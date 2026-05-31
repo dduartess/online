@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -101,7 +101,7 @@ return false;
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
@@ -109,10 +109,10 @@ db_estilosite();
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?
+<?php 
 mens_div();
 ?>
-<table align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>" class="texto">
+<table align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>" class="texto">
   <tr>
     <td align="left" valign="top">
       <form name="form1" action="sociosdae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo)?>" method="post">
@@ -196,7 +196,7 @@ mens_div();
                     </th>
                     <th></th>
                   </tr>
-                  <? 
+                  <?php  
                   if(isset($primeira)){ 
                     $result = pg_exec("select * from db_daesocios where w06_codigo = $codigo");
                     if(pg_numrows($result) == 0 ){     

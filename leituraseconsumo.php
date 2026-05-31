@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -99,7 +99,7 @@ function js_voltar(){
 js_verificapagina("atualizaendereco.php,digitacontribuinte.php,digitainscricao.php,digitamatricula.php,listabicalvara.php,listabicimovel.php,listadebitospendentes.php,listasegundaviaalvara.php");
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 .db_area {
@@ -110,8 +110,8 @@ db_estilosite();
 }
 </style>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<? //mens_div(); ?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php  //mens_div(); ?>
 
 <table align="center" width="60%" border="0" cellspacing="0"
 	cellpadding="0">
@@ -128,11 +128,11 @@ db_estilosite();
 					<tr class="texto">
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: <span class="bold3"><?=$cgccpf?></span><br>
-						<? if(@$inscricao!=""){?> Inscrição:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
-						<?}else if(@$matricula!=""){?> Matrícula:&nbsp; <span
+						<?php  if(@$inscricao!=""){?> Inscrição:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
+						<?php }else if(@$matricula!=""){?> Matrícula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
-							<?}else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
-							<?}?></td>
+							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
+							<?php }?></td>
 					</tr>
 					<tr class="texto">
 						<td  colspan="2">

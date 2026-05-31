@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -92,7 +92,7 @@ function js_marca(obj){
   <tr>
     <td  valign="top">
       <table border='1' width="100%" bgcolor="#cccccc" id="tabela_seleciona">
-<?
+<?php 
 if(isset($sql) && $sql!=""){ 
        $result=pg_query($sql);
        $numrows=pg_numrows($result);
@@ -181,6 +181,6 @@ if(isset($sql) && $sql!=""){
   </form>
 </body>  
 </html>
-<?
+<?php 
 unlink(base64_decode($arquivo)) or die('Erro');
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -63,7 +63,7 @@ if(isset($HTTP_POST_VARS["enviar"])) {
 <meta http-equiv="Expires" CONTENT="0">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
-<?
+<?php 
 $result = pg_exec("select mens,alinhamento from db_confmensagem where cod = '$codhelp'");
 db_fieldsmemory($result,0);
 $resultado = $mens;
@@ -313,7 +313,7 @@ fieldset {
 <table width="790" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td height="430" align="center" valign="top" bgcolor="#CCCCCC">
-<?
+<?php 
 echo "<b><u>Help ".$codhelp."</u>\n";
 ?>	
 <form method="post" name="form1" onSubmit="js_submeter()">

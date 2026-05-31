@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -58,7 +58,7 @@ db_postmemory($_GET);
   document.getElementById('int_perc2').style.width='0%';
 </script>
 <table width="100%" border="1" bordercolor="#999999" cellpadding="2" cellspacing="0" class="texto">
-<?
+<?php 
 
 
 
@@ -97,7 +97,7 @@ if (@$numcgm!="") {
      Nenhum Empenho em Aberto para Numcgm <b><?=$numcgm?></b>
     </td>
    </tr>
-   <?
+   <?php 
   }else{
    ?>
    <tr bgcolor="#99bbff" class="bold4" align="center">
@@ -113,7 +113,7 @@ if (@$numcgm!="") {
     <td>Valor Anul.</td>
     <td>Instituição</td>
    </tr>
-   <?
+   <?php 
    $cor2="#99ccff";
    $cor3="#ffffcc";
    for ($x=0; $x<$linhas; $x++) {
@@ -141,7 +141,7 @@ if (@$numcgm!="") {
        <td align="right">&nbsp;<?=number_format($e60_vlranu,2,',','.')?></td>
        <td align="center"><?=$codigo."-".$nomeinst?></td>
       </tr>
-      <?
+      <?php 
    }
   }
 }else{
@@ -152,7 +152,7 @@ if (@$numcgm!="") {
     Para acessar suas informações, efetue login.
    </td>
   </tr>
-  <?
+  <?php 
  }
 ?>
 </table>

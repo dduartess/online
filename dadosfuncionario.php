@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -80,7 +80,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
   <form name="form1" method="post" action="">
     <table  class="tableForm" width="750px;">
       <tr>
@@ -132,7 +132,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
           Sexo:
         </td>
         <td class="dadosForm" colspan="3">
-          <?
+          <?php 
             if ( $oDadosServidor->z01_sexo == 'M' ) {
               echo 'Masculino';
             } else if ($oDadosServidor->z01_sexo == 'F') {

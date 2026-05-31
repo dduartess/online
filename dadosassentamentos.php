@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -68,7 +68,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
   <form name="form1" method="post" action="">
     <table  class="tableForm" width="70%">
        <tr>
@@ -76,7 +76,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
             <?=$sTituloTela?>
          </td>
        </tr>
-      <?
+      <?php 
        
         if ( $iNroAssenta > 0 ) {
       
@@ -104,7 +104,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
                 Data Final:
               </td>
               <td class="dadosForm">
-                <?
+                <?php 
                   if ( $oAssenta->h16_dtterm != '' ) {
                    echo  db_formatar($oAssenta->h16_dtterm,'d');
                   } else {
@@ -146,7 +146,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
               </td>
             </tr>
 
-      <?
+      <?php 
 
           }
           
@@ -159,7 +159,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
         </td>
       </tr>      
         
-      <?
+      <?php 
         }
     
       ?>  

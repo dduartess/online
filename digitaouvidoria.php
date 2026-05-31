@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -209,11 +209,11 @@ function js_tipo_resposta() {
 em {
 	color: red;
 }
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <br>
 <center>
  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
@@ -225,11 +225,11 @@ em {
   </tr>
   <tr align="center">
     <td id="error-list">
-      <? if(!empty($DB_MSG)) { ?>
+      <?php  if(!empty($DB_MSG)) { ?>
       <table border="0" cellspacing="0" cellpadding="0" class="texto"><tr><td><em>Favor corrigir as seguintes informações:</em></td></tr>
       	<?=@$DB_MSG; ?>
       </table>
-    <?}?>
+    <?php }?>
     </td>
   <tr>
     <td align="center" valign="middle">
@@ -252,12 +252,12 @@ em {
           <td> 
             <select name="po01_tipo" id="po01_tipo">
               <option value="">-</option>
-            <?
+            <?php 
               $results = pg_fetch_all($cl_db_tipo->sql_record($cl_db_tipo->sql_query("","*","","")));
               foreach ($results as $result) {
             ?>
               <option value="<?=@$result['w03_codtipo']?>" <?=@($result['w03_codtipo']==$po01_tipo?"selected='selected'":"")?>><?=@$result['w03_tipo']?></option>
-            <?}?>
+            <?php }?>
             </select>
           </td>
         <tr>
@@ -265,12 +265,12 @@ em {
           <td><?=@$Lpo01_sigilo?></td>
           <td> 
             <select name="po01_sigilo" id="po01_sigilo">
-            <?
+            <?php 
               $x = array('f'=>'Não','t'=>'Sim');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_sigilo) && $k==$po01_sigilo)?"selected='selected'":"")?>><?=@$v?></option>
-            <?}?>
+            <?php }?>
             </select>
           </td>
         </tr>
@@ -278,12 +278,12 @@ em {
           <td><?=@$Lpo01_resposta?></td>
           <td> 
             <select name="po01_resposta" id="po01_resposta" onchange="js_tipo_resposta()">
-            <?
+            <?php 
               $x = array('f'=>'Não','t'=>'Sim');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_resposta) && $k==$po01_resposta)?"selected='selected'":"")?>><?=@$v?></option>
-            <?}?>
+            <?php }?>
             </select>
           </td>
         </tr>
@@ -291,12 +291,12 @@ em {
           <td><?=@$Lpo01_tiporesposta?></td>
           <td> 
             <select name="po01_tiporesposta" id="po01_tiporesposta">
-            <?
+            <?php 
               $x = array('0'=>'E-mail','1'=>'Carta','2'=>'Telefone');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_sigilo) && $k==$po01_sigilo)?"selected='selected'":"")?>><?=@$v?></option>
-            <?}?>
+            <?php }?>
             </select>
           </td>
         </tr>
@@ -310,12 +310,12 @@ em {
           <td><?=@$Lpo01_sexo?></td>
           <td> 
             <select name="po01_sexo" id="po01_sexo">
-            <?
+            <?php 
               $x = array('' => '-', 'F'=>'Feminino','M'=>'Masculino');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($sexo) && $k==$sexo)?"selected='selected'":"")?>><?=@$v?></option>
-            <?}?>
+            <?php }?>
             </select>
           </td>
         </tr>
@@ -329,12 +329,12 @@ em {
           <td><?=@$Lpo01_escolaridade?></td>
           <td> 
             <select name="po01_escolaridade" id="po01_escolaridade">
-            <?
+            <?php 
               $x = array('' => '-', '0'=>'Não alfabetizado','1'=>'Nível fundamental','2'=>'Nível médio','3'=>'Graduado');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_escolaridade) && $k==$po01_escolaridade)?"selected='selected'":"")?>><?=@$v?></option>
-            <?}?>
+            <?php }?>
             </select>
           </td>
         </tr>
@@ -385,12 +385,12 @@ em {
         <td> 
           <select name="po01_db_uf" id="po01_db_uf">
             <option value="">-</option>
-          <?
+          <?php 
             $results = pg_fetch_all($cl_db_uf->sql_record($cl_db_uf->sql_query("","*","db12_uf","")));
             foreach ($results as $result) {
           ?>
             <option value="<?=@$result['db12_codigo']?>" <?=@($result['db12_codigo']==$po01_db_uf?"selected='selected'":"")?>><?=@$result['db12_uf']?></option>
-          <?}?>
+          <?php }?>
           </select>
         </td>
       </tr>
@@ -472,7 +472,7 @@ em {
 </tr>
 </table>
 </center>
-<?
+<?php 
 db_logs("","",0,"Acesso a Ouvidoria.");
 if(isset($mensagem))
   echo "<script>alert('".$mensagem."'); location.href= 'digitaouvidoria.php'</script>\n";

@@ -54,7 +54,7 @@ require_once 'classes/db_cgm_classe.php';
     </style>
     <link href="config/estilos.css" rel="stylesheet" type="text/css">
   </head>
-  <body bgcolor="<?php echo $w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+  <body bgcolor="<?php echo $w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 
 
   <script>

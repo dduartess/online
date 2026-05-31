@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -150,7 +150,7 @@ if(isset($matric) and !empty($matric)){
 <center>
 <form name="form1" method="post" action="" target="reciboweb2">
 <table id="tabdebitos" name="tabdebitos">
-<?
+<?php 
   if($numrows>0){
   
     /**
@@ -273,7 +273,7 @@ if(isset($matric) and !empty($matric)){
   }else{
 ?>
   <tr><td><small>Nenhum registro encontrado</small></td></tr> 
-<?
+<?php 
   }
 ?>
 </table>

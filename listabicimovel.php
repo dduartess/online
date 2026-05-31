@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -107,7 +107,7 @@ js_verificapagina("opcoesdebitospendentes.php,opcoesitbi.php");
 
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 echo"
 .tabfonte {
                font-family: $w01_fontesite;
@@ -128,11 +128,11 @@ echo"
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 	<form name="form1" >
 <input name="z01_cgccpf" type="hidden" value=<?=$z01_cgccpf?>>
 <input name="id_usuario" type="hidden" value=<?=$id_usuario?>>
-<?mens_div();?>
+<?php mens_div();?>
 <input type="submit" value="< Voltar" style="background-color:#eaeaea" name="voltar">
 <center>
 
@@ -193,7 +193,7 @@ echo"
         </table>
         <strong><br>
         CARACTER&Iacute;STICAS DO IM&Oacute;VEL</strong> <table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-          <?
+          <?php 
               $controle = 1;
             $result = db_query("select * from carlote,caracter,cargrup 
                                    where j35_idbql = $j01_idbql and
@@ -204,13 +204,13 @@ echo"
                     if ($controle == 1 ) {
                      ?>
                             <tr> 
-                              <?
+                              <?php 
                      if( $contador == 0 ) {
                            ?>
-                              <?
+                              <?php 
                      } else {
                            ?>
-                              <?
+                              <?php 
                          }
                          ?>
                               <td class="tabfonte" width="5%"> 
@@ -219,7 +219,7 @@ echo"
                               <td class="tabfonte" width="37%"> 
                                 <?=ucfirst(substr($j32_descr,0,15))." - ".ucfirst(strtolower(substr($j31_descr,0,20)))?>
                               </td>
-                              <?
+                              <?php 
                          $controle = 2;
                    } else {
                      $controle = 1;
@@ -231,7 +231,7 @@ echo"
                                 <?=ucfirst(substr($j32_descr,0,15))." - ".ucfirst(strtolower(substr($j31_descr,0,20)))?>
                               </td>
                             </tr>
-                            <?
+                            <?php 
                    }
          }
        }
@@ -239,7 +239,7 @@ echo"
                           </table>
                           <font size="2" face="Arial, Helvetica, sans-serif"><strong><br>
                           ISEN&Ccedil;&Otilde;ES</strong></font> <table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-                            <?
+                            <?php 
            $result = db_query("select distinct iptuisen.*,tipoisen.* from iptuisen
                                                 inner join isenexe on iptuisen.j46_codigo = isenexe.j47_codigo
                                                                                  ,tipoisen 
@@ -273,7 +273,7 @@ echo"
                                 <?=substr($j45_descr,0,20)?>
                               </td>
                             </tr>
-                            <?
+                            <?php 
               }
         } else {
                   ?>
@@ -281,13 +281,13 @@ echo"
                               <td width="8%" align="center" nowrap class="tabfonte"><strong>Sem 
                                 Isenções</strong></td>
                             </tr>
-                            <?
+                            <?php 
             }
                 ?>
                           </table>
                           <font size="2" face="Arial, Helvetica, sans-serif"><strong><br>
                           TESTADA</strong></font><br> <table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-                            <?
+                            <?php 
                 $result = db_query("select * from testada,ruas 
                                    where j36_idbql  = $j01_idbql  and
                                                                  j36_codigo = j14_codigo");
@@ -297,7 +297,7 @@ echo"
                     ?>
                             <tr> 
                               <td class="tabfonte" width="8%">Rua:</td>
-                              <td class="tabfonte" width="53%"><? echo $j36_codigo." - ".substr($j14_nome,0,20)?></td>
+                              <td class="tabfonte" width="53%"><?php  echo $j36_codigo." - ".substr($j14_nome,0,20)?></td>
                               <td class="tabfonte" width="13%"><strong>Face:</strong></td>
                               <td class="tabfonte" width="8%"> 
                                 <?=$j36_face?>
@@ -307,7 +307,7 @@ echo"
                                 <?=$j36_testad?>
                               </td>
                             </tr>
-                            <?
+                            <?php 
                }
              } else {
            echo "<tr>";
@@ -319,7 +319,7 @@ echo"
                           <font size="2" face="Arial, Helvetica, sans-serif"><strong><br>
                           EDIFICA&Ccedil;&Otilde;ES( Constru&ccedil;&otilde;es 
                           Lan&ccedil;adas )</strong></font> <strong> 
-                          <?
+                          <?php 
                 $result = db_query("select * from iptuconstr,carconstr,caracter,ruas
                                    where j39_matric = $cod_matricula and
                                                    j39_matric = j48_matric and
@@ -356,22 +356,22 @@ echo"
                             </tr>
                           </table>
                           <table width="100%" border="1" bordercolor="#cccccc"  cellpadding="0" cellspacing="0">
-                            <?
+                            <?php 
                     }
                         if ( $confere == 0 ){
                           $confere = 1;
                           ?>
                             <tr> 
-                              <?
+                              <?php 
                           if( $impcar == 0 ){ 
                             $impcar = 1;
                                 ?>
                               <td class="tabfonte" width="15%" height="29"> <strong>Caracter&iacute;sticas:</strong></td>
-                              <?
+                              <?php 
                           } else {  
                             ?>
                               <td class="tabfonte" width="15%" height="29">&nbsp;</td>
-                              <?
+                              <?php 
                       }
                           ?>
                               <td class="tabfonte" width="3%" height="29"> 
@@ -380,7 +380,7 @@ echo"
                               <td class="tabfonte" width="36%" height="29"> 
                                 <?=substr($j31_descr,0,20)?>
                               </td>
-                              <?
+                              <?php 
                           } else {
                         $confere = 0;
                       ?>
@@ -391,13 +391,13 @@ echo"
                                 <?=substr($j31_descr,0,20)?>
                               </td>
                             </tr>
-                            <?
+                            <?php 
                   }                        
                   }
                   ?>
                           </table>
                           <strong> 
-                          <?
+                          <?php 
                 } else {
           echo "<table width=\"100%\" border=\"1\"  cellpadding=\"0\" cellspacing=\"0\" bordercolor=\"#cccccc\">";
           echo "<tr>";
@@ -409,7 +409,7 @@ echo"
                           <br>
                           <font size="2" face="Arial, Helvetica, sans-serif"> 
                           OUTROS PROPRIET&Aacute;RIOS</font></strong><br> <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#cccccc   ">
-                            <?
+                            <?php 
                 $result = db_query("select z01_nome,z01_ender from propri,cgm
                                    where j42_matric = $cod_matricula and
                                                    j42_numcgm = z01_numcgm");
@@ -426,7 +426,7 @@ echo"
                                 <?=$z01_ender?>
                               </td>
                             </tr>
-                            <?
+                            <?php 
                   }
                 } else {
           echo "<tr>";
@@ -441,7 +441,7 @@ echo"
     </tr>
     <tr> 
     <td class="tabfonte" align="center">
-    <?
+    <?php 
         db_query("begin");                        
     $sql = "select arq from db_imgsitbi where matricula = ".@$cod_matricula." order by data desc limit 1";
     $img = db_query($sql);
@@ -460,13 +460,13 @@ echo"
       </tr>
       <tr align="center"> 
         <td>
-                  <a title="Clique para ampliar a imagem" href="" onclick="window.open('listabicimovelpopup.php?src=<? echo base64_encode($DocHome."/tmp/".basename($caminho)) ?>','','width=640,height=480');return false">
+                  <a title="Clique para ampliar a imagem" href="" onclick="window.open('listabicimovelpopup.php?src=<?php  echo base64_encode($DocHome."/tmp/".basename($caminho)) ?>','','width=640,height=480');return false">
                     <img width="250" height="250" src="<?=$DocHome."/tmp/".basename($caminho)?>" border="0">
                   </a>
             </td>
       </tr>
     </table>   
-     <?
+     <?php 
         }
     db_query("end");
         ?>

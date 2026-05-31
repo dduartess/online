@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -52,7 +52,7 @@ if(isset($fechar)){
   </tr>
   <tr> 
     <td height="56" align="center"><font size="2" face="Arial, Helvetica, sans-serif"><br>
-    <?
+    <?php 
 	echo @$db_erro;
 	?>
      </font></td>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -52,7 +52,7 @@ td{
   </tr>
   <tr> 
     <td align="center" valign="top"> 
-        <?
+        <?php 
 	 $sql = "select z01_nome,z01_numcgm from cgm inner join graficas on y20_grafica = z01_numcgm"; 
          db_lovrot($sql,10,"()","",$funcao_js);
 	?>

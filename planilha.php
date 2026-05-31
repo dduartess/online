@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -148,19 +148,19 @@ $cl_issplanitinscr = new cl_issplanitinscr;
 <script language="JavaScript" src="scripts/db_script.js"></script>
 
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 small{
     font-size: 10px;
     }
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?mens_div();?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php mens_div();?>
 <center>
  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="texto">
   <tr>
-  	<?
+  	<?php 
      $sqlcgc = "Select z01_cgccpf from cgm where z01_numcgm = $numcgm ";
 	 $resultcgc = pg_query($sqlcgc);
 	 $linhascgc = pg_num_rows($resultcgc);
@@ -198,7 +198,7 @@ small{
            <input type="button" class="botao" value="Nova Planilha" onclick="novaplan()">
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buscar planilhas
            <select name="mostra"  onchange= "js_mostra();">
-                 <? 
+                 <?php  
 								 echo "<option value=\"5\"".($mostra==5?" selected":"").">Em digitação</option>		
 							         <option value=\"1\"".($mostra==1?" selected":"").">Abertos</option>				 
 							         <option value=\"2\"".($mostra==2?" selected":"").">Todos</option>
@@ -215,7 +215,7 @@ small{
        <tr><td>&nbsp;</td></tr>
        <tr>
         <td>
-          <?
+          <?php 
     	
     	if (isset($mostra)){
     		
@@ -349,7 +349,7 @@ small{
                
              }
              echo "</tbody>";
-             ?><input type="button" value="Voltar" onclick="history.back()"><?
+             ?><input type="button" value="Voltar" onclick="history.back()"><?php 
           }else{ 
           	
           // ################## entra aki qd vem da opcoesissqn antes de clicar nos botoes ##################
@@ -466,7 +466,7 @@ small{
          </tr>
          <tr>
          <td align="center" colspan="7">Data de Pagamento:
-             <?
+             <?php 
             
              $mescorreto += 1; 
              if($mescorreto>12){
@@ -490,7 +490,7 @@ small{
              ?>
          </td>
         </tr>
-         <?
+         <?php 
          }
     
          

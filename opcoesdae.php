@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -170,7 +170,7 @@ function trocacor(id){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 
 div.tabArea {
   font-size: 14px;
@@ -179,7 +179,7 @@ div.tabArea {
 }
 
 a.tab {
-  background-color:<?echo $w01_corfundomenu;?> ;
+  background-color:<?php echo $w01_corfundomenu;?> ;
   border: 1px solid #000000;  
   border-bottom-width: 0px;
   padding: 2px 1em 2px 1em;
@@ -187,24 +187,24 @@ a.tab {
   border-radius-topleft: .75em;
   border-radius-topright: .75em;
   text-decoration: none;
-  color: <?echo $w01_corfontemenu;?>; 
+  color: <?php echo $w01_corfontemenu;?>; 
 }
 
 a.tab:hover {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
-  color: <?echo $w01_corfontemenu;?>;           
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
+  color: <?php echo $w01_corfontemenu;?>;           
 }
 
 a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
   border-bottom-width: 0px;
-  color:<?echo $w01_corfontemenu;?>;
+  color:<?php echo $w01_corfontemenu;?>;
 }
 
 div.tabMain {
  // background-color:#0099CC;
   border: 6px solid #000000;
-  border-color: <?echo $w01_corfundomenuativo;?>; 
+  border-color: <?php echo $w01_corfundomenuativo;?>; 
   -moz-border-radius: 0em .3em .3em 0em;
  
   padding: .3em;
@@ -220,10 +220,10 @@ div.tabIframeWrapper {
 }
 
 </style>
-<?mens_div();?>
+<?php mens_div();?>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" <?php  mens_OnHelp() ?>>
 <form name="form1" method="post" action="opcoesissqn.php">
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom: 0px">
@@ -236,14 +236,14 @@ div.tabIframeWrapper {
   		<td colspan="5">
     		<div class="tabArea">
        	      	<a id="1" class="tab activeTab" href= "enderecodae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae"  onClick="trocacor('1')" >Endereço</a>
-			    <?
+			    <?php 
 			    $sqlsocio="select * from configdbpref";
 			    $resultsocio = db_query($sqlsocio);
 			    db_fieldsmemory($resultsocio,0);
 			    if($w13_libsociosdai=='t'){
 			      ?>
 			      <a id="2" class="tab" href= "sociosdae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae"  onClick="trocacor('2')" >Socios</a>
-			      <?
+			      <?php 
 			    }
 			    ?>
 			    <a id="3" class="tab" href="valoresdae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('3')" >Valores</a>

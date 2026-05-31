@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -41,7 +41,7 @@ db_postmemory($HTTP_SERVER_VARS);
 </script>
 </head>
 <body bgcolor="<?=$w01_corbody?>" >
-<?
+<?php 
 
 $sql = "select   l03_descr,  l20_objeto,  l20_codtipocom, l20_numero,l27_arquivo,
 		'edital_'||l03_tipo||'_'||l20_numero||'_'||to_char(l20_dtpublic, 'yyyymmdd')||'.pdf' as l99_nomearq
@@ -62,7 +62,7 @@ obs: ta mostrando todos com permição para publicar...idependente da data....
 
 <table width="90%" border="0" align= "center">
 	<form name="form1" method="post" action="">
-	<?
+	<?php 
 	if ($lin>0){
 		for ($i = 0; $i < $lin; $i++) {
 			db_fieldsmemory($result, $i);

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -58,18 +58,18 @@ if($db_verificaip == "0"){//este if é usado para qdo se tem cnpj ou cpf na pagin
 <script>
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -96,7 +96,7 @@ mens_div();
 	  <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
       <tr>
             <td width="90" align="left" valign="top"> 
-          <?    db_montamenus();        
+          <?php     db_montamenus();        
           ?>
 		</td>
             <td align="left" valign="top"> 
@@ -135,13 +135,13 @@ mens_div();
   </tr>
 </table>
 </center>
-<?
+<?php 
 db_rodape();
 ?>
 </body>
 <!-- InstanceEnd --></html>
 
 
-<?
+<?php 
 db_logs("","",0,"este é um log de teste, que será gravado toda vez que tu entrar nesta pagina.");//aqui é o log do sistema
 ?>

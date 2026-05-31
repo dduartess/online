@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -26,17 +26,32 @@
  */
 
 
+function db_to_utf8_safe($s) {
+  if ($s === null) {
+    return $s;
+  }
+  if (@preg_match("//u", $s)) {
+    return $s;
+  }
+  if (function_exists("iconv")) {
+    $c = @iconv("ISO-8859-1", "UTF-8//IGNORE", $s);
+    if ($c !== false) {
+      return $c;
+    }
+  }
+  return utf8_encode($s);
+}
+
 function db_mensagem($cabecalho,$rodape) {
   global $DB_mens1, $DB_align1, $DB_mens2, $DB_align2;
   $result = pg_query("select mens,alinhamento from db_confmensagem where (cod = '$cabecalho' or cod = '$rodape') and instit = ".db_getsession("DB_instit")." order by cod");
   if (pg_numrows($result) == 0 ){
-     db_msgbox2("Mensagem não encontrado para: $cabecalho $rodape");
-     //redireciona("index.php");
-         exit;
+     db_msgbox2("Mensagem nao encontrada para: $cabecalho $rodape");
+     exit;
   }
-  $DB_mens1  = @pg_result($result,0,0);
+  $DB_mens1  = db_to_utf8_safe(@pg_result($result,0,0));
   $DB_align1 = @pg_result($result,0,1);
-  $DB_mens2  = @pg_result($result,1,0);
+  $DB_mens2  = db_to_utf8_safe(@pg_result($result,1,0));
   $DB_align2 = @pg_result($result,1,1);
 }
 function debitos_tipos_matricula($matricula, $instit = null){

@@ -1,5 +1,6 @@
 <?php
 include_once("libs/legacy_compat.php");
+include_once("libs/legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -82,7 +83,7 @@ if( isset( $login ) ){
     $result = db_query($sql);
     if(pg_numrows($result)==0){
       //db_redireciona("index.php?".base64_encode("erroscripts='4'"));
-      ?><script>parent.location="index.php?".base64_encode("erroscripts='4'";</script><?
+      ?><script>parent.location="index.php?".base64_encode("erroscripts='4'";</script><?php 
     }
     $HTTP_SESSION_VARS["DB_acesso"] = pg_result($result,0,0);
     $HTTP_SESSION_VARS["hora"] = date("H:i:s");
@@ -112,13 +113,13 @@ function js_submeter() {
 }
 </script>
 <style type="text/css">
-<?db_estilosite()?>
+<?php db_estilosite()?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?
+<?php 
 if(db_getsession("DB_login") == ""){
       echo "<form name=\"form1\" action=\"\" method=\"post\">";
       echo"<table bgcolor=\"".$w01_corbody."\" style=\"border:0 ".$w01_estilomenu." ".$w01_corbordamenu."\" class=\"texto\">
@@ -142,7 +143,7 @@ if(db_getsession("DB_login") == ""){
 ?>
 </body>
 </html>
-<?
+<?php 
 if(isset($erroscripts) && !isset($DB_LOGADO)){
   if(@$erroscripts == 1)
     echo "<script>alert('Login Inválido UOUU');</script>\n";
@@ -158,7 +159,7 @@ if(isset($erroscripts) && !isset($DB_LOGADO)){
 
 ?>
 <script>
-<?
+<?php 
 if(!isset($DB_LOGADO) && (db_getsession("DB_login") == "")){
 echo "
   function js_foco(){

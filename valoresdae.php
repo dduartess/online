@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -207,14 +207,14 @@ return true;
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 </head>
 <body bgcolor="<?=$w01_corbody?>">
 
-<?
+<?php 
 
 $sqlano="select w04_ano from db_dae where w04_inscr = $inscricaow and w04_codigo=$codigo";
 $resultano = pg_query($sqlano);
@@ -329,7 +329,7 @@ if (isset($salvar)){
 	<td  >
 		Data do pagamento
 	</td>
-	<?
+	<?php 
 	if (isset($mesdai)){
 		$mesdai++;
 	}
@@ -337,7 +337,7 @@ if (isset($salvar)){
 	?>
 <tr class= "titulo2">
 	<td >
-		<?
+		<?php 
 		
 		$messs = array(1=>"janeiro",
 					   2=>"fevereiro",
@@ -417,7 +417,7 @@ if (isset($salvar)){
 				</th>
 			</tr>
 			
-<?
+<?php 
 	
 $result = $cldb_daevalores->sql_record( $cldb_daevalores->sql_query("$codigo","","*","w07_mes","w07_codigo = $codigo"));
 //die($cldb_daevalores->sql_query("$codigo","","*","w07_mes","w07_codigo = $codigo"));

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -40,18 +40,18 @@ postmemory($HTTP_POST_VARS);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -78,7 +78,7 @@ mens_div();
 	  <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
       <tr>
             <td width="90" align="left" valign="top"> 
-              <?
+              <?php 
 db_montamenus();
           ?>
 		</td>

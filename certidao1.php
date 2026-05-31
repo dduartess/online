@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -92,7 +92,7 @@ function js_verificamatricula() {
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 echo"
 .bordas {
 	border: $w01_bordamenu $w01_estilomenu;
@@ -145,12 +145,12 @@ input {
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -174,7 +174,7 @@ mens_div();
               <!-- MENU -->
               <img src="imagens/linha.gif" width="90" height="1" border="0"> 
               <table width="97%" cellpadding="0" cellspacing="0" border="0">
-          <?            
+          <?php             
 		  	$result_dtw = pg_exec("SELECT * FROM db_menupref WHERE m_ativo = '1'");
 	        $numrows_dtw = pg_numrows($result_dtw);
             for($i = 0;$i < $numrows_dtw;$i++) {
@@ -190,7 +190,7 @@ mens_div();
 				  </a>
 				  </td>				
               </tr>
-              <?
+              <?php 
 		    }
           ?>
           </table>
@@ -209,7 +209,7 @@ mens_div();
         <table width="100%" border="0">
           <tr> 
             <td width="42%" align="right"> 
-          <?
+          <?php 
 		  echo $opcao;
 		  ?>
             </td>
@@ -217,7 +217,7 @@ mens_div();
           </tr>
           <tr>
             <td align="right">
-              <? 
+              <?php  
 			  if(@$nome!="") {
 			    $name = "cpf";
                             $opcao1 = "CPF:";

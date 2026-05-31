@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -330,7 +330,7 @@ function js_soma() {
 }
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 echo"
 .tabfonte {
                font-family: $w01_fontesite;
@@ -341,8 +341,8 @@ echo"
 ?>
 </style>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?mens_div();?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php mens_div();?>
 <center>
 <form name="form1" method="post" action="">
 <table width="100%" height="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#000000">
@@ -465,59 +465,59 @@ echo"
                               </td>
                             <td>&nbsp;&nbsp;
                               <select name="ufcomprador">
-                                <option value="RS" <? echo @$ufcomprador=="RS"?"selected":"" ?>>
+                                <option value="RS" <?php  echo @$ufcomprador=="RS"?"selected":"" ?>>
                                 RS </option>
-                                <option value="AC" <? echo @$ufcomprador=="AC"?"selected":"" ?>>
+                                <option value="AC" <?php  echo @$ufcomprador=="AC"?"selected":"" ?>>
                                 AC </option>
-                                <option value="AL" <? echo @$ufcomprador=="AL"?"selected":"" ?>>
+                                <option value="AL" <?php  echo @$ufcomprador=="AL"?"selected":"" ?>>
                                 AL </option>
-                                <option value="AM" <? echo @$ufcomprador=="AM"?"selected":"" ?>>
+                                <option value="AM" <?php  echo @$ufcomprador=="AM"?"selected":"" ?>>
                                 AM </option>
-                                <option value="AP" <? echo @$ufcomprador=="AP"?"selected":"" ?>>
+                                <option value="AP" <?php  echo @$ufcomprador=="AP"?"selected":"" ?>>
                                 AP </option>
-                                <option value="BA" <? echo @$ufcomprador=="BA"?"selected":"" ?>>
+                                <option value="BA" <?php  echo @$ufcomprador=="BA"?"selected":"" ?>>
                                 BA </option>
-                                <option value="CE" <? echo @$ufcomprador=="CE"?"selected":"" ?>>
+                                <option value="CE" <?php  echo @$ufcomprador=="CE"?"selected":"" ?>>
                                 CE </option>
-                                <option value="DF" <? echo @$ufcomprador=="DF"?"selected":"" ?>>
+                                <option value="DF" <?php  echo @$ufcomprador=="DF"?"selected":"" ?>>
                                 DF </option>
-                                <option value="ES" <? echo @$ufcomprador=="ES"?"selected":"" ?>>
+                                <option value="ES" <?php  echo @$ufcomprador=="ES"?"selected":"" ?>>
                                 ES </option>
-                                <option value="GO" <? echo @$ufcomprador=="GO"?"selected":"" ?>>
+                                <option value="GO" <?php  echo @$ufcomprador=="GO"?"selected":"" ?>>
                                 GO </option>
-                                <option value="MA" <? echo @$ufcomprador=="MA"?"selected":"" ?>>
+                                <option value="MA" <?php  echo @$ufcomprador=="MA"?"selected":"" ?>>
                                 MA </option>
-                                <option value="MG" <? echo @$ufcomprador=="MG"?"selected":"" ?>>
+                                <option value="MG" <?php  echo @$ufcomprador=="MG"?"selected":"" ?>>
                                 MG </option>
-                                <option value="MS" <? echo @$ufcomprador=="MS"?"selected":"" ?>>
+                                <option value="MS" <?php  echo @$ufcomprador=="MS"?"selected":"" ?>>
                                 MS </option>
-                                <option value="MT" <? echo @$ufcomprador=="MT"?"selected":"" ?>>
+                                <option value="MT" <?php  echo @$ufcomprador=="MT"?"selected":"" ?>>
                                 MT </option>
-                                <option value="PA" <? echo @$ufcomprador=="PA"?"selected":"" ?>>
+                                <option value="PA" <?php  echo @$ufcomprador=="PA"?"selected":"" ?>>
                                 PA </option>
-                                <option value="PB" <? echo @$ufcomprador=="PB"?"selected":"" ?>>
+                                <option value="PB" <?php  echo @$ufcomprador=="PB"?"selected":"" ?>>
                                 PB </option>
-                                <option value="PE" <? echo @$ufcomprador=="PE"?"selected":"" ?>>
+                                <option value="PE" <?php  echo @$ufcomprador=="PE"?"selected":"" ?>>
                                 PE </option>
-                                <option value="PI" <? echo @$ufcomprador=="PI"?"selected":"" ?>>
+                                <option value="PI" <?php  echo @$ufcomprador=="PI"?"selected":"" ?>>
                                 PI </option>
-                                <option value="PR" <? echo @$ufcomprador=="PR"?"selected":"" ?>>
+                                <option value="PR" <?php  echo @$ufcomprador=="PR"?"selected":"" ?>>
                                 PR </option>
-                                <option value="RJ" <? echo @$ufcomprador=="RJ"?"selected":"" ?>>
+                                <option value="RJ" <?php  echo @$ufcomprador=="RJ"?"selected":"" ?>>
                                 RJ </option>
-                                <option value="RN" <? echo @$ufcomprador=="RN"?"selected":"" ?>>
+                                <option value="RN" <?php  echo @$ufcomprador=="RN"?"selected":"" ?>>
                                 RN </option>
-                                <option value="RO" <? echo @$ufcomprador=="RO"?"selected":"" ?>>
+                                <option value="RO" <?php  echo @$ufcomprador=="RO"?"selected":"" ?>>
                                 RO </option>
-                                <option value="RR" <? echo @$ufcomprador=="RR"?"selected":"" ?>>
+                                <option value="RR" <?php  echo @$ufcomprador=="RR"?"selected":"" ?>>
                                 RR </option>
-                                <option value="SC" <? echo @$ufcomprador=="SC"?"selected":"" ?>>
+                                <option value="SC" <?php  echo @$ufcomprador=="SC"?"selected":"" ?>>
                                 SC </option>
-                                <option value="SE" <? echo @$ufcomprador=="SE"?"selected":"" ?>>
+                                <option value="SE" <?php  echo @$ufcomprador=="SE"?"selected":"" ?>>
                                 SE </option>
-                                <option value="SP" <? echo @$ufcomprador=="SP"?"selected":"" ?>>
+                                <option value="SP" <?php  echo @$ufcomprador=="SP"?"selected":"" ?>>
                                 SP </option>
-                                <option value="TO" <? echo @$ufcomprador=="TO"?"selected":"" ?>>
+                                <option value="TO" <?php  echo @$ufcomprador=="TO"?"selected":"" ?>>
                                 TO </option>
                               </select>
                               </td>
@@ -544,42 +544,42 @@ echo"
                       <td class="tabfonte">Tipo de Transmiss&atilde;o:</td>
                       <td class="tabfonte" colspan="3"><select name="tipotransacao">
 
-<option  <? echo @$tipotransacao=="ABERT.CRED.FIXO REAL"?"selected":"" ?>             value='ABERT.CRED.FIXO REAL'>ABERTURA DE CRÉDITO FIXO COM GARANTIA REAL</option>
-<option  <? echo @$tipotransacao=="AVALIAÇÃO FISCAL"?"selected":"" ?>                 value='AVALIAÇÃO FISCAL'>AVALIAÇÃO FISCAL</option>
-<option  <? echo @$tipotransacao=="CANCEL.  DE USUFRUTO"?"selected":"" ?>             value='CANCEL.  DE USUFRUTO'>CANCELAMENTO DE USUFRUTO</option>
-<option  <? echo @$tipotransacao=="CANCEL.USUF FAL USUF"?"selected":"" ?>             value='CANCEL.USUF FAL USUF'>CANCELAMENTO DE USUFRUTO P/FALECIMENTO DO USUFRUTUÁRIO</option>
-<option  <? echo @$tipotransacao=="CARTA DE ADJUDICAÇÃO"?"selected":"" ?>             value='CARTA DE ADJUDICAÇÃO'>CARTA DE ADJUDICAÇÃO</option>
-<option  <? echo @$tipotransacao=="CARTA DE ARREMATAÇÃO"?"selected":"" ?>             value='CARTA DE ARREMATAÇÃO' >CARTA DE ARREMATAÇÃO</option>
-<option  <? echo @$tipotransacao=="CARTA DE ARR LEILÃO"?"selected":"" ?>              value='CARTA DE ARR LEILÃO'>CARTA DE ARREMATAÇÃO - LEILÃO</option>
-<option  <? echo @$tipotransacao=="CESSÃO DE DIR HERED."?"selected":"" ?>             value='CESSÃO DE DIR HERED.' >CESSÃO DE DIREITOS HEREDITÁRIOS</option>
-<option  <? echo @$tipotransacao=="CESSÃO DIR POSSESSÓR"?"selected":"" ?>             value='CESSÃO DIR POSSESSÓR'>CESSÃO DE DIREITOS POSSESSÓRIOS</option>
-<option  <? echo @$tipotransacao=="CESSÃO E TRA DIR HER"?"selected":"" ?>             value='CESSÃO E TRA DIR HER'>CESSÃO E TRANSFERÊNCIA DE DIREITOS HEREDITÁRIOS</option>
-<option  <? echo @$tipotransacao=="COMPRA E VENDA"?"selected":"" ?> selected        value='COMPRA E VENDA' >COMPRA E VENDA</option>
-<option  <? echo @$tipotransacao=="COMPRA E VENDA-COMPL"?"selected":"" ?>              value='COMPRA E VENDA-COMPL'>COMPRA E VENDA - COMPLEMENTAR</option>
-<option  <? echo @$tipotransacao=="COMPRA E VEN RES USU"?"selected":"" ?>             value='COMPRA E VEN RES USU' >COMPRA E VENDA COM RESERVA DE USUFRUTO</option>
-<option  <? echo @$tipotransacao=="COMPRA E VEN NUA PRO"?"selected":"" ?>             value='COMPRA E VEN NUA PRO'>COMPRA E VENDA DA NUA PROPRIEDADE</option>
-<option  <? echo @$tipotransacao=="COMPRA VENDA MEAÇÃO"?"selected":"" ?>              value='COMPRA VENDA MEAÇÃO'>COMPRA E VENDA DE MEAÇÃO</option>
-<option  <? echo @$tipotransacao=="COMPRA VENDA DO USU"?"selected":"" ?>              value='COMPRA VENDA DO USU'>COMPRA E VENDA DO USUFRUTO</option>
-<option  <? echo @$tipotransacao=="CONF  DÍV C/GAR HIP"?"selected":"" ?>              value='CONF  DÍV C/GAR HIP'>CONFISSÃO DE DÍVIDA C/GARANTIA HIPOTECÁRIA</option>
-<option  <? echo @$tipotransacao=="CONTR DE PROM COMP V"?"selected":"" ?>             value='CONTR DE PROM COMP V'>CONTRATO DE PROMESSA DE COMPRA E VENDA</option>
-<option  <? echo @$tipotransacao=="DAÇÃO EM PAGAMENTO"?"selected":"" ?>               value='DAÇÃO EM PAGAMENTO'>DAÇÃO EM PAGAMENTO</option>
-<option  <? echo @$tipotransacao=="DAÇÃO PAG P/INT COT"?"selected":"" ?>              value='DAÇÃO PAG P/INT COT'>DAÇÃO EM PAGTO P/FINS DE INTEGRALIZAÇÃO DE COTA CAPITAL</option>
-<option  <? echo @$tipotransacao=="DESAPROPIAÇÃO"?"selected":"" ?>                    value='DESAPROPIAÇÃO'>DESAPROPIAÇÃO</option>
-<option  <? echo @$tipotransacao=="DIV EXT DE USUFRUTO"?"selected":"" ?>              value='DIV EXT DE USUFRUTO'>DIVISÃO E EXTINÇÃO DE USUFRUTO</option>
-<option  <? echo @$tipotransacao=="HIPOTECA"?"selected":"" ?>                         value='HIPOTECA'>HIPOTECA</option>
-<option  <? echo @$tipotransacao=="INCORPORAÇÃO"?"selected":"" ?>                     value='INCORPORAÇÃO'>INCORPORAÇÃO</option>
-<option  <? echo @$tipotransacao=="INST DE GAR HIPOTEC"?"selected":"" ?>              value='INST DE GAR HIPOTEC'>INSTITUIÇÃO DE GARANTIA HIPOTECÁRIA</option>
-<option  <? echo @$tipotransacao=="INSTITUIÇÃO DE USUFR"?"selected":"" ?>             value='INSTITUIÇÃO DE USUFR"'>INSTITUIÇÃO DE USUFRUTO</option>
-<option  <? echo @$tipotransacao=="L E I L Ã O"?"selected":"" ?>                         value='L E I L Ã O' >L E I L Ã O</option>
-<option  <? echo @$tipotransacao=="PERMUTA"?"selected":"" ?>                          value='PERMUTA'>PERMUTA</option>
-<option  <? echo @$tipotransacao=="RENÚNCIA DE USUFRUTO"?"selected":"" ?>               value='RENÚNCIA DE USUFRUTO' >RENÚNCIA DE USUFRUTO</option>
-<option  <? echo @$tipotransacao=="T O R N A"?"selected":"" ?>                        value='T O R N A' >T O R N A</option>
-<option  <? echo @$tipotransacao=="T O R N A (div Cons)"?"selected":"" ?>             value='T O R N A (div Cons)'>T O R N A (divórcio Consensual)</option>
-<option  <? echo @$tipotransacao=="TORNA-SEP JUD CONSEN"?"selected":"" ?>             value='TORNA-SEP JUD CONSEN'>TORNA - SEPARAÇÃO JUDICIAL CONSENSUAL</option>
-<option  <? echo @$tipotransacao=="USUCAPIAO"?"selected":"" ?>                      value='USUCAPIAO' >USUCAPIAO</option>
-<option  <? echo @$tipotransacao=="VENDA DE MEAÇÃO"?"selected":"" ?>                value='VENDA DE MEAÇÃO'>VENDA DE MEAÇÃO</option>
-<option  <? echo @$tipotransacao=="CISÃO PARCIAL COM INCORPORAÇÃO"?"selected":"" ?> value='CISÃO PARCIAL COM INCORPORAÇÃO'>CISÃO PARCIAL COM INCORPORAÇÃO</option>
-<option  <? echo @$tipotransacao=="EXTINÇÃO DE PESSOA JURÍDICA"?"selected":"" ?>   value='EXTINÇÃO DE PESSOA JURÍDICA'>EXTINÇÃO DE PESSOA JURÍDICA</option>
+<option  <?php  echo @$tipotransacao=="ABERT.CRED.FIXO REAL"?"selected":"" ?>             value='ABERT.CRED.FIXO REAL'>ABERTURA DE CRÉDITO FIXO COM GARANTIA REAL</option>
+<option  <?php  echo @$tipotransacao=="AVALIAÇÃO FISCAL"?"selected":"" ?>                 value='AVALIAÇÃO FISCAL'>AVALIAÇÃO FISCAL</option>
+<option  <?php  echo @$tipotransacao=="CANCEL.  DE USUFRUTO"?"selected":"" ?>             value='CANCEL.  DE USUFRUTO'>CANCELAMENTO DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="CANCEL.USUF FAL USUF"?"selected":"" ?>             value='CANCEL.USUF FAL USUF'>CANCELAMENTO DE USUFRUTO P/FALECIMENTO DO USUFRUTUÁRIO</option>
+<option  <?php  echo @$tipotransacao=="CARTA DE ADJUDICAÇÃO"?"selected":"" ?>             value='CARTA DE ADJUDICAÇÃO'>CARTA DE ADJUDICAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="CARTA DE ARREMATAÇÃO"?"selected":"" ?>             value='CARTA DE ARREMATAÇÃO' >CARTA DE ARREMATAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="CARTA DE ARR LEILÃO"?"selected":"" ?>              value='CARTA DE ARR LEILÃO'>CARTA DE ARREMATAÇÃO - LEILÃO</option>
+<option  <?php  echo @$tipotransacao=="CESSÃO DE DIR HERED."?"selected":"" ?>             value='CESSÃO DE DIR HERED.' >CESSÃO DE DIREITOS HEREDITÁRIOS</option>
+<option  <?php  echo @$tipotransacao=="CESSÃO DIR POSSESSÓR"?"selected":"" ?>             value='CESSÃO DIR POSSESSÓR'>CESSÃO DE DIREITOS POSSESSÓRIOS</option>
+<option  <?php  echo @$tipotransacao=="CESSÃO E TRA DIR HER"?"selected":"" ?>             value='CESSÃO E TRA DIR HER'>CESSÃO E TRANSFERÊNCIA DE DIREITOS HEREDITÁRIOS</option>
+<option  <?php  echo @$tipotransacao=="COMPRA E VENDA"?"selected":"" ?> selected        value='COMPRA E VENDA' >COMPRA E VENDA</option>
+<option  <?php  echo @$tipotransacao=="COMPRA E VENDA-COMPL"?"selected":"" ?>              value='COMPRA E VENDA-COMPL'>COMPRA E VENDA - COMPLEMENTAR</option>
+<option  <?php  echo @$tipotransacao=="COMPRA E VEN RES USU"?"selected":"" ?>             value='COMPRA E VEN RES USU' >COMPRA E VENDA COM RESERVA DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="COMPRA E VEN NUA PRO"?"selected":"" ?>             value='COMPRA E VEN NUA PRO'>COMPRA E VENDA DA NUA PROPRIEDADE</option>
+<option  <?php  echo @$tipotransacao=="COMPRA VENDA MEAÇÃO"?"selected":"" ?>              value='COMPRA VENDA MEAÇÃO'>COMPRA E VENDA DE MEAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="COMPRA VENDA DO USU"?"selected":"" ?>              value='COMPRA VENDA DO USU'>COMPRA E VENDA DO USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="CONF  DÍV C/GAR HIP"?"selected":"" ?>              value='CONF  DÍV C/GAR HIP'>CONFISSÃO DE DÍVIDA C/GARANTIA HIPOTECÁRIA</option>
+<option  <?php  echo @$tipotransacao=="CONTR DE PROM COMP V"?"selected":"" ?>             value='CONTR DE PROM COMP V'>CONTRATO DE PROMESSA DE COMPRA E VENDA</option>
+<option  <?php  echo @$tipotransacao=="DAÇÃO EM PAGAMENTO"?"selected":"" ?>               value='DAÇÃO EM PAGAMENTO'>DAÇÃO EM PAGAMENTO</option>
+<option  <?php  echo @$tipotransacao=="DAÇÃO PAG P/INT COT"?"selected":"" ?>              value='DAÇÃO PAG P/INT COT'>DAÇÃO EM PAGTO P/FINS DE INTEGRALIZAÇÃO DE COTA CAPITAL</option>
+<option  <?php  echo @$tipotransacao=="DESAPROPIAÇÃO"?"selected":"" ?>                    value='DESAPROPIAÇÃO'>DESAPROPIAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="DIV EXT DE USUFRUTO"?"selected":"" ?>              value='DIV EXT DE USUFRUTO'>DIVISÃO E EXTINÇÃO DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="HIPOTECA"?"selected":"" ?>                         value='HIPOTECA'>HIPOTECA</option>
+<option  <?php  echo @$tipotransacao=="INCORPORAÇÃO"?"selected":"" ?>                     value='INCORPORAÇÃO'>INCORPORAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="INST DE GAR HIPOTEC"?"selected":"" ?>              value='INST DE GAR HIPOTEC'>INSTITUIÇÃO DE GARANTIA HIPOTECÁRIA</option>
+<option  <?php  echo @$tipotransacao=="INSTITUIÇÃO DE USUFR"?"selected":"" ?>             value='INSTITUIÇÃO DE USUFR"'>INSTITUIÇÃO DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="L E I L Ã O"?"selected":"" ?>                         value='L E I L Ã O' >L E I L Ã O</option>
+<option  <?php  echo @$tipotransacao=="PERMUTA"?"selected":"" ?>                          value='PERMUTA'>PERMUTA</option>
+<option  <?php  echo @$tipotransacao=="RENÚNCIA DE USUFRUTO"?"selected":"" ?>               value='RENÚNCIA DE USUFRUTO' >RENÚNCIA DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="T O R N A"?"selected":"" ?>                        value='T O R N A' >T O R N A</option>
+<option  <?php  echo @$tipotransacao=="T O R N A (div Cons)"?"selected":"" ?>             value='T O R N A (div Cons)'>T O R N A (divórcio Consensual)</option>
+<option  <?php  echo @$tipotransacao=="TORNA-SEP JUD CONSEN"?"selected":"" ?>             value='TORNA-SEP JUD CONSEN'>TORNA - SEPARAÇÃO JUDICIAL CONSENSUAL</option>
+<option  <?php  echo @$tipotransacao=="USUCAPIAO"?"selected":"" ?>                      value='USUCAPIAO' >USUCAPIAO</option>
+<option  <?php  echo @$tipotransacao=="VENDA DE MEAÇÃO"?"selected":"" ?>                value='VENDA DE MEAÇÃO'>VENDA DE MEAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="CISÃO PARCIAL COM INCORPORAÇÃO"?"selected":"" ?> value='CISÃO PARCIAL COM INCORPORAÇÃO'>CISÃO PARCIAL COM INCORPORAÇÃO</option>
+<option  <?php  echo @$tipotransacao=="EXTINÇÃO DE PESSOA JURÍDICA"?"selected":"" ?>   value='EXTINÇÃO DE PESSOA JURÍDICA'>EXTINÇÃO DE PESSOA JURÍDICA</option>
 
                                         </select>
                                      </td>
@@ -634,7 +634,7 @@ echo"
                                       </td>
                                     </tr>
                                     <!--select name="caracteristicas"-->
-                                    <?
+                                    <?php 
 
                                   echo "<tr>
                                                                          <td class=\"tabfonte\">

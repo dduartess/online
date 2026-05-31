@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -119,7 +119,7 @@ if (isset($excluir)){
 ?>
 <html>
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 <script>
 
@@ -222,7 +222,7 @@ function js_verifica(){
     	<td align="left" >
     	<select name="especie"  >
          
-          <?
+          <?php 
 		  $sqlesp ="select * from itbiparespecie";
 		  $resultesp =pg_query($sqlesp);
 		  $linhasesp=pg_num_rows($resultesp);
@@ -241,7 +241,7 @@ function js_verifica(){
     	&nbsp;&nbsp;&nbsp;
     	Tipo:
       	<select name="tipo"  >
-      <? 
+      <?php  
           //die("xxxxxxxxx11");
           //echo "<script> alert('kakakakakk'); </script>";
 		  $sqltip    = "select * from itbipartipo";
@@ -298,7 +298,7 @@ function js_verifica(){
     			Opções
       			</th>
   			</tr>
-  			<?
+  			<?php 
   			
   	$sqlcons= "
 			select * 

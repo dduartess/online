@@ -1,4 +1,4 @@
-<?
+<?php 
 //Verificação do Login
 function Login(){
  if($_COOKIE["ID_USUARIO"]=="")
@@ -64,7 +64,7 @@ function msg_box($msg){
   <script>
    alert("<?=$msg?>");
   </script>
- <?
+ <?php 
 }
 
 function voltar(){
@@ -72,7 +72,7 @@ function voltar(){
   <script>
    history.back();
   </script>
- <?
+ <?php 
 }
 
 //Input do Formulário

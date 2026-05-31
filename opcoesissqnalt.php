@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -220,19 +220,19 @@ function js_cgccpf(obj){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <form name="form1" method="post" action="opcoesissqn.php" >
-<?
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -259,7 +259,7 @@ mens_div();
 	  <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
       <tr>
             <td width="90" align="left" valign="top"> 
-          <?            
+          <?php             
 db_montamenus();
           ?>
 		</td>
@@ -376,7 +376,7 @@ db_montamenus();
                         </tr>
                         <tr> 
                           <td colspan="5"> 
-                            <?
+                            <?php 
 $mostra_gravar = false;			    
 if(!isset($alter)){
   if(isset($guarda)){
@@ -586,7 +586,7 @@ if(isset($alter)){
 </form>
 </body>
 </html>
-<?
+<?php 
 if($mostra_gravar){
   echo "<SCRIPT>document.form1.grava.style.visibility='visible'</script>";
 }

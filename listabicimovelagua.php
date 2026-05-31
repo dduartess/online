@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -49,7 +49,7 @@ db_fieldsmemory($result, 0, false);
 <head>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
-<?
+<?php 
 		echo " 
 		function js_voltar(){
 		  location.href = 'opcoesdebitospendentes.php?matricula=".@$matricula."&inscricao=".@$inscricao."&opcao=m&id_usuario=".@$id_usuario."&opcao=m&cgccpf=.@$cgccpf';
@@ -62,7 +62,7 @@ db_fieldsmemory($result, 0, false);
 		?>
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 echo"
 .tabfonte {
                font-family: $w01_fontesite;
@@ -142,11 +142,11 @@ td {
 	<td>&nbsp;<?=@$x01_qtdponto?></td>
 	
 	<!-- <td>&nbsp;<?=@$Lx01_obs?></td>
-	<td>&nbsp;<? if($x01_obs == null){echo "Nenhuma";} else{ echo $x01_obs;} ?></td>
+	<td>&nbsp;<?php  if($x01_obs == null){echo "Nenhuma";} else{ echo $x01_obs;} ?></td>
 	 -->
 </tr>
 
-<?// Condomínio 
+<?php // Condomínio 
 
   $resultCondominio = $consulta->RecordSetAguaCondominio();
   if(pg_numrows($resultCondominio)>0) {
@@ -157,7 +157,7 @@ td {
   		<td>Condominio</td>
   		<td>&nbsp;<?=@$infoCondominio?></td>
   	</tr>
-  	<?
+  	<?php 
   }
  ?>
  
@@ -174,7 +174,7 @@ td {
 
 <tr><td>
  <table width="100%" border="1" bordercolor="#eaeaea" cellpadding="0" cellspacing="0">
- <?
+ <?php 
  //CARACTERISTICAS DO IMOVEL
   $result = $consulta->RecordSetAguaBaseCar();
   if($result) {
@@ -192,7 +192,7 @@ td {
   		
   			<td>&nbsp;<?=@$j31_codigo?></td>
   			<td>&nbsp;<?=@$j31_descr?> (<?=@$j32_descr?>)</td>
-  		<?
+  		<?php 
   		if($coluna <> 1){
   			echo "</tr>";
   		}
@@ -207,7 +207,7 @@ td {
   		<tr>
   			<td align="center">Sem Caracter&iacute;sticas Cadastradas</td>
   		</tr>
-  	<?
+  	<?php 
   }
   //ISENÇÕES
   ?>
@@ -223,7 +223,7 @@ td {
 	</tr>
 	<tr><td>
 	<table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-  <?
+  <?php 
 	$result = $consulta->RecordSetAguaIsencaoRec();
 
 	if($result) {
@@ -237,20 +237,20 @@ td {
 			db_fieldsmemory($result, $i);
 			?>
 			<tr>
-				<td>&nbsp;<?echo db_formatar($x10_dtini, 'd')?> a 
-				    &nbsp;<?echo db_formatar($x10_dtfim, 'd')?></td>
+				<td>&nbsp;<?php echo db_formatar($x10_dtini, 'd')?> a 
+				    &nbsp;<?php echo db_formatar($x10_dtfim, 'd')?></td>
 				<td>&nbsp;<?=@$x29_descr?></td>
-				<td>&nbsp;<?echo db_formatar($x26_percentual, 'f')?>%</td>
+				<td>&nbsp;<?php echo db_formatar($x26_percentual, 'f')?>%</td>
 				<td>&nbsp;<?=@$x25_descr?></td>
 			</tr>
-			<?
+			<?php 
 		}
 	}else {
 		?>
 			<tr>
   			<td align="center">Sem Isen&ccedil;&otilde;es</td>
   		</tr>
-		<?
+		<?php 
 	}
 	// CONSTRUÇÕES
 	?>
@@ -263,7 +263,7 @@ td {
 			<td align="center"><strong style="font-size:13px">CONSTRU&Ccedil;&Otilde;ES</strong></td>
 		</tr>
 		<tr><td><table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-  <?
+  <?php 
   
 	$result = $consulta->RecordSetAguaConstrCar();
 	if($result) {
@@ -297,17 +297,17 @@ td {
 					<td>&nbsp;<?=@$Lx11_numero?></td><td>&nbsp;<?=@$x11_numero?> </td>
 					<td>&nbsp;<?=@$Lx11_complemento?></td><td>&nbsp;<?=@$x11_complemento?> </td>
 				</tr>
-				<?//area pavimento?>
+				<?php //area pavimento?>
 				<tr>
 					<td>&nbsp;<?=@$Lx11_area?></td><td>&nbsp;<?=@$x11_area?> m2</td>
 					<td>&nbsp;<?=@$Lx11_pavimento?></td><td>&nbsp;<?=@$x11_pavimento?> </td>
 				</tr>
-				<?// qtde familia / qtde pessoas?>
+				<?php // qtde familia / qtde pessoas?>
 				<tr>
 					<td>&nbsp;<?=@$Lx11_qtdfamilia?></td><td>&nbsp;<?=@$x11_qtdfamilia?> </td>
 					<td>&nbsp;<?=@$Lx11_qtdpessoas?></td><td>&nbsp;<?=@$x11_qtdpessoas?> </td>
 				</tr>
-				<?
+				<?php 
 			}
 			?>
 			</table>
@@ -318,9 +318,9 @@ td {
 			</tr>
 			<tr>
 				<td>&nbsp;<?=@$j31_codigo?></td>
-				<td>&nbsp;<? $descr = substr($j31_descr,0,20).' ('.substr($j32_descr,0,20).')'; echo $descr?> </td>
+				<td>&nbsp;<?php  $descr = substr($j31_descr,0,20).' ('.substr($j32_descr,0,20).')'; echo $descr?> </td>
 			</tr>	
-			<?
+			<?php 
 			
 		}
 	}else {
@@ -328,7 +328,7 @@ td {
 		<tr>
   			<td align="center">Sem Constru&ccedil;&otilde;es Cadastradas</td>
   	</tr>
-		<?
+		<?php 
 	}
 
 	//Endereço de Entrega
@@ -341,7 +341,7 @@ td {
 			<td align="center"><strong style="font-size:13px">ENDERE&Ccedil;O DE ENTREGA</strong></td>
 		</tr>
 		<tr><td><table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-	<?
+	<?php 
 	$result = $consulta->RecordSetAguaBaseCorresp();
 	
 	if($result) {
@@ -371,7 +371,7 @@ td {
 					<td>&nbsp;<?=@$Lx02_codbairro?></td>
 					<td>&nbsp;<?=@$j13_descr?></td>
 				</tr>
-			<?
+			<?php 
 			//numero : complemento
 			?>
 				<tr>
@@ -381,7 +381,7 @@ td {
 					<td>&nbsp;<?=@$x02_complemento?></td>
 				</tr>
 			
-			<?
+			<?php 
 			// ROTA  :  ORIENTACAO
 			?>
 				<tr>
@@ -390,7 +390,7 @@ td {
 					<td>&nbsp;<?=@$Lx02_orientacao?></td>
 					<td>&nbsp;<?=@$x02_orientacao?></td>
 				</tr>
-			<?
+			<?php 
 		
 		}
 	}else {
@@ -398,7 +398,7 @@ td {
 		<tr>
   			<td align="center">Sem Endere&ccedil;o de Entrega Cadastrado</td>
   	</tr>
-		<?
+		<?php 
 	}
 	
  	//Hidrometros
@@ -412,7 +412,7 @@ td {
 			<td align="center"><strong style="font-size:13px">HIDR&Ocirc;METROS</strong></td>
 		</tr>
 		
-	<?
+	<?php 
 	$result = $consulta->RecordSetAguaHidroMatric();
 
 	if($result) {
@@ -445,7 +445,7 @@ td {
 				<td>&nbsp;<?=$Lx04_dtinst?></td>
 				<td>&nbsp;<?=db_formatar($x04_dtinst,'d')?></td>
 			</tr>
-			<?
+			<?php 
 			// LEITURA INICIAL  :  DIAMETRO  :  MARCA 
 			?>
 			<tr>
@@ -456,7 +456,7 @@ td {
 				<td>&nbsp;<?=$Lx03_nomemarca?></td>
 				<td>&nbsp;<?=$x03_nomemarca?></td>
 			</tr>
-			<?
+			<?php 
 			if(!empty($x28_dttroca)){
 			?>
 				<tr>
@@ -465,18 +465,18 @@ td {
 					<td>&nbsp;<?=$Lx28_obs?></td>
 					<td colspan="3">&nbsp;<?=$x28_obs?></td>
 				</tr>
-			<?
+			<?php 
 			}
 			?>
 				</table><br/>
-			<? 
+			<?php  
 		}		
 	}else{
 		?>
 		<tr>
   			<td align="center">Sem Hidr&ocirc;metros Cadastrados</td>
   	</tr>
-		<?
+		<?php 
 	}
 	?>
 	
@@ -489,7 +489,7 @@ td {
 		<td align="center" align="center" colspan="10"><strong style="font-size:13px">LEITURAS</strong></td>
 	</tr>
 	<tr><td><table width="100%" border="1"  cellpadding="0" cellspacing="0" bordercolor="#cccccc">
-	<?
+	<?php 
 	
 	//Leituras
 	$result = $consulta->RecordSetAguaLeitura(12);
@@ -526,7 +526,7 @@ td {
 			<!--<td>&nbsp;<?=$Lx21_numcgm?></td>
 			<td>&nbsp;<?=$Llogin?></td>
 		--></tr>
-		<?
+		<?php 
 		for($i=0; $i<$linhas; $i++) {
 			db_fieldsmemory($result, $i);
 			?>
@@ -542,7 +542,7 @@ td {
 				<!--<td>&nbsp;<?=$x21_numcgm?></td>
 				<td>&nbsp;<?=$login?></td>
 			--></tr>
-			<?
+			<?php 
 		}
 		
 	}else {
@@ -550,7 +550,7 @@ td {
 		<tr>
   			<td colspan="4" align="center">Sem Leituras Cadastradas</td>
   	</tr>
-		<?
+		<?php 
 	}	
 
 ?>

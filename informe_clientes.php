@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -391,7 +391,7 @@ if ($iSql > 0) {
        bgcolor="<?=$w01_corbody?>" class="texto">
   <tr bgcolor="<?=$w01_corbody?>" class="bold3">
     <td colspan="3">
-   <?
+   <?php 
   $msg_1 = "";
   if (@$imobil == "true") {
     echo "Imobiliária, ";
@@ -414,12 +414,12 @@ if ($iSql > 0) {
   </tr>
   <tr>
    <td colspan="3">
-   <?
+   <?php 
   if ($p12_codigo == "") {
     ?>
      <input type="hidden" name="p11_fechado" value="f"> 
      <input type="hidden" name="p11_processado" value="f">
-   <?
+   <?php 
   }
   ?>
      <input type="hidden" name="p12_codigo" value="<?=$p12_codigo?>"> 
@@ -429,7 +429,7 @@ if ($iSql > 0) {
      <input type="button" id="voltar" value="Voltar" onClick="js_voltar();" <?=$pBotaoVoltar?>>
    </td>
   </tr>
- <?
+ <?php 
 if (isset($anteriores)) {
   ?>
   <tr>
@@ -447,7 +447,7 @@ if (isset($anteriores)) {
         <td>Contato</td>
         <td width="5%">&nbsp;</td>
       </tr>
-    <?
+    <?php 
   $sqlListaInscrCab = " select * 
                           from listainscrcab
                          where p11_numcgm = $cgmlogin
@@ -468,13 +468,13 @@ if (isset($anteriores)) {
                   onclick="js_imprimir('<?=$p11_codigo?>')" <?=$pListaInscr?>>
        </td>
       </tr>
-    <?
+    <?php 
   }
   ?>
    </table>
     </td>
   </tr>
- <?
+ <?php 
 } else if (@$oCriaLista->p11_fechado == "f" && @$oCriaLista->p11_processado == "f") {
   ?>
  <tr>
@@ -494,7 +494,7 @@ if (isset($anteriores)) {
       </table>
     </td>
   </tr>
-<?
+<?php 
   if (@$imobil == "true") {
 
   	$iMostrarMatric = 1;
@@ -513,7 +513,7 @@ if (isset($anteriores)) {
       </table>
     </td>
  </tr>
- <?
+ <?php 
   }
   if (@$escrito == "true") {
     ?>
@@ -572,14 +572,14 @@ if (isset($anteriores)) {
       </span>
     </td>
   </tr> 
-  <?
+  <?php 
     //verifica se escrito tem lista aberta
     //listainscrcab
     //existe lista aberta
     if ($iCriaLista > 0) {
   ?>
     <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
-           bgcolor="<?$w01_corbody?>" class="texto">
+           bgcolor="<?php $w01_corbody?>" class="texto">
     <tr class="bold2" bgcolor="#cccccc">
       <td>Cód.</td>
       <td>CGM</td>
@@ -600,14 +600,14 @@ if (isset($anteriores)) {
       </td>
     </tr>
   </table>
-    <?
+    <?php 
       $rsListaInscrCod = $cllistainscr->sql_record($cllistainscr->sql_query("", "", "*", "", "p12_codigo = $oCriaLista->p11_codigo"));
       if ($cllistainscr->numrows > 0) {
         ?>
      <script>
         document.getElementById('fechar').disabled = false;
      </script>
-    <?
+    <?php 
       }
       ?>
       
@@ -618,7 +618,7 @@ if (isset($anteriores)) {
     </table>
       
     <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
-    bgcolor="<?
+    bgcolor="<?php 
       $w01_corbody?>" class="pequeno">
     <tr class="bold2" bgcolor="#cccccc">
       <td>Inscr.</td>
@@ -627,7 +627,7 @@ if (isset($anteriores)) {
       <td>Nome/Razão Social</td>
       <td width="5%">-</td>
     </tr>
-      <?
+      <?php 
       for($y = 0; $y < $cllistainscr->numrows; $y ++) {
         if ($cllistainscr->numrows > 0) {
           $oListaInscr = db_utils::fieldsMemory($rsListaInscrCod, $y);
@@ -652,11 +652,11 @@ if (isset($anteriores)) {
                                      '<?=$oListaInscr->p12_codigo?>');">
       </td>
     </tr>
-      <?
+      <?php 
       }
       ?>
     </table>
-    <?
+    <?php 
     } else {
       //não existe lista aberta
       $p12_codigo = "";
@@ -664,7 +664,7 @@ if (isset($anteriores)) {
    <tr>
     <td colspan='2' class='pequeno3'>** Nenhuma lista aberta... **</td>
   </tr>
-<?
+<?php 
     }
   }
 } else if (@$p11_fechado == "t" && @$p11_processado == "f") {
@@ -674,7 +674,7 @@ if (isset($anteriores)) {
     <br>
     <center>
     <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
-           bgcolor="<?$w01_corbody?>" class="texto">
+           bgcolor="<?php $w01_corbody?>" class="texto">
       <tr class="bold2" bgcolor="#cccccc">
         <td>Cód.</td>
         <td>CGM</td>
@@ -684,7 +684,7 @@ if (isset($anteriores)) {
         <td width="5%">&nbsp;</td>
       </tr>
       
-      <?
+      <?php 
 	$sqlListaInscrCb = " select * 
 	                        from listainscrcab
 	                       where p11_numcgm     = {$cgmlogin}
@@ -711,7 +711,7 @@ if (isset($anteriores)) {
                  onclick="js_imprimir('<?=$oListaInscrCb->p11_codigo?>')" <?=$pListaInscr?>>
         </td>
      </tr>
-       <?
+       <?php 
         }
        ?>
     </table>
@@ -722,7 +722,7 @@ if (isset($anteriores)) {
 		 </tr>     
     </table>
     
- <?
+ <?php 
    $sqlListaInscr = " select * 
                         from listainscr 
                              inner join issbase       on issbase.q02_inscr        = listainscr.p12_inscr 
@@ -736,7 +736,7 @@ if (isset($anteriores)) {
    $iListaInscr   = pg_numrows($rsListaInscr);
  ?>
    <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
-          bgcolor="<?$w01_corbody?>" class="pequeno">
+          bgcolor="<?php $w01_corbody?>" class="pequeno">
       <tr bgcolor="#cccccc">
         <td>Cód</td>
         <td>Inscr</td>
@@ -744,7 +744,7 @@ if (isset($anteriores)) {
         <td>Fone</td>
         <td>Nome/Razão Social</td>
       </tr>
-      <?
+      <?php 
   for($y = 0; $y < $iListaInscr; $y ++) {
        if ($iListaInscr > 0) {
            $oListaInscr = db_utils::fieldsMemory($rsListaInscr, $y);
@@ -763,7 +763,7 @@ if (isset($anteriores)) {
         <td>&nbsp;<?=$oListaInscr->p12_fone?></td>
         <td><?=$oListaInscr->z01_nome?></td>
       </tr>
-    <?
+    <?php 
       }
    ?>
     </table>
@@ -771,7 +771,7 @@ if (isset($anteriores)) {
     Em caso de dúvida, entre em contato com a Prefeitura.</center>
     </td>
   </tr>
-<?
+<?php 
 } else {
 ?>
  <tr height="50">
@@ -782,7 +782,7 @@ if (isset($anteriores)) {
     <center>Em caso de dúvida, entre em contato com a Prefeitura.</center>
     </td>
   </tr>
- <?
+ <?php 
 }
 ?>
 </table>
@@ -949,7 +949,7 @@ if (isset($anteriores)) {
 </script>
 </body>
 </html>
-<?
+<?php 
 function convert_CPFCNPJ($cgccpf) {
   $cgccpf = str_replace(".", "", $cgccpf);
   $cgccpf = str_replace("/", "", $cgccpf);

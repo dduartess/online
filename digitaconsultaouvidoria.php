@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -133,7 +133,7 @@ function js_CPF(campo) {
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
@@ -148,10 +148,10 @@ function js_CPF(campo) {
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <br>
 <center>
-<?
+<?php 
 //verifica se está logado
 if (isset($id_usuario) && !empty($id_usuario)) {
  
@@ -176,12 +176,12 @@ if (isset($id_usuario) && !empty($id_usuario)) {
    <a href="digitaconsultaouvidoria.php?outro='outro processo'">:: Pesquisar Outro Processo ::</a><br><br>
    <b><?=$z01_numcgm." - ".$z01_nome?></b>
    <table width="90%"  class="tab">
-   <?
+   <?php 
    //busca clientes do escritório
    for ($x =0; $x < $linhas; $x++) {
    	
     if ($x == 0) {
-     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><th colspan="4">Meus Processos</th></tr><?
+     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><th colspan="4">Meus Processos</th></tr><?php 
     }
     
     db_fieldsmemory($result,$x);
@@ -192,9 +192,9 @@ if (isset($id_usuario) && !empty($id_usuario)) {
       <td width="15%"><?=db_formatar($p58_dtproc,'d')?></td>
       <td>&nbsp;<?=$p58_obs?></td>
      </tr>
-    <?
+    <?php 
    }
-  ?></table><?
+  ?></table><?php 
 	
  } else {
   //não tem processo
@@ -219,7 +219,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
    </td>
   </tr>
   </table>
-  <?
+  <?php 
  }
 } else {
 ?>
@@ -269,7 +269,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
     </tr>
   </table>
 </form>
-<?
+<?php 
 }
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
@@ -282,7 +282,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
 </center>
 </body>
 </html>
-<?
+<?php 
 db_logs("","",0,"Digita Consulta da Ouvidoria.");
 if (isset($erroscripts)) {
 	

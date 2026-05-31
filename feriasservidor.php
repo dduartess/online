@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -86,7 +86,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
   <form name="form1" method="post" action="">
   
           <table  class="tableForm" width="600px;">
@@ -95,7 +95,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
 			          <b>Férias Gozadas</b>
 			        </td>
 			      </tr>          
-		      <?
+		      <?php 
 		       
 		        if ( $iNroFeriasGozadas > 0 ) {
 		      
@@ -129,7 +129,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
               <td class="dadosForm" align="center"><?=$oFeriasGozadas->r30_proc1?></td> 
             </tr>
             
-            <? 
+            <?php  
                 if ( trim($oFeriasGozadas->r30_proc2) != '' ) { 
             ?>
             
@@ -142,7 +142,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
             </tr>
 		         
             
-  		      <?
+  		      <?php 
                 }
             ?>    
             <tr>
@@ -150,11 +150,11 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
                 &nbsp;
               </td>
             </tr>                
-            <?    
+            <?php     
 		          }
 		        ?>
 		         
-		      <? 
+		      <?php  
 		          
 		        } else {
 		      ?>      
@@ -164,7 +164,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
               </td>
             </tr>
         
-		      <?
+		      <?php 
 		        }
 		      ?>  
 			      <tr>
@@ -172,7 +172,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
 			          <b>Férias a Gozar</b>
 			        </td>
 			      </tr>          
-          <?
+          <?php 
            
             if ( $iNroFeriasaGozar > 0 ) {
           
@@ -192,7 +192,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
               </td>
             </tr>
           
-          <?
+          <?php 
                   $lMonstraMsg = true; 
                 } else if ( $iNroFeriasaGozar == 1  ) {
                 	$lMonstraMsg = false;
@@ -203,7 +203,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
               </td>
             </tr>            
            
-          <?      	
+          <?php       	
                 }
                  	
               }
@@ -215,7 +215,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
                 *Períodos aquisitivos de férias ainda não gozadas estão sujeitos a avaliação pela Instituição
               </td>
             </tr>    
-          <?
+          <?php 
               }
           
               
@@ -229,7 +229,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
             </tr>
               
         
-          <?
+          <?php 
             }
           ?>  
     </table>

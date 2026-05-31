@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -385,7 +385,7 @@ $pdf->SetFillColor(235);
 }   	
 //$pdf->Cell(180,$altura,int25($codigo_barras),0,1,"C",0);
    /*
-            <?
+            <?php 
 	           echo $linha_digitavel;
 	        ?>
             </strong> </td>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -100,23 +100,23 @@ function js_verificamatricula() {
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <!--<form name="form1" method="post" onSubmit="window.open('certidao2.php','cert','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,height=500,width=700')">-->
-<?mens_div();?>
+<?php mens_div();?>
 <center>
 <br><br><br>
         <form name="form1" method="post" action="certidao2.php" <?=@$retorna?>>
         <table width="100%" border="0" class="texto">
           <tr> 
             <td width="42%" align="right"> 
-          <?
+          <?php 
                   echo $opcao;
                   ?>
             </td>
@@ -124,7 +124,7 @@ db_estilosite()
           </tr>
           <tr>
             <td align="right">
-              <? 
+              <?php  
                             $name = "cpf";
                             $opcao1 = "CPF:";
                             echo $opcao1."
@@ -135,7 +135,7 @@ db_estilosite()
 </tr>
 <tr>
 <td align="right">
-              <? 
+              <?php  
                             $name = "cnpj";
                             $op = "CNPJ:";
                             echo $op."

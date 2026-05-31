@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -107,7 +107,7 @@ a:active{
   <td><br></td>
  </tr>
 </table>
-<?if($id_usuario!=""){?>
+<?php if($id_usuario!=""){?>
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
     <td height="275">
@@ -152,7 +152,7 @@ a:active{
     </table></td>
   </tr>
 </table>
-<?}elseif($w13_permfornsemlog == "f"){?>
+<?php }elseif($w13_permfornsemlog == "f"){?>
  <table width="300" align="center" border="0" bordercolor="#cccccc" cellpadding="2" cellspacing="0" class="texto">
   <tr height="220">
    <td align="center">
@@ -161,7 +161,7 @@ a:active{
    </td>
   </tr>
  </table>
-<?}elseif($w13_permfornsemlog == "t"){
+<?php }elseif($w13_permfornsemlog == "t"){
 
 //verifica se está logado
 if(@$codigo_cgm!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
@@ -192,7 +192,7 @@ if(@$codigo_cgm!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
    </tr>
   </table>
  </form>
-<?}
+<?php }
 }?>
 </body>
 </html>

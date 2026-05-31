@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -79,7 +79,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
   document.getElementById('int_perc1').style.visibility='visible';
   document.getElementById('int_perc2').style.width='15%';
 </script>
-  <?
+  <?php 
 
   require("libs/db_stdlib.php");
   require("libs/db_sql.php");
@@ -670,7 +670,7 @@ function msgNaoLiberada(id) {
 <body leftmargin="4" topmargin="5" marginwidth="4" marginheight="4"
 	onLoad="js_somatudo()">
 <center><script> document.getElementById('int_perc2').style.width='60%'; </script>
-  <?
+  <?php 
 
 
   //verifica se clicou no link da matricula ou inscrição
@@ -740,7 +740,7 @@ function msgNaoLiberada(id) {
 								db_redireciona("cai3_gerfinanc007.php?erro1=1");
 						}
     }
-    ?><script> document.getElementById('int_perc2').style.width='85%'; </script><?
+    ?><script> document.getElementById('int_perc2').style.width='85%'; </script><?php 
 
 
     $numrows = pg_numrows($result);
@@ -1007,7 +1007,7 @@ function msgNaoLiberada(id) {
 	<td colspan="15" class="texto">Clique em <b>Parcelas</b> para
 	visualizar os parcelamentos.</td>
 </tr>
-      <?
+      <?php 
 
       //agrupar por parcela
 } else
@@ -1451,7 +1451,7 @@ if ($agpar == 't') {
   }
 } ////////****************************************************************************************/
 ?><input type="hidden" name="var_vcto">
-	<input type="hidden" name="dt_agrupadebitos" id="dt_agrupadebitos" value="0"><?
+	<input type="hidden" name="dt_agrupadebitos" id="dt_agrupadebitos" value="0"><?php 
 
 echo "</table>\n</form>\n";
 }
@@ -1477,7 +1477,7 @@ echo "</table>\n</form>\n";
   document.getElementById(obj).click();
   }
 </script>
-<?
+<?php 
 
 }
 ?>

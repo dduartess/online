@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -51,7 +51,7 @@ $cldb_cgmatualiza->rotulo->label("w11_nome");
               <?=$Lw11_numcgm?>
             </td>
             <td width="96%" align="left" nowrap> 
-              <?
+              <?php 
                        db_input("w11_numcgm",10,$Iw11_numcgm,true,"text",4,"","chave_w11_numcgm");
                        ?>
             </td>
@@ -61,7 +61,7 @@ $cldb_cgmatualiza->rotulo->label("w11_nome");
               <?=$Lw11_nome?>
             </td>
             <td width="96%" align="left" nowrap> 
-              <?
+              <?php 
                        db_input("w11_nome",40,$Iw11_nome,true,"text",4,"","chave_w11_nome");
                        ?>
             </td>
@@ -79,7 +79,7 @@ $cldb_cgmatualiza->rotulo->label("w11_nome");
   </tr>
   <tr> 
     <td align="center" valign="top"> 
-      <?
+      <?php 
       if(!isset($pesquisa_chave)){
         if(isset($campos)==false){
            if(file_exists("funcoes/db_func_db_cgmatualiza.php")==true){
@@ -115,11 +115,11 @@ $cldb_cgmatualiza->rotulo->label("w11_nome");
 </table>
 </body>
 </html>
-<?
+<?php 
 if(!isset($pesquisa_chave)){
   ?>
   <script>
   </script>
-  <?
+  <?php 
 }
 ?>

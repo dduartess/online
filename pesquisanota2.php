@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -33,7 +33,7 @@ include("classes/db_issplanit_classe.php");
 <html>
 <body>
 <form name="form1" method="post" action="pesquisanota.php">
-<?
+<?php 
 echo "<script>alert ('nota=$nota serie=$serie cnpj =$cnpj');</script>";
 
 $sql = $cl_issplanit->sql_query_file("","","","q21_cnpj= $cnpj and q21_nota = $nota and q21_serie=$serie and q21_status = 1");

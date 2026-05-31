@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -300,7 +300,7 @@ window.print();
             <p align='right'>&nbsp;</p>
             <p align='right'><font color="#000000" size="2" face="Verdana"> 
               <?=$munic.","?>
-              <? echo $dia."&nbsp;DE&nbsp;".$mes."&nbsp;DE&nbsp;".$ano; ?></font></p>
+              <?php  echo $dia."&nbsp;DE&nbsp;".$mes."&nbsp;DE&nbsp;".$ano; ?></font></p>
             <font color="#000000" size="2" face="Verdana"><br>
             <br>
             </font>
@@ -308,8 +308,8 @@ window.print();
               <tr valign='top'> 
                 <td width='50%'> <div align='left'><font color="#000000" size='2' face='Verdana'><b>ASPECTOS 
                     T&Eacute;CNICOS DE VALIDADE:</b><br>
-                    Emiss&atilde;o &agrave;s <b><? echo $hora.":".$min.":".$sec; ?></b> 
-                    em <b><? echo $dia."/".$mes1."/".$ano; ?></b>.<br>
+                    Emiss&atilde;o &agrave;s <b><?php  echo $hora.":".$min.":".$sec; ?></b> 
+                    em <b><?php  echo $dia."/".$mes1."/".$ano; ?></b>.<br>
                     C&oacute;digo de autenticidade da Certid&atilde;o: <br>
                     <br>
                   <font face='courier'><?=$t1?></font><br>

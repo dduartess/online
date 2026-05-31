@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -162,14 +162,14 @@ function js_cnpj(obj){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 //mens_div();
 ?>
 <center>
@@ -182,7 +182,7 @@ function js_cnpj(obj){
                 </tr>
                 <tr> 
                   <td align="center" valign="top">
-                  <?
+                  <?php 
                             
                   $clcgm = new cl_cgm;
                  // $result = $clcgm->sql_record($clcgm->sql_query($z01_numcgm));
@@ -273,7 +273,7 @@ function js_cnpj(obj){
                           </fieldset>
                         </td>
                       </tr>
-                  <?
+                  <?php 
                   }
                   ?>
                   </td>
@@ -293,7 +293,7 @@ function js_cnpj(obj){
 </center>
 </body>
 </html>
-<?
+<?php 
 if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir Inscrição na Lista"){
   //$cllistainscr->erro(true,false);
   if($erro == true){

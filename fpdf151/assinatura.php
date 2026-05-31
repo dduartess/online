@@ -1,4 +1,4 @@
-<?
+<?php 
 class cl_assinatura {
 //|00|//assinatura
 //|10|//Esta é o construtor da classe. Ele permite que seja impresso a assinatura do usuario corrente ou  

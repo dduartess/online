@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -58,7 +58,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
   <form name="form1" method="post" action="">
     <table  class="tableForm" width="60%">
 		   <tr>
@@ -66,7 +66,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
             Dependentes
          </td>
 	     </tr>          
-      <?
+      <?php 
        
         if ( $iNroDependentes > 0 ) {
       
@@ -86,7 +86,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
                 Parentesco:
               </td>
               <td class="dadosForm">
-              <?
+              <?php 
 
                  switch ($oDependentes->rh31_gparen) {
                    case 'C':
@@ -120,7 +120,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
                 <?=db_formatar($oDependentes->rh31_dtnasc,'d')?>
               </td>
             
-            <?
+            <?php 
 
                 $sSqlTipoDependente  = " select *                                                 ";
                 $sSqlTipoDependente .= "   from fc_tipo_dependente({$iMatric},                    ";
@@ -163,7 +163,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
               </td>
             </tr>            
                         
-      <?
+      <?php 
 
           }
           
@@ -176,7 +176,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
         </td>
       </tr>      
         
-      <?
+      <?php 
         }
     
       ?>  

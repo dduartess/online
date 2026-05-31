@@ -1,5 +1,6 @@
 <?php
 include_once("libs/legacy_compat.php");
+include_once("libs/legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -87,7 +88,7 @@ if(isset($processar)){
 <script language="JavaScript" src="scripts/db_script.js"></script>
 
 <style type="text/css">
-	<?db_estilosite();?>
+	<?php db_estilosite();?>
 	</style>
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"

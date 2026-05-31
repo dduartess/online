@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -231,7 +231,7 @@ MM_reloadPage(true);
 <body leftmargin="4" topmargin="5" marginwidth="4" marginheight="4" onLoad="js_somatudo()">
 <center>
   <form name="form1" method="post" action="">
-    <?
+    <?php 
     
     if (isset($inscr) && trim($inscr) != "" ){
       $sSqlInner  = "inner join arreinscr  on arreinscr.k00_numpre  = arresusp.k00_numpre";

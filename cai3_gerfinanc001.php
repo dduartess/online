@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -186,9 +186,9 @@ function js_verificaDebitos(){
 	sQuery += '&ver_inscr='+iframe.document.form1.ver_inscr.value;
 	sQuery += '&ver_numcgm='+iframe.document.form1.ver_numcgm.value;
 	sQuery += '&numpre_unica='+iframe.document.form1.numpre_unica.value;
-	<? if (isset($inicial)) { ?>
+	<?php  if (isset($inicial)) { ?>
 	  sQuery += '&inicial=true';
-	<? } ?>
+	<?php  } ?>
 	sQuery += '&num_pres='+numpres;
 	
 	//alert("antes ajax : "+sQuery);
@@ -218,7 +218,7 @@ function js_debito(iss,iv){
 	
 	location.href='debito.php?numcgm='+<?=$numcgm?>+'&'+iv+'='+iss+'&tipo='+<?=$tipo?>+'&numpres='+numpres;
 }
-<?
+<?php 
 echo " 
 function js_voltar(){
   location.href = 'opcoesdebitospendentes.php?matricula=".trim(@$matric).

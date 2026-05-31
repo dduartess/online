@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -65,7 +65,7 @@ if($db_verificaip == "0"){
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -78,12 +78,12 @@ if($db_verificaip == "0"){
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<body leftmargin="0" text="<?=$w01_cortexto?>" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" text="<?=$w01_cortexto?>" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <center>
 <br>
 <?=$DB_mens1?>
 <br><br>
-<?
+<?php 
   //verifica se está logado
   if(@$id_usuario!="" ){
    @$usuario = $id_usuario;
@@ -127,24 +127,24 @@ if($db_verificaip == "0"){
       <td align="center">
       
        <a href="opcoesdebitospendentes.php?inscricao=<?=@$q02_inscr?>&codigo_cgm=<?=$z01_numcgm?>&cpf=<?=$cpf?>&cgc=<?=$cgc?>&opcao=n&id_usuario=<?=$id_usuario?>">Acessar Meus Dados</a><br><br>
-       <?//"opcoesdebitospendentes.php?".base64_encode("inscricao=$q02_inscr&cgc=$z01_cgccpf&opcao=i&id_usuario=".@$id_usuario);?>
+       <?php //"opcoesdebitospendentes.php?".base64_encode("inscricao=$q02_inscr&cgc=$z01_cgccpf&opcao=i&id_usuario=".@$id_usuario);?>
        
        <a href="digitacontribuinte.php?outro">Acessar Outro Contribuinte</a>
       </td>
      </tr>
     </table>
-    <?
+    <?php 
    }
   }else{
  ?>
  <form name="form1" method="post" action="opcoesdebitospendentes.php" <?=$onsubmit?>>
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
-   <?if(@$w13_permconscgm=="t"){?>
+   <?php if(@$w13_permconscgm=="t"){?>
    <tr>
     <td width="50%" height="30" align="right">Nº Contribuinte / CGM:&nbsp;</td>
     <td width="50%" height="30"><input name="codigo_cgm" type="text" class="digitacgccpf" id="codigo_cgm" size="10" maxlength="10"></td>
    </tr>
-   <?}?>
+   <?php }?>
    <tr>
     <td width="50%" height="30" align="right">CNPJ:&nbsp;</td>
     <td width="50%" height="30"><input name="cgc" type="text" class="digitacgccpf" id="cgc" 
@@ -166,8 +166,8 @@ if($db_verificaip == "0"){
    </tr>
   </table>
  </form>
- <?}?>
-<?
+ <?php }?>
+<?php 
 if(isset($funcao)){
   echo "<script>alert('Código identificador dever ser preenchido')</script>";
 }

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -50,7 +50,7 @@ if($linhas==0){
          <script>
           alert("Base de cálculo NÃO pode ser encontrada!\n\nComunique a Prefeitura.");
          </script>
-         <?
+         <?php 
 }else{
         ?>
         <html>
@@ -110,13 +110,13 @@ if($linhas==0){
                    Informe a Alíquota:<br>
                    <select name="base1" onChange="EscolheAliquota();calcular()">
                     <option value="">Escolha</option>
-                    <?
+                    <?php 
                     for($x=0;$x<$linhas;$x++){
                       // eu robson alterei a linha abaixo pois estava com 0 fixo no db_fieldsmemory
                       db_fieldsmemory($query,$x);
                     ?>
                     <option value="<?=$q81_valexe?>"><?=$q81_valexe?></option>
-                    <?
+                    <?php 
                     }
                     ?>
                    </select>
@@ -126,7 +126,7 @@ if($linhas==0){
                    <input type="button" name="calc" id='calc' value="Calcular" onclick="calcular()"><br><br>
                   </td>
                   
-				   <?
+				   <?php 
 		   // faz consulta para ver se o parâmetro do movimento do ISSQN está habilitado nas 
 		   // configurações se estiver exibe tela normalmente, se não é exibida a mensagem do usuário	   
 		   $sql  = " select configdbpref.w13_liberalancisssemmov, db_confmensagem.mens ";
@@ -144,7 +144,7 @@ if($linhas==0){
 				   <?=$sRetorno["mens"]?>                 	
 				  </div> 
                    </td >	              
-				   <?
+				   <?php 
 			       } else{		   
 				   ?>
          		   <td width="65%" id="sem_movimento">
@@ -154,7 +154,7 @@ if($linhas==0){
                    <textarea name="txt_movimento" id="txt_movimento"="txt_movimento" rows="6" cols="45%" onKeyUp="js_caracteres(this)" disabled></textarea>
 				   </fieldset>
                    </td >
-                  <? 
+                  <?php  
 				  }
 				  			  
 				  ?>
@@ -277,4 +277,4 @@ if($linhas==0){
          }
         </script>
         </html>
-<?}?>
+<?php }?>

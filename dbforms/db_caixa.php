@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -272,7 +272,7 @@ function js_verificavalor(){
 </tr>
 <tr>
   <td align="center"> 
-<?
+<?php 
 db_lov($sql,15,"db_caixa.php?".base64_encode("campo=$campo&campoaux=$campoaux"),$HTTP_POST_VARS["filtro"]);
 if($sqltem == false){
   ?>
@@ -280,7 +280,7 @@ if($sqltem == false){
   <input type="button" onclick="js_verificavalor()" name="Submit" value="Outro Valor"> 
   
   </form>
-  <?
+  <?php 
 }
 ?>
       </td>

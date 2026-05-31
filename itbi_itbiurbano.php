@@ -1,5 +1,6 @@
 <?php
 include_once("libs/legacy_compat.php");
+include_once("libs/legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -308,7 +309,7 @@ if (isset($incluir)){
 ?>
 <html>
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 <head>
 <title>Cadastro de departamento</title>
@@ -421,7 +422,7 @@ function js_verifica(){
     	</td>
     	<td align="left"" >
     	<select name="it01_tipotransacao"  >
-      <?
+      <?php 
 		  
 		  $sqltipo = "select * from itbitransacao";
 	      $resulttipo= pg_query($sqltipo);
@@ -506,7 +507,7 @@ function js_verifica(){
     	</td>
     	<td align="left" >
 		<select name="it05_itbisituacao"  >
-     <?
+     <?php 
 		  $sqlsit = "select * from itbisituacao";
 	      $resultsit= pg_query($sqlsit);
 	  	  $linhassit= pg_num_rows($resultsit);
@@ -531,7 +532,7 @@ function js_verifica(){
 </form>
 <html>
 
-<?
+<?php 
 if($cod!=""){
 	echo"
 	<script>

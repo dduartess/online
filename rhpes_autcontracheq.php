@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -123,7 +123,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
         </tr> 
       </table>
     </form>
-<?
+<?php 
  if ($sValidaCodAutenticacao == 'f') {
 ?>    
  <table width="300" align="center" border="0" bordercolor="#cccccc" cellpadding="2" cellspacing="0" class="texto">
@@ -134,7 +134,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
    </td>
   </tr>
  </table>
-<?
+<?php 
  } else if ($sValidaCodAutenticacao == 't') {
  	  $codSeq    = $oRhEmiteContraCheque->rh85_sequencial;
  	  $codMatric = $oRhEmiteContraCheque->rh85_regist;
@@ -147,7 +147,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
    <td align="center">&nbsp;</td>
   </tr>
  </table>
-<?
+<?php 
  }
 ?>    
   </body>

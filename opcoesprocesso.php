@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -113,15 +113,15 @@ db_fieldsmemory($result,0);
 js_verificapagina("digitaconsultaprocesso.php");
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?mens_div();?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php mens_div();?>
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
   <tr>
@@ -135,7 +135,7 @@ db_estilosite();
      <tr>
       <td valign="top">
        <table width="99%" border="0" cellspacing="0" cellpadding="0" class="texto">
-        <?if( $ident != 2 ){?>
+        <?php if( $ident != 2 ){?>
         <tr>
          <td valign="top" align="left">
           <table width="100%" style="border: 1px solid black" cellspacing="3" cellpadding="0" class="texto">
@@ -198,11 +198,11 @@ db_estilosite();
           </table>
           </td>
          </tr>
-         <?}?>
+         <?php }?>
          <tr>
           <td align="center" valign="top">
            <table width="100%" border="1" cellspacing="0" cellpadding="0" class="texto">
-            <?
+            <?php 
             $totreg = pg_numrows($result) - 1;
             for ($contador=0;$contador <= $totreg;$contador ++) {
               if ( ($totreg == 0) and ( $p58_codigo == "" ) ) {
@@ -212,7 +212,7 @@ db_estilosite();
                   SEM ANDAMENTO
                  </td>
                 </tr>
-                <?
+                <?php 
               break;
               }
             }

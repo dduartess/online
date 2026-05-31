@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -80,7 +80,7 @@ try {
 
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
@@ -94,12 +94,12 @@ try {
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <br>
-<?//mens_div();?>
+<?php //mens_div();?>
 <br><br>
 <center>
-<?
+<?php 
   //verifica se está logado
   if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
    @$usuario = $id_usuario==""?$_COOKIE["cookie_codigo_cgm"]:$id_usuario;
@@ -129,7 +129,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
  <form name="form1" method="post" <?=$onsubmit?> action="opcoesdebitospendentes.php">
  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
      
-    <? /*
+    <?php  /*
      <tr>
       <td width="50%" height="30" align="right">
         Matr&iacute;cula Im&oacute;vel:&nbsp;
@@ -150,7 +150,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
 
      <tr>
      <td width="50%" height="30" align="right">
-      <img src="captcha/securimage_show.php?sid=<? echo md5(uniqid(time())); ?>" id="image" align="absmiddle" />
+      <img src="captcha/securimage_show.php?sid=<?php  echo md5(uniqid(time())); ?>" id="image" align="absmiddle" />
       <br>
       <a href="#" onclick="document.getElementById('image').src = 'captcha/securimage_show.php?sid=' + Math.random(); return false">Nova imagem</a>
      </td>
@@ -167,17 +167,17 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
      </tr>
     </table>
   </form>
- <?
+ <?php 
  }else{
    ?>
    <a href="digitamatricula.php?outro">:: Pesquisar Outro Imóvel ::</a><br><br>
    <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
-   <?
+   <?php 
   
    //busca clientes do escritório
    for($x=0;$x<$imobil;$x++){
     if($x==0){
-     ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Matrículas que tenho acesso</b></td></tr><?
+     ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Matrículas que tenho acesso</b></td></tr><?php 
     }
     db_fieldsmemory($result,$x);
     if($imobil==1 && $iptubase==0){
@@ -190,7 +190,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
    //busca dados do issbase
    for($x=0;$x<$iptubase;$x++){
     if($x==0){
-     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><td colspan="3"><b>Minhas Matrículas</b></td></tr><?
+     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><td colspan="3"><b>Minhas Matrículas</b></td></tr><?php 
     }
     db_fieldsmemory($result2,$x);
     if($imobil==0 && $iptubase==1){
@@ -204,7 +204,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
     echo "<tr height=\"20\"><td><img src=\"imagens/seta.gif\" border=\"0\"></td><td align=\"right\"><a class=\"links\" href=\"opcoesdebitospendentes.php?".base64_encode("matricula1=$j01_matric&cgc=$z01_cgccpf&opcao=m&id_usuario=".@$id_usuario)."\"><b>".$j01_matric."</b></a></td><td><a class='links' href=\"opcoesdebitospendentes.php?".base64_encode("matricula1=$j01_matric&cgc=$z01_cgccpf&cpf=$z01_cgccpf&opcao=m&id_usuario=".@$id_usuario)."\"> ".$z01_nome." - ".$proprietario."</a></td></tr>";
     echo "<tr height=\"1\" bgcolor=\"$w01_corfundomenu\"><td colspan=\"3\"></td></tr>";
    }
-   ?></table><?
+   ?></table><?php 
    }
    db_logs("","",0,"Digita Codigo da Matrícula.");
   if(isset($erroscripts)){
@@ -212,7 +212,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
   }
 ?>
 
-<iframe src='captcha/pesquisa_captcha.php?code=<?@$code?>' name="pesquisacaptcha" style="visibility:hidden"></iframe>
+<iframe src='captcha/pesquisa_captcha.php?code=<?php @$code?>' name="pesquisacaptcha" style="visibility:hidden"></iframe>
 
 <br><br>
 </center>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -104,14 +104,14 @@ return false;
 }
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 //mens_div();
 ?>
 <center>
@@ -125,7 +125,7 @@ return false;
                 </tr>
                 <tr> 
                   <td align="center" valign="top">
-                  <?
+                  <?php 
                   $clcgm = new cl_cgm;
                   $result = $clcgm->sql_record($clcgm->sql_query($z01_numcgm));
                   //die($clcgm->sql_query($z01_numcgm));
@@ -154,7 +154,7 @@ return false;
                     <table width="80%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td align="right" width="50">
-                       <? 
+                       <?php  
                         if(isset($mostra_contato) && $mostra_contato== 't' ){
                   	?>
                  	
@@ -173,7 +173,7 @@ return false;
                           <input name="db_opcao" value ="Incluir Nova Lista" type="submit" onClick="return js_contato()">
                         </td>
                        
-                       <?
+                       <?php 
                          }
                        ?>
                       </tr>
@@ -195,7 +195,7 @@ return false;
                           <!--</fieldset>-->
                         </td>
                       </tr>
-                  <?
+                  <?php 
                   }
                   ?>
                   
@@ -217,7 +217,7 @@ onLoad = document.form1.p11_contato.focus();
 </script>
 </center>
 </body>
-<?
+<?php 
 db_logs("","",0,"Listas do escritório.");
 }else{
 	msgbox("Somente para usuários logados.");

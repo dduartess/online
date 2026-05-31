@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -132,14 +132,14 @@ db_logs("$matricula","",0,"Matricula Pesquisada. Numero : $matricula");
 js_verificapagina("digitaitbi.php,listabicimovel.php,listaitbisolicitacao.php,listaitbiverifica.php");
 </script>
 <style type="text/css">
-<? db_estilosite();
+<?php  db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
@@ -180,7 +180,7 @@ mens_div();
   </tr>
 </table>
 </center>
-<?
+<?php 
 if(@$script == true)
 echo "<script>alert('$MensCgcCpf')</script>\n";
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -67,7 +67,7 @@ if($db_verificaip == "0"){
   <td><br></td>
  </tr>
 </table>
-<?if($id_usuario!=""){?>
+<?php if($id_usuario!=""){?>
 <form name="form">
   <table width="100%" border="0" bordercolor="#cccccc" cellpadding="2" cellspacing="0" class="texto">
    <tr align="center">
@@ -89,7 +89,7 @@ if($db_verificaip == "0"){
   </table>
 </form>
 <iframe id="iframe" name="iframe" src="consultafornecedor.php?numcgm=<?=$id_usuario?>" width="100%" height="280"></iframe>
-<?}elseif($w13_permfornsemlog == "f"){?>
+<?php }elseif($w13_permfornsemlog == "f"){?>
  <table width="300" align="center" border="0" bordercolor="#cccccc" cellpadding="2" cellspacing="0" class="texto">
   <tr height="220">
    <td align="center">
@@ -98,7 +98,7 @@ if($db_verificaip == "0"){
    </td>
   </tr>
  </table>
-<?}elseif($w13_permfornsemlog == "t"){
+<?php }elseif($w13_permfornsemlog == "t"){
 //verifica se está logado
 if(@$codigo_cgm!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
  $usuario = $codigo_cgm==""?$_COOKIE["cookie_codigo_cgm"]:$codigo_cgm;
@@ -140,7 +140,7 @@ if(@$codigo_cgm!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
    </tr>
   </table>
  </form>
-<?}
+<?php }
 }?>
 </body>
 </html>

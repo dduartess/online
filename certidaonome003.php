@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -58,7 +58,7 @@ if($db_verificaip == "0"){
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -110,7 +110,7 @@ if($db_verificaip == "0"){
  }
 </script>
 <body leftmargin="0" text="<?=$w01_cortexto?>" topmargin="0" marginwidth="0" marginheight="0" 
-      bgcolor="<?=$w01_corbody?>" onLoad="js_carregando(true);" <? mens_OnHelp() ?>>
+      bgcolor="<?=$w01_corbody?>" onLoad="js_carregando(true);" <?php  mens_OnHelp() ?>>
   <div id='int_perc1' align="left" style="position:absolute;top:30%;left:35%; float:left; width:200; 
                                           background-color:#ECEDF2; padding:5px; margin:0px; border:1px #C2C7CB solid; 
                                           margin-left:10px; font-size:80%; visibility:hidden">
@@ -125,7 +125,7 @@ if($db_verificaip == "0"){
 <br><br><br>
 <?=$DB_mens1?>
 <br><br>
-<?
+<?php 
   //verifica se está logado
   if (@$id_usuario != "") {
     @$usuario = $id_usuario;
@@ -174,13 +174,13 @@ if($db_verificaip == "0"){
       </td>
      </tr>
     </table>
-    <?
+    <?php 
    }
   } else {
  ?>
  <form name="form1" method="post" action="opcoescertidao.php" <?=$onsubmit?>>
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
-   <?
+   <?php 
      if (@$w13_permconscgm == "t") {
    ?>
    <tr>
@@ -188,7 +188,7 @@ if($db_verificaip == "0"){
     <td width="50%" height="30">
       <input name="codigo_cgm" type="text" class="digitacgccpf" id="codigo_cgm" size="10" maxlength="10"></td>
    </tr>
-   <?
+   <?php 
      }
    ?>
    <tr>
@@ -212,8 +212,8 @@ if($db_verificaip == "0"){
    </tr>
   </table>
  </form>
- <?}?>
-<?
+ <?php }?>
+<?php 
 if(isset($funcao)){
   echo "<script>alert('Código identificador dever ser preenchido')</script>";
 }

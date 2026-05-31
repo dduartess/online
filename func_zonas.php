@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -60,7 +60,7 @@ $clzonas->rotulo->label("j50_descr");
               <?=$Lj50_zona?>
             </td>
             <td width="96%" align="left" nowrap> 
-              <?
+              <?php 
 		       db_input("j50_zona",10,$Ij50_zona,true,"text",4,"","chave_j50_zona");
 		       ?>
             </td>
@@ -70,7 +70,7 @@ $clzonas->rotulo->label("j50_descr");
               <?=$Lj50_descr?>
             </td>
             <td width="96%" align="left" nowrap> 
-              <?
+              <?php 
 		       db_input("j50_descr",40,$Ij50_descr,true,"text",4,"","chave_j50_descr");
 		       ?>
             </td>
@@ -88,7 +88,7 @@ $clzonas->rotulo->label("j50_descr");
   </tr>
   <tr> 
     <td align="center" valign="top"> 
-      <?
+      <?php 
       if(!isset($pesquisa_chave)){
         if(isset($campos)==false){
            if(file_exists("funcoes/db_func_zonas.php")==true){
@@ -124,11 +124,11 @@ $clzonas->rotulo->label("j50_descr");
 </table>
 </body>
 </html>
-<?
+<?php 
 if(!isset($pesquisa_chave)){
   ?>
   <script>
   </script>
-  <?
+  <?php 
 }
 ?>

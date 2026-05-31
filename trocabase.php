@@ -1,5 +1,6 @@
 <?php
 include_once("libs/legacy_compat.php");
+include_once("libs/legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -51,7 +52,7 @@ $linha=pg_num_rows($result);
 
 <form name="form2" method="post" action="trocabase.php">
 <select name="base" >
-<?
+<?php 
 for($i=0;$i<$linha;$i++){
 	db_fieldsmemory($result, $i);
 	echo"<option value='$datname'>$datname</option>";

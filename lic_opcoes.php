@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -44,7 +44,7 @@ function trocacor(id){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 
 div.tabArea {
   font-size: 14px;
@@ -53,7 +53,7 @@ div.tabArea {
 }
 
 a.tab {
-  background-color:<?echo $w01_corfundomenu;?> ;
+  background-color:<?php echo $w01_corfundomenu;?> ;
   border: 1px solid #000000;  
   border-bottom-width: 0px;
   padding: 2px 1em 2px 1em;
@@ -61,24 +61,24 @@ a.tab {
   border-radius-topleft: .75em;
   border-radius-topright: .75em;
   text-decoration: none;
-  color: <?echo $w01_corfontemenu;?>; 
+  color: <?php echo $w01_corfontemenu;?>; 
 }
 
 a.tab:hover {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
-  color: <?echo $w01_corfontemenu;?>;           
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
+  color: <?php echo $w01_corfontemenu;?>;           
 }
 
 a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
   border-bottom-width: 0px;
-  color:<?echo $w01_corfontemenu;?>;
+  color:<?php echo $w01_corfontemenu;?>;
 }
 
 div.tabMain {
  // background-color:#0099CC;
   border: 6px solid #000000;
-  border-color: <?echo $w01_corfundomenuativo;?>; 
+  border-color: <?php echo $w01_corfundomenuativo;?>; 
   -moz-border-radius: 0em .3em .3em 0em;
  
   padding: .3em;
@@ -96,7 +96,7 @@ div.tabIframeWrapper {
 </style>
 </head>
 <body >
-<?
+<?php 
 $sql = "select * from cflicita";
 $result= pg_exec($sql);                   
 $linhas = pg_num_rows($result);
@@ -111,7 +111,7 @@ $linhas = pg_num_rows($result);
    	<tr>
   		<td colspan="<?=$linhas?>">
     		<div class="tabArea">
-    		    <?for ($i = 0; $i < $linhas; $i++){
+    		    <?php for ($i = 0; $i < $linhas; $i++){
     		      	db_fieldsmemory($result,$i);
        	      		echo "<a id='$i' class='tab activeTab' href= 'licitacao.php?tipo=$l03_codigo' target='lic' onClick='trocacor($i)' >$l03_descr</a>";
     		    }

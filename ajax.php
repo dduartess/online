@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -51,7 +51,7 @@ sajax_handle_client_request();// serve instancias de clientes
 <head>
 <title>Nome </title>
 <script>
-<?
+<?php 
 sajax_show_javascript(); //gera o javascript
 ?>
 function mostra(nome) { //esta funcao retorna o valor para o campo do formulario

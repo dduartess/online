@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -152,7 +152,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  		<?=$Lz01_cgccpf?>
 	  	</td>
 	  	<td>
-	  	  <?
+	  	  <?php 
 	  	    db_input('z01_cgccpf', 20, $Iz01_cgccpf, true, 'text', 1, "onchange='verifica(this)'");
 	  	  ?>
 	  	</td>
@@ -163,7 +163,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	    	<?=$Lz01_nome?>
 	    </td>
 	    <td>
-	    	<?
+	    	<?php 
 	    		db_input('z01_nome', 54, $Iz01_nome, true, 'text', 1)
 	    	?>
 	    </td>
@@ -174,7 +174,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	    	<?=$Lz01_email?>
 	    </td>
 	    <td>
-	    	<?
+	    	<?php 
 	    		db_input('z01_email', 54, $Iz01_email, true, 'text', 1, "onchange='js_validaEmail(this)'")
 	    	?>
 	    </td>
@@ -187,12 +187,12 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	<table>
 	  <tr>
 	  	<td title="<?=$Tj14_nome?>">
-	  		<?
+	  		<?php 
 	  			db_ancora('Logradouro', 'js_pesquisaLogradouro()', 1);
 	  		?>
 	  	</td>
 	  	<td>
-	  	  <?
+	  	  <?php 
 	  	    db_input('j14_codigo', 54, $Ij14_nome, true, 'hidden', 1);
 	  	    db_input('j14_nome', 54, $Ij14_nome, true, 'text', 3);
 	  	  ?>
@@ -204,7 +204,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	    	<?=$Lz01_numero?>
 	    </td>
 	    <td>
-	    	<?
+	    	<?php 
 	    		db_input('z01_numero', 10, $Iz01_numero, true, 'text', 1)
 	    	?>
 	    </td>
@@ -215,7 +215,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	    	<?=$Lz01_compl?>
 	    </td>
 	    <td>
-	    	<?
+	    	<?php 
 	    		db_input('z01_compl', 54, $Iz01_compl, true, 'text', 1)
 	    	?>
 	    </td>
@@ -223,12 +223,12 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 
 	  <tr>
 	  	<td title="<?=$Tj13_descr?>">
-	  		<?
+	  		<?php 
 	  			db_ancora('<strong>Bairro:</strong>', 'js_pesquisaBairro()', 1);
 	  		?>
 	  	</td>
 	  	<td>
-	  	  <?
+	  	  <?php 
 	  	    db_input('j13_codi', 54, $Ij13_descr, true, 'hidden', 1);
 	  	    db_input('j13_descr', 54, $Ij13_descr, true, 'text', 3);
 	  	  ?>
@@ -240,7 +240,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  		<strong><?=$Lz01_telef?></strong>
 	  	</td>
 	  	<td>
-	  	  <?
+	  	  <?php 
 	  	    db_input('z01_telef', 54, $Iz01_telef, true, 'text', 1);
 	  	  ?>
 	  	</td>
@@ -253,12 +253,12 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	<table>
 	  <tr>
 	  	<td title="<?=$Tq86_numcgm?>">
-	  		<?
+	  		<?php 
 	  			db_ancora($Lq86_numcgm, 'js_pesquisaEscritorio()', 1);
 	  		?>
 	  	</td>
 	  	<td style="position:relative;">
-	  		<?
+	  		<?php 
 	  			db_input('z01_numcgm', 10, $Iz01_numcgm, true, 'hidden', 1);
 	  			db_input('z01_nome', 54, $Iz01_nome, true, 'text', 3, '', 'z01_nome_escritorio');
 	  		?>
@@ -268,12 +268,12 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 
 	  <tr>
 	  	<td title="<?=$Tj50_descr?>">
-	  		<?
+	  		<?php 
 	  			db_ancora('<strong>Zona</strong>', 'js_pesquisaZona()', 1)
 	  		?>
 	  	</td>
 	  	<td>
-	  		<?
+	  		<?php 
 	  			db_input('j50_zona', 10, $Ij50_zona, true, 'hidden', 1);
 	  			db_input('j50_descr', 54, $Ij50_descr, true, 'text', 3);
 	  		?>
@@ -325,7 +325,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  		<strong>Data Início</strong>
 	  	</td>
 	  	<td>
-	  	  <?
+	  	  <?php 
 	  	  	db_inputdata('data_inicio', @$data_inicio_dia, @$data_inicio_mes, @$data_inicio_ano, true, 'text', 1);
 	  	  ?>
 	  	</td>
@@ -338,12 +338,12 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	<table>
 	  <tr>
 	  	<td title="Atividades">
-	  		<?
+	  		<?php 
 	  			db_ancora('<strong>Atividade:</strong>', 'js_pesquisaAtividade()', 1);
 	  		?>
 	  	</td>
 	  	<td nowrap="nowrap">
-	  		<?
+	  		<?php 
 	  			db_input('q03_ativ' , 10, $Ij50_zona , true, 'hidden', 1);
 	  			db_input('q03_descr', 44, $Ij50_descr, true, 'text', 3);
 	  		?>

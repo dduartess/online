@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -107,11 +107,11 @@ if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
 <script>
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?mens_div();?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php mens_div();?>
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
   <tr>
@@ -159,7 +159,7 @@ if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
   </tr>
 </table>
 </center>
-<?
+<?php 
 db_logs("","",0,"Digita Codigo da Inscricao para solicitacao AIDOF.");
 if(isset($erroscripts)){
   echo "<script>alert('".$erroscripts."');</script>";

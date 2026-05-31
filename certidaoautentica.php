@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -180,10 +180,10 @@ if ($clcertidaoweb->numrows > 0) {
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <br /><br /><br />
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
@@ -221,7 +221,7 @@ if ($clcertidaoweb->numrows > 0) {
   </tr>
 </table>
 </center>
-<?
+<?php 
   db_logs("","",0,"Verifica Codigo Autenticidade de Certidão.");
 ?>
 </body>

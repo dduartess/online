@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -71,7 +71,7 @@ if($total > 0){
    parent.document.getElementById('msgerro').style.display = 'none';
    parent.document.getElementById('msgerro').innerHTML     = '';
 </script>
-<?
+<?php 
 } else {
 ?>
 <script>   
@@ -85,6 +85,6 @@ if($total > 0){
    parent.document.getElementById('msgerro').innerHTML = msgerro;
    
 </script>
-<?
+<?php 
 }
 ?>

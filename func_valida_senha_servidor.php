@@ -183,7 +183,7 @@ str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÍNIMO 6 CARACTERES,
    parent.document.getElementById('msgerrosenha').innerHTML      = msgerro;
      
 </script>
-<?
+<?php 
 } else {
 	if(isset($sErroUsuario) && $sErroUsuario == 't'){
 ?>
@@ -197,7 +197,7 @@ str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÍNIMO 6 CARACTERES,
    parent.document.getElementById('msgerro').innerHTML = msgerro;
    parent.document.getElementById('msgerrosenha').innerHTML  = '';
 </script>
-<?
+<?php 
   } else {
 ?>
 <script> 
@@ -209,7 +209,7 @@ str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÍNIMO 6 CARACTERES,
    parent.document.getElementById('msgerro').innerHTML = msgerro;
    parent.document.getElementById('msgerrosenha').innerHTML  = '';
 </script>
-<?
+<?php 
   }
 }
 ?>

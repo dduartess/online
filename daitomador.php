@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -239,14 +239,14 @@ function js_verificacomp(){
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 </head>
 <body bgcolor="<?=$w01_corbody?>">
 
-<?
+<?php 
 
 // ############## função  ################
 	
@@ -462,7 +462,7 @@ if (isset($salvar)){
 <tr>
 	
 	<td align = "center" colspan="7"><strong>
-	Competência: <? if(isset($mesdai2)) echo" ".db_mes($mesdai2)." ";?>
+	Competência: <?php  if(isset($mesdai2)) echo" ".db_mes($mesdai2)." ";?>
 	</strong>
 	</td>
 </tr>
@@ -484,7 +484,7 @@ if (isset($salvar)){
 	<td >
 		<select  name="mesdai" onChange="document.form1.cnpj.focus();" onblur= "js_mes();" >
 	    	<option value="0">Mês</option>
-	    	<?
+	    	<?php 
 	    	for ($m=1; $m<=12;$m++){
 	    		echo "<option value = \"$m\"".($m==$mesdai?" selected":"").">".db_mes($m)." </option>";
 	    	}
@@ -616,7 +616,7 @@ if (isset($salvar)){
 				</th>
 			</tr>
 			
-<?
+<?php 
 //echo "cod=$codigo";
 	$parametro = array( 
 		'w08_origem'     => "",

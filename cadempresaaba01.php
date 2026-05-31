@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -85,7 +85,7 @@ function trocacor(id){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 
 div.tabArea {
   font-size: 14px;
@@ -94,7 +94,7 @@ div.tabArea {
 }
 
 a.tab {
-  background-color:<?echo $w01_corfundomenu;?> ;
+  background-color:<?php echo $w01_corfundomenu;?> ;
   border: 1px solid #000000;  
   border-bottom-width: 0px;
   padding: 2px 1em 2px 1em;
@@ -102,24 +102,24 @@ a.tab {
   border-radius-topleft: .75em;
   border-radius-topright: .75em;
   text-decoration: none;
-  color: <?echo $w01_corfontemenu;?>; 
+  color: <?php echo $w01_corfontemenu;?>; 
 }
 
 a.tab:hover {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
-  color: <?echo $w01_corfontemenu;?>;           
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
+  color: <?php echo $w01_corfontemenu;?>;           
 }
 
 a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
   border-bottom-width: 0px;
-  color:<?echo $w01_corfontemenu;?>;
+  color:<?php echo $w01_corfontemenu;?>;
 }
 
 div.tabMain {
  // background-color:#0099CC;
   border: 6px solid #000000;
-  border-color: <?echo $w01_corfundomenuativo;?>; 
+  border-color: <?php echo $w01_corfundomenuativo;?>; 
   -moz-border-radius: 0em .3em .3em 0em;
  
   padding: .3em;
@@ -151,14 +151,14 @@ div.tabIframeWrapper {
 	<tr>
 		<td colspan="5">
 		<div class="tabArea">
-		 <?
+		 <?php 
 		 $href = "cadempresa_dados.php?pessoa=$pessoa&cpf_cnpj=$cpf_cnpj&opcao=$opcao";
 		 ?>
 		  <a id="1" class="tab activeTab" href=<?=$href?> target="cad" onClick="trocacor('1')">Dados iniciais</a> 
 			<a id="2" class="tab" target="cad" onClick="trocacor('2')">Atividades</a> 
-			<?if($pessoa=='J'){?>
+			<?php if($pessoa=='J'){?>
 			<a id="3" class="tab" target="cad" onClick="trocacor('3')">Sócios</a>
-			<?}?>
+			<?php }?>
 		</div>
 		<div class="tabMain">
 		<div class="tabIframeWrapper">

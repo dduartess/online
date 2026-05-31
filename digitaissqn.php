@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -103,7 +103,7 @@ function js_vericampos(){
      return false
   }
   
-<?
+<?php 
      // conta se o contribuente possui alvará no mesmo município que se encontra
 	 // caso a consulta retorna um verdadeiro, se retornar zero o contribuente não
 	 // possui alvará no município
@@ -127,7 +127,7 @@ function js_vericampos(){
       alert("Selecione uma inscrição abaixo!");
       return false;
     }
-<?		 		 
+<?php 		 		 
   }
 
 ?>  
@@ -185,13 +185,13 @@ function js_vericampos(){
  
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <center>
-  <?
+  <?php 
   //verifica se permite acessar sem login
  //##################eu tirei #######################
  
@@ -207,7 +207,7 @@ function js_vericampos(){
     </tr>
    </table>
    
-   <?
+   <?php 
    exit;*/
   
   
@@ -261,7 +261,7 @@ function js_vericampos(){
                    Competência:
 
 		   <select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
-                    <?
+                    <?php 
                       $sano = date("Y");
                       if(date("m")==12)
                        $sano ++;
@@ -286,7 +286,7 @@ function js_vericampos(){
               </form>
               <form name="form2" method="post" >
               <table width="100%" border="1" cellspacing="0" cellpadding="3" class="texto">
-               <?
+               <?php 
                //é escritório?
 			   $wherebx = " and q10_dtfim is null ";
 			   if (@$mostrainscricao == 1) {
@@ -306,7 +306,7 @@ function js_vericampos(){
                 ?>
 				   <tr height="20" ><td colspan="3"><b>Mostrar inscriçoes</b> 
 				   <select name="mostrainscricao" onchange = "document.form2.submit();">
-				   <? echo "
+				   <?php  echo "
 				   <option value = '1'".($mostrainscricao == 1?"selected":"").">Todas</option>
 				   <option value = '2'".($mostrainscricao == 2?"selected":"").">Somente baixadas</option>
 				   <option value = '3'".($mostrainscricao == 3?"selected":"").">Somente não baixadas</option>
@@ -316,11 +316,11 @@ function js_vericampos(){
 				   </td></tr>
                
                
-               <?
+               <?php 
                 //busca clientes do escritório
                 for ($x = 0; $x < $escrito; $x++) {
                  if($x == 0){
-                 ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Inscrições que tenho acesso</b></td></tr><?
+                 ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Inscrições que tenho acesso</b></td></tr><?php 
                  }
                  db_fieldsmemory($result,$x);
                  echo "<tr>
@@ -342,7 +342,7 @@ function js_vericampos(){
                @$x = $x==""?0:$x;
                for($y=$x;$y<$issbase+$x;$y++){
                 if($y==$x){
-                ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Minhas Inscrições</b></td></tr><?
+                ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Minhas Inscrições</b></td></tr><?php 
                 }
                 db_fieldsmemory($result2,$y-$x);
                 echo "<tr>
@@ -359,7 +359,7 @@ function js_vericampos(){
               ?>
               </table>
               </form>
-             <?}else{
+             <?php }else{
               if(@$_COOKIE["cookie_codigo_cgm"]!=""){
                @$cookie_codigo_cgm = $_COOKIE["cookie_codigo_cgm"];
                @$result  = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,cgm.z01_cgccpf","","cgm.z01_numcgm = $cookie_codigo_cgm"));
@@ -381,7 +381,7 @@ function js_vericampos(){
                 </tr>
                 <tr>
                  <td align="center">
-                 	<?/*
+                 	<?php /*
                  	$sql ="select q02_inscr,z01_cgccpf,z01_numcgm,z01_nome from cgm inner join issbase on z01_numcgm=q02_numcgm where z01_cgccp=<script>document.form1.cgc.value</script> and q02_dtbaix is null"; 
                  	$result3  = $clissbase->sql_record($sql);
                  	$linha = $clissbase->numrows;
@@ -416,7 +416,7 @@ function js_vericampos(){
                   <td align="center">
                    Competência:
                     <select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
-		      <?
+		      <?php 
 		      if ( $cgc_pref == "87366159000102" ) {
 		        $sano = 2010;
 		      } else {
@@ -442,7 +442,7 @@ function js_vericampos(){
                </tr>
                </form>
               </table>
-             <?}?>
+             <?php }?>
             </td>
           </tr>
       </td>
@@ -456,7 +456,7 @@ function js_vericampos(){
 </center>
 </body>
 </html>
-<?
+<?php 
 db_logs("","",0,"Digita Codigo da Inscricao para o issqn retencao.");
 if(isset($erroscripts)){
   echo "<script>alert('".$erroscripts."');</script>";

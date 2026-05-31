@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -272,7 +272,7 @@ if (isset($alterar)) {
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <style type="text/css">
-<? db_estilosite(); ?>
+<?php  db_estilosite(); ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
@@ -330,7 +330,7 @@ if (isset($alterar)) {
 </tr>
 
 <tr class="texto">
-	<td >Data limite: <?echo db_formatar($pc20_dtate,'d'); ?> </td>
+	<td >Data limite: <?php echo db_formatar($pc20_dtate,'d'); ?> </td>
 	<td >Hora limite: <?=$pc20_hrate?></td>
 </tr>
 
@@ -352,7 +352,7 @@ if (isset($alterar)) {
 	<td colspan="2">&nbsp;</td>
 </tr>
 
-<?
+<?php 
 if ((isset($alterar)) || (isset($incluir))){ // se clicou no alterar ou incluir... mostra  o resultado
 $sql= "select z01_cgccpf,
               z01_nome,
@@ -443,9 +443,9 @@ $linhas= pg_num_rows($result);
 
 ?>
 <tr class="texto">
- 	<td>Prazo de entrega:<?if($pc21_prazoent!=""){ echo db_formatar($pc21_prazoent, 'd');}?>
+ 	<td>Prazo de entrega:<?php if($pc21_prazoent!=""){ echo db_formatar($pc21_prazoent, 'd');}?>
 	</td>
-	<td>Validade do orçamento:<? if($pc21_validadorc!=""){ echo db_formatar($pc21_validadorc, 'd');}?>
+	<td>Validade do orçamento:<?php  if($pc21_validadorc!=""){ echo db_formatar($pc21_validadorc, 'd');}?>
 	</td>
 	<td></td>
 </tr>
@@ -465,23 +465,23 @@ $linhas= pg_num_rows($result);
 			<th>Valor total</th>
 			
 		</tr>
-		<?for ($i = 0; $i < $linhas; $i ++) {
+		<?php for ($i = 0; $i < $linhas; $i ++) {
 			db_fieldsmemory($result,$i); ?>
 		<tr>
 		
-		<? // mostra antes de imprimir
+		<?php  // mostra antes de imprimir
 		echo"
 			<td>$pc11_seq</td>
 			<td>$pc11_quant  <input name='quant$i' type='hidden' value='$pc11_quant' > </td> 
 			<td>$pc01_descrmater <br>Resumo: $pc11_resum</td> "; ?>
-			<td><? if ($pc23_obs==""){?>&nbsp<?}else{echo $pc23_obs;} ?></td>
-			<td><? if($pc23_validmin!=""){ echo db_formatar($pc23_validmin, 'd');}else{?>&nbsp<?}?></td>
-			<td> <? echo db_formatar($pc23_vlrun, 'f'); ?> </td>
-			<td><?echo db_formatar($pc23_valor, 'f'); ?> </td>	
+			<td><?php  if ($pc23_obs==""){?>&nbsp<?php }else{echo $pc23_obs;} ?></td>
+			<td><?php  if($pc23_validmin!=""){ echo db_formatar($pc23_validmin, 'd');}else{?>&nbsp<?php }?></td>
+			<td> <?php  echo db_formatar($pc23_vlrun, 'f'); ?> </td>
+			<td><?php echo db_formatar($pc23_valor, 'f'); ?> </td>	
 			
 		
 		</tr>
-		<?}?>
+		<?php }?>
 		</table>
 	</td>
 </tr>
@@ -493,12 +493,12 @@ $linhas= pg_num_rows($result);
 	</td>
 </tr>
 
-<?
+<?php 
 }else{ // se não clicou no alterar ou incluir
 ?>
 
 <tr class="texto">
-<?
+<?php 
 
 		$dia1[$i]="";
 		$mes1[$i]="";
@@ -522,9 +522,9 @@ $linhas= pg_num_rows($result);
 		
 //db_inputdata($nome, $dia = "", $mes = "", $ano = "", $dbcadastro = true, $dbtype = 'text', $db_opcao = 3		
 ?>
-	<td>Prazo de entrega: <?db_inputdata("p",$dia2[$i],$mes2[$i],$ano2[$i],true,"text",1)?>
+	<td>Prazo de entrega: <?php db_inputdata("p",$dia2[$i],$mes2[$i],$ano2[$i],true,"text",1)?>
 	</td>
-	<td>Validade do orçamento: <?db_inputdata("v",$dia1[$i],$mes1[$i],$ano1[$i],true,"text",1)?>
+	<td>Validade do orçamento: <?php db_inputdata("v",$dia1[$i],$mes1[$i],$ano1[$i],true,"text",1)?>
 	</td>
 	<td></td>
 </tr>
@@ -544,12 +544,12 @@ $linhas= pg_num_rows($result);
 			<th>Valor total</th>
 			
 		</tr>
-		<?
+		<?php 
 		for ($i = 0; $i < $linhas; $i ++) {
 			db_fieldsmemory($result,$i); ?>
 		<tr class="texto">
 		
-		<?
+		<?php 
 		$dia[$i]="";
 		$mes[$i]="";
 		$ano[$i]="";
@@ -568,7 +568,7 @@ $linhas= pg_num_rows($result);
 		 <td><?=$pc01_descrmater?> <br>Resumo: <?=$pc11_resum?></td> 
 		 <td><input name="obs<?=$i?>" type='text' size='25' value="<?=$pc23_obs?>" >  </td>
 		 <td width='135px' align='center'>
-		    <?db_inputdata("o$i",$dia[$i],$mes[$i],$ano[$i],true,"text",1)?>
+		    <?php db_inputdata("o$i",$dia[$i],$mes[$i],$ano[$i],true,"text",1)?>
 		 </td>
 		 <td>
 		  <input name="valor<?=$i?>" type='text' style="text-align:right" size='10' value="<?=$pc23_vlrun?>" onBlur="js_calcula(<?=$i?>,1)" onKeyUp="js_ValidaCampos(this,4,'Valor Unitário',false,false,event);"> 
@@ -577,14 +577,14 @@ $linhas= pg_num_rows($result);
  		  <input name="valortotal<?=$i?>" type='text' style="text-align:right" size='10' value="<?=$pc23_valor?>" onBlur="js_calcula(<?=$i?>,2)">   
 		 </td>	
 		</tr>
-		<?}?>
+		<?php }?>
 		</table>
 	</td>
 </tr>
 <tr><td colspan="2">&nbsp;</td></tr>
 <tr>
 	<td colspan="2" align="center">
-	<?
+	<?php 
 	if ($pc23_vlrun==""){
 		echo "<input name='incluir' type='submit' value='Incluir orçamento' class='botao' >";
 	}else{
@@ -595,7 +595,7 @@ $linhas= pg_num_rows($result);
 	<input name="voltar" type="button" value="Voltar" class="botao" onclick="js_volta(<?=$cgm?>)">	
 	</td>
 </tr>
-<?
+<?php 
 }
 
 ?>

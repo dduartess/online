@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -252,7 +252,7 @@ function js_tipo(){
 } 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 td{
@@ -262,7 +262,7 @@ td{
 
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <form name="form1" method="post" action="opcoesaidof.php" >
 <center>
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -304,7 +304,7 @@ td{
            <tr height="30">
              <td colspan="2">
              <b>Tipo de Nota:&nbsp;&nbsp;&nbsp;&nbsp;</b>
-             <?
+             <?php 
              $result = pg_query("select distinct q14_nota,q09_descr
                                   from issbase
                                         inner join tabativ on q07_inscr = q02_inscr
@@ -336,11 +336,11 @@ td{
            </tr>
            <tr height="30">
              <td colspan="2">
-             <? if(isset($tiponota)){?>
+             <?php  if(isset($tiponota)){?>
              <fieldset style="border: 1px solid <?=$w01_corfontesite?>">
                <legend> <b>Última Solicitação</b> </legend>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-               <? 
+               <?php  
                //die($tiponota);
                $result = pg_query("select * from aidof where y08_inscr = $inscricaow and y08_nota=$tiponota and (y08_cancel is false or y08_cancel is null) order by  y08_codigo desc limit 1");
                if(pg_numrows($result) != 0){
@@ -395,7 +395,7 @@ td{
                ?>
                </table>
              </fieldset>
-             <?}?>
+             <?php }?>
              </td>
            </tr>
            <tr nowrap height="30">
@@ -406,18 +406,18 @@ td{
            </tr>
            <tr height="30">
              <td>
-             <? if(isset($tiponota) && $tiponota!=0){?>
+             <?php  if(isset($tiponota) && $tiponota!=0){?>
                Notas a serem impressas :&nbsp;&nbsp;&nbsp;
                de&nbsp;<?=($y08_notafi + 1)?>&nbsp;até
                <input type="text" name="quantnotasrec" value="" size="5" maxlength="5" style="border: none; border-color: #transparent; background-color: <?=$w01_corbody?>; color: <?=$w01_corfontesite?>; font-size:<?=$w01_tamfontesite?>">
-               <?}?>
+               <?php }?>
              </td>
            </tr>
            <tr>
              <td colspan="5"> <table width="457" border="0">
                  <tr height="30" valign="center">
                    <td align="left" nowrap>Gráfica:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <?
+                   <?php 
                    $sqlgraf= "select z01_nome,z01_numcgm from cgm inner join graficas on y20_grafica = z01_numcgm order by z01_nome";
                    $resultgraf=pg_query($sqlgraf);
                    $linhasgraf=pg_num_rows($resultgraf);

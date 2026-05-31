@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -361,7 +361,7 @@ if (@$_COOKIE ["cookie_codigo_cgm"] == "") {
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<?
+<?php 
 if ($opcao == 'n') {
 	$arquivosel = 'certidaonome003.php';
 } elseif ($opcao == 'm') {
@@ -401,7 +401,7 @@ $script = false;
 if (isset ( $codigo_cgm ) && $codigo_cgm == "") {
 	?>
 <script>alert("Dados Inválidos. Verifique!"); history.back();</script>
-<?
+<?php 
 
 }
 
@@ -413,7 +413,7 @@ if (!isset ( $opcao )) {
    alert("Acesso a Rotina Iválida. Verifique!"); 
    history.back();
  </script>
-<?
+<?php 
 	} else {
 		$opcao = $HTTP_POST_VARS ["opcao"];
 	}
@@ -744,18 +744,18 @@ if (pg_num_rows($result) > 0) {
 
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <table align="center" width="60%" border="0" cellspacing="0" cellpadding="0">
 	<tr class="bold3">
 		<td height="50" align="<?=$DB_align1?>"><?=$DB_mens1?></td>
 	</tr>
 	<tr>
-		<td height="200" align="center" valign="middle"><?
+		<td height="200" align="center" valign="middle"><?php 
 				
 		if ($opcao == "i") {
       $sSqlInner  = "inner join arreinscr  on arreinscr.k00_numpre  = arresusp.k00_numpre";
@@ -817,11 +817,11 @@ db_estilosite();
 					<tr class="texto">
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: <span class="bold3"><?=$cgccpf?></span><br>
-						<? if(@$inscricao!=""){?> Inscrição:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
-						<?}else if(@$matricula!=""){?> Matrícula:&nbsp; <span
+						<?php  if(@$inscricao!=""){?> Inscrição:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
+						<?php }else if(@$matricula!=""){?> Matrícula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
-							<?}else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
-							<?}?>
+							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
+							<?php }?>
 						</td>
 						<td>
 							<?=@$msgcortesituacao ?>
@@ -831,7 +831,7 @@ db_estilosite();
 				</table>
 				</td>
 			</tr>
-			<?
+			<?php 
         
 			$aK00_tipo = array();
 			$lNome     = false;
@@ -863,7 +863,7 @@ db_estilosite();
 					src="imagens/pasta2.gif" border="0"> <?=$k00_descr?></a></td>
 			</tr>
 			
-			<?
+			<?php 
 					}
           $lNome = true;
 				}
@@ -875,7 +875,7 @@ db_estilosite();
 							if ($k00_recibodbpref != "3") {
 								?>
 
-			<?
+			<?php 
 							}
 						}
 					}
@@ -922,7 +922,7 @@ db_estilosite();
 				?>
 			</td>
 			</tr>
-			<?
+			<?php 
 				
 			}
 			
@@ -939,7 +939,7 @@ db_estilosite();
 						          src="imagens/folder4.gif" border="0"> Emitir Certidão por Nome</a>
 						        </td>
 						      </tr>            	 	
-        <?    	 	
+        <?php     	 	
             	 } else {
             	 	
        ?>
@@ -948,7 +948,7 @@ db_estilosite();
 						          href="cai3_certidao.php?numcgm=<?=$cookie_codigo_cgm?>"> <img
 						          src="imagens/folder4.gif" border="0"> Emitir Certidão por Nome</a> </td>
 						      </tr>
-      <?            	 	
+      <?php             	 	
             	 	
             	 }
 
@@ -960,7 +960,7 @@ db_estilosite();
           href="cai3_certidao.php?inscricao=<?=$inscricao?>"> <img
           src="imagens/folder4.gif" border="0"> Emitir Certidão por Inscrição </a> </td>
       </tr>
-      <?
+      <?php 
           }
           if ($opcao == "m") {
        ?>
@@ -969,7 +969,7 @@ db_estilosite();
           href="cai3_certidao.php?matricula=<?=$matricula1?>"> <img
           src="imagens/folder4.gif" border="0"> Emitir Certidão por matricula</a> </td>
       </tr>
-      <?
+      <?php 
           }
         }           
           
@@ -981,7 +981,7 @@ db_estilosite();
 		</form>
 		<input type="submit" value="Voltar" class="botao"
 			onclick="js_voltar();">
- <?
+ <?php 
 		
 		} else {
 
@@ -994,12 +994,12 @@ db_estilosite();
 					<tr class="texto">
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: <span class="bold3"><?=@$cgccpf?></span><br>
-            <? if(@$inscricao!=""){?> Inscrição:&nbsp; <span
+            <?php  if(@$inscricao!=""){?> Inscrição:&nbsp; <span
 							class="bold3"><?=@$inscricao?></span><br>
-						<?}else if(@$matricula!=""){?> Matrícula:&nbsp; <span
+						<?php }else if(@$matricula!=""){?> Matrícula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
-							<?}else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
-							<?}?>						
+							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
+							<?php }?>						
               </span>
             </td>
             <td><?=@$msgcortesituacao?></td>
@@ -1007,7 +1007,7 @@ db_estilosite();
 				</table>
 				</td>
 			</tr>
-       <?
+       <?php 
 			if ($linhasmenucert > 0) {
 
 				if ($opcao == "n") {
@@ -1017,14 +1017,14 @@ db_estilosite();
              <td height="28"><a class='links' href="cai3_certidao.php?numcgm=<?=$codigo_cgm?>"> 
              <img src="imagens/folder4.gif" border="0"> Emitir Certidão</a> </td>
             </tr>
-           <?
+           <?php 
 				  } else {
 					  ?>
 			      <tr>
 				     <td height="28"><a class='links' href="cai3_certidao.php?numcgm=<?=$cookie_codigo_cgm?>"> 
 				     <img src="imagens/folder4.gif" border="0"> Emitir Certidão</a> </td>
 		    	  </tr>
-			    <?  
+			    <?php   
 				  }
 			
 				}
@@ -1035,7 +1035,7 @@ db_estilosite();
 					href="cai3_certidao.php?inscricao=<?=$inscricao?>"> <img
 					src="imagens/folder4.gif" border="0"> Emitir Certidão por Inscrição	</a> </td>
 			</tr>
-			<?
+			<?php 
 				}
 				if ($opcao == "m") {
 					?>
@@ -1044,7 +1044,7 @@ db_estilosite();
 					href="cai3_certidao.php?matricula=<?=$matricula1?>"> <img
 					src="imagens/folder4.gif" border="0"> Emitir Certidão por matricula</a>	</td>
 			</tr>
-			<?
+			<?php 
 				}
 			}
 			?>
@@ -1054,7 +1054,7 @@ db_estilosite();
 				</td>
 			</tr>
 		</table>
-		<?
+		<?php 
 		
 		}
 		?>
@@ -1076,7 +1076,7 @@ db_estilosite();
 	}
 ?>
 <input type="hidden" name="sK00_tipo" id="sK00_tipo" value="<?php echo $sK00_tipo; ?>">
-<?
+<?php 
 
 if ($script == true) {
 	echo "<script>alert('$MensCgcCpf')</script>\n";

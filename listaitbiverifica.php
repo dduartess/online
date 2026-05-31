@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -76,7 +76,7 @@ function js_emiteboletoitbi() {
 
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 font {
      color: black;
@@ -85,12 +85,12 @@ font {
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -119,7 +119,7 @@ mens_div();
           <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
       <tr>
             <td width="90" align="left" valign="top"> 
-          <?    db_montamenus();        
+          <?php     db_montamenus();        
           ?>
                 </td>
             <td align="left" valign="top"> 
@@ -127,7 +127,7 @@ mens_div();
                                         <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="imagens/azul_ceu_O.jpg">
                 <tr> 
                   <td height="206" valign="top"> <table width="100%" border="1" cellspacing="0" cellpadding="0">
-                      <?
+                      <?php 
                 for ($contador = 0;$contador <= pg_numrows($result)-1;$contador ++ ){
           db_fieldsmemory($result,$contador);
                   if( $numpre <> null ){
@@ -156,7 +156,7 @@ mens_div();
                           <?=$valortransacao?>
                           </font></td>
                       </tr>
-                      <?
+                      <?php 
                   if( $datavencimento != null ) {
                   ?>
                       <tr> 
@@ -205,12 +205,12 @@ mens_div();
                           <br>
                           </font></td>
                       </tr>
-                      <?
+                      <?php 
                   }else{
                   ?>
                       <td width="24%" valign="top"><strong><font size="2" color="black" face="Arial, Helvetica, sans-serif">Observa&ccedil;&otilde;es:</font></strong></td>
                       <td width="76%"> <font size="2" color="black" face="Arial, Helvetica, sans-serif"> 
-                        <?
+                        <?php 
             if( $liberado == null ){
                 ?>
                         <font color="black">
@@ -218,12 +218,12 @@ mens_div();
                         dados desta Guia de &nbsp;ITBI poderão ser modificados 
                         na seção de SOLICITAÇÃO DE ITBI. 
                         </font>
-            <?
+            <?php 
                     }
                   }
                   /*
           if($liberado != null) {
-                    ?><font color="black">&nbsp;Guia em Processo de Avaliação. Aguarde liberação.</font><?
+                    ?><font color="black">&nbsp;Guia em Processo de Avaliação. Aguarde liberação.</font><?php 
           }
                   */
                   ?>
@@ -232,7 +232,7 @@ mens_div();
            <tr align="center" valign="middle"> 
            <td colspan="2">
                    <font size="2 color="black"" face="Arial, Helvetica, sans-serif"> 
-            <?
+            <?php 
                         if($datavencimento != null) {
                         ?>
                         <form name="form1" method="post">
@@ -240,14 +240,14 @@ mens_div();
               <input type="hidden" name="itbinumpre" value="<?=$numpre?>">
               <input class="botao" type="button" name="imprimeguia" value="<?=$imprimeguia?>" class="botaoconfirma" onclick="js_emiteboletoitbi()">
                       </form>
-            <?
+            <?php 
                         }
                         ?>
             <input type="button" class="botao" name="retorna" value="Retorna" class="botaoconfirma" onclick="history.go(-1)">
             </font>
                         </td>
             </tr>
-            <?
+            <?php 
                 }
 
                 ?>
@@ -264,7 +264,7 @@ mens_div();
   </tr>
 </table>
 </center>
-<?
+<?php 
 db_rodape();
 ?>
 </body>

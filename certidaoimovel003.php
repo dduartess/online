@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -89,7 +89,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<? db_estilosite(); ?>
+<?php  db_estilosite(); ?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script>
@@ -156,7 +156,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 </script>
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" 
-      onLoad="js_carregando(true);" <?mens_OnHelp()?>>
+      onLoad="js_carregando(true);" <?php mens_OnHelp()?>>
 <div id='int_perc1' align="left" style="position:absolute;top:30%;left:35%; float:left; width:200; background-color:#ECEDF2;padding:5px;
                                         margin:0px; border:1px #C2C7CB solid; margin-left:10px; font-size:80%; visibility:hidden">
   <div style="border:1px #ffffff solid; margin:8px 3px 3px 3px;">
@@ -166,7 +166,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
   </div>
 </div>
 <br /> <br /> <br /> <center>
-<?
+<?php 
 //verifica se está logado
 if ((isset($id_usuario) && trim($id_usuario) != "") ) {
    $usuario = $id_usuario;
@@ -215,7 +215,7 @@ if((@$imobil==0 && @$iptubase==0) || @$usuario=="") {
        <input name="matricula1" type="text" class="digitacgccpf" id="matricula1" size="10" maxlength="10">
       </td>
      </tr>    
-<?
+<?php 
  /*
  *  Se o parametro de configuração do prefeitura on-line no dbportal, na tabela configdbpref, campo chamado w13_exigecpfcnpj
  *  estiver como true é para exibir os campos cnpj e cpf para o usuário do dbpref  
@@ -243,7 +243,7 @@ if ($oRetorno->w13_exigecpfcnpj == "t") {
               onKeyPress="FormataCPF(this,event); return js_teclas(event);">
       </td>
      </tr>
-<?
+<?php 
 }    
 ?>   
      <tr>
@@ -255,12 +255,12 @@ if ($oRetorno->w13_exigecpfcnpj == "t") {
      </tr>
     </table>
   </form>  
-<?
+<?php 
 } else {
 ?>
    <a href="certidaoimovel003.php?outro">:: Pesquisar Outro Imóvel ::</a><br><br>
    <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
-<?  
+<?php   
   //busca clientes do escritório 
   for ( $x=0; $x<$imobil; $x++ ) {
     if ( $x==0 ) {
@@ -272,7 +272,7 @@ if ($oRetorno->w13_exigecpfcnpj == "t") {
 	    </b>
 	  </td>
 	</tr>
-	<?
+	<?php 
       }
 	  db_fieldsmemory($result,$x);
 	  if($imobil==1 && $iptubase==0){
@@ -311,7 +311,7 @@ if( !isset($iLogin) ) {
      document.cookie = 'cookie_codigo_cgm=;';
 	 location.href = 'certidaoimovel003.php';
    </script>
-<?
+<?php 
 }
    //busca dados do issbase
    for($x=0;$x<$iptubase;$x++){ 
@@ -320,7 +320,7 @@ if( !isset($iLogin) ) {
 	     <tr height="20" bgcolor="<?=$w01_corfundomenu?>"> 
 	     <td colspan="3"> <b> Minhas Matrículas </b> </td> 
 	     </tr>
-<?
+<?php 
      }
 	 db_fieldsmemory($result2,$x);
 	
@@ -341,7 +341,7 @@ if( !isset($iLogin) ) {
     <img src="imagens/seta.gif" border="0">                                                                                                                                                                
   </td>                                                                                                                                                                                                        
   <td align="right">
-<?
+<?php 
   $sUrlMatric = base64_encode("matricula1=$j01_matric&cgc=$z01_cgccpf&opcao=m&id_usuario=".@$id_usuario);
   echo " <a class=\"links\" href=\"opcoescertidao.php?".$sUrlMatric."\"> 
            <b>".$j01_matric."</b> 
@@ -350,7 +350,7 @@ if( !isset($iLogin) ) {
   </td>                                                                                                                                                                                                        
   <td>                                                                                                                                                                                                          
 
-<?
+<?php 
   $sUrlNome = base64_encode("matricula1=$j01_matric&cgc=$z01_cgccpf&cpf=$z01_cgccpf&opcao=m&id_usuario=".@$id_usuario);
   echo " <a class=\"links\" href=\"opcoescertidao.php?".$sUrlNome."\"> 
            ".$z01_nome." - ".$proprietario."
@@ -361,12 +361,12 @@ if( !isset($iLogin) ) {
 <tr height="1" bgcolor="<?=$w01_corfundomenu?>">  
   <td colspan="3"></td>                                                                                                                                                                                                        
 </tr>
-<?  
+<?php   
    }
 ?>
 </table>
 </center>
-<?
+<?php 
 }
   db_logs("","",0,"Tela da Certidoo por Matricula.");
   if(isset($erroscripts)){

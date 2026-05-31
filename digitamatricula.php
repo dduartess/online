@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -71,7 +71,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-	<? db_estilosite(); ?>
+	<?php  db_estilosite(); ?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -85,9 +85,9 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
 <br /> <br /> <br /> <center>
-<?
+<?php 
   //verifica se está logado
 	if ((isset($id_usuario) && trim($id_usuario) != "") ) {
 
@@ -136,14 +136,14 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
         Matr&iacute;cula do Im&oacute;vel:&nbsp;
       </td>
       <td width="50%" height="30">
-      	<?
+      	<?php 
       	  db_input("matricula1", 10, 1, true, "text", 1, " class=\"digitacgccpf\" onfocus=this.value=''", "matricula1");
       	
       	?>
       </td>
      </tr>
     
-<?
+<?php 
  /*
  *  Se o parametro de configuração do prefeitura on-line no dbportal, na tabela configdbpref, campo chamado w13_exigecpfcnpj
  *  estiver como true é para exibir os campos cnpj e cpf para o usuário do dbpref  
@@ -172,7 +172,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
               onKeyPress="FormataCPF(this,event); return js_teclas(event);">
       </td>
      </tr>
-<?
+<?php 
   }    
 ?>   
      <tr>
@@ -185,7 +185,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
     </table>
   </form>
   
-<?
+<?php 
 
  } else {
 
@@ -195,7 +195,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
    <a href="digitamatricula.php?outro">:: Pesquisar Outro Imóvel ::</a><br><br>
    <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
  
- <?
+ <?php 
   
    //busca clientes do escritório
    
@@ -209,7 +209,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 	    </b>
 	  </td>
 	</tr>
-	<?
+	<?php 
       }
 			db_fieldsmemory($result,$x);
 			if($imobil==1 && $iptubase==0){
@@ -233,7 +233,7 @@ if( !isset($iLogin) ) {
      document.cookie = 'cookie_codigo_cgm=;';
 	 location.href = 'digitamatricula.php';
    </script>
- <?
+ <?php 
 
 }
    //busca dados do issbase
@@ -244,7 +244,7 @@ if( !isset($iLogin) ) {
 	     <tr height="20" bgcolor="<?=$w01_corfundomenu?>"> 
 	     <td colspan="3"> <b> Minhas Matrículas </b> </td> 
 	     </tr>
-	   <?
+	   <?php 
      }
     
 	db_fieldsmemory($result2,$x);
@@ -267,14 +267,14 @@ if( !isset($iLogin) ) {
   </td>                                                                                                                                                                                                        
 <td align="right">                                                                                                                                                                                         
 
-<?
+<?php 
   echo " <a class=\"links\" href=\"opcoesdebitospendentes.php?".base64_encode("matricula1=$j01_matric&cgc=$cgccpf_imobil&opcao=m&id_usuario=".@$id_usuario)."\"> <b>".$j01_matric."</b> </a> ";                          
 ?>
 
   </td>                                                                                                                                                                                                        
   <td>                                                                                                                                                                                                          
 
-<?
+<?php 
   if(strlen($cgccpf_imobil) > 11){
    $cgc = $cgccpf_imobil;
   } else {
@@ -290,13 +290,13 @@ if( !isset($iLogin) ) {
   </td>                                                                                                                                                                                                        
 </tr>                                                                                                                                                                                                          
 
-<?  
+<?php   
   }
 ?>
 
 </table>
 
-<?
+<?php 
 
    }
    db_logs("","",0,"Digita Codigo da Matrícula.");

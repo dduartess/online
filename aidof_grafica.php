@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -97,7 +97,7 @@ if(isset($verifica)){
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 
@@ -133,7 +133,7 @@ db_estilosite();
   
   
   
-<?
+<?php 
 for($i = 0;$i < $linha; $i++){
 	db_fieldsmemory($result,$i);
 	echo"

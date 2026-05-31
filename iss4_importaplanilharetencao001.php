@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -95,7 +95,7 @@ function js_vericampos(){
      return false
   }
   
-<?
+<?php 
      // conta se o contribuente possui alvará no mesmo município que se encontra
 	 // caso a consulta retorna um verdadeiro, se retornar zero o contribuente não
 	 // possui alvará no município
@@ -114,7 +114,7 @@ function js_vericampos(){
       alert("Selecione uma inscrição abaixo!");
       return false;
     }
-<?		 		 
+<?php 		 		 
   }
 
 ?>  
@@ -173,13 +173,13 @@ function SelecionaContribuinte(radio,tipo,total){
  
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <center>
-<?
+<?php 
 
 //verifica se está logado
 if(@$id_usuario !=""){
@@ -226,7 +226,7 @@ if(@$id_usuario !=""){
 		<tr>
 		  <td align="center"><strong>Competência:</strong>
 				<select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
-	      <?
+	      <?php 
           $sano = date("Y");
           if(date("m")==12)
             $sano ++;
@@ -251,7 +251,7 @@ if(@$id_usuario !=""){
 	
 	<form name="form2" method="post" enctype="multipart/form-data">
 		<table width="100%" class="texto">
-	  <?
+	  <?php 
       //é escritório?
       $wherebx = " and q10_dtfim is null ";
       if (@$mostrainscricao == 1) {
@@ -271,7 +271,7 @@ if(@$id_usuario !=""){
   			<tr height="20" >
   				<td colspan="3"><b>Mostrar inscriçoes</b> 
   				<select name="mostrainscricao" onchange = "document.form2.submit();">
-  	        <? 
+  	        <?php  
   	           echo "<option value = '1'".($mostrainscricao == 1?"selected":"").">Todas</option>";
   				     echo "<option value = '2'".($mostrainscricao == 2?"selected":"").">Somente baixadas</option>";
   				     echo "<option value = '3'".($mostrainscricao == 3?"selected":"").">Somente não baixadas</option>";
@@ -279,7 +279,7 @@ if(@$id_usuario !=""){
   				</select>
   				</td>
   			</tr>
-        <?
+        <?php 
                   //busca clientes do escritório
         for ($x = 0; $x < $escrito; $x++) {
           if($x == 0){
@@ -288,7 +288,7 @@ if(@$id_usuario !=""){
   					<td colspan="3"><b>Inscrições que tenho acesso</b>
   					</td>
   				</tr>
-  				<?
+  				<?php 
           }
           db_fieldsmemory($result,$x);
           echo "<tr>
@@ -315,7 +315,7 @@ if(@$id_usuario !=""){
 					<td colspan="3"><b>Minhas Inscrições</b>
 					</td>
 				</tr>
-				<?
+				<?php 
         }
         db_fieldsmemory($result2,$y-$x);
         echo "<tr>
@@ -332,7 +332,7 @@ if(@$id_usuario !=""){
       ?>
 		</table>
 		</form>
-	  <? 
+	  <?php  
     } else{
       if(@$_COOKIE["cookie_codigo_cgm"]!=""){
         @$cookie_codigo_cgm = $_COOKIE["cookie_codigo_cgm"];
@@ -375,7 +375,7 @@ if(@$id_usuario !=""){
 					<td align="center">
 					<strong>Competência:</strong>
 					<select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
-		      <?
+		      <?php 
 		      if ( $cgc_pref == "87366159000102" ) {
 		        $sano = 2010;
 		      } else {
@@ -408,13 +408,13 @@ if(@$id_usuario !=""){
       </tr>
 		</table>
 		</form>
-	  <?
+	  <?php 
     }
     ?>
 </center>
 </body>
 </html>
-<?
+<?php 
 db_logs("","",0,"Digita Codigo da Inscricao para o issqn retencao.");
 if(isset($erroscripts)){
   echo "<script>alert('".$erroscripts."');</script>";

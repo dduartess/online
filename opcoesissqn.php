@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -578,7 +578,7 @@ if(isset($primeiravez)){
             
             
         </script>
-        <?
+        <?php 
 
 // ################# função ######################################
 function monta_tabela($sql, $array_formata = array()){
@@ -654,11 +654,11 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 
 ?>
         <style type="text/css">
-            <?db_estilosite();?>
+            <?php db_estilosite();?>
         </style>
     </head>
     <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad=""
-        <? mens_OnHelp() ?>
+        <?php  mens_OnHelp() ?>
 >
         <form name="form1" method="post" action="opcoesissqn.php?cgc=$cgc">
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
@@ -677,7 +677,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 								<input name="modificando" type="hidden" value="<?=@$modificando?>">
 								<input name="plani" type="hidden" value="<?=@$plani?>">
 								<input name="z01_nome" type="hidden" value="<?=@$z01_nome?>">
-								<input name="z01_numcgm" type="hidden" value="<?@$z01_numcgm?>">
+								<input name="z01_numcgm" type="hidden" value="<?php @$z01_numcgm?>">
 								<input name="ttt" type="hidden">
 								<input name="planilha" type="hidden" value="<?=@$planilha?>">
 								<input name="nova" type="hidden" value="<?=@$nova?>">
@@ -703,7 +703,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                     </font>
                                 </small>
                             </td>
-                            <?
+                            <?php 
 				//echo "inscrição = $inscricaow";
 				if ($inscricaow =="" || $inscricaow=="f"){
 
@@ -767,12 +767,12 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 <td align="left" colspan="2">
                                     <select name="q21_tipolanc" onChange="js_tomado();">
                                         <option value="1">Tomado</option>
-                                        <?if($w13_libissprestado=="t"){?>
+                                        <?php if($w13_libissprestado=="t"){?>
                                         <option value="2">Prestado</option>
-                                        <?}?>
+                                        <?php }?>
                                     </select>
                                     &nbsp;&nbsp;&nbsp;&nbsp; 
-                                    <?
+                                    <?php 
 				//verifica se é a prefeitura
 				$where = "";
 				//echo"numcgm = $numcgm   ...... cgc = $cgc ........  cnpj $cgccpf";
@@ -813,7 +813,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 </td>
                                 <td>
                                     
-                                    <?if ($inscricaow==""){
+                                    <?php if ($inscricaow==""){
 					  $ins="0";
 					}else{
 					  $ins="$inscricaow";
@@ -864,7 +864,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                             Data da nota:
                                         </small>
                                     </b>
-                                    <? 
+                                    <?php  
 				//if(@$q21_datanota!=""){
 				//  $q21_datanota_dia = substr($q21_datanota,8,2);
 				// $q21_datanota_mes = substr($q21_datanota,5,2);
@@ -930,7 +930,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                             Aliquota:
                                         </small>
                                     </b>
-                                    <?
+                                    <?php 
 
 					$numcgm = isset($numcgm)?$numcgm:@$z01_numcgm;
 
@@ -941,16 +941,16 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 					$s = pg_num_rows($query);
 					if($w13_aliqissretido=="f"){?>
                                     <select name="aliquota" onChange="return js_veri();">
-                                        <?
+                                        <?php 
 					for($xx=0;$xx<$s;$xx++){
 					  db_fieldsmemory($query,$xx);
 					  ?>
                                         <option value="<?=$q81_valexe?>">
                                             <?=$q81_valexe?>
                                             %</option>
-                                        <?}?>
+                                        <?php }?>
                                     </select>
-                                    <?
+                                    <?php 
 }else{// não entra aki
   db_fieldsmemory($query,0);
   ?>
@@ -958,64 +958,64 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                         <option value="0">0%</option>
                                         <option value="0.5">0.5%</option>
                                         <option value="1"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="1"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="1"){echo "selected";}?>
 > 1% </option>
                                         <option value="1.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="1.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="1.5"){echo "selected";}?>
 > 1.5% </option>
                                         <option value="2"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="2"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="2"){echo "selected";}?>
 > 2% </option>
                                         <option value="2.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="2.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="2.5"){echo "selected";}?>
 > 2.5% </option>
                                         <option value="3"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="3"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="3"){echo "selected";}?>
 > 3% </option>
                                         <option value="3.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="3.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="3.5"){echo "selected";}?>
 > 3.5% </option>
                                         <option value="4"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="4"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="4"){echo "selected";}?>
 > 4% </option>
                                         <option value="4.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="4.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="4.5"){echo "selected";}?>
 > 4.5% </option>
                                         <option value="5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="5"){echo "selected";}?>
 > 5% </option>
                                         <option value="5.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="5.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="5.5"){echo "selected";}?>
 > 5.5% </option>
                                         <option value="6"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="6"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="6"){echo "selected";}?>
 > 6% </option>
                                         <option value="6.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="6.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="6.5"){echo "selected";}?>
 > 6.5% </option>
                                         <option value="7"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="7"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="7"){echo "selected";}?>
 > 7% </option>
                                         <option value="7.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="7.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="7.5"){echo "selected";}?>
 > 7.5% </option>
                                         <option value="8"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="8"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="8"){echo "selected";}?>
 > 8% </option>
                                         <option value="8.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="8.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="8.5"){echo "selected";}?>
 > 8.5% </option>
                                         <option value="9"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="9"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="9"){echo "selected";}?>
 > 9% </option>
                                         <option value="9.5"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="9.5"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="9.5"){echo "selected";}?>
 > 9.5% </option>
                                         <option value="10"
-                                            <?if(isset($q81_valexe)&&$q81_valexe=="10"){echo "selected";}?>
+                                            <?php if(isset($q81_valexe)&&$q81_valexe=="10"){echo "selected";}?>
 > 10% </option>
                                     </select>
-                                    <?}?>
+                                    <?php }?>
                                 </td>
                             </tr>
                             <tr>
@@ -1079,7 +1079,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 </td>
                             </tr>
                         </table>
-                        <?
+                        <?php 
 		
 		
 		// ######### botão proximo ###############
@@ -1606,7 +1606,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                         <th>
                                         </th>
                                     </tr>
-                                    <?
+                                    <?php 
 //if($q21_tipolanc==1){$q21_tipolanc= "tomado";	}
 /*
  $parametro = array(

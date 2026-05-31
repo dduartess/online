@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -274,20 +274,20 @@ mens_help();
 js_verificapagina("digitafornecedor.php,index.php");
 </script>
 </head>
-<?
+<?php 
 
 db_logs("","",0,"Fornecedor Pesquisado. CGCCPF: $cgccpf");
 $dblink="digitafornecedor.php";
 ?>
-<body bgcolor="#00436e" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"   <? mens_OnHelp() ?> >
-<?
+<body bgcolor="#00436e" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"   <?php  mens_OnHelp() ?> >
+<?php 
 mens_div();
 include("processando.php");
 ?>
 <table width="657" height="100%" border="0" cellpadding="0" cellspacing="0" background="imagens/azul_ceu_O.jpg">
   <tr>
     <td height="13">
-      <?include("retornar.php")?>
+      <?php include("retornar.php")?>
     </td>
   </tr>
   <tr>
@@ -303,7 +303,7 @@ include("processando.php");
   </tr>
   <tr>
     <td height="173" valign="top">
-        <?
+        <?php 
          //pega número do cgm
          $result = @db_query("SELECT z01_numcgm FROM cgm where Z01_CGCCPF='$cgccpf'");
          $dados = @pg_fetch_row( $result, 0 );

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -80,7 +80,7 @@ if(strcmp($dtat, $dtvenc)<"0"){
      <?=$cernomecontr?><br><br>
      Vencimento: <?=db_formatar($cerdtvenc,'d')?>
     </div>
-    <?
+    <?php 
   }else{
     Header('Content-Type: application/pdf');
     header("Expires: Mon, 26 Jul 2001 05:00:00 GMT");              // Date in the pas

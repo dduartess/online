@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -58,7 +58,7 @@ function js_alterar(orc,sol,forne,cgm){
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -66,7 +66,7 @@ db_estilosite()
 <br>
 <table width='600px' align='center' class="tab"  >
 <form name="form1" method="post" target="">
-<?
+<?php 
 if($id_usuario!=""){
 	if(!isset($mostra)){
 		$mostra = 1;
@@ -75,13 +75,13 @@ if($id_usuario!=""){
 ?>  
  <div align="center" class='titulo'> Situação dos orçamentos
   <select name="mostra"  onchange="js_mostra()">
-   <option value=1 <? if($mostra=="1"){ echo "selected"; }?> >Abertos</option>				 
-	 <option value=2 <? if($mostra=="2"){ echo "selected"; }?> >Vencidos</option>
-   <option value=3 <? if($mostra=="3"){ echo "selected"; }?> >Todos</option>
+   <option value=1 <?php  if($mostra=="1"){ echo "selected"; }?> >Abertos</option>				 
+	 <option value=2 <?php  if($mostra=="2"){ echo "selected"; }?> >Vencidos</option>
+   <option value=3 <?php  if($mostra=="3"){ echo "selected"; }?> >Todos</option>
   </select> 
  </div>
  <br>  
-<?	
+<?php 	
 if ($mostra==1) {	// se for em ABERTO .............
  	$sql="select distinct on(pc20_codorc) 
  	             pc20_codorc,

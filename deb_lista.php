@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -43,7 +43,7 @@ $linhasdeb=pg_num_rows($resultdeb);
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -64,7 +64,7 @@ function js_cod(cod){
 		<td align= 'center'>Data de lançamento</td>
 		<td align= 'center'>Opção</td>
 	</tr>
-	<?for ($i = 0; $i < $linhasdeb; $i++) {
+	<?php for ($i = 0; $i < $linhasdeb; $i++) {
 		db_fieldsmemory($resultdeb,$i);
 		echo"<tr class='texto'>
 			<td align= 'center'> $d63_codigo</td>
@@ -77,7 +77,7 @@ function js_cod(cod){
 	</form>
 </table>
 </html>
-<?
+<?php 
 $numpres="";
 if(isset($imprime)){
 	$sqlnumpre ="select * from debcontapedidotiponumpre where d67_codigo=$cod";

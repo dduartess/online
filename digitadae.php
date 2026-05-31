@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -106,12 +106,12 @@ function js_vericampos(){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
-<?
+<?php 
 if(isset($erroscripts)){
 echo "<script>
 		function js_loadmensagem(){
@@ -127,13 +127,13 @@ echo "<script>
 }
 ?>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="js_loadmensagem();" <? mens_OnHelp() ?>>
-<? mens_div(); ?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="js_loadmensagem();" <?php  mens_OnHelp() ?>>
+<?php  mens_div(); ?>
 
 
 
 
-<?
+<?php 
   //verifica se está logado
   if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
 	   @$usuario = $id_usuario==""?$_COOKIE["cookie_codigo_cgm"]:$id_usuario;
@@ -196,7 +196,7 @@ echo "<script>
 </table>
 </form>
 
-<?
+<?php 
   }else{
   	$sql= "select z01_cgccpf,z01_nome,q02_inscr,q02_numcgm from issbase inner join cgm on z01_numcgm=q02_numcgm where z01_numcgm=$usuario;";
   
@@ -215,7 +215,7 @@ echo "<script>
   		 	<td colspan="2" align="center"> <br><br> <?=$DB_mens1?> <br><br><br> </td>
   		</tr>
   		<tr>
-  			<td colspan="2" align="center" class="titulo2"><strong> <?echo $z01_nome;?> </strong></td>
+  			<td colspan="2" align="center" class="titulo2"><strong> <?php echo $z01_nome;?> </strong></td>
   		</tr>
   		
   		<tr>
@@ -248,7 +248,7 @@ echo "<script>
 </table>
 </form>
 
-<?
+<?php 
   
  
   

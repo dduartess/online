@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -76,9 +76,9 @@ if (isset($e60_numemp) and $e60_numemp !=""){
 <table width="100%" border="0" align="center" cellspacing="2" class="bold4">
  <tr>
   <td width="25%" align="right" nowrap title="<?=$Te60_numemp?>"><?=$Le60_numemp?></td>
-  <td width="15%" align="left" nowrap><? db_input("e60_numemp",15,"",true,"text",3); ?> </td>
+  <td width="15%" align="left" nowrap><?php  db_input("e60_numemp",15,"",true,"text",3); ?> </td>
   <td width="*%" align="left" nowrap title="<?=$Te60_codemp ?>"><?=$Le60_codemp ?>
-   <?
+   <?php 
     db_input("e60_codemp",15,"",true,"text",3);
    if($e60_anousu!=db_getsession("DB_anousu"))
      echo "<font color='red'><b>RESTOS À PAGAR</b></font>";
@@ -88,13 +88,13 @@ if (isset($e60_numemp) and $e60_numemp !=""){
  <tr>
   <td align="right" nowrap title="<?=$Te61_autori?>">
    <?=$Le61_autori?></td>
-  <td align="left" nowrap><? db_input("e61_autori",15,"",true,"text",3); ?> </td>
-  <td align="left" nowrap title="<?=$Te60_destin ?>"><?=$Le60_destin ?><? db_input("e60_destin",40,"",true,"text",3); ?></td>
+  <td align="left" nowrap><?php  db_input("e61_autori",15,"",true,"text",3); ?> </td>
+  <td align="left" nowrap title="<?=$Te60_destin ?>"><?=$Le60_destin ?><?php  db_input("e60_destin",40,"",true,"text",3); ?></td>
  </tr>
  <tr>
   <td align="right" nowrap title="<?=$Te60_emiss?>"><?=$Le60_emiss?></td>
   <td align="left" nowrap>
-    <?
+    <?php 
     if(isset($e60_emiss) and ($e60_emiss != "")){
       list($e60_emiss_dia,$e60_emiss_mes,$e60_emiss_ano)= split('[/.-]',$e60_emiss);
      }
@@ -103,7 +103,7 @@ if (isset($e60_numemp) and $e60_numemp !=""){
    </td>
   <td align="left" nowrap title="<?=$Te60_vencim ?>">
    <?=$Le60_vencim ?>
-   <? if (isset($e60_vencim) and ($e60_vencim != "")) {
+   <?php  if (isset($e60_vencim) and ($e60_vencim != "")) {
        list($e60_vencim_dia,$e60_vencim_mes,$e60_vencim_ano) = split('[/.-]',$e60_vencim);
       }
       db_inputdata('e60_vencim',@$e60_vencim_dia,@$e60_vencim_mes,@$e60_vencim_ano,true,'text',3,"");
@@ -113,12 +113,12 @@ if (isset($e60_numemp) and $e60_numemp !=""){
  <tr>
   <td  align="right" nowrap title="<?=$Te60_numcgm ?>"><b><?=$Le60_numcgm?></b></td>
   <td  colspan="2"  align="left" nowrap title="<?=$Te60_numcgm ?>">
-   <? db_input("e60_numcgm",8,"",true,"text",3);
+   <?php  db_input("e60_numcgm",8,"",true,"text",3);
       db_input("z01_nome",40,"",true,"text",3);
    ?>
   </td>
  </tr>
- <?  //-----------  dotacão
+ <?php   //-----------  dotacão
      if (isset($e60_coddot) and ($e60_coddot !="")) {
          $sql= $clorcdotacao->sql_query($e60_anousu,$e60_coddot,"o56_elemento,o56_descr,fc_estruturaldotacao(o58_anousu,o58_coddot) as o58_estrutdespesa");
          $res = $clorcdotacao->sql_record($sql);
@@ -131,46 +131,46 @@ if (isset($e60_numemp) and $e60_numemp !=""){
   <td  align="right" nowrap title="<?=$Te60_coddot ?>">
    <?=$Le60_coddot?></td>
   <td  colspan=2   align="left" >
-   <? db_input("e60_coddot",8,"",true,"text",3);
+   <?php  db_input("e60_coddot",8,"",true,"text",3);
       db_input("o58_estrutdespesa",50,"",true,"text",3);   ?> </td>
  </tr>
  <tr>
   <td  align="right"> &nbsp; </td>
   <td  colspan="2" align="left" nowrap >
-      <? db_input("o56_elemento",20,"",true,"text",3);
+      <?php  db_input("o56_elemento",20,"",true,"text",3);
          db_input("o56_descr",50,"",true,"text",3);   ?> </td>
  </tr>
  <tr> <!--- valor --->
   <td   align="right" nowrap title="<?=$Te60_vlremp ?>"><?=$Le60_vlremp ?></td>
-  <td   align="left" nowrap title="<?=$Te60_vlremp ?>"><? db_input("e60_vlremp",8,"",true,"text",3);?></td>
+  <td   align="left" nowrap title="<?=$Te60_vlremp ?>"><?php  db_input("e60_vlremp",8,"",true,"text",3);?></td>
   <td   align="left" nowrap title="<?=$Te60_codtipo ?>">
      <?=$Le60_codtipo ?>
-     <?  db_input("e60_codtipo",6,"",true,"text",3);
+     <?php   db_input("e60_codtipo",6,"",true,"text",3);
          db_input("e41_descr",20,"",true,"text",3);   ?>
   </td>
  </tr>
  <tr>
   <td   align="right" nowrap title="<?=$Te60_vlrliq ?>"><?=$Le60_vlrliq ?></td>
-  <td   align="left" nowrap title="<?=$Te60_vlremp ?>"><? db_input("e60_vlrliq",8,"",true,"text",3);?></td>
+  <td   align="left" nowrap title="<?=$Te60_vlremp ?>"><?php  db_input("e60_vlrliq",8,"",true,"text",3);?></td>
   <td   align="left" nowrap >
   <?=@$Le63_codhist ?>
-  <?   db_input("e63_codhist",6,"",true,"text",3);
+  <?php    db_input("e63_codhist",6,"",true,"text",3);
        db_input("e40_descr",40,"",true,"text",3);  ?></td>
  </tr>
  <tr>
   <td align="right" nowrap title="<?=$Te60_vlrpag ?>"><?=$Le60_vlrpag ?></td>
-  <td align="left" nowrap title="<?=$Te60_vlrpag ?>"><? db_input("e60_vlrpag",8,"",true,"text",3);?></td>
+  <td align="left" nowrap title="<?=$Te60_vlrpag ?>"><?php  db_input("e60_vlrpag",8,"",true,"text",3);?></td>
   <td align="left" nowrap title="<?=$Te60_resumo ?>"><?=$Le60_resumo ?>  </td>
  </tr>
  <tr>
   <td align="right" nowrap title="<?=$Te60_vlranu ?>"><?=$Le60_vlranu ?></td>
-  <td align="left" nowrap title="<?=$Te60_vlranu ?>"><? db_input("e60_vlranu",8,"",true,"text",3);?></td>
-  <td rowspan=2 align="left" ><?  db_textarea("e60_resumo",3,40,""); ?> </td>
+  <td align="left" nowrap title="<?=$Te60_vlranu ?>"><?php  db_input("e60_vlranu",8,"",true,"text",3);?></td>
+  <td rowspan=2 align="left" ><?php   db_textarea("e60_resumo",3,40,""); ?> </td>
  </tr>
  <tr>
   <td align="right" nowrap title="Valor a Pagar"><strong>A pagar:</strong></td>
   <td align="left" nowrap title="<?=$Te60_vlranu ?>">
-  <?
+  <?php 
   $e60_apagar = $e60_vlremp-$e60_vlranu-$e60_vlrpag;
    db_input("e60_apagar",8,"",true,"text",3);
   ?></td>
@@ -179,7 +179,7 @@ if (isset($e60_numemp) and $e60_numemp !=""){
 <div align="center" class="bold2">
 LANÇAMENTOS
 </div>
-<?
+<?php 
  $sql = " select c70_codlan,
                     c70_data,
                     c53_descr,

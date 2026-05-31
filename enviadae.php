@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -79,18 +79,18 @@ return false;
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?
+<?php 
 mens_div();
 ?>
 <center>
-<table align"center" width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table align"center" width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
 <tr>
     <td align="left" valign="top">
       <table width="100%" height="200" border="0" cellpadding="0" cellspacing="0">
@@ -125,7 +125,7 @@ mens_div();
 </form>
 </body>
 </html>
-<?
+<?php 
 if(isset($enviadae)){
   $data = date("Y-m-d");
   pg_exec("update db_dae set w04_enviado = 't', w04_resp = '$responsavel', w04_telcontato = '$telcontato' where w04_codigo = $codigo");

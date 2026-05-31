@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -56,7 +56,7 @@ function js_alterar(orc,sol,forne,cgm){
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -64,7 +64,7 @@ db_estilosite()
 <br>
 <table width='600px' align='center' class="tab"  >
 <form name="form1" method="post" target="">
-<?
+<?php 
 
 
 if($id_usuario!=""){
@@ -74,7 +74,7 @@ if($id_usuario!=""){
 
 ?>  <div align="center" class='titulo'>Ordems de Compra:
 	<select name="mostra"  onchange="js_mostra()">
-<?
+<?php 
     echo"
     	 		 <option value=\"1\"".($mostra==1?" selected":"").">Apenas com saldo a entregar/liquidar</option>
                  <option value=\"2\"".($mostra==2?" selected":"").">Todos</option>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -64,12 +64,12 @@ if($db_verificaip == "0"){
 <script>
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <div id='int_perc1' align="left" style="position:absolute;top:30%;left:35%; float:left; width:200; background-color:#ECEDF2; padding:5px; margin:0px; border:1px #C2C7CB solid; margin-left:10px; font-size:80%; visibility:hidden">
   <div style="border:1px #ffffff solid; margin:8px 3px 3px 3px;">
    <div id='int_perc2' style="width:100%; background-color:#eaeaea;" align="center"><img src="imagens/processando.gif" align="center"> Processando...</div>
@@ -80,7 +80,7 @@ if($db_verificaip == "0"){
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
 <center><br><br>
-<?
+<?php 
   //verifica se está logado
   if($id_usuario!="" || $_COOKIE["cookie_codigo_cgm"]!=""){
    $usuario = $id_usuario==""?$_COOKIE["cookie_codigo_cgm"]:$id_usuario;
@@ -119,7 +119,7 @@ if($db_verificaip == "0"){
        <b>Minhas Matrículas</b>
       </td>
      </tr>
-     <?
+     <?php 
      for($i=0;$i<$linhas2;$i++){
       db_fieldsmemory($result2,$i);
      ?>
@@ -128,14 +128,14 @@ if($db_verificaip == "0"){
        <b><a href="opcoesitbi.php?matricula1=<?=$j01_matric?>&codigo_cgm=<?=$z01_numcgm?>&cpf=<?=$cpf?>&cgc=<?=$cgc?>&opcao=mi&id_usuario=<?=$id_usuario?>"><?=$j01_matric?> - <?=$z01_ender?> <?=$z01_numero?></a></b>
       </td>
      </tr>
-     <?}?>
+     <?php }?>
      <tr height="30">
       <td align="center">
        <a href="digitaitbi.php?outro">Acessar Outro Contribuinte</a>
       </td>
      </tr>
     </table>
-    <?
+    <?php 
    }
   }else{
 ?>
@@ -184,9 +184,9 @@ if($db_verificaip == "0"){
     </td>
   </tr>
 </table>
-<?}?>
+<?php }?>
 </center>
-<?
+<?php 
 db_logs("","",0,"Digita Codigo da Matricula do ITBI.");
 if(isset($erroscripts)){
   echo "<script>alert('".$erroscripts."');</script>";

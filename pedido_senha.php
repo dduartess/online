@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -66,7 +66,7 @@ if(isset($sVr) && $sVr != 0){
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
 
-<?
+<?php 
 if (isset($cgccpf)) {
 
   $cgccpf = str_replace(".","",$cgccpf);
@@ -262,7 +262,7 @@ function formataCpf($sCpf){
  </tr>
 </table>
 <form name="form1" method="post" target="CentroPref">
-<table width="80%" align="center" border="0" cellpadding="1" cellspacing="1" bgcolor="<?$w01_corbody?>" class="bold10">
+<table width="80%" align="center" border="0" cellpadding="1" cellspacing="1" bgcolor="<?php $w01_corbody?>" class="bold10">
   <tr bgcolor="<?=$w01_corbody?>" class="bold3">
     <td colspan="2"><?= $sTitulo; ?></td>
     <td>&nbsp;&nbsp;</td>
@@ -273,7 +273,7 @@ function formataCpf($sCpf){
   <tr>
     <td width="13%" colspan="2" align='left'><b>CONTRIBUINTE/SERVIDOR:&nbsp;</b></td>
     <td width="60%" colspan="2" align="left">
-    <?
+    <?php 
      $sSeleciona = array ("1" => "Contribuinte",
                           "2" => "Servidor Municipal");
      db_select('srvctb', $sSeleciona, true, 1,"onChange='js_redireciona(this.value);'");
@@ -287,7 +287,7 @@ function formataCpf($sCpf){
  </tr>
 </table>
 <table id="contribuinte" width="80%" align="center" border="0" cellpadding="5" cellspacing="1"
-       bgcolor="<?$w01_corbody?>" class="bold4">
+       bgcolor="<?php $w01_corbody?>" class="bold4">
   <tr class="pequeno3">
     <td colspan="2">&nbsp;</td>
   </tr>
@@ -320,7 +320,7 @@ function formataCpf($sCpf){
 </table>
 
 <table id="servidor" width="80%" align="center" border="0"
-       cellpadding="5" cellspacing="1" bgcolor="<?$w01_corbody?>"
+       cellpadding="5" cellspacing="1" bgcolor="<?php $w01_corbody?>"
        class="bold4" style="display: none">
   <tr>
     <td width="15%">Matricula:</td>
@@ -349,7 +349,7 @@ function formataCpf($sCpf){
     <td width="15%">Data Nascimento:</td>
     <td width="1%"><span><font color='#E9000'> * </font></span></td>
     <td width="10%" colspan="9">
-    <?
+    <?php 
         if(@$z01_nasc != ""){
           $z01_nasc_dia = substr($z01_nasc,8,2);
           $z01_nasc_mes = substr($z01_nasc,5,2);

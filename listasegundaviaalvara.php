@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -169,11 +169,11 @@ js_verificapagina("opcoesdebitospendentes.php");
 
                 </td>
               </tr>
-              <?
+              <?php 
 		  for ($contador=0; $contador < pg_numrows($result); $contador ++){
 		     db_fieldsmemory($result,$contador);
 		  ?>
-              <?
+              <?php 
 		  }
 		  ?>
             </table></td>
@@ -189,7 +189,7 @@ js_verificapagina("opcoesdebitospendentes.php");
             Atividade</strong></td>
           <td class="tabfonte" width="12%" height="26" align="center"> <strong>Tipo</strong></td>
         </tr>
-        <?
+        <?php 
   	    for ($contador=0; $contador < pg_numrows($result); $contador ++){
 		   db_fieldsmemory($result,$contador);
 		?>
@@ -207,7 +207,7 @@ js_verificapagina("opcoesdebitospendentes.php");
 
           </td>
         </tr>
-        <?
+        <?php 
 		}
 		?>
       </table></td>

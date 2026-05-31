@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -72,7 +72,7 @@ class cl_iframe_seleciona {
          $arquivo.=".php";
          umask(74);
 	 $fd = fopen($arquivo,"w") or die('Erro ao abrir!');
-	 fputs($fd,' <?    '."\n");
+	 fputs($fd,' <?php     '."\n");
 	 fputs($fd,' $textocabec="'.$this->textocabec.'";'."\n");
 	 fputs($fd,' $textocorpo="'.$this->textocorpo.'";'."\n");
 	 fputs($fd,' $fundocabec="'.$this->fundocabec.'";'."\n");
@@ -220,7 +220,7 @@ class cl_iframe_alterar_excluir_html{
      $arquivo.=".php";
      umask(74);
      $fd = fopen($arquivo,"w") or die('Erro ao abrir!');
-     fputs($fd,' <?    '."\n");
+     fputs($fd,' <?php     '."\n");
      fputs($fd,' $textocabec="'.$this->textocabec.'";'."\n");
      fputs($fd,' $textocorpo="'.$this->textocorpo.'";'."\n");
      fputs($fd,' $fundocabec="'.$this->fundocabec.'";'."\n");
@@ -432,14 +432,14 @@ class cl_criaabas {
                 for(y=0; y < document.forms['formaba'].length; y++){
      	          tab[x].style.border = '1px outset #cccccc';
  	          tab[x].style.borderBottomColor = '#000000';
- <?
+ <?php 
     reset($this->identifica);
  for($w=0; $w<sizeof($this->identifica); $w++){
        $chave=key($this->identifica);
  ?>     
   	          document.formaba.<?=$chave?>.style.color ='<?=(isset($this->cortexto[$chave])&&$this->cortexto[$chave]!=""?$this->cortexto[$chave]:"black")?>';;
   	          document.formaba.<?=$chave?>.style.fontWeight = 'normal';
-<?
+<?php 
      next($this->identifica);
    }   
 ?>		  
@@ -511,7 +511,7 @@ class cl_criaabas {
         <td align="left" valign="top" bgcolor="#CCCCCC">
 	  <table border="0" cellpadding="0" cellspacing="0" marginwidth="0" >
    	    <tr>
- <?
+ <?php 
     reset($this->identifica);
     for($w=0; $w<sizeof($this->identifica); $w++){
        $chave=key($this->identifica);
@@ -530,7 +530,7 @@ class cl_criaabas {
                   </tr>
                 </table>
               </td>
-<?	      
+<?php 	      
      next($this->identifica);
     } 	      
 ?>	      
@@ -543,7 +543,7 @@ class cl_criaabas {
       <form name="form_iframes" method="post" id="form_iframes" >
       <tr>
         <td height="340" align="center">   
- <?
+ <?php 
     reset($this->identifica);
     for($w=0; $w<sizeof($this->identifica); $w++){
        $chave=key($this->identifica);
@@ -558,7 +558,7 @@ class cl_criaabas {
             <iframe  id='<?=$chave?>' name="iframe_<?=$chave?>" class="bordasi" <?=$src?> frameborder="0" marginwidth="0" leftmargin="0" topmargin="0"   height="<?=$this->iframe_height?>" scrolling="<?=$this->scrolling?>"  width="<?=$this->iframe_width?>">
 	      </iframe>
 	  </div>    
-<?
+<?php 
      next($this->identifica);
    }
 ?>	    
@@ -567,7 +567,7 @@ class cl_criaabas {
       </tr>
       </form>
       </table>
- <?     
+ <?php      
   reset($this->identifica);
   $chave=key($this->identifica);
   echo "
@@ -634,7 +634,7 @@ class cl_iframe_alterar_excluir {
      $arquivo.=".php";
      umask(74);
      $fd = fopen($arquivo,"w") or die('Erro ao abrir!');
-     fputs($fd,' <?    '."\n");
+     fputs($fd,' <?php     '."\n");
      fputs($fd,' $textocabec="'.$this->textocabec.'";'."\n");
      fputs($fd,' $textocorpo="'.$this->textocorpo.'";'."\n");
      fputs($fd,' $fundocabec="'.$this->fundocabec.'";'."\n");

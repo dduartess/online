@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -39,7 +39,7 @@ parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" type="text/javascript" src="scripts/md5.js"></script>
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
 </script>
@@ -59,7 +59,7 @@ function js_submeter() {
 }
 </script>
 <style type="text/css">
-<?db_estilosite()?>
+<?php db_estilosite()?>
 </style>
 
 </head>
@@ -68,6 +68,6 @@ function js_submeter() {
  <br><br><br><br>
  <?=$DB_mens1?>
 </div><br><br><br>
-<?db_rodape();?>
+<?php db_rodape();?>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -66,7 +66,7 @@ $clcadescrito = new cl_cadescrito;
   </tr>
   <tr> 
     <td align="center" valign="top"> 
-      <?
+      <?php 
       if(!isset($pesquisa_chave)){
         if(isset($campos)==false){
           $campos = "cadescrito.q86_numcgm,cgm.z01_nome,cgm.z01_ender, cgm.z01_numero, cgm.z01_compl";
@@ -93,11 +93,11 @@ $clcadescrito = new cl_cadescrito;
 </table>
 </body>
 </html>
-<?
+<?php 
 if(!isset($pesquisa_chave)){
   ?>
   <script>
   </script>
-  <?
+  <?php 
 }
 ?>

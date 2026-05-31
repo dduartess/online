@@ -1,5 +1,6 @@
 <?php
 include_once("libs/legacy_compat.php");
+include_once("libs/legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -338,7 +339,7 @@ if (isset($incluir)){
 ?>
 <html>
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 <head>
 <title>Cadastro de departamento</title>
@@ -395,7 +396,7 @@ function js_verifica(){
     	</td>
     	<td align="left"" >
     	<select name="it01_tipotransacao"  >
-      <?
+      <?php 
 		  
 		  $sqltipo = "select * from itbitransacao";
 	      $resulttipo= pg_query($sqltipo);
@@ -450,7 +451,7 @@ function js_verifica(){
     	<td align="left" ><input name="it01_mail" type="text" >
     	</td>
   	</tr>
-  	<?
+  	<?php 
   	if ($tipo=="urbano"){
   	?>
   	<tr class="texto">
@@ -482,7 +483,7 @@ function js_verifica(){
     	</td>
     	<td align="left" >
 		<select name="it05_itbisituacao"  >
-     <?
+     <?php 
 		  $sqlsit = "select * from itbisituacao";
 	      $resultsit= pg_query($sqlsit);
 	  	  $linhassit= pg_num_rows($resultsit);
@@ -495,7 +496,7 @@ function js_verifica(){
     	
     	</td>
   	</tr>
-  	<?
+  	<?php 
   	}elseif($tipo=="rural"){
   	?>
  <tr class="texto">
@@ -521,7 +522,7 @@ function js_verifica(){
 		 	<fieldset >
 		    	<legend>Dados da área</legend>
 		    	<table width="100%"  >
-		       	<?
+		       	<?php 
 		       	$sqlcar  ="select * from caracter inner join cargrup on cargrup.j32_grupo = caracter.j31_grupo where j32_tipo = 'I'";
 		       	$resultcar= pg_query($sqlcar);
 		       	$linhascar=pg_num_rows($resultcar);
@@ -553,7 +554,7 @@ function js_verifica(){
     	</td>
     </tr>
 
-  	<?
+  	<?php 
   	}
   	?>
   	<tr class="texto">
@@ -567,7 +568,7 @@ function js_verifica(){
 </form>
 <html>
 
-<?
+<?php 
 if($cod!=""){
 	echo"
 	<script>

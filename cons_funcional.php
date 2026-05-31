@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -56,7 +56,7 @@ db_logs("","",0,"Consulta Funcional.");
   <td><br></td>
  </tr>
 </table>
-<?
+<?php 
 if ($id_usuario != "") { 
 ?>
 
@@ -65,7 +65,7 @@ if ($id_usuario != "") {
   document.location.href = 'cons_cgmservrhpessoal.php?'+idusuario;
 </script>
 
-<?
+<?php 
 } else if ($w13_permfornsemlog == "f") {
 ?>
  <table width="300" align="center" border="0" bordercolor="#cccccc" cellpadding="2" cellspacing="0" class="texto">
@@ -76,7 +76,7 @@ if ($id_usuario != "") {
    </td>
   </tr>
  </table>
-<?
+<?php 
 }
 ?>
 </body>

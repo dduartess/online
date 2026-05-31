@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -151,7 +151,7 @@ return false;
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 td{
@@ -162,13 +162,13 @@ td{
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?
+<?php 
 mens_div();
 ?>
 <center>
 <form name="form1" method="post" action="valoresdae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo)?>">
 <input type="hidden" name="tamanho">
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
 <tr>
     <td align="left" valign="top">
       <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
@@ -285,7 +285,7 @@ mens_div();
 		  Data pgto.
 		</td>
 	      </tr>
-	      <?
+	      <?php 
               $data = @$ano.@$mes1.@$dia;
               if($data == ""){
                 $data = "null";

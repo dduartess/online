@@ -51,7 +51,7 @@ $clouvidoriaatendimento = new cl_ouvidoriaatendimento;
 <table align="center" valign="top">
   <tr> 
     <td> 
-      <?
+      <?php 
       
 	      $sWhere  = "    ov01_instit       = ".db_getsession('DB_instit');
 	      $sWhere .= "and ov09_protprocesso = {$oGet->iCodProcesso}";

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -68,7 +68,7 @@ if($numrows > 0) {
       </CENTER>
     </body>
     </html>
-    <?
+    <?php 
     exit;
   }
 }

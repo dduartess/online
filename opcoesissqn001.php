@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -180,7 +180,7 @@ function js_checkpaga(obj){
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 .planilha {
@@ -191,15 +191,15 @@ db_estilosite();
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?//mens_div();?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php //mens_div();?>
 <form name="form1" method="post" action="opcoesissqn001.php">
 <center>
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
    <tr align="center">
     <td>
      <table width="100%" border="0" cellspacing="0" class="texto">
-    <?
+    <?php 
 
     if(isset($comp_planilha) && $comp_planilha != ""){
        $clquery->sql_query("issplanit"," distinct q21_inscr,q21_cnpj,q21_nome,q21_servico,sum(q21_valor) as q21_valor",""," q21_planilha = $comp_planilha group by q21_cnpj,q21_inscr,q21_nome,q21_servico");
@@ -233,7 +233,7 @@ db_estilosite();
          <input type="button" value="Voltar" onclick="history.back()">
         </td>
        </tr>
-       <?
+       <?php 
      }else{
        ?>
            <tr><td><input type="hidden" name="alterplan" value=""></td></tr>
@@ -260,7 +260,7 @@ db_estilosite();
            <tr>
              <td align="right" valign="top">&nbsp;<font color="<?=$w01_corfontesite?>" face="Arial, Helvetica, sans-serif">Observa&ccedil;&atilde;o:</font></td>
              <td>
-               <?
+               <?php 
                
                if($q20_numpre != 0){
                ?>
@@ -270,7 +270,7 @@ db_estilosite();
                O recibo poder&aacute; ser emitido at&eacute; a data
                de seu vencimento.<br>
                </font>
-               <?
+               <?php 
                }else{
                ?>
                <font color="<?=$w01_corfontesite?>" face="Arial, Helvetica, sans-serif">Após
@@ -279,7 +279,7 @@ db_estilosite();
                correção da planilha após e emissão do bloqueto, entre
                em contato com a prefeitura.<br>
                </font>
-               <?
+               <?php 
                }
                ?>
              </td>
@@ -295,7 +295,7 @@ db_estilosite();
            </tr>
            <tr>
              <td colspan="2" >
-       <?
+       <?php 
        $clquery->sql_query("issplan","q20_planilha, q20_ano, q20_mes","q20_mes","q20_inscr= $inscricao and q20_planilha = $planilha");
        $clquery->sql_record($clquery->sql);
        $result = $clquery->result;
@@ -362,7 +362,7 @@ db_estilosite();
 <tr>
   <td colspan="2" align="center">
     Data Pagamento:
-    <?
+    <?php 
     $mescorreto += 1;
     if($mescorreto>12){
       $mescorreto = 1;
@@ -393,7 +393,7 @@ db_estilosite();
   <td height="60" align="" colspan="2">&nbsp;
   </td>
 </tr>
-<? if (@$inscricaow==""){
+<?php  if (@$inscricaow==""){
 	$inscricaow = 0;
 } 
 ?>
@@ -403,7 +403,7 @@ db_estilosite();
     <input name="inscricaow" type="hidden" value="<?=@$inscricaow?>">
     <input name="nomecontri" type="hidden" value="<?=@$nomecontri?>">
     <input name="fonecontri" type="hidden" value="<?=@$fonecontri?>">
-<?
+<?php 
 }
 ?>
 </center>

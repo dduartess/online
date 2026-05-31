@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -40,7 +40,7 @@ parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 <script>
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -103,7 +103,7 @@ db_estilosite()
 			</td>
 		</tr>
 		
-	<?
+	<?php 
 	//echo "$edital";
 	$data= date("Y-m-d");
 	$hora = date("H:i");

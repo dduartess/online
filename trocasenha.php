@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -168,13 +168,13 @@ return false;
 }
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
@@ -186,7 +186,7 @@ mens_div();
   </tr>
   <tr>
     <td height="200" align="center" valign="middle"><!-- InstanceBeginEditable name="digita" -->
-    <?
+    <?php 
     $sql = "select nome,login, senha as senhaatual
               from db_usuarios
              where id_usuario     = $id_usuario

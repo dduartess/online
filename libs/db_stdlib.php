@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -707,7 +707,7 @@ function db_data($nome,$dia="",$mes="",$ano="") {
     <input name="<?=$nome."_dia"?>" type="text" id="<?=$nome."_dia"?>" value="<?=$dia?>" size="2" maxlength="2" autocomplete="off"><strong>/</strong>
     <input name="<?=$nome."_mes"?>" type="text" id="<?=$nome."_mes"?>" value="<?=$mes?>" size="2" maxlength="2" autocomplete="off"><strong>/</strong>
     <input name="<?=$nome."_ano"?>" type="text" id="<?=$nome."_ano"?>" value="<?=$ano?>" size="4" maxlength="4" autocomplete="off">
-    <?
+    <?php 
 }
 /*************************************/
 
@@ -1081,7 +1081,7 @@ function mens_OnHelp() {
   global $nome_help;
   ?>
   onhelp="MM_showHideLayers('<?=$nome_help?>','',(document.getElementById('<?=$nome_help?>').style.visibility=='visible'?'hide':'show'));<?=(isset($DB_SELLER)?'js_db_iframe_helph()':'')?>;return false"
-  <?
+  <?php 
 }
 function mens_div() {
   global $larg_div;
@@ -1106,7 +1106,7 @@ function mens_div() {
             </td>
           </tr>
         </table>
-        <?
+        <?php 
         if(isset($DB_SELLER)){
           ?>
       </td>
@@ -1128,7 +1128,7 @@ function mens_div() {
             document.getElementById('div3').style.visibility='hidden';
           }
           </script>
-          <?
+          <?php 
         }
         ?>
         </td >
@@ -1144,13 +1144,13 @@ function mens_div() {
 </div>
 <iframe name="texto_help" src="db_frmtexto_help.php?nomepagina=<?=$nome_help?>" frameborder="0" align="top" width="100%" height="127"></iframe>
 </div>
-<?
+<?php 
 if(isset($DB_SELLER)){
   ?>
   <div id="div3" style="background-color:blue;border: thin inset #CCCCCC; position:absolute;  visibility: hidden" >
      <iframe style="width:100% ; height:100%" name="helpiframe" src="pre4_mensagens001.php?codhelp=<?=$nome_help?>"></iframe>
   </div>
-  <?
+  <?php 
 }
 }
 
@@ -1238,8 +1238,8 @@ class janela {
         else
           $this->iniciarVisivel = "hidden";
     ?>
-        <div id="Jan<? echo $this->nome ?>" style=" background-color: #c0c0c0;border: 0px outset #666666;position:absolute; left:<? echo $this->posX ?>px; top:<? echo $this->posY ?>px; width:<? echo $this->largura ?>px; height:<? echo $this->altura ?>px; z-index:1; visibility: <? echo $this->iniciarVisivel ?>;"><table width="100%" height="100%" style="border-color: #f0f0f0 #606060 #404040 #d0d0d0;border-style: solid;  border-width: 2px;"  border="0" cellspacing="0" cellpadding="2"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr id="CF<? echo $this->nome ?>" style="white-space: nowrap;background-color:<? echo $this->corFundoTitulo ?>"><td nowrap onmousedown="js_engage(document.getElementById('Jan<? echo $this->nome ?>'),event)" onmouseup="js_release(document.getElementById('Jan<? echo $this->nome ?>'),event)" onmousemove="js_dragIt(document.getElementById('Jan<? echo $this->nome ?>'),event)" onmouseout="js_release(document.getElementById('Jan<? echo $this->nome ?>'),event)" width="80%" style="cursor:hand;font-weight: bold;color: <? echo $this->corTitulo ?>;font-family: <? echo $this->fonteTitulo ?>;font-size: <? echo $this->tamTitulo ?>px">&nbsp;<? echo $this->titulo ?></td><td width="20%" align="right" valign="middle" nowrap><?$kp=0x4;$m = $kp & $this->janBotoes;$kp >>= 1;?><img <? echo $m?'style="cursor:hand"':"" ?> src=<? echo $m?"imagens/jan_mini_on.gif":"imagens/jan_mini_off.gif" ?> title="Minimizar" border="0" onClick="js_MinimizarJan(this,'<? echo $this->nome ?>')"><?$m = $kp & $this->janBotoes;$kp >>= 1;?><img <? echo $m?'style="cursor:hand"':"" ?> src=<? echo $m?"imagens/jan_max_on.gif":"imagens/jan_max_off.gif" ?> title="Maximizar" border="0" onClick="js_MaximizarJan(this,'<? echo $this->nome ?>')"><?$m = $kp & $this->janBotoes;$kp >>= 1;?><img <? echo $m?'style="cursor:hand"':"" ?> src=<? echo $m?"imagens/jan_fechar_on.gif":"imagens/jan_fechar_off.gif" ?> title="Fechar" border="0" onClick="js_FecharJan(this,'<? echo $this->nome ?>')"></td></tr></table></td></tr><tr><td width="100%" height="100%"><iframe frameborder="1" style="border-color:#C0C0F0" height="100%" width="100%" id="IF<? echo $this->nome ?>" name="IF<? echo $this->nome ?>" scrolling="<? echo $this->scrollbar ?>" src="<? echo $this->arquivo ?>"></iframe></td></tr></table></div><script><? echo $this->nome ?> = new janela(document.getElementById('Jan<? echo $this->nome ?>'),document.getElementById('CF<? echo $this->nome ?>'),IF<? echo $this->nome ?>);</script>
-        <?
+        <div id="Jan<?php  echo $this->nome ?>" style=" background-color: #c0c0c0;border: 0px outset #666666;position:absolute; left:<?php  echo $this->posX ?>px; top:<?php  echo $this->posY ?>px; width:<?php  echo $this->largura ?>px; height:<?php  echo $this->altura ?>px; z-index:1; visibility: <?php  echo $this->iniciarVisivel ?>;"><table width="100%" height="100%" style="border-color: #f0f0f0 #606060 #404040 #d0d0d0;border-style: solid;  border-width: 2px;"  border="0" cellspacing="0" cellpadding="2"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr id="CF<?php  echo $this->nome ?>" style="white-space: nowrap;background-color:<?php  echo $this->corFundoTitulo ?>"><td nowrap onmousedown="js_engage(document.getElementById('Jan<?php  echo $this->nome ?>'),event)" onmouseup="js_release(document.getElementById('Jan<?php  echo $this->nome ?>'),event)" onmousemove="js_dragIt(document.getElementById('Jan<?php  echo $this->nome ?>'),event)" onmouseout="js_release(document.getElementById('Jan<?php  echo $this->nome ?>'),event)" width="80%" style="cursor:hand;font-weight: bold;color: <?php  echo $this->corTitulo ?>;font-family: <?php  echo $this->fonteTitulo ?>;font-size: <?php  echo $this->tamTitulo ?>px">&nbsp;<?php  echo $this->titulo ?></td><td width="20%" align="right" valign="middle" nowrap><?php $kp=0x4;$m = $kp & $this->janBotoes;$kp >>= 1;?><img <?php  echo $m?'style="cursor:hand"':"" ?> src=<?php  echo $m?"imagens/jan_mini_on.gif":"imagens/jan_mini_off.gif" ?> title="Minimizar" border="0" onClick="js_MinimizarJan(this,'<?php  echo $this->nome ?>')"><?php $m = $kp & $this->janBotoes;$kp >>= 1;?><img <?php  echo $m?'style="cursor:hand"':"" ?> src=<?php  echo $m?"imagens/jan_max_on.gif":"imagens/jan_max_off.gif" ?> title="Maximizar" border="0" onClick="js_MaximizarJan(this,'<?php  echo $this->nome ?>')"><?php $m = $kp & $this->janBotoes;$kp >>= 1;?><img <?php  echo $m?'style="cursor:hand"':"" ?> src=<?php  echo $m?"imagens/jan_fechar_on.gif":"imagens/jan_fechar_off.gif" ?> title="Fechar" border="0" onClick="js_FecharJan(this,'<?php  echo $this->nome ?>')"></td></tr></table></td></tr><tr><td width="100%" height="100%"><iframe frameborder="1" style="border-color:#C0C0F0" height="100%" width="100%" id="IF<?php  echo $this->nome ?>" name="IF<?php  echo $this->nome ?>" scrolling="<?php  echo $this->scrollbar ?>" src="<?php  echo $this->arquivo ?>"></iframe></td></tr></table></div><script><?php  echo $this->nome ?> = new janela(document.getElementById('Jan<?php  echo $this->nome ?>'),document.getElementById('CF<?php  echo $this->nome ?>'),IF<?php  echo $this->nome ?>);</script>
+        <?php 
   }
 }
 
@@ -1666,7 +1666,7 @@ function db_criatabela($result) {
 
   $numcols = pg_numfields($result);
 
-  ?> <br><br><table border="1" cellpadding="0" cellspacing="0"> <?
+  ?> <br><br><table border="1" cellpadding="0" cellspacing="0"> <?php 
 
   echo "<tr bgcolor=\"#00CCFF\">\n";
 
@@ -1694,7 +1694,7 @@ function db_criatabela($result) {
 
   }
 
-  ?> </table><br><br> <?
+  ?> </table><br><br> <?php 
 
 }
 

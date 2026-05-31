@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -80,12 +80,12 @@ return false;
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?mens_div();?>
+<?php mens_div();?>
 <center>
  <form name="form1" method="post" action="enderecodae.php" onSubmit="return js_vericampos()">
    <table   border="0" cellspacing="2" cellpadding="0">
@@ -145,7 +145,7 @@ function js_bairro(){
 
 }
 </script>
-<?
+<?php 
 if (isset($funcao)){
   if(isset($ruas)){
     echo "<script>document.form1.ruas.value = '$chave1 - $chave';</script>";

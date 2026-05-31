@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -280,7 +280,7 @@ js_soma(2);
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 td{
@@ -290,12 +290,12 @@ td{
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="js_soma(1)" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="js_soma(1)" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -323,7 +323,7 @@ mens_div();
        <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
       <tr>
             <td width="90" align="left" valign="top"> 
-          <?    db_montamenus();        
+          <?php     db_montamenus();        
           ?>
           </td>
             <td align="left" valign="top"> 
@@ -352,7 +352,7 @@ mens_div();
                     <th class="borda" style="font-size:11px" nowrap>Tot.</th>
                     <th class="borda" style="font-size:11px" nowrap><a id="marca" href="" style="color:black" onclick="js_marca();return false">M</a></th>
                   </tr>
-                  <?
+                  <?php 
      ////////////////////////////////////////////////////////
        //if com 3 partes. Primeiro se é pra agrupar por numpre, segundo se é pra agrupar por parcela e terceiro mostra o default
   //agrupar por numpre
@@ -801,12 +801,12 @@ mens_div();
                   </tr>
                   <tr> 
                     <td colspan="5">
-              <input type="submit"  class="botao" name="emiterecibo" onClick="return js_emiterecibo()" value="Emitir Recibo" <? echo ($tipo==3 && !isset($HTTP_POST_VARS["calculavalor"]))?"disabled":"" ?>>
-              <?
+              <input type="submit"  class="botao" name="emiterecibo" onClick="return js_emiterecibo()" value="Emitir Recibo" <?php  echo ($tipo==3 && !isset($HTTP_POST_VARS["calculavalor"]))?"disabled":"" ?>>
+              <?php 
               if(isset($calculavalor)){
                 ?>
                 <input type="button" class="botao" name="btretornar" onClick="history.back(1)" value="Retornar">
-                <?
+                <?php 
               }
               ?>
               </td>
@@ -832,11 +832,11 @@ mens_div();
   </tr>
 </table>
 </center>
-<?
+<?php 
 db_rodape();
 ?>
 </body>
 <!-- InstanceEnd --></html>
-<?
+<?php 
 } //fim de if(isset($HTTP_POST_VARS["emiterecibo"])) {
 ?>

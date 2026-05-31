@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -101,14 +101,14 @@ function js_pesquisar() {
 }
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <img src="imagens/leis.gif">
-<?mens_div();?>
+<?php mens_div();?>
 <center>
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
                 <tr> 
@@ -150,6 +150,6 @@ function js_pesquisar() {
 </center>
 </body>
 <!-- InstanceEnd --></html>
-<?
+<?php 
 } //fim do if(isset($HTTP_POST_VARS["pesquisar]))
 ?>

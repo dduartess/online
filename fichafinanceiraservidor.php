@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -65,7 +65,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/prototype.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
   <form name="form1" method="post"  target="iframeFichaFinanceira" >
     <table align="center" width="100%">
       <tr>  
@@ -76,7 +76,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
       <tr>  
         <td>
           <fieldset>
-          <?
+          <?php 
            
          if ( $iNroCalculoAnos > 0 ) {
           
@@ -87,7 +87,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
                 Ano Base:
               </td>
               <td class="dadosForm">
-                <?
+                <?php 
                    if ( $iNroCalculoAnos > 0 ) {
                      db_selectrecord('anocalc',$rsCalculoAnos,true,1,'','','','','js_consultaMes()',1);
                    }
@@ -118,7 +118,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
               </td>
             </tr>
           </table>
-          <?
+          <?php 
               
             } else {
           ?>      
@@ -129,7 +129,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
               </td>
             </tr>
           </table>          
-          <?
+          <?php 
             }
           ?>  
           </fieldset>

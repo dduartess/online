@@ -1,4 +1,4 @@
-<?
+<?php 
 include("assinatura.php");
 
 class cl_cabec_rodape extends cl_assinatura {

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -422,7 +422,7 @@ window.print();
                              <td>
                               <b><?=@$z01_ident?></b>                             </td>
                             </tr>
-                          <?
+                          <?php 
                           if (isset($matric)){
                           echo "<tr> 
                       <td align=\"right\">SETOR/QUADRA/LOTE:</td>
@@ -443,7 +443,7 @@ window.print();
 
                            
             </font> <p align='left'><font size="1" face="Arial, Helvetica, sans-serif"> 
-              <?
+              <?php 
                 echo $DB_mens1;
               ?>
               <br><b>
@@ -451,13 +451,13 @@ window.print();
                           OBS.: A Fazenda Municipal se reserva o direito de lançar débitos 
               independentemente da data desta certidão. Validade: 90 dias da data 
               de sua emissão.</font> </p>                                                                                         
-            <p align='right'><?=$munic.","?><? echo "&nbsp;".$dia."&nbsp;DE&nbsp;".$mes."&nbsp;DE&nbsp;".$ano; ?></p>
+            <p align='right'><?=$munic.","?><?php  echo "&nbsp;".$dia."&nbsp;DE&nbsp;".$mes."&nbsp;DE&nbsp;".$ano; ?></p>
             <table width='100%' border='0' cellspacing='5' cellpadding='5'>
                            <tr valign='top'>
                            <td width='50%'>
                            <font face="Arial, Helvetica, sans-serif" size="-7"><b>ASPECTOS
-                              T&Eacute;CNICOS DE VALIDADE:</b><br>Emiss&atilde;o &agrave;s <b><? echo $hora.":".$min.":".$sec; ?></b> 
-                  em <b><? echo $dia."/".$mes1."/".$ano; ?></b>.<br>
+                              T&Eacute;CNICOS DE VALIDADE:</b><br>Emiss&atilde;o &agrave;s <b><?php  echo $hora.":".$min.":".$sec; ?></b> 
+                  em <b><?php  echo $dia."/".$mes1."/".$ano; ?></b>.<br>
                               C&oacute;digo de autenticidade da Certid&atilde;o: <br>
                   <br></font>
                   <font face='courier' size="-4"><?=$t1?></font><br>

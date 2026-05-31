@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -123,7 +123,7 @@ if($clissbase->numrows != 0){
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
@@ -152,13 +152,13 @@ db_estilosite();
 			
 			<tr class="texto">
 				<td></td>
-				<? echo"<td><img src='imagens/seta.gif' border='0'><a href='opcoesaidof.php?inscricaow=$q02_inscr'>Solicita AIDOF</a></td>"; ?>
+				<?php  echo"<td><img src='imagens/seta.gif' border='0'><a href='opcoesaidof.php?inscricaow=$q02_inscr'>Solicita AIDOF</a></td>"; ?>
 				<td></td>
 			</tr>
 			<tr ><td colspan="2">&nbsp;</td></tr>
 			<tr class="texto">
 				<td></td>
-				<? echo"<td><img src='imagens/seta.gif' border='0'><a href='aidof_consulta.php?inscricaow=$q02_inscr'>Consulta AIDOF</a></td>"; ?>
+				<?php  echo"<td><img src='imagens/seta.gif' border='0'><a href='aidof_consulta.php?inscricaow=$q02_inscr'>Consulta AIDOF</a></td>"; ?>
 				<td></td>
 			</tr>
 		</table>

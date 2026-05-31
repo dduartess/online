@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -34,13 +34,13 @@ require_once("libs/db_utils.php");
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
 </head>
 
-<?
+<?php 
 
 db_logs(0,0,0,"Licitações em Aberto.");
 
@@ -90,7 +90,7 @@ $linhas = pg_num_rows($result);
 				<tr><td >&nbsp;</td></tr>	
 				<tr><td  align="center" class="texto" bgcolor="<?=$w01_corfundomenu?>"><b>LICITAÇÕES EM ABERTO</b></td></tr>
 				<tr><td >&nbsp;</td></tr>	
-				<?
+				<?php 
 				for ($i = 0; $i < $linhas; $i++){
 			    	db_fieldsmemory($result,$i);
 			    	echo " 

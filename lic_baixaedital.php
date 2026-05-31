@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -60,7 +60,7 @@ if (isset($oid_arq)&&$oid_arq!=""){
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -68,7 +68,7 @@ db_estilosite()
 <body >
 <table width="100%" border="0" align= "center" Cellspacing="10">
 	<form name="form1" method="post" action="">
-		<?
+		<?php 
 	
 
 		//var_dump($HTTP_SERVER_VARS);

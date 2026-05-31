@@ -1,5 +1,6 @@
 <?php
 include_once("legacy_compat.php");
+// Compat layer for legacy e-Cidade code running on modern PHP versions.
 if (function_exists('session_status')) {
   if (session_status() === PHP_SESSION_NONE) {
     @session_start();
@@ -16,9 +17,11 @@ if (!function_exists('session_register')) {
       }
       return true;
     }
+
     if (!is_string($name) || $name === '') {
       return false;
     }
+
     $_SESSION[$name] = array_key_exists($name, $GLOBALS) ? $GLOBALS[$name] : null;
     return true;
   }
@@ -39,6 +42,7 @@ if (!function_exists('session_unregister')) {
   }
 }
 
+// Legacy superglobal aliases expected by older code.
 $HTTP_SESSION_VARS =& $_SESSION;
 $HTTP_SERVER_VARS  =& $_SERVER;
 $HTTP_POST_VARS    =& $_POST;

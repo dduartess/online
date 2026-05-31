@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -298,7 +298,7 @@ Processando...</div>
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<?
+<?php 
 //
 
 
@@ -341,7 +341,7 @@ $script = false;
 if (isset ( $codigo_cgm ) && $codigo_cgm == "") {
 	?>
 <script>alert("Dados Inválidos. Verifique!"); history.back();</script>
-<?
+<?php 
 
 }
 
@@ -350,7 +350,7 @@ if (! isset ( $opcao )) {
 		db_logs ( "", "", 0, "Acesso a Rotina Invalida. - Variável opcao nao setada" );
 		?>
 <script>alert("Acesso a Rotina Iválida. Verifique!"); history.back();</script>
-<?
+<?php 
 	
 	} else {
 		$opcao = $HTTP_POST_VARS ["opcao"];
@@ -725,7 +725,7 @@ if (pg_num_rows($result) > 0) {
 js_verificapagina("atualizaendereco.php,digitacontribuinte.php,digitainscricao.php,digitamatricula.php,listabicalvara.php,listabicimovel.php,listadebitospendentes.php,listasegundaviaalvara.php");
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
@@ -746,8 +746,8 @@ function js_AbreJanelaRelatorio(squery) {
 </script>
 
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<? //mens_div(); ?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php  //mens_div(); ?>
 
 <table align="center" width="60%" border="0" cellspacing="0"
 	cellpadding="0">
@@ -755,7 +755,7 @@ function js_AbreJanelaRelatorio(squery) {
 		<td height="50" align="<?=$DB_align1?>"><?=$DB_mens1?></td>
 	</tr>
 	<tr>
-		<td height="200" align="center" valign="middle"><?
+		<td height="200" align="center" valign="middle"><?php 
 				
 		if ($opcao == "i") {
       $sSqlInner  = "inner join arreinscr  on arreinscr.k00_numpre  = arresusp.k00_numpre";
@@ -820,15 +820,15 @@ function js_AbreJanelaRelatorio(squery) {
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: 
 						<span class="bold3">
-						  <?
+						  <?php 
 						    echo (trim($cgccpf) == ''?@$mostraCGCCPF:$cgccpf); 
 						  ?>
 						</span><br>
-						<? if(@$inscricao!=""){?> Inscrição:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
-						<?}else if(@$matricula!=""){?> Matrícula:&nbsp; <span
+						<?php  if(@$inscricao!=""){?> Inscrição:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
+						<?php }else if(@$matricula!=""){?> Matrícula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
-							<?}else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
-							<?}?>
+							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
+							<?php }?>
 						</td>
 						<td>
 							<?=@$msgcortesituacao ?>
@@ -838,7 +838,7 @@ function js_AbreJanelaRelatorio(squery) {
 				</table>
 				</td>
 			</tr>
-			<?
+			<?php 
 			$aK00_tipo = array();
 			for($x = 0; $x < $linhas; $x ++) {
 				db_fieldsmemory ( $result, $x );
@@ -886,7 +886,7 @@ if (($k00_recibodbpref != "3") and ($linhasmenuissqn > 0)) {
   	</td>
 	</tr>
 
-<?
+<?php 
 }
 
 				}
@@ -911,7 +911,7 @@ if (($k00_recibodbpref != "3") and ($linhasmenuissqn > 0)) {
  <a class='links' href="cai3_certidao.php?numcgm=<?=$k00_numcgm?>"><img src="imagens/folder4.gif" border="0"> Emitir Certidão por Nome</a>
  </td>
  </tr>
- <?
+ <?php 
 
  }
  }
@@ -933,7 +933,7 @@ if (($k00_recibodbpref != "3") and ($linhasmenuissqn > 0)) {
 				movimento<font color="red"> <b>Acesso Restrito a Usuários Logados</b></font>
 				</td>
 			</tr>
-			<?
+			<?php 
 							}
 						}
 					}
@@ -998,14 +998,14 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 		</td>
 	</tr>
 
-<?
+<?php 
 }
 					}
 				}
 				?>
 			</td>
 			</tr>
-			<?
+			<?php 
 				
 				if ($x == pg_numrows ( $result ) - 1 && $opcao == "m") {
 					
@@ -1022,13 +1022,13 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 									href="leituraseconsumo.php?acao=hidrometros&numcgm=<?=@$k00_numcgm?>&matric=<?=@$matricula?>&inscr=<?=@$q02_inscr?>&db_datausu=<?=date ( 'Y-m-d', db_getsession ( 'DB_datausu' ) )?>&id_usuario=<?=@$id_usuario?>&cgccpf=<?=@$cgccpf?>&opcao=<?=$opcao?>"><img
 									src="imagens/pasta2.gif" border="0">Hidrômetros</a></td>
 							</tr>
-							<?*/ 
+							<?php */ 
 						}
 						?>
 					<tr>
 						<td height="28" valign="middle">
 							<a class='links' href="#" 
-								 onclick="js_AbreJanelaRelatorio('db_datausu=<?
+								 onclick="js_AbreJanelaRelatorio('db_datausu=<?php 
 						          																					echo $db_datausu."&";
 					            																				  echo "matric=$matricula1";
 					            																				?>')"> 
@@ -1038,13 +1038,13 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 							<input type="radio" id="rdTipoRelatorio2" name="rdTipoRelatorio" value="completo"><span class="radioOption">Completo</span>
 						</td>
 					</tr>
-			<?
+			<?php 
 					}
 					?>
 			<tr>
 				<td height="28">
 				
-				<?
+				<?php 
 				
 				if((isset($matricula)) and ($db21_usasisagua == "t")) {
 				  //desabilitado para dbpref daeb
@@ -1052,16 +1052,16 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 					
 					<!--<a class='links' href="listabicimovelagua.php?<?=base64_encode ( 'matricula=' . $matricula . '&id_usuario=' . @$id_usuario . '&cgccpf=' .$cgccpf.'' )?>">
 					<img src="imagens/folder1.gif" border="0"> Informa&ccedil;&otilde;es do Im&oacute;vel</a>
-				--><?
+				--><?php 
 				}else {?>
 					<a class='links' href="listabicimovel.php?<?=base64_encode ( 'matricula=' . $matricula . '&id_usuario=' . @$id_usuario . '&cgccpf=' .$cgccpf.'' )?>">
 					<img src="imagens/folder1.gif" border="0"> Informa&ccedil;&otilde;es do Im&oacute;vel</a>
-				<?
+				<?php 
 				} 
 				?>	
 				</td>
 			</tr>
-			<?
+			<?php 
 					
 					$sqldeb = " select * from debcontapedido
 						inner join debcontapedidocgm on d63_codigo =d70_codigo 
@@ -1078,7 +1078,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 					src="imagens/folder1.gif" border="0"> Debito em conta </a></td>
 			</tr>
 
-			<?
+			<?php 
 					
 					}
 				}
@@ -1093,7 +1093,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 					src="imagens/folder4.gif" border="0"> Carnê de ISSQN Variável </a>
 				</td>
 			</tr>
-			<?
+			<?php 
 					}
 					
 					//echo" cgm=  $k00_numcgm ....ins=  $inscricao";
@@ -1112,7 +1112,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 					src="imagens/folder1.gif" border="0"> Debito em conta </a></td>
 			</tr>
 
-			<?
+			<?php 
 					
 					}
 				}
@@ -1143,7 +1143,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 		</table>
 		</form>
 		<input type="submit" value="Voltar" class="botao"
-			onclick="js_voltar();"> <?
+			onclick="js_voltar();"> <?php 
 		
 		} else {
 			?>
@@ -1156,14 +1156,14 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: 
 						<span class="bold3">
-						<?if(trim($cgccpf) == ''){ echo $mostraCGCCPF; } else {echo $cgccpf;}?>
+						<?php if(trim($cgccpf) == ''){ echo $mostraCGCCPF; } else {echo $cgccpf;}?>
 						</span><br>
-            <? if(@$inscricao!=""){?> Inscrição:&nbsp; <span
+            <?php  if(@$inscricao!=""){?> Inscrição:&nbsp; <span
 							class="bold3"><?=@$inscricao?></span><br>
-						<?}else if(@$matricula!=""){?> Matrícula:&nbsp; <span
+						<?php }else if(@$matricula!=""){?> Matrícula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
-							<?}else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
-							<?}?>						
+							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
+							<?php }?>						
               </span>
             </td>
             <td><?=@$msgcortesituacao?></td>
@@ -1171,7 +1171,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 				</table>
 				</td>
 			</tr>
-       <?   
+       <?php    
          if ($iNroLinhasDebitosSuspensos > 0) {
            echo "<tr> ";
            echo "  <td height='28'><a class='links' ";
@@ -1196,7 +1196,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 				<td align="center" class="green">Contribuinte sem Movimentos
 				Pendentes.</td>
 			</tr>
-			<?
+			<?php 
          }
 			
 			if ($opcao == "m") {
@@ -1206,16 +1206,16 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 			
 			<tr>
 				<td height="28">
-				<?
+				<?php 
 				if((isset($matricula)) and ($db21_usasisagua == "t")) {
 				?>
 					<a class='links' href="listabicimovelagua.php?<?=base64_encode ( 'matricula=' . $matricula . '&id_usuario=' . @$id_usuario  . '&cgccpf=' .$cgccpf.'' )?>">
 					<img src="imagens/folder1.gif" border="0"> Informa&ccedil;&otilde;es do Im&oacute;vel</a></td>
-				<? 
+				<?php  
 				}else {?>
 					<a class='links' href="listabicimovel.php?<?=base64_encode ( 'matricula=' . $matricula . '&id_usuario=' . @$id_usuario  . '&cgccpf=' .$cgccpf.'' )?>">
 					<img src="imagens/folder1.gif" border="0"> Informa&ccedil;&otilde;es do Im&oacute;vel</a></td>
-				<?
+				<?php 
 				}
 				?>
 			</tr>
@@ -1226,7 +1226,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 				</td>
 			</tr>
 			</form>
-			<?
+			<?php 
 			}
 			?>
 			<tr>
@@ -1234,7 +1234,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 					onclick="js_voltar();"></td>
 			</tr>
 		</table>
-		<?
+		<?php 
 		
 		}
 		?>
@@ -1256,7 +1256,7 @@ if ($k00_tipo == $iTipo and $linhasmenuretido == 0) {
 	}
 ?>
 <input type="hidden" name="sK00_tipo" id="sK00_tipo" value="<?php echo $sK00_tipo; ?>">
-<?
+<?php 
 
 if ($script == true)
 	echo "<script>alert('$MensCgcCpf')</script>\n";

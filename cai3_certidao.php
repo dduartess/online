@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -138,7 +138,7 @@ digitaco...zdWFyaW89 (linha 143)
 <tr>
 <td align="center" valign="top">
 <center>
-<?        
+<?php         
 
 
 

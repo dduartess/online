@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -438,7 +438,7 @@ if(isset($mostar) && $mostar == 1){
 <form name="form1" method="post" action="" target="CentroPref">
 <input type="hidden" id="senha" name="senha" value="">
 <table id="servidor" width="50%" align="center" border="0"
-       cellpadding="5" cellspacing="1" bgcolor="<?$w01_corbody?>"
+       cellpadding="5" cellspacing="1" bgcolor="<?php $w01_corbody?>"
        class="bold4">
   <tr>
     <td width="5%">Informações Servidor:</td>
@@ -447,7 +447,7 @@ if(isset($mostar) && $mostar == 1){
       <input type="text" id="nome" name="nome" size="29" value="<?= $sNome; ?>" maxlength="30" align="left" disabled>
     </td>
   </tr>
-	<?
+	<?php 
 	 if(isset($sEmailServ) && $sEmailServ != ''){
 	?>
   <tr>
@@ -456,7 +456,7 @@ if(isset($mostar) && $mostar == 1){
       <input type="text" id="emailsrv" name="emailsrv" value="<?= $sEmailServ; ?>" size="41" maxlength="50" disabled>
     </td>
   </tr>
-	<?
+	<?php 
 	 }
 	?>
   <tr id="rdsenha">
@@ -467,7 +467,7 @@ if(isset($mostar) && $mostar == 1){
   </tr>
   <tr>
     <td colspan="2" align="center">
-    <?
+    <?php 
       $sSmatricula = $rh01_regist;
       $sSnome      = $z01_nome;
       $sScpf       = $z01_cgccpf;
@@ -505,6 +505,6 @@ function js_imprimir_dados(matricula,nome,numcpf,datansc,emailsrv,header) {
  jan.moveTo(0,0);
 }
 </script>
-<?
+<?php 
 }
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -252,7 +252,7 @@ db_fim_transacao($sqlerro);
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -272,7 +272,7 @@ db_estilosite()
 	<td>
 	<select  name="banco" >
 	    	<option value="0">selecione</option>
-	    	<?
+	    	<?php 
 	    	$sql="select * from bancos inner join debcontaparam on d62_banco=codbco inner join configdbpref on d62_instituicao=w13_instit;";
 	    	$resultbc=pg_query($sql);
 	    	$linhasbc=pg_num_rows($resultbc);
@@ -288,7 +288,7 @@ db_estilosite()
 </tr>
 
 
-	<?
+	<?php 
 	 echo"<tr class='texto'><td colspan='2'>Nome: $z01_nome </td> </tr>";
 	 
 	 echo"<tr class='texto'><td colspan='2'>CPF/CNPJ: $z01_cgccpf </td></tr>";
@@ -318,7 +318,7 @@ db_estilosite()
 </body>
 </html>
 
-<?
+<?php 
 /*if(isset($imprime)){
 echo "<script>
 	  window.open('debito_relatorio.php?cgm=$z01_numcgm&numpres=$numpres&cod= 9999&banco=$banco','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');

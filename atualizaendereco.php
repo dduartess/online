@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -133,13 +133,13 @@ Não responda este e-mail, ele foi gerado automaticamente pelo Servidor.
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <style type="text/css">
-<?//db_estilosite();?>
+<?php //db_estilosite();?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?//mens_div();?>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php //mens_div();?>
 <center>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -149,7 +149,7 @@ Não responda este e-mail, ele foi gerado automaticamente pelo Servidor.
   </tr>
   <tr>
    <td align="center" valign="top" class="texto">
-<?if(!isset($tipo)){?>
+<?php if(!isset($tipo)){?>
  <br><br><br><br><br>
  <form>
   <input type="hidden" name="id_usuario" value="<?=$id_usuario?>">
@@ -164,7 +164,7 @@ Não responda este e-mail, ele foi gerado automaticamente pelo Servidor.
   </select><br><br><br>
   <input type="submit" value="Próximo">
  </form>
-<?
+<?php 
 }else{
 if($tipo=="s")
  $tipo = 3;
@@ -235,22 +235,22 @@ if($cgmlogin==0){
      Nome:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_numcgm',10,"numcgm",true,'hidden',"","")
 ?>
-<?
+<?php 
 db_input('w11_nome',50,$Iw11_nome,true,'text',"","")
 ?>
     </td>
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_ender?>">
-       <?
+       <?php 
        db_ancora("<b>Endereço:</b>","js_pesquisaw11_ender(true);","");
        ?>
     </td>
     <td>
-<?
+<?php 
 db_input('w11_ender',50,$Iw11_ender,true,'text',"",'');
 ?>
     </td>
@@ -260,7 +260,7 @@ db_input('w11_ender',50,$Iw11_ender,true,'text',"",'');
       Número:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_numero',6,$Iw11_numero,true,'text',"","")
 ?>
     </td>
@@ -270,19 +270,19 @@ db_input('w11_numero',6,$Iw11_numero,true,'text',"","")
       Complemento:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_compl',20,$Iw11_compl,true,'text',"","")
 ?>
     </td>
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_bairro?>">
-       <?
+       <?php 
        db_ancora("<b>Bairro:</b>","js_pesquisaw11_bairro(true);",$db_opcao);
        ?>
     </td>
     <td>
-<?
+<?php 
 db_input('w11_bairro',30,$Iw11_bairro,true,'text',"",'');
 ?>
     </td>
@@ -292,7 +292,7 @@ db_input('w11_bairro',30,$Iw11_bairro,true,'text',"",'');
       Municipio:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_munic',20,$Iw11_munic,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -302,7 +302,7 @@ db_input('w11_munic',20,$Iw11_munic,true,'text',$db_opcao,"")
        UF:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_uf',2,$Iw11_uf,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -312,7 +312,7 @@ db_input('w11_uf',2,$Iw11_uf,true,'text',$db_opcao,"")
        CEP
     </td>
     <td>
-<?
+<?php 
 db_input('w11_cep',8,$Iw11_cep,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -322,7 +322,7 @@ db_input('w11_cep',8,$Iw11_cep,true,'text',$db_opcao,"")
       Caixa Postal:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_cxpostal',20,$Iw11_cxpostal,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -332,7 +332,7 @@ db_input('w11_cxpostal',20,$Iw11_cxpostal,true,'text',$db_opcao,"")
       Telefone:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_telef',12,$Iw11_telef,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -342,7 +342,7 @@ db_input('w11_telef',12,$Iw11_telef,true,'text',$db_opcao,"")
        RG:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_ident',20,$Iw11_ident,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -352,7 +352,7 @@ db_input('w11_ident',20,$Iw11_ident,true,'text',$db_opcao,"")
       Inscrição Estadual:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_incest',15,$Iw11_incest,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -362,7 +362,7 @@ db_input('w11_incest',15,$Iw11_incest,true,'text',$db_opcao,"")
       Celular:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_telcel',12,$Iw11_telcel,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -372,7 +372,7 @@ db_input('w11_telcel',12,$Iw11_telcel,true,'text',$db_opcao,"")
       Email:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_email',50,$Iw11_email,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -382,7 +382,7 @@ db_input('w11_email',50,$Iw11_email,true,'text',$db_opcao,"")
       Endereço Comercial:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_endcon',50,$Iw11_endcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -392,7 +392,7 @@ db_input('w11_endcon',50,$Iw11_endcon,true,'text',$db_opcao,"")
      Número:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_numcon',4,$Iw11_numcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -402,7 +402,7 @@ db_input('w11_numcon',4,$Iw11_numcon,true,'text',$db_opcao,"")
      Complemento:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_comcon',20,$Iw11_comcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -412,7 +412,7 @@ db_input('w11_comcon',20,$Iw11_comcon,true,'text',$db_opcao,"")
       Bairro:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_baicon',20,$Iw11_baicon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -422,7 +422,7 @@ db_input('w11_baicon',20,$Iw11_baicon,true,'text',$db_opcao,"")
       Município:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_muncon',20,$Iw11_muncon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -432,7 +432,7 @@ db_input('w11_muncon',20,$Iw11_muncon,true,'text',$db_opcao,"")
       UF:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_ufcon',2,$Iw11_ufcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -442,7 +442,7 @@ db_input('w11_ufcon',2,$Iw11_ufcon,true,'text',$db_opcao,"")
       CEP:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_cepcon',8,$Iw11_cepcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -452,7 +452,7 @@ db_input('w11_cepcon',8,$Iw11_cepcon,true,'text',$db_opcao,"")
       Caixa Postal:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_cxposcon',20,$Iw11_cxposcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -462,7 +462,7 @@ db_input('w11_cxposcon',20,$Iw11_cxposcon,true,'text',$db_opcao,"")
       Telefone:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_telcon',12,$Iw11_telcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -472,7 +472,7 @@ db_input('w11_telcon',12,$Iw11_telcon,true,'text',$db_opcao,"")
       Celular:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_celcon',12,$Iw11_celcon,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -482,7 +482,7 @@ db_input('w11_celcon',12,$Iw11_celcon,true,'text',$db_opcao,"")
       Email:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_emailc',50,$Iw11_emailc,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -492,7 +492,7 @@ db_input('w11_emailc',50,$Iw11_emailc,true,'text',$db_opcao,"")
       Nacionalidade:
     </td>
     <td>
-<?
+<?php 
 $x = array('1'=>'Brasileira','2'=>'Estrangeira');
 db_select('w11_nacion',$x,true,$db_opcao,"");
 ?>
@@ -503,7 +503,7 @@ db_select('w11_nacion',$x,true,$db_opcao,"");
       Estado Civil:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_estciv',4,$Iw11_estciv,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -513,7 +513,7 @@ db_input('w11_estciv',4,$Iw11_estciv,true,'text',$db_opcao,"")
       Profissão:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_profis',40,$Iw11_profis,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -523,7 +523,7 @@ db_input('w11_profis',40,$Iw11_profis,true,'text',$db_opcao,"")
       Tipo de Credor:
     </td>
     <td>
-<?
+<?php 
 $x = array('2'=>'Empresa Privada','1'=>'Empresa Pública');
 db_select('w11_tipcre',$x,true,$db_opcao,"");
 ?>
@@ -534,7 +534,7 @@ db_select('w11_tipcre',$x,true,$db_opcao,"");
      CNPJ/CPF:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_cgccpf',14,$Iw11_cgccpf,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -544,7 +544,7 @@ db_input('w11_cgccpf',14,$Iw11_cgccpf,true,'text',$db_opcao,"")
       Fax:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_fax',12,$Iw11_fax,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -554,7 +554,7 @@ db_input('w11_fax',12,$Iw11_fax,true,'text',$db_opcao,"")
       Nascimento:
     </td>
     <td>
-<?
+<?php 
 db_inputdata('w11_nasc',@$w11_nasc_dia,@$w11_nasc_mes,@$w11_nasc_ano,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -564,7 +564,7 @@ db_inputdata('w11_nasc',@$w11_nasc_dia,@$w11_nasc_mes,@$w11_nasc_ano,true,'text'
       Nome da Mãe:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_mae',40,$Iw11_mae,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -574,7 +574,7 @@ db_input('w11_mae',40,$Iw11_mae,true,'text',$db_opcao,"")
       Sexo:
     </td>
     <td>
-<?
+<?php 
 $x = array('M'=>'Masculino','F'=>'Feminino');
 db_select('w11_sexo',$x,true,$db_opcao,"");
 ?>
@@ -585,7 +585,7 @@ db_select('w11_sexo',$x,true,$db_opcao,"");
       Contato:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_contato',40,$Iw11_contato,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -595,7 +595,7 @@ db_input('w11_contato',40,$Iw11_contato,true,'text',$db_opcao,"")
      Nome Fantasia:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_nomefanta',40,$Iw11_nomefanta,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -605,7 +605,7 @@ db_input('w11_nomefanta',40,$Iw11_nomefanta,true,'text',$db_opcao,"")
      CNH:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_cnh',20,$Iw11_cnh,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -615,7 +615,7 @@ db_input('w11_cnh',20,$Iw11_cnh,true,'text',$db_opcao,"")
      Categoria:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_categoria',2,$Iw11_categoria,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -625,7 +625,7 @@ db_input('w11_categoria',2,$Iw11_categoria,true,'text',$db_opcao,"")
      Data Emissão:
     </td>
     <td>
-<?
+<?php 
 db_inputdata('w11_dtemissao',@$w11_dtemissao_dia,@$w11_dtemissao_mes,@$w11_dtemissao_ano,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -635,7 +635,7 @@ db_inputdata('w11_dtemissao',@$w11_dtemissao_dia,@$w11_dtemissao_mes,@$w11_dtemi
      Primeira CNH:
     </td>
     <td>
-<?
+<?php 
 db_inputdata('w11_dthabilitacao',@$w11_dthabilitacao_dia,@$w11_dthabilitacao_mes,@$w11_dthabilitacao_ano,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -645,7 +645,7 @@ db_inputdata('w11_dthabilitacao',@$w11_dthabilitacao_dia,@$w11_dthabilitacao_mes
      Nome Completo:
     </td>
     <td>
-<?
+<?php 
 db_input('w11_nomecomple',50,$Iw11_nomecomple,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -655,7 +655,7 @@ db_input('w11_nomecomple',50,$Iw11_nomecomple,true,'text',$db_opcao,"")
      Vencimento CNH:
     </td>
     <td>
-<?
+<?php 
 db_inputdata('w11_dtvencimento',@$w11_dtvencimento_dia,@$w11_dtvencimento_mes,@$w11_dtvencimento_ano,true,'text',$db_opcao,"")
 ?>
     </td>
@@ -738,4 +738,4 @@ function js_mostraceplogradouros1(chave1,chave2){
   db_iframe_ceplogradouros.hide();
 }
 </script>
-<?}?>
+<?php }?>

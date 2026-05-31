@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -57,7 +57,7 @@ if($clempempenho->numrows == 0){
   alert("Você não possui Empenho para gerar o relatório.");
   window.close();
  </script>
- <?
+ <?php 
  exit;
 }
 $pdf = new PDF();

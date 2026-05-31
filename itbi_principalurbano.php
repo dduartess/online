@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -104,7 +104,7 @@ function trocacor(id, tipo){
 
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 
 div.tabArea {
   font-size: 14px;
@@ -113,7 +113,7 @@ div.tabArea {
 }
 
 a.tab {
-  background-color:<?echo $w01_corfundomenu;?> ;
+  background-color:<?php echo $w01_corfundomenu;?> ;
   border: 1px solid #000000;  
   border-bottom-width: 0px;
   padding: 2px 1em 2px 1em;
@@ -121,24 +121,24 @@ a.tab {
   border-radius-topleft: .75em;
   border-radius-topright: .75em;
   text-decoration: none;
-  color: <?echo $w01_corfontemenu;?>; 
+  color: <?php echo $w01_corfontemenu;?>; 
 }
 
 a.tab:hover {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
-  color: <?echo $w01_corfontemenu;?>;           
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
+  color: <?php echo $w01_corfontemenu;?>;           
 }
 
 a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
-  background-color:<?echo $w01_corfundomenuativo;?>; 
+  background-color:<?php echo $w01_corfundomenuativo;?>; 
   border-bottom-width: 0px;
-  color:<?echo $w01_corfontemenu;?>;
+  color:<?php echo $w01_corfontemenu;?>;
 }
 
 div.tabMain {
  // background-color:#0099CC;
   border: 6px solid #000000;
-  border-color: <?echo $w01_corfundomenuativo;?>; 
+  border-color: <?php echo $w01_corfundomenuativo;?>; 
   -moz-border-radius: 0em .3em .3em 0em;
  
   padding: .3em;
@@ -154,7 +154,7 @@ div.tabIframeWrapper {
 }
 
 </style>
-<?mens_div(); ?>
+<?php mens_div(); ?>
 
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" >
@@ -178,7 +178,7 @@ div.tabIframeWrapper {
   	</tr>
    	<tr>
   		<td colspan="5">
-  			<?
+  			<?php 
   			if($tipo=="urbano"){
   			?>
   				<div class="tabArea">
@@ -189,7 +189,7 @@ div.tabIframeWrapper {
 				    <a id="5" class="tab"  target="itbi"  onClick="trocacor('5','<?=$tipo?>')" >Construção</a>
 				    <a id="6" class="tab"  target="itbi"  onClick="trocacor('6','<?=$tipo?>')" >Envia ITBI</a>
 			    </div>
-  			<?
+  			<?php 
   			}
   			if ($tipo=="rural"){
   			?>
@@ -201,24 +201,24 @@ div.tabIframeWrapper {
 			    <a id="5" class="tab"  target="itbi"  onClick="trocacor('5','<?=$tipo?>')" >Construção</a>
 			    <a id="7" class="tab"  target="itbi"  onClick="trocacor('7','<?=$tipo?>')" >Proprietário</a>
 			    <a id="6" class="tab"  target="itbi"  onClick="trocacor('6','<?=$tipo?>')" >Envia ITBI</a>
-			 <?
+			 <?php 
 			 }
 			 ?>
       	    </div>
      		<div class="tabMain">
     			<div class="tabIframeWrapper">
     				
-        			<?
+        			<?php 
         			if($tipo=="rural"){
         				?>
         				<iframe name="itbi" width="100%" height="800" align="center"  marginheight="8" marginwidth="8" frameborder="0"  src="itbi_itbirural.php?cnpj=<?=$cnpj?>&sol=<?=$sol?>"  >
         				</iframe>
-        				<?
+        				<?php 
         			}else{
         				?>
         				<iframe name="itbi" width="100%" height="800" align="center"  marginheight="8" marginwidth="8" frameborder="0"  src="itbi_itbiurbano.php?mat=<?=$mat?>"  >
         				</iframe>
-        				<?
+        				<?php 
         			}
         			?>
  				</div>
@@ -230,6 +230,6 @@ div.tabIframeWrapper {
 </body>
 </html>
 
-<?
+<?php 
   // 
   ?>

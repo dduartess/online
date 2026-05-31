@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -65,7 +65,7 @@ td{
               <?=$Lq02_inscr?>
             </td>
             <td width="96%" align="left" nowrap> 
-              <?
+              <?php 
                  db_input("q02_inscr",4,$Iq02_inscr,true,"text",4,"","chave_q02_inscr");
               ?>
             </td>
@@ -75,7 +75,7 @@ td{
               <?=$Lz01_nome?>
             </td>
             <td width="96%" align="left" nowrap> 
-              <?
+              <?php 
                  db_input("z01_nome",40,$Iz01_nome,true,"text",4,"","chave_z01_nome");
               ?>
             </td>
@@ -93,7 +93,7 @@ td{
   </tr>
   <tr> 
     <td align="center" valign="top"> 
-      <?
+      <?php 
       if(!isset($pesquisa_chave)){
         $campos = "issbase.q02_inscr,issbase.q02_dtinic,cgm.z01_nome,cgm.z01_ender,cgm.z01_numero,cgm.z01_compl,cgm.z01_cgccpf";
         if(isset($chave_q02_inscr) && (trim($chave_q02_inscr)!="") ){
@@ -164,13 +164,13 @@ td{
 </table>
 </body>
 </html>
-<?
+<?php 
 if(!isset($pesquisa_chave)){
   ?>
   <script>
      document.form2.chave_z01_nome.focus();
      document.form2.chave_z01_nome.select();
   </script>
-  <?
+  <?php 
 }
 ?>

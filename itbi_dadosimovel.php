@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -59,7 +59,7 @@ if(isset($incluir)){
 ?>
 <html>
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 <script>
 function js_verifica(){
@@ -121,7 +121,7 @@ function js_verifica(){
     	<td align="left" >&nbsp;
     	</td>
     	<td align="left" >
-    	<?
+    	<?php 
     	if($cod!=""){
 			$sql= "select * from itbidadosimovel where it22_itbi =$cod";
 			$result = pg_query($sql);
@@ -139,7 +139,7 @@ function js_verifica(){
 </table>
 </form>
 <html>
-<?
+<?php 
 		
 		echo"
 		<script>
@@ -162,7 +162,7 @@ function js_verifica(){
 </table>
 </form>
 <html>
-<?
+<?php 
 			}
     	}
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php 
 
 
 //include("cabec_rodape.php");

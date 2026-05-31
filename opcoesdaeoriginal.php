@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -160,15 +160,15 @@ function js_trocaframe(div,obj){
 }
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
-<?
+<?php 
 mens_div();
 ?>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" <?php  mens_OnHelp() ?>>
 <form name="form1" method="post" action="opcoesissqn.php">
 <center>
 <table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-bottom: 0px">

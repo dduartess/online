@@ -1,5 +1,6 @@
 <?php
 include_once("legacy_compat.php");
+include_once("legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             

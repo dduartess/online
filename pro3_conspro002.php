@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -108,7 +108,7 @@ function js_imprime(cod) {
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
@@ -132,7 +132,7 @@ db_estilosite();
 <table width="100%" class="texto">
 	<tr>
 		<td>
-		<?
+		<?php 
 		  $result_param = $clprotparam->sql_record($clprotparam->sql_query(null,"*",null,"p90_instit=".db_getsession("DB_instit")));
 		  
 		  if ($clprotparam->numrows > 0) {

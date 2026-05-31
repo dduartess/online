@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -61,10 +61,10 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
 
   <form name="form1" method="post" action="pes2_cedulac002.php">
-          <?
+          <?php 
            
          if ( $iNroCalculoAnos > 0 ) {
           
@@ -80,7 +80,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
                 Ano Base:
               </td>
               <td class="dadosForm">
-                <?
+                <?php 
                    db_selectrecord('anobase',$rsCalculoAnos,true,1,'','','','','',1);
                    db_input('iMatric',10,'',true,'hidden',1,'');
                    db_input('iInstit',10,'',true,'hidden',1,'');
@@ -93,7 +93,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
               </td>
             </tr>
           </table>
-          <?
+          <?php 
               
             } else {
           ?>      
@@ -105,7 +105,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
             </tr>
           </table>          
         
-          <?
+          <?php 
             }
           ?>  
   

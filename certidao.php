@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -147,7 +147,7 @@ if (isset($w13_libcertpos) && $w13_libcertpos == "t") {
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <script>
  function js_valida(){
@@ -187,7 +187,7 @@ if (isset($w13_libcertpos) && $w13_libcertpos == "t") {
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" >
 <br><br><br>
-<?
+<?php 
 if ($bForm == true) {
 ?>
 <form name="certidaonome" id="certidaonome" method="post" action="">
@@ -231,7 +231,7 @@ if ($bForm == true) {
      </tr>       
 </table>
 </form>
-<?
+<?php 
 } else if ($bForm == false) {
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
@@ -243,7 +243,7 @@ if ($bForm == true) {
  	 <tr>
   	   <td colspan="2" align="center">&nbsp;</td>
   	 </tr>
-<?
+<?php 
 if (isset($numcgm) && $numcgm != "") {
    if(isset($w13_libcertpos) && $w13_libcertpos == 't'){
      $bForm = false;
@@ -292,12 +292,12 @@ if (isset($w13_libcertpos) && $w13_libcertpos == "t") {
 }
 ?>
 </table>
-<?
+<?php 
 }
 ?>
 </body>
 </html>
-<?
+<?php 
 db_logs("","",0,"Tela da Certidoo por Nome.");
 
 function formata_cgccpf($sCgcCpf){

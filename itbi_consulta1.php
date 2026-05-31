@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -32,7 +32,7 @@ parse_str($HTTP_SERVER_VARS["QUERY_STRING"]);
 postmemory($HTTP_POST_VARS);
 ?>
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 
 <script>
@@ -44,7 +44,7 @@ function js_imprime(cod){
 	imp = window.open('itbi_recibo.php?itbi='+cod, 'blank');
 }
 </script>
-<?
+<?php 
 
 $sql="
 	select it03_seq,it03_guia,it03_nome,it01_finalizado,it03_tipo,it06_matric, 

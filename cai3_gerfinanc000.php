@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -39,11 +39,11 @@ parse_str($HTTP_SERVER_VARS['QUERY_STRING']);
 <script type="text/javascript" src="scripts/strings.js"></script>
 <script type="text/javascript" src="scripts/prototype.js"></script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
-<?
+<?php 
  if(trim(@$numcgm)==''){
  	$numcgm = '';
  }
@@ -70,32 +70,32 @@ db_estilosite();
  if (isset($suspensao)) { 
    ?>
    <iframe id="iframe" name="iframe" src="cai3_gerfinanc008.php?numcgm=<?=@$numcgm?>&matric=<?=@$matric?>&inscr=<?=@$inscr?>&tipo=<?=@$tipo?>&emrec=<?=@$emrec?>&agnum=<?=@$agnum?>&agpar=<?=@$agpar?>&db_datausu=<?=date('Y-m-d',db_getsession('DB_datausu'))?>&id_usuario=<?=@$id_usuario?>&cgccpf=<?=$cgccpf?>" width="100%" height="270"></iframe>
-   <? 	
+   <?php  	
  } else if( isset($tipo) && $tipo == 3){
   ?>	
     <script>alert("Atenção!\n\Informe os valores clicando nas caixas de texto.\n\nApós, clique em Agrupar para selecionar\nas parcelas que deseja emitir o Recibo.");</script>
-    <?if(trim($matric)=='')$matric='';?>
+    <?php if(trim($matric)=='')$matric='';?>
     <iframe id="iframe" name="iframe" src="cai3_gerfinanc002.php?numcgm=<?=@$numcgm?>&matric=<?=@$matric?>&inscr=<?=@$inscr?>&tipo=<?=@$tipo?>&emrec=<?=@$emrec?>&agnum=<?=@$agnum?>&agpar=<?=@$agpar?>&db_datausu=<?=date('Y-m-d',db_getsession('DB_datausu'))?>&id_usuario=<?=@$id_usuario?>&cgccpf=<?=$cgccpf?>" width="100%" height="270"></iframe>	
-  <?
+  <?php 
  } else if( isset($tipo) &&  $tipo == 19){
    ?>
    <iframe id="iframe" name="iframe" src="cai3_gerfinanc040.php?numcgm=<?=@$numcgm?>&matric=<?=@$matric?>&inscr=<?=@$inscr?>&tipo=<?=@$tipo?>&emrec=<?=@$emrec?>&agnum=<?=@$agnum?>&agpar=<?=@$agpar?>&db_datausu=<?=date('Y-m-d',db_getsession('DB_datausu'))?>&id_usuario=<?=@$id_usuario?>&cgccpf=<?=$cgccpf?>" width="100%" height="270"></iframe>
-   <?
+   <?php 
  } else if( isset($tipo) && $tipo == 34){
    $inicial = true;
    ?>
    <iframe id="iframe" name="iframe" src="cai3_gerfinanc050.php?numcgm=<?=@$numcgm?>&matric=<?=@$matric?>&inscr=<?=@$inscr?>&tipo=<?=@$tipo?>&emrec=<?=@$emrec?>&agnum=<?=@$agnum?>&agpar=<?=@$agpar?>&db_datausu=<?=date('Y-m-d',db_getsession('DB_datausu'))?>&id_usuario=<?=@$id_usuario?>&cgccpf=<?=$cgccpf?>" width="100%" height="270"></iframe>
-   <?
+   <?php 
  } else {
    ?>
      <iframe id="iframe" name="iframe" src="cai3_gerfinanc002.php?numcgm=<?=@$numcgm?>&matric=<?=@$matric?>&inscr=<?=@$inscr?>&tipo=<?=@$tipo?>&emrec=<?=@$emrec?>&agnum=<?=@$agnum?>&agpar=<?=@$agpar?>&db_datausu=<?=date('Y-m-d',db_getsession('DB_datausu'))?>&id_usuario=<?=@$id_usuario?>&cgccpf=<?=$cgccpf?>" width="100%" height="270"></iframe>
-   <?
+   <?php 
  }
  
 ?>
 <br>
 
 
-<?include("cai3_gerfinanc001.php");?>
+<?php include("cai3_gerfinanc001.php");?>
 </body>
 </html>

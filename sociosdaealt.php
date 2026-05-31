@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -148,17 +148,17 @@ function js_deletalinha(obj,obj1){
 }
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?
+<?php 
 mens_div();
 ?>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td align="left" valign="top">
       <form name="form1" action="opcoesdae.php?inscricaow=<?=$inscricaow?>" method="post">
@@ -227,7 +227,7 @@ mens_div();
 		      Endereço.
 		    </td>
 		  </tr>
-		  <?
+		  <?php 
 		    if(!isset($primeira)){
 		      exit;
 		    }  

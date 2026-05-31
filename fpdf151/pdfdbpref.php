@@ -1,4 +1,4 @@
-<?
+<?php 
 session_cache_limiter('none');
 session_start();
 require("libs/db_conecta.php");

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -114,7 +114,7 @@ switch ($sSigla) {
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?mens_OnHelp()?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
   <form name="form1" method="post" target="iframeFichaFinanceira">
     <table align="center" class="tableForm" width="60%">
       <tr>  
@@ -205,7 +205,7 @@ switch ($sSigla) {
 				            </tr>           
 			            </thead> 
 			            <tbody>
-				            <?
+				            <?php 
 			
 				               $sSqlRubricas = " select {$sSigla}_rubric as rubric,
 				                                        {$sSigla}_quant  as quant,

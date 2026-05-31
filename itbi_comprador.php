@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -96,7 +96,7 @@ if (isset($excluir)){
 <title>Comprador</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 <script>
 function js_alterar(seq,princ,nome,sexo,cnpj,end,num,compl,cxpostal,bairro,munic,uf,cep,email){
@@ -275,7 +275,7 @@ function js_verifica(){
     			Opções
       			</th>
   			</tr>
-  			<?
+  			<?php 
   			
   			if(isset($pesq)){
 	$sqlcgm="select * from cgm where z01_cgccpf= $it03_cpfcnpj";	
@@ -349,6 +349,6 @@ function js_verifica(){
 </form>
 </html>
 
-<?
+<?php 
 
 ?>

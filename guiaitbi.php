@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -164,7 +164,7 @@ db_fieldsmemory($config,0);
   <tr> 
     <td colspan="4"> 
       <Table border="0" cellpadding="0" cellspacing="0">
-        <?
+        <?php 
     $CAR = pg_exec($conn,"select c.descricao,i.area 
                     from db_caritbi c,db_caritbilan i
                     where c.codigo = i.codigo
@@ -208,7 +208,7 @@ db_fieldsmemory($config,0);
             <?=($are4 != ""?number_format($are4,2,".",","):"")?>
             &nbsp;</td>
         </TR>
-        <?
+        <?php 
     }
     ?>
       </table></td>

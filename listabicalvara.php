@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -83,7 +83,7 @@ if(!isset($DB_LOGADO) && $m_publico !='t'){
 js_verificapagina("opcoesdebitospendentes.php");
 </script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 echo"
 .tabfonte {
      	  font-family: $w01_fontesite;
@@ -96,12 +96,12 @@ echo"
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
-<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?$w01_corbody?>">
+<table width="766" border="0" cellpadding="0" cellspacing="0" bgcolor="<?php $w01_corbody?>">
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -130,7 +130,7 @@ mens_div();
 	  <table width="100%" height="313" border="0" cellpadding="0" cellspacing="0">
       <tr>
             <td width="90" align="left" valign="top"> 
-          <?    db_montamenus();        
+          <?php     db_montamenus();        
           ?>
 		</td>
             <td align="left" valign="top"> 
@@ -261,7 +261,7 @@ mens_div();
                           <td class="tabfonte" width="81%">&nbsp;&nbsp;&nbsp; Descri&ccedil;&atilde;o</td>
                           <td class="tabfonte" width="10%" align="center"> Tipo</td>
                         </tr>
-                        <?
+                        <?php 
 		                for($contador=0; $contador < pg_numrows($result); $contador ++){
 		                  db_fieldsmemory($result,$contador);
 		                  ?>
@@ -274,7 +274,7 @@ mens_div();
                               <?=$j14_tipo?>
                           </td>
                         </tr>
-                        <?
+                        <?php 
 		              }
 		                ?>
                       </table>
@@ -290,7 +290,7 @@ mens_div();
   </tr>
 </table>
 </center>
-<?
+<?php 
 db_rodape();
 ?>
 </body>

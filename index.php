@@ -143,7 +143,7 @@ if (@$cgm != "") {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" type="text/javascript" src="scripts/md5.js"></script>
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
 <script>
@@ -164,11 +164,11 @@ function js_submeter() {
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
-<?
+<?php 
 
 $result4 = db_query("select upper(trim(munic)) as munic from db_config where codigo = ".db_getsession("DB_instit"));
 if( pg_num_rows($result4) > 0 ) {
@@ -205,7 +205,7 @@ $altura = 200;
 	bgcolor="<?=$w01_corbody?>"
 	onLoad="<?=!isset($DB_LOGADO) && (db_getsession('DB_login') == '')?'js_foco()':''?>">
 
-<?
+<?php 
 if ( (isset($usuario) && $usuario !="") || (isset($id_usuario) && $id_usuario != "")) {
 
 	if ( $usuario != "" && !isset( $id_usuario ) ) {
@@ -229,11 +229,11 @@ if ( (isset($usuario) && $usuario !="") || (isset($id_usuario) && $id_usuario !=
 	cellspacing="0" bgcolor="<?=$w01_corbody?>">
  <!--
 	<tr>
-		<td height="<? //=$altura?>px" colspan="3"
+		<td height="<?php  //=$altura?>px" colspan="3"
 			 style="background-image:url('imagens/cabecalho.jpg'); background-repeat: no-repeat;" align="center"></td>
 	</tr>
  -->
- <?
+ <?php 
   /*
    * Modificacao incluida para que nao repita ou corte a imagem  do cabecalho enviado pelo cliente
    */
@@ -249,7 +249,7 @@ if ( (isset($usuario) && $usuario !="") || (isset($id_usuario) && $id_usuario !=
 	</tr>
 	<tr height="15" bgcolor="<?=$w01_corbody?>" class="texto">
 
-		<td><?
+		<td><?php 
 
 		if (db_getsession("DB_login") == "") {
 		  echo "
@@ -270,7 +270,7 @@ if ( (isset($usuario) && $usuario !="") || (isset($id_usuario) && $id_usuario !=
            <a href="pedido_senha.php?eqm=0"  target="CentroPref">Pedido de Senha</a>&nbsp;&nbsp;
            <a href="pedido_senha.php?eqm=1"  target="CentroPref">Esqueci Minha Senha</a>&nbsp;&nbsp;
            <a href="rhpes_autcontracheq.php" target="CentroPref">Autenticidade de Contracheque</a>
-		    <?
+		    <?php 
 
 //#################################################################
 
@@ -464,7 +464,7 @@ $HTTP_SESSION_VARS["DB_codperfil"] = $id_usuario;
 ?>
 
 		</td>
-		<td> <?db_logon(isset($login)?false:true,$w13_liberaatucgm,$w13_liberaescritorios); ?></td>
+		<td> <?php db_logon(isset($login)?false:true,$w13_liberaatucgm,$w13_liberaescritorios); ?></td>
 
  		<td align="left"> <?=date('d/m/Y') ?></td>
   	</tr>
@@ -473,9 +473,9 @@ $HTTP_SESSION_VARS["DB_codperfil"] = $id_usuario;
  	</tr>
 
 	<tr>
-			<?$ano= date("Y"); ?>
+			<?php $ano= date("Y"); ?>
 
-		<td colspan="3"> <?db_menu_dbpref($codperf,5457,$ano,$DB_INSTITUICAO,@$cgm,@$nomeusuario); ?>
+		<td colspan="3"> <?php db_menu_dbpref($codperf,5457,$ano,$DB_INSTITUICAO,@$cgm,@$nomeusuario); ?>
 
 		</td>
 	</tr>
@@ -488,7 +488,7 @@ $HTTP_SESSION_VARS["DB_codperfil"] = $id_usuario;
 </table>
 </body>
 </html>
-<?
+<?php 
 
 if (isset ($erroscripts) && !isset ($DB_LOGADO)) {
 	if (@ $erroscripts == 1)
@@ -501,7 +501,7 @@ if (isset ($erroscripts) && !isset ($DB_LOGADO)) {
 
 ?>
 <script>
-<?
+<?php 
 
 if (!isset ($DB_LOGADO) && (db_getsession("DB_login") == "")) {
 

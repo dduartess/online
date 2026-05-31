@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -288,7 +288,7 @@ function js_marca(){
 		<td>
 			<table width="90%" border="1" cellpadding="1" cellspacing="0" align = "center">
 			
-			<?
+			<?php 
 		if ($linhas>0){
 			?>
 			
@@ -303,7 +303,7 @@ function js_marca(){
 				
 			</tr>
 			
-		<?
+		<?php 
 		
 			for($i = 0;$i < $linhas;$i++) {
 				db_fieldsmemory($result,$i);	

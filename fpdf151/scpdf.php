@@ -1,4 +1,4 @@
-<?
+<?php 
 set_time_limit(0);
 session_cache_limiter('none');
 if ( session_id() == null ) 

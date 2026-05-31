@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -179,14 +179,14 @@ return true;
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite();
 ?>
 </style>
 </head>
 <body bgcolor="<?=$w01_corbody?>">
 
-<?
+<?php 
 
 
 $cldb_dairetido= new cl_db_dairetido;
@@ -359,7 +359,7 @@ db_fieldsmemory($resultano,0);
 				
 			</tr>
 			
-<?
+<?php 
   
 	$result = $cldb_dairetido->sql_record( $cldb_dairetido->sql_query("","*","w15_mes","w15_dai = $codigo"));
 	$linhas= $cldb_dairetido->numrows;

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -100,7 +100,7 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
 <script>
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
@@ -157,10 +157,10 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
 <script>
   document.getElementById('int_perc1').style.visibility='visible';
 </script>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <br><br>
 <center>
-<?
+<?php 
 // verifica se está logado
   if(( @$id_usuario!="" ) && !isset($outro)){
      @$usuario = $id_usuario;
@@ -245,7 +245,7 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
   </tr>
 </table>
 </form>
-<?
+<?php 
 } else {
 	   	
    //Escritorio  
@@ -271,24 +271,24 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
   </tr>
 </table>
 </form>  
-<?
+<?php 
    }
    if($escrito > 0){
 ?>
       <a href="certidaoinscr003.php?id_usuario=<?=$id_usuario?>&outro=''">:: Pesquisar Outro Alvará ::</a><br><br>
-<?
+<?php 
    }
 ?>
 <form name="form3" method="post" >
 <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
-<? 
+<?php  
    if($escrito > 0){ 
 ?>
   <tr height="20" >
     <td colspan="3">
       <b>Mostrar inscriçoes</b> 
         <select name="mostrainscricao" onchange = "document.form3.submit();">
-<? 
+<?php  
   echo "
           <option value = '1'".($mostrainscricao == 1?"selected":"").">Todas</option>
           <option value = '2'".($mostrainscricao == 2?"selected":"").">Somente baixadas</option>
@@ -296,7 +296,7 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
        ";
 ?>
         </select>
-<? 
+<?php  
    }
 ?>
     </td>
@@ -304,7 +304,7 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
   <tr height="20" >
     <td colspan="3">&nbsp;</td>
   </tr>
-<?
+<?php 
    //busca clientes do escritório
    for ($x = 0; $x < $escrito; $x++) {
       if ($x == 0) {
@@ -314,7 +314,7 @@ if (@$_COOKIE["cookie_codigo_cgm"] == "") {
       <b>Inscrições que tenho acesso</b>
     </td>
   </tr>
-<?
+<?php 
       }
     
       db_fieldsmemory($result,$x);
@@ -357,7 +357,7 @@ echo "
       <b>Minha Inscrição</b>
     </td>
   </tr>
-<?
+<?php 
       }
       
       db_fieldsmemory($result2,$x);
@@ -395,7 +395,7 @@ echo "
 ?>
 </table>
 </form>
-<?
+<?php 
    }
    
   db_logs("","",0,"Digita Codigo da Inscricao.");

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -74,8 +74,8 @@ function js_erroinscr(inscr){
 .unnamed1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: normal; font-weight: bold; color: #996633; text-decoration: none}
 </style>
 </head>
-<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  <? mens_OnHelp() ?> >
-<?
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  <?php  mens_OnHelp() ?> >
+<?php 
 mens_div();
 include("processando.php");
 $db_verifica_ip = db_verifica_ip();

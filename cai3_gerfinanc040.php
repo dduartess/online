@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -110,7 +110,7 @@ if(isset($inicial)){
 <center>
 <form name="form1" method="post" action="">
 <table>
-<?
+<?php 
   if($numrows>0){
     echo "
           <tr bgcolor=\"#FFCC66\">   \n  	
@@ -218,7 +218,7 @@ if(isset($inicial)){
   }else{
 ?>
   <tr><td><small>Nenhum registro encontrado</small></td></tr> 
-<?
+<?php 
   }
 ?>
 </table>

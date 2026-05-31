@@ -1,5 +1,6 @@
 <?php
 include_once("libs/legacy_compat.php");
+include_once("libs/legacy_compat.php");
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2013  DBselller Servicos de Informatica             
@@ -112,7 +113,7 @@ function js_submeter() {
 
 </script>
 <style type="text/css">
-<?
+<?php 
 db_estilosite()
 ?>
 </style>
@@ -120,7 +121,7 @@ db_estilosite()
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
-<?//mens_div();?>
-<?db_montamenus(isset($login)?false:true);?>
+<?php //mens_div();?>
+<?php db_montamenus(isset($login)?false:true);?>
 </body>
 </html>

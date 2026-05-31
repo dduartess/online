@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -145,7 +145,7 @@ if(!isset($trocaip) && !isset($atualiza)){
               <?=$HTTP_SERVER_VARS['PHP_SELF'];?>
             </td>
           </tr>
-          <?
+          <?php 
 					if(isset($HTTP_SESSION_VARS["DB_SELLER"]) || (isset($atualiza) || isset($db_ip))){
            $result = pg_exec("select datname from pg_database where substr(datname,1,6) != 'templa'"); 
 	         if($result!=false && pg_numrows($result)!=0){
@@ -160,16 +160,16 @@ if(!isset($trocaip) && !isset($atualiza)){
 
               ?>
                <tr> 
-              <?
+              <?php 
 							if ($permissao_parcelamento == "true" or db_getsession("DB_id_usuario") == 1) {
 							?>
                <td nowrap><strong>Base:</strong></td>
                <td nowrap><select name="db_base">
-							<?
+							<?php 
 								for($bb=0;$bb<pg_numrows($result);$bb++){
 								?>
 									<option value="<?=pg_result($result,$bb,0)?>" <?=($DB_BASE==pg_result($result,$bb,0)?"selected":"")?>><?=pg_result($result,$bb,0)?></option> 
-								<?
+								<?php 
 								}
 							}
 								?>
@@ -181,7 +181,7 @@ if(!isset($trocaip) && !isset($atualiza)){
 	       <input name="trocaip" type="submit" value="Troca Servidor" >
 	       </td>
               </tr>
-	    <?
+	    <?php 
             }
 	  }
 	  ?>

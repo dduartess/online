@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -44,12 +44,12 @@ if($cllistainscrcab->numrows > 0 ){
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
-<?db_estilosite();
+<?php db_estilosite();
 ?>
 </style>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <form name="form1" method="post" target="_parent" action="listaescritorios.php">
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
@@ -72,7 +72,7 @@ if($cllistainscrcab->numrows > 0 ){
 	    <strong>Opções</strong>
 	  </th>
 	</tr>
-<?
+<?php 
 for($i=0;$i<$numrows;$i++){
   db_fieldsmemory($result,$i);
   if($i%2 == 0){
@@ -96,11 +96,11 @@ for($i=0;$i<$numrows;$i++){
 	  </td>
 	  <td align="left" nowrap>
 	    <input class="botao" type="<?=($p11_fechado == 'f'?"submit":"button")?>" value="<?=($p11_fechado == 'f'?"Fechar Lista":"Imprimir Lista")?>" name="opcao" <?=($p11_fechado == 'f'?"onclick=\"document.form1.p11_codigo_fechar.value='$p11_codigo';return confirm('Após fechar a lista ela não pode mais ser alterada\\ndeseja fechar a lista?');\"":"onclick=\"js_imprimir('$p11_codigo')\"")?>>
-	    <?
+	    <?php 
 	    if($p11_processado == 'f' && $p11_fechado == 'f'){
 	    ?>
 	      <input type="submit" value="Alterar Lista" name="alterar" class="botao" onclick="document.form1.p11_codigo_alterar.value='<?=$p11_codigo?>'">
-	    <?
+	    <?php 
 	    }elseif($p11_processado == 't'){
 	      echo "<strong><font size='1'>.: lista já processada na Prefeitura :.</font></strong>";
 	    }else{
@@ -109,12 +109,12 @@ for($i=0;$i<$numrows;$i++){
 	    if($p11_fechado == 'f'){
 	    ?>
 	    <input type="button" class="botao" value="Imprimir Lista" name="opcao" onclick="js_imprimir('<?=$p11_codigo?>')">
-	    <?
+	    <?php 
 	    }
 	    ?>
 	  </td>
 	</tr>
-<?
+<?php 
 }
 ?>	      
 	<input type="hidden" value="" name="p11_codigo_fechar">
@@ -122,7 +122,7 @@ for($i=0;$i<$numrows;$i++){
       </table>
     </td>
   </tr>
-  <?
+  <?php 
 }else{
 ?>
   <tr> 
@@ -131,7 +131,7 @@ for($i=0;$i<$numrows;$i++){
     </td>
   </tr>
 
-<?
+<?php 
 }
 ?>
 </table> 

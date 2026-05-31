@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -60,7 +60,7 @@ db_logs("","",0,"Consulta Funcional.");
   <td><br></td>
  </tr>
 </table>
-<?  
+<?php   
   $sqlPermConsServ = " select * 
                          from configdbpref 
                         where w13_permconsservdemit = true ";
@@ -109,7 +109,7 @@ db_logs("","",0,"Consulta Funcional.");
        <b>NÃO PERMITE CONSULTA DE FUNCIONÁRIO DEMITIDO!</b>
     </td>
    </tr>
-   <?
+   <?php 
     } else {
    ?>
 <table align="center" width="90%" cellpadding="2" cellspacing="0" class="texto">
@@ -125,7 +125,7 @@ db_logs("","",0,"Consulta Funcional.");
       <td>Data Demissão</td>
       <td>Instituicao</td>
    </tr>
-   <?
+   <?php 
        $corFundo = "#FFFFFF";
        $corOver  = "#ede67c";
        
@@ -150,24 +150,24 @@ db_logs("","",0,"Consulta Funcional.");
      <td align="center">&nbsp;<?= $oCgmCont->rh01_regist; ?></td>
      <td align="center">&nbsp;<?= db_formatar($oCgmCont->rh01_admiss,'d'); ?></td>
      <td align="center">&nbsp;<?= $oCgmCont->rh37_descr;  ?></td> 
-     <?
+     <?php 
        if ($oCgmCont->rh05_recis == '') {
      ?>    
      <td align="center">&nbsp;</td>
-     <?
+     <?php 
        } else {
      ?> 
      <td align="center">&nbsp;<?= db_formatar($oCgmCont->rh05_recis,'d');  ?></td>
-     <?
+     <?php 
        }
      ?>     
      <td align="center">&nbsp;<?= $oCgmCont->rh02_instit;  ?></td> 
     </tr>
-    <?
+    <?php 
      }
     ?>
 </table>
-<?
+<?php 
  }
 ?>
 </body>

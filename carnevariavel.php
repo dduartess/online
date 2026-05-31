@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -122,7 +122,7 @@ if(isset($ano)){
     alert("Sem lançamentos!");
     window.close();
    </script>
-   <?
+   <?php 
   }
 
 }
@@ -184,7 +184,7 @@ function js_emiterecibo() {
 
 </script>
 <style type="text/css">
-<?//db_estilosite();
+<?php //db_estilosite();
 echo"
 .tabfonte {
           font-family: $w01_fontesite;
@@ -197,8 +197,8 @@ echo"
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-<?
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+<?php 
 mens_div();
 ?>
 <center>
@@ -340,7 +340,7 @@ mens_div();
 
       </script>
       </select>
-      <?
+      <?php 
       $sano     = date("Y");
       $mesatual = date("m");
       //$sqlvariavel = "select arrecad.k00_numpar,issvar.q05_numpre from issvar inner join arreinscr on arreinscr.k00_numpre = issvar.q05_numpre inner join arrecad on arrecad.k00_numpre = issvar.q05_numpre and arrecad.k00_numpar = issvar.q05_numpar where issvar.q05_ano = $sano and issvar.q05_mes <= " . ($mesatual + 1) . " and arreinscr.k00_inscr = $inscricao and q05_vlrinf = 0";
@@ -355,7 +355,7 @@ mens_div();
           <a id="marca" href="#" style="color:black" onclick="js_marca();return false">Desmarcar</a>
         </th>
        </tr>
-       <?
+       <?php 
        $cont = 0;
        //$numpre = pg_result($result,$ci,1);
        for($ci = 0; $ci < pg_num_rows($result); $ci++){
@@ -391,7 +391,7 @@ mens_div();
      <tr>
       <td align="center">
        <input type="button" value="Voltar" onclick="history.go(-2)">
-       <input class="botao" type="submit" name="emite" value="Emite carnê" <?if(pg_num_rows($result)==0){echo "disabled";}?> onClick="return js_emiterecibo()">
+       <input class="botao" type="submit" name="emite" value="Emite carnê" <?php if(pg_num_rows($result)==0){echo "disabled";}?> onClick="return js_emiterecibo()">
       </td>
      </tr>
       </td>

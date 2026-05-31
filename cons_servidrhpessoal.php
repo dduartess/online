@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2012  DBselller Servicos de Informatica             
@@ -81,7 +81,7 @@ if ($iCodCli == 15 ) {
   <td><br></td>
  </tr>
 </table>
-<?
+<?php 
   if ($id_usuario != "") { 
 ?>
 <table width="100%" border="0" cellpadding="2" cellspacing="0" class="texto">
@@ -94,7 +94,7 @@ if ($iCodCli == 15 ) {
            </td>
         </tr>
         
-        <? if ($lBloqueio == false ) { ?>
+        <?php  if ($lBloqueio == false ) { ?>
         <tr>
            <td nowrap="nowrap" width="100%">
              <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('assentamentos');">Assentamentos</span>
@@ -105,7 +105,7 @@ if ($iCodCli == 15 ) {
              <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('averbacao');">Averbação de Tempo de Serviço</span>
            </td>
         </tr>
-        <? } ?>
+        <?php  } ?>
         
         <tr>
             <td nowrap="nowrap" width="100%">
@@ -113,13 +113,13 @@ if ($iCodCli == 15 ) {
             </td>
          </tr>
          
-        <? if ($lBloqueio == false ) { ?>
+        <?php  if ($lBloqueio == false ) { ?>
          <tr>
             <td nowrap="nowrap" width="100%">
               <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('ferias');">Férias</span>
             </td>
          </tr>
-        <? } ?>
+        <?php  } ?>
                     
          <tr>
              <td nowrap="nowrap" width="100%">
@@ -147,7 +147,7 @@ if ($iCodCli == 15 ) {
     <td>&nbsp;</td>       
   </tr>  
 </table>
-<? 
+<?php  
   } else if ($w13_permfornsemlog == "f") {
 ?>
  <table width="300" align="center" border="0" bordercolor="#cccccc" cellpadding="2" cellspacing="0" class="texto">
@@ -158,7 +158,7 @@ if ($iCodCli == 15 ) {
    </td>
   </tr>
  </table>
-<?
+<?php 
 }
 ?>
 </body>

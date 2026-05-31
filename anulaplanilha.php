@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -77,11 +77,11 @@ if(isset($anular)){
 	
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <center>
 	<br><br>
 	<form name="form1" >
@@ -120,7 +120,7 @@ if(isset($anular)){
 </body>
 <html>
 	
-	<?
+	<?php 
 	if(isset($anular)){
 	  if($sqlerro == true){
 	  	//db_msgbox($erro_msg);

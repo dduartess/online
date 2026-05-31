@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -157,7 +157,7 @@ class cl_estrutura {
       <input name="mascara"  readonly disabled size='<?=$this->size?>' type="text"  value="<?=$mascara?>"    >
       </td>
       </tr>
-      <?
+      <?php 
       
       
     }
@@ -168,19 +168,19 @@ class cl_estrutura {
       <?=@$$label?>
       </td>
       <td> 
-      <?
+      <?php 
       
       
     }
     ?>
     <input title="<?=@$$title?>" name="<?=$picture?>" maxlength='<?=$tamanho?>' size='<?=$this->size?>' type="text"  value="<?=@$$picture?>" onKeyPress="return js_mascara01_<?=$picture?>(event,this.value);"  <?=$funcao?> <?=($this->db_opcao==22||$this->db_opcao==33||$this->db_opcao==3?"readonly style=\"background-color:#DEB887\" ":"")?> >
-    <? 
+    <?php  
     
     if ($this->input == false) {
       ?>     
       </td>  
       </tr>  
-      <?
+      <?php 
       
       
     }
@@ -207,7 +207,7 @@ class cl_estrutura {
       while(obj.search(/\./)!='-1'){
         obj=obj.replace(/\./,''); 
       }
-      <?
+      <?php 
       
       
       if ($this->autocompletar == true) {
@@ -216,7 +216,7 @@ class cl_estrutura {
         for(i=obj.length; i<tam; i++){
           obj=obj+"0";
         }
-        <?
+        <?php 
         
         
       }
@@ -245,7 +245,7 @@ class cl_estrutura {
         }
       } 
       document.<?=$this->nomeform?>.<?=$picture?>.value=obj;
-      <?
+      <?php 
       
       
       if ($this->reload == true) {
@@ -256,14 +256,14 @@ class cl_estrutura {
         obj.setAttribute('value',"atualizar");
         document.<?=$this->nomeform?>.appendChild(obj);
         document.<?=$this->nomeform?>.submit();
-        <?
+        <?php 
         
         
       }
       ?>      
     }
     </script>    
-    <?
+    <?php 
     
     
   }

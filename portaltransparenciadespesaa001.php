@@ -63,12 +63,12 @@ $aMes      = array(1  => 'Janeiro',
 <script>
 </script>
 <style type="text/css">
-<?db_estilosite();?>
+<?php db_estilosite();?>
 </style>
 </head>
   <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
-        bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
-    <?mens_div();?>
+        bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
+    <?php mens_div();?>
     <br>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -83,7 +83,7 @@ $aMes      = array(1  => 'Janeiro',
                 <td>
                   <select name='anosreceita' id='anosreceita' style='width:100px'>
                     <option value=''>Selecione um ano</option>
-                    <?
+                    <?php 
                     foreach ($aAnos as $oAno) {
                       echo "  <option value='{$oAno->o58_anousu}'>{$oAno->o58_anousu}</option>\n";            
                     }
@@ -94,7 +94,7 @@ $aMes      = array(1  => 'Janeiro',
                 <td>
                   <select name='mesreceita' id='mesreceita' style='width:100px'>
                     <option value=''>Selecione um Mês</option>
-                    <?
+                    <?php 
                     foreach ($aMes as $iMes => $sDescricao) {
                      echo "  <option value='{$iMes}'>{$sDescricao}</option>\n";            
                     }

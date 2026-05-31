@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -65,7 +65,7 @@ if(isset($excluir)){
 
 <html>
 <style type="text/css">
-<?db_estilosite(); ?>
+<?php db_estilosite(); ?>
 </style>
 <script>
 	function js_excluir(cgm){
@@ -96,7 +96,7 @@ if(isset($excluir)){
     	            	  <input type="submit" name="pesq" value="Pesquisar" class="botao">
        	</td>
   	</tr>
-  	<?
+  	<?php 
   	if(isset($z01_nome)){
   		echo"
   	<tr class='texto''>
@@ -137,7 +137,7 @@ if(isset($excluir)){
     			Opções
       			</th>
   			</tr>
-  			<?
+  			<?php 
   			if($cod!=""){
 					$sql= "select * from itbipropriold inner join cgm on it20_numcgm=z01_numcgm where it20_guia=$cod";
 					$result = pg_query($sql);

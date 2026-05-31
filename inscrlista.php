@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
  *     E-cidade Software Publico para Gestao Municipal                
  *  Copyright (C) 2009  DBselller Servicos de Informatica             
@@ -46,7 +46,7 @@ if($cllistainscr->numrows > 0 ){
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <? mens_OnHelp() ?>>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php  mens_OnHelp() ?>>
 <form name="form1" method="post" target="_parent" action="listaescritorios001.php">
       <table width="100%" border="1" cellpadding="0" cellspacing="0">
 	<tr>
@@ -66,7 +66,7 @@ if($cllistainscr->numrows > 0 ){
 	    <strong>Opções</strong>
 	  </td>
 	</tr>
-<?
+<?php 
 for($i=0;$i<$numrows;$i++){
   db_fieldsmemory($result,$i);
   if($i%2 == 0){
@@ -92,7 +92,7 @@ for($i=0;$i<$numrows;$i++){
 	    <input type="submit" value="Excluir" name="opcao" onclick="document.form1.p12_codigo_excluir.value='<?=$p12_codigo?>';document.form1.p12_inscr_excluir.value='<?=$p12_inscr?>'">
 	  </td>
 	</tr>
-  <?
+  <?php 
   }
   ?>	      
 	<input type="hidden" value="" name="p12_codigo_excluir">
@@ -100,7 +100,7 @@ for($i=0;$i<$numrows;$i++){
       </table>
     </td>
   </tr>
-  <?
+  <?php 
 }else{
 ?>
   <tr> 
@@ -110,7 +110,7 @@ for($i=0;$i<$numrows;$i++){
   </tr>
 </table>  
 
-<?
+<?php 
 }
 ?>
 </form>
