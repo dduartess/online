@@ -46,7 +46,7 @@ require_once 'classes/db_cgm_classe.php';
 <html>
   <head>
     <title>DBSeller Inform&aacute;tica Ltda - Prefeitura On - Line</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script language="javaScript" src="scripts/db_script.js"></script>
     <script language="javaScript" src="scripts/scripts.js"></script>
     <style type="text/css">
@@ -77,7 +77,7 @@ try {
   }
 
   if ( $oPost->inscricaow == '' ) {
-    throw new Exception('Informe a inscrição');
+    throw new Exception('Informe a inscriÃ§Ã£o');
   }
 
   $sSqlValidaDados  = "select q02_numcgm                                 ";
@@ -91,7 +91,7 @@ try {
   $oValidaDados = db_utils::fieldsMemory($rsValidaDados, 0);
 
   if(pg_numrows($rsValidaDados) == 0) {
-    throw new Exception('Não encontrado inscrição para o CNPJ/CPF informado');
+    throw new Exception('NÃ£o encontrado inscriÃ§Ã£o para o CNPJ/CPF informado');
   }
 
   $sNomeArquivo = 'tmp/'.date('Ymd_His').'_'.$oArquivoEnviado->name;
@@ -108,10 +108,10 @@ try {
   $oLayout = new DBLayoutReader(190, $sNomeArquivo);
 
   /**
-   * Verifica se arquivo é do tipo txt
+   * Verifica se arquivo Ã© do tipo txt
    */
   if ( $oArquivoEnviado->type <> 'text/plain' ) {
-    throw new Exception('Arquivo inválido, somente txt');
+    throw new Exception('Arquivo invÃ¡lido, somente txt');
   }
 
   /**
@@ -130,7 +130,7 @@ try {
   $iTotalLinhasProcessadas   = count( $aLinhas );
 
   if ( $iTotalLinhasArquivo <> $iTotalLinhasProcessadas  ) {
-    throw new Exception('Número de linhas não conferem');
+    throw new Exception('NÃºmero de linhas nÃ£o conferem');
   }
 
   db_inicio_transacao();
@@ -142,7 +142,7 @@ try {
   $iMesUsu = !empty($oPost->mes) ? $oPost->mes : null;
 
   /**
-   * Cria planilha retenção
+   * Cria planilha retenÃ§Ã£o
    */
   $oPlanilhaRetencao = new planilhaRetencao(null, $oValidaDados->q02_numcgm, $iAnoUsu, $iMesUsu, $oPost->inscricaow);
 
@@ -176,12 +176,12 @@ try {
     $oNotaRetencao->setValorBase       ( $oLinha->valor_base );
     $oNotaRetencao->setValorImposto    ( $oLinha->valor_imposto );
     $oNotaRetencao->setDescricaoServico( "Recolhimento de retencao" );
-    $oNotaRetencao->setObservacoes     ( "Realizado via importaçao de arquivo no DBPREF" );
+    $oNotaRetencao->setObservacoes     ( "Realizado via importaÃ§ao de arquivo no DBPREF" );
     $oPlanilhaRetencao->adicionarNota  ( $oNotaRetencao );
   }
 
   db_fim_transacao(false);
-  db_msgbox('Importação efetuada com sucesso.');
+  db_msgbox('ImportaÃ§Ã£o efetuada com sucesso.');
   db_redireciona("planilha.php?nomecontri=&mostra=5&fonecontri=&inscricaow={$oPost->inscricaow}&mesx=&mes={$iMesUsu}&ano={$iAnoUsu}&numcgm={$oValidaDados->q02_numcgm}");
 
 } catch(Exception $oErro) {

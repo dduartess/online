@@ -52,7 +52,7 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"></script>
@@ -99,10 +99,10 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
                     echo 'Pai';
                    break;
                    case 'M':
-                    echo 'Mãe';
+                    echo 'MÃ£e';
                    break;
                    case 'A':
-                    echo 'Avó';
+                    echo 'AvÃ³';
                    break;
                    case 'O':
                     echo 'Outros';
@@ -133,20 +133,20 @@ $iNroDependentes = @pg_num_rows($rsDependentes);
                 $oTipoDepend  = db_utils::fieldsMemory($rsTipoDepend,0);
                 
                 if ( $oTipoDepend->rlirrf == 'f' ) {
-                	$sIRRF = 'Não';
+                	$sIRRF = 'NÃ£o';
                 }	else {
                 	$sIRRF = 'Sim';
                 }
                 
                 if ( $oTipoDepend->rlsalariofamilia == 'f' ) {
-                  $sSalarioFamilia = 'Não';
+                  $sSalarioFamilia = 'NÃ£o';
                 } else {
                   $sSalarioFamilia = 'Sim';
                 }                
             
             ?>
               <td class="labelForm">
-                Salário Família:
+                SalÃ¡rio FamÃ­lia:
               </td>
               <td class="dadosForm">
                 <?=$sSalarioFamilia?>

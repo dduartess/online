@@ -46,7 +46,7 @@ class cl_db_usuacgm {
    var $cgmlogin = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 id_usuario = int4 = Cod. Usuário 
+                 id_usuario = int4 = Cod. UsuÃ¡rio 
                  cgmlogin = int4 = Numcgm 
                  ";
    //funcao construtor da classe 
@@ -80,7 +80,7 @@ class cl_db_usuacgm {
        $this->erro_sql = " Campo Numcgm nao Informado.";
        $this->erro_campo = "cgmlogin";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -89,7 +89,7 @@ class cl_db_usuacgm {
      if(($this->id_usuario == null) || ($this->id_usuario == "") ){ 
        $this->erro_sql = " Campo id_usuario nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -107,13 +107,13 @@ class cl_db_usuacgm {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Usuário externo ($this->id_usuario) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Usuário externo já Cadastrado";
+         $this->erro_sql   = "UsuÃ¡rio externo ($this->id_usuario) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "UsuÃ¡rio externo jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Usuário externo ($this->id_usuario) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "UsuÃ¡rio externo ($this->id_usuario) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -123,7 +123,7 @@ class cl_db_usuacgm {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->id_usuario;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -147,10 +147,10 @@ class cl_db_usuacgm {
        $sql  .= $virgula." id_usuario = $this->id_usuario ";
        $virgula = ",";
        if(trim($this->id_usuario) == null ){ 
-         $this->erro_sql = " Campo Cod. Usuário nao Informado.";
+         $this->erro_sql = " Campo Cod. UsuÃ¡rio nao Informado.";
          $this->erro_campo = "id_usuario";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -163,7 +163,7 @@ class cl_db_usuacgm {
          $this->erro_sql = " Campo Numcgm nao Informado.";
          $this->erro_campo = "cgmlogin";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -189,9 +189,9 @@ class cl_db_usuacgm {
      $result = db_query($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Usuário externo nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "UsuÃ¡rio externo nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->id_usuario;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -199,18 +199,18 @@ class cl_db_usuacgm {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Usuário externo nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "UsuÃ¡rio externo nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->id_usuario;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->id_usuario;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -251,9 +251,9 @@ class cl_db_usuacgm {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Usuário externo nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "UsuÃ¡rio externo nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$id_usuario;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -261,18 +261,18 @@ class cl_db_usuacgm {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Usuário externo nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "UsuÃ¡rio externo nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$id_usuario;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$id_usuario;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -287,7 +287,7 @@ class cl_db_usuacgm {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -296,7 +296,7 @@ class cl_db_usuacgm {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:db_usuacgm";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

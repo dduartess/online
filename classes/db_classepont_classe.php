@@ -47,7 +47,7 @@ class cl_classepont {
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
                  q25_classe = int4 = codigo da classe 
-                 q25_pontuacao = float8 = Pontuação 
+                 q25_pontuacao = float8 = PontuaÃ§Ã£o 
                  ";
    //funcao construtor da classe 
    function cl_classepont() { 
@@ -77,10 +77,10 @@ class cl_classepont {
    function incluir ($q25_classe){ 
       $this->atualizacampos();
      if($this->q25_pontuacao == null ){ 
-       $this->erro_sql = " Campo Pontuação nao Informado.";
+       $this->erro_sql = " Campo PontuaÃ§Ã£o nao Informado.";
        $this->erro_campo = "q25_pontuacao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -89,7 +89,7 @@ class cl_classepont {
      if(($this->q25_classe == null) || ($this->q25_classe == "") ){ 
        $this->erro_sql = " Campo q25_classe nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -106,13 +106,13 @@ class cl_classepont {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Pontuação das classes ($this->q25_classe) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Pontuação das classes já Cadastrado";
+         $this->erro_sql   = "PontuaÃ§Ã£o das classes ($this->q25_classe) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "PontuaÃ§Ã£o das classes jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Pontuação das classes ($this->q25_classe) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "PontuaÃ§Ã£o das classes ($this->q25_classe) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -122,7 +122,7 @@ class cl_classepont {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q25_classe;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -140,7 +140,7 @@ class cl_classepont {
          $this->erro_sql = " Campo codigo da classe nao Informado.";
          $this->erro_campo = "q25_classe";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -150,10 +150,10 @@ class cl_classepont {
        $sql  .= $virgula." q25_pontuacao = $this->q25_pontuacao ";
        $virgula = ",";
        if(trim($this->q25_pontuacao) == null ){ 
-         $this->erro_sql = " Campo Pontuação nao Informado.";
+         $this->erro_sql = " Campo PontuaÃ§Ã£o nao Informado.";
          $this->erro_campo = "q25_pontuacao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -166,9 +166,9 @@ class cl_classepont {
      $result = db_query($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Pontuação das classes nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "PontuaÃ§Ã£o das classes nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->q25_classe;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -176,18 +176,18 @@ class cl_classepont {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Pontuação das classes nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "PontuaÃ§Ã£o das classes nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->q25_classe;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q25_classe;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -213,9 +213,9 @@ class cl_classepont {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Pontuação das classes nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "PontuaÃ§Ã£o das classes nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$q25_classe;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -223,18 +223,18 @@ class cl_classepont {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Pontuação das classes nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "PontuaÃ§Ã£o das classes nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$q25_classe;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$q25_classe;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -249,7 +249,7 @@ class cl_classepont {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -258,7 +258,7 @@ class cl_classepont {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:classepont";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

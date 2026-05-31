@@ -12,9 +12,9 @@ $this->objpdf->AliasNbPages();
 	$this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 	$this->objpdf->setfillcolor(255,255,255);
 	$this->objpdf->Setfont('Arial','B',10);
-	$this->objpdf->text(126,$xlin-13,'NOTA DE ANULAÇÃO N'.CHR(176).': ');
+	$this->objpdf->text(126,$xlin-13,'NOTA DE ANULAÃ‡ÃƒO N'.CHR(176).': ');
 	$this->objpdf->text(175,$xlin-13,db_formatar($this->notaanulacao,'s','0',6,'e'));
-	$this->objpdf->text(134,$xlin-8,'DATA DE EMISSÃO : ');
+	$this->objpdf->text(134,$xlin-8,'DATA DE EMISSÃƒO : ');
 	$this->objpdf->text(175,$xlin-8,$this->emissao);
 
 	$this->objpdf->text(134,$xlin-3,'        EMPENHO : ');
@@ -31,17 +31,17 @@ $this->objpdf->AliasNbPages();
 	$this->objpdf->text(40,$xlin-5,$this->telefpref);
 	$this->objpdf->text(40,$xlin-2,$this->emailpref);
 
-        /// retangulo dos dados da dotação
+        /// retangulo dos dados da dotaÃ§Ã£o
 	$this->objpdf->rect($xcol,$xlin+2,$xcol+100,50,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','B',8);
-	$this->objpdf->text($xcol+2,$xlin+7,'Órgao');
+	$this->objpdf->text($xcol+2,$xlin+7,'Ã“rgao');
 	$this->objpdf->text($xcol+2,$xlin+11,'Unidade');
-	$this->objpdf->text($xcol+2,$xlin+15,'Função');
+	$this->objpdf->text($xcol+2,$xlin+15,'FunÃ§Ã£o');
 	
 	$this->objpdf->text($xcol+2,$xlin+22,'Proj/Ativ');
 	$this->objpdf->text($xcol+2,$xlin+30,'Rubrica');
 	$this->objpdf->text($xcol+2,$xlin+42,'Recurso');
-	$this->objpdf->text($xcol+2,$xlin+48,'Licitação');
+	$this->objpdf->text($xcol+2,$xlin+48,'LicitaÃ§Ã£o');
 	
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text($xcol+17,$xlin+7,':  '.db_formatar($this->orgao,'orgao').' - '.$this->descr_orgao);
@@ -66,8 +66,8 @@ $this->objpdf->AliasNbPages();
 	$this->objpdf->Setfont('Arial','B',8);
 	$this->objpdf->text($xcol+107,$xlin+7,'Numcgm');
 	$this->objpdf->text($xcol+107,$xlin+11,'Nome');
-	$this->objpdf->text($xcol+107,$xlin+15,'Endereço');
-	$this->objpdf->text($xcol+107,$xlin+19,'Município');
+	$this->objpdf->text($xcol+107,$xlin+15,'EndereÃ§o');
+	$this->objpdf->text($xcol+107,$xlin+19,'MunicÃ­pio');
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text($xcol+124,$xlin+7,': '.$this->numcgm);
 	$this->objpdf->text($xcol+124,$xlin+11,': '.$this->nome);
@@ -83,7 +83,7 @@ $this->objpdf->AliasNbPages();
 	$this->objpdf->rect($xcol+155,$xlin+42.5,47,9,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','',6);
 	$this->objpdf->text($xcol+157,$xlin+23.5,'Valor Empenhado');
-	$this->objpdf->text($xcol+108,$xlin+34.0,'Valor Orçado');
+	$this->objpdf->text($xcol+108,$xlin+34.0,'Valor OrÃ§ado');
 	$this->objpdf->text($xcol+157,$xlin+34.0,'Saldo Anterior');
 	$this->objpdf->text($xcol+108,$xlin+44.5,'Valor Anulado');
 	$this->objpdf->text($xcol+157,$xlin+44.5,'Saldo Atual');
@@ -110,10 +110,10 @@ $this->objpdf->AliasNbPages();
 	$this->objpdf->rect($xcol+152,$xlin+54,25,6,2,'DF','12');
 	$this->objpdf->rect($xcol+177,$xlin+54,25,6,2,'DF','12');
 
-	//// título do corpo do empenho
+	//// tÃ­tulo do corpo do empenho
 	$this->objpdf->text($xcol+2,$xlin+58,'QUANT');
-	$this->objpdf->text($xcol+70,$xlin+58,'MATERIAL OU SERVIÇO');
-	$this->objpdf->text($xcol+154,$xlin+58,'VALOR UNITÁRIO');
+	$this->objpdf->text($xcol+70,$xlin+58,'MATERIAL OU SERVIÃ‡O');
+	$this->objpdf->text($xcol+154,$xlin+58,'VALOR UNITÃRIO');
 	$this->objpdf->text($xcol+181,$xlin+58,'VALOR TOTAL');
         $maiscol = 0;
 	
@@ -178,8 +178,8 @@ $this->objpdf->AliasNbPages();
 	   $this->objpdf->SetFont('Arial','',6);
 	   $this->objpdf->text($xcol+12,$xlin+199,'EMPENHADO E CONFERIDO');
 	   $this->objpdf->text($xcol+26,$xlin+213,'VISTO');
-	   $this->objpdf->text($xcol+19,$xlin+227,'TÉCNICO CONTÁBIL');
-	   $this->objpdf->text($xcol+13,$xlin+240,'SECRETÁRIO(A) DA FAZENDA');
+	   $this->objpdf->text($xcol+19,$xlin+227,'TÃ‰CNICO CONTÃBIL');
+	   $this->objpdf->text($xcol+13,$xlin+240,'SECRETÃRIO(A) DA FAZENDA');
 	   
 	   $this->objpdf->text($xcol+66,$xlin+212,'DATA  ____________/____________/____________');
 	   $this->objpdf->text($xcol+76,$xlin+227,'PREFEITO MUNICIPAL');
@@ -195,7 +195,7 @@ $this->objpdf->AliasNbPages();
 	   
 	   $this->objpdf->SetFont('Arial','',7);
 	   $this->objpdf->text($xcol+90,$xlin+249,'R E C I B O');
-	   $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+	   $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
 	   $this->objpdf->text($xcol+2,$xlin+257,'(     ) PARTE DO VALOR EMPENHADO');
 	   $this->objpdf->text($xcol+102,$xlin+257,'(     ) SALDO/TOTAL EMPENHADO');
 	   $this->objpdf->text($xcol+2,$xlin+261,'R$');

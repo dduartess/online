@@ -36,7 +36,7 @@ if(isset($HTTP_POST_VARS["pesquisar"])) {
     <html>
     <head>
     <title>Consulta de Leis do Munic&iacute;pio</title>
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
         <style>
         .links {
           font-family: Arial, Helvetica, sans-serif;
@@ -92,7 +92,7 @@ if(isset($HTTP_POST_VARS["pesquisar"])) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_pesquisar() {

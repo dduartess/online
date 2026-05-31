@@ -36,22 +36,22 @@ class Smtp {
   function Smtp() {
  	
   	if (!file_exists('./libs/config.mail.php')) {
-  		throw new Exception("Arquivo de configuração de e-mail não encontrado!");
+  		throw new Exception("Arquivo de configuraÃ§Ã£o de e-mail nÃ£o encontrado!");
   	}
   	
     include('config.mail.php');
   	        	
     if (empty($sHost)) {
-    	throw new Exception("Host servidor de e-mail não informado! \nVerifique arquivo de configuração.");
+    	throw new Exception("Host servidor de e-mail nÃ£o informado! \nVerifique arquivo de configuraÃ§Ã£o.");
     }
     
     if (empty($sPort)) {
-      throw new Exception("Porta servidor de e-mail não informado! \nVerifique arquivo de configuração.");
+      throw new Exception("Porta servidor de e-mail nÃ£o informado! \nVerifique arquivo de configuraÃ§Ã£o.");
     }
     
     $this->conn = fsockopen($sHost, $sPort, $errno, $errstr, 3);
     if (!$this->conn) {
-    	throw new Exception("Falha ao conectar com o servidor de email! \nVerifique arquivo de configuração.");
+    	throw new Exception("Falha ao conectar com o servidor de email! \nVerifique arquivo de configuraÃ§Ã£o.");
     }
     
     $this->Put("EHLO $sHost");
@@ -98,7 +98,7 @@ class Smtp {
     $header .= "Subject: ".$subject." \r\n";
     $header .= "Date: ". date('D, d M Y H:i:s O') ." \r\n";
     if ($this->html) { 
-      $header .= "Content-Type: text/html; charset=iso-8859-1 \r\n";
+      $header .= "Content-Type: text/html; charset=utf-8 \r\n";
     }
     $header .= "X-MSMail-Priority: High \r\n";
     return $header;

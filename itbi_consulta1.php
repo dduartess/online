@@ -49,7 +49,7 @@ function js_imprime(cod){
 $sql="
 	select it03_seq,it03_guia,it03_nome,it01_finalizado,it03_tipo,it06_matric, 
 	case when it14_guia is not null then 'Liberado' else 
-	case when it01_finalizado='t' then 'Enviado' else 'Não enviado'
+	case when it01_finalizado='t' then 'Enviado' else 'NÃ£o enviado'
 	end 
 	end as situacao, 
 	case when it06_matric is null then 'rural' else 'urbano' 
@@ -66,7 +66,7 @@ $sql="
 	if($linhas>0){
 		echo"<form name=\"form1\" method=\"post\" action=\"\">
 <br>		
-<div class='titulo' align='center'>Consulta situação da ITBI</div>
+<div class='titulo' align='center'>Consulta situaÃ§Ã£o da ITBI</div>
 <br>
 		<table width=\"90%\" cellpadding=\"5\" cellspacing=\"0\" class=\"tab\" align=\"center\">
 		<tr>
@@ -74,9 +74,9 @@ $sql="
 			<th>Matricula</th>
 			<th>Nome</th>
 			<th>Tipo</th>
-			<th>Situação</th>
-			<th>Imóvel</th>
-			<th>Opções</th>
+			<th>SituaÃ§Ã£o</th>
+			<th>ImÃ³vel</th>
+			<th>OpÃ§Ãµes</th>
 		</tr>
 
 		";

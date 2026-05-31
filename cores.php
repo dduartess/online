@@ -53,7 +53,7 @@
         	// set color as background color
 		document.bgColor = '#' + triplet
 		// display the color hexadecimal triplet
-//		alert('A cor deste background é #' + triplet)
+//		alert('A cor deste background Ã© #' + triplet)
 	  }
 	  // draw a single table cell based on all descriptors
 	  function drawCell(red, green, blue) {

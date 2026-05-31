@@ -42,7 +42,7 @@ class cl_cadescrito {
    var $q86_numcgm = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 q86_numcgm = int4 = Escritório Contábil 
+                 q86_numcgm = int4 = EscritÃ³rio ContÃ¡bil 
                  ";
    //funcao construtor da classe 
    function cl_cadescrito() { 
@@ -74,7 +74,7 @@ class cl_cadescrito {
      if(($this->q86_numcgm == null) || ($this->q86_numcgm == "") ){ 
        $this->erro_sql = " Campo q86_numcgm nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -88,13 +88,13 @@ class cl_cadescrito {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Escritório Contábil  ($this->q86_numcgm) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Escritório Contábil  já Cadastrado";
+         $this->erro_sql   = "EscritÃ³rio ContÃ¡bil  ($this->q86_numcgm) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "EscritÃ³rio ContÃ¡bil  jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Escritório Contábil  ($this->q86_numcgm) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "EscritÃ³rio ContÃ¡bil  ($this->q86_numcgm) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -103,7 +103,7 @@ class cl_cadescrito {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $resaco = $this->sql_record($this->sql_query_file($this->q86_numcgm));
@@ -127,10 +127,10 @@ class cl_cadescrito {
        $sql  .= $virgula." q86_numcgm = $this->q86_numcgm ";
        $virgula = ",";
        if(trim($this->q86_numcgm) == null ){ 
-         $this->erro_sql = " Campo Escritório Contábil nao Informado.";
+         $this->erro_sql = " Campo EscritÃ³rio ContÃ¡bil nao Informado.";
          $this->erro_campo = "q86_numcgm";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -148,26 +148,26 @@ class cl_cadescrito {
      $result = @pg_exec($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Escritório Contábil  nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "EscritÃ³rio ContÃ¡bil  nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Escritório Contábil  nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "EscritÃ³rio ContÃ¡bil  nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração Efetivada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -196,26 +196,26 @@ class cl_cadescrito {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Escritório Contábil  nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "EscritÃ³rio ContÃ¡bil  nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Escritório Contábil  nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "EscritÃ³rio ContÃ¡bil  nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão Efetivada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q86_numcgm;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -229,7 +229,7 @@ class cl_cadescrito {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -238,7 +238,7 @@ class cl_cadescrito {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Dados do Grupo nao Encontrado";
-        $this->erro_msg   = "Usuário: \n\n ".$this->erro_sql." \n\n";
+        $this->erro_msg   = "UsuÃ¡rio: \n\n ".$this->erro_sql." \n\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

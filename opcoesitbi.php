@@ -47,8 +47,8 @@ $db_verifica_ip = db_verifica_ip();
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 if( !isset($matricula) ) {
   if (!isset($matricula1) or !isset($cgc) or !isset($cpf)){
-    db_logs("","",0,"Acesso a Rotina Inv·lido.");
-    db_redireciona("digitatbi.php?".base64_encode("erroscripts=Os dados informados n„o conferem, verifique!"));
+    db_logs("","",0,"Acesso a Rotina Inv√°lido.");
+    db_redireciona("digitatbi.php?".base64_encode("erroscripts=Os dados informados n√£o conferem, verifique!"));
   }
 $matricula = $matricula1;
   $cgc = $cgc;
@@ -70,7 +70,7 @@ if($db_verifica_ip=="0"){
 }
 if (!isset($matricula) or empty($matricula) or !is_int(0 + $matricula)){
      db_logs("","",0,"Variavel Matricula Invalida.");
-    db_redireciona("digitatbi.php?".base64_encode("erroscripts=Os dados informados n„o conferem, verifique!"));
+    db_redireciona("digitatbi.php?".base64_encode("erroscripts=Os dados informados n√£o conferem, verifique!"));
   }
 
   $cgccpf = str_replace(".","",$cgccpf);
@@ -103,7 +103,7 @@ db_fieldsmemory($result,0);
 include("libs/db_mens.php");
 if($cliptubase->numrows == 0 ){
   db_logs("$matricula","",0,"Dados Inconsistentes. Numero : $matricula");
-  db_redireciona("digitaitbi.php?".base64_encode("erroscripts=Os dados informados n„o conferem, verifique!"));
+  db_redireciona("digitaitbi.php?".base64_encode("erroscripts=Os dados informados n√£o conferem, verifique!"));
   $script = false; 
 } else if($z01_cgccpf == "00000000000000" || $z01_cgccpf == "              ") {
   $script = true; 
@@ -112,12 +112,12 @@ if(!isset($DB_LOGADO)  && $m_publico !='t'){
   $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricao)";
   $result = pg_exec($sql);
   if(pg_numrows($result)==0){
-    db_redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso n„o Permitido. Contate a Prefeitura."));
+    db_redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso n√£o Permitido. Contate a Prefeitura."));
     exit;
   }
   $result = pg_result($result,0,0);
   if($result=="0"){
-    db_redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso n„o Permitido. Contate a Prefeitura."));
+    db_redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso n√£o Permitido. Contate a Prefeitura."));
     exit;
   }
 } 
@@ -126,7 +126,7 @@ db_logs("$matricula","",0,"Matricula Pesquisada. Numero : $matricula");
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("digitaitbi.php,listabicimovel.php,listaitbisolicitacao.php,listaitbiverifica.php");

@@ -110,8 +110,8 @@ if(isset($codord)){
 		     echo "<script>parent.js_erropesquisaordem('Ja existe Ordem de pagamento ($q96_pagordem) para esta planilha')</script>";
 		     exit;
 		   }else{
-		     // se esta planilha ja tem notas sem ordem n„o pode incluir um nota com ordem..
-             echo "<script>parent.js_erropesquisaordem('Esta planilha ja possui notas lanÁadas sem ordem de pagamento.')</script>";
+		     // se esta planilha ja tem notas sem ordem n√£o pode incluir um nota com ordem..
+             echo "<script>parent.js_erropesquisaordem('Esta planilha ja possui notas lan√ßadas sem ordem de pagamento.')</script>";
 		     exit;
 		   }
 		   
@@ -121,7 +121,7 @@ if(isset($codord)){
           for($i=0;$i<$linhas;$i++){
             db_fieldsmemory($result,$i);
              
-            // buscar serviÁo
+            // buscar servi√ßo
 			$sqlservico = "
             select c60_descr as servico from empelemento
 			inner join empempenho    on e60_numemp = e64_numemp 
@@ -211,13 +211,13 @@ if(isset($codord)){
        
       }
     }else{
-      // n„o tem nota
-      echo "<script>parent.js_erropesquisaordem('Esta ordem ($codord) n„o possui nota.')</script>";
+      // n√£o tem nota
+      echo "<script>parent.js_erropesquisaordem('Esta ordem ($codord) n√£o possui nota.')</script>";
       exit;
     }
   }else{
-    // n„o existe a ordem
-    echo "<script>parent.js_erropesquisaordem('CÛdigo da ordem $codord n„o encontrado.')</script>";
+    // n√£o existe a ordem
+    echo "<script>parent.js_erropesquisaordem('C√≥digo da ordem $codord n√£o encontrado.')</script>";
     exit;
   }
 

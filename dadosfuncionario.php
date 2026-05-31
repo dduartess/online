@@ -73,7 +73,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 
@@ -95,7 +95,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
 		  </tr>
       <tr>
         <td class="labelForm" width="15%">
-          Matrícula:
+          MatrÃ­cula:
         </td>
         <td class="dadosForm">
           <?=$oDadosServidor->rh01_regist?>
@@ -143,7 +143,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
       </tr>
       <tr>
         <td class="labelForm">
-          Grau de Instrução:
+          Grau de InstruÃ§Ã£o:
         </td>
         <td class="dadosForm">
           <?=$oDadosServidor->rh21_descr?>
@@ -157,7 +157,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
       </tr>            
 		  <tr>
 		    <td class="subTituloForm" colspan="6">
-		      <b>Endereço</b>
+		      <b>EndereÃ§o</b>
 		    </td>
 		  </tr>          
       <tr>
@@ -170,7 +170,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
       </tr>
       <tr>
         <td class="labelForm">
-          Endereço:
+          EndereÃ§o:
         </td>
         <td class="dadosForm" colspan="5">
           <?=$oDadosServidor->z01_ender?>
@@ -178,7 +178,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
       </tr>
       <tr>
         <td class="labelForm">
-          Nº:
+          NÂº:
         </td>
         <td class="dadosForm">
           <?=$oDadosServidor->z01_numero?>
@@ -247,7 +247,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
 		  </tr>          
       <tr>
         <td class="labelForm" width="15%">
-          Data Admissão:
+          Data AdmissÃ£o:
         </td>
         <td class="dadosForm">
           <?=db_formatar($oDadosServidor->rh01_admiss,'d')?>
@@ -267,7 +267,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
       </tr>
       <tr>
         <td class="labelForm">
-          Lotação:
+          LotaÃ§Ã£o:
         </td>
         <td class="dadosForm">
           <?=$oDadosServidor->r70_descr?>
@@ -295,13 +295,13 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
       </tr>
       <tr>                            
         <td class="labelForm">
-          Padrão Inicial:
+          PadrÃ£o Inicial:
         </td>
         <td class="dadosForm">
           <?=$oDadosServidor->rh03_padrao?>
         </td>            
         <td class="labelForm">
-          Padrão Atual:
+          PadrÃ£o Atual:
         </td>
         <td class="dadosForm" colspan="3">
           <?=$oDadosServidor->padraoatual?>
@@ -315,7 +315,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
           <?=$oDadosServidor->rh44_codban?>
         </td>            
         <td class="labelForm">
-          Agência:
+          AgÃªncia:
         </td>
         <td class="dadosForm">
           <?=$oDadosServidor->rh44_agencia."-".$oDadosServidor->rh44_dvagencia?>

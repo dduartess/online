@@ -66,7 +66,7 @@ if (isset($oPost->tipodelancamento)) {
 
 /*
 * Referencia: desabilita botao voltar listas anteriores 
-* Descrição: nao mostra o botao voltar das listas anteriores
+* DescriÃ§Ã£o: nao mostra o botao voltar das listas anteriores
 *  */
 
 if (isset($anteriores)) {
@@ -77,7 +77,7 @@ if (isset($anteriores)) {
 
 /*
 * Referencia: Verifica regra configurada 
-* Descrição: busca tipo de regra configurada no parametros DBPref
+* DescriÃ§Ã£o: busca tipo de regra configurada no parametros DBPref
 * */
 
 $sqlVerificaParametros = " select w13_liberaescritorios from configdbpref ";
@@ -91,12 +91,12 @@ if ($iVerificaParametros > 0) {
 
 /*
 * Referencia: regras modificadas na rotina 
-* Descrição: verifica regras configuradas, disabilita select, muda tipo de variavel para a pesquisa na lockup
+* DescriÃ§Ã£o: verifica regras configuradas, disabilita select, muda tipo de variavel para a pesquisa na lockup
 * */
 
         if (isset($regra) && $regra == 1) {
 	       $sTipo = "1";
-	       db_msgbox("Configuração DBPref \\n - Tipo regra não permite.");
+	       db_msgbox("ConfiguraÃ§Ã£o DBPref \\n - Tipo regra nÃ£o permite.");
 	       db_redireciona("centro_pref.php");
         } else if (isset($regra) && $regra == 2) {
 		   $sTipo           = "1";
@@ -147,7 +147,7 @@ if (isset($oPost->p12_cnpj)) {
 
 /*
 * Referencia: cria uma lista para os escritorios inserir quais sao seus clientes 
-* Descrição: cria lista na tabela listainscrcab.
+* DescriÃ§Ã£o: cria lista na tabela listainscrcab.
 * */
 
 if (isset($criar)) {
@@ -174,8 +174,8 @@ if (isset($criar)) {
 
 /*
 * Referencia: desabilita botao de lista anteriores
-* Descrição: select verifica se escritorio com o numcgm(informado) possui listas anteriores, se nao possui registros 
-* disabilita o botão listas anteriores.
+* DescriÃ§Ã£o: select verifica se escritorio com o numcgm(informado) possui listas anteriores, se nao possui registros 
+* disabilita o botÃ£o listas anteriores.
 * */
 
 $sqlVerificaListaAnterior = " select * 
@@ -330,7 +330,7 @@ if (isset($adicionar)) {
         }
       
       } else {
-        db_msgbox("CPF/CNPJ NÃO CORRESPONDE COM A INSCRIÇÃO INFORMADA");
+        db_msgbox("CPF/CNPJ NÃƒO CORRESPONDE COM A INSCRIÃ‡ÃƒO INFORMADA");
         db_redireciona($_SERVER ['REQUEST_URI']);
       }
       
@@ -394,16 +394,16 @@ if ($iSql > 0) {
    <?php 
   $msg_1 = "";
   if (@$imobil == "true") {
-    echo "Imobiliária, ";
+    echo "ImobiliÃ¡ria, ";
   }
   if (@$escrito == "true") {
-    echo "Escritório, ";
+    echo "EscritÃ³rio, ";
   }
   if (@$oVerificaListaAnterior->p11_processado == "f" && @$oVerificaListaAnterior->p11_fechado == "t") {
-    $msg_1 = "aguarde a liberação de sua lista.";
+    $msg_1 = "aguarde a liberaÃ§Ã£o de sua lista.";
   }
   if (@$oVerificaListaAnterior->p11_processado == "f" && @$oVerificaListaAnterior->p11_fechado == "f") {
-    $msg_1 = "informe seus clientes e feche a lista para liberação na Prefeitura.";
+    $msg_1 = "informe seus clientes e feche a lista para liberaÃ§Ã£o na Prefeitura.";
   }
   if ($cllistainscrcab->numrows == 0) {
     $msg_1 = "crie uma lista agora e informe seus clientes.";
@@ -433,14 +433,14 @@ if ($iSql > 0) {
 if (isset($anteriores)) {
   ?>
   <tr>
-    <td colspan="3"><b>Listas Anteriores, já liberadas:</b></td>
+    <td colspan="3"><b>Listas Anteriores, jÃ¡ liberadas:</b></td>
   </tr>
   <tr>
     <td>
     <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
            bgcolor="<?=$w01_corbody?>" class="texto">
       <tr class="bold2" bgcolor="#cccccc">
-        <td>Cód.</td>
+        <td>CÃ³d.</td>
         <td>CGM</td>
         <td>Data</td>
         <td>Hora</td>
@@ -500,7 +500,7 @@ if (isset($anteriores)) {
   	$iMostrarMatric = 1;
 ?>
  <tr>
-    <td width="13%">Matrícula do Imóvel: &nbsp;</td>
+    <td width="13%">MatrÃ­cula do ImÃ³vel: &nbsp;</td>
     <td width="1%"><font color='#E9000'><b>*</b></font></td>
     <td>
       <table border="0" bgcolor="<?=$w01_corbody?>" class="texto">
@@ -518,7 +518,7 @@ if (isset($anteriores)) {
   if (@$escrito == "true") {
     ?>
  <tr>
-    <td width="13%">Inscrição do Alvará: <br /><small>:.. Sem dígito verificador ..:</small></td>
+    <td width="13%">InscriÃ§Ã£o do AlvarÃ¡: <br /><small>:.. Sem dÃ­gito verificador ..:</small></td>
     <td width="1%"><font color='#E9000'><b>*</b></font></td>
     <td>
       <table border="0" bgcolor="<?=$w01_corbody?>" class="texto">
@@ -548,7 +548,7 @@ if (isset($anteriores)) {
              <input name="p12_fone" type="text" class="digitacgccpf" size="10" maxlength="10" 
                     onKeyPress='return js_teclas(event);' <?=$sDisabled;?>>
           </td>
-          <td <?=$sDisabledSelect?>>Tipo de Lançamento:</td>
+          <td <?=$sDisabledSelect?>>Tipo de LanÃ§amento:</td>
           <td <?=$sDisabledSelect?> width="1%"><font color='#E9000'><b>*</b></font></td>
           <td <?=$sDisabledSelect?>>
              <select id="tipolancamento" name="tipodelancamento" onChange='js_alteraTipoLanc(this.value);'>
@@ -568,7 +568,7 @@ if (isset($anteriores)) {
   <tr>
     <td colspan="3" class="pequeno" align="center">
       <span>
-        <font color='#E9000'> Campos marcados com <b>(<small>*</small>)</b> é obrigatório o preenchimento. </font>
+        <font color='#E9000'> Campos marcados com <b>(<small>*</small>)</b> Ã© obrigatÃ³rio o preenchimento. </font>
       </span>
     </td>
   </tr> 
@@ -581,7 +581,7 @@ if (isset($anteriores)) {
     <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
            bgcolor="<?php $w01_corbody?>" class="texto">
     <tr class="bold2" bgcolor="#cccccc">
-      <td>Cód.</td>
+      <td>CÃ³d.</td>
       <td>CGM</td>
       <td>Data</td>
       <td>Hora</td>
@@ -624,7 +624,7 @@ if (isset($anteriores)) {
       <td>Inscr.</td>
       <td>CNPJ/CPF</td>
       <td>Fone</td>
-      <td>Nome/Razão Social</td>
+      <td>Nome/RazÃ£o Social</td>
       <td width="5%">-</td>
     </tr>
       <?php 
@@ -658,7 +658,7 @@ if (isset($anteriores)) {
     </table>
     <?php 
     } else {
-      //não existe lista aberta
+      //nÃ£o existe lista aberta
       $p12_codigo = "";
       ?>
    <tr>
@@ -670,13 +670,13 @@ if (isset($anteriores)) {
 } else if (@$p11_fechado == "t" && @$p11_processado == "f") {
 ?>
  <tr height="50">
-    <td colspan="2"><img src="imagens/atencao.gif" align="center"> <b>Você deve aguardar a liberação da lista abaixo.</b>
+    <td colspan="2"><img src="imagens/atencao.gif" align="center"> <b>VocÃª deve aguardar a liberaÃ§Ã£o da lista abaixo.</b>
     <br>
     <center>
     <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
            bgcolor="<?php $w01_corbody?>" class="texto">
       <tr class="bold2" bgcolor="#cccccc">
-        <td>Cód.</td>
+        <td>CÃ³d.</td>
         <td>CGM</td>
         <td>Data</td>
         <td>Hora</td>
@@ -738,11 +738,11 @@ if (isset($anteriores)) {
    <table width="90%" align="center" border="1" bordercolor="#cccccc" cellpadding="1" cellspacing="0"
           bgcolor="<?php $w01_corbody?>" class="pequeno">
       <tr bgcolor="#cccccc">
-        <td>Cód</td>
+        <td>CÃ³d</td>
         <td>Inscr</td>
         <td>CNPJ/CPF</td>
         <td>Fone</td>
-        <td>Nome/Razão Social</td>
+        <td>Nome/RazÃ£o Social</td>
       </tr>
       <?php 
   for($y = 0; $y < $iListaInscr; $y ++) {
@@ -768,7 +768,7 @@ if (isset($anteriores)) {
    ?>
     </table>
     <br>
-    Em caso de dúvida, entre em contato com a Prefeitura.</center>
+    Em caso de dÃºvida, entre em contato com a Prefeitura.</center>
     </td>
   </tr>
 <?php 
@@ -779,7 +779,7 @@ if (isset($anteriores)) {
     seus Clientes...</b> <br>
     <br>
     <br>
-    <center>Em caso de dúvida, entre em contato com a Prefeitura.</center>
+    <center>Em caso de dÃºvida, entre em contato com a Prefeitura.</center>
     </td>
   </tr>
  <?php 
@@ -914,7 +914,7 @@ if (isset($anteriores)) {
     }
     
     if(tipolancamento == 0){
-      strTpl = "Selecione um Tipo de Lançamento."
+      strTpl = "Selecione um Tipo de LanÃ§amento."
       alert(strTpl);
       return false;    
     } else if(inscr == ""){
@@ -989,7 +989,7 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
             if ($iTipoLanc == 0) { 	
                if ($iRegra == 3 && $oEscrito->q10_dtfim == "" || $iRegra == 5 && $oEscrito->q10_dtfim == "") {            		
 	              if ($oEscrito->q10_inscr == $iNumInscr) {
-		             $sMsg = "ATENÇÃO! Inscrição $iNumInscr já Lançada como Cliente.\\n - Informe apenas seu novo Cliente.";
+		             $sMsg = "ATENÃ‡ÃƒO! InscriÃ§Ã£o $iNumInscr jÃ¡ LanÃ§ada como Cliente.\\n - Informe apenas seu novo Cliente.";
 		          }		
 		          db_msgbox($sMsg);
 		          db_redireciona($_SERVER ['REQUEST_URI']);
@@ -999,7 +999,7 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
             if ($iRegra == 2 && $sExit == "EXIT" && $oEscrito->q10_dtfim == "" || 
                 $iRegra == 4 && $sExit == "EXIT" && $oEscrito->q10_dtfim == "") {            		
 	          if ($oEscrito->q10_inscr == $iNumInscr) {
-		         $sMsg = "ATENÇÃO! Inscrição $iNumInscr já Lançada como Cliente.\\n - Informe apenas seu novo Cliente.";
+		         $sMsg = "ATENÃ‡ÃƒO! InscriÃ§Ã£o $iNumInscr jÃ¡ LanÃ§ada como Cliente.\\n - Informe apenas seu novo Cliente.";
 		      }
 		
 		      db_msgbox($sMsg);
@@ -1010,12 +1010,12 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
             if ($iTipoLanc == 1 && $oEscrito->q10_numcgm == $iNumCgm) { 	
             	if ($iRegra == 2 && $oEscrito->q10_dtfim == "" || $iRegra == 4 && $oEscrito->q10_dtfim == "") {            		
 	            	if ($oEscrito->q10_inscr == $iNumInscr) {
-		               $sMsg = "ATENÇÃO! Inscrição $iNumInscr já Lançada como Cliente.\\n - Informe apenas seu novo Cliente.";
+		               $sMsg = "ATENÃ‡ÃƒO! InscriÃ§Ã£o $iNumInscr jÃ¡ LanÃ§ada como Cliente.\\n - Informe apenas seu novo Cliente.";
 		               db_msgbox($sMsg);
                        db_redireciona($_SERVER ['REQUEST_URI']);
 		               exit();		               
 		             } else {
-		               $sMsg = "ATENÇÃO! Inscrição $iNumInscr já Pertence a outro Escritório.\\n - Informe apenas seu novo Cliente.";
+		               $sMsg = "ATENÃ‡ÃƒO! InscriÃ§Ã£o $iNumInscr jÃ¡ Pertence a outro EscritÃ³rio.\\n - Informe apenas seu novo Cliente.";
  		               db_msgbox($sMsg);
 		               db_redireciona($_SERVER ['REQUEST_URI']);
 		               exit();
@@ -1023,12 +1023,12 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
 	             
              } else if ($iRegra == 3 && $oEscrito->q10_dtfim == "" || $iRegra == 5 && $oEscrito->q10_dtfim == "") {
                if ($oEscrito->q10_inscr == $iNumInscr) {
-                 $sMsg = "ATENÇÃO! Inscrição $iNumInscr já Lançada como Cliente.";
+                 $sMsg = "ATENÃ‡ÃƒO! InscriÃ§Ã£o $iNumInscr jÃ¡ LanÃ§ada como Cliente.";
 		         db_msgbox($sMsg);
                  db_redireciona($_SERVER ['REQUEST_URI']);
 		         exit();                 
                } else {
-                 $sMsg = "ATENÇÃO! Inscrição $iNumInscr já Pertence a outro Escritório.";
+                 $sMsg = "ATENÃ‡ÃƒO! InscriÃ§Ã£o $iNumInscr jÃ¡ Pertence a outro EscritÃ³rio.";
                  db_msgbox($sMsg);
                }
              }              	
@@ -1036,33 +1036,33 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
             } else if ($iTipoLanc == 1 && $oEscrito->q10_numcgm != $iNumCgm) {
             	
                if ($iRegra == 2 && $oEscrito->q10_dtfim == "" || $iRegra == 4 && $oEscrito->q10_dtfim == "") {
-            	   $sMsg = "ATENÇÂO! Inscrição $iNumInscr Pertence a outro Escritório.";
+            	   $sMsg = "ATENÃ‡Ã‚O! InscriÃ§Ã£o $iNumInscr Pertence a outro EscritÃ³rio.";
                    db_msgbox($sMsg);
                    db_redireciona($_SERVER ['REQUEST_URI']);
                    exit();  
                       
             	} else if ($iRegra == 3 && $oEscrito->q10_dtfim == "" || $iRegra == 5 && $oEscrito->q10_dtfim == "") {
-                   $sMsg = "ATENÇÂO! Inscrição $iNumInscr Pertence a outro Escritório.";
+                   $sMsg = "ATENÃ‡Ã‚O! InscriÃ§Ã£o $iNumInscr Pertence a outro EscritÃ³rio.";
                    db_msgbox($sMsg); 
                               		       	
             	}
             } else if ($iTipoLanc == 2 && $oEscrito->q10_numcgm != $iNumCgm) {
             	echo "1";
                 if ($iRegra == 2 && $oEscrito->q10_dtfim == "" || $iRegra == 4 && $oEscrito->q10_dtfim == "") {
-                   $sMsg = "ATENÇÂO! Inscrição $iNumInscr não Cadastrada neste Escritório.\\n - Informe apenas seus Ex Clientes.";
+                   $sMsg = "ATENÃ‡Ã‚O! InscriÃ§Ã£o $iNumInscr nÃ£o Cadastrada neste EscritÃ³rio.\\n - Informe apenas seus Ex Clientes.";
                    db_msgbox($sMsg);
                    db_redireciona($_SERVER ['REQUEST_URI']);
                    exit();     
                    
             	} else if ($iRegra == 3 && $oEscrito->q10_dtfim == "" || $iRegra == 5 && $oEscrito->q10_dtfim == "") {
-                   $sMsg = "ATENÇÂO! Inscrição $iNumInscr não Cadastrada como Ex Cliente de um Escritório.";
+                   $sMsg = "ATENÃ‡Ã‚O! InscriÃ§Ã£o $iNumInscr nÃ£o Cadastrada como Ex Cliente de um EscritÃ³rio.";
                    db_msgbox($sMsg);           		       	
             	}     
             	        	
             }
               if ($iTipoLanc == 2 && $oEscrito->q10_dtfim != "") {            		
 	             if ($oEscrito->q10_inscr == $iNumInscr) {
-		            $sMsg  = "ATENÇÂO! Inscrição $iNumInscr já Cadastrada como Ex Cliente de um Escritório.";
+		            $sMsg  = "ATENÃ‡Ã‚O! InscriÃ§Ã£o $iNumInscr jÃ¡ Cadastrada como Ex Cliente de um EscritÃ³rio.";
 		            $sMsg .= "\\n - Informe apenas seus Ex Clientes.";
 		         }		
 		         db_msgbox($sMsg);
@@ -1073,7 +1073,7 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
        } else {
           if ($iTipoLanc == 2) {
           	if ($iRegra == 2 || $iRegra == 3 || $iRegra == 4 || $iRegra == 5) {
-               $sMsg = "ATENÇÂO! Inscrição $iNumInscr não Cadastrada como Cliente.";
+               $sMsg = "ATENÃ‡Ã‚O! InscriÃ§Ã£o $iNumInscr nÃ£o Cadastrada como Cliente.";
                db_msgbox($sMsg);
                db_redireciona($_SERVER ['REQUEST_URI']);
                exit();     
@@ -1081,7 +1081,7 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
           }               
        }    
       
-     ///verifica se inscr já está na tabela listainscr
+     ///verifica se inscr jÃ¡ estÃ¡ na tabela listainscr
      $sqlListainscr = " select * 
                           from listainscr
                                inner join listainscrcab on p11_codigo = p12_codigo
@@ -1099,14 +1099,14 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
 				   exit();
 				}
 	  	   if ($iTipoLanc == 1) {
-               $sMsg  = "ATENÇÃO! A inscrição $iNumInscr já está vinculada a uma lista não processada.\\n";
-               $sMsg .= "Para maiores informações entre em contato com a Prefeitura...";             
+               $sMsg  = "ATENÃ‡ÃƒO! A inscriÃ§Ã£o $iNumInscr jÃ¡ estÃ¡ vinculada a uma lista nÃ£o processada.\\n";
+               $sMsg .= "Para maiores informaÃ§Ãµes entre em contato com a Prefeitura...";             
                db_msgbox($sMsg);
                db_redireciona($_SERVER ['REQUEST_URI']);
                exit();
 				   	
 		   } else {
-               $sMsg  = "ATENÇÃO! A inscrição $iNumInscr já Lançada como Cliente.";             
+               $sMsg  = "ATENÃ‡ÃƒO! A inscriÃ§Ã£o $iNumInscr jÃ¡ LanÃ§ada como Cliente.";             
                db_msgbox($sMsg);
                db_redireciona($_SERVER ['REQUEST_URI']);
                exit();				   	
@@ -1130,10 +1130,10 @@ function validaRegra($iRgr,$iCgm,$iInscr,$iCgcCpf,$iTipo){
 			        }
 			    
 			        if ($oVerificaBaixa->q02_dtbaix != "" && $iTipoLanc == 2) {
-			            $sMsg = "Inscrição Baixada - Contate a Prefeitura.";
+			            $sMsg = "InscriÃ§Ã£o Baixada - Contate a Prefeitura.";
 			            db_msgbox($sMsg);        	
 			        } else if ($oVerificaBaixa->q02_dtbaix != "") {
-                        $sMsg = "Inscrição Baixada - Contate a Prefeitura.";
+                        $sMsg = "InscriÃ§Ã£o Baixada - Contate a Prefeitura.";
                         db_msgbox($sMsg);
                         db_redireciona($_SERVER ['REQUEST_URI']);			        	
 			        }

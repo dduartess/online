@@ -67,7 +67,7 @@ if (isset($e60_numemp) and $e60_numemp !=""){
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -81,7 +81,7 @@ if (isset($e60_numemp) and $e60_numemp !=""){
    <?php 
     db_input("e60_codemp",15,"",true,"text",3);
    if($e60_anousu!=db_getsession("DB_anousu"))
-     echo "<font color='red'><b>RESTOS À PAGAR</b></font>";
+     echo "<font color='red'><b>RESTOS Ã€ PAGAR</b></font>";
    ?>
   </td>
  </tr>
@@ -118,7 +118,7 @@ if (isset($e60_numemp) and $e60_numemp !=""){
    ?>
   </td>
  </tr>
- <?php   //-----------  dotacão
+ <?php   //-----------  dotacÃ£o
      if (isset($e60_coddot) and ($e60_coddot !="")) {
          $sql= $clorcdotacao->sql_query($e60_anousu,$e60_coddot,"o56_elemento,o56_descr,fc_estruturaldotacao(o58_anousu,o58_coddot) as o58_estrutdespesa");
          $res = $clorcdotacao->sql_record($sql);
@@ -177,7 +177,7 @@ if (isset($e60_numemp) and $e60_numemp !=""){
  </tr>
 </table>
 <div align="center" class="bold2">
-LANÇAMENTOS
+LANÃ‡AMENTOS
 </div>
 <?php 
  $sql = " select c70_codlan,

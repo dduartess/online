@@ -53,18 +53,18 @@ class cl_orcdotacao {
    var $o58_instit = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 o58_anousu = int4 = ExercÌcio 
-                 o58_coddot = int4 = CÛdigo da DotaÁ„o 
-                 o58_orgao = int4 = CÛdigo Org„o 
-                 o58_unidade = int4 = CÛdigo Unidade 
-                 o58_funcao = int4 = CÛdigo da FunÁ„o 
-                 o58_subfuncao = int4 = Sub FunÁ„o 
-                 o58_programa = int4 = Programas OrÁamento 
+                 o58_anousu = int4 = Exerc√≠cio 
+                 o58_coddot = int4 = C√≥digo da Dota√ß√£o 
+                 o58_orgao = int4 = C√≥digo Org√£o 
+                 o58_unidade = int4 = C√≥digo Unidade 
+                 o58_funcao = int4 = C√≥digo da Fun√ß√£o 
+                 o58_subfuncao = int4 = Sub Fun√ß√£o 
+                 o58_programa = int4 = Programas Or√ßamento 
                  o58_projativ = int4 = Projetos / Atividades 
-                 o58_codele = int4 = CÛdigo Elemento 
+                 o58_codele = int4 = C√≥digo Elemento 
                  o58_codigo = int4 = Codigo do Tipo de Recurso 
-                 o58_valor = float8 = Previs„o 
-                 o58_instit = int4 = InstituÁ„o 
+                 o58_valor = float8 = Previs√£o 
+                 o58_instit = int4 = Institu√ß√£o 
                  ";
    //funcao construtor da classe 
    function cl_orcdotacao() { 
@@ -105,46 +105,46 @@ class cl_orcdotacao {
    function incluir ($o58_anousu,$o58_coddot){ 
       $this->atualizacampos();
      if($this->o58_orgao == null ){ 
-       $this->erro_sql = " Campo CÛdigo Org„o nao Informado.";
+       $this->erro_sql = " Campo C√≥digo Org√£o nao Informado.";
        $this->erro_campo = "o58_orgao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_unidade == null ){ 
-       $this->erro_sql = " Campo CÛdigo Unidade nao Informado.";
+       $this->erro_sql = " Campo C√≥digo Unidade nao Informado.";
        $this->erro_campo = "o58_unidade";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_funcao == null ){ 
-       $this->erro_sql = " Campo CÛdigo da FunÁ„o nao Informado.";
+       $this->erro_sql = " Campo C√≥digo da Fun√ß√£o nao Informado.";
        $this->erro_campo = "o58_funcao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_subfuncao == null ){ 
-       $this->erro_sql = " Campo Sub FunÁ„o nao Informado.";
+       $this->erro_sql = " Campo Sub Fun√ß√£o nao Informado.";
        $this->erro_campo = "o58_subfuncao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_programa == null ){ 
-       $this->erro_sql = " Campo Programas OrÁamento nao Informado.";
+       $this->erro_sql = " Campo Programas Or√ßamento nao Informado.";
        $this->erro_campo = "o58_programa";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -153,16 +153,16 @@ class cl_orcdotacao {
        $this->erro_sql = " Campo Projetos / Atividades nao Informado.";
        $this->erro_campo = "o58_projativ";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_codele == null ){ 
-       $this->erro_sql = " Campo CÛdigo Elemento nao Informado.";
+       $this->erro_sql = " Campo C√≥digo Elemento nao Informado.";
        $this->erro_campo = "o58_codele";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -171,25 +171,25 @@ class cl_orcdotacao {
        $this->erro_sql = " Campo Codigo do Tipo de Recurso nao Informado.";
        $this->erro_campo = "o58_codigo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_valor == null ){ 
-       $this->erro_sql = " Campo Previs„o nao Informado.";
+       $this->erro_sql = " Campo Previs√£o nao Informado.";
        $this->erro_campo = "o58_valor";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->o58_instit == null ){ 
-       $this->erro_sql = " Campo InstituÁ„o nao Informado.";
+       $this->erro_sql = " Campo Institu√ß√£o nao Informado.";
        $this->erro_campo = "o58_instit";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -199,7 +199,7 @@ class cl_orcdotacao {
      if(($this->o58_anousu == null) || ($this->o58_anousu == "") ){ 
        $this->erro_sql = " Campo o58_anousu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -207,7 +207,7 @@ class cl_orcdotacao {
      if(($this->o58_coddot == null) || ($this->o58_coddot == "") ){ 
        $this->erro_sql = " Campo o58_coddot nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -244,13 +244,13 @@ class cl_orcdotacao {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "DotaÁıes LanÁadas ($this->o58_anousu."-".$this->o58_coddot) nao IncluÌdo. Inclusao Abortada.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "DotaÁıes LanÁadas j· Cadastrado";
+         $this->erro_sql   = "Dota√ß√µes Lan√ßadas ($this->o58_anousu."-".$this->o58_coddot) nao Inclu√≠do. Inclusao Abortada.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Dota√ß√µes Lan√ßadas j√° Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "DotaÁıes LanÁadas ($this->o58_anousu."-".$this->o58_coddot) nao IncluÌdo. Inclusao Abortada.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Dota√ß√µes Lan√ßadas ($this->o58_anousu."-".$this->o58_coddot) nao Inclu√≠do. Inclusao Abortada.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -259,7 +259,7 @@ class cl_orcdotacao {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->o58_anousu."-".$this->o58_coddot;
-     $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $resaco = $this->sql_record($this->sql_query_file($this->o58_anousu,$this->o58_coddot));
@@ -292,10 +292,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_anousu = $this->o58_anousu ";
        $virgula = ",";
        if(trim($this->o58_anousu) == null ){ 
-         $this->erro_sql = " Campo ExercÌcio nao Informado.";
+         $this->erro_sql = " Campo Exerc√≠cio nao Informado.";
          $this->erro_campo = "o58_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -305,10 +305,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_coddot = $this->o58_coddot ";
        $virgula = ",";
        if(trim($this->o58_coddot) == null ){ 
-         $this->erro_sql = " Campo CÛdigo da DotaÁ„o nao Informado.";
+         $this->erro_sql = " Campo C√≥digo da Dota√ß√£o nao Informado.";
          $this->erro_campo = "o58_coddot";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -318,10 +318,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_orgao = $this->o58_orgao ";
        $virgula = ",";
        if(trim($this->o58_orgao) == null ){ 
-         $this->erro_sql = " Campo CÛdigo Org„o nao Informado.";
+         $this->erro_sql = " Campo C√≥digo Org√£o nao Informado.";
          $this->erro_campo = "o58_orgao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -331,10 +331,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_unidade = $this->o58_unidade ";
        $virgula = ",";
        if(trim($this->o58_unidade) == null ){ 
-         $this->erro_sql = " Campo CÛdigo Unidade nao Informado.";
+         $this->erro_sql = " Campo C√≥digo Unidade nao Informado.";
          $this->erro_campo = "o58_unidade";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -344,10 +344,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_funcao = $this->o58_funcao ";
        $virgula = ",";
        if(trim($this->o58_funcao) == null ){ 
-         $this->erro_sql = " Campo CÛdigo da FunÁ„o nao Informado.";
+         $this->erro_sql = " Campo C√≥digo da Fun√ß√£o nao Informado.";
          $this->erro_campo = "o58_funcao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -357,10 +357,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_subfuncao = $this->o58_subfuncao ";
        $virgula = ",";
        if(trim($this->o58_subfuncao) == null ){ 
-         $this->erro_sql = " Campo Sub FunÁ„o nao Informado.";
+         $this->erro_sql = " Campo Sub Fun√ß√£o nao Informado.";
          $this->erro_campo = "o58_subfuncao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -370,10 +370,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_programa = $this->o58_programa ";
        $virgula = ",";
        if(trim($this->o58_programa) == null ){ 
-         $this->erro_sql = " Campo Programas OrÁamento nao Informado.";
+         $this->erro_sql = " Campo Programas Or√ßamento nao Informado.";
          $this->erro_campo = "o58_programa";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -386,7 +386,7 @@ class cl_orcdotacao {
          $this->erro_sql = " Campo Projetos / Atividades nao Informado.";
          $this->erro_campo = "o58_projativ";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -396,10 +396,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_codele = $this->o58_codele ";
        $virgula = ",";
        if(trim($this->o58_codele) == null ){ 
-         $this->erro_sql = " Campo CÛdigo Elemento nao Informado.";
+         $this->erro_sql = " Campo C√≥digo Elemento nao Informado.";
          $this->erro_campo = "o58_codele";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -412,7 +412,7 @@ class cl_orcdotacao {
          $this->erro_sql = " Campo Codigo do Tipo de Recurso nao Informado.";
          $this->erro_campo = "o58_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -422,10 +422,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_valor = $this->o58_valor ";
        $virgula = ",";
        if(trim($this->o58_valor) == null ){ 
-         $this->erro_sql = " Campo Previs„o nao Informado.";
+         $this->erro_sql = " Campo Previs√£o nao Informado.";
          $this->erro_campo = "o58_valor";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -435,10 +435,10 @@ class cl_orcdotacao {
        $sql  .= $virgula." o58_instit = $this->o58_instit ";
        $virgula = ",";
        if(trim($this->o58_instit) == null ){ 
-         $this->erro_sql = " Campo InstituÁ„o nao Informado.";
+         $this->erro_sql = " Campo Institu√ß√£o nao Informado.";
          $this->erro_campo = "o58_instit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -480,26 +480,26 @@ class cl_orcdotacao {
      $result = @pg_exec($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "DotaÁıes LanÁadas nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "Dota√ß√µes Lan√ßadas nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->o58_anousu."-".$this->o58_coddot;
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "DotaÁıes LanÁadas nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "Dota√ß√µes Lan√ßadas nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->o58_anousu."-".$this->o58_coddot;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "AlteraÁ„o Efetivada com Sucesso\\n";
+         $this->erro_sql = "Altera√ß√£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->o58_anousu."-".$this->o58_coddot;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -547,26 +547,26 @@ class cl_orcdotacao {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "DotaÁıes LanÁadas nao ExcluÌdo. Exclus„o Abortada.\\n";
+       $this->erro_sql   = "Dota√ß√µes Lan√ßadas nao Exclu√≠do. Exclus√£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$o58_anousu."-".$o58_coddot;
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "DotaÁıes LanÁadas nao Encontrado. Exclus„o n„o Efetuada.\\n";
+         $this->erro_sql = "Dota√ß√µes Lan√ßadas nao Encontrado. Exclus√£o n√£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$o58_anousu."-".$o58_coddot;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclus„o Efetivada com Sucesso\\n";
+         $this->erro_sql = "Exclus√£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$o58_anousu."-".$o58_coddot;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -580,7 +580,7 @@ class cl_orcdotacao {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -589,7 +589,7 @@ class cl_orcdotacao {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Dados do Grupo nao Encontrado";
-        $this->erro_msg   = "Usu·rio: \n\n ".$this->erro_sql." \n\n";
+        $this->erro_msg   = "Usu√°rio: \n\n ".$this->erro_sql." \n\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;
@@ -652,7 +652,7 @@ class cl_orcdotacao {
      }else{
        $sql .= $campos;
      }
-     // n„o altere aqui sem contactar Paulo !
+     // n√£o altere aqui sem contactar Paulo !
      $sql .= " from orcdotacao ";
      $sql .= "      inner join db_config  on  db_config.codigo = orcdotacao.o58_instit";
      $sql .= "      inner join orctiporec  on  orctiporec.o15_codigo = orcdotacao.o58_codigo";

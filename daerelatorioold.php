@@ -51,7 +51,7 @@ $min  = db_formatar($data['minutes'],'s',0,2,'e');
 $sec  = db_formatar($data['seconds'],'s',0,2,'e');
 $pdf = new PDF1(); // abre a classe
 $pdf->SetFont('arial','B',10);
-$head1 = "DECLARAÇÃO ANUAL DE ISSQN \n EXERCÍCIO: $w04_ano - DATA DE ENVIO: ".($w04_data != ""?db_formatar($w04_data,'d'):"")." \n INSCRIÇÃO: $w04_inscr";
+$head1 = "DECLARAÃ‡ÃƒO ANUAL DE ISSQN \n EXERCÃCIO: $w04_ano - DATA DE ENVIO: ".($w04_data != ""?db_formatar($w04_data,'d'):"")." \n INSCRIÃ‡ÃƒO: $w04_inscr";
 $Letra = 'arial';
 $pdf->SetFont($Letra,'B',11);
 $pdf->Open(); // abre o relatorio
@@ -65,13 +65,13 @@ $pdf->Ln(3);
 $pdf->SetFont($Letra,'',10);
 $pdf->Cell(80,6,'NOME: '.@$z01_nome,0,0,"J",1);
 $pdf->MultiCell(0,6,'CIDADE: '.@$z01_munic,0,"J",1,30);
-$pdf->Cell(80,6,'ENDEREÇO: '.@$w05_rua,0,0,"J",1);
-$pdf->MultiCell(0,6,'NÚMERO: '.@$w05_numero,0,"J",1,30);
+$pdf->Cell(80,6,'ENDEREÃ‡O: '.@$w05_rua,0,0,"J",1);
+$pdf->MultiCell(0,6,'NÃšMERO: '.@$w05_numero,0,"J",1,30);
 $pdf->Cell(80,6,'COMPLEMENTO: '.@$w05_compl,0,0,"J",1);
 $pdf->Cell(80,6,'BAIRRO: '.@$w05_bairro,0,0,"J",1);
 $pdf->Ln(10);
 $pdf->SetFont($Letra,'B',11);
-$pdf->Cell(3,1,"SÓCIOS: ",0,0,"L",0);
+$pdf->Cell(3,1,"SÃ“CIOS: ",0,0,"L",0);
 $pdf->Ln(3);
 $pdf->SetFont($Letra,'I',10);
 if(pg_numrows($resultsocios)>1){
@@ -81,7 +81,7 @@ if(pg_numrows($resultsocios)>1){
     $pdf->Cell(100,6,'Nome: '.$w06_nome,1,0,"J",1);
     $pdf->MultiCell(0,6,'RG: '.$w06_rg,1,"J",1);
     $pdf->Cell(110,6,'RUA: '.$w06_ender,1,0,"J",0);
-    $pdf->Cell(40,6,'NÚMERO: '.$w06_numero,1,0,"J",0);
+    $pdf->Cell(40,6,'NÃšMERO: '.$w06_numero,1,0,"J",0);
     $pdf->MultiCell(0,6,'COMPL: '.$w06_compl,1,"J",0);
     $pdf->Cell(80,6,'BAIRRO: '.$w06_bairro,1,0,"J",0);
     $pdf->Cell(30,6,'CEP: '.$w06_cep,1,0,"J",0);
@@ -95,7 +95,7 @@ if(pg_numrows($resultsocios)>1){
     $pdf->Cell(100,6,'Nome: '.$w06_nome,1,0,"J",1);
     $pdf->MultiCell(0,6,'RG: '.$w06_rg,1,"J",1);
     $pdf->Cell(110,6,'RUA: '.$w06_ender,1,0,"J",0);
-    $pdf->Cell(40,6,'NÚMERO: '.$w06_numero,1,0,"J",0);
+    $pdf->Cell(40,6,'NÃšMERO: '.$w06_numero,1,0,"J",0);
     $pdf->MultiCell(0,6,'COMPL: '.$w06_compl,1,"J",0);
     $pdf->Cell(80,6,'BAIRRO: '.$w06_bairro,1,0,"J",0);
     $pdf->Cell(30,6,'CEP: '.$w06_cep,1,0,"J",0);
@@ -112,7 +112,7 @@ $pdf->Ln(3);
 $pdf->SetFont($Letra,'',10);
 if(pg_numrows($resultval)>1){
     $pdf->SetFillColor(200);
-    $pdf->Cell(25,6,'Mês',1,0,"C",1);
+    $pdf->Cell(25,6,'MÃªs',1,0,"C",1);
     $pdf->Cell(40,6,'Valor',1,0,"C",1);
     $pdf->Cell(35,6,'Aliquota - %',1,0,"C",1);
     $pdf->Cell(40,6,'Imposto',1,0,"C",1);
@@ -129,7 +129,7 @@ if(pg_numrows($resultval)>1){
     if($w07_dtpaga != ""){
       $w07_dtpaga = db_formatar($w07_dtpaga,'d');
     }else{
-      $w07_dtpaga = "Não efetuado";
+      $w07_dtpaga = "NÃ£o efetuado";
     }  
     $pdf->Cell(50,6,''.$w07_dtpaga,1,1,"C",1);
     $total += $w07_valor;
@@ -144,7 +144,7 @@ if(pg_numrows($resultval)>1){
     $total = 0;
     $totali = 0;
     $pdf->SetFillColor(200);
-    $pdf->Cell(25,6,'Mês',1,0,"C",1);
+    $pdf->Cell(25,6,'MÃªs',1,0,"C",1);
     $pdf->Cell(40,6,'Valor',1,0,"C",1);
     $pdf->Cell(35,6,'Aliquota - %',1,0,"C",1);
     $pdf->Cell(40,6,'Imposto',1,0,"C",1);
@@ -158,7 +158,7 @@ if(pg_numrows($resultval)>1){
     if($w07_dtpaga != ""){
       $w07_dtpaga = db_formatar($w07_dtpaga,'d');
     }else{
-      $w07_dtpaga = "Não efetuado";
+      $w07_dtpaga = "NÃ£o efetuado";
     }
     $pdf->Cell(50,6,''.$w07_dtpaga,1,1,"C",1);
     $total += $w07_valor;

@@ -53,15 +53,15 @@ class cl_issplan {
    var $q20_situacao = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 q20_planilha = int4 = Código da Planilha 
-                 q20_numcgm = int4 = Número do CGM 
+                 q20_planilha = int4 = CÃ³digo da Planilha 
+                 q20_numcgm = int4 = NÃºmero do CGM 
                  q20_ano = int4 = Ano 
-                 q20_mes = int4 = Mês 
+                 q20_mes = int4 = MÃªs 
                  q20_nomecontri = varchar(40) = Nome do contribuinte 
                  q20_fonecontri = varchar(40) = Telefone do Contribuinte 
                  q20_numpre = int8 = Numpre 
-                 q20_numbco = int8 = Número do Banco 
-                 q20_situacao = int4 = situaçao 
+                 q20_numbco = int8 = NÃºmero do Banco 
+                 q20_situacao = int4 = situaÃ§ao 
                  ";
    //funcao construtor da classe 
    function cl_issplan() { 
@@ -98,10 +98,10 @@ class cl_issplan {
    function incluir ($q20_planilha){ 
       $this->atualizacampos();
      if($this->q20_numcgm == null ){ 
-       $this->erro_sql = " Campo Número do CGM nao Informado.";
+       $this->erro_sql = " Campo NÃºmero do CGM nao Informado.";
        $this->erro_campo = "q20_numcgm";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -110,16 +110,16 @@ class cl_issplan {
        $this->erro_sql = " Campo Ano nao Informado.";
        $this->erro_campo = "q20_ano";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q20_mes == null ){ 
-       $this->erro_sql = " Campo Mês nao Informado.";
+       $this->erro_sql = " Campo MÃªs nao Informado.";
        $this->erro_campo = "q20_mes";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -138,7 +138,7 @@ class cl_issplan {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: issplan_q20_planilha_seq do campo: q20_planilha"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -147,9 +147,9 @@ class cl_issplan {
      }else{
        $result = @db_query("select last_value from issplan_q20_planilha_seq");
        if(($result != false) && (pg_result($result,0,0) < $q20_planilha)){
-         $this->erro_sql = " Campo q20_planilha maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo q20_planilha maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -160,7 +160,7 @@ class cl_issplan {
      if(($this->q20_planilha == null) || ($this->q20_planilha == "") ){ 
        $this->erro_sql = " Campo q20_planilha nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -191,13 +191,13 @@ class cl_issplan {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Planilha de retenção na fonte ($this->q20_planilha) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Planilha de retenção na fonte já Cadastrado";
+         $this->erro_sql   = "Planilha de retenÃ§Ã£o na fonte ($this->q20_planilha) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Planilha de retenÃ§Ã£o na fonte jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Planilha de retenção na fonte ($this->q20_planilha) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Planilha de retenÃ§Ã£o na fonte ($this->q20_planilha) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -207,7 +207,7 @@ class cl_issplan {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q20_planilha;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -238,10 +238,10 @@ class cl_issplan {
        $sql  .= $virgula." q20_planilha = $this->q20_planilha ";
        $virgula = ",";
        if(trim($this->q20_planilha) == null ){ 
-         $this->erro_sql = " Campo Código da Planilha nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo da Planilha nao Informado.";
          $this->erro_campo = "q20_planilha";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -251,10 +251,10 @@ class cl_issplan {
        $sql  .= $virgula." q20_numcgm = $this->q20_numcgm ";
        $virgula = ",";
        if(trim($this->q20_numcgm) == null ){ 
-         $this->erro_sql = " Campo Número do CGM nao Informado.";
+         $this->erro_sql = " Campo NÃºmero do CGM nao Informado.";
          $this->erro_campo = "q20_numcgm";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -267,7 +267,7 @@ class cl_issplan {
          $this->erro_sql = " Campo Ano nao Informado.";
          $this->erro_campo = "q20_ano";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -277,10 +277,10 @@ class cl_issplan {
        $sql  .= $virgula." q20_mes = $this->q20_mes ";
        $virgula = ",";
        if(trim($this->q20_mes) == null ){ 
-         $this->erro_sql = " Campo Mês nao Informado.";
+         $this->erro_sql = " Campo MÃªs nao Informado.";
          $this->erro_campo = "q20_mes";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -349,9 +349,9 @@ class cl_issplan {
      $result = @db_query($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Planilha de retenção na fonte nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "Planilha de retenÃ§Ã£o na fonte nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->q20_planilha;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -359,18 +359,18 @@ class cl_issplan {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Planilha de retenção na fonte nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "Planilha de retenÃ§Ã£o na fonte nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->q20_planilha;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q20_planilha;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -417,9 +417,9 @@ class cl_issplan {
      $result = @db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Planilha de retenção na fonte nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Planilha de retenÃ§Ã£o na fonte nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$q20_planilha;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -427,18 +427,18 @@ class cl_issplan {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Planilha de retenção na fonte nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Planilha de retenÃ§Ã£o na fonte nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$q20_planilha;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$q20_planilha;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -453,7 +453,7 @@ class cl_issplan {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -462,7 +462,7 @@ class cl_issplan {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:issplan";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

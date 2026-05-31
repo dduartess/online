@@ -102,7 +102,7 @@ if(!empty($_FILES)) {
           }
         }
       } else {
-        $DB_MSG .= "<tr><td>Arquivo " . substr($k, -2) . " em formato ou tamanho inválido.</tr></td>";
+        $DB_MSG .= "<tr><td>Arquivo " . substr($k, -2) . " em formato ou tamanho invÃ¡lido.</tr></td>";
       }
   	}
   }
@@ -129,7 +129,7 @@ if(empty($DB_MSG)) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/strings.js"></script>
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
@@ -146,48 +146,48 @@ function js_submit() {
 	document.getElementById("error-list").innerHTML = ("");
 	
 	var retorno = true;
-	var erro = '<table border="0" cellspacing="0" cellpadding="0" class="texto"><tr><td><em>Favor corrigir as seguintes informações:</em></td></tr>';
+	var erro = '<table border="0" cellspacing="0" cellpadding="0" class="texto"><tr><td><em>Favor corrigir as seguintes informaÃ§Ãµes:</em></td></tr>';
 	if(document.form1.po01_nome.value.trim() == "") {
-		erro += "<tr><td>Campo Nome não informado.</td></tr>";
+		erro += "<tr><td>Campo Nome nÃ£o informado.</td></tr>";
 		retorno = false;
 	}
 
 	if(!validate(document.form1.po01_email.value)) {
-		erro += "<tr><td>Campo E-mail inválido.</td></tr>";
+		erro += "<tr><td>Campo E-mail invÃ¡lido.</td></tr>";
 		retorno = false;
 	}
 
 	if(document.form1.po01_tipo.value.trim() == "") {
-		erro += "<tr><td>Campo Categoria não informado.</td></tr>";
+		erro += "<tr><td>Campo Categoria nÃ£o informado.</td></tr>";
 		retorno = false;
 	}
 
 	if(document.form1.po01_db_uf.value.trim() == "") {
-		erro += "<tr><td>Campo Estado não informado.</td></tr>";
+		erro += "<tr><td>Campo Estado nÃ£o informado.</td></tr>";
 		retorno = false;
 	}
 
 	if(document.form1.po01_assunto.value.trim() == "") {
-		erro += "<tr><td>Campo Assunto não informado.</td></tr>";
+		erro += "<tr><td>Campo Assunto nÃ£o informado.</td></tr>";
 		retorno = false;
 	}
 
 	if(document.form1.po01_mensagem.value.trim() == "") {
-		erro += "<tr><td>Campo Mensagem não informado.</td></tr>";
+		erro += "<tr><td>Campo Mensagem nÃ£o informado.</td></tr>";
 		retorno = false;
 	}
 
 	if(document.form1.po01_tiporesposta.value == "1" && 
 	   document.form1.po01_enderecoresidencial.value.trim() == "" && 
 	   document.form1.po01_enderecocomercial.value.trim() == "") {
-		erro += "<tr><td>Para o Tipo de resposta Carta é necessário informar o Endereço residencial ou o Endereço comercial.</td></tr>";
+		erro += "<tr><td>Para o Tipo de resposta Carta Ã© necessÃ¡rio informar o EndereÃ§o residencial ou o EndereÃ§o comercial.</td></tr>";
 		retorno = false;
 	}
 
 	if(document.form1.po01_tiporesposta.value == "2" && 
 	   document.form1.po01_telefone.value.trim() == "" && 
 	   document.form1.po01_celular.value.trim() == "") {
-		erro += "<tr><td>Para o Tipo de resposta Telefone é necessário informar o Telefone fixo com DDD ou o Telefone celular com DDD.</td></tr>";
+		erro += "<tr><td>Para o Tipo de resposta Telefone Ã© necessÃ¡rio informar o Telefone fixo com DDD ou o Telefone celular com DDD.</td></tr>";
 		retorno = false;
 	}
 
@@ -220,13 +220,13 @@ em {
   <tr>
    <td height="50" align="<?=$DB_align1?>">
     <?=$DB_mens1?>
-    <h3>Por favor use o formulário a seguir para enviar uma mensagem à Ouvidoria. Campos obrigatórios estão marcados com <em>*</em></h3>
+    <h3>Por favor use o formulÃ¡rio a seguir para enviar uma mensagem Ã  Ouvidoria. Campos obrigatÃ³rios estÃ£o marcados com <em>*</em></h3>
    </td>
   </tr>
   <tr align="center">
     <td id="error-list">
       <?php  if(!empty($DB_MSG)) { ?>
-      <table border="0" cellspacing="0" cellpadding="0" class="texto"><tr><td><em>Favor corrigir as seguintes informações:</em></td></tr>
+      <table border="0" cellspacing="0" cellpadding="0" class="texto"><tr><td><em>Favor corrigir as seguintes informaÃ§Ãµes:</em></td></tr>
       	<?=@$DB_MSG; ?>
       </table>
     <?php }?>
@@ -266,7 +266,7 @@ em {
           <td> 
             <select name="po01_sigilo" id="po01_sigilo">
             <?php 
-              $x = array('f'=>'Não','t'=>'Sim');
+              $x = array('f'=>'NÃ£o','t'=>'Sim');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_sigilo) && $k==$po01_sigilo)?"selected='selected'":"")?>><?=@$v?></option>
@@ -279,7 +279,7 @@ em {
           <td> 
             <select name="po01_resposta" id="po01_resposta" onchange="js_tipo_resposta()">
             <?php 
-              $x = array('f'=>'Não','t'=>'Sim');
+              $x = array('f'=>'NÃ£o','t'=>'Sim');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_resposta) && $k==$po01_resposta)?"selected='selected'":"")?>><?=@$v?></option>
@@ -330,7 +330,7 @@ em {
           <td> 
             <select name="po01_escolaridade" id="po01_escolaridade">
             <?php 
-              $x = array('' => '-', '0'=>'Não alfabetizado','1'=>'Nível fundamental','2'=>'Nível médio','3'=>'Graduado');
+              $x = array('' => '-', '0'=>'NÃ£o alfabetizado','1'=>'NÃ­vel fundamental','2'=>'NÃ­vel mÃ©dio','3'=>'Graduado');
               foreach ($x as $k=>$v) {
             ?>
               <option value="<?=@$k?>" <?=@((isset($po01_escolaridade) && $k==$po01_escolaridade)?"selected='selected'":"")?>><?=@$v?></option>
@@ -420,7 +420,7 @@ em {
         <td>
           Tipos de arquivos aceitos: *.gif, *.jpg, *.png, *.zip, *.rar, *.doc, *.docx, *.txt, *.pdf
           <br />
-          Tamanho máximo de arquivos: 5124 Kb (5.00 Mb) 
+          Tamanho mÃ¡ximo de arquivos: 5124 Kb (5.00 Mb) 
         </td>
       </tr>
       <tr>
@@ -431,10 +431,10 @@ em {
           <br />
           <ul>
       	    <li>
-      	      Todas informações necessárias foram preenchidas corretamente.
+      	      Todas informaÃ§Ãµes necessÃ¡rias foram preenchidas corretamente.
       	    </li>
       	    <li>
-              Todas informações estão corretas e livres de erros.
+              Todas informaÃ§Ãµes estÃ£o corretas e livres de erros.
       	    </li>
           </ul> 
         </td>
@@ -442,7 +442,7 @@ em {
       <tr>
         <td></td>
         <td>
-          Nós registraremos:
+          NÃ³s registraremos:
         <br />
         <ul>
       	  <li>

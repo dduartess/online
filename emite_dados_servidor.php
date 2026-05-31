@@ -25,7 +25,7 @@
  *                                licenca/licenca_pt.txt 
  */
 
-error_reporting('** FAVOR FAÇA SEU PEDIDO DE SENHA! **');
+error_reporting('** FAVOR FAÃ‡A SEU PEDIDO DE SENHA! **');
 include("libs/db_utils.php");
 require('fpdf151/pdf.php');
 
@@ -67,10 +67,10 @@ $sHeader    = $oGet->header;
   }
 
   if ($total == 0) {
-    db_redireciona('db_erros.php?fechar=true&db_erro=Não foram encontrados registros para esse(s) filtro(s).');
+    db_redireciona('db_erros.php?fechar=true&db_erro=NÃ£o foram encontrados registros para esse(s) filtro(s).');
   }
 
-//****************************************    P D F  Servidor Público ***********************************************//
+//****************************************    P D F  Servidor PÃºblico ***********************************************//
 
 if(isset($sHeader) && $sHeader == 'E'){
     $sImpHeader = "Esqueci Minha Senha";
@@ -78,7 +78,7 @@ if(isset($sHeader) && $sHeader == 'E'){
     $sImpHeader = "Pedido de Senha";
 }
 
-$head4 = "Informações Servidor Público";
+$head4 = "InformaÃ§Ãµes Servidor PÃºblico";
 $head5 = $sImpHeader;
 
 $pdf = new PDF();
@@ -89,7 +89,7 @@ $pdf->Addpage();
 $pdf->cell(30,5,''                             ,0,1,"L",0);
 $pdf->cell(30,5,''                             ,0,1,"L",0);
 $pdf->SetFont('Arial','b',8);
-$pdf->cell(30,5,'Nº do CGM:'                   ,0,0,"L",1);
+$pdf->cell(30,5,'NÂº do CGM:'                   ,0,0,"L",1);
 $pdf->cell(0,5,$z01_numcgm                     ,0,1,"L",1);
 $pdf->cell(30,5,'Nome:'                        ,0,0,"L",0);
 $pdf->cell(0,5,$z01_nome                       ,0,1,"L",0);
@@ -121,7 +121,7 @@ $pdf->cell(30,5,'Login:'                       ,0,0,"L",0);
 $pdf->cell(0,5,$z01_numcgm                     ,0,1,"L",0);
 $pdf->Output();
 
-//****************************************   	FIM PDF Servidor Público   ********************************************//
+//****************************************   	FIM PDF Servidor PÃºblico   ********************************************//
 
 function formataDataNasc($sData){
 

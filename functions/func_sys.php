@@ -1,9 +1,9 @@
 <?php 
-//VerificaÁ„o do Login
+//Verifica√ß√£o do Login
 function Login(){
  if($_COOKIE["ID_USUARIO"]=="")
  {
-  msg_box("ERRO! FaÁa Login.");
+  msg_box("ERRO! Fa√ßa Login.");
   parent.location("index.php");
  }
 }
@@ -21,7 +21,7 @@ function enc($string)
   }
  else
   {
-   $enc_string = "ERRO de SeguranÁa! - 11";
+   $enc_string = "ERRO de Seguran√ßa! - 11";
   }
    return $enc_string;
 }
@@ -41,17 +41,17 @@ function des($string)
          $ver = substr($md5,0,3).substr($md5,-3);
          if($ver != $ini.$end)
          {
-             $des_string = "ERRO de SeguranÁa! - 21";
+             $des_string = "ERRO de Seguran√ßa! - 21";
          }
     }
    else
     {
-        $des_string = "ERRO de SeguranÁa! - 22";
+        $des_string = "ERRO de Seguran√ßa! - 22";
     }
     return $des_string;
 }
 
-//Location para outra p·gina
+//Location para outra p√°gina
 function location($location){
  echo "<script>";
  echo "location='$location'";
@@ -75,7 +75,7 @@ function voltar(){
  <?php 
 }
 
-//Input do Formul·rio
+//Input do Formul√°rio
 function input($type,$name,$value,$size=null,$maxlength=null,$condicao=null,$javascript=null,$class=null){
   $frm = "<input type='$type' name='$name' value='$value' size='$size' maxlength='$maxlength'";
   if($class !=""){
@@ -111,7 +111,7 @@ function FormData($name1,$padrao1,$name2,$padrao2,$name3,$padrao3,$class=""){
  echo "<a href=\"javascript:abre('calendario_00.php?name1=$name1&name2=$name2&name3=$name3&','calendario',200,400,245,150,'no')\"><img src=\"images/calendario.gif\" border=\"0\"></a>";
 }
 
-//prÛximo registro
+//pr√≥ximo registro
 function NextReg($tabela,$campo){
  $sql = "SELECT MAX($campo) FROM $tabela";
  $query = pg_query($sql);
@@ -123,28 +123,28 @@ function NextReg($tabela,$campo){
 function maiusculo(&$string)
 {
 $string = strtoupper($string);
-$string = str_replace("·","¡",$string);
-$string = str_replace("È","…",$string);
-$string = str_replace("Ì","Õ",$string);
-$string = str_replace("Û","”",$string);
-$string = str_replace("˙","⁄",$string);
-$string = str_replace("‚","¬",$string);
-$string = str_replace("Í"," ",$string);
-$string = str_replace("Ù","‘",$string);
-$string = str_replace("Ó","Œ",$string);
-$string = str_replace("˚","€",$string);
-$string = str_replace("„","√",$string);
-$string = str_replace("ı","’",$string);
-$string = str_replace("Á","«",$string);
-$string = str_replace("‡","¿",$string);
-$string = str_replace("Ë","»",$string);
+$string = str_replace("√°","√Å",$string);
+$string = str_replace("√©","√â",$string);
+$string = str_replace("√≠","√ç",$string);
+$string = str_replace("√≥","√ì",$string);
+$string = str_replace("√∫","√ö",$string);
+$string = str_replace("√¢","√Ç",$string);
+$string = str_replace("√™","√ä",$string);
+$string = str_replace("√¥","√î",$string);
+$string = str_replace("√Æ","√é",$string);
+$string = str_replace("√ª","√õ",$string);
+$string = str_replace("√£","√É",$string);
+$string = str_replace("√µ","√ï",$string);
+$string = str_replace("√ß","√á",$string);
+$string = str_replace("√†","√Ä",$string);
+$string = str_replace("√®","√à",$string);
 return $string;
 }
 
 Function TiraAcento($string)
 {
    set_time_limit(240);
-   $acentos = '·ÈÌÛ˙¡…Õ”⁄‡¿¬‚ ÍÙ‘¸‹Ôœˆ÷Ò—„√ı’Á«™∫‰ƒ\'';
+   $acentos = '√°√©√≠√≥√∫√Å√â√ç√ì√ö√†√Ä√Ç√¢√ä√™√¥√î√º√ú√Ø√è√∂√ñ√±√ë√£√É√µ√ï√ß√á¬™¬∫√§√Ñ\'';
    $letras  = 'AEIOUAEIOUAAAAEEOOUUIIOONNAAOOCCAOAA ';
    $new_string = '';
    for($x=0; $x<strlen($string); $x++)
@@ -177,14 +177,14 @@ function VerEmBranco($campos){
 // data do servidor
  $diasemana[0] = 'domingo';
  $diasemana[1] = 'segunda-feira';
- $diasemana[2] = 'terÁa-feira';
+ $diasemana[2] = 'ter√ßa-feira';
  $diasemana[3] = 'quarta-feira';
  $diasemana[4] = 'quinta-feira';
  $diasemana[5] = 'sexta-feira';
- $diasemana[6] = 's·bado';
+ $diasemana[6] = 's√°bado';
  $mesnome[1] = 'janeiro';
  $mesnome[2] = 'fevereiro';
- $mesnome[3] = 'marÁo';
+ $mesnome[3] = 'mar√ßo';
  $mesnome[4] = 'abril';
  $mesnome[5] = 'maio';
  $mesnome[6] = 'junho';
@@ -212,7 +212,7 @@ function combo($nome,$tabela,$campo1,$campo2,$where=null,$selected=null,$java=nu
  echo "</select>";
 }
 
-//˙ltimo registro
+//√∫ltimo registro
 function Ultimo($tabela,$ordem){
  $sql = "SELECT * FROM $tabela ORDER BY $ordem DESC";
  $query = pg_query($sql);
@@ -269,7 +269,7 @@ function ContaCorrente($cliente,$valor){
 
 //saldo anterior
 function Saldo($cliente){
- //dÈbito
+ //d√©bito
  $sql1 = "SELECT sum(movimento_f_valorfinal)
          FROM movimentos
          WHERE cliente_i_codigo = $cliente
@@ -277,7 +277,7 @@ function Saldo($cliente){
         ";
  $query1 = pg_query($sql1);
  $dados1 = pg_fetch_array($query1);
- //crÈdito
+ //cr√©dito
  $sql2 = "SELECT sum(movimento_f_valorfinal),
                  sum(movimento_f_juro),
                  sum(movimento_f_desconto)

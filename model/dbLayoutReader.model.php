@@ -50,22 +50,22 @@ class DBLayoutReader {
   
   protected $sCaminhoArquivo   = false;
   /**
-   * No construtor j· ser· gerado os abjetos apartir do layout informado
+   * No construtor j√° ser√° gerado os abjetos apartir do layout informado
    *
-   * @param integer $iLayoutTxt  CÛdigo do Cadastro de Layout
+   * @param integer $iLayoutTxt  C√≥digo do Cadastro de Layout
    * @param string  $sArquivo    Caminho do Arquivo
    * @param boolean $lUsaSeparador  true para utilizar separador (se houver), ou seja,
-   * fazer o explode pelo separador nas linhas. false para n„o utilizar separador.
+   * fazer o explode pelo separador nas linhas. false para n√£o utilizar separador.
    * @param boolean $lProcessarArquivo  true para processar o arquivo diretamente default true
    */
   function __construct ($iLayoutTxt='',$sArquivo='', $lUsaSeparador = false, $lProcessarArquivo = true, $lUsaChr = false) {
   	
   	if ( trim($iLayoutTxt) == '' ) {
-  		throw new Exception('CÛdigo do Layout n„o informado!');
+  		throw new Exception('C√≥digo do Layout n√£o informado!');
   	}
   	
     if ( trim($sArquivo) == '' ) {
-      throw new Exception('Caminho do arquivo n„o informado!');
+      throw new Exception('Caminho do arquivo n√£o informado!');
     }  	
   	
     
@@ -100,19 +100,19 @@ class DBLayoutReader {
   		
       /**
       * Para o caso de utilizar separadores para determinar os campos dentro das linhas
-      * preciso saber o Ìndice do vetor explodido no separador. Como os dados vÍm ordenados
-      * pelo tipo de linha e pela posiÁ„o dentro do tipo de linha, ent„o, a ordem
-      * para cada campo dentro de cada tipo de linha j· est· correta. O Ìndice comeÁa em 0
-      * porque os arrays no PHP comeÁam em 0 tambÈm.
+      * preciso saber o √≠ndice do vetor explodido no separador. Como os dados v√™m ordenados
+      * pelo tipo de linha e pela posi√ß√£o dentro do tipo de linha, ent√£o, a ordem
+      * para cada campo dentro de cada tipo de linha j√° est√° correta. O √≠ndice come√ßa em 0
+      * porque os arrays no PHP come√ßam em 0 tamb√©m.
       * Ex.: 
       * linha: 123|456|78
       * separador: |
       * array explodido: {123, 456, 78}
-      * valor da posiÁ„o 1: 456
+      * valor da posi√ß√£o 1: 456
       */
       $iIndice             = 0;
       /**
-      * Vari·vel que identifica a mudanÁa de um tipo de linha para outro
+      * Vari√°vel que identifica a mudan√ßa de um tipo de linha para outro
       */ 
       $sIdentificadorAtual = '';
   		for ( $iInd=0; $iInd < $iLinhasLayout; $iInd++ ) {
@@ -120,7 +120,7 @@ class DBLayoutReader {
   			$oDadosLayout = db_utils::fieldsMemory($rsDadosLayout,$iInd);
 
   			/**
-        * Verifico se mudou o tipo de linha. Se mudou, zero o Ìndice do campo.
+        * Verifico se mudou o tipo de linha. Se mudou, zero o √≠ndice do campo.
         */
         if ($sIdentificadorAtual != $oDadosLayout->identificador) {
 
@@ -130,8 +130,8 @@ class DBLayoutReader {
         }
 
   			/**
-  			 *  Cria um array contendo as propriedades necess·rias para 
-  			 *  a localizaÁ„o do campo dentro da linha do arquivo
+  			 *  Cria um array contendo as propriedades necess√°rias para 
+  			 *  a localiza√ß√£o do campo dentro da linha do arquivo
   			 */
   			$this->aPropriedadesCampos[$oDadosLayout->identificador]
   			                          [$oDadosLayout->nome_campo]   = array($oDadosLayout->posicao_campo,

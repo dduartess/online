@@ -146,12 +146,12 @@ td {
 	 -->
 </tr>
 
-<?php // Condomínio 
+<?php // CondomÃ­nio 
 
   $resultCondominio = $consulta->RecordSetAguaCondominio();
   if(pg_numrows($resultCondominio)>0) {
     db_fieldsmemory($resultCondominio, 0);
-    $infoCondominio = $x31_codcondominio." ( Matrícula: ".$x31_matric." - ".$dl_proprietario." ) ";
+    $infoCondominio = $x31_codcondominio." ( MatrÃ­cula: ".$x31_matric." - ".$dl_proprietario." ) ";
   	?>
   	<tr>
   		<td>Condominio</td>
@@ -209,7 +209,7 @@ td {
   		</tr>
   	<?php 
   }
-  //ISENÇÕES
+  //ISENÃ‡Ã•ES
   ?>
  </table>
  </td>
@@ -252,7 +252,7 @@ td {
   		</tr>
 		<?php 
 	}
-	// CONSTRUÇÕES
+	// CONSTRUÃ‡Ã•ES
 	?>
 	</table></td></tr>
 	</table>
@@ -331,7 +331,7 @@ td {
 		<?php 
 	}
 
-	//Endereço de Entrega
+	//EndereÃ§o de Entrega
 	?>
 	</table></td></tr>
 	</table>

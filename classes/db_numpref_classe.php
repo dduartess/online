@@ -81,43 +81,43 @@ class cl_numpref {
    var $k03_diasreemissaocertidao = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 k03_anousu = int4 = Exercício 
-                 k03_instit = int4 = Cód. Instituição 
-                 k03_numpre = int4 = Numeração 
-                 k03_defope = int4 = Operação 
+                 k03_anousu = int4 = ExercÃ­cio 
+                 k03_instit = int4 = CÃ³d. InstituiÃ§Ã£o 
+                 k03_numpre = int4 = NumeraÃ§Ã£o 
+                 k03_defope = int4 = OperaÃ§Ã£o 
                  k03_recjur = int4 = Receita Juros 
                  k03_numsli = int4 = Slip 
-                 k03_impend = bool = Imprime Endereço 
-                 k03_unipri = bool = Única/Primeira 
+                 k03_impend = bool = Imprime EndereÃ§o 
+                 k03_unipri = bool = Ãšnica/Primeira 
                  k03_codbco = int4 = Banco 
-                 k03_codage = char(5) = Agência 
+                 k03_codage = char(5) = AgÃªncia 
                  k03_recmul = int4 = Receita Multa 
-                 k03_calrec = bool = Receita Cálculo 
+                 k03_calrec = bool = Receita CÃ¡lculo 
                  k03_msg = text = Mensagem 
                  k03_msgcarne = text = Mensagem exibida no carne 
                  k03_msgbanco = text = Mensagem do local de pagamento exibida no carne 
-                 k03_certissvar = bool = Libera Variável 
+                 k03_certissvar = bool = Libera VariÃ¡vel 
                  k03_diasjust = int4 = Dias Justif. 
-                 k03_reccert = bool = Recibo na certidão 
-                 k03_taxagrupo = int4 = Código do grupo de taxas 
-                 k03_tipocodcert = int4 = Tipo de Codificação 
+                 k03_reccert = bool = Recibo na certidÃ£o 
+                 k03_taxagrupo = int4 = CÃ³digo do grupo de taxas 
+                 k03_tipocodcert = int4 = Tipo de CodificaÃ§Ã£o 
                  k03_reciboprot = int4 = Tipo do Recibo do Protocolo 
-                 k03_regracnd = int4 = Regra paraEmissão CND 
-                 k03_reciboprotretencao = int4 = Tipo Recibo Retenção 
-                 k03_tipocertidao = int4 = Forma Emissão Certidão de Débitos 
+                 k03_regracnd = int4 = Regra paraEmissÃ£o CND 
+                 k03_reciboprotretencao = int4 = Tipo Recibo RetenÃ§Ã£o 
+                 k03_tipocertidao = int4 = Forma EmissÃ£o CertidÃ£o de DÃ©bitos 
                  k03_separajurmulparc = int4 = Separar jur e mul no parcelamento 
                  k03_respcgm = int4 = Numcgm 
                  k03_respcargo = int4 = Cargo 
-                 k03_msgautent = text = Mensagem Impressora Térmica 
-                 k03_toleranciapgtoparc = numeric(15,2) = Valor Tolerância Diferença Pagamento 
+                 k03_msgautent = text = Mensagem Impressora TÃ©rmica 
+                 k03_toleranciapgtoparc = numeric(15,2) = Valor TolerÃ¢ncia DiferenÃ§a Pagamento 
                  k03_pgtoparcial = bool = Ativa Pagamento Parcial 
-                 k03_reemissaorecibo = bool = Permite Reemissão de Recibo 
+                 k03_reemissaorecibo = bool = Permite ReemissÃ£o de Recibo 
                  k03_opcaoemissparcela = char(1) = Parcela de Outros Exercicios 
                  k03_numprepgtoparcial = int8 = Numpre inicio pagamento parcial 
                  k03_agrupadorarquivotxtbaixabanco = int4 = Forma de Processamento de Arquivo TXT 
                  k03_receitapadraocredito = int4 = Receita 
                  k03_diasvalidadecertidao = int4 = Dias de vencimento das certidoes 
-                 k03_diasreemissaocertidao = int4 = Dias para reemissão das certidoes 
+                 k03_diasreemissaocertidao = int4 = Dias para reemissÃ£o das certidoes 
                  ";
    //funcao construtor da classe 
    function cl_numpref() { 
@@ -186,172 +186,172 @@ class cl_numpref {
        $this->k03_numpre = "0";
      }
      if($this->k03_defope == null ){ 
-       $this->erro_sql = " Campo Operação não informado.";
+       $this->erro_sql = " Campo OperaÃ§Ã£o nÃ£o informado.";
        $this->erro_campo = "k03_defope";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_recjur == null ){ 
-       $this->erro_sql = " Campo Receita Juros não informado.";
+       $this->erro_sql = " Campo Receita Juros nÃ£o informado.";
        $this->erro_campo = "k03_recjur";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_numsli == null ){ 
-       $this->erro_sql = " Campo Slip não informado.";
+       $this->erro_sql = " Campo Slip nÃ£o informado.";
        $this->erro_campo = "k03_numsli";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_impend == null ){ 
-       $this->erro_sql = " Campo Imprime Endereço não informado.";
+       $this->erro_sql = " Campo Imprime EndereÃ§o nÃ£o informado.";
        $this->erro_campo = "k03_impend";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_unipri == null ){ 
-       $this->erro_sql = " Campo Única/Primeira não informado.";
+       $this->erro_sql = " Campo Ãšnica/Primeira nÃ£o informado.";
        $this->erro_campo = "k03_unipri";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_codbco == null ){ 
-       $this->erro_sql = " Campo Banco não informado.";
+       $this->erro_sql = " Campo Banco nÃ£o informado.";
        $this->erro_campo = "k03_codbco";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_codage == null ){ 
-       $this->erro_sql = " Campo Agência não informado.";
+       $this->erro_sql = " Campo AgÃªncia nÃ£o informado.";
        $this->erro_campo = "k03_codage";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_recmul == null ){ 
-       $this->erro_sql = " Campo Receita Multa não informado.";
+       $this->erro_sql = " Campo Receita Multa nÃ£o informado.";
        $this->erro_campo = "k03_recmul";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_calrec == null ){ 
-       $this->erro_sql = " Campo Receita Cálculo não informado.";
+       $this->erro_sql = " Campo Receita CÃ¡lculo nÃ£o informado.";
        $this->erro_campo = "k03_calrec";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_certissvar == null ){ 
-       $this->erro_sql = " Campo Libera Variável não informado.";
+       $this->erro_sql = " Campo Libera VariÃ¡vel nÃ£o informado.";
        $this->erro_campo = "k03_certissvar";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_diasjust == null ){ 
-       $this->erro_sql = " Campo Dias Justif. não informado.";
+       $this->erro_sql = " Campo Dias Justif. nÃ£o informado.";
        $this->erro_campo = "k03_diasjust";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_reccert == null ){ 
-       $this->erro_sql = " Campo Recibo na certidão não informado.";
+       $this->erro_sql = " Campo Recibo na certidÃ£o nÃ£o informado.";
        $this->erro_campo = "k03_reccert";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_taxagrupo == null ){ 
-       $this->erro_sql = " Campo Código do grupo de taxas não informado.";
+       $this->erro_sql = " Campo CÃ³digo do grupo de taxas nÃ£o informado.";
        $this->erro_campo = "k03_taxagrupo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_tipocodcert == null ){ 
-       $this->erro_sql = " Campo Tipo de Codificação não informado.";
+       $this->erro_sql = " Campo Tipo de CodificaÃ§Ã£o nÃ£o informado.";
        $this->erro_campo = "k03_tipocodcert";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_reciboprot == null ){ 
-       $this->erro_sql = " Campo Tipo do Recibo do Protocolo não informado.";
+       $this->erro_sql = " Campo Tipo do Recibo do Protocolo nÃ£o informado.";
        $this->erro_campo = "k03_reciboprot";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_regracnd == null ){ 
-       $this->erro_sql = " Campo Regra paraEmissão CND não informado.";
+       $this->erro_sql = " Campo Regra paraEmissÃ£o CND nÃ£o informado.";
        $this->erro_campo = "k03_regracnd";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_reciboprotretencao == null ){ 
-       $this->erro_sql = " Campo Tipo Recibo Retenção não informado.";
+       $this->erro_sql = " Campo Tipo Recibo RetenÃ§Ã£o nÃ£o informado.";
        $this->erro_campo = "k03_reciboprotretencao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_tipocertidao == null ){ 
-       $this->erro_sql = " Campo Forma Emissão Certidão de Débitos não informado.";
+       $this->erro_sql = " Campo Forma EmissÃ£o CertidÃ£o de DÃ©bitos nÃ£o informado.";
        $this->erro_campo = "k03_tipocertidao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_separajurmulparc == null ){ 
-       $this->erro_sql = " Campo Separar jur e mul no parcelamento não informado.";
+       $this->erro_sql = " Campo Separar jur e mul no parcelamento nÃ£o informado.";
        $this->erro_campo = "k03_separajurmulparc";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -363,46 +363,46 @@ class cl_numpref {
        $this->k03_respcargo = "null";
      }
      if($this->k03_toleranciapgtoparc == null ){ 
-       $this->erro_sql = " Campo Valor Tolerância Diferença Pagamento não informado.";
+       $this->erro_sql = " Campo Valor TolerÃ¢ncia DiferenÃ§a Pagamento nÃ£o informado.";
        $this->erro_campo = "k03_toleranciapgtoparc";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_pgtoparcial == null ){ 
-       $this->erro_sql = " Campo Ativa Pagamento Parcial não informado.";
+       $this->erro_sql = " Campo Ativa Pagamento Parcial nÃ£o informado.";
        $this->erro_campo = "k03_pgtoparcial";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_reemissaorecibo == null ){ 
-       $this->erro_sql = " Campo Permite Reemissão de Recibo não informado.";
+       $this->erro_sql = " Campo Permite ReemissÃ£o de Recibo nÃ£o informado.";
        $this->erro_campo = "k03_reemissaorecibo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_numprepgtoparcial == null ){ 
-       $this->erro_sql = " Campo Numpre inicio pagamento parcial não informado.";
+       $this->erro_sql = " Campo Numpre inicio pagamento parcial nÃ£o informado.";
        $this->erro_campo = "k03_numprepgtoparcial";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k03_agrupadorarquivotxtbaixabanco == null ){ 
-       $this->erro_sql = " Campo Forma de Processamento de Arquivo TXT não informado.";
+       $this->erro_sql = " Campo Forma de Processamento de Arquivo TXT nÃ£o informado.";
        $this->erro_campo = "k03_agrupadorarquivotxtbaixabanco";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -421,7 +421,7 @@ class cl_numpref {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: numpref_k03_numpre_seq do campo: k03_numpre"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -430,9 +430,9 @@ class cl_numpref {
      }else{
        $result = db_query("select last_value from numpref_k03_numpre_seq");
        if(($result != false) && (pg_result($result,0,0) < $k03_numpre)){
-         $this->erro_sql = " Campo k03_numpre maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo k03_numpre maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -443,7 +443,7 @@ class cl_numpref {
      if(($this->k03_anousu == null) || ($this->k03_anousu == "") ){ 
        $this->erro_sql = " Campo k03_anousu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -451,7 +451,7 @@ class cl_numpref {
      if(($this->k03_instit == null) || ($this->k03_instit == "") ){ 
        $this->erro_sql = " Campo k03_instit nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -538,13 +538,13 @@ class cl_numpref {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Numerações ($this->k03_anousu."-".$this->k03_instit) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Numerações já Cadastrado";
+         $this->erro_sql   = "NumeraÃ§Ãµes ($this->k03_anousu."-".$this->k03_instit) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "NumeraÃ§Ãµes jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Numerações ($this->k03_anousu."-".$this->k03_instit) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "NumeraÃ§Ãµes ($this->k03_anousu."-".$this->k03_instit) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -554,7 +554,7 @@ class cl_numpref {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->k03_anousu."-".$this->k03_instit;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -620,10 +620,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_anousu = $this->k03_anousu ";
        $virgula = ",";
        if(trim($this->k03_anousu) == null ){ 
-         $this->erro_sql = " Campo Exercício não informado.";
+         $this->erro_sql = " Campo ExercÃ­cio nÃ£o informado.";
          $this->erro_campo = "k03_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -633,10 +633,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_instit = $this->k03_instit ";
        $virgula = ",";
        if(trim($this->k03_instit) == null ){ 
-         $this->erro_sql = " Campo Cód. Instituição não informado.";
+         $this->erro_sql = " Campo CÃ³d. InstituiÃ§Ã£o nÃ£o informado.";
          $this->erro_campo = "k03_instit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -653,10 +653,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_defope = $this->k03_defope ";
        $virgula = ",";
        if(trim($this->k03_defope) == null ){ 
-         $this->erro_sql = " Campo Operação não informado.";
+         $this->erro_sql = " Campo OperaÃ§Ã£o nÃ£o informado.";
          $this->erro_campo = "k03_defope";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -666,10 +666,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_recjur = $this->k03_recjur ";
        $virgula = ",";
        if(trim($this->k03_recjur) == null ){ 
-         $this->erro_sql = " Campo Receita Juros não informado.";
+         $this->erro_sql = " Campo Receita Juros nÃ£o informado.";
          $this->erro_campo = "k03_recjur";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -679,10 +679,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_numsli = $this->k03_numsli ";
        $virgula = ",";
        if(trim($this->k03_numsli) == null ){ 
-         $this->erro_sql = " Campo Slip não informado.";
+         $this->erro_sql = " Campo Slip nÃ£o informado.";
          $this->erro_campo = "k03_numsli";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -692,10 +692,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_impend = '$this->k03_impend' ";
        $virgula = ",";
        if(trim($this->k03_impend) == null ){ 
-         $this->erro_sql = " Campo Imprime Endereço não informado.";
+         $this->erro_sql = " Campo Imprime EndereÃ§o nÃ£o informado.";
          $this->erro_campo = "k03_impend";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -705,10 +705,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_unipri = '$this->k03_unipri' ";
        $virgula = ",";
        if(trim($this->k03_unipri) == null ){ 
-         $this->erro_sql = " Campo Única/Primeira não informado.";
+         $this->erro_sql = " Campo Ãšnica/Primeira nÃ£o informado.";
          $this->erro_campo = "k03_unipri";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -718,10 +718,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_codbco = $this->k03_codbco ";
        $virgula = ",";
        if(trim($this->k03_codbco) == null ){ 
-         $this->erro_sql = " Campo Banco não informado.";
+         $this->erro_sql = " Campo Banco nÃ£o informado.";
          $this->erro_campo = "k03_codbco";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -731,10 +731,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_codage = '$this->k03_codage' ";
        $virgula = ",";
        if(trim($this->k03_codage) == null ){ 
-         $this->erro_sql = " Campo Agência não informado.";
+         $this->erro_sql = " Campo AgÃªncia nÃ£o informado.";
          $this->erro_campo = "k03_codage";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -744,10 +744,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_recmul = $this->k03_recmul ";
        $virgula = ",";
        if(trim($this->k03_recmul) == null ){ 
-         $this->erro_sql = " Campo Receita Multa não informado.";
+         $this->erro_sql = " Campo Receita Multa nÃ£o informado.";
          $this->erro_campo = "k03_recmul";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -757,10 +757,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_calrec = '$this->k03_calrec' ";
        $virgula = ",";
        if(trim($this->k03_calrec) == null ){ 
-         $this->erro_sql = " Campo Receita Cálculo não informado.";
+         $this->erro_sql = " Campo Receita CÃ¡lculo nÃ£o informado.";
          $this->erro_campo = "k03_calrec";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -782,10 +782,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_certissvar = '$this->k03_certissvar' ";
        $virgula = ",";
        if(trim($this->k03_certissvar) == null ){ 
-         $this->erro_sql = " Campo Libera Variável não informado.";
+         $this->erro_sql = " Campo Libera VariÃ¡vel nÃ£o informado.";
          $this->erro_campo = "k03_certissvar";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -795,10 +795,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_diasjust = $this->k03_diasjust ";
        $virgula = ",";
        if(trim($this->k03_diasjust) == null ){ 
-         $this->erro_sql = " Campo Dias Justif. não informado.";
+         $this->erro_sql = " Campo Dias Justif. nÃ£o informado.";
          $this->erro_campo = "k03_diasjust";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -808,10 +808,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_reccert = '$this->k03_reccert' ";
        $virgula = ",";
        if(trim($this->k03_reccert) == null ){ 
-         $this->erro_sql = " Campo Recibo na certidão não informado.";
+         $this->erro_sql = " Campo Recibo na certidÃ£o nÃ£o informado.";
          $this->erro_campo = "k03_reccert";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -821,10 +821,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_taxagrupo = $this->k03_taxagrupo ";
        $virgula = ",";
        if(trim($this->k03_taxagrupo) == null ){ 
-         $this->erro_sql = " Campo Código do grupo de taxas não informado.";
+         $this->erro_sql = " Campo CÃ³digo do grupo de taxas nÃ£o informado.";
          $this->erro_campo = "k03_taxagrupo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -834,10 +834,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_tipocodcert = $this->k03_tipocodcert ";
        $virgula = ",";
        if(trim($this->k03_tipocodcert) == null ){ 
-         $this->erro_sql = " Campo Tipo de Codificação não informado.";
+         $this->erro_sql = " Campo Tipo de CodificaÃ§Ã£o nÃ£o informado.";
          $this->erro_campo = "k03_tipocodcert";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -847,10 +847,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_reciboprot = $this->k03_reciboprot ";
        $virgula = ",";
        if(trim($this->k03_reciboprot) == null ){ 
-         $this->erro_sql = " Campo Tipo do Recibo do Protocolo não informado.";
+         $this->erro_sql = " Campo Tipo do Recibo do Protocolo nÃ£o informado.";
          $this->erro_campo = "k03_reciboprot";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -860,10 +860,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_regracnd = $this->k03_regracnd ";
        $virgula = ",";
        if(trim($this->k03_regracnd) == null ){ 
-         $this->erro_sql = " Campo Regra para Emissão CND não informado.";
+         $this->erro_sql = " Campo Regra para EmissÃ£o CND nÃ£o informado.";
          $this->erro_campo = "k03_regracnd";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -873,10 +873,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_reciboprotretencao = $this->k03_reciboprotretencao ";
        $virgula = ",";
        if(trim($this->k03_reciboprotretencao) == null ){ 
-         $this->erro_sql = " Campo Tipo Recibo Retenção não informado.";
+         $this->erro_sql = " Campo Tipo Recibo RetenÃ§Ã£o nÃ£o informado.";
          $this->erro_campo = "k03_reciboprotretencao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -886,10 +886,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_tipocertidao = $this->k03_tipocertidao ";
        $virgula = ",";
        if(trim($this->k03_tipocertidao) == null ){ 
-         $this->erro_sql = " Campo Forma Emissão Certidão de Débitos não informado.";
+         $this->erro_sql = " Campo Forma EmissÃ£o CertidÃ£o de DÃ©bitos nÃ£o informado.";
          $this->erro_campo = "k03_tipocertidao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -899,10 +899,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_separajurmulparc = '$this->k03_separajurmulparc' ";
        $virgula = ",";
        if(trim($this->k03_separajurmulparc) == null ){ 
-         $this->erro_sql = " Campo Separar jur e mul no parcelamento não informado.";
+         $this->erro_sql = " Campo Separar jur e mul no parcelamento nÃ£o informado.";
          $this->erro_campo = "k03_separajurmulparc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -930,10 +930,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_toleranciapgtoparc = $this->k03_toleranciapgtoparc ";
        $virgula = ",";
        if(trim($this->k03_toleranciapgtoparc) == null ){ 
-         $this->erro_sql = " Campo Valor Tolerância Diferença Pagamento não informado.";
+         $this->erro_sql = " Campo Valor TolerÃ¢ncia DiferenÃ§a Pagamento nÃ£o informado.";
          $this->erro_campo = "k03_toleranciapgtoparc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -943,10 +943,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_pgtoparcial = '$this->k03_pgtoparcial' ";
        $virgula = ",";
        if(trim($this->k03_pgtoparcial) == null ){ 
-         $this->erro_sql = " Campo Ativa Pagamento Parcial não informado.";
+         $this->erro_sql = " Campo Ativa Pagamento Parcial nÃ£o informado.";
          $this->erro_campo = "k03_pgtoparcial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -956,10 +956,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_reemissaorecibo = '$this->k03_reemissaorecibo' ";
        $virgula = ",";
        if(trim($this->k03_reemissaorecibo) == null ){ 
-         $this->erro_sql = " Campo Permite Reemissão de Recibo não informado.";
+         $this->erro_sql = " Campo Permite ReemissÃ£o de Recibo nÃ£o informado.";
          $this->erro_campo = "k03_reemissaorecibo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -973,10 +973,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_numprepgtoparcial = $this->k03_numprepgtoparcial ";
        $virgula = ",";
        if(trim($this->k03_numprepgtoparcial) == null ){ 
-         $this->erro_sql = " Campo Numpre inicio pagamento parcial não informado.";
+         $this->erro_sql = " Campo Numpre inicio pagamento parcial nÃ£o informado.";
          $this->erro_campo = "k03_numprepgtoparcial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -986,10 +986,10 @@ class cl_numpref {
        $sql  .= $virgula." k03_agrupadorarquivotxtbaixabanco = $this->k03_agrupadorarquivotxtbaixabanco ";
        $virgula = ",";
        if(trim($this->k03_agrupadorarquivotxtbaixabanco) == null ){ 
-         $this->erro_sql = " Campo Forma de Processamento de Arquivo TXT não informado.";
+         $this->erro_sql = " Campo Forma de Processamento de Arquivo TXT nÃ£o informado.";
          $this->erro_campo = "k03_agrupadorarquivotxtbaixabanco";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1117,9 +1117,9 @@ class cl_numpref {
      $result = db_query($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Numerações nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "NumeraÃ§Ãµes nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->k03_anousu."-".$this->k03_instit;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -1127,18 +1127,18 @@ class cl_numpref {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Numerações nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "NumeraÃ§Ãµes nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->k03_anousu."-".$this->k03_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->k03_anousu."-".$this->k03_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -1230,9 +1230,9 @@ class cl_numpref {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Numerações nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "NumeraÃ§Ãµes nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$k03_anousu."-".$k03_instit;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -1240,18 +1240,18 @@ class cl_numpref {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Numerações nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "NumeraÃ§Ãµes nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$k03_anousu."-".$k03_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$k03_anousu."-".$k03_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -1266,7 +1266,7 @@ class cl_numpref {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -1275,7 +1275,7 @@ class cl_numpref {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:numpref";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

@@ -26,7 +26,7 @@ class PDF extends FPDF {
     //Arial italic 8
     $this->SetFont('Arial','I',8);
     //Page number
-    $this->Cell(0,10,'página '.$this->PageNo().' de {nb}',0,0,'C');
+    $this->Cell(0,10,'pÃ¡gina '.$this->PageNo().' de {nb}',0,0,'C');
   }
 }
 
@@ -90,22 +90,22 @@ for($i = 0;$i < $tam;$i++) {
   $arq[$i] = str_replace(chr(27)."(s#10#H","",$arq[$i]);
   $arq[$i] = str_replace(chr(27)."(s#8#H","",$arq[$i]);
 
-  $arq[$i] = str_replace("C".chr(8).",","Ç",$arq[$i]);
-  $arq[$i] = str_replace("c".chr(8).",","ç",$arq[$i]);
-  $arq[$i] = str_replace("a".chr(8)."~","ã",$arq[$i]);
-  $arq[$i] = str_replace("A".chr(8)."~","Ã",$arq[$i]);
-  $arq[$i] = str_replace("o".chr(8)."~","õ",$arq[$i]);
-  $arq[$i] = str_replace("O".chr(8)."~","Õ",$arq[$i]);
-  $arq[$i] = str_replace("o".chr(8)."'","ó",$arq[$i]);
-  $arq[$i] = str_replace("O".chr(8)."'","Ó",$arq[$i]);
-  $arq[$i] = str_replace("a".chr(8)."'","á",$arq[$i]);
-  $arq[$i] = str_replace("A".chr(8)."'","Á",$arq[$i]);
-  $arq[$i] = str_replace("o".chr(8)."^","ô",$arq[$i]);
-  $arq[$i] = str_replace("O".chr(8)."^","Ô",$arq[$i]);
-  $arq[$i] = str_replace("A".chr(8)."^","Â",$arq[$i]);
-  $arq[$i] = str_replace("A".chr(8)."^","Â",$arq[$i]);
-  $arq[$i] = str_replace("e".chr(8)."^","ê",$arq[$i]);
-  $arq[$i] = str_replace("E".chr(8)."^","Ê",$arq[$i]);
+  $arq[$i] = str_replace("C".chr(8).",","Ã‡",$arq[$i]);
+  $arq[$i] = str_replace("c".chr(8).",","Ã§",$arq[$i]);
+  $arq[$i] = str_replace("a".chr(8)."~","Ã£",$arq[$i]);
+  $arq[$i] = str_replace("A".chr(8)."~","Ãƒ",$arq[$i]);
+  $arq[$i] = str_replace("o".chr(8)."~","Ãµ",$arq[$i]);
+  $arq[$i] = str_replace("O".chr(8)."~","Ã•",$arq[$i]);
+  $arq[$i] = str_replace("o".chr(8)."'","Ã³",$arq[$i]);
+  $arq[$i] = str_replace("O".chr(8)."'","Ã“",$arq[$i]);
+  $arq[$i] = str_replace("a".chr(8)."'","Ã¡",$arq[$i]);
+  $arq[$i] = str_replace("A".chr(8)."'","Ã",$arq[$i]);
+  $arq[$i] = str_replace("o".chr(8)."^","Ã´",$arq[$i]);
+  $arq[$i] = str_replace("O".chr(8)."^","Ã”",$arq[$i]);
+  $arq[$i] = str_replace("A".chr(8)."^","Ã‚",$arq[$i]);
+  $arq[$i] = str_replace("A".chr(8)."^","Ã‚",$arq[$i]);
+  $arq[$i] = str_replace("e".chr(8)."^","Ãª",$arq[$i]);
+  $arq[$i] = str_replace("E".chr(8)."^","ÃŠ",$arq[$i]);
   $arq[$i] = str_replace(chr(15),"",$arq[$i]);
   $arq[$i] = str_replace(chr(18),"",$arq[$i]);
   $arq[$i] = str_replace(chr(8),"",$arq[$i]);

@@ -92,7 +92,7 @@ switch ($oParam->sExec) {
 			$oSimulaCalculoInscricao = new SimulaCalculoInscricao($oDaoIsssimulacalculo->q130_sequencial);
       $oCalculoSimulacao       = $oSimulaCalculoInscricao->processaSimulacao();
 			if (isset($oCalculoSimulacao->lErro)) {
-			  throw new Exception("Erro durante o processamento do calculo de SimulaÁ„o!\n\nErro: {$oCalculoSimulacao->sMsg}");
+			  throw new Exception("Erro durante o processamento do calculo de Simula√ß√£o!\n\nErro: {$oCalculoSimulacao->sMsg}");
 			}
 			
 			foreach ($oCalculoSimulacao as $oDadosCalculo) {
@@ -104,14 +104,14 @@ switch ($oParam->sExec) {
 			  $oDaoIsssimulacalculoTipoCalculo->q132_valor            = "$oDadosCalculo->nValor";
 			  $oDaoIsssimulacalculoTipoCalculo->incluir(null);
 			  if($oDaoIsssimulacalculoTipoCalculo->erro_status == "0") {
-			    throw new Exception("Erro durante o armazenamento do calculo de SimulaÁ„o!\n\nErro: {$oDaoIsssimulacalculoTipoCalculo->erro_msg}");
+			    throw new Exception("Erro durante o armazenamento do calculo de Simula√ß√£o!\n\nErro: {$oDaoIsssimulacalculoTipoCalculo->erro_msg}");
 			  }
 			  
 			}
 			
       $oRetorno->iSimulacao = $oDaoIsssimulacalculo->q130_sequencial; 
       $oRetorno->oCalculo   = $oCalculoSimulacao;
-      $oRetorno->sMessage   = "Calculo de SimulaÁ„o realizado com Sucesso!";
+      $oRetorno->sMessage   = "Calculo de Simula√ß√£o realizado com Sucesso!";
       
       db_fim_transacao(false);
 			

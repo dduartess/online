@@ -48,8 +48,8 @@ mens_help();
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 $cod_matricula = 0 + $matricula;
 if ( !is_int($cod_matricula) or $cod_matricula == "" ){
-   db_logs("$cod_matricula","",0,"Consulta Bic - Acesso com MatrÌcula Inv·lida : $cod_matricula");
-   msgbox("CÛdigo MatrÌcula Inv·lido.");
+   db_logs("$cod_matricula","",0,"Consulta Bic - Acesso com Matr√≠cula Inv√°lida : $cod_matricula");
+   msgbox("C√≥digo Matr√≠cula Inv√°lido.");
    redireciona("index.php");
 }
 
@@ -76,7 +76,7 @@ where j01_matric = $cod_matricula";
 
 $result = db_query($sql);
 if (pg_numrows($result) == 0){
-   msgbox("MatrÌcula n„o Cadastrada.");
+   msgbox("Matr√≠cula n√£o Cadastrada.");
    db_logs("$cod_matricula","",0,"Matricula naon Cadastrada. Numero: $cod_matricula");
    redireciona("index.php");
 }
@@ -86,12 +86,12 @@ if(!isset($DB_LOGADO) && $m_publico !='t' ){
   $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",3,$cod_matricula)";
   $result = db_query($sql);
   if(pg_numrows($result)==0){
-    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv·lido.'));
+    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv√°lido.'));
     exit;
   }
   $result = pg_result($result,0,0);
   if($result=="0"){
-    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv·lido.'));
+    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv√°lido.'));
     exit;
   }
 } 
@@ -100,7 +100,7 @@ if(!isset($DB_LOGADO) && $m_publico !='t' ){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdebitospendentes.php,opcoesitbi.php");
@@ -279,7 +279,7 @@ echo"
                   ?>
                             <tr> 
                               <td width="8%" align="center" nowrap class="tabfonte"><strong>Sem 
-                                IsenÁıes</strong></td>
+                                Isen√ß√µes</strong></td>
                             </tr>
                             <?php 
             }
@@ -401,7 +401,7 @@ echo"
                 } else {
           echo "<table width=\"100%\" border=\"1\"  cellpadding=\"0\" cellspacing=\"0\" bordercolor=\"#cccccc\">";
           echo "<tr>";
-          echo " <td class=\"tabfonte\" align=\"center\">ImÛvel Territorial</td>";
+          echo " <td class=\"tabfonte\" align=\"center\">Im√≥vel Territorial</td>";
                   echo "</tr>";
           echo "</table>";
             }
@@ -430,7 +430,7 @@ echo"
                   }
                 } else {
           echo "<tr>";
-          echo " <td class=\"tabfonte\" align=\"center\">Sem Outros Propriet·rios</td>";
+          echo " <td class=\"tabfonte\" align=\"center\">Sem Outros Propriet√°rios</td>";
                   echo "</tr>";
                 }
                 ?>
@@ -455,7 +455,7 @@ echo"
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       <tr> 
                         <td class="tabfonte" align="center"><strong>IMAGEM</strong><br>
-          <font style="font-size:11px">(Clique na foto para ampli·-la)</font>
+          <font style="font-size:11px">(Clique na foto para ampli√°-la)</font>
                 </td>
       </tr>
       <tr align="center"> 

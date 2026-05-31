@@ -36,7 +36,7 @@ if(isset($trocar)){
 	echo "baseeeeeeeeeeeeeeeeee = $base";
 	session_register("BASE");
 	$_SESSION["BASE"] = $base;
-	echo "sess„o... ".$_SESSION["BASE"];
+	echo "sess√£o... ".$_SESSION["BASE"];
 	echo"<script> parent.location.href='index.php';</script> ";
 	//db_redireciona("index.php");
 	//echo"<script>vari = window.open('index.php',self);</script>";

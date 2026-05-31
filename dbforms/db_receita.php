@@ -68,7 +68,7 @@ if(isset($HTTP_POST_VARS["arg"])){
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onFocus="document.form5.filtro.focus()">

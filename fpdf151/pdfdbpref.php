@@ -46,7 +46,7 @@ $this->Ln(10);
     global $conn;
 	global $result;
 	global $url;
-	//Dados da instituiÁ„o
+	//Dados da institui√ß√£o
     $dados = @pg_exec("select nomeinst,ender,munic,uf,telef,email,url,logo from db_config where codigo = ".@$GLOBALS["DB_instit"]);
 	$url = @pg_result($dados,0,"url");
 	$this->SetXY(1,1);
@@ -89,12 +89,12 @@ $this->Ln(10);
     $this->SetFont('Arial','I',8);
     $this->SetY(-10);
 	$this->Text(14,293,$url);	
-//    $this->Cell(0,10,'p·gina '.$this->PageNo().' de {nb}',"T",0,'C');
+//    $this->Cell(0,10,'p√°gina '.$this->PageNo().' de {nb}',"T",0,'C');
     $nome = @$GLOBALS["HTTP_SERVER_VARS"]["PHP_SELF"];
 	$nome = substr($nome,strrpos($nome,"/")+1);
     $this->Cell(0,10,$nome.'       Emissor: '.@$GLOBALS["DB_login"],"T",0,'C');
 //    $this->Write("100",$url);
-    $this->Cell(0,10,'Data: '.date("d-m-Y").'     P·gina '.$this->PageNo().' de {nb}',0,1,'R');
+    $this->Cell(0,10,'Data: '.date("d-m-Y").'     P√°gina '.$this->PageNo().' de {nb}',0,1,'R');
   }
 
 
@@ -564,9 +564,9 @@ $this->Ln(10);
 function db_extenso($valor=0, $maiusculas=false) {
  
     $rt = '';
-    $singular = array("centavo", "real", "mil", "milh„o", "bilh„o", "trilh„o", "quatrilh„o"); 
-    $plural = array("centavos", "reais", "mil", "milhıes", "bilhıes", "trilhıes", 
-"quatrilhıes"); 
+    $singular = array("centavo", "real", "mil", "milh√£o", "bilh√£o", "trilh√£o", "quatrilh√£o"); 
+    $plural = array("centavos", "reais", "mil", "milh√µes", "bilh√µes", "trilh√µes", 
+"quatrilh√µes"); 
 
     $c = array("", "cem", "duzentos", "trezentos", "quatrocentos", 
 "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"); 
@@ -574,7 +574,7 @@ function db_extenso($valor=0, $maiusculas=false) {
 "sessenta", "setenta", "oitenta", "noventa"); 
     $d10 = array("dez", "onze", "doze", "treze", "quatorze", "quinze", 
 "dezesseis", "dezesete", "dezoito", "dezenove"); 
-    $u = array("", "um", "dois", "trÍs", "quatro", "cinco", "seis", 
+    $u = array("", "um", "dois", "tr√™s", "quatro", "cinco", "seis", 
 "sete", "oito", "nove"); 
 
     $z=0; 
@@ -606,7 +606,7 @@ $ru) ? " e " : "").$ru;
          if(!$maiusculas){ 
                           return($rt ? $rt : "zero"); 
          } else { /*
-	                 Trocando o " E " por " e ", fica muito + apresent·vel! 
+	                 Trocando o " E " por " e ", fica muito + apresent√°vel! 
                      Rodrigo Cerqueira, rodrigobc@fte.com.br
                     */
 			  if ($rt) $rt=ereg_replace(" E "," e ",ucwords($rt));

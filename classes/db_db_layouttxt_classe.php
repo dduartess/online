@@ -49,11 +49,11 @@ class cl_db_layouttxt {
    var $db50_obs = null; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 db50_codigo = int4 = Código do layout 
-                 db50_layouttxtgrupo = int4 = Código do grupo 
-                 db50_descr = varchar(40) = Descrição 
+                 db50_codigo = int4 = CÃ³digo do layout 
+                 db50_layouttxtgrupo = int4 = CÃ³digo do grupo 
+                 db50_descr = varchar(40) = DescriÃ§Ã£o 
                  db50_quantlinhas = int4 = Quantidade de linhas 
-                 db50_obs = text = Observações 
+                 db50_obs = text = ObservaÃ§Ãµes 
                  ";
    //funcao construtor da classe 
    function cl_db_layouttxt() { 
@@ -86,19 +86,19 @@ class cl_db_layouttxt {
    function incluir ($db50_codigo){ 
       $this->atualizacampos();
      if($this->db50_layouttxtgrupo == null ){ 
-       $this->erro_sql = " Campo Código do grupo nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo do grupo nao Informado.";
        $this->erro_campo = "db50_layouttxtgrupo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->db50_descr == null ){ 
-       $this->erro_sql = " Campo Descrição nao Informado.";
+       $this->erro_sql = " Campo DescriÃ§Ã£o nao Informado.";
        $this->erro_campo = "db50_descr";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -111,7 +111,7 @@ class cl_db_layouttxt {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: db_layouttxt_db50_codigo_seq do campo: db50_codigo"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -120,9 +120,9 @@ class cl_db_layouttxt {
      }else{
        $result = db_query("select last_value from db_layouttxt_db50_codigo_seq");
        if(($result != false) && (pg_result($result,0,0) < $db50_codigo)){
-         $this->erro_sql = " Campo db50_codigo maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo db50_codigo maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -133,7 +133,7 @@ class cl_db_layouttxt {
      if(($this->db50_codigo == null) || ($this->db50_codigo == "") ){ 
        $this->erro_sql = " Campo db50_codigo nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -156,13 +156,13 @@ class cl_db_layouttxt {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Cadastro de layouts ($this->db50_codigo) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Cadastro de layouts já Cadastrado";
+         $this->erro_sql   = "Cadastro de layouts ($this->db50_codigo) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Cadastro de layouts jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Cadastro de layouts ($this->db50_codigo) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Cadastro de layouts ($this->db50_codigo) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -172,7 +172,7 @@ class cl_db_layouttxt {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->db50_codigo;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -199,10 +199,10 @@ class cl_db_layouttxt {
        $sql  .= $virgula." db50_codigo = $this->db50_codigo ";
        $virgula = ",";
        if(trim($this->db50_codigo) == null ){ 
-         $this->erro_sql = " Campo Código do layout nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do layout nao Informado.";
          $this->erro_campo = "db50_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -212,10 +212,10 @@ class cl_db_layouttxt {
        $sql  .= $virgula." db50_layouttxtgrupo = $this->db50_layouttxtgrupo ";
        $virgula = ",";
        if(trim($this->db50_layouttxtgrupo) == null ){ 
-         $this->erro_sql = " Campo Código do grupo nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do grupo nao Informado.";
          $this->erro_campo = "db50_layouttxtgrupo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -225,10 +225,10 @@ class cl_db_layouttxt {
        $sql  .= $virgula." db50_descr = '$this->db50_descr' ";
        $virgula = ",";
        if(trim($this->db50_descr) == null ){ 
-         $this->erro_sql = " Campo Descrição nao Informado.";
+         $this->erro_sql = " Campo DescriÃ§Ã£o nao Informado.";
          $this->erro_campo = "db50_descr";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -273,7 +273,7 @@ class cl_db_layouttxt {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Cadastro de layouts nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->db50_codigo;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -283,16 +283,16 @@ class cl_db_layouttxt {
          $this->erro_banco = "";
          $this->erro_sql = "Cadastro de layouts nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->db50_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->db50_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -336,9 +336,9 @@ class cl_db_layouttxt {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Cadastro de layouts nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Cadastro de layouts nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$db50_codigo;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -346,18 +346,18 @@ class cl_db_layouttxt {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Cadastro de layouts nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Cadastro de layouts nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$db50_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$db50_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -372,7 +372,7 @@ class cl_db_layouttxt {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -381,7 +381,7 @@ class cl_db_layouttxt {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:db_layouttxt";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

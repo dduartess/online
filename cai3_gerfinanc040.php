@@ -96,7 +96,7 @@ if(isset($inicial)){
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <style type="text/css">
 .borda {
@@ -136,7 +136,7 @@ if(isset($inicial)){
       db_fieldsmemory($result,$i);
       if($modo=="d"){
 	$certid = $certid;
-	$mododescr='Dívida ativa';
+	$mododescr='DÃ­vida ativa';
 	$funcao="js_certdiv('$certid');";
       }else if($modo=="p"){
 	$certid = $certid;
@@ -147,7 +147,7 @@ if(isset($inicial)){
       }
        $result02=$clcertid->sql_record($clcertid->sql_query($certid));      
        db_fieldsmemory($result02,0);
-//calcular valores da certidão
+//calcular valores da certidÃ£o
       if($modo=="d"){
          $sql04 = " 
            select distinct  v01_numpre as numpre

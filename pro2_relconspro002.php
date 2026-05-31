@@ -61,7 +61,7 @@ $cod_procandamint = 0;
 $arquiv = false;
 $arqant = false;
 
-// seleciona o nome da instituição pelo código do processo e coloca o resultado na váriavel $nomeinstabrev
+// seleciona o nome da instituiÃ§Ã£o pelo cÃ³digo do processo e coloca o resultado na vÃ¡riavel $nomeinstabrev
 $sql  = "select nomeinstabrev from db_config where codigo = ";
 $sql .= " (select p58_instit from protprocesso where p58_codproc = $codproc)";
   $sRetorno = pg_query($sql);
@@ -71,7 +71,7 @@ $sql .= " (select p58_instit from protprocesso where p58_codproc = $codproc)";
 if (isset ($codproc) && $codproc != "") {
 
 	$head3 = "Consulta de Processo ";
-	$head4 = "Processo N° $codproc";
+	$head4 = "Processo NÂ° $codproc";
 
 	$pdf = new PDF();
 	$pdf->Open();
@@ -89,10 +89,10 @@ if (isset ($codproc) && $codproc != "") {
 		
 		db_fieldsmemory($result_protprocesso, 0);
 		
-	  $pdf->cell(50, $alt, 'Número de Controle do Processo :', 0, 0, "R", 0);
+	  $pdf->cell(50, $alt, 'NÃºmero de Controle do Processo :', 0, 0, "R", 0);
 	  $pdf->cell(75, $alt, $codproc, 0, 1, "L", 0);
 	  
-	  $pdf->cell(50, $alt, 'Número do Processo :', 0, 0, "R", 0);
+	  $pdf->cell(50, $alt, 'NÃºmero do Processo :', 0, 0, "R", 0);
 		$pdf->cell(75, $alt, $p58_numero . '/' . $p58_ano, 0, 0, "L", 0);
 		$pdf->cell(50, $alt, 'Titular do Processo :', 0, 0, "R", 0);
 		$pdf->cell(75, $alt, $z01_nome, 0, 1, "L", 0);
@@ -113,7 +113,7 @@ if (isset ($codproc) && $codproc != "") {
 		$pdf->cell(50, $alt, 'Instituicao :', 0, 0, "R", 0);
 		$pdf->cell(75, $alt, $nomeinst, 0, 1, "L", 0);
 
-		$pdf->cell(50, $alt, 'Observação :', 0, 0, "R", 0);
+		$pdf->cell(50, $alt, 'ObservaÃ§Ã£o :', 0, 0, "R", 0);
 		$pdf->multicell(175, $alt, $p58_obs, 0, "L", 0);
 
 		$pdf->Ln(2);
@@ -133,7 +133,7 @@ if (isset ($codproc) && $codproc != "") {
 					$pdf->cell(40, $alt, 'Departamento', 1, 0, "C", 1);
 					$pdf->cell(25, $alt, 'Instit', 1, 0, "C", 1);
 					//$pdf->cell(45, $alt, 'Login', 1, 0, "C", 1);
-					$pdf->cell(80, $alt, 'Ocorrência', 1, 0, "C", 1);
+					$pdf->cell(80, $alt, 'OcorrÃªncia', 1, 0, "C", 1);
 					$pdf->cell(65, $alt, 'Despacho', 1, 1, "C", 1);
 					if ($troca == 1) {
 						$pdf->setfont('arial', '', 7);
@@ -179,7 +179,7 @@ if (isset ($codproc) && $codproc != "") {
 							$pdf->cell(40, $alt, substr($p62_coddepto.'-'.$deptoatual,0,25), 0, 0, "L", 0);
 							$pdf->cell(25, $alt, substr($nomeinstabrev,0,14), 0, 0, "L", 0);
 							//$pdf->cell(45, $alt, substr($nome,0,25), 0, 0, "L", 0);
-							$pdf->cell(80, $alt, substr('Tranferência p/ o Departamento:'.$deptodestino, 0, 58), 0, 0, "L", 0);
+							$pdf->cell(80, $alt, substr('TranferÃªncia p/ o Departamento:'.$deptodestino, 0, 58), 0, 0, "L", 0);
 							$pdf->cell(65, $alt, '', 0, 1, "C", 0);
 						}
 					}
@@ -209,7 +209,7 @@ if (isset ($codproc) && $codproc != "") {
 									$pdf->cell(80, $alt, 'Desarquivamento', 0, 0, "L", 0);
 								}
 							} else {
-								$pdf->cell(80, $alt, 'Recebeu Tranferência', 0, 0, "L", 0);
+								$pdf->cell(80, $alt, 'Recebeu TranferÃªncia', 0, 0, "L", 0);
 							}
 							$pdf->multicell(65, $alt, $p61_despacho, 0, "L", 0);							      	    
 
@@ -229,9 +229,9 @@ if (isset ($codproc) && $codproc != "") {
 											$pdf->cell(15, $alt, 'Data', 1, 0, "C", 1);
 											$pdf->cell(10, $alt, 'Hora', 1, 0, "C", 1);
 											$pdf->cell(40, $alt, 'Departamento', 1, 0, "C", 1);
-											$pdf->cell(25, $alt, 'Instituição', 1, 0, "C", 1);
+											$pdf->cell(25, $alt, 'InstituiÃ§Ã£o', 1, 0, "C", 1);
 											//$pdf->cell(45, $alt, 'Login', 1, 0, "C", 1);
-											$pdf->cell(80, $alt, 'Ocorrência', 1, 0, "C", 1);
+											$pdf->cell(80, $alt, 'OcorrÃªncia', 1, 0, "C", 1);
 											$pdf->cell(65, $alt, 'Despacho', 1, 1, "C", 1);
 
 											$troca = 0;
@@ -261,9 +261,9 @@ if (isset ($codproc) && $codproc != "") {
 										$pdf->cell(15, $alt, 'Data', 1, 0, "C", 1);
 										$pdf->cell(10, $alt, 'Hora', 1, 0, "C", 1);
 										$pdf->cell(40, $alt, 'Departamento', 1, 0, "C", 1);
-										$pdf->cell(25, $alt, 'Instituição', 1, 0, "C", 1);
+										$pdf->cell(25, $alt, 'InstituiÃ§Ã£o', 1, 0, "C", 1);
 										//$pdf->cell(45, $alt, 'Login', 1, 0, "C", 1);
-										$pdf->cell(80, $alt, 'Ocorrência', 1, 0, "C", 1);
+										$pdf->cell(80, $alt, 'OcorrÃªncia', 1, 0, "C", 1);
 										$pdf->cell(65, $alt, 'Despacho', 1, 1, "C", 1);
 
 										$troca = 0;
@@ -279,7 +279,7 @@ if (isset ($codproc) && $codproc != "") {
 										$pdf->cell(40, $alt, substr($p61_coddepto.'-'.$descrdepto,0,25), 0, 0, "L", 0);
 										$pdf->cell(25, $alt, substr($nomeinstabrev,0,14), 0, 0, "L", 0);
 										//$pdf->cell(45, $alt, substr($usuatual,0,25), 0, 0, "L", 0);
-										$pdf->cell(80, $alt, substr('Tranferência Interna para '.$usudestino, 0, 58), 0, 0, "L", 0);
+										$pdf->cell(80, $alt, substr('TranferÃªncia Interna para '.$usudestino, 0, 58), 0, 0, "L", 0);
 										
 										if ( $p88_publico !=  'f' ){
 										   $pdf->multicell(65, $alt, $p88_despacho, 0, "L", 0);
@@ -302,9 +302,9 @@ if (isset ($codproc) && $codproc != "") {
 														$pdf->cell(15, $alt, 'Data', 1, 0, "C", 1);
 														$pdf->cell(10, $alt, 'Hora', 1, 0, "C", 1);
 														$pdf->cell(40, $alt, 'Departamento', 1, 0, "C", 1);
-														$pdf->cell(25, $alt, 'Instituição', 1, 0, "C", 1);
+														$pdf->cell(25, $alt, 'InstituiÃ§Ã£o', 1, 0, "C", 1);
 														//$pdf->cell(45, $alt, 'Login', 1, 0, "C", 1);
-														$pdf->cell(80, $alt, 'Ocorrência', 1, 0, "C", 1);
+														$pdf->cell(80, $alt, 'OcorrÃªncia', 1, 0, "C", 1);
 														$pdf->cell(65, $alt, 'Despacho', 1, 1, "C", 1);
 
 														$troca = 0;
@@ -322,7 +322,7 @@ if (isset ($codproc) && $codproc != "") {
 														$pdf->cell(40, $alt, substr($p61_coddepto.'-'.$descrdepto,0,25), 0, 0, "L", 0);
 														$pdf->cell(25, $alt, substr($nomeinstabrev,0,14), 0, 0, "L", 0);
 														//$pdf->cell(45, $alt, substr($nome,0,25), 0, 0, "L", 0);
-														$pdf->cell(80, $alt, 'Recebeu Tranferência Interna', 0, 0, "L", 0);
+														$pdf->cell(80, $alt, 'Recebeu TranferÃªncia Interna', 0, 0, "L", 0);
 														$pdf->multicell(65, $alt, "", 0, "L", 0);
 													} else {
 														$pdf->cell(15, $alt, db_formatar($p78_data, 'd'), 0, 0, "C", 0);
@@ -421,7 +421,7 @@ if (isset ($codproc) && $codproc != "") {
 														$pdf->cell(40, $alt, substr($p61_coddepto.'-'.$descrdepto,0,25), 0, 0, "L", 0);
 														$pdf->cell(25, $alt, substr($nomeinstabrev,0,14), 0, 0, "L", 0);
 														//$pdf->cell(45, $alt, substr($nome,0,25), 0, 0, "L", 0);
-														$pdf->cell(80, $alt, 'Recebeu Tranferência Interna', 0, 0, "L", 0);
+														$pdf->cell(80, $alt, 'Recebeu TranferÃªncia Interna', 0, 0, "L", 0);
 														$pdf->multicell(65, $alt, $p78_despacho, 0, "L", 0);
 													} else {
 														$pdf->cell(15, $alt, db_formatar($p78_data, 'd'), 0, 0, "C", 0);

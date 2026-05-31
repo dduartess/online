@@ -214,7 +214,7 @@ if (isset($incluir)){
 </style>
 <head>
 <title>Cadastro de departamento</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
 function js_verifica(){
 	var obj    = document.form1;
@@ -228,31 +228,31 @@ function js_verifica(){
 	var pro    = obj.it18_prof.value;
 	js_valida();
 	if(isNaN(ter)){
-	    alert("verifique o valor informado para o campo Área do terreno.");
+	    alert("verifique o valor informado para o campo Ãrea do terreno.");
 	    document.form1.it01_areaterreno.value="";
 	    document.form1.it01_areaterreno.focus();
 	    return false;
 	}
 	if(isNaN(edi)){
-	    alert("verifique o valor informado para o campo Área edificada.");
+	    alert("verifique o valor informado para o campo Ãrea edificada.");
 	    document.form1.it01_areaedificada.value="";
 	    document.form1.it01_areaedificada.focus();
 	    return false;
 	}
 	if(isNaN(vltranf)){
-	    alert("verifique o valor informado para o campo Valor da transação financiado.");
+	    alert("verifique o valor informado para o campo Valor da transaÃ§Ã£o financiado.");
 	    document.form1.it01_valortransacaofinanc.value="";
 	    document.form1.it01_valortransacaofinanc.focus();
 	    return false;
 	}
 	if(isNaN(vltran)){
-	    alert("verifique o valor informado para o campo Valor da transação à vista.");
+	    alert("verifique o valor informado para o campo Valor da transaÃ§Ã£o Ã  vista.");
 	    document.form1.it01_valortransacao.value="";
 	    document.form1.it01_valortransacao.focus();
 	    return false;
 	}
 	if(isNaN(areatra)){
-	    alert("verifique o valor informado para o campo Área transferida.");
+	    alert("verifique o valor informado para o campo Ãrea transferida.");
 	    document.form1.it01_areatrans.value="";
 	    document.form1.it01_areatrans.focus();
 	    return false;
@@ -277,11 +277,11 @@ function js_verifica(){
 	}
 	
 	var erro = "";
-	if (ter=='')    erro = erro+' Área do terreno\n';
-	if (edi=='')    erro = erro+' Área edificada\n';
-	if (vltran=='') erro = erro+' Valor da transação à vista\n';
-	if (vltranf=='') erro = erro+' Valor da transação financiado\n';
-	if (areatra=='')erro = erro+' Área transmitida da terreno\n';
+	if (ter=='')    erro = erro+' Ãrea do terreno\n';
+	if (edi=='')    erro = erro+' Ãrea edificada\n';
+	if (vltran=='') erro = erro+' Valor da transaÃ§Ã£o Ã  vista\n';
+	if (vltranf=='') erro = erro+' Valor da transaÃ§Ã£o financiado\n';
+	if (areatra=='')erro = erro+' Ãrea transmitida da terreno\n';
 	if (fre=='')erro = erro+' Frente\n';
 	if (fun=='')erro = erro+' Fundos\n';
 	if (pro=='')erro = erro+' Profundidade\n';
@@ -306,13 +306,13 @@ function js_verifica(){
       	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" width="30%">Código da guia itbi:
+    	<td align="left" width="30%">CÃ³digo da guia itbi:
     	</td>
     	<td align="left" ><?=@$cod?>
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Tipo de Transação:
+    	<td align="left" >Tipo de TransaÃ§Ã£o:
     	</td>
     	<td align="left"" >
     	<select name="it01_tipotransacao"  >
@@ -330,37 +330,37 @@ function js_verifica(){
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Área do terreno:
+    	<td align="left" >Ãrea do terreno:
     	</td>
     	<td align="left" ><input name="it01_areaterreno" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Área edificada:
+    	<td align="left" >Ãrea edificada:
     	</td>
     	<td align="left" ><input name="it01_areaedificada" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Observação dadas pelo comprador:
+    	<td align="left" >ObservaÃ§Ã£o dadas pelo comprador:
     	</td>
     	<td align="left" ><textarea name="it01_obs" cols="60" rows="3" ></textarea>
     	</td>
   	</tr>
   	<tr class="texto"> 
-    	<td align="left" >Valor da transação à vista:
+    	<td align="left" >Valor da transaÃ§Ã£o Ã  vista:
     	</td>
     	<td align="left" ><input name="it01_valortransacao" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Valor da transação financiado:
+    	<td align="left" >Valor da transaÃ§Ã£o financiado:
     	</td>
     	<td align="left" ><input name="it01_valortransacaofinanc" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Área transmitida do terreno:
+    	<td align="left" >Ãrea transmitida do terreno:
     	</td>
     	<td align="left" ><input name="it01_areatrans" type="text" >
     	</td>
@@ -392,7 +392,7 @@ function js_verifica(){
   	<tr>
   		<td colspan="2">
 		 	<fieldset >
-		    	<legend>Dados da área</legend>
+		    	<legend>Dados da Ã¡rea</legend>
 		    	<table width="100%"  >
 		       	<?php 
 		       	$sqlcar  ="select * from caracter inner join cargrup on cargrup.j32_grupo = caracter.j31_grupo where j32_tipo = 'I'";

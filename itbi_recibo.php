@@ -144,7 +144,7 @@ $rscompprinc = $clitbinome->sql_record($clitbinome->sql_query(""," it03_nome    
 if($clitbinome->numrows  > 0){
 	db_fieldsmemory($rscompprinc,$p);
 }else{
-	  db_msgbox ('Adquirente principal n„o encontrado ! ');
+	  db_msgbox ('Adquirente principal n√£o encontrado ! ');
 	  echo "<script>window.close()</script>";
 	  exit;
  
@@ -161,7 +161,7 @@ if($clitbinome->numrows  > 0){
   $num = pg_numrows($result);
   for ($p = 0;$p < $num;$p++){
 	  db_fieldsmemory($result,$p);
-	  // acumula o numero compradores homens e mulheres para colocar na observaÁ„o da guia
+	  // acumula o numero compradores homens e mulheres para colocar na observa√ß√£o da guia
 	  if(strtoupper($sexocomprador) == 'M'){
 		  $compradoresm++;
 	  }elseif(strtoupper($sexocomprador) == 'F'){
@@ -229,7 +229,7 @@ if($clitbinome->numrows  > 0){
   $propri .= "\n".'OUTRO(S) TRANSMITENTE(S) : ';
   $num = pg_numrows($result);
 	
-// acumula o numero compradores homens e mulheres para colocar na observaÁ„o da guia
+// acumula o numero compradores homens e mulheres para colocar na observa√ß√£o da guia
 
   for ($p = 0;$p < $num;$p++){
 	  db_fieldsmemory($result,$p);
@@ -273,7 +273,7 @@ if($clitbinome->numrows  > 0){
       }	  
 	}
 	if(!isset($cgmdevedor) || $cgmdevedor == ""){
-	   echo "<script>alert('Par‚metros do recibo n„o configurados! \\n Contate suporte!')</script>";
+	   echo "<script>alert('Par√¢metros do recibo n√£o configurados! \\n Contate suporte!')</script>";
 	   echo "<script>window.close()</script>";
 	   exit;
 	}	
@@ -297,7 +297,7 @@ if($clitbinome->numrows  > 0){
 
   $numpre = $clitbinumpre->it15_numpre;
 	
-//die("afsdjf Áasjldfa".$it17_codigo);
+//die("afsdjf √ßasjldfa".$it17_codigo);
 
   $clrecibo->k00_numcgm    = $cgmdevedor;
   $clrecibo->k00_dtoper    = date("Y-m-d",db_getsession("DB_datausu"));
@@ -383,13 +383,13 @@ for ( $i=1;$i < 3;$i++){
    $pdf->Cell(100,3,$nomeinst,0,1,"L",0);
    $pdf->SetFont('Arial','',8);
    $pdf->setx(30);
-   $pdf->Cell(100,3,'Imposto Sobre Transmiss„o de Bens ImÛveis (ITBI)',0,0,"L",0);
+   $pdf->Cell(100,3,'Imposto Sobre Transmiss√£o de Bens Im√≥veis (ITBI)',0,0,"L",0);
    $pdf->SetFont('Arial','B',12);
    $pdf->cell(100,3,'Vencimento : '.db_formatar($datavencimento,'d'),0,1,"L",0);
    $pdf->SetFont('Arial','',8);
    $pdf->setx(30);
-   $pdf->Cell(100,3,'Tipo de Transmiss„o : '.$it04_descr,0,0,"L",0);
-   $pdf->cell(100,3,'CÛdigo de ArrecadaÁ„o : '.$numpre,0,1,"L",0);
+   $pdf->Cell(100,3,'Tipo de Transmiss√£o : '.$it04_descr,0,0,"L",0);
+   $pdf->cell(100,3,'C√≥digo de Arrecada√ß√£o : '.$numpre,0,1,"L",0);
    $pdf->setx(30);
    $pdf->SetFont('Arial','B',10);
    $pdf->Cell(100,3,'Guia de Recolhimento N'.chr(176).' SMF/'.db_formatar($itbi,'s','0',5).'/'.db_getsession("DB_anousu"),0,1,"L",0);
@@ -397,8 +397,8 @@ for ( $i=1;$i < 3;$i++){
    $pdf->Ln(7);
    $pdf->SetFont('Arial','B',8);
    $pdf->cell(20,$altura,'',1,0,"C",1);
-   $pdf->cell(80,$altura,'IdentificaÁ„o do Transmitente',1,0,"C",1);
-   $pdf->cell(97,$altura,'IdentificaÁ„o do Adquirente',1,1,"C",1);
+   $pdf->cell(80,$altura,'Identifica√ß√£o do Transmitente',1,0,"C",1);
+   $pdf->cell(97,$altura,'Identifica√ß√£o do Adquirente',1,1,"C",1);
    $pdf->cell(20,$altura,'Nome : ',1,0,"L",0);
    $pdf->SetFont('Arial','',8);
    $pdf->cell(80,$altura,$z01_nome.$outrostransmitentes,1,0,"L",0);    //nome do transmitente
@@ -410,30 +410,30 @@ for ( $i=1;$i < 3;$i++){
    $pdf->cell(80,$altura,$z01_cgccpf,1,0,"L",0);                                   
    $pdf->cell(97,$altura,$cgccpfcomprador,1,1,"L",0);
    $pdf->SetFont('Arial','B',8);
-   $pdf->cell(20,$altura,'EndereÁo : ',1,0,"L",0);
+   $pdf->cell(20,$altura,'Endere√ßo : ',1,0,"L",0);
    $pdf->SetFont('Arial','',8);
    $pdf->cell(80,$altura,$z01_ender.' - '.$z01_bairro ,1,0,"L",0);
    $pdf->cell(97,$altura,$enderecocomprador.','.$numerocomprador.' / '.$complcomprador ,1,1,"L",0);
    $pdf->SetFont('Arial','B',8);
-   $pdf->cell(20,$altura,'MunicÌpio : ',1,0,"L",0);
+   $pdf->cell(20,$altura,'Munic√≠pio : ',1,0,"L",0);
    $pdf->SetFont('Arial','',8);
    $pdf->cell(80,$altura,$z01_munic.'('.$z01_uf.') - CEP: '.$z01_cep ,1,0,"L",0);
    $pdf->cell(97,$altura,$municipiocomprador.'('.$ufcomprador.') - CEP: '.$cepcomprador . ' - BAIRRO: '.$bairrocomprador ,1,1,"L",0);
    $pdf->Ln(2);
    $pdf->SetFont('Arial','B',8);
-   $pdf->cell(88,$altura,'Dados do ImÛvel',1,0,"C",1);
+   $pdf->cell(88,$altura,'Dados do Im√≥vel',1,0,"C",1);
    $pdf->cell(2,$altura,'',0,0,"C",0);
-   $pdf->cell(107,$altura,'Dados da ConstruÁ„o(Áıes)',1,1,"C",1);
+   $pdf->cell(107,$altura,'Dados da Constru√ß√£o(√ß√µes)',1,1,"C",1);
    $pdf->SetFont('Arial','',8);
    $y = $pdf->gety();
 
    $pdf->SetFont('Arial','B',8);
-   $pdf->cell(35,$altura,'MatrÌcula da Prefeitura: ',1,0,"L",1);
+   $pdf->cell(35,$altura,'Matr√≠cula da Prefeitura: ',1,0,"L",1);
    $pdf->SetFont('Arial','',8);
    $pdf->cell(13,$altura,@$it06_matric,1,0,"L",0);
 
    $pdf->SetFont('Arial','B',8);
-   $pdf->cell(30,$altura,'N˙mero do imÛvel: ',1,0,"L",1);
+   $pdf->cell(30,$altura,'N√∫mero do im√≥vel: ',1,0,"L",1);
    $pdf->SetFont('Arial','',8);
    $pdf->cell(10,$altura,@$j39_numero,1,1,"L",0);
 
@@ -465,7 +465,7 @@ for ( $i=1;$i < 3;$i++){
    $pdf->SetFont('Arial','B',8);
 
    if(isset($tipo) && $tipo == "urbano"){
-     $pdf->cell(22,$altura,'SituaÁ„o: ',1,0,"L",1);
+     $pdf->cell(22,$altura,'Situa√ß√£o: ',1,0,"L",1);
      $pdf->SetFont('Arial','',8);
      $pdf->cell(66,$altura,@$it07_descr,1,1,"L",0);
      $pdf->SetFont('Arial','B',8);
@@ -503,7 +503,7 @@ for ( $i=1;$i < 3;$i++){
    $pdf->cell(33,$altura,(count($areaterrenomat)==1?db_formatar($areatran,'f',' ',' ',' ',5).($tipo=="urbano"?'m2':'ha'):(strlen($areaterrenomat[1])>2?$areatran:db_formatar($areatran,'f',' ',' ',' ',5).($tipo=="urbano"?'m2':'ha'))),1,1,"R",0);
 
    $pdf->SetFont('Arial','B',7);
-   $pdf->cell(22,$altura,'ConstruÁ„o(Áıes)',1,0,"L",1);
+   $pdf->cell(22,$altura,'Constru√ß√£o(√ß√µes)',1,0,"L",1);
    $pdf->SetFont('Arial','',8);
 
    @$areaedificadamat = split('\.',@$areatotal);
@@ -543,10 +543,10 @@ for ( $i=1;$i < 3;$i++){
    $pdf->SetXY(100,$y);
 
    $pdf->SetFont('Arial','B',7);
-   $pdf->cell(24,$altura,'DescriÁ„o',1,0,"C",1);
+   $pdf->cell(24,$altura,'Descri√ß√£o',1,0,"C",1);
    $pdf->cell(35,$altura,'Tipo',1,0,"C",1);
-   $pdf->cell(20,$altura,'¡rea m2',1,0,"C",1);
-   $pdf->cell(20,$altura,'¡rea trans m2',1,0,"C",1);
+   $pdf->cell(20,$altura,'√Årea m2',1,0,"C",1);
+   $pdf->cell(20,$altura,'√Årea trans m2',1,0,"C",1);
    $pdf->cell(8,$altura,'Ano',1,1,"C",1);
    $pdf->SetFont('Arial','',7);
 
@@ -583,7 +583,7 @@ for ( $i=1;$i < 3;$i++){
    }
    $pdf->sety($yy+2);
    $pdf->SetFont('Arial','B',8);
-   $pdf->cell(170,$altura,'ObservaÁıes',1,0,"L",1);
+   $pdf->cell(170,$altura,'Observa√ß√µes',1,0,"L",1);
    $pdf->cell(27,$altura,'V I S T O',1,1,"C",1);
    $pdf->SetFont('Arial','',8);
    $y = $pdf->gety();
@@ -607,23 +607,23 @@ for ( $i=1;$i < 3;$i++){
    $pdf->sety($yy);   
    $pdf->cell(40,$altura,'valor terreno     : ',                'LTB',0,"l",0);
    $pdf->cell(10,$altura,db_formatar($it14_valoravalter,'f'),   'RTB',0,"R",0);
-   $pdf->cell(55,$altura,'valor construÁ„o(Áıes) : ',           'LTB',0,"l",0);
+   $pdf->cell(55,$altura,'valor constru√ß√£o(√ß√µes) : ',           'LTB',0,"l",0);
    $pdf->cell(10,$altura,db_formatar($it14_valoravalconstr,'f'),'RTB',0,"R",0);
-   $pdf->cell(55,$altura,'valor avaliaÁ„o : ',                  'LTB',0,"l",0);
+   $pdf->cell(55,$altura,'valor avalia√ß√£o : ',                  'LTB',0,"l",0);
    $pdf->cell(27,$altura,db_formatar($it14_valoraval,'f'),      'RTB',1,"R",0);
 
    $pdf->cell(40,$altura,'valor financ. terreno     : ',              'LTB',0,"l",0);
    $pdf->cell(10,$altura,db_formatar($it14_valoravalterfinanc,'f'),   'RTB',0,"R",0);
-   $pdf->cell(55,$altura,'valor financ. construÁ„o(Áıes) : ',         'LTB',0,"l",0);
+   $pdf->cell(55,$altura,'valor financ. constru√ß√£o(√ß√µes) : ',         'LTB',0,"l",0);
    $pdf->cell(10,$altura,db_formatar($it14_valoravalconstrfinanc,'f'),'RTB',0,"R",0);
-   $pdf->cell(55,$altura,'valor financ. avaliaÁ„o : ',                'LTB',0,"l",0);
+   $pdf->cell(55,$altura,'valor financ. avalia√ß√£o : ',                'LTB',0,"l",0);
    $pdf->cell(27,$altura,db_formatar($it14_valoravalfinanc,'f'),      'RTB',1,"R",0);
 
    $pdf->cell(50,$altura,'Valor Informado : '       .db_formatar($it01_valortransacao,'f'), 1,0,"L",0);
    if(isset($it04_aliquotafinanc) && $it04_aliquotafinanc != ''){
-      $pdf->cell(35,$altura,'AlÌq. av/fin : '.$it04_aliquota.'% / '.$it04_aliquotafinanc.'%',   1,0,"L",0);
+      $pdf->cell(35,$altura,'Al√≠q. av/fin : '.$it04_aliquota.'% / '.$it04_aliquotafinanc.'%',   1,0,"L",0);
 	 }else{
-      $pdf->cell(35,$altura,'AlÌquota : '              .db_formatar($it04_aliquota,'f').'%',   1,0,"L",0);
+      $pdf->cell(35,$altura,'Al√≠quota : '              .db_formatar($it04_aliquota,'f').'%',   1,0,"L",0);
 		 
 	 }
 

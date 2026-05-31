@@ -175,11 +175,11 @@ class cl_ruas {
   }
   function incluir($codigo,$nome,$tipo) {
     if($codigo==""){
-	   $this->$db_erro = 'CÛdigo da Rua/Avenida Inv·lido';
+	   $this->$db_erro = 'C√≥digo da Rua/Avenida Inv√°lido';
 	   return false;
 	}
     if($nome==""){
-	   $this->$db_erro = 'DescriÁ„o da Rua/Avenida dever· ser preenchida.';
+	   $this->$db_erro = 'Descri√ß√£o da Rua/Avenida dever√° ser preenchida.';
 	   return false;
 	}
     $result = @pg_exec("insert into ruas(j14_codigo,j14_nome,j14_tipo) values($codigo,'$nome','$tipo')");
@@ -195,7 +195,7 @@ class cl_ruas {
   }
   function alterar($codigo,$nome,$tipo) {
     if($codigo==""){
-	   $this->$db_erro = 'CÛdigo da Rua/Avenida Inv·lido';
+	   $this->$db_erro = 'C√≥digo da Rua/Avenida Inv√°lido';
 	   return false;
 	}
     $result = @pg_exec("update ruas set j14_nome = '$nome',
@@ -210,7 +210,7 @@ class cl_ruas {
   }
   function excluir($codigo) {
     if($codigo==""){
-	   $this->$db_erro = 'CÛdigo do Logradouro Inv·lido';
+	   $this->$db_erro = 'C√≥digo do Logradouro Inv√°lido';
 	   return false;
 	}
     $result = @pg_exec("delete from ruas where j14_codigo = $codigo");

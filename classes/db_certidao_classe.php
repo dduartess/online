@@ -62,19 +62,19 @@ class cl_certidao {
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
                  p50_sequencial = int8 = Codigo 
-                 p50_idusuario = int4 = Cod. Usu·rio 
-                 p50_tipo = char(1) = Tipo da Certid„o 
-                 p50_data = date = Data de inclus„o 
-                 p50_hora = varchar(10) = Hora da inclus„o 
+                 p50_idusuario = int4 = Cod. Usu√°rio 
+                 p50_tipo = char(1) = Tipo da Certid√£o 
+                 p50_data = date = Data de inclus√£o 
+                 p50_hora = varchar(10) = Hora da inclus√£o 
                  p50_ip = varchar(16) = IP 
-                 p50_hist = text = HistÛrico 
+                 p50_hist = text = Hist√≥rico 
                  p50_web = bool = Gerado pela web 
-                 p50_codproc = int4 = CÛdigo do processo 
-                 p50_exerc = int4 = ExercÌcio 
-                 p50_codimpresso = varchar(20) = CÛdigo Impresso 
-                 p50_instit = int4 = Cod. InstituiÁ„o 
+                 p50_codproc = int4 = C√≥digo do processo 
+                 p50_exerc = int4 = Exerc√≠cio 
+                 p50_codimpresso = varchar(20) = C√≥digo Impresso 
+                 p50_instit = int4 = Cod. Institui√ß√£o 
                  p50_arquivo = oid = Imagem 
-                 p50_diasvalidade = int4 = Dias de validade da certid„o 
+                 p50_diasvalidade = int4 = Dias de validade da certid√£o 
                  ";
    //funcao construtor da classe 
    function cl_certidao() { 
@@ -123,64 +123,64 @@ class cl_certidao {
    function incluir ($p50_sequencial){ 
       $this->atualizacampos();
      if($this->p50_idusuario == null ){ 
-       $this->erro_sql = " Campo Cod. Usu·rio n„o informado.";
+       $this->erro_sql = " Campo Cod. Usu√°rio n√£o informado.";
        $this->erro_campo = "p50_idusuario";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p50_tipo == null ){ 
-       $this->erro_sql = " Campo Tipo da Certid„o n„o informado.";
+       $this->erro_sql = " Campo Tipo da Certid√£o n√£o informado.";
        $this->erro_campo = "p50_tipo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p50_data == null ){ 
-       $this->erro_sql = " Campo Data de inclus„o n„o informado.";
+       $this->erro_sql = " Campo Data de inclus√£o n√£o informado.";
        $this->erro_campo = "p50_data_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p50_hora == null ){ 
-       $this->erro_sql = " Campo Hora da inclus„o n„o informado.";
+       $this->erro_sql = " Campo Hora da inclus√£o n√£o informado.";
        $this->erro_campo = "p50_hora";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p50_ip == null ){ 
-       $this->erro_sql = " Campo IP n„o informado.";
+       $this->erro_sql = " Campo IP n√£o informado.";
        $this->erro_campo = "p50_ip";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p50_hist == null ){ 
-       $this->erro_sql = " Campo HistÛrico n„o informado.";
+       $this->erro_sql = " Campo Hist√≥rico n√£o informado.";
        $this->erro_campo = "p50_hist";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p50_web == null ){ 
-       $this->erro_sql = " Campo Gerado pela web n„o informado.";
+       $this->erro_sql = " Campo Gerado pela web n√£o informado.";
        $this->erro_campo = "p50_web";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -192,10 +192,10 @@ class cl_certidao {
        $this->p50_exerc = "0";
      }
      if($this->p50_instit == null ){ 
-       $this->erro_sql = " Campo Cod. InstituiÁ„o n„o informado.";
+       $this->erro_sql = " Campo Cod. Institui√ß√£o n√£o informado.";
        $this->erro_campo = "p50_instit";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -205,7 +205,7 @@ class cl_certidao {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: certidao_p50_sequencial_seq do campo: p50_sequencial"; 
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -214,9 +214,9 @@ class cl_certidao {
      }else{
        $result = db_query("select last_value from certidao_p50_sequencial_seq");
        if(($result != false) && (pg_result($result,0,0) < $p50_sequencial)){
-         $this->erro_sql = " Campo p50_sequencial maior que ˙ltimo n˙mero da sequencia.";
-         $this->erro_banco = "Sequencia menor que este n˙mero.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo p50_sequencial maior que √∫ltimo n√∫mero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este n√∫mero.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -227,7 +227,7 @@ class cl_certidao {
      if(($this->p50_sequencial == null) || ($this->p50_sequencial == "") ){ 
        $this->erro_sql = " Campo p50_sequencial nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -268,13 +268,13 @@ class cl_certidao {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Certidoes geradas ($this->p50_sequencial) nao IncluÌdo. Inclusao Abortada.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Certidoes geradas j· Cadastrado";
+         $this->erro_sql   = "Certidoes geradas ($this->p50_sequencial) nao Inclu√≠do. Inclusao Abortada.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Certidoes geradas j√° Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Certidoes geradas ($this->p50_sequencial) nao IncluÌdo. Inclusao Abortada.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Certidoes geradas ($this->p50_sequencial) nao Inclu√≠do. Inclusao Abortada.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -284,7 +284,7 @@ class cl_certidao {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->p50_sequencial;
-     $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -326,10 +326,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_sequencial = $this->p50_sequencial ";
        $virgula = ",";
        if(trim($this->p50_sequencial) == null ){ 
-         $this->erro_sql = " Campo Codigo n„o informado.";
+         $this->erro_sql = " Campo Codigo n√£o informado.";
          $this->erro_campo = "p50_sequencial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -339,10 +339,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_idusuario = $this->p50_idusuario ";
        $virgula = ",";
        if(trim($this->p50_idusuario) == null ){ 
-         $this->erro_sql = " Campo Cod. Usu·rio n„o informado.";
+         $this->erro_sql = " Campo Cod. Usu√°rio n√£o informado.";
          $this->erro_campo = "p50_idusuario";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -352,10 +352,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_tipo = '$this->p50_tipo' ";
        $virgula = ",";
        if(trim($this->p50_tipo) == null ){ 
-         $this->erro_sql = " Campo Tipo da Certid„o n„o informado.";
+         $this->erro_sql = " Campo Tipo da Certid√£o n√£o informado.";
          $this->erro_campo = "p50_tipo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -365,10 +365,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_data = '$this->p50_data' ";
        $virgula = ",";
        if(trim($this->p50_data) == null ){ 
-         $this->erro_sql = " Campo Data de inclus„o n„o informado.";
+         $this->erro_sql = " Campo Data de inclus√£o n√£o informado.";
          $this->erro_campo = "p50_data_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -378,10 +378,10 @@ class cl_certidao {
          $sql  .= $virgula." p50_data = null ";
          $virgula = ",";
          if(trim($this->p50_data) == null ){ 
-           $this->erro_sql = " Campo Data de inclus„o n„o informado.";
+           $this->erro_sql = " Campo Data de inclus√£o n√£o informado.";
            $this->erro_campo = "p50_data_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -392,10 +392,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_hora = '$this->p50_hora' ";
        $virgula = ",";
        if(trim($this->p50_hora) == null ){ 
-         $this->erro_sql = " Campo Hora da inclus„o n„o informado.";
+         $this->erro_sql = " Campo Hora da inclus√£o n√£o informado.";
          $this->erro_campo = "p50_hora";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -405,10 +405,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_ip = '$this->p50_ip' ";
        $virgula = ",";
        if(trim($this->p50_ip) == null ){ 
-         $this->erro_sql = " Campo IP n„o informado.";
+         $this->erro_sql = " Campo IP n√£o informado.";
          $this->erro_campo = "p50_ip";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -418,10 +418,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_hist = '$this->p50_hist' ";
        $virgula = ",";
        if(trim($this->p50_hist) == null ){ 
-         $this->erro_sql = " Campo HistÛrico n„o informado.";
+         $this->erro_sql = " Campo Hist√≥rico n√£o informado.";
          $this->erro_campo = "p50_hist";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -431,10 +431,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_web = '$this->p50_web' ";
        $virgula = ",";
        if(trim($this->p50_web) == null ){ 
-         $this->erro_sql = " Campo Gerado pela web n„o informado.";
+         $this->erro_sql = " Campo Gerado pela web n√£o informado.";
          $this->erro_campo = "p50_web";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -462,10 +462,10 @@ class cl_certidao {
        $sql  .= $virgula." p50_instit = $this->p50_instit ";
        $virgula = ",";
        if(trim($this->p50_instit) == null ){ 
-         $this->erro_sql = " Campo Cod. InstituiÁ„o n„o informado.";
+         $this->erro_sql = " Campo Cod. Institui√ß√£o n√£o informado.";
          $this->erro_campo = "p50_instit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -532,7 +532,7 @@ class cl_certidao {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Certidoes geradas nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->p50_sequencial;
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -542,16 +542,16 @@ class cl_certidao {
          $this->erro_banco = "";
          $this->erro_sql = "Certidoes geradas nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->p50_sequencial;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "AlteraÁ„o efetuada com Sucesso\\n";
+         $this->erro_sql = "Altera√ß√£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->p50_sequencial;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -613,9 +613,9 @@ class cl_certidao {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Certidoes geradas nao ExcluÌdo. Exclus„o Abortada.\\n";
+       $this->erro_sql   = "Certidoes geradas nao Exclu√≠do. Exclus√£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$p50_sequencial;
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -623,18 +623,18 @@ class cl_certidao {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Certidoes geradas nao Encontrado. Exclus„o n„o Efetuada.\\n";
+         $this->erro_sql = "Certidoes geradas nao Encontrado. Exclus√£o n√£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$p50_sequencial;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclus„o efetuada com Sucesso\\n";
+         $this->erro_sql = "Exclus√£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$p50_sequencial;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -649,7 +649,7 @@ class cl_certidao {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -658,7 +658,7 @@ class cl_certidao {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:certidao";
-        $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;
@@ -780,7 +780,7 @@ class cl_certidao {
   }
   
    /**
-   * MÈtodo que retorna as certidıes e seus prazos vigentes
+   * M√©todo que retorna as certid√µes e seus prazos vigentes
    * @param string $sOrigem
    * @param integer $iCodigoOrigem
    * @param string $sDataValidaEmissao

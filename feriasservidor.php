@@ -80,7 +80,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"></script>
@@ -92,7 +92,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
           <table  class="tableForm" width="600px;">
 			      <tr>
 			        <td class="tituloForm"  colspan="3">
-			          <b>Férias Gozadas</b>
+			          <b>FÃ©rias Gozadas</b>
 			        </td>
 			      </tr>          
 		      <?php 
@@ -106,7 +106,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
 		      ?>
             <tr>
               <td class="subTituloForm" colspan="2">
-                Período Aquisitivo : <?=db_formatar($oFeriasGozadas->r30_perai,'d')." à ".db_formatar($oFeriasGozadas->r30_peraf,'d')?>
+                PerÃ­odo Aquisitivo : <?=db_formatar($oFeriasGozadas->r30_perai,'d')." Ã  ".db_formatar($oFeriasGozadas->r30_peraf,'d')?>
               </td>
               <td class="subTituloForm">
                 Abono : <?=$oFeriasGozadas->r30_abono?> 
@@ -115,15 +115,15 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
             
                       
             <tr>
-              <td class="labelForm" align="center">Períodos de Gozo:</td>
+              <td class="labelForm" align="center">PerÃ­odos de Gozo:</td>
               <td class="labelForm" align="center">Dias de Gozo:    </td>
-              <td class="labelForm" align="center">Mês Pagamento    </td>              
+              <td class="labelForm" align="center">MÃªs Pagamento    </td>              
             </tr>            
             
             
             <tr>
               <td class="dadosForm" align="center">
-                <?=db_formatar($oFeriasGozadas->r30_per1i,'d')." à ".db_formatar($oFeriasGozadas->r30_per1f,'d')?>
+                <?=db_formatar($oFeriasGozadas->r30_per1i,'d')." Ã  ".db_formatar($oFeriasGozadas->r30_per1f,'d')?>
               </td>
               <td class="dadosForm" align="center"><?=$oFeriasGozadas->r30_dias1?></td>
               <td class="dadosForm" align="center"><?=$oFeriasGozadas->r30_proc1?></td> 
@@ -135,7 +135,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
             
             <tr>
               <td class="dadosForm" align="center">
-                <?=db_formatar($oFeriasGozadas->r30_per2i,'d')." à ".db_formatar($oFeriasGozadas->r30_per2f,'d')?>
+                <?=db_formatar($oFeriasGozadas->r30_per2i,'d')." Ã  ".db_formatar($oFeriasGozadas->r30_per2f,'d')?>
               </td>
               <td class="dadosForm" align="center"><?=$oFeriasGozadas->r30_dias2?></td>
               <td class="dadosForm" align="center"><?=$oFeriasGozadas->r30_proc2?></td> 
@@ -169,7 +169,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
 		      ?>  
 			      <tr>
 			        <td class="tituloForm"  colspan="3">
-			          <b>Férias a Gozar</b>
+			          <b>FÃ©rias a Gozar</b>
 			        </td>
 			      </tr>          
           <?php 
@@ -185,10 +185,10 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
           ?>
             <tr>
               <td class="labelForm">
-                Período Aquisitivo:
+                PerÃ­odo Aquisitivo:
               </td>
               <td class="dadosForm">
-                <?=db_formatar($oFeriasaGozar->periodo_aquisitivo_inicial,'d')." à ".db_formatar($oFeriasaGozar->periodo_aquisitivo_final,'d')?>
+                <?=db_formatar($oFeriasaGozar->periodo_aquisitivo_inicial,'d')." Ã  ".db_formatar($oFeriasaGozar->periodo_aquisitivo_final,'d')?>
               </td>
             </tr>
           
@@ -212,7 +212,7 @@ $iNroFeriasaGozar = pg_num_rows($rsFeriasaGozar);
           ?>
             <tr>
               <td style="font-size: 11px;font-weight:bold;" colspan="3">
-                *Períodos aquisitivos de férias ainda não gozadas estão sujeitos a avaliação pela Instituição
+                *PerÃ­odos aquisitivos de fÃ©rias ainda nÃ£o gozadas estÃ£o sujeitos a avaliaÃ§Ã£o pela InstituiÃ§Ã£o
               </td>
             </tr>    
           <?php 

@@ -40,7 +40,7 @@ if ($linhascgm>0){
 $sqlaidof= "
 			select *,
 			case when y08_cancel='t' then 'cancelado' else
-			case when y08_quantlib =0 then 'Não liberada' else 'Liberado' 
+			case when y08_quantlib =0 then 'NÃ£o liberada' else 'Liberado' 
 			end
 			end as situacao
 			from aidof 
@@ -61,7 +61,7 @@ if(isset($cancelar)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php 
@@ -95,18 +95,18 @@ function js_cancela(cod){
 	<form name="form1" method="post" action="" >
 		<input name="codigoaidof" type="hidden" value="">
 		<br><br><br>
-		<div align="center" class="texto"> <b>Solicitações de AIDOF</b><br></div>
+		<div align="center" class="texto"> <b>SolicitaÃ§Ãµes de AIDOF</b><br></div>
 		<br>
 		<table width="80%" align="center" class="tab" >
 		<tr  align="center">
-			<th >Código</th>
+			<th >CÃ³digo</th>
 			<th>Tipo de nota</th>
-			<th>Data da solicitção</th>
+			<th>Data da solicitÃ§Ã£o</th>
 			<th>Quant. Solicititada</th>
 			<th>Quant. Liberada</th>
-			<th>Numeração</th>
-			<th>Situação</th>
-			<th>Opções</th>
+			<th>NumeraÃ§Ã£o</th>
+			<th>SituaÃ§Ã£o</th>
+			<th>OpÃ§Ãµes</th>
 		</tr>
 		<?php 
 		if($linhasaidof>0){
@@ -120,11 +120,11 @@ function js_cancela(cod){
 					<td>".db_formatar($y08_dtlanc,'d')."</td>
 					<td>$y08_quantsol</td>
 					<td>$y08_quantlib</td>
-					<td>$y08_notain até $y08_notafi</td>		
+					<td>$y08_notain atÃ© $y08_notafi</td>		
 					<td>$situacao</td>";
 				if($situacao=='Liberado'){
-					echo"<td><input name='imprime' value='Imprimir autorização' type='submit' class='botao' onclick=\"js_autorizacao($y08_codigo,$y08_numcgm,$y08_inscr,'$q09_descr')\"></td>";
-				}elseif($situacao=='Não liberada'){
+					echo"<td><input name='imprime' value='Imprimir autorizaÃ§Ã£o' type='submit' class='botao' onclick=\"js_autorizacao($y08_codigo,$y08_numcgm,$y08_inscr,'$q09_descr')\"></td>";
+				}elseif($situacao=='NÃ£o liberada'){
 					echo"<td><input name='imprime' value='Imprimir comprovante' type='submit' class='botao' onclick=\"js_comprovante($y08_codigo,$y08_numcgm,$y08_inscr,'$q09_descr')\">
 						<input name='cancelar' value='Cancelar' type='submit' class='botao' onclick='js_cancela($y08_codigo)'>
 						</td>";

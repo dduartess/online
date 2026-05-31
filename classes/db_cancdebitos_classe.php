@@ -52,11 +52,11 @@ class cl_cancdebitos {
    var $k20_usuario = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 k20_codigo = int8 = Código 
+                 k20_codigo = int8 = CÃ³digo 
                  k20_descr = varchar(50) = Descricao resumida do cancelamento 
                  k20_hora = varchar(5) = Hora 
                  k20_data = date = Data 
-                 k20_usuario = int4 = Cod. Usuário 
+                 k20_usuario = int4 = Cod. UsuÃ¡rio 
                  ";
    //funcao construtor da classe 
    function cl_cancdebitos() { 
@@ -99,7 +99,7 @@ class cl_cancdebitos {
        $this->erro_sql = " Campo Hora nao Informado.";
        $this->erro_campo = "k20_hora";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -108,16 +108,16 @@ class cl_cancdebitos {
        $this->erro_sql = " Campo Data nao Informado.";
        $this->erro_campo = "k20_data_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->k20_usuario == null ){ 
-       $this->erro_sql = " Campo Cod. Usuário nao Informado.";
+       $this->erro_sql = " Campo Cod. UsuÃ¡rio nao Informado.";
        $this->erro_campo = "k20_usuario";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -127,7 +127,7 @@ class cl_cancdebitos {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: cancdebitos_k20_codigo_seq do campo: k20_codigo"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -136,9 +136,9 @@ class cl_cancdebitos {
      }else{
        $result = @pg_query("select last_value from cancdebitos_k20_codigo_seq");
        if(($result != false) && (pg_result($result,0,0) < $k20_codigo)){
-         $this->erro_sql = " Campo k20_codigo maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo k20_codigo maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -149,7 +149,7 @@ class cl_cancdebitos {
      if(($this->k20_codigo == null) || ($this->k20_codigo == "") ){ 
        $this->erro_sql = " Campo k20_codigo nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -173,13 +173,13 @@ class cl_cancdebitos {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Debitos a cancelar ($this->k20_codigo) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Debitos a cancelar já Cadastrado";
+         $this->erro_sql   = "Debitos a cancelar ($this->k20_codigo) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Debitos a cancelar jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Debitos a cancelar ($this->k20_codigo) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Debitos a cancelar ($this->k20_codigo) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -189,7 +189,7 @@ class cl_cancdebitos {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->k20_codigo;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -215,10 +215,10 @@ class cl_cancdebitos {
        $sql  .= $virgula." k20_codigo = $this->k20_codigo ";
        $virgula = ",";
        if(trim($this->k20_codigo) == null ){ 
-         $this->erro_sql = " Campo Código nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo nao Informado.";
          $this->erro_campo = "k20_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -235,7 +235,7 @@ class cl_cancdebitos {
          $this->erro_sql = " Campo Hora nao Informado.";
          $this->erro_campo = "k20_hora";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -248,7 +248,7 @@ class cl_cancdebitos {
          $this->erro_sql = " Campo Data nao Informado.";
          $this->erro_campo = "k20_data_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -261,7 +261,7 @@ class cl_cancdebitos {
            $this->erro_sql = " Campo Data nao Informado.";
            $this->erro_campo = "k20_data_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -272,10 +272,10 @@ class cl_cancdebitos {
        $sql  .= $virgula." k20_usuario = $this->k20_usuario ";
        $virgula = ",";
        if(trim($this->k20_usuario) == null ){ 
-         $this->erro_sql = " Campo Cod. Usuário nao Informado.";
+         $this->erro_sql = " Campo Cod. UsuÃ¡rio nao Informado.";
          $this->erro_campo = "k20_usuario";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -308,7 +308,7 @@ class cl_cancdebitos {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Debitos a cancelar nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->k20_codigo;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -318,16 +318,16 @@ class cl_cancdebitos {
          $this->erro_banco = "";
          $this->erro_sql = "Debitos a cancelar nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->k20_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->k20_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -371,9 +371,9 @@ class cl_cancdebitos {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Debitos a cancelar nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Debitos a cancelar nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$k20_codigo;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -381,18 +381,18 @@ class cl_cancdebitos {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Debitos a cancelar nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Debitos a cancelar nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$k20_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$k20_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -407,7 +407,7 @@ class cl_cancdebitos {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -416,7 +416,7 @@ class cl_cancdebitos {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:cancdebitos";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;
@@ -573,7 +573,7 @@ class cl_cancdebitos {
   }
 	
 	function incluir_cancelamento( $cancdebitosissplan = true){
-		// $cancdebitosissplan = Se grava na cancdebitosissplan...true: grava false: não grava
+		// $cancdebitosissplan = Se grava na cancdebitosissplan...true: grava false: nÃ£o grava
 		//gravar na cancdebitos, cancdebitosreg, cancdebitosproc, cancdebitosprocreg
 		$erro = false;
 		
@@ -598,7 +598,7 @@ class cl_cancdebitos {
 			if($clcancdebitosissplan->erro_status=="0"){
         $erro=true;
 			  $this->erro_msg = $clcancdebitosissplan->erro_msg;
-			  //echo "<br> não incluiu na cancdebitosissplan ".$this->erro_msg;
+			  //echo "<br> nÃ£o incluiu na cancdebitosissplan ".$this->erro_msg;
 			  $this->erro_status ="0";
       }	
 			
@@ -615,7 +615,7 @@ class cl_cancdebitos {
 	  if($clcancdebitosproc->erro_status=="0"){
       $erro=true;
 			$this->erro_msg = $clcancdebitosproc->erro_msg;
-			//echo "<br> não incluiu na cancdebitosproc ".$this->erro_msg;
+			//echo "<br> nÃ£o incluiu na cancdebitosproc ".$this->erro_msg;
 			$this->erro_status ="0";
     }	
 		//echo "<br> cancdebitosproc = ".$clcancdebitosproc->k23_codigo;
@@ -639,7 +639,7 @@ class cl_cancdebitos {
 				if($clcancdebitosreg->erro_status=="0"){
           $erro=true;
 					$this->erro_msg = $clcancdebitosreg->erro_msg;
-					//echo "<br> não incluiu na cancdebitosreg ".$this->erro_msg;
+					//echo "<br> nÃ£o incluiu na cancdebitosreg ".$this->erro_msg;
 					$this->erro_status ="0";
 
         }	
@@ -668,14 +668,14 @@ class cl_cancdebitos {
 					if($clcancdebitosprocreg->erro_status=="0"){
             $erro=true;
 					  $this->erro_msg = $clcancdebitosprocreg->erro_msg;
-					  //echo "<br> não incluiu na cancdebitosprocreg ".$this->erro_msg;
+					  //echo "<br> nÃ£o incluiu na cancdebitosprocreg ".$this->erro_msg;
 						$this->erro_status ="0";
           }	
 				}
 				
 			}
 		}else{
-			$this->erro_msg = "Não encontrou registros no arrecad.";
+			$this->erro_msg = "NÃ£o encontrou registros no arrecad.";
 		}
 		
 	}

@@ -72,19 +72,19 @@ db_fieldsmemory($result,0);
 <!-- InstanceBeginEditable name="doctitle" -->
 <title><?=$w01_titulo?></title>
 <!-- InstanceEndEditable --> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- InstanceParam name="onload" type="text" value="" --> 
 <script language="JavaScript" src="scripts/db_script.js">
 function testa() {
   var numero = new Number(document.form1.<?=@$opcao2?>.value);
   if(isNaN(numero)){
-    alert ("este campo deve ser preenchido somente com números");
+    alert ("este campo deve ser preenchido somente com nÃºmeros");
     document.form1.<?=$opcao2?>.focus();
   }
 }
 function js_verificamatricula() {
   if (document.form1.<?=$opcao2?>.value == "" || isNaN(document.form1.<?=$opcao2?>.value)){
-    alert("Codigo de <?=$opcao?> Inválido.");
+    alert("Codigo de <?=$opcao?> InvÃ¡lido.");
     document.form1.<?=$opcao2?>.focus();
     document.form1.<?=$opcao2?>.select();
     return false;

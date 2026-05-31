@@ -40,7 +40,7 @@ db_postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
 <script>
@@ -110,7 +110,7 @@ if($id_usuario!=""){
 				</th>
 				<th align='center'> Emissao Empenho
 				</th>
-				<th align='center'> Nome da Instituição
+				<th align='center'> Nome da InstituiÃ§Ã£o
 				</th>
 				</th>
 				<th align='center'>Imprimir
@@ -142,7 +142,7 @@ if($id_usuario!=""){
 	}
 
 }else{
-	echo " não logado";
+	echo " nÃ£o logado";
 }
 ?>
 </form>

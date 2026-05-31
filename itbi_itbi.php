@@ -185,7 +185,7 @@ if($tipo == "rural" && $sqlerro == false){
 	    
   	}
   	
-// inclui itbidadosimovel.....dados do imóvel .................
+// inclui itbidadosimovel.....dados do imÃ³vel .................
   	
   	$rsdadosimovel =  pg_query("select * from proprietario
                    				inner join itbimatric on it06_matric = j01_matric
@@ -292,7 +292,7 @@ if($tipo == "rural" && $sqlerro == false){
   	
   	
   	
-// fim da transação.... se tiver ok mostra a msg e chama a outra tela  	
+// fim da transaÃ§Ã£o.... se tiver ok mostra a msg e chama a outra tela  	
 	db_fim_transacao($sqlerro);	
 	if ($sqlerro==false){
 		$codigo=$clitbi->it01_guia;
@@ -343,7 +343,7 @@ if (isset($incluir)){
 </style>
 <head>
 <title>Cadastro de departamento</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
 function js_verifica(){
 	var obj    = document.form1;
@@ -357,10 +357,10 @@ function js_verifica(){
 	var esq    = obj.it05_esquerdo.value;
 	
 	var erro = "";
-	if (ter=='')    erro = erro+' Área do terreno\n';
-	if (edi=='')    erro = erro+' Área edificada\n';
-	if (vltran=='') erro = erro+' Valor da transação\n';
-	if (areatra=='')erro = erro+' Área transmitida da terreno\n';
+	if (ter=='')    erro = erro+' Ãrea do terreno\n';
+	if (edi=='')    erro = erro+' Ãrea edificada\n';
+	if (vltran=='') erro = erro+' Valor da transaÃ§Ã£o\n';
+	if (areatra=='')erro = erro+' Ãrea transmitida da terreno\n';
 	if (fre=='') erro = erro+' Frente\n';
 	if (fun=='') erro = erro+' Fundos\n';
 	if (dir=='') erro = erro+' Direito\n';
@@ -386,13 +386,13 @@ function js_verifica(){
       	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" width="30%">Código da guia itbi:
+    	<td align="left" width="30%">CÃ³digo da guia itbi:
     	</td>
     	<td align="left" ><?=@$cod?>
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Tipo de Transação:
+    	<td align="left" >Tipo de TransaÃ§Ã£o:
     	</td>
     	<td align="left"" >
     	<select name="it01_tipotransacao"  >
@@ -410,37 +410,37 @@ function js_verifica(){
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Área do terreno:
+    	<td align="left" >Ãrea do terreno:
     	</td>
     	<td align="left" ><input name="it01_areaterreno" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Área edificada:
+    	<td align="left" >Ãrea edificada:
     	</td>
     	<td align="left" ><input name="it01_areaedificada" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Observação dadas pelo comprador:
+    	<td align="left" >ObservaÃ§Ã£o dadas pelo comprador:
     	</td>
     	<td align="left" ><textarea name="it01_obs" cols="60" rows="3" ></textarea>
     	</td>
   	</tr>
   	<tr class="texto"> 
-    	<td align="left" >Valor da transação à vista:
+    	<td align="left" >Valor da transaÃ§Ã£o Ã  vista:
     	</td>
     	<td align="left" ><input name="it01_valortransacao" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Valor da transação financiado:
+    	<td align="left" >Valor da transaÃ§Ã£o financiado:
     	</td>
     	<td align="left" ><input name="it01_valortransacaofinanc" type="text" >
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Área transmitida do terreno:
+    	<td align="left" >Ãrea transmitida do terreno:
     	</td>
     	<td align="left" ><input name="it01_areatrans" type="text" >
     	</td>
@@ -479,7 +479,7 @@ function js_verifica(){
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Situação da ITBI:
+    	<td align="left" >SituaÃ§Ã£o da ITBI:
     	</td>
     	<td align="left" >
 		<select name="it05_itbisituacao"  >
@@ -520,7 +520,7 @@ function js_verifica(){
   	<tr>
   		<td colspan="2">
 		 	<fieldset >
-		    	<legend>Dados da área</legend>
+		    	<legend>Dados da Ã¡rea</legend>
 		    	<table width="100%"  >
 		       	<?php 
 		       	$sqlcar  ="select * from caracter inner join cargrup on cargrup.j32_grupo = caracter.j31_grupo where j32_tipo = 'I'";

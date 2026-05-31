@@ -59,7 +59,7 @@ if (@$cod!=""){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js">
 </script>
 <script>
@@ -168,7 +168,7 @@ div.tabIframeWrapper {
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom: 0px">
 	<tr>
     	<td colspan="5" align="center" class="titulo">
-    	Solicitação de ITBI 
+    	SolicitaÃ§Ã£o de ITBI 
       	</td>
   	</tr>
   	<tr>
@@ -183,10 +183,10 @@ div.tabIframeWrapper {
   			?>
   				<div class="tabArea">
 	       	      	<a id="1" class="tab activeTab" href= "itbi_itbiurbano.php?mat=<?=$mat?>"  target="itbi"  onClick="trocacor('1','<?=$tipo?>')" >ITBI</a>
-				    <a id="2" class="tab"  target="itbi"  onClick="trocacor('2','<?=$tipo?>')" >Dados do imóvel</a>
+				    <a id="2" class="tab"  target="itbi"  onClick="trocacor('2','<?=$tipo?>')" >Dados do imÃ³vel</a>
 				    <a id="3" class="tab"  target="itbi"  onClick="trocacor('3','<?=$tipo?>')" >Transmitente</a>
 				    <a id="4" class="tab"  target="itbi"  onClick="trocacor('4','<?=$tipo?>')" >Comprador</a>
-				    <a id="5" class="tab"  target="itbi"  onClick="trocacor('5','<?=$tipo?>')" >Construção</a>
+				    <a id="5" class="tab"  target="itbi"  onClick="trocacor('5','<?=$tipo?>')" >ConstruÃ§Ã£o</a>
 				    <a id="6" class="tab"  target="itbi"  onClick="trocacor('6','<?=$tipo?>')" >Envia ITBI</a>
 			    </div>
   			<?php 
@@ -195,11 +195,11 @@ div.tabIframeWrapper {
   			?>
     		<div class="tabArea">
        	      	<a id="1" class="tab activeTab" href= "itbi_itbirural.php?cnpj=<?=$cnpj?>&sol=<?=$sol?>"  target="itbi"  onClick="trocacor('1','<?=$tipo?>')" >ITBI</a>
-			    <a id="2" class="tab"  target="itbi"  onClick="trocacor('2','<?=$tipo?>')" >Dados do imóvel</a>
+			    <a id="2" class="tab"  target="itbi"  onClick="trocacor('2','<?=$tipo?>')" >Dados do imÃ³vel</a>
 			    <a id="3" class="tab"  target="itbi"  onClick="trocacor('3','<?=$tipo?>')" >Transmitente</a>
 			    <a id="4" class="tab"  target="itbi"  onClick="trocacor('4','<?=$tipo?>')" >Comprador</a>
-			    <a id="5" class="tab"  target="itbi"  onClick="trocacor('5','<?=$tipo?>')" >Construção</a>
-			    <a id="7" class="tab"  target="itbi"  onClick="trocacor('7','<?=$tipo?>')" >Proprietário</a>
+			    <a id="5" class="tab"  target="itbi"  onClick="trocacor('5','<?=$tipo?>')" >ConstruÃ§Ã£o</a>
+			    <a id="7" class="tab"  target="itbi"  onClick="trocacor('7','<?=$tipo?>')" >ProprietÃ¡rio</a>
 			    <a id="6" class="tab"  target="itbi"  onClick="trocacor('6','<?=$tipo?>')" >Envia ITBI</a>
 			 <?php 
 			 }

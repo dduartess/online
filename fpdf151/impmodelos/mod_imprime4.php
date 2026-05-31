@@ -20,7 +20,7 @@ if (substr($this->dtparapag,4,1)=='-' || substr($this->dtparapag,7,1)=='/') {
 }
 //die($this->dtparapag);
 $this->objpdf->Setfont('Arial','B',9);
-$this->objpdf->text(142, $xlin-8,"DOCUMENTO VÁLIDO ATÉ: ".$this->dtparapag); //$this->descr14); //  $this->datacalc);  COMENTEI ESSA LINHA E ADD A DEBAIXO
+$this->objpdf->text(142, $xlin-8,"DOCUMENTO VÃLIDO ATÃ‰: ".$this->dtparapag); //$this->descr14); //  $this->datacalc);  COMENTEI ESSA LINHA E ADD A DEBAIXO
 //$this->objpdf->text(159, $xlin-8,  $this->descr14); //$this->descr14); //  $this->datacalc);
 
 $str_via = 'Contribuinte';
@@ -41,18 +41,18 @@ $this->objpdf->text(40, $xlin-2, $this->emailpref);
 $this->objpdf->Roundedrect(@$xcol,@$xlin+2,@$xcol+119,20,2,'DF','1234');
 
 $this->objpdf->Setfont('Arial','',6);
-$this->objpdf->text(@$xcol+2,@$xlin+4,'Identificação:');
+$this->objpdf->text(@$xcol+2,@$xlin+4,'IdentificaÃ§Ã£o:');
 $this->objpdf->Setfont('Arial','',8);
 $this->objpdf->text($xcol+2,  $xlin+7,  'Nome : ');
 $this->objpdf->text($xcol+17, $xlin+7,  $this->descr11_1); //  $this->nome);
-$this->objpdf->text($xcol+2,  $xlin+11, 'Endereço : ');
+$this->objpdf->text($xcol+2,  $xlin+11, 'EndereÃ§o : ');
 $this->objpdf->text($xcol+17, $xlin+11, $this->descr11_2); //  $this->ender);
 
 $this->objpdf->text($xcol+2,  $xlin+15, 'Bairro : ');
 $this->objpdf->text($xcol+17, $xlin+15, $this->bairrocontri);
 
 
-$this->objpdf->text($xcol+2,  $xlin+19, 'Município : ');
+$this->objpdf->text($xcol+2,  $xlin+19, 'MunicÃ­pio : ');
 $this->objpdf->text($xcol+17, $xlin+19, $this->munic);
 $this->objpdf->text($xcol+75, $xlin+15, 'CEP : ');
 $this->objpdf->text($xcol+83, $xlin+15, $this->cep);
@@ -90,7 +90,7 @@ $intnumrows = count($this->arraycodreceitas);
 $this->objpdf->setx($xcol+3+$maiscol);
 $this->objpdf->cell(5,3,"Rec",0,0,"L",0);
 $this->objpdf->cell(7,3,"Reduz",0,0,"L",0);
-$this->objpdf->cell(63,3,"Descrição",0,0,"L",0);
+$this->objpdf->cell(63,3,"DescriÃ§Ã£o",0,0,"L",0);
 $this->objpdf->cell(15,3,"Valor",0,1,"R",0);
 
 $reccol           = $xcol+5;
@@ -104,7 +104,7 @@ $this->totalacres = 0;
 for($x=0;$x<$intnumrows;$x++){
   $this->obsdescr = null;
    if($x==50){
-     db_redireciona('db_erros.php?fechar=true&db_erro=O numero de receitas ultrapassou o espaço limite do carne.  Contate o suporte!');
+     db_redireciona('db_erros.php?fechar=true&db_erro=O numero de receitas ultrapassou o espaÃ§o limite do carne.  Contate o suporte!');
      break;
    }
    $this->objpdf->Text($reccol,    $bklin,$this->arraycodreceitas[$x]);
@@ -133,7 +133,7 @@ $xlin+= 15;
 $this->objpdf->Roundedrect($xcol,$xlin+72,160,60,2,'DF','1234'); // historico
 $this->objpdf->SetY($xlin+72);
 $this->objpdf->SetX($xcol+3);
-$this->objpdf->multicell(0,4,'HISTÓRICO :   '.$this->descr12_1);
+$this->objpdf->multicell(0,4,'HISTÃ“RICO :   '.$this->descr12_1);
 $this->objpdf->SetX($xcol+3);
 $this->objpdf->Setfont('Arial','',6);
 $this->objpdf->setx(15);
@@ -167,9 +167,9 @@ $this->objpdf->Roundedrect(102,$xlin+103,40,9,2,'DF','1234');
 $this->objpdf->Roundedrect(143,$xlin+103,21,9,2,'DF','1234');
 $this->objpdf->Roundedrect($xcol+161,$xlin+103,40,9,2,'DF','1234');
 
-$this->objpdf->text(110,$xlin+105,'Nosso Número');
+$this->objpdf->text(110,$xlin+105,'Nosso NÃºmero');
 $this->objpdf->text(147,$xlin+105,'Vencimento');
-$this->objpdf->text(168,$xlin+105,'Nro. Documento/Cód. Arrecadação');
+$this->objpdf->text(168,$xlin+105,'Nro. Documento/CÃ³d. ArrecadaÃ§Ã£o');
 $this->objpdf->setfont('Arial','',10);
 $this->valor_cobrado       = $this->valtotal;
 $this->desconto_abatimento = db_formatar(abs($this->totaldesc),'f');
@@ -185,7 +185,7 @@ $this->objpdf->text(145,$xlin+110,$this->dtparapag);//   $this->dtvenc);
 $this->objpdf->text(175,$xlin+110,$this->descr9);
 
 /*********************************************************************************************************************************************************/
-// incluir a ficha de compensação
+// incluir a ficha de compensaÃ§Ã£o
 include("fpdf151/impmodelos/mod_imprime48.php"); 
  
 ?>

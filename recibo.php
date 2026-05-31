@@ -98,7 +98,7 @@ if(!isset($emite_recibo_protocolo)){
 
   db_fieldsmemory($result,0);
  // $k00_descr = $k00_descr." - ".db_getsession("DB_anousu");
-  $k00_descr = "ISSQN RET NA FONTE / ISSQN VARI¡VEL ";
+  $k00_descr = "ISSQN RET NA FONTE / ISSQN VARI√ÅVEL ";
   
   
   $vt = $HTTP_POST_VARS;
@@ -190,7 +190,7 @@ for($i = 0;$i < pg_numrows($DadosPagamento);$i++) {
 }
 //seleciona da tabela db_config, o numero do banco e a taxa bancaria e concatena em variavel    //codigo = ".db_getsession("DB_instit")
 $DadosInstit = pg_query("select nomeinst,ender,munic,email,telef,cgc,uf,logo,to_char(tx_banc,'9.99') as tx_banc,numbanco from db_config where codigo = ".db_getsession('DB_instit'));
-//cria codigo de barras e linha digit·vel
+//cria codigo de barras e linha digit√°vel
 $NumBanco = pg_result($DadosInstit,0,"numbanco");
 $db_numbanco = pg_result($DadosInstit,0,"numbanco");
 $taxabancaria = pg_result($DadosInstit,0,"tx_banc");
@@ -204,7 +204,7 @@ $db_cgc      = pg_result($DadosInstit,0,'cgc');
 $db_email    = pg_result($DadosInstit,0,'email');
 $total_recibo += $taxabancaria;
 $valor_parm = $total_recibo; 
-//seleciona dados de identificacao. Verifica se È inscr ou matric e da o respectivo select
+//seleciona dados de identificacao. Verifica se √© inscr ou matric e da o respectivo select
 //essa variavel vem do cai3_gerfinanc002.php, pelo window open, criada por parse_str
 $tipo_chave = "";
 if(!empty($HTTP_POST_VARS["ver_matric"])) {
@@ -213,7 +213,7 @@ if(!empty($HTTP_POST_VARS["ver_matric"])) {
                             from proprietario
                             where j01_matric = $numero limit 1");
   db_fieldsmemory($Identificacao,0);
-  $tipo_chave = "MatrÌcula";
+  $tipo_chave = "Matr√≠cula";
 } else if(!empty($HTTP_POST_VARS["ver_inscr"])) {
   $numero = $HTTP_POST_VARS["ver_inscr"];
   $Identificacao = pg_query("select z01_nome,
@@ -230,7 +230,7 @@ if(!empty($HTTP_POST_VARS["ver_matric"])) {
                             from empresa
                             where q02_inscr = $numero");
   db_fieldsmemory($Identificacao,0);
-  $tipo_chave = "InscriÁ„o";
+  $tipo_chave = "Inscri√ß√£o";
 }else if(!empty($HTTP_POST_VARS["ver_numcgm"])) {
   $numero = $HTTP_POST_VARS["ver_numcgm"];
   $Identificacao = pg_query("select z01_nome,z01_cgccpf,z01_ender,z01_munic,z01_uf,z01_cep,''::bpchar as nomepri,''::bpchar as j39_compl,''::bpchar as j39_numero,z01_bairro as j13_descr, '' as sql
@@ -362,7 +362,7 @@ if(isset($tipo)){
                 }
                 $ano = pg_result($result,0,5);
                 $mes = pg_result($result,0,6);
-                $histparcela = "CompetÍncia: $mes/$ano.";
+                $histparcela = "Compet√™ncia: $mes/$ano.";
             }
             //$arr_prestador = split("#", $str_prestador );
         //}
@@ -431,14 +431,14 @@ $pdf1->prestador             = @$str_prestador;
 $pdf1->totalvalor_P          = @$totalvalor_P;
 
 //ficha
-$pdf1->descr9                = str_pad($k03_numpre."000",11,0,STR_PAD_LEFT); // cod. de arrecadaÁ„o
+$pdf1->descr9                = str_pad($k03_numpre."000",11,0,STR_PAD_LEFT); // cod. de arrecada√ß√£o
 $pdf1->descr11_1             = @$z01_nome;
 $pdf1->descr11_2             = @$z01_ender." ".@$j39_numero." ".@$j39_compl;
 $pdf1->dtparapag             = db_formatar(@$datavencimento,'d');
 $pdf1->descr10               = "1/1";
 
 $pdf1->dtvenc                = db_formatar(@$datavencimento,'d');
-$pdf1->quaisbancos           = "LOCAIS DE PAGAMENTO AT… O VENCIMENTO:\nAgÍncias do BANCO DO BRASIL, BANRISUL, CAIXA ECON‘MICA FEDERAL e Rede Nacional de LOT…RICAS.\nEM CASO DE PAGAMENTO VIA HOME-BANKING ESCOLHER A OP«√O ARRECADA«√O";
+$pdf1->quaisbancos           = "LOCAIS DE PAGAMENTO AT√â O VENCIMENTO:\nAg√™ncias do BANCO DO BRASIL, BANRISUL, CAIXA ECON√îMICA FEDERAL e Rede Nacional de LOT√âRICAS.\nEM CASO DE PAGAMENTO VIA HOME-BANKING ESCOLHER A OP√á√ÉO ARRECADA√á√ÉO";
 $pdf1->numpre                = @$numpre;
 $pdf1->valtotal              = db_formatar(@$valor_parm,'f');
 $pdf1->linhadigitavel        = @$linhadigitavel;

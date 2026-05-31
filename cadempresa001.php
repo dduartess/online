@@ -38,7 +38,7 @@ if(isset($processar)){
 
   if($cpf_cnpj!=""){
     if(($cpf_cnpj=="00000000000")||($cpf_cnpj=="00000000000000")){
-      db_msgbox("Informe Um CPF/CNPJ válido");
+      db_msgbox("Informe Um CPF/CNPJ vÃ¡lido");
     }else{
       $tam = strlen($cpf_cnpj);
       if($tam==14){
@@ -65,7 +65,7 @@ if(isset($processar)){
           $_SESSION["dbprefempresa"] = $dbprefempresa;
           echo"<script> location.href='cadempresaaba01.php?pessoa=$pessoa&cpf_cnpj=$cpf_cnpj&opcao=2';</script>";
         }else{
-          db_msgbox("Empresa ja cadastrada por outro usuário");
+          db_msgbox("Empresa ja cadastrada por outro usuÃ¡rio");
         }
       }else{
         session_register("dbprefcgm");
@@ -84,7 +84,7 @@ if(isset($processar)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 
 <style type="text/css">
@@ -105,7 +105,7 @@ if(isset($processar)){
 	</tr>
 	<tr>
 		<td colspan="2" align="center" class="titulo">CADASTRO DE
-		EMPRESAS/PROFISSIONAIS AUTÔNOMOS</td>
+		EMPRESAS/PROFISSIONAIS AUTÃ”NOMOS</td>
 	</tr>
 	<tr>
 		<td colspan="2">&nbsp;</td>
@@ -114,7 +114,7 @@ if(isset($processar)){
 	<tr>
 		<td>Pessoa:</td>
 		<td><select name="pessoa">
-			<option value="F">Física</option>
+			<option value="F">FÃ­sica</option>
 			<option value="J">Juridica</option>
 		</select></td>
 	</tr>-->

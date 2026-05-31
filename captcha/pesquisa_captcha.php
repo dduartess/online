@@ -47,7 +47,7 @@ if ( !session_is_registered("DB_processacaptcha") ) {
   }
 }
 
-//checa se o código digitado é igual ao do captcha
+//checa se o cÃ³digo digitado Ã© igual ao do captcha
 if($processa==true) {
   
   if ( $img->check($code) ) {

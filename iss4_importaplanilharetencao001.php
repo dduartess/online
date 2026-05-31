@@ -55,13 +55,13 @@ db_mensagem("issqnretencao_cab","issqnretencao_rod");
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda - Prefeitura On - Line</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_vericampos(){
   jmes=document.form1.mes.value;
   if(jmes=="mes"){
-    alert("Favor selecionar o mês!");
+    alert("Favor selecionar o mÃªs!");
     return false
   }
 
@@ -73,7 +73,7 @@ function js_vericampos(){
   cgc1           = LimpaCampo(document.form1.cgc.value,10)
   
   if (cgc1 == 0) {
-     alert('Dados informados para o CPF/CNPJ são inválidos');
+     alert('Dados informados para o CPF/CNPJ sÃ£o invÃ¡lidos');
      return false;
   }
 
@@ -86,19 +86,19 @@ function js_vericampos(){
   }
   
   if(inscricaow=="" && cgc.value==""){
-    alert("Favor preencher um dos campos de identificação!");
+    alert("Favor preencher um dos campos de identificaÃ§Ã£o!");
     document.form1.inscricaow.focus();
     return false  
   }
   if(isNaN(inscricaow)){
-     alert("Verifique o campo Inscricão!");
+     alert("Verifique o campo InscricÃ£o!");
      return false
   }
   
 <?php 
-     // conta se o contribuente possui alvará no mesmo município que se encontra
-	 // caso a consulta retorna um verdadeiro, se retornar zero o contribuente não
-	 // possui alvará no município
+     // conta se o contribuente possui alvarÃ¡ no mesmo municÃ­pio que se encontra
+	 // caso a consulta retorna um verdadeiro, se retornar zero o contribuente nÃ£o
+	 // possui alvarÃ¡ no municÃ­pio
 	 $sqlCidade =  " select count(db_cgmruas.z01_numcgm) as qtd  			  ";
 	 $sqlCidade .= " from db_cgmruas                                          ";
 	 $sqlCidade .= " inner join cgm on cgm.z01_numcgm = db_cgmruas.z01_numcgm ";
@@ -111,7 +111,7 @@ function js_vericampos(){
 ?>
   
     if(document.form1.inscricaow.value == "") {
-      alert("Selecione uma inscrição abaixo!");
+      alert("Selecione uma inscriÃ§Ã£o abaixo!");
       return false;
     }
 <?php 		 		 
@@ -181,7 +181,7 @@ function SelecionaContribuinte(radio,tipo,total){
 <center>
 <?php 
 
-//verifica se está logado
+//verifica se estÃ¡ logado
 if(@$id_usuario !=""){
   @$result  = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,z01_nome,z01_cgccpf","","q02_numcgm = $id_usuario"));
   @$linhas  = $clissbase->numrows;
@@ -206,7 +206,7 @@ if(@$id_usuario !=""){
 		<input name="primeiravez" type="hidden" value="true">
 		<tr>
 			<td align="center">
-      	<strong>Inscrição Alvará:</strong>
+      	<strong>InscriÃ§Ã£o AlvarÃ¡:</strong>
 				<input name="inscricaow" type="text" class="digitacgccpf" style="BACKGROUND-COLOR: #eaeaea;" readonly size="8" maxlength="6">
         <strong>CNPJ/CPF:</strong>
 				<input name="cgc" value="<?=@$var_cnpj?>" type="text" class="digitacgccpf" id="cgc" style="BACKGROUND-COLOR: #eaeaea;" readonly size="18" maxlength="18" onKeyPress='FormataCPFeCNPJ(this,event); return js_teclas(event);'>
@@ -219,12 +219,12 @@ if(@$id_usuario !=""){
 		</tr>
 		<tr>
 			<td align="center">
-				<strong>Arquivo de Retenção ISSQN</strong><br/>
+				<strong>Arquivo de RetenÃ§Ã£o ISSQN</strong><br/>
         <input type="file" name="arquivo" id="arquivo">
 			</td>
 		</tr>
 		<tr>
-		  <td align="center"><strong>Competência:</strong>
+		  <td align="center"><strong>CompetÃªncia:</strong>
 				<select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
 	      <?php 
           $sano = date("Y");
@@ -236,7 +236,7 @@ if(@$id_usuario !=""){
         ?> 
 				</select>
 				<select class="digitacgccpf" name="mes" id="mes" >
-					<option value="mes">Mês</option>
+					<option value="mes">MÃªs</option>
         </select> 
         <script>
 					js_criames(document.form1.ano, <?=$cgc_pref?>);
@@ -252,7 +252,7 @@ if(@$id_usuario !=""){
 	<form name="form2" method="post" enctype="multipart/form-data">
 		<table width="100%" class="texto">
 	  <?php 
-      //é escritório?
+      //Ã© escritÃ³rio?
       $wherebx = " and q10_dtfim is null ";
       if (@$mostrainscricao == 1) {
         // todas
@@ -261,7 +261,7 @@ if(@$id_usuario !=""){
         //baixadas
         $wherebx = " and q10_dtfim is null and q02_dtbaix is not null ";
       } if (@$mostrainscricao == 3) {
-        // não baixadas
+        // nÃ£o baixadas
 				$wherebx = " and q10_dtfim is null and q02_dtbaix is null ";
 			}
       $result  = $clescrito->sql_record($clescrito->sql_query("","q02_inscr,cgm.z01_nome as z01_nome,cgm.z01_cgccpf as z01_cgccpf","","q10_numcgm = $id_usuario $wherebx"));
@@ -269,23 +269,23 @@ if(@$id_usuario !=""){
       if($escrito!=0) {
         ?>
   			<tr height="20" >
-  				<td colspan="3"><b>Mostrar inscriçoes</b> 
+  				<td colspan="3"><b>Mostrar inscriÃ§oes</b> 
   				<select name="mostrainscricao" onchange = "document.form2.submit();">
   	        <?php  
   	           echo "<option value = '1'".($mostrainscricao == 1?"selected":"").">Todas</option>";
   				     echo "<option value = '2'".($mostrainscricao == 2?"selected":"").">Somente baixadas</option>";
-  				     echo "<option value = '3'".($mostrainscricao == 3?"selected":"").">Somente não baixadas</option>";
+  				     echo "<option value = '3'".($mostrainscricao == 3?"selected":"").">Somente nÃ£o baixadas</option>";
             ?>
   				</select>
   				</td>
   			</tr>
         <?php 
-                  //busca clientes do escritório
+                  //busca clientes do escritÃ³rio
         for ($x = 0; $x < $escrito; $x++) {
           if($x == 0){
             ?>
   				<tr height="20" bgcolor="#eaeaea">
-  					<td colspan="3"><b>Inscrições que tenho acesso</b>
+  					<td colspan="3"><b>InscriÃ§Ãµes que tenho acesso</b>
   					</td>
   				</tr>
   				<?php 
@@ -303,7 +303,7 @@ if(@$id_usuario !=""){
           echo "<tr height=\"1\" bgcolor=\"#cccccc\"><td colspan=\"3\"></td></tr>";
         }
       }
-      //é issbase
+      //Ã© issbase
       $result2 = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,z01_nome,z01_cgccpf","","q02_numcgm = $id_usuario"));
       $issbase = $clissbase->numrows;
       //busca dados do issbase
@@ -312,7 +312,7 @@ if(@$id_usuario !=""){
         if($y==$x){
           ?>
 				<tr height="20" bgcolor="#eaeaea">
-					<td colspan="3"><b>Minhas Inscrições</b>
+					<td colspan="3"><b>Minhas InscriÃ§Ãµes</b>
 					</td>
 				</tr>
 				<?php 
@@ -354,11 +354,11 @@ if(@$id_usuario !=""){
                  
 						<b>CNPJ/CPF</b>:
 						<input name="cgc" type="text" class="digitacgccpf" id="cgc" value="<?=@$z01_cgccpf?>" size="18" maxlength="18" onKeyPress="FormataCPFeCNPJ(this,event); return js_teclas(event);" >
-						<strong>Inscrição Alvará:</strong>
+						<strong>InscriÃ§Ã£o AlvarÃ¡:</strong>
             <!--
             10/05/2006
-            Se não digitar inscrição e o cont. possuir inscr, ele encontrará na próxima vez que clicar em iss ret.
-            e não encontrará na busca dos valores.
+            Se nÃ£o digitar inscriÃ§Ã£o e o cont. possuir inscr, ele encontrarÃ¡ na prÃ³xima vez que clicar em iss ret.
+            e nÃ£o encontrarÃ¡ na busca dos valores.
             <input name="inscricaow" type="text" class="digitacgccpf" value="<?=@$q02_inscr?>" size="8" maxlength="6">
             -->
 						<input name="inscricaow" type="text" class="digitacgccpf" value="<?=@$q02_inscr?>" size="8" maxlength="6">
@@ -367,13 +367,13 @@ if(@$id_usuario !=""){
 				</tr>
 				<tr>
 					<td align="center">
-						<strong>Arquivo de Retenção ISSQN</strong><br/>
+						<strong>Arquivo de RetenÃ§Ã£o ISSQN</strong><br/>
 						<input type="file" name="arquivo" id="arquivo">
 					</td>
 				</tr>
 				<tr>
 					<td align="center">
-					<strong>Competência:</strong>
+					<strong>CompetÃªncia:</strong>
 					<select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
 		      <?php 
 		      if ( $cgc_pref == "87366159000102" ) {
@@ -391,7 +391,7 @@ if(@$id_usuario !=""){
           ?>
 					</select>
           <select class="digitacgccpf" name="mes" id="mes" >
-            <option value="mes">Mês</option>
+            <option value="mes">MÃªs</option>
           </select>
           <script>
 					  js_criames(document.form1.ano,<?=$cgc_pref?>);

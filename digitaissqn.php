@@ -63,13 +63,13 @@ $dblink="index.php";
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda - Prefeitura On - Line</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_vericampos(){
   jmes=document.form1.mes.value;
   if(jmes=="mes"){
-    alert("Favor selecionar o mês!");
+    alert("Favor selecionar o mÃªs!");
     return false
   }
 
@@ -81,7 +81,7 @@ function js_vericampos(){
   cgc1           = LimpaCampo(document.form1.cgc.value,10)
   
   if (cgc1 == 0) {
-     alert('Dados informados para o CPF/CNPJ são inválidos');
+     alert('Dados informados para o CPF/CNPJ sÃ£o invÃ¡lidos');
      return false;
   }
 
@@ -94,19 +94,19 @@ function js_vericampos(){
   }
   
   if(inscricaow=="" && cgc.value==""){
-    alert("Favor preencher um dos campos de identificação!");
+    alert("Favor preencher um dos campos de identificaÃ§Ã£o!");
     document.form1.inscricaow.focus();
     return false  
   }
   if(isNaN(inscricaow)){
-     alert("Verifique o campo Inscricão!");
+     alert("Verifique o campo InscricÃ£o!");
      return false
   }
   
 <?php 
-     // conta se o contribuente possui alvará no mesmo município que se encontra
-	 // caso a consulta retorna um verdadeiro, se retornar zero o contribuente não
-	 // possui alvará no município
+     // conta se o contribuente possui alvarÃ¡ no mesmo municÃ­pio que se encontra
+	 // caso a consulta retorna um verdadeiro, se retornar zero o contribuente nÃ£o
+	 // possui alvarÃ¡ no municÃ­pio
 	 //$id_usuario = (!isset($id_usuario)||trim($id_usuario)=='')?'NULL':$id_usuario;
 	 if (isset($id_usuario) and trim($id_usuario)<>'') {
 	   $sqlCidade =  " select count(db_cgmruas.z01_numcgm) as qtd  			  ";
@@ -124,7 +124,7 @@ function js_vericampos(){
 ?>
   
     if(document.form1.inscricaow.value == "") {
-      alert("Selecione uma inscrição abaixo!");
+      alert("Selecione uma inscriÃ§Ã£o abaixo!");
       return false;
     }
 <?php 		 		 
@@ -212,7 +212,7 @@ function js_vericampos(){
   
   
   
-  //verifica se está logado
+  //verifica se estÃ¡ logado
   if(@$id_usuario !=""){
    @$result  = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,z01_nome,z01_cgccpf","","q02_numcgm = $id_usuario"));
    @$linhas  = $clissbase->numrows;
@@ -224,7 +224,7 @@ function js_vericampos(){
      $var_cnpj = $z01_cgccpf;
     }
    }else{
-    //db_msgbox("Nenhuma inscrição encontrada!");
+    //db_msgbox("Nenhuma inscriÃ§Ã£o encontrada!");
     //db_redireciona("centro_pref.php");
      $sql_z01_cgccpf = db_query("SELECT cgm.z01_cgccpf FROM cgm WHERE z01_numcgm = $id_usuario");
      $rRetorno = pg_fetch_assoc ($sql_z01_cgccpf);
@@ -244,7 +244,7 @@ function js_vericampos(){
               <table width="100%" border="0" cellspacing="0" cellpadding="3" class="texto">
                 <tr>
                   <td>
-                   Inscrição Alvará:
+                   InscriÃ§Ã£o AlvarÃ¡:
                    <input name="inscricaow" type="text" class="digitacgccpf" style="BACKGROUND-COLOR: #eaeaea;" readonly size="8" maxlength="6">
                    CNPJ/CPF:
                   <input name="cgc" value="<?=@$var_cnpj?>" type="text" 
@@ -258,7 +258,7 @@ function js_vericampos(){
                 </tr>
                 <tr>
                   <td>
-                   Competência:
+                   CompetÃªncia:
 
 		   <select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
                     <?php 
@@ -272,7 +272,7 @@ function js_vericampos(){
                     ?> 
                     </select>
                     <select class="digitacgccpf" name="mes" id="mes" >
-                      <option value="mes">Mês</option>
+                      <option value="mes">MÃªs</option>
                     </select> 
                     <script>
                     js_criames(document.form1.ano, <?=$cgc_pref?>);
@@ -287,7 +287,7 @@ function js_vericampos(){
               <form name="form2" method="post" >
               <table width="100%" border="1" cellspacing="0" cellpadding="3" class="texto">
                <?php 
-               //é escritório?
+               //Ã© escritÃ³rio?
 			   $wherebx = " and q10_dtfim is null ";
 			   if (@$mostrainscricao == 1) {
 				 // todas
@@ -296,7 +296,7 @@ function js_vericampos(){
 			     // baixadas
 			     $wherebx = " and q10_dtfim is null and q02_dtbaix is not null ";
 			   } if (@$mostrainscricao == 3) {
-				 // não baixadas
+				 // nÃ£o baixadas
 				 $wherebx = " and q10_dtfim is null and q02_dtbaix is null ";
 			   }
                $result  = $clescrito->sql_record($clescrito->sql_query("","q02_inscr,cgm.z01_nome as z01_nome,cgm.z01_cgccpf as z01_cgccpf","","q10_numcgm = $id_usuario $wherebx"));
@@ -304,12 +304,12 @@ function js_vericampos(){
                $escrito = $clescrito->numrows;
                if($escrito!=0){
                 ?>
-				   <tr height="20" ><td colspan="3"><b>Mostrar inscriçoes</b> 
+				   <tr height="20" ><td colspan="3"><b>Mostrar inscriÃ§oes</b> 
 				   <select name="mostrainscricao" onchange = "document.form2.submit();">
 				   <?php  echo "
 				   <option value = '1'".($mostrainscricao == 1?"selected":"").">Todas</option>
 				   <option value = '2'".($mostrainscricao == 2?"selected":"").">Somente baixadas</option>
-				   <option value = '3'".($mostrainscricao == 3?"selected":"").">Somente não baixadas</option>
+				   <option value = '3'".($mostrainscricao == 3?"selected":"").">Somente nÃ£o baixadas</option>
 				   ";
 				   ?>
 				   </select>
@@ -317,10 +317,10 @@ function js_vericampos(){
                
                
                <?php 
-                //busca clientes do escritório
+                //busca clientes do escritÃ³rio
                 for ($x = 0; $x < $escrito; $x++) {
                  if($x == 0){
-                 ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Inscrições que tenho acesso</b></td></tr><?php 
+                 ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>InscriÃ§Ãµes que tenho acesso</b></td></tr><?php 
                  }
                  db_fieldsmemory($result,$x);
                  echo "<tr>
@@ -335,14 +335,14 @@ function js_vericampos(){
                  echo "<tr height=\"1\" bgcolor=\"#cccccc\"><td colspan=\"3\"></td></tr>";
                 }
                }
-               //é issbase
+               //Ã© issbase
                $result2 = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,z01_nome,z01_cgccpf","","q02_numcgm = $id_usuario"));
                $issbase = $clissbase->numrows;
                //busca dados do issbase
                @$x = $x==""?0:$x;
                for($y=$x;$y<$issbase+$x;$y++){
                 if($y==$x){
-                ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Minhas Inscrições</b></td></tr><?php 
+                ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Minhas InscriÃ§Ãµes</b></td></tr><?php 
                 }
                 db_fieldsmemory($result2,$y-$x);
                 echo "<tr>
@@ -376,7 +376,7 @@ function js_vericampos(){
                 </tr>
                 <tr>
                  <td colspan="2" align="center">
-                  <a href="digitaissqn.php?outro">:: Pesquisar Outra Inscrição ::</a>
+                  <a href="digitaissqn.php?outro">:: Pesquisar Outra InscriÃ§Ã£o ::</a>
                  </td>
                 </tr>
                 <tr>
@@ -398,23 +398,23 @@ function js_vericampos(){
                           size="18" maxlength="18" 
                           onKeyPress="FormataCPFeCNPJ(this,event); return js_teclas(event);" >
                   
-                   Inscrição Alvará:
+                   InscriÃ§Ã£o AlvarÃ¡:
                    <!--
                     10/05/2006
-                    Se não digitar inscrição e o cont. possuir inscr, ele encontrará na próxima vez que clicar em iss ret.
-                    e não encontrará na busca dos valores.
+                    Se nÃ£o digitar inscriÃ§Ã£o e o cont. possuir inscr, ele encontrarÃ¡ na prÃ³xima vez que clicar em iss ret.
+                    e nÃ£o encontrarÃ¡ na busca dos valores.
                     <input name="inscricaow" type="text" class="digitacgccpf" value="<?=@$q02_inscr?>" size="8" maxlength="6">
                    -->
                    <input name="inscricaow" type="text" class="digitacgccpf" value="<?=@$q02_inscr?>" size="8" maxlength="6">
                    <br>
-                   <b>Atenção:</b> Campo inscrição só deve ser preenchido
-                   para empresas do Município.<br>Empresas de fora do
-                   Município devem preencher somente o CNPJ.
+                   <b>AtenÃ§Ã£o:</b> Campo inscriÃ§Ã£o sÃ³ deve ser preenchido
+                   para empresas do MunicÃ­pio.<br>Empresas de fora do
+                   MunicÃ­pio devem preencher somente o CNPJ.
                   </td>
                 </tr>
                 <tr>
                   <td align="center">
-                   Competência:
+                   CompetÃªncia:
                     <select name="ano" onchange="js_criames(this,<?=$cgc_pref?>)">
 		      <?php 
 		      if ( $cgc_pref == "87366159000102" ) {
@@ -431,7 +431,7 @@ function js_vericampos(){
                     ?>
                     </select>
                     <select class="digitacgccpf" name="mes" id="mes" >
-                      <option value="mes">Mês</option>
+                      <option value="mes">MÃªs</option>
                     </select>
                     <script>
                     js_criames(document.form1.ano,<?=$cgc_pref?>);

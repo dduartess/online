@@ -3,8 +3,8 @@ include("assinatura.php");
 
 class cl_cabec_rodape extends cl_assinatura {
 //|00|//assinatura
-//|10|//Esta é o construtor da classe. Ele permite que seja impresso a assinatura do usuario corrente ou  
-//|10|//de um tipo de assinatura específica a qual será definida nas tabelas db_paragrafos e db_documentos
+//|10|//Esta Ã© o construtor da classe. Ele permite que seja impresso a assinatura do usuario corrente ou  
+//|10|//de um tipo de assinatura especÃ­fica a qual serÃ¡ definida nas tabelas db_paragrafos e db_documentos
 //|10|//escolhendo o tipo de assinatura de acordo com a tabela db_tipodoc.
 //|15|//$classinatura = new cl_assinatura;
   var $modelo = null;
@@ -16,7 +16,7 @@ class cl_cabec_rodape extends cl_assinatura {
 
   function rodape($mod){
 //#00#//assinatura_usuario
-//#10#//Este método é usado gerar a assinatura do usuario que gerou o relatório
+//#10#//Este mÃ©todo Ã© usado gerar a assinatura do usuario que gerou o relatÃ³rio
 //#15#//assinatura_usuario()
 /*  if($mod == 1){
       $this->objpdf->rect($xcol,$xlin+197,60,47,2,'DF','34');
@@ -65,7 +65,7 @@ class cl_cabec_rodape extends cl_assinatura {
       
       $this->objpdf->SetFont('Arial','',7);
       $this->objpdf->text($xcol+90,$xlin+249,'R E C I B O');
-      $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+      $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
       $this->objpdf->text($xcol+2,$xlin+257,'(     ) PARTE DO VALOR EMPENHADO');
       $this->objpdf->text($xcol+102,$xlin+257,'(     ) SALDO/TOTAL EMPENHADO');
       $this->objpdf->text($xcol+2,$xlin+261,'R$');

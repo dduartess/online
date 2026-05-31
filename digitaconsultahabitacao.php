@@ -68,7 +68,7 @@ if ($db_verificaip == "0") {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_num_processo() {
@@ -79,15 +79,15 @@ function js_num_processo() {
 
   if (codproc == "" && isNaN(codproc)) {
     
-    var sMsgErro  = "Informe o número de controle do processo \n";
-        sMsgErro += " ou um número do processo válido!";
+    var sMsgErro  = "Informe o nÃºmero de controle do processo \n";
+        sMsgErro += " ou um nÃºmero do processo vÃ¡lido!";
     alert(sMsgErro);
     return false;
   }
 
   if (cgc == "" && cpf == "" ) {
   
-    alert("Codigo de CNPJ ou CPF Inválido.");
+    alert("Codigo de CNPJ ou CPF InvÃ¡lido.");
     return false;
   } else {  
   
@@ -95,12 +95,12 @@ function js_num_processo() {
     var icpf  = js_CPF(cpf);   
     if (cgc != "" && icnpj != 14) {
     
-      alert("Codigo de CNPJ Inválido.");
+      alert("Codigo de CNPJ InvÃ¡lido.");
       document.form1.cgc.value = '';
       return false;    
     } else if (cpf != "" && icpf != 11) {
     
-      alert("Codigo de CPF Inválido.");
+      alert("Codigo de CPF InvÃ¡lido.");
       document.form1.cpf.value = '';
       return false;       
     } else {
@@ -152,7 +152,7 @@ function js_CPF(campo) {
 <br>
 <center>
 <?php 
-//verifica se está logado
+//verifica se estÃ¡ logado
 if (isset($id_usuario) && !empty($id_usuario)) {
  
 	$sCampos  = "distinct cgm.z01_numcgm, cgm.z01_cgccpf, cgm.z01_nome, protprocesso.p58_codproc, ";
@@ -177,7 +177,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
    <b><?=$z01_numcgm." - ".$z01_nome?></b>
    <table width="90%"  class="tab">
    <?php 
-   //busca clientes do escritório
+   //busca clientes do escritÃ³rio
    for ($x =0; $x < $linhas; $x++) {
    	
     if ($x == 0) {
@@ -197,7 +197,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
   ?></table><?php 
 	
  } else {
-  //não tem processo
+  //nÃ£o tem processo
   ?>
   <br><br>
   <table width="350"  class="tab">
@@ -234,7 +234,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
     <tr>
       <td width="50%" height="30" align="right">
-       Número de Controle do Processo:&nbsp;
+       NÃºmero de Controle do Processo:&nbsp;
       </td>
       <td width="50%" height="30">
         <input type="text" id="cod_processo" name="codproc" class="digitacgccpf" size="10" maxlength="10">
@@ -283,7 +283,7 @@ if (isset($id_usuario) && !empty($id_usuario)) {
 </body>
 </html>
 <?php 
-db_logs("","",0,"Digita Consulta da Habitação.");
+db_logs("","",0,"Digita Consulta da HabitaÃ§Ã£o.");
 if (isset($erroscripts)) {
 	
   echo "<script> \n";

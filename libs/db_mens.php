@@ -25,10 +25,10 @@
  *                                licenca/licenca_pt.txt 
  */
 
-$MensCgcCpf = "O seu CNPJ ou CPF est· inv·lido, entre em contato com a Prefeitura e atualize seu cadastro o mais breve possÌvel ou acesse o link CONTRIBUINTE.";
+$MensCgcCpf = "O seu CNPJ ou CPF est√° inv√°lido, entre em contato com a Prefeitura e atualize seu cadastro o mais breve poss√≠vel ou acesse o link CONTRIBUINTE.";
 
 //$MensCgcCpf = $MensCgcCpf . "<a href=\"prefeitura/digitacontribuinte.php\">Atualize seu cadastro Clicando Aqui!</a>";
 
-$MensCgcCpfInvalido = "<p>Os seus dados de identificaÁ„o n„o est„o corretos, entre em contato com a <br>
-          Prefeitura e atualize seu cadastro o mais breve possÌvel.</p>";
+$MensCgcCpfInvalido = "<p>Os seus dados de identifica√ß√£o n√£o est√£o corretos, entre em contato com a <br>
+          Prefeitura e atualize seu cadastro o mais breve poss√≠vel.</p>";
 ?>

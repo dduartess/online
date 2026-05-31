@@ -50,7 +50,7 @@ if (isset($pesquisa)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 </script>
@@ -65,7 +65,7 @@ if (isset($pesquisa)){
 	            <td align="center" colspan="2">&nbsp;</td>
 	        </tr>
 	    	<tr>
-	            <td align="center" colspan="2" class="titulo">Solicitação de ITBI Urbana</td>
+	            <td align="center" colspan="2" class="titulo">SolicitaÃ§Ã£o de ITBI Urbana</td>
 	        </tr>
 	    	<tr>
 	            <td align="center" colspan="2">&nbsp;</td>

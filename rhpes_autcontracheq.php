@@ -52,7 +52,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
       $iRhEmiteContraCheque   = pg_num_rows($rsRhEmiteContraCheque);
 
     if($iRhEmiteContraCheque == 0){
-       db_logs("","",0,"Solicitação de senha para fornecedor: cgc ou cpf não encontrado. {$numMatricula}");
+       db_logs("","",0,"SolicitaÃ§Ã£o de senha para fornecedor: cgc ou cpf nÃ£o encontrado. {$numMatricula}");
        $erro = true;
     }
    
@@ -77,7 +77,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
 <html>
   <head>
     <title><?=$w01_titulo?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="estilos.css" rel="stylesheet" type="text/css">
     <link href="config/estilos.css" rel="stylesheet" type="text/css">
     <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -111,7 +111,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
          <td class="" width="10%" align="left" colspan="0">
          <td class="" width="2%"  align="left" colspan="0">
          <td align="left" colspan="2">
-            <span><font color='#E9000'> PREENCHIMENTO OBRIGATÓRIO(*) </font></span>
+            <span><font color='#E9000'> PREENCHIMENTO OBRIGATÃ“RIO(*) </font></span>
          </td>         
         </tr>        
         <tr class="">
@@ -130,7 +130,7 @@ if (isset($oPost->autent)    && $oPost->autent    != '' &&
   <tr height="220">
    <td align="center">
     <img src="imagens/atencao.gif"><br>
-    Os Dados Digitados são Inconsistentes!
+    Os Dados Digitados sÃ£o Inconsistentes!
    </td>
   </tr>
  </table>

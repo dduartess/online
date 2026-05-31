@@ -35,7 +35,7 @@ parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -71,10 +71,10 @@ function js_vericampos(){
     alerta +="RG\n";
   }
   if(ender==""){
-    alerta +="Endereço\n";
+    alerta +="EndereÃ§o\n";
   }
   if(numero=="" || isNaN(numero)){
-    alerta +="Número\n";
+    alerta +="NÃºmero\n";
   }
   if(bairro==""){
     alerta +="Bairro\n";
@@ -123,7 +123,7 @@ mens_div();
                 <table cellpadding="3" cellspacing="0" class="texto">
                   <tr class="titulo2">
                      <td colspan="4" >
-                      <br>* digite o CPF ou CNPJ do SÓCIO da empresa
+                      <br>* digite o CPF ou CNPJ do SÃ“CIO da empresa
                     </td>
                   </tr>
                      <tr class="titulo2" > 
@@ -143,9 +143,9 @@ mens_div();
               <td>
                 <table cellpadding="3" cellspacing="0" class="texto">
                      <tr class="titulo2"> 
-                    <td align="left">Endereço:&nbsp;<br>
+                    <td align="left">EndereÃ§o:&nbsp;<br>
                     <input name="ender" type="text" size="40" maxlength="40" onKeyUp="js_maiusculo(this)"></td>
-                    <td align="left">Número:&nbsp;<br>
+                    <td align="left">NÃºmero:&nbsp;<br>
                     <input name="numero" type="text" size="6" maxlength="6"></td>
                     <td align="left">Compl.:&nbsp;<br>
                     <input name="compl" type="text" size="10" maxlength="10" onKeyUp="js_maiusculo(this)"></td>

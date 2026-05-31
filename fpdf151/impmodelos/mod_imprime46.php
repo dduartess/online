@@ -28,13 +28,13 @@ $this->objpdf->Setfont('Arial', 'B', 10);
 
 //$this->objpdf->Image('imagens/brasao_armas1.png', 15, $xlin -17, 15); //.$this->logo
 $this->objpdf->Setfont('Arial', 'B', 8);
-$this->objpdf->text(40, $xlin -11, 'MINISTÉRIO DA FAZENDA');
+$this->objpdf->text(40, $xlin -11, 'MINISTÃ‰RIO DA FAZENDA');
 $this->objpdf->Setfont('Arial', '', 8);
 $this->objpdf->text(40, $xlin -8, 'SECRETARIA DA RECEITA FEDERAL');
-$this->objpdf->text(130, $xlin -11, 'Comprovante de rendimentos pagos e de retenção');
+$this->objpdf->text(130, $xlin -11, 'Comprovante de rendimentos pagos e de retenÃ§Ã£o');
 $this->objpdf->text(144, $xlin -8, 'de imposto de renda na fonte.');
 $this->objpdf->Setfont('Arial', 'B', 8);
-$this->objpdf->text(147, $xlin -3, 'ANO CALENDÁRIO '.$this->ano);
+$this->objpdf->text(147, $xlin -3, 'ANO CALENDÃRIO '.$this->ano);
 $this->objpdf->Setfont('Arial', '', 6);
 
 $xlin = $xlin + 10;
@@ -42,9 +42,9 @@ $xlin = $xlin + 10;
 $this->objpdf->sety($xlin);
 //$this->objpdf->rect($xcol+1, $xlin , $xcol +196, 23);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt, '1 - FONTE PAGADORA PESSOA JURÍDICA OU PESSOA FÍSICA',1,1,'L',1);
+$this->objpdf->cell(200,$alt, '1 - FONTE PAGADORA PESSOA JURÃDICA OU PESSOA FÃSICA',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 5);
-$this->objpdf->cell(100,$alt,'RAZÃO SOCIAL','LRT',0,'L',0);
+$this->objpdf->cell(100,$alt,'RAZÃƒO SOCIAL','LRT',0,'L',0);
 $this->objpdf->cell(100,$alt,'CNPJ/CPF','LRT',1,'L',0);
 $this->objpdf->Setfont('Arial', '', 7);
 $this->objpdf->cell(100,$alt,$this->prefeitura,'LBR',0,'L',0);
@@ -58,7 +58,7 @@ $this->objpdf->cell(200,$alt, 'RENDIMENTOS DE TRABALHO ASSALARIADO','LRB',1,'L',
 $this->objpdf->ln(5);
 //$this->objpdf->rect($xcol+1, $xlin+30 , $xcol +196, 18,1);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt, '2 - PESSOA FÍSICA BENEFICIÁRIA DOS RENDIMENTOS',1,1,'L',1);
+$this->objpdf->cell(200,$alt, '2 - PESSOA FÃSICA BENEFICIÃRIA DOS RENDIMENTOS',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 5);
 $this->objpdf->cell(100,$alt,'CPF','LRT',0,'L',0);
 $this->objpdf->cell(100,$alt,'NOME COMPLETO','LRT',1,'L',0);
@@ -73,34 +73,34 @@ $this->objpdf->cell(100,$alt,$this->nome,'BLR',1,'L',0);
 $this->objpdf->ln(5);
 $this->objpdf->Setfont('Arial', 'B', 7);
 //$this->objpdf->text($xcol +2, $xlin +60, '3 - RENDIMENTOS TRIBUTAVEIS, DEDUCOES E IMPOSTO RETIDO NA FONTE ');
-$this->objpdf->cell(200,5, '3 - RENDIMENTOS TRIBUTÁVEIS, DEDUÇÕES E IMPOSTO RETIDO NA FONTE ',1,1,'L',1);
+$this->objpdf->cell(200,5, '3 - RENDIMENTOS TRIBUTÃVEIS, DEDUÃ‡Ã•ES E IMPOSTO RETIDO NA FONTE ',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 7);
-$this->objpdf->cell(160,$alt,'01 - TOTAL DOS RENDIMENTOS (INCLUSIVE FÉRIAS)',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'01 - TOTAL DOS RENDIMENTOS (INCLUSIVE FÃ‰RIAS)',1,0,'L',0);
 $this->objpdf->cell(40, $alt,db_formatar($this->w_salario,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'02 - CONTRIBUIÇÃO PREVIDÊNCIARIA OFICIAL',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'02 - CONTRIBUIÃ‡ÃƒO PREVIDÃŠNCIARIA OFICIAL',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_contr,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'03 - CONTRIBUIÇÃO A PREVIDÊNCIA PRIVADA',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'03 - CONTRIBUIÃ‡ÃƒO A PREVIDÃŠNCIA PRIVADA',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_privad,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'04 - PENSÃO JUDICIAL (INFORME O BENEFÍCIO NO CAMPO 06)',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'04 - PENSÃƒO JUDICIAL (INFORME O BENEFÃCIO NO CAMPO 06)',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_pensao,'f'),1,1,'R',0);
 $this->objpdf->cell(160,$alt,'05 - IMPOSTO RETIDO NA FONTE',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_irfonte,'f'),1,1,'R',0);
 
 $this->objpdf->ln(5);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt,'4 - RENDIMENTOS ISENTOS E NÃO TRIBUTÁVEIS',1,1,'L',1);
+$this->objpdf->cell(200,$alt,'4 - RENDIMENTOS ISENTOS E NÃƒO TRIBUTÃVEIS',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 7);
 $this->objpdf->cell(160,$alt,'01 - PARTE DOS PROVENTOS DE APOSENTADOS (65 ANOS OU MAIS)',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_parte,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'02 - DIÁRIAS E AJUDA DE CUSTO',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'02 - DIÃRIAS E AJUDA DE CUSTO',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_diaria,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'03 - PENSÃO, APOSENT OU REF P/MOLEST GRAVE OU INV PERMANENTE',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'03 - PENSÃƒO, APOSENT OU REF P/MOLEST GRAVE OU INV PERMANENTE',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_aviso,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'04 - RENDIMENTO/LUCRO DISTRIBUÍDO',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'04 - RENDIMENTO/LUCRO DISTRIBUÃDO',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_aviso,'f'),1,1,'R',0);
 $this->objpdf->cell(160,$alt,'05 - VALORES PAGOS AO TITULAR/SOCIO DE MICRO/PEQUENA EMPRESA',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar(0,'f'),1,1,'R',0);
-$this->objpdf->cell(160,$alt,'06 - INDENIZAÇÕES RESCISÃO CONTRATO, PDV E ACIDENTE TRABALHO',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'06 - INDENIZAÃ‡Ã•ES RESCISÃƒO CONTRATO, PDV E ACIDENTE TRABALHO',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_vlresc_ntrib,'f'),1,1,'R',0);
 
 if($this->w_outros5 > 0 ) {
@@ -114,9 +114,9 @@ $this->objpdf->cell(40 ,$alt,db_formatar($this->w_outros5,'f'),1,1,'R',0);
 
 $this->objpdf->ln(5);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt, '5 - RENDIMENTOS SUJEITOS A TRIBUTAÇÃO EXCLUSIVA (RENDIMENTO LÍQUIDO)',1,1,'L',1);
+$this->objpdf->cell(200,$alt, '5 - RENDIMENTOS SUJEITOS A TRIBUTAÃ‡ÃƒO EXCLUSIVA (RENDIMENTO LÃQUIDO)',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 7);
-$this->objpdf->cell(160,$alt,'01 - DÉCIMO TERCEIRO SALÁRIO',1,0,'L',0);
+$this->objpdf->cell(160,$alt,'01 - DÃ‰CIMO TERCEIRO SALÃRIO',1,0,'L',0);
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_sal13,'f'),1,1,'R',0);
 $this->objpdf->cell(160,$alt,'02 - OUTROS (ESPECIFICAR)',1,0,'L',0);                                                      
 $this->objpdf->cell(40 ,$alt,db_formatar($this->w_outros6,'f'),1,1,'R',0);
@@ -124,7 +124,7 @@ $this->objpdf->cell(40 ,$alt,db_formatar($this->w_outros6,'f'),1,1,'R',0);
 
 $this->objpdf->ln(5);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt,'6 - RENDIMENTOS RECEBIDOS ACUMULADAMENTO - Art. 12-A da Lei no.7.713, de 1988 (sujeito a tributaÃao exclusiva)',1,1,'L',1);
+$this->objpdf->cell(200,$alt,'6 - RENDIMENTOS RECEBIDOS ACUMULADAMENTO - Art. 12-A da Lei no.7.713, de 1988 (sujeito a tributaÃƒao exclusiva)',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 7);
 $this->objpdf->cell(110,$alt,'6.1 - NUMERO DO PROCESSO:',1,0,'L',0);
 $this->objpdf->cell(30 ,$alt,'QUANT. DE MESES ',1,0,'R',0);
@@ -149,12 +149,12 @@ $this->objpdf->cell(40 ,$alt,db_formatar(0,'f'),'LRB',1,'R',0);
 
 $this->objpdf->ln(5);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt, '7 - INFORMAÇÕES COMPLEMENTARES)',1,1,'L',1);
+$this->objpdf->cell(200,$alt, '7 - INFORMAÃ‡Ã•ES COMPLEMENTARES)',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 7);
 $soma_des_med = 0;
 if($this->w_dmedic > 0){
   $soma_des_med += 4;
-  $this->objpdf->cell(160,$alt,'DESP MÉDICAS, PLANOS DE SAÚDE E REEMBOLSO P/ EMPREGADOR','LTB',0,'L',0);
+  $this->objpdf->cell(160,$alt,'DESP MÃ‰DICAS, PLANOS DE SAÃšDE E REEMBOLSO P/ EMPREGADOR','LTB',0,'L',0);
   $this->objpdf->cell(40 ,$alt,db_formatar($this->w_dmedic,'f'),'RTB',1,'R',0);
 }
 
@@ -165,10 +165,10 @@ $this->objpdf->multicell(200,$alt,'',1,'L',0);
 
 $this->objpdf->ln(5);
 $this->objpdf->cell(30,$alt,'Matricula  : '.$this->matricula,0,0,'L',0);                                                      
-$this->objpdf->cell(30,$alt,'     Lotação : '.$this->lotacao,0,1,'L',0);                                                      
+$this->objpdf->cell(30,$alt,'     LotaÃ§Ã£o : '.$this->lotacao,0,1,'L',0);                                                      
 $this->objpdf->ln(5);
 $this->objpdf->Setfont('Arial', 'B', 7);
-$this->objpdf->cell(200,$alt, '7 - RESPONSÁVEL PELAS INFORMAÇÕES',1,1,'L',1);
+$this->objpdf->cell(200,$alt, '7 - RESPONSÃVEL PELAS INFORMAÃ‡Ã•ES',1,1,'L',1);
 $this->objpdf->Setfont('Arial', '', 5);
 $this->objpdf->cell(100,$alt,'Nome','LTR',0,'L',0);                                                      
 $this->objpdf->cell(30 ,$alt,'Data','LTR',0,'L',0);                                                      

@@ -76,7 +76,7 @@ for ($iInd = 0;$iInd < $iLinhasConsulta;$iInd++){
 
      $pdf->setX(5);
      $pdf->SetFont('Arial','B',$titulo);
-     $pdf->Cell(200,4,"Dados Cadastrais da Simulação de Alvará","LRBT",1,"C",0);
+     $pdf->Cell(200,4,"Dados Cadastrais da SimulaÃ§Ã£o de AlvarÃ¡","LRBT",1,"C",0);
      $pdf->setX(5);
      $pdf->Cell(200,4,"","",1,"C",0);
      
@@ -100,9 +100,9 @@ for ($iInd = 0;$iInd < $iLinhasConsulta;$iInd++){
      //lado esquerdo da tela
      $pdf->setX(10);
      $pdf->SetFont('Arial','',$titulo);
-     $pdf->Cell(30,4,"Endereço:","",0,"L",1);
+     $pdf->Cell(30,4,"EndereÃ§o:","",0,"L",1);
      $pdf->SetFont('Arial','',$texto);
-     $pdf->Cell(60,4,"$oDados->j14_nome, N° $oDados->q130_numero","",0,"L",0);
+     $pdf->Cell(60,4,"$oDados->j14_nome, NÂ° $oDados->q130_numero","",0,"L",0);
      $pdf->Cell(30,1,"","",0,"R",0);
      $pdf->Cell(60,1,"","",0,"L",0);
 
@@ -185,13 +185,13 @@ for ($iInd = 0;$iInd < $iLinhasConsulta;$iInd++){
      //lado esquerdo da tela
      $pdf->setX(5);
      $pdf->SetFont('Arial','B',$titulo);
-     $pdf->Cell(200,4,"Dados da Simulação de Alvará","LRBT",1,"C",0);
+     $pdf->Cell(200,4,"Dados da SimulaÃ§Ã£o de AlvarÃ¡","LRBT",1,"C",0);
      $pdf->setX(5);
      $pdf->Cell(200,4,"","",1,"C",0);
      
      $pdf->setX(10);
      $pdf->SetFont('Arial','',$titulo);
-     $pdf->Cell(30,4,"Simulação:","",0,"L",1);
+     $pdf->Cell(30,4,"SimulaÃ§Ã£o:","",0,"L",1);
      $pdf->SetFont('Arial','',$texto);
      $pdf->Cell(60,4,"$oDados->q130_sequencial","",0,"L",0);
      $pdf->Cell(30,1,"","",0,"R",0);
@@ -236,7 +236,7 @@ for ($iInd = 0;$iInd < $iLinhasConsulta;$iInd++){
      //lado direito da tela
      $pdf->setX(105);
      $pdf->SetFont('Arial','',$titulo);
-     $pdf->Cell(30,4,"Escritório:","",0,"L",1);
+     $pdf->Cell(30,4,"EscritÃ³rio:","",0,"L",1);
      $pdf->SetFont('Arial','',$texto);
      $pdf->Cell(60,4,$oDados->q86_numcgm." - ".$oDados->z01_nome,"",1,"L",0);
      $pdf->Cell(30,1,"","",0,"R",0);
@@ -280,7 +280,7 @@ if($iLinhasConsultaAtividade > 0) {
       
 } else {
   
-  $pdf->cell(190,4,"NÃO POSSUI ATIVIDADE",0,1,"C",0);
+  $pdf->cell(190,4,"NÃƒO POSSUI ATIVIDADE",0,1,"C",0);
   
 }
 
@@ -288,7 +288,7 @@ $pdf->Cell(180,3,"","",1,"L",0);
 $pdf->Cell(200,4,"","",1,"C",0);
 $pdf->setX(5);
 $pdf->SetFont('Arial','B',9);
-$pdf->Cell(200,4,"Dados da Simulação do Calculo","LRBT",1,"C",0);
+$pdf->Cell(200,4,"Dados da SimulaÃ§Ã£o do Calculo","LRBT",1,"C",0);
 $pdf->setX(5);
 $pdf->Cell(200,4,"","",1,"C",0);
 

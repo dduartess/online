@@ -145,13 +145,13 @@ function js_verifica(){
 
 	
 	if(isNaN(area)){
-	    alert("verifique o valor informado para o campo ¡rea.");
+	    alert("verifique o valor informado para o campo √Årea.");
 	    document.form1.it08_area.value="";
 	    document.form1.it08_area.focus();
 	    return false;
 	}
 	if(isNaN(areatran)){
-	    alert("verifique o valor informado para o campo ¡rea transferida.");
+	    alert("verifique o valor informado para o campo √Årea transferida.");
 	    document.form1.it08_areatrans.value="";
 	    document.form1.it08_areatrans.focus();
 	    return false;
@@ -164,8 +164,8 @@ function js_verifica(){
 	}
 	
 	var erro = "";
-	if (area=='') erro = erro+' ¡rea\n';
-	if (areatran=='') erro = erro+' ¡rea tranferida\n';
+	if (area=='') erro = erro+' √Årea\n';
+	if (areatran=='') erro = erro+' √Årea tranferida\n';
 	if (ano=='') erro = erro+' Ano\n';
 	
 		
@@ -184,34 +184,34 @@ function js_verifica(){
 <table width="770px" border="0" cellspacing="2" cellpadding="2" align="center">
 	<tr class="titulo">
     	<td colspan="2" align="center" >
-    	Dados da ConstruÁ„o
+    	Dados da Constru√ß√£o
       	</td>
   	</tr>
  	
 
   	<tr class="texto">
-    	<td align="left" width="20%">N˙mero da guia de ITBI:
+    	<td align="left" width="20%">N√∫mero da guia de ITBI:
     	</td>
     	<td align="left" > <?=@$cod?>
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >¡rea:
+    	<td align="left" >√Årea:
     	</td>
     	<td align="left" ><input name="it08_area" type="text" size="20">
     	&nbsp;&nbsp;&nbsp;
-    	¡rea Transferida:
+    	√Årea Transferida:
     	<input name="it08_areatrans" type="text" size="20">
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Ano da construÁ„o:
+    	<td align="left" >Ano da constru√ß√£o:
     	</td>
     	<td align="left" ><input name="it08_ano" type="text" size="20">
        	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >ObservaÁ„o:
+    	<td align="left" >Observa√ß√£o:
     	</td>
     	<td align="left" ><textarea name="it08_obs" cols="60" rows="3" id="obs"></textarea>
     	</td>
@@ -277,25 +277,25 @@ function js_verifica(){
 			<tr class="titulo">
 			
     			<th align="center" >
-    			CÛdigo
+    			C√≥digo
       			</th>
       			<th align="center" >
-    			¡rea 
+    			√Årea 
       			</th>
       			<th align="center" >
-    			¡rea transferida
+    			√Årea transferida
       			</th>
       			<th align="center" >
     			Ano
       			</th>
       			<th align="center" >
-    			EspÈcie
+    			Esp√©cie
       			</th>
       			<th align="center" >
     			Tipo
       			</th>
       			<th align="center" >
-    			OpÁıes
+    			Op√ß√µes
       			</th>
   			</tr>
   			<?php 

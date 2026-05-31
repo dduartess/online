@@ -27,8 +27,8 @@
 ?>
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>

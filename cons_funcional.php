@@ -46,7 +46,7 @@ db_logs("","",0,"Consulta Funcional.");
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
@@ -72,7 +72,7 @@ if ($id_usuario != "") {
   <tr height="220">
    <td align="center">
     <img src="imagens/atencao.gif"><br>
-    Para acessar suas informações, efetue login.
+    Para acessar suas informaÃ§Ãµes, efetue login.
    </td>
   </tr>
  </table>

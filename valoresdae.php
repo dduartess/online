@@ -50,7 +50,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -127,7 +127,7 @@ function js_verificacomp(){
 	
 	//str_pad(datadae,2," ",0);
 	if (dataval < datadae){
-		alert ('Data informada inferior a competência :'+ mesdai+'/'+anodae);
+		alert ('Data informada inferior a competÃªncia :'+ mesdai+'/'+anodae);
 		obj3.dia.value="";
 		obj3.mes.value="";
 		obj3.ano.value="";
@@ -149,7 +149,7 @@ function js_data(){
   
  if (sal!='Alterar'){
 	 if (document.getElementById('mes_'+mesdai)){
-	 		var confirma = confirm('Ja existe lançamento para este mês. Confirma novo lançamento?');
+	 		var confirma = confirm('Ja existe lanÃ§amento para este mÃªs. Confirma novo lanÃ§amento?');
 	            if(confirma != true){
 	            	return false;	
 	            				
@@ -161,26 +161,26 @@ function js_data(){
   if ((diaval!='')&& (mesval!='')&&(anoval!='')){
   
 	  if(isNaN(diaval)){
-	    alert('dia Inválido');
+	    alert('dia InvÃ¡lido');
 	    obj3.incluir.value="nao";
 	    return false;
 	    
 	  }    
 	  if(isNaN(mesval)){
-	    alert('Data Inválida ');
+	    alert('Data InvÃ¡lida ');
 	    obj3.incluir.value="nao";
 	    return false;
 	   
 	  }  
 	  if(isNaN(anoval)){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	    obj3.incluir.value="nao";
 	    return false;
 	   
 	  }  
 	  data = new Date(anoval,(mesval-1),diaval);
 	  if((data.getMonth() + 1) != mesval || data.getFullYear() != anoval){
-	    alert('Data Inválida ');
+	    alert('Data InvÃ¡lida ');
 	    obj3.incluir.value="nao";
 	    return false;
 	    
@@ -310,12 +310,12 @@ if (isset($salvar)){
 
 <tr>
 	<td colspan="5" align="center" class="titulo2"> 
-		No valor do imposto não devem ser considerados juros e multa
+		No valor do imposto nÃ£o devem ser considerados juros e multa
 	</td>
 </tr>
 <tr class= "titulo2">
 	<td >
-		Mês
+		MÃªs
 	</td>
 	<td  >
 		Valor da receita
@@ -341,7 +341,7 @@ if (isset($salvar)){
 		
 		$messs = array(1=>"janeiro",
 					   2=>"fevereiro",
-					   3=>"março",
+					   3=>"marÃ§o",
 					   4=>"abril",
 					   5=>"maio",
 					   6=>"junho",
@@ -398,7 +398,7 @@ if (isset($salvar)){
 		<table width="100%" class="tab">
 			<tr >
 				<th>
-					Mês
+					MÃªs
 				</th>
 				<th>
 					Valor da receita
@@ -445,7 +445,7 @@ $linhas= $cldb_daevalores->numrows;
 					".db_formatar($w07_imposto,'f')."
 				</td>
 				<td>
-					".($w07_dtpaga != ""?db_formatar($w07_dtpaga,'d'):'não efetuado')."
+					".($w07_dtpaga != ""?db_formatar($w07_dtpaga,'d'):'nÃ£o efetuado')."
 ";					
 					
 					if($w07_dtpaga!= ""){

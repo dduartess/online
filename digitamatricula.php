@@ -68,7 +68,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 	<?php  db_estilosite(); ?>
@@ -88,12 +88,12 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>" onLoad="" <?php mens_OnHelp()?>>
 <br /> <br /> <br /> <center>
 <?php 
-  //verifica se está logado
+  //verifica se estÃ¡ logado
 	if ((isset($id_usuario) && trim($id_usuario) != "") ) {
 
 	  $usuario = $id_usuario;
 
-  //é imobilária
+  //Ã© imobilÃ¡ria
 
   if(is_numeric($usuario)){
 
@@ -106,7 +106,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
 		db_fieldsmemory($resconf, 0);
 		
 		
-		// exibe os imovéis do usuário
+		// exibe os imovÃ©is do usuÃ¡rio
 		$cliptubase    = new cl_iptubase;
 		$sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracgmiptu);
     
@@ -145,8 +145,8 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
     
 <?php 
  /*
- *  Se o parametro de configuração do prefeitura on-line no dbportal, na tabela configdbpref, campo chamado w13_exigecpfcnpj
- *  estiver como true é para exibir os campos cnpj e cpf para o usuário do dbpref  
+ *  Se o parametro de configuraÃ§Ã£o do prefeitura on-line no dbportal, na tabela configdbpref, campo chamado w13_exigecpfcnpj
+ *  estiver como true Ã© para exibir os campos cnpj e cpf para o usuÃ¡rio do dbpref  
  */
   $rsParametro = $clconfigdbpref->sql_record($clconfigdbpref->sql_query_file(db_getsession("DB_instit"),"w13_exigecpfcnpj"));
   $oRetorno    = db_utils::fieldsMemory($rsParametro,0);
@@ -192,12 +192,12 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
  ?>
  
  
-   <a href="digitamatricula.php?outro">:: Pesquisar Outro Imóvel ::</a><br><br>
+   <a href="digitamatricula.php?outro">:: Pesquisar Outro ImÃ³vel ::</a><br><br>
    <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
  
  <?php 
   
-   //busca clientes do escritório
+   //busca clientes do escritÃ³rio
    
   for ( $x=0; $x<$imobil; $x++ ) {
     if ( $x==0 ) {
@@ -205,7 +205,7 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
      <tr height="20" bgcolor="#eaeaea">
 	   <td colspan="3">
 		 <b>
-		  Matrículas que tenho acesso
+		  MatrÃ­culas que tenho acesso
 	    </b>
 	  </td>
 	</tr>
@@ -222,12 +222,12 @@ $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc
     echo "<tr height=\"1\" bgcolor=\"#cccccc\"><td colspan=\"3\"></td></tr>";
    }
 
-// verifica se o usuário não está logado
+// verifica se o usuÃ¡rio nÃ£o estÃ¡ logado
 $iLogin = db_getsession ( 'DB_login' );
 
 if( !isset($iLogin) ) {
 
- // condição faz com que entre novamente na tela para o usuário informar o número da matrícula
+ // condiÃ§Ã£o faz com que entre novamente na tela para o usuÃ¡rio informar o nÃºmero da matrÃ­cula
  ?>	
    <script>
      document.cookie = 'cookie_codigo_cgm=;';
@@ -242,7 +242,7 @@ if( !isset($iLogin) ) {
 	 if($x==0){
        ?>
 	     <tr height="20" bgcolor="<?=$w01_corfundomenu?>"> 
-	     <td colspan="3"> <b> Minhas Matrículas </b> </td> 
+	     <td colspan="3"> <b> Minhas MatrÃ­culas </b> </td> 
 	     </tr>
 	   <?php 
      }
@@ -299,7 +299,7 @@ if( !isset($iLogin) ) {
 <?php 
 
    }
-   db_logs("","",0,"Digita Codigo da Matrícula.");
+   db_logs("","",0,"Digita Codigo da MatrÃ­cula.");
   if(isset($erroscripts)){
     echo "<script>alert('".$erroscripts."');</script>";
   }
@@ -310,7 +310,7 @@ if( !isset($iLogin) ) {
 <script>
   function js_valida(){
     if(document.form1.matricula1.value == ""){
-	  alert('Preencha o campo Matrícula');
+	  alert('Preencha o campo MatrÃ­cula');
 	  return false;
 	} else {
 	  return true;

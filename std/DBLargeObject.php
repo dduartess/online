@@ -47,7 +47,7 @@ abstract class DBLargeObject {
 		global $conn;
 
 		if( !db_utils::inTransaction() ) {
-			throw new Exception("Sem transação Ativa.");
+			throw new Exception("Sem transaÃ§Ã£o Ativa.");
 		}
 		$lEscritaArquivo = pg_lo_export($iOid, $sCaminhoArquivo, $conn);
 
@@ -65,7 +65,7 @@ abstract class DBLargeObject {
 		global $conn;
 		
 		if( !db_utils::inTransaction() ) {
-			throw new Exception("Sem transação Ativa.");
+			throw new Exception("Sem transaÃ§Ã£o Ativa.");
 		}
 		$rsLargeObject    = pg_lo_open($conn, $iOid, "w");
 		
@@ -81,7 +81,7 @@ abstract class DBLargeObject {
 	 * @param integer $iOid
 	 *
 	 * Caso de Uso: Ao excluir um registro de uma tabela e eo campo for do tipo oid,
-	 * Deve-se excluir o objeto do banco utilizando este método
+	 * Deve-se excluir o objeto do banco utilizando este mÃ©todo
 	 */
 	public static function exclusao($iOid) {
 
@@ -90,7 +90,7 @@ abstract class DBLargeObject {
 		global $conn;
 
 			if( !db_utils::inTransaction() ) {
-			throw new Exception("Sem transação Ativa.");
+			throw new Exception("Sem transaÃ§Ã£o Ativa.");
 		}
 
 		return pg_lo_unlink ($conn, $iOid);

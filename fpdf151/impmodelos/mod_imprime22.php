@@ -17,13 +17,13 @@
 	$this->objpdf->setfillcolor(245);
 	$this->objpdf->Roundedrect(15,45,110,35,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','',6);
-	$this->objpdf->text(16,47,'Identificação:');
+	$this->objpdf->text(16,47,'IdentificaÃ§Ã£o:');
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text(16,51,'Nome :');
 	$this->objpdf->text(32,51,$this->nome);
-	$this->objpdf->text(16,56,'Endereço :');
+	$this->objpdf->text(16,56,'EndereÃ§o :');
 	$this->objpdf->text(32,56,$this->ender);
-	$this->objpdf->text(16,60,'Município :');
+	$this->objpdf->text(16,60,'MunicÃ­pio :');
 	$this->objpdf->text(32,60,$this->munic);
 	$this->objpdf->text(16,64,'CEP :');
 	$this->objpdf->text(32,64,$this->cep);
@@ -45,7 +45,7 @@
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text(132,58,$this->nomepri);
 	$this->objpdf->Setfont('Arial','',6);
-	$this->objpdf->text(132,63,'Número/Complemento :');
+	$this->objpdf->text(132,63,'NÃºmero/Complemento :');
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text(132,66,$this->nrpri."      ".$this->complpri);
 	$this->objpdf->Setfont('Arial','',6);
@@ -54,7 +54,7 @@
 	$this->objpdf->text(132,74,$this->bairropri);
 	
 	$this->objpdf->Setfont('Arial','B',11);
-	$this->objpdf->text(70,87,'RECIBO VÁLIDO ATÉ: '.$this->datacalc);
+	$this->objpdf->text(70,87,'RECIBO VÃLIDO ATÃ‰: '.$this->datacalc);
 	
 	$this->objpdf->setfillcolor(245);
 	$this->objpdf->Roundedrect(15,90,180,65,2,'DF','1234');
@@ -62,7 +62,7 @@
 	
 	$this->objpdf->SetXY(17,96);
 	if($this->taxabanc!=0){
-	  $this->objpdf->Cell(20,4,'Taxa Bancária',0,0,"L",0);
+	  $this->objpdf->Cell(20,4,'Taxa BancÃ¡ria',0,0,"L",0);
 	  $this->objpdf->Cell(20,4,db_formatar($this->taxabanc,'f'),0,1,"R",0);
 	}
 	
@@ -77,7 +77,7 @@
 	   $this->objpdf->cell(15,4,db_formatar(pg_result($this->recorddadospagto,$i,$this->valor),'f'),0,1,"R",0);
 	}
 	$this->objpdf->SetXY(15,158);
-	$this->objpdf->multicell(0,4,'HISTÓRICO :   '.$this->historico);
+	$this->objpdf->multicell(0,4,'HISTÃ“RICO :   '.$this->historico);
 	$this->objpdf->setx(15);
 	$this->objpdf->multicell(0,4,$this->histparcel);
 	$this->objpdf->setfillcolor(255,255,255);
@@ -89,7 +89,7 @@
 	$this->objpdf->Roundedrect(93,200,48,10,2,'DF','1234');
 	$this->objpdf->Roundedrect(146,200,48,10,2,'DF','1234');
 	$this->objpdf->text(42,202,'Vencimento');
-	$this->objpdf->text(95,202,'Código de Arrecadação');
+	$this->objpdf->text(95,202,'CÃ³digo de ArrecadaÃ§Ã£o');
 	$this->objpdf->text(148,202,'Valor a Pagar');
 	$this->objpdf->setfont('Arial','',10);
 	$this->objpdf->text(48,207,$this->dtvenc);
@@ -112,7 +112,7 @@
 	$this->objpdf->Roundedrect(146,250,48,10,2,'DF','1234');
 	$this->objpdf->setfont('Arial','',6);
 	$this->objpdf->text(42,252,'Vencimento');
-	$this->objpdf->text(95,252,'Código de Arrecadação');
+	$this->objpdf->text(95,252,'CÃ³digo de ArrecadaÃ§Ã£o');
 	$this->objpdf->text(148,252,'Valor a Pagar');
 	$this->objpdf->setfont('Arial','',10);
 	$this->objpdf->text(48,257,$this->dtvenc);

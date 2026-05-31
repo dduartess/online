@@ -68,30 +68,30 @@ class cl_configdbpref {
    var $w13_tipocodigocertidao = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 w13_liberaatucgm = bool = Libera Atualização do CGM 
+                 w13_liberaatucgm = bool = Libera AtualizaÃ§Ã£o do CGM 
                  w13_liberapedsenha = bool = Libera Pedido de Senha 
                  w13_permfornsemlog = bool = permite acessar fornecedor sem estar logado 
                  w13_permvarsemlog = bool = Permite ISS Var sem login 
-                 w13_liberaescritorios = int4 = Regra para Escritório Informar Clientes 
-                 w13_liberaimobiliaria = bool = Libera Imobiliárias para adicionar seus clientes 
+                 w13_liberaescritorios = int4 = Regra para EscritÃ³rio Informar Clientes 
+                 w13_liberaimobiliaria = bool = Libera ImobiliÃ¡rias para adicionar seus clientes 
                  w13_permconscgm = bool = Permite consulta Contribuinte por CGM 
-                 w13_aliqissretido = bool = Permitir alíquota fora do padrão 
+                 w13_aliqissretido = bool = Permitir alÃ­quota fora do padrÃ£o 
                  w13_liberaissretido = bool = Libera ISS Retido sem login 
                  w13_utilizafolha = bool = Utiliza Folha 
-                 w13_instit = int4 = instituição 
+                 w13_instit = int4 = instituiÃ§Ã£o 
                  w13_libcertpos = bool = Libera certidao positiva 
-                 w13_libcarnevariavel = bool = Libera carne de ISSQN variável 
+                 w13_libcarnevariavel = bool = Libera carne de ISSQN variÃ¡vel 
                  w13_libsociosdai = bool = Libera aba socios na DAI 
                  w13_libissprestado = bool = Libera opcao de ISSQN prestado 
                  w13_emailadmin = varchar(50) = E-mail do administrador 
                  w13_liberalancisssemmov = bool = Permitir ISSQN sem movimento 
-                 w13_exigecpfcnpj = bool = Exige CPF/CNPJ na consulta de imóveis 
-                 w13_regracnd = int4 = Regra para Emissão CND 
+                 w13_exigecpfcnpj = bool = Exige CPF/CNPJ na consulta de imÃ³veis 
+                 w13_regracnd = int4 = Regra para EmissÃ£o CND 
                  w13_permconsservdemit = bool = Permite Consulta de Servidor Demitido 
-                 w13_tipocertidao = int4 = Forma Emissão Certidão de Débitos 
-                 w13_agrupadebrecibos = bool = Agrupa Déb. Venc. na Emissão de Recibos 
+                 w13_tipocertidao = int4 = Forma EmissÃ£o CertidÃ£o de DÃ©bitos 
+                 w13_agrupadebrecibos = bool = Agrupa DÃ©b. Venc. na EmissÃ£o de Recibos 
                  w13_msgaviso = bool = Mostrar Mensagem de Aviso de Corte 
-                 w13_tipocodigocertidao = int4 = Tipo de Codificação da certidão 
+                 w13_tipocodigocertidao = int4 = Tipo de CodificaÃ§Ã£o da certidÃ£o 
                  ";
    //funcao construtor da classe 
    function cl_configdbpref() { 
@@ -143,10 +143,10 @@ class cl_configdbpref {
    function incluir ($w13_instit){ 
       $this->atualizacampos();
      if($this->w13_liberaatucgm == null ){ 
-       $this->erro_sql = " Campo Libera Atualização do CGM nao Informado.";
+       $this->erro_sql = " Campo Libera AtualizaÃ§Ã£o do CGM nao Informado.";
        $this->erro_campo = "w13_liberaatucgm";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -155,7 +155,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Libera Pedido de Senha nao Informado.";
        $this->erro_campo = "w13_liberapedsenha";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -164,7 +164,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo permite acessar fornecedor sem estar logado nao Informado.";
        $this->erro_campo = "w13_permfornsemlog";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -173,25 +173,25 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Permite ISS Var sem login nao Informado.";
        $this->erro_campo = "w13_permvarsemlog";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_liberaescritorios == null ){ 
-       $this->erro_sql = " Campo Regra para Escritório Informar Clientes nao Informado.";
+       $this->erro_sql = " Campo Regra para EscritÃ³rio Informar Clientes nao Informado.";
        $this->erro_campo = "w13_liberaescritorios";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_liberaimobiliaria == null ){ 
-       $this->erro_sql = " Campo Libera Imobiliárias para adicionar seus clientes nao Informado.";
+       $this->erro_sql = " Campo Libera ImobiliÃ¡rias para adicionar seus clientes nao Informado.";
        $this->erro_campo = "w13_liberaimobiliaria";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -200,16 +200,16 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Permite consulta Contribuinte por CGM nao Informado.";
        $this->erro_campo = "w13_permconscgm";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_aliqissretido == null ){ 
-       $this->erro_sql = " Campo Permitir alíquota fora do padrão nao Informado.";
+       $this->erro_sql = " Campo Permitir alÃ­quota fora do padrÃ£o nao Informado.";
        $this->erro_campo = "w13_aliqissretido";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -218,7 +218,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Libera ISS Retido sem login nao Informado.";
        $this->erro_campo = "w13_liberaissretido";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -227,7 +227,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Utiliza Folha nao Informado.";
        $this->erro_campo = "w13_utilizafolha";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -236,16 +236,16 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Libera certidao positiva nao Informado.";
        $this->erro_campo = "w13_libcertpos";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_libcarnevariavel == null ){ 
-       $this->erro_sql = " Campo Libera carne de ISSQN variável nao Informado.";
+       $this->erro_sql = " Campo Libera carne de ISSQN variÃ¡vel nao Informado.";
        $this->erro_campo = "w13_libcarnevariavel";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -254,7 +254,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Libera aba socios na DAI nao Informado.";
        $this->erro_campo = "w13_libsociosdai";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -263,7 +263,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Libera opcao de ISSQN prestado nao Informado.";
        $this->erro_campo = "w13_libissprestado";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -272,7 +272,7 @@ class cl_configdbpref {
        $this->erro_sql = " Campo E-mail do administrador nao Informado.";
        $this->erro_campo = "w13_emailadmin";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -281,25 +281,25 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Permitir ISSQN sem movimento nao Informado.";
        $this->erro_campo = "w13_liberalancisssemmov";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_exigecpfcnpj == null ){ 
-       $this->erro_sql = " Campo Exige CPF/CNPJ na consulta de imóveis nao Informado.";
+       $this->erro_sql = " Campo Exige CPF/CNPJ na consulta de imÃ³veis nao Informado.";
        $this->erro_campo = "w13_exigecpfcnpj";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_regracnd == null ){ 
-       $this->erro_sql = " Campo Regra para Emissão CND nao Informado.";
+       $this->erro_sql = " Campo Regra para EmissÃ£o CND nao Informado.";
        $this->erro_campo = "w13_regracnd";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -308,25 +308,25 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Permite Consulta de Servidor Demitido nao Informado.";
        $this->erro_campo = "w13_permconsservdemit";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_tipocertidao == null ){ 
-       $this->erro_sql = " Campo Forma Emissão Certidão de Débitos nao Informado.";
+       $this->erro_sql = " Campo Forma EmissÃ£o CertidÃ£o de DÃ©bitos nao Informado.";
        $this->erro_campo = "w13_tipocertidao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_agrupadebrecibos == null ){ 
-       $this->erro_sql = " Campo Agrupa Déb. Venc. na Emissão de Recibos nao Informado.";
+       $this->erro_sql = " Campo Agrupa DÃ©b. Venc. na EmissÃ£o de Recibos nao Informado.";
        $this->erro_campo = "w13_agrupadebrecibos";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -335,16 +335,16 @@ class cl_configdbpref {
        $this->erro_sql = " Campo Mostrar Mensagem de Aviso de Corte nao Informado.";
        $this->erro_campo = "w13_msgaviso";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w13_tipocodigocertidao == null ){ 
-       $this->erro_sql = " Campo Tipo de Codificação da certidão nao Informado.";
+       $this->erro_sql = " Campo Tipo de CodificaÃ§Ã£o da certidÃ£o nao Informado.";
        $this->erro_campo = "w13_tipocodigocertidao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -353,7 +353,7 @@ class cl_configdbpref {
      if(($this->w13_instit == null) || ($this->w13_instit == "") ){ 
        $this->erro_sql = " Campo w13_instit nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -414,13 +414,13 @@ class cl_configdbpref {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "configdbpref ($this->w13_instit) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "configdbpref já Cadastrado";
+         $this->erro_sql   = "configdbpref ($this->w13_instit) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "configdbpref jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "configdbpref ($this->w13_instit) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "configdbpref ($this->w13_instit) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -430,7 +430,7 @@ class cl_configdbpref {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->w13_instit;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -476,10 +476,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_liberaatucgm = '$this->w13_liberaatucgm' ";
        $virgula = ",";
        if(trim($this->w13_liberaatucgm) == null ){ 
-         $this->erro_sql = " Campo Libera Atualização do CGM nao Informado.";
+         $this->erro_sql = " Campo Libera AtualizaÃ§Ã£o do CGM nao Informado.";
          $this->erro_campo = "w13_liberaatucgm";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -492,7 +492,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Libera Pedido de Senha nao Informado.";
          $this->erro_campo = "w13_liberapedsenha";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -505,7 +505,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo permite acessar fornecedor sem estar logado nao Informado.";
          $this->erro_campo = "w13_permfornsemlog";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -518,7 +518,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Permite ISS Var sem login nao Informado.";
          $this->erro_campo = "w13_permvarsemlog";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -528,10 +528,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_liberaescritorios = $this->w13_liberaescritorios ";
        $virgula = ",";
        if(trim($this->w13_liberaescritorios) == null ){ 
-         $this->erro_sql = " Campo Regra para Escritório Informar Clientes nao Informado.";
+         $this->erro_sql = " Campo Regra para EscritÃ³rio Informar Clientes nao Informado.";
          $this->erro_campo = "w13_liberaescritorios";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -541,10 +541,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_liberaimobiliaria = '$this->w13_liberaimobiliaria' ";
        $virgula = ",";
        if(trim($this->w13_liberaimobiliaria) == null ){ 
-         $this->erro_sql = " Campo Libera Imobiliárias para adicionar seus clientes nao Informado.";
+         $this->erro_sql = " Campo Libera ImobiliÃ¡rias para adicionar seus clientes nao Informado.";
          $this->erro_campo = "w13_liberaimobiliaria";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -557,7 +557,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Permite consulta Contribuinte por CGM nao Informado.";
          $this->erro_campo = "w13_permconscgm";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -567,10 +567,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_aliqissretido = '$this->w13_aliqissretido' ";
        $virgula = ",";
        if(trim($this->w13_aliqissretido) == null ){ 
-         $this->erro_sql = " Campo Permitir alíquota fora do padrão nao Informado.";
+         $this->erro_sql = " Campo Permitir alÃ­quota fora do padrÃ£o nao Informado.";
          $this->erro_campo = "w13_aliqissretido";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -583,7 +583,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Libera ISS Retido sem login nao Informado.";
          $this->erro_campo = "w13_liberaissretido";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -596,7 +596,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Utiliza Folha nao Informado.";
          $this->erro_campo = "w13_utilizafolha";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -606,10 +606,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_instit = $this->w13_instit ";
        $virgula = ",";
        if(trim($this->w13_instit) == null ){ 
-         $this->erro_sql = " Campo instituição nao Informado.";
+         $this->erro_sql = " Campo instituiÃ§Ã£o nao Informado.";
          $this->erro_campo = "w13_instit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -622,7 +622,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Libera certidao positiva nao Informado.";
          $this->erro_campo = "w13_libcertpos";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -632,10 +632,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_libcarnevariavel = '$this->w13_libcarnevariavel' ";
        $virgula = ",";
        if(trim($this->w13_libcarnevariavel) == null ){ 
-         $this->erro_sql = " Campo Libera carne de ISSQN variável nao Informado.";
+         $this->erro_sql = " Campo Libera carne de ISSQN variÃ¡vel nao Informado.";
          $this->erro_campo = "w13_libcarnevariavel";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -648,7 +648,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Libera aba socios na DAI nao Informado.";
          $this->erro_campo = "w13_libsociosdai";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -661,7 +661,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Libera opcao de ISSQN prestado nao Informado.";
          $this->erro_campo = "w13_libissprestado";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -674,7 +674,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo E-mail do administrador nao Informado.";
          $this->erro_campo = "w13_emailadmin";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -687,7 +687,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Permitir ISSQN sem movimento nao Informado.";
          $this->erro_campo = "w13_liberalancisssemmov";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -697,10 +697,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_exigecpfcnpj = '$this->w13_exigecpfcnpj' ";
        $virgula = ",";
        if(trim($this->w13_exigecpfcnpj) == null ){ 
-         $this->erro_sql = " Campo Exige CPF/CNPJ na consulta de imóveis nao Informado.";
+         $this->erro_sql = " Campo Exige CPF/CNPJ na consulta de imÃ³veis nao Informado.";
          $this->erro_campo = "w13_exigecpfcnpj";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -710,10 +710,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_regracnd = $this->w13_regracnd ";
        $virgula = ",";
        if(trim($this->w13_regracnd) == null ){ 
-         $this->erro_sql = " Campo Regra para Emissão CND nao Informado.";
+         $this->erro_sql = " Campo Regra para EmissÃ£o CND nao Informado.";
          $this->erro_campo = "w13_regracnd";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -726,7 +726,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Permite Consulta de Servidor Demitido nao Informado.";
          $this->erro_campo = "w13_permconsservdemit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -736,10 +736,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_tipocertidao = $this->w13_tipocertidao ";
        $virgula = ",";
        if(trim($this->w13_tipocertidao) == null ){ 
-         $this->erro_sql = " Campo Forma Emissão Certidão de Débitos nao Informado.";
+         $this->erro_sql = " Campo Forma EmissÃ£o CertidÃ£o de DÃ©bitos nao Informado.";
          $this->erro_campo = "w13_tipocertidao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -749,10 +749,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_agrupadebrecibos = '$this->w13_agrupadebrecibos' ";
        $virgula = ",";
        if(trim($this->w13_agrupadebrecibos) == null ){ 
-         $this->erro_sql = " Campo Agrupa Déb. Venc. na Emissão de Recibos nao Informado.";
+         $this->erro_sql = " Campo Agrupa DÃ©b. Venc. na EmissÃ£o de Recibos nao Informado.";
          $this->erro_campo = "w13_agrupadebrecibos";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -765,7 +765,7 @@ class cl_configdbpref {
          $this->erro_sql = " Campo Mostrar Mensagem de Aviso de Corte nao Informado.";
          $this->erro_campo = "w13_msgaviso";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -775,10 +775,10 @@ class cl_configdbpref {
        $sql  .= $virgula." w13_tipocodigocertidao = $this->w13_tipocodigocertidao ";
        $virgula = ",";
        if(trim($this->w13_tipocodigocertidao) == null ){ 
-         $this->erro_sql = " Campo Tipo de Codificação da certidão nao Informado.";
+         $this->erro_sql = " Campo Tipo de CodificaÃ§Ã£o da certidÃ£o nao Informado.";
          $this->erro_campo = "w13_tipocodigocertidao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -850,7 +850,7 @@ class cl_configdbpref {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "configdbpref nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->w13_instit;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -860,16 +860,16 @@ class cl_configdbpref {
          $this->erro_banco = "";
          $this->erro_sql = "configdbpref nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->w13_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->w13_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -932,9 +932,9 @@ class cl_configdbpref {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "configdbpref nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "configdbpref nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$w13_instit;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -942,18 +942,18 @@ class cl_configdbpref {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "configdbpref nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "configdbpref nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$w13_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$w13_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -968,7 +968,7 @@ class cl_configdbpref {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -977,7 +977,7 @@ class cl_configdbpref {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:configdbpref";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

@@ -9,7 +9,7 @@
           include("classes/db_orcreservasol_classe.php"); 
 	}
 	$clorcreservasol = new cl_orcreservasol;
-////////// MODELO 111  -  SOLICITAÇÃO DE COMPRA
+////////// MODELO 111  -  SOLICITAÃ‡ÃƒO DE COMPRA
 	$this->objpdf->AliasNbPages();
 	$this->objpdf->AddPage();
 	$this->objpdf->settopmargin(1);
@@ -21,10 +21,10 @@
 	$this->objpdf->setfillcolor(245);
 	$this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 
-        // Imprime o cabeçalho com dados sobre a prefeitura
+        // Imprime o cabeÃ§alho com dados sobre a prefeitura
 	$this->objpdf->setfillcolor(255,255,255);
 	$this->objpdf->Setfont('Arial','B',9);
-	$this->objpdf->text(130,$xlin-13,'SOLICITAÇÃO DE COMPRA N'.CHR(176));
+	$this->objpdf->text(130,$xlin-13,'SOLICITAÃ‡ÃƒO DE COMPRA N'.CHR(176));
 	$this->objpdf->text(185,$xlin-13,db_formatar($this->Snumero,'s','0',6,'e'));
         $this->objpdf->Setfont('Arial','B',7);
 	$this->objpdf->text(130,$xlin-9,'ORGAO');
@@ -45,22 +45,22 @@
 	// caixa para frases
 	$this->objpdf->rect($xcol,$xlin+3,$xcol+198,9,2,'DF','1234');
 	$this->objpdf->SetXY(4,$xlin+4);
-	$this->objpdf->MultiCell(202,4,'QUANDO NECESSÁRIO FRETE, O MESMO CORRERÁ POR CONTA DO FORNECEDOR',0,"C",0);
+	$this->objpdf->MultiCell(202,4,'QUANDO NECESSÃRIO FRETE, O MESMO CORRERÃ POR CONTA DO FORNECEDOR',0,"C",0);
 	$this->objpdf->SetXY(4,$xlin+8);
-	$this->objpdf->MultiCell(202,4,'TODO FRETE DEVERÁ SER PAGO PELA EMPRESA REMETENTE - O MATERIAL DEVERÁ SER DE PRIMEIRA QUALIDADE',0,"C",0);
+	$this->objpdf->MultiCell(202,4,'TODO FRETE DEVERÃ SER PAGO PELA EMPRESA REMETENTE - O MATERIAL DEVERÃ SER DE PRIMEIRA QUALIDADE',0,"C",0);
 	$this->objpdf->Setfont('Arial','',8);
 
-        // Caixa com dados da solicitação
+        // Caixa com dados da solicitaÃ§Ã£o
 	$this->objpdf->rect($xcol,$xlin+13,$xcol+198,10,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','',6);
-	$this->objpdf->text($xcol+2,$xlin+15,'Dados do Solicitação');
+	$this->objpdf->text($xcol+2,$xlin+15,'Dados do SolicitaÃ§Ã£o');
 	$this->objpdf->Setfont('Arial','B',8);
 	$this->objpdf->text($xcol+  2,$xlin+18,'Departamento');
 	$this->objpdf->text($xcol+109,$xlin+18,'Tipo');
 	$this->objpdf->text($xcol+  2,$xlin+22,'Data');
 	$this->objpdf->text($xcol+109,$xlin+22,'Val. Aprox.');
 
-	// Imprime dados da solicitação
+	// Imprime dados da solicitaÃ§Ã£o
 	$this->objpdf->text($xcol+ 23,$xlin+18,':  '.$this->Sdepart);
 	if(isset($this->Sdata) && trim($this->Sdata)!=""){
 	  $this->Sdata = db_formatar($this->Sdata,'d');
@@ -109,12 +109,12 @@
 
 	  // Label das colunas
 	  $this->objpdf->text($xcol+   4,$setaut+11,'CGM');
-	  $this->objpdf->text($xcol+30.5,$setaut+11,'NOME/RAZÃO SOCIAL');
-	  $this->objpdf->text($xcol+ 103,$setaut+11,'ENDEREÇO');
-	  $this->objpdf->text($xcol+ 155,$setaut+11,'MUNICÍPIO');
+	  $this->objpdf->text($xcol+30.5,$setaut+11,'NOME/RAZÃƒO SOCIAL');
+	  $this->objpdf->text($xcol+ 103,$setaut+11,'ENDEREÃ‡O');
+	  $this->objpdf->text($xcol+ 155,$setaut+11,'MUNICÃPIO');
 	  $this->objpdf->text($xcol+184.5,$setaut+11,'TELEFONE');
 
-	  // Seta altura nova para impressão dos dados
+	  // Seta altura nova para impressÃ£o dos dados
 	  $this->objpdf->sety($setaut+13.8);
 	  $this->objpdf->setx($xcol);
 	  $this->objpdf->setleftmargin(4);
@@ -149,9 +149,9 @@
 	$this->objpdf->rect($xcol,    $xlin+$getdoy+6,15,193-$contafornec,2,'DF','34');
         // Caixa da quantidade
 	$this->objpdf->rect($xcol+ 15,$xlin+$getdoy+6,20,193-$contafornec,2,'DF','34');
-        // Caixa dos materiais ou serviços
+        // Caixa dos materiais ou serviÃ§os
 	$this->objpdf->rect($xcol+ 35,$xlin+$getdoy+6,107,193-$contafornec,2,'DF','34');
-        // Caixa dos valores unitários
+        // Caixa dos valores unitÃ¡rios
 	$this->objpdf->rect($xcol+142,$xlin+$getdoy+6,30,193-$contafornec,2,'DF','');
         // Caixa dos valores totais dos itens
 	$this->objpdf->rect($xcol+172,$xlin+$getdoy+6,30,193-$contafornec,2,'DF','34');
@@ -162,8 +162,8 @@
 	$this->objpdf->Setfont('Arial','B',8);
 	$this->objpdf->text($xcol+   4,$xlin+$getdoy+4,'ITEM');
 	$this->objpdf->text($xcol+15.5,$xlin+$getdoy+4,'QUANTIDADE');
-	$this->objpdf->text($xcol+  70,$xlin+$getdoy+4,'MATERIAL OU SERVIÇO');
-	$this->objpdf->text($xcol+ 145,$xlin+$getdoy+4,'VALOR UNITÁRIO');
+	$this->objpdf->text($xcol+  70,$xlin+$getdoy+4,'MATERIAL OU SERVIÃ‡O');
+	$this->objpdf->text($xcol+ 145,$xlin+$getdoy+4,'VALOR UNITÃRIO');
 	$this->objpdf->text($xcol+ 176,$xlin+$getdoy+4,'VALOR TOTAL');
         $maiscol = 0;
 
@@ -216,7 +216,7 @@
 	    $prazo = "\nPRAZO: ".trim($prazo);
 	  }
 	  if(isset($pgto) && trim($pgto)!=""){
-	    $pgto = "\nCONDIÇÃO: ".trim($pgto);
+	    $pgto = "\nCONDIÃ‡ÃƒO: ".trim($pgto);
 	  }
 	  if(isset($resum) && trim($resum)!=""){
 	    $resum = "\nRESUMO: ".trim($resum);
@@ -235,7 +235,7 @@
 	      $unid .= " ($quantunid UNIDADES)\n";
 	    }
 	  }else{
-	    $unid = $barran."\nSERVIÇO";
+	    $unid = $barran."\nSERVIÃ‡O";
 	  }
 
 	  $descricaoitem .= " - ".$unid;
@@ -295,7 +295,7 @@
 		$distb = 3;
 		$this->objpdf->SetAligns(array('C','C','C','C','C','C','C','R','R'));
 		$this->objpdf->Row(array('','',"\n",'',''),3,false,$dist);
-		$this->objpdf->Row(array('','',"DOTAÇÃO","ANO","ELEMENTO","RESERVADO",'',''),3,false,$dist);
+		$this->objpdf->Row(array('','',"DOTAÃ‡ÃƒO","ANO","ELEMENTO","RESERVADO",'',''),3,false,$dist);
 	      }	      
 	      $this->objpdf->Setfont('Arial','',7);
 	      $this->objpdf->SetAligns(array('C','C','C','C','C','C','C','R','R'));
@@ -308,7 +308,7 @@
 	      array_push($arr_dotac,$dcoddot);
 	      if(isset($dcoddot) && trim($dcoddot)!=""){
 		$result_orcreservasol = $clorcreservasol->sql_record($clorcreservasol->sql_query_orcreserva(null,null,"o82_codres as codigodareserva","","o82_solicitem=$codigo and o80_coddot=$dcoddot"));
-		$ddvalor = "NÃO";
+		$ddvalor = "NÃƒO";
 		if($clorcreservasol->numrows>0){
 		  $ddvalor = "SIM";
 		}

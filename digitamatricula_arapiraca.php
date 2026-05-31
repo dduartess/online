@@ -60,7 +60,7 @@ db_mensagem("imovel_cab","imovel_rod");
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 
@@ -100,10 +100,10 @@ try {
 <br><br>
 <center>
 <?php 
-  //verifica se está logado
+  //verifica se estÃ¡ logado
   if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
    @$usuario = $id_usuario==""?$_COOKIE["cookie_codigo_cgm"]:$id_usuario;
-   //é imobiliária?
+   //Ã© imobiliÃ¡ria?
    $result  = $climobil->sql_record($climobil->sql_query("","iptubase.j01_matric, a.z01_nome as z01_nome,a.z01_cgccpf as z01_cgccpf","","imobil.j44_numcgm = $usuario"));
    $imobil = $climobil->numrows;
    //iptubase
@@ -170,14 +170,14 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
  <?php 
  }else{
    ?>
-   <a href="digitamatricula.php?outro">:: Pesquisar Outro Imóvel ::</a><br><br>
+   <a href="digitamatricula.php?outro">:: Pesquisar Outro ImÃ³vel ::</a><br><br>
    <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
    <?php 
   
-   //busca clientes do escritório
+   //busca clientes do escritÃ³rio
    for($x=0;$x<$imobil;$x++){
     if($x==0){
-     ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Matrículas que tenho acesso</b></td></tr><?php 
+     ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>MatrÃ­culas que tenho acesso</b></td></tr><?php 
     }
     db_fieldsmemory($result,$x);
     if($imobil==1 && $iptubase==0){
@@ -190,7 +190,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
    //busca dados do issbase
    for($x=0;$x<$iptubase;$x++){
     if($x==0){
-     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><td colspan="3"><b>Minhas Matrículas</b></td></tr><?php 
+     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><td colspan="3"><b>Minhas MatrÃ­culas</b></td></tr><?php 
     }
     db_fieldsmemory($result2,$x);
     if($imobil==0 && $iptubase==1){
@@ -206,7 +206,7 @@ $sqlpromitente = $cliptubase ->sqlmatriculas_nome_numero($usuario, $db21_regracg
    }
    ?></table><?php 
    }
-   db_logs("","",0,"Digita Codigo da Matrícula.");
+   db_logs("","",0,"Digita Codigo da MatrÃ­cula.");
   if(isset($erroscripts)){
    echo "<script>alert('".$erroscripts."');</script>";
   }
@@ -226,7 +226,7 @@ function js_captcha(){
 
   xmlhttp.open("GET",'captcha/pesquisa_captcha.php?code='+document.form1.letras.value,true);
 
-    //Executada quando o navegador obtiver o código
+    //Executada quando o navegador obtiver o cÃ³digo
     xmlhttp.onreadystatechange=function() {
 
         if (xmlhttp.readyState==4){
@@ -241,12 +241,12 @@ function js_captcha(){
     xmlhttp.send(null)
 }
 function retorno_captcha(ret){
-  // váriavel ret retorna true ou false
+  // vÃ¡riavel ret retorna true ou false
   
   if (ret) {  
     document.form1.submit();
   } else {
-     alert('Número de confirmação não confere');
+     alert('NÃºmero de confirmaÃ§Ã£o nÃ£o confere');
      document.form1.letras.value = '';
      document.form1.letras.focus();
      document.getElementById('image').src = 'captcha/securimage_show.php?sid=' + Math.random(); 

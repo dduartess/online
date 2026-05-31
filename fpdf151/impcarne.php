@@ -3,36 +3,36 @@
 include("assinatura.php");
 
 //========================================================================================//
-//       ALTERAÇÕES NA CLASSE impcarne                                                    //
+//       ALTERAÃ‡Ã•ES NA CLASSE impcarne                                                    //
 //                                                                                        //
-//  1 - OS NOVOS MODELO INCLUIDOS NÃO DEVERÃO SER DESENVOLVIDOS DIRETAMENTE NA CLASSE     //
+//  1 - OS NOVOS MODELO INCLUIDOS NÃƒO DEVERÃƒO SER DESENVOLVIDOS DIRETAMENTE NA CLASSE     //
 //  2 - APENAS SERA INCLUIDO UM ARQUIVO EXTERNO POR MEIO DE include_once                  //  
-//  3 - OS MODELOS NOVOS E ANTIGOS VÃO FICAR NA PASTA fpdf151/impmodelos/                 //
-//  4 - COLABORE, ORGANIZE O CODIGO, SIGA O PADRÃO                                        //
+//  3 - OS MODELOS NOVOS E ANTIGOS VÃƒO FICAR NA PASTA fpdf151/impmodelos/                 //
+//  4 - COLABORE, ORGANIZE O CODIGO, SIGA O PADRÃƒO                                        //
 //                                                                                        //
 //========================================================================================//
 // DIRETORIO DOS MODELOS        ===>>> 	fpdf151/impmodelos/                               // 
-// PADRÃO PARA NOME DOS MODELOS ===>>>  mod_imprime<xx>.php ex: mod_imprime1.php          //
+// PADRÃƒO PARA NOME DOS MODELOS ===>>>  mod_imprime<xx>.php ex: mod_imprime1.php          //
 //========================================================================================//
 
 // MODELO 1  - CARNES DE PARCELAMENTO
 // MODELO 2  - RECIBO DE PAGAMENTO ( 2 VIAS )
-// MODELO 3  - ALVARA NÃO DEFINIDO 
+// MODELO 3  - ALVARA NÃƒO DEFINIDO 
 // MODELO 4  - BOLETO
-// MODELO 5  - AUTORIZAÇÃO DE EMPENHO
+// MODELO 5  - AUTORIZAÃ‡ÃƒO DE EMPENHO
 // MODELO 6  - NOTA DE EMPENHO
 // MODELO 7  - ORDEM DE PAGAMENTO
 // MODELO 8  - FICHA DE TRANSFERENCIA DE BENS
-// MODELO 9  - ALVARÁ DE LOCALIZAÇÃO METADE A4
+// MODELO 9  - ALVARÃ DE LOCALIZAÃ‡ÃƒO METADE A4
 // MODELO 10 - ORDEM DE COMPRA
-// MODELO 11 - SOLICITAÇÃO DE COMPRA  Itens/Dotações
-// MODELO 12 - ANULAÇÃO DE EMPENHO
-// MODELO 13 - SOLICITAÇÃO DE ORÇAMENTO
+// MODELO 11 - SOLICITAÃ‡ÃƒO DE COMPRA  Itens/DotaÃ§Ãµes
+// MODELO 12 - ANULAÃ‡ÃƒO DE EMPENHO
+// MODELO 13 - SOLICITAÃ‡ÃƒO DE ORÃ‡AMENTO
 // MODELO 14 - AIDOF
 // MODELO 15 - ESTORNO DE PAGAMENTO
 // MODELO 16 - CONTRA-CHEQUE 1          
-// MODELO 17 - SOLICITAÇÃO DE COMPRA  Dotações/Itens          
-// MODELO 18 - REQUISIÇÃO DE SAÍDA DE MATERIAIS
+// MODELO 17 - SOLICITAÃ‡ÃƒO DE COMPRA  DotaÃ§Ãµes/Itens          
+// MODELO 18 - REQUISIÃ‡ÃƒO DE SAÃDA DE MATERIAIS
 // MODELO 19 - EXTRATO DO RPPS
 // MODELO 20 - ALVARA SANITARIO A4
 // MODELO 21 - ALVARA SANITARIO METADE A4
@@ -41,19 +41,19 @@ include("assinatura.php");
 // MODELO 24 - ALVARA DE LICENSA GRANDE
 // MODELO 25 - GUIA RECOLHIMENTO PREVIDENCIA
 // MODELO 26 - ALVARA PRE IMPRESSO (BAGE)
-// MODELO 27 - TERMO DE TRANSFERÊNCIA DE MATERIAIS(ALMOXARIFADO)
+// MODELO 27 - TERMO DE TRANSFERÃŠNCIA DE MATERIAIS(ALMOXARIFADO)
 // MODELO 28 - Carne de IPTU parcela unica
 
 class db_impcarne extends cl_assinatura {
 //class db_impcarne {
 
-/////   VARIÁVEIS PARA EMISSAO DE CARNES DE PARCELAMENTO - MODELO 1
+/////   VARIÃVEIS PARA EMISSAO DE CARNES DE PARCELAMENTO - MODELO 1
 
   var $mod_rodape= 1;
   var $modelo    = 1;
 
   var $qtdcarne  = null;
-  var $tipodebito= 'TIPO DE DÉBITO';
+  var $tipodebito= 'TIPO DE DÃ‰BITO';
   //var $tipoinscr = null;
   var $tipoinscr1= null;
   var $prefeitura= 'PREFEITURA DBSELLER';
@@ -63,12 +63,12 @@ class db_impcarne extends cl_assinatura {
   var $parcela   = null;
   var $titulo1   = '';
   var $descr1    = null;
-  var $titulo2   = 'Cód de Arrecadação';
+  var $titulo2   = 'CÃ³d de ArrecadaÃ§Ã£o';
   var $descr2    = null;
-  var $titulo3   = 'Contribuinte/Endereço';
+  var $titulo3   = 'Contribuinte/EndereÃ§o';
   var $descr3_1  = null;
   var $descr3_2  = null;
-  var $titulo4   = 'Instruções';
+  var $titulo4   = 'InstruÃ§Ãµes';
   var $descr4_1  = null;
   var $descr4_2  = null;
   var $titulo5   = 'Parcela';
@@ -79,14 +79,14 @@ class db_impcarne extends cl_assinatura {
   var $descr7    = null;
   var $titulo8   = '';
   var $descr8    = null;
-  var $titulo9   = 'Cód. de Arrecadação';
+  var $titulo9   = 'CÃ³d. de ArrecadaÃ§Ã£o';
   var $descr9    = null;
   var $titulo10  = 'Parcela';
   var $descr10   = null;
-  var $titulo11  = 'Contribuinte/Endereço';
+  var $titulo11  = 'Contribuinte/EndereÃ§o';
   var $descr11_1 = null;
   var $descr11_2 = null;
-  var $titulo12  = 'Instruções';
+  var $titulo12  = 'InstruÃ§Ãµes';
   var $descr12_1 = null;
   var $descr12_2 = null;
   var $titulo13  = '';
@@ -104,7 +104,7 @@ class db_impcarne extends cl_assinatura {
   var $objpdf    = null;
   var $impmodelo = null;
  
-//////  VARIÁVEIS PARA EMISSAO DE CONTRA-CHEQUES
+//////  VARIÃVEIS PARA EMISSAO DE CONTRA-CHEQUES
 
   var $lotacao     	= null;
   var $descr_lota  	= null;
@@ -119,7 +119,7 @@ class db_impcarne extends cl_assinatura {
   var $rubrica		= null;
   var $descr_rub	= null;
 
-//////  VARIÁVEIS PARA EMISSAO DE RECIBO DE PAGAMENTO - MODELO 2
+//////  VARIÃVEIS PARA EMISSAO DE RECIBO DE PAGAMENTO - MODELO 2
   var $cgccpf = null;
   var $identifica_dados = ""; 
   var $enderpref = null;
@@ -164,7 +164,7 @@ class db_impcarne extends cl_assinatura {
   var $numpre    = null;
   var $valtotal  = null;
  
-//////  VARIÁVEIS PARA EMISSAO DE ALVARÁ
+//////  VARIÃVEIS PARA EMISSAO DE ALVARÃ
 
   var $tipoalvara  = null;
   var $obs         = null;
@@ -183,13 +183,13 @@ class db_impcarne extends cl_assinatura {
   var $dtiniativ   = null; // data de inicio das atividades
   var $dtfimativ   = null; // data de fim das atividades
   var $impdatas    = null; // se imprime as datas de inicio e fim das atividades
-  var $impobsativ  = null; // se imprime a observasão das atividades
+  var $impobsativ  = null; // se imprime a observasÃ£o das atividades
   var $impcodativ  = null; // se imprime o codigo das atividades
-  var $impobslanc  = null; // se imprime a observação do lançamento
+  var $impobslanc  = null; // se imprime a observaÃ§Ã£o do lanÃ§amento
   var $permanente  = null; // se permanente ou provisorio 
   var $cnpjcpf     = null;
   var $assalvara   = null; // assinatura do alvara
-  var $lancobs     = null; // observação do lançamento do alvara de sanitario
+  var $lancobs     = null; // observaÃ§Ã£o do lanÃ§amento do alvara de sanitario
   
 
 //////  FICHA DE COMPENSACAO
@@ -231,8 +231,8 @@ class db_impcarne extends cl_assinatura {
   var $uf_config        = '';
 
 
-//// variaveis para a solicitação de compras
-  var $secfaz           = null;  //Nome do secretário da fazenda
+//// variaveis para a solicitaÃ§Ã£o de compras
+  var $secfaz           = null;  //Nome do secretÃ¡rio da fazenda
   var $nompre           = null;  //Nome do prefeiro
   
   var $fonedepto        = null;
@@ -241,49 +241,49 @@ class db_impcarne extends cl_assinatura {
   var $emaildepto       = null;
 
   // solicita
-  var $Snumero          = null;  //número da solicitação
-  var $Snumero_ant      = null;  //número da solicitação
-  var $Sdata            = null;  //data da solicitação
-  var $Svalor           = null;  //valor aproximado da solicitação
-  var $Sorgao           = null;  //orgão
+  var $Snumero          = null;  //nÃºmero da solicitaÃ§Ã£o
+  var $Snumero_ant      = null;  //nÃºmero da solicitaÃ§Ã£o
+  var $Sdata            = null;  //data da solicitaÃ§Ã£o
+  var $Svalor           = null;  //valor aproximado da solicitaÃ§Ã£o
+  var $Sorgao           = null;  //orgÃ£o
   var $Sunidade         = null;  //unidade
   var $sabrevunidade    = null;  //unidade abreviada
-  var $Sresumo          = '';    //resumo da solicitação
-  var $Stipcom          = '';    //tipo de compra da solicitação
-  var $Sdepart          = '';    //departamento da solicitação
-  var $Srespdepart      = '';    //responsável pelo departamento
-  var $Susuarioger      = '';    //Usuário que gerou a solicitação
+  var $Sresumo          = '';    //resumo da solicitaÃ§Ã£o
+  var $Stipcom          = '';    //tipo de compra da solicitaÃ§Ã£o
+  var $Sdepart          = '';    //departamento da solicitaÃ§Ã£o
+  var $Srespdepart      = '';    //responsÃ¡vel pelo departamento
+  var $Susuarioger      = '';    //UsuÃ¡rio que gerou a solicitaÃ§Ã£o
   
-  var $Scoddepto        = '';    //responsável pelo departamento
-  var $Sdescrdepto      = '';    //responsável pelo departamento
-  var $Snumdepart       = '';    //responsável pelo departamento
-  var $linhasdosdepart  = '';    //responsável pelo departamento
-  var $resultdosdepart  = '';    //responsável pelo departamento
+  var $Scoddepto        = '';    //responsÃ¡vel pelo departamento
+  var $Sdescrdepto      = '';    //responsÃ¡vel pelo departamento
+  var $Snumdepart       = '';    //responsÃ¡vel pelo departamento
+  var $linhasdosdepart  = '';    //responsÃ¡vel pelo departamento
+  var $resultdosdepart  = '';    //responsÃ¡vel pelo departamento
   
   // solicitem
   var $scodpcmater      = null;  //codigo do pcmater (quando for informado)
   var $scodunid         = null;  //codigo da unidade do item
   var $squantunid       = null;  //quantidade de cada unidade (caixa com 10 unidades)
   var $sprazo           = '';    //prazo de entrega do item
-  var $spgto            = '';    //condições de pagamento do item
+  var $spgto            = '';    //condiÃ§Ãµes de pagamento do item
   var $sresum           = '';    //resumo do item
   var $sjust            = '';    //justificativa para a compra do item
-  var $sunidade         = '';    //unidade (caixa,unitário, etc...)
-  var $sservico         = '';    //se é serviço ou material
+  var $sunidade         = '';    //unidade (caixa,unitÃ¡rio, etc...)
+  var $sservico         = '';    //se Ã© serviÃ§o ou material
   var $svalortot        = '';    //valor total (quantidade * valor)
-  var $susaquant        = '';    //se usa a quantidade ex. caixa (usa quant),unitário(não usa)
-  var $selemento        = '';    //elemento do item da solicitação
-  var $sdelemento       = '';    //descriçaõ do elemento do item da solicitação
+  var $susaquant        = '';    //se usa a quantidade ex. caixa (usa quant),unitÃ¡rio(nÃ£o usa)
+  var $selemento        = '';    //elemento do item da solicitaÃ§Ã£o
+  var $sdelemento       = '';    //descriÃ§aÃµ do elemento do item da solicitaÃ§Ã£o
 
   // pcdotac
-  var $dcodigo          = null;  //código da dotação
-  var $dcoddot          = null;  //código da dotação
-  var $danousu          = null;  //ano da dotação
-  var $dquant           = null;  //quantidade do item na dotação
-  var $dvalor           = null;  //valor da dotação  
-  var $delemento        = '';    //elemento da dotação
+  var $dcodigo          = null;  //cÃ³digo da dotaÃ§Ã£o
+  var $dcoddot          = null;  //cÃ³digo da dotaÃ§Ã£o
+  var $danousu          = null;  //ano da dotaÃ§Ã£o
+  var $dquant           = null;  //quantidade do item na dotaÃ§Ã£o
+  var $dvalor           = null;  //valor da dotaÃ§Ã£o  
+  var $delemento        = '';    //elemento da dotaÃ§Ã£o
   var $dvalortot        = '';    //valor total (quantidade * valor)
-  var $dreserva         = '';    //se o valor da dotação foi reservado
+  var $dreserva         = '';    //se o valor da dotaÃ§Ã£o foi reservado
   var $resultdasdotac   = null;  // recordset com dados dos fornecedores
   var $linhasdasdotac   = null;  // numero de linhas retornadas no recordsert
   var $dcprojativ       = '';
@@ -302,18 +302,18 @@ class db_impcarne extends cl_assinatura {
   var $resultdosfornec  = null;       // recordset com dados dos fornecedores
   var $linhasdosfornec  = null;       // numero de linhas retornadas no recordsert
 
-  //labels dos itens do processo do orçamento do processo de compras e orçamento de solicitação
-  var $labtitulo        = '';         // se é orçamento de solicitação ou PC
-  var $labdados         = '';         // se é orçamento de solicitação ou PC
-  var $labsolproc       = '';         // código do orçamento ou solicitação
-  var $labtipo          = '';         // se for solicitação, label do tipo
+  //labels dos itens do processo do orÃ§amento do processo de compras e orÃ§amento de solicitaÃ§Ã£o
+  var $labtitulo        = '';         // se Ã© orÃ§amento de solicitaÃ§Ã£o ou PC
+  var $labdados         = '';         // se Ã© orÃ§amento de solicitaÃ§Ã£o ou PC
+  var $labsolproc       = '';         // cÃ³digo do orÃ§amento ou solicitaÃ§Ã£o
+  var $labtipo          = '';         // se for solicitaÃ§Ã£o, label do tipo
 
-//// variaveis para a autorização de empenho E ORDEM DE COMPRA
+//// variaveis para a autorizaÃ§Ã£o de empenho E ORDEM DE COMPRA
   var $assinatura1       = 'VISTO';
   
-  var $assinatura2       = 'TÉCNICO CONTÁBIL'; 
-  var $assinatura3       = 'SECRETÁRIO(A) DA FAZENDA';
-  var $assinatura4       = 'SECRETÁRIO DA FAZENDA';
+  var $assinatura2       = 'TÃ‰CNICO CONTÃBIL'; 
+  var $assinatura3       = 'SECRETÃRIO(A) DA FAZENDA';
+  var $assinatura4       = 'SECRETÃRIO DA FAZENDA';
   var $assinaturaprefeito= 'PREFEITO MUNICIPAL';
     
   var $usa_sub		= false;	// a prefeitura utiliza o orcamento no subelemento
@@ -347,41 +347,41 @@ class db_impcarne extends cl_assinatura {
   var $dotacao 		= null;		// dotacao orcamentaria (orgao,unidade,funcao,subfuncao,programa,projativ,elemento,recurso)
   var $descrdotacao 	= null;		// descricao da dotacao
   var $coddot		= null;		// codigo reduzido da despesa
-  var $destino		= null;		// destino do material ou serviço
-  var $resumo		= null;		// destino do material ou serviço
-  var $licitacao  	= null;		// tipo de licitação
-  var $num_licitacao  	= null;		// numero da licitação
-  var $descr_licitacao 	= null;		// descrição do tipo de licitação
-  var $descr_tipocompra	= null;		// descrição do tipo de compra
+  var $destino		= null;		// destino do material ou serviÃ§o
+  var $resumo		= null;		// destino do material ou serviÃ§o
+  var $licitacao  	= null;		// tipo de licitaÃ§Ã£o
+  var $num_licitacao  	= null;		// numero da licitaÃ§Ã£o
+  var $descr_licitacao 	= null;		// descriÃ§Ã£o do tipo de licitaÃ§Ã£o
+  var $descr_tipocompra	= null;		// descriÃ§Ã£o do tipo de compra
   var $prazo_ent  	= null;		// prazo de entrega
-//  var $obs		= null;		// observações
-  var $cond_pag		= null;		// condições de pagamento
-  var $out_cond		= null;		// outras condições de pagamento
+//  var $obs		= null;		// observaÃ§Ãµes
+  var $cond_pag		= null;		// condiÃ§Ãµes de pagamento
+  var $out_cond		= null;		// outras condiÃ§Ãµes de pagamento
   var $telef_cont 	= null;		// telefone do contato
   var $recorddositens 	= null;		// record set dos itens
   var $linhasdositens 	= null;		// numero de itens da autorizacao
   var $item	    	= null;		// codigo do item
   var $quantitem    	= null;		// quantidade do item
-  var $valoritem    	= null;		// valor unitário do item
-  var $empempenho       = null;         // cod empenho para emissão de ordem de compra
-  var $dataordem        = null;         // data da geração da ordem de compra
+  var $valoritem    	= null;		// valor unitÃ¡rio do item
+  var $empempenho       = null;         // cod empenho para emissÃ£o de ordem de compra
+  var $dataordem        = null;         // data da geraÃ§Ã£o da ordem de compra
   var $observacaoitem   = null;
   var $descricaoitem    = null;
   var $ordpag		= null;		// numero da ordem de pagamento
   var $elemento		= null;		// elemento da despesa
-  var $descr_elemento	= null;		// descrição do elemento da despesa
+  var $descr_elemento	= null;		// descriÃ§Ã£o do elemento da despesa
   var $elementoitem	= null;		// elemento do item da ordem de pagamento
-  var $descr_elementoitem= null;	// descrição do elemento do item da ordem de pagamento
+  var $descr_elementoitem= null;	// descriÃ§Ã£o do elemento do item da ordem de pagamento
   var $outrasordens     = null;		// saldo das outras ordens de pagamento do empenho
-  var $vlrrec           = null;		// valor das receitas de retençoes
+  var $vlrrec           = null;		// valor das receitas de retenÃ§oes
   var $cnpj             = null;         // cpf ou cnpj do credor
   var $anulado		= null;         // valor anulado
   var $vlr_anul         = null;         // valor anulado
   var $data_est         = null;         // data estorno
-  var $descr_anu        = null;         // descrição da anulação
-  var $Scodemp          = null;         // descrição da anulação
+  var $descr_anu        = null;         // descriÃ§Ã£o da anulaÃ§Ã£o
+  var $Scodemp          = null;         // descriÃ§Ã£o da anulaÃ§Ã£o
 
-// Variáveis necessárias para requisição de saída de materiais
+// VariÃ¡veis necessÃ¡rias para requisiÃ§Ã£o de saÃ­da de materiais
   var $Rnumero          = null;
   var $Rdata		    = null;
   var $Rdepart          = null;
@@ -396,7 +396,7 @@ class db_impcarne extends cl_assinatura {
   var $robsdositens     = null;
   var $casadec          = null;
 
-// VARIAVEIS PARA EMISSÃO DO CARNE DE IPTU PARCELA UNICA
+// VARIAVEIS PARA EMISSÃƒO DO CARNE DE IPTU PARCELA UNICA
  
     var $iptj23_anousu      = '';
     var $iptz01_nome        = '';
@@ -481,8 +481,8 @@ class db_impcarne extends cl_assinatura {
 	    $this->objpdf->multicell(66,0.5,"_________________________________",0,"C");
 
 	    $this->objpdf->SetXY($xcol+08,$xlin+247.5);
-            //   SECRETÁRIO(A) DA SECRETARIA QUE SOLICITOU   //
-	    $this->objpdf->multicell(66,4,"SECRETÁRIO",0,"C");
+            //   SECRETÃRIO(A) DA SECRETARIA QUE SOLICITOU   //
+	    $this->objpdf->multicell(66,4,"SECRETÃRIO",0,"C");
 	    $this->objpdf->SetXY($xcol+08,$xlin+251.5);
 	    $this->objpdf->multicell(66,4,substr($this->Sorgao,0,30),0,"C");
 	    ///////////////////////////////////////////////////
@@ -494,7 +494,7 @@ class db_impcarne extends cl_assinatura {
             $this->objpdf->SetXY($xcol+68,$xlin+235.5);
             $this->objpdf->multicell(66,0.5,"_________________________________",0,"C");
 	    $this->objpdf->SetXY($xcol+68,$xlin+242);
-	    $this->objpdf->multicell(66,4,"HÁ RECURSOS FINANCEIROS",0,"C");
+	    $this->objpdf->multicell(66,4,"HÃ RECURSOS FINANCEIROS",0,"C");
 
 
 
@@ -519,7 +519,7 @@ class db_impcarne extends cl_assinatura {
 	    $this->objpdf->text($xcol+152.5,$xlin+270,"________/________/________",0,4);
 	  }
 	$this->objpdf->Setfont('Arial','',9);
-	$this->objpdf->text(111.2,$xlin+224,'Continua na Página '.($contapagina+1));
+	$this->objpdf->text(111.2,$xlin+224,'Continua na PÃ¡gina '.($contapagina+1));
 	$this->objpdf->setfillcolor(0,0,0);
 
 	$this->objpdf->SetFont('Arial','',4);
@@ -527,7 +527,7 @@ class db_impcarne extends cl_assinatura {
 	$this->objpdf->setfont('Arial','',11);
       }else{
 	$this->objpdf->Setfont('Arial','',9);
-	$this->objpdf->text(112.5,$xlin+271,'Continua na Página '.($contapagina+1));
+	$this->objpdf->text(112.5,$xlin+271,'Continua na PÃ¡gina '.($contapagina+1));
       }
       $contapagina+=1;
       $this->objpdf->addpage();
@@ -538,12 +538,12 @@ class db_impcarne extends cl_assinatura {
       $xlin = 20;
       $xcol = 4;
   
-      // Imprime cabeçalho com dados sobre a prefeitura se mudar de página
+      // Imprime cabeÃ§alho com dados sobre a prefeitura se mudar de pÃ¡gina
       $this->objpdf->setfillcolor(245);
       $this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
       $this->objpdf->setfillcolor(255,255,255);
       $this->objpdf->Setfont('Arial','B',9);
-      $this->objpdf->text(130,$xlin-13,'SOLICITAÇÃO DE COMPRA N'.CHR(176));
+      $this->objpdf->text(130,$xlin-13,'SOLICITAÃ‡ÃƒO DE COMPRA N'.CHR(176));
       $this->objpdf->text(185,$xlin-13,db_formatar($this->Snumero,'s','0',6,'e'));
       $this->objpdf->Setfont('Arial','B',7);
       $this->objpdf->text(130,$xlin-9,'ORGAO');
@@ -560,8 +560,8 @@ class db_impcarne extends cl_assinatura {
       $this->objpdf->text(40,$xlin-5,$this->telefpref);
       $this->objpdf->text(40,$xlin-2,$this->emailpref);
       $this->objpdf->text(40,$xlin+ 1,db_formatar($this->cgcpref,'cnpj'));
-//      $this->objpdf->text(40,$xlin+2,'Continuação da Página '.($contapagina-1));
-      $this->objpdf->text(130,$xlin+2,'Página '.$contapagina);
+//      $this->objpdf->text(40,$xlin+2,'ContinuaÃ§Ã£o da PÃ¡gina '.($contapagina-1));
+      $this->objpdf->text(130,$xlin+2,'PÃ¡gina '.$contapagina);
       
       $xlin = 0;      
       if((isset($fornec) && $fornec=="false") || !isset($fornec)){
@@ -587,9 +587,9 @@ class db_impcarne extends cl_assinatura {
 	$this->objpdf->rect($xcol+ 10,$xlin+30,12,262,2,'DF','34');
 	
 	$this->objpdf->rect($xcol+ 22,$xlin+30,22,262,2,'DF','34');
-        // Caixa dos materiais ou serviços
+        // Caixa dos materiais ou serviÃ§os
 	$this->objpdf->rect($xcol+ 44,$xlin+30,98,262,2,'DF','34');
-        // Caixa dos valores unitário3
+        // Caixa dos valores unitÃ¡rio3
 	$this->objpdf->rect($xcol+142,$xlin+30,30,262,2,'DF','');
         // Caixa dos valores totais dos iten
 	$this->objpdf->rect($xcol+172,$xlin+30,30,262,2,'DF','34');
@@ -602,15 +602,15 @@ class db_impcarne extends cl_assinatura {
 	$this->objpdf->text($xcol+   2,$xlin+28,'ITEM');
 	$this->objpdf->text($xcol+  11,$xlin+28,'QUANT');
 	$this->objpdf->text($xcol+  30,$xlin+28,'REF');
-	$this->objpdf->text($xcol+  70,$xlin+28,'MATERIAL OU SERVIÇO');
-	$this->objpdf->text($xcol+ 145,$xlin+28,'VALOR UNITÁRIO');
+	$this->objpdf->text($xcol+  70,$xlin+28,'MATERIAL OU SERVIÃ‡O');
+	$this->objpdf->text($xcol+ 145,$xlin+28,'VALOR UNITÃRIO');
 	$this->objpdf->text($xcol+ 176,$xlin+28,'VALOR TOTAL');
 
       }else if(isset($fornec) && $fornec=="true"){
       }
       $maiscol = 0;
       $xlin = 20;
-      // Seta altura nova para impressão dos dados
+      // Seta altura nova para impressÃ£o dos dados
       $this->objpdf->sety($xlin+11);
       $this->objpdf->setleftmargin(3);
       $x = true;

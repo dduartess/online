@@ -112,12 +112,12 @@ class cl_db_cgmatualiza {
    // cria propriedade com as variaveis do arquivo
    var $campos = "
                  w11_sequencial = int4 = Sequencial
-                 w11_nome = varchar(40) = Nome/Razão Social
-                 w11_ender = varchar(100) = Endereço
+                 w11_nome = varchar(40) = Nome/RazÃ£o Social
+                 w11_ender = varchar(100) = EndereÃ§o
                  w11_numero = int4 = Numero
                  w11_compl = varchar(20) = Complemento
                  w11_bairro = varchar(20) = Bairro
-                 w11_munic = varchar(20) = Município
+                 w11_munic = varchar(20) = MunicÃ­pio
                  w11_uf = varchar(2) = UF
                  w11_cep = varchar(8) = CEP
                  w11_cxpostal = varchar(20) = Caixa Postal
@@ -146,15 +146,15 @@ class cl_db_cgmatualiza {
                  w11_cgccpf = varchar(14) = CNPJ/CPF
                  w11_fax = varchar(12) = Fax
                  w11_nasc = date = Nascimento
-                 w11_mae = varchar(40) = Mãe
+                 w11_mae = varchar(40) = MÃ£e
                  w11_sexo = varchar(1) = Sexo
-                 w11_ultalt = date = Ultima Alteração
+                 w11_ultalt = date = Ultima AlteraÃ§Ã£o
                  w11_contato = varchar(40) = Contato
                  w11_hora = varchar(5) = Hora do Cadastramento
                  w11_nomefanta = varchar(40) = Nome Fantasia
                  w11_cnh = varchar(20) = CNH
                  w11_categoria = varchar(2) = Categoria CNH
-                 w11_dtemissao = date = Emissão CNH
+                 w11_dtemissao = date = EmissÃ£o CNH
                  w11_dthabilitacao = date = Primeira CNH
                  w11_nomecomple = varchar(100) = Nome Completo
                  w11_dtvencimento = date = Vencimento CNH
@@ -278,19 +278,19 @@ class cl_db_cgmatualiza {
    function incluir ($w11_sequencial){
       $this->atualizacampos();
      if($this->w11_nome == null ){
-       $this->erro_sql = " Campo Nome/Razão Social nao Informado.";
+       $this->erro_sql = " Campo Nome/RazÃ£o Social nao Informado.";
        $this->erro_campo = "w11_nome";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->w11_ender == null ){
-       $this->erro_sql = " Campo Endereço nao Informado.";
+       $this->erro_sql = " Campo EndereÃ§o nao Informado.";
        $this->erro_campo = "w11_ender";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -302,7 +302,7 @@ class cl_db_cgmatualiza {
        $this->erro_sql = " Campo CEP nao Informado.";
        $this->erro_campo = "w11_cep";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -344,7 +344,7 @@ class cl_db_cgmatualiza {
        $this->erro_sql = " Campo Revisado nao Informado.";
        $this->erro_campo = "w11_revisado";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -353,7 +353,7 @@ class cl_db_cgmatualiza {
        $this->erro_sql = " Campo CGM novo nao Informado.";
        $this->erro_campo = "w11_cgmnovo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -363,7 +363,7 @@ class cl_db_cgmatualiza {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: db_cgmatualiza_w11_seq_seq do campo: w11_sequencial";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -372,9 +372,9 @@ class cl_db_cgmatualiza {
      }else{
        $result = @pg_query("select last_value from db_cgmatualiza_w11_seq_seq");
        if(($result != false) && (pg_result($result,0,0) < $w11_sequencial)){
-         $this->erro_sql = " Campo w11_sequencial maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo w11_sequencial maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -386,7 +386,7 @@ class cl_db_cgmatualiza {
      if(($this->w11_sequencial == null) || ($this->w11_sequencial == "") ){
        $this->erro_sql = " Campo w11_sequencial nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -497,13 +497,13 @@ class cl_db_cgmatualiza {
      if($result==false){
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Atualizacao do cgm ($this->w11_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Atualizacao do cgm já Cadastrado";
+         $this->erro_sql   = "Atualizacao do cgm ($this->w11_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Atualizacao do cgm jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Atualizacao do cgm ($this->w11_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Atualizacao do cgm ($this->w11_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -513,7 +513,7 @@ class cl_db_cgmatualiza {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->w11_sequencial;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -586,7 +586,7 @@ class cl_db_cgmatualiza {
          $this->erro_sql = " Campo Sequencial nao Informado.";
          $this->erro_campo = "w11_sequencial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -596,10 +596,10 @@ class cl_db_cgmatualiza {
        $sql  .= $virgula." w11_nome = '$this->w11_nome' ";
        $virgula = ",";
        if(trim($this->w11_nome) == null ){
-         $this->erro_sql = " Campo Nome/Razão Social nao Informado.";
+         $this->erro_sql = " Campo Nome/RazÃ£o Social nao Informado.";
          $this->erro_campo = "w11_nome";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -609,10 +609,10 @@ class cl_db_cgmatualiza {
        $sql  .= $virgula." w11_ender = '$this->w11_ender' ";
        $virgula = ",";
        if(trim($this->w11_ender) == null ){
-         $this->erro_sql = " Campo Endereço nao Informado.";
+         $this->erro_sql = " Campo EndereÃ§o nao Informado.";
          $this->erro_campo = "w11_ender";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -648,7 +648,7 @@ class cl_db_cgmatualiza {
          $this->erro_sql = " Campo CEP nao Informado.";
          $this->erro_campo = "w11_cep";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -858,7 +858,7 @@ class cl_db_cgmatualiza {
          $this->erro_sql = " Campo Revisado nao Informado.";
          $this->erro_campo = "w11_revisado";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -871,7 +871,7 @@ class cl_db_cgmatualiza {
          $this->erro_sql = " Campo CGM novo nao Informado.";
          $this->erro_campo = "w11_cgmnovo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -992,7 +992,7 @@ class cl_db_cgmatualiza {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Atualizacao do cgm nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->w11_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -1002,16 +1002,16 @@ class cl_db_cgmatualiza {
          $this->erro_banco = "";
          $this->erro_sql = "Atualizacao do cgm nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->w11_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->w11_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -1098,9 +1098,9 @@ class cl_db_cgmatualiza {
      $result = @pg_exec($sql.$sql2);
      if($result==false){
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Atualizacao do cgm nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Atualizacao do cgm nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$w11_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -1108,18 +1108,18 @@ class cl_db_cgmatualiza {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Atualizacao do cgm nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Atualizacao do cgm nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$w11_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$w11_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -1134,7 +1134,7 @@ class cl_db_cgmatualiza {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -1143,7 +1143,7 @@ class cl_db_cgmatualiza {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:db_cgmatualiza";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

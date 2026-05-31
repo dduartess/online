@@ -39,7 +39,7 @@ $rsAnos    = db_query($sSqlAnos);
 $aAnos     = db_utils::getColectionByRecord($rsAnos);
 $aMes      = array(1  => 'Janeiro',
                    2  => 'Fevereiro',
-                   3  => 'Março',
+                   3  => 'MarÃ§o',
                    4  => 'Abril',
                    5  => 'Maio',
                    6  => 'Junho',
@@ -55,7 +55,7 @@ $aMes      = array(1  => 'Janeiro',
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script language="JavaScript" src="scripts/prototype.js"></script>
@@ -75,11 +75,11 @@ $aMes      = array(1  => 'Janeiro',
         <td>
           <fieldset>
             <legend>
-              <b>Opções Disponíveis</b>
+              <b>OpÃ§Ãµes DisponÃ­veis</b>
             </legend>
             <table>
               <tr>
-                <td><b>Anos Disponíveis:</b></td>
+                <td><b>Anos DisponÃ­veis:</b></td>
                 <td>
                   <select name='anosreceita' id='anosreceita' style='width:100px'>
                     <option value=''>Selecione um ano</option>
@@ -90,10 +90,10 @@ $aMes      = array(1  => 'Janeiro',
                     ?>
                   </select>
                 </td>
-                <td><b>Mês:</b></td>
+                <td><b>MÃªs:</b></td>
                 <td>
                   <select name='mesreceita' id='mesreceita' style='width:100px'>
-                    <option value=''>Selecione um Mês</option>
+                    <option value=''>Selecione um MÃªs</option>
                     <?php 
                     foreach ($aMes as $iMes => $sDescricao) {
                      echo "  <option value='{$iMes}'>{$sDescricao}</option>\n";            
@@ -236,7 +236,7 @@ function js_retornoReceitas(oResponse) {
     sCorpoReceitas     += "       <b>Receita</b>";
     sCorpoReceitas     += "     </th>";
     sCorpoReceitas     += "     <th  style=';color:black'>";
-    sCorpoReceitas     += "        <b>Descrição</b>";
+    sCorpoReceitas     += "        <b>DescriÃ§Ã£o</b>";
     sCorpoReceitas     += "      </th>";
     sCorpoReceitas     += "      <th  style=';color:black'>";
     sCorpoReceitas     += "        <b>Recurso</b>";
@@ -248,7 +248,7 @@ function js_retornoReceitas(oResponse) {
     sCorpoReceitas     += "        <b>Valor Prev. Adicional</b>";
     sCorpoReceitas     += "      </th>";
     sCorpoReceitas     += "      <th  style=';color:black'>";
-    sCorpoReceitas     += "        <b>Valor Arrecadado no Mês</b>";
+    sCorpoReceitas     += "        <b>Valor Arrecadado no MÃªs</b>";
     sCorpoReceitas     += "      </th> ";
     sCorpoReceitas     += "      <th  style=';color:black'>";
     sCorpoReceitas     += "        <b>Valor Arrecado no Ano</b>";

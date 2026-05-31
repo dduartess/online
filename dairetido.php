@@ -52,7 +52,7 @@ parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -117,7 +117,7 @@ function js_verificacomp(){
 	anodae = Number(obj3.anodae.value);
 	mesdai = Number(obj3.mesdai.value);
 	if((mesval != mesdai) || (anoval < anodae)){
-		alert ('Data informada diferente da competência :'+ mesdai+'/'+anodae);
+		alert ('Data informada diferente da competÃªncia :'+ mesdai+'/'+anodae);
 		obj3.dia.value="";
 		obj3.mes.value="";
 		obj3.ano.value="";
@@ -133,26 +133,26 @@ function js_cnpj(){
   if ((diaval!='')&& (mesval!='')&&(anoval!='')){
  
 	  if(isNaN(diaval)){
-	    alert('dia Inválido');
+	    alert('dia InvÃ¡lido');
 	    
 	    erro = "s";
 	    return false;
 	  }    
 	  if(isNaN(mesval)){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	   
 	    erro = "s";
 	    return false;
 	  }  
 	  if(isNaN(anoval)){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	   
 	    erro = "s";
 	    return false;
 	  }  
 	  data = new Date(anoval,(mesval-1),diaval);
 	  if((data.getMonth() + 1) != mesval || data.getFullYear() != anoval){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	    
 	    erro = "s";
 	    return false;
@@ -266,7 +266,7 @@ db_fieldsmemory($resultano,0);
 </tr>
 <tr class="titulo2">
 	<td>
-		Mês
+		MÃªs
 	</td>
 	<td>
 		CPF ou CNPJ
@@ -275,23 +275,23 @@ db_fieldsmemory($resultano,0);
 		Nota
 	</td>
 	<td>
-		Série
+		SÃ©rie
 	</td>
 	<td>
 		Valor da nota
 	</td>
 	<td>
-		Data de emissão
+		Data de emissÃ£o
 	</td>
 	
 	
 <tr class="titulo2">
 	<td >
 		<select  name="mesdai" onChange="document.form1.cnpj.focus();">
-	    	<option value="0">Mês</option>
+	    	<option value="0">MÃªs</option>
 	    	<option value="1">Janeiro</option>
 	    	<option value="2">Fevereiro</option>
-	    	<option value="3">Março</option>
+	    	<option value="3">MarÃ§o</option>
 	    	<option value="4">Abril</option>
 	    	<option value="5">Maio</option>
 	    	<option value="6">Junho</option>
@@ -336,7 +336,7 @@ db_fieldsmemory($resultano,0);
 		<table width="100%" class="tab">
 			<tr >
 				<th>
-					Mês
+					MÃªs
 				</th>
 				<th>
 					CNPJ
@@ -345,13 +345,13 @@ db_fieldsmemory($resultano,0);
 					Nota
 				</th>
 				<th>
-					Série
+					SÃ©rie
 				</th>
 				<th>
 					Valor da nota
 				</th>
 				<th>
-					Data de emissão
+					Data de emissÃ£o
 				</th>
 				<th>
 					
@@ -384,7 +384,7 @@ db_fieldsmemory($resultano,0);
 					".db_formatar($w15_valreceita,'f')."
 				</td>
 				<td>
-					".($w15_data != ""?db_formatar($w15_data,'d'):'não efetuado')."
+					".($w15_data != ""?db_formatar($w15_data,'d'):'nÃ£o efetuado')."
 ";
 					if($w15_data!= ""){
 						$data = split("-",$w15_data);

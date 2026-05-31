@@ -16,22 +16,22 @@ if(!defined('DB_BIBLIOT')){
    define('FPDF_FONTPATH','fpdf151/font/');
 class pdf3 extends fpdf {
 //|00|//pdf3
-//|10|//Esta classe È uma extens„o da classe |fpdf| e difere da mesma pelo fato de que nesta  classe
-//|10|//foram alterados os mÈtodos |header| (cabeÁalho da p·gina) de  |footer|  (rodapÈ)  para   que
+//|10|//Esta classe √© uma extens√£o da classe |fpdf| e difere da mesma pelo fato de que nesta  classe
+//|10|//foram alterados os m√©todos |header| (cabe√ßalho da p√°gina) de  |footer|  (rodap√©)  para   que
 //|10|//atendessem as nossas necessidades, da seguinte maneira:
 //|10|//|header|     :    - O logotipo da prefeitura ficou centralizado;
 //|10|//                  - Os dados da prefeitura tais como: estado,nome e departamento ficaram 
 //|10|//                    prefeitura;
-//|10|//               Contem ainda vari·veis livres para o desenvolvedor as quais  ser„o  impressas
-//|10|//               na parte superior direita da tela, s„o elas:
+//|10|//               Contem ainda vari√°veis livres para o desenvolvedor as quais  ser√£o  impressas
+//|10|//               na parte superior direita da tela, s√£o elas:
 //|10|//                  - head1
 //|10|//
 //|10|//|footer|     :    - contem dados como:
-//|10|//                      - programa que gerou o relatÛrio;
+//|10|//                      - programa que gerou o relat√≥rio;
 //|10|//                      - emissor;
-//|10|//                      - exercÌcio;
-//|10|//                      - data e hora da emiss„o;
-//|10|//                      - n˙mero da p·gina.
+//|10|//                      - exerc√≠cio;
+//|10|//                      - data e hora da emiss√£o;
+//|10|//                      - n√∫mero da p√°gina.
 
 
  // ################################# Initialization
@@ -129,8 +129,8 @@ $this->Ln(10);
 	}else{
 	   	$emissor = @$GLOBALS["DB_login"];
 	}	
-    $this->Cell(0,10,$url.'   '.$nome.'   Emissor: '.substr(ucwords(strtolower($emissor)),0,30).'   ExercÌcio: '.db_getsession("DB_anousu").'   Data: '.date("d-m-Y",db_getsession("DB_datausu"))." - ".date("H:i:s"),"T",0,'L');
-    $this->Cell(0,10,'P·gina '.$this->PageNo().' de {nb}',0,1,'R');
+    $this->Cell(0,10,$url.'   '.$nome.'   Emissor: '.substr(ucwords(strtolower($emissor)),0,30).'   Exerc√≠cio: '.db_getsession("DB_anousu").'   Data: '.date("d-m-Y",db_getsession("DB_datausu"))." - ".date("H:i:s"),"T",0,'L');
+    $this->Cell(0,10,'P√°gina '.$this->PageNo().' de {nb}',0,1,'R');
     $this->SetLeftMargin($S);
 
   }
@@ -600,9 +600,9 @@ $this->Ln(10);
 function db_extenso($valor=0, $maiusculas=false) {
  
     $rt = '';
-    $singular = array("centavo", "real", "mil", "milh„o", "bilh„o", "trilh„o", "quatrilh„o"); 
-    $plural = array("centavos", "reais", "mil", "milhıes", "bilhıes", "trilhıes", 
-"quatrilhıes"); 
+    $singular = array("centavo", "real", "mil", "milh√£o", "bilh√£o", "trilh√£o", "quatrilh√£o"); 
+    $plural = array("centavos", "reais", "mil", "milh√µes", "bilh√µes", "trilh√µes", 
+"quatrilh√µes"); 
 
     $c = array("", "cem", "duzentos", "trezentos", "quatrocentos", 
 "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"); 
@@ -610,7 +610,7 @@ function db_extenso($valor=0, $maiusculas=false) {
 "sessenta", "setenta", "oitenta", "noventa"); 
     $d10 = array("dez", "onze", "doze", "treze", "quatorze", "quinze", 
 "dezesseis", "dezesete", "dezoito", "dezenove"); 
-    $u = array("", "um", "dois", "trÍs", "quatro", "cinco", "seis", 
+    $u = array("", "um", "dois", "tr√™s", "quatro", "cinco", "seis", 
 "sete", "oito", "nove"); 
 
     $z=0; 
@@ -642,7 +642,7 @@ $ru) ? " e " : "").$ru;
          if(!$maiusculas){ 
                           return($rt ? $rt : "zero"); 
          } else { /*
-	                 Trocando o " E " por " e ", fica muito + apresent·vel! 
+	                 Trocando o " E " por " e ", fica muito + apresent√°vel! 
                      Rodrigo Cerqueira, rodrigobc@fte.com.br
                     */
 			  if ($rt) $rt=ereg_replace(" E "," e ",ucwords($rt));

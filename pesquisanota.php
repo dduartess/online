@@ -33,7 +33,7 @@ $cl_issplanit = new cl_issplanit;
 //die($cl_issplanit->sql_query_file(null,"*", null, "q21_cnpj= '$cnpj' and q21_nota = '$nota' and q21_serie='$serie'"));
 $result = $cl_issplanit->sql_record($cl_issplanit->sql_query_file(null, "*", null, "q21_cnpj= '$cnpj' and q21_nota = '$nota' and q21_serie='$serie' and q21_status = 1"));
 if ($cl_issplanit->numrows > 0) {
-	echo " <script> alert('CNPJ, Nota e Série ja lançadas');
+	echo " <script> alert('CNPJ, Nota e SÃ©rie ja lanÃ§adas');
   	parent.js_notaexiste()
  	 </script>";
 } 

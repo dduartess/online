@@ -60,7 +60,7 @@ if(isset($alterplan) && $alterplan!=""){
   db_fieldsmemory($clquery->result,0);
   echo "<script>location.href=\"opcoesissqn.php?".base64_encode("modificando=true&alter=true&nomecontri=".$q20_nomecontri."&fonecontri=".$q20_fonecontri."&mes=".$altermes."&ano=".$alterano."&numcgm=".$q20_numcgm."&nomes=".$alternome."&inscricaow=".$q20_inscr."&planilha=".$alterplan)."\"</script>";
 }  
-$matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"Março","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
+$matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"MarÃ§o","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
 
 if(isset($planilha)){
   if($inscricao!=0)
@@ -88,7 +88,7 @@ if(isset($comp_planilha)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 
@@ -108,7 +108,7 @@ function js_emiterecibo(){
 
   if(isNaN(dt)){
 
-    alert('Data Inválida. Verifique');
+    alert('Data InvÃ¡lida. Verifique');
     document.form1.dtvenc_dia.select();
     document.form1.dtvenc_dia.focus();
   
@@ -119,7 +119,7 @@ function js_emiterecibo(){
    
     if( dti < dtf ){
     
-      alert('Data de Pagamento Inválida. Deverá ser data de hoje ou maior que hoje.');
+      alert('Data de Pagamento InvÃ¡lida. DeverÃ¡ ser data de hoje ou maior que hoje.');
     
     }else{
 
@@ -144,13 +144,13 @@ function js_emiterecibo(){
 
       //if(soma<<?=$w10_valor?>){
      //   if(quantas>1)
-    //      alert("Valor mínimo do recibo é <?=db_formatar($w10_valor,'f')?>. Os valores destas Planilhas serão acumulados na próxima retenção.");
+    //      alert("Valor mÃ­nimo do recibo Ã© <?=db_formatar($w10_valor,'f')?>. Os valores destas Planilhas serÃ£o acumulados na prÃ³xima retenÃ§Ã£o.");
    //     else
-   //       alert("Valor mínimo do recibo é <?=db_formatar($w10_valor,'f')?>. O valor desta Planilha será acumulado na próxima retenção.");
+   //       alert("Valor mÃ­nimo do recibo Ã© <?=db_formatar($w10_valor,'f')?>. O valor desta Planilha serÃ¡ acumulado na prÃ³xima retenÃ§Ã£o.");
   //    }else{
-   //      var retorno = confirm('Confirma emissão do recibo?');
+   //      var retorno = confirm('Confirma emissÃ£o do recibo?');
    //   }
-      var retorno = confirm('Confirma emissão do recibo?');
+      var retorno = confirm('Confirma emissÃ£o do recibo?');
       if(retorno==true){
         jan = window.open('recibopdf.php?qplan='+qplan+'&dtpaga='+document.form1.dtvenc_ano.value+"-"+document.form1.dtvenc_mes.value+"-"+document.form1.dtvenc_dia.value,'','toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');
         jan.focus();
@@ -210,9 +210,9 @@ db_estilosite();
          echo "<table width=\"100%\" border=\"1\"cellpadding=\"2\" cellspacing=\"0\" class='texto'>";
          echo "  <tr>";
          echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">CNPJ</font></b></td> ";
-         echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">INSCRIÇÃO</font></b></td> ";
-         echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">NOME/RAZÃO SOCIAL</font></b></td> ";
-         echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">SERVIÇO PRESTADO</font></b></td> ";
+         echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">INSCRIÃ‡ÃƒO</font></b></td> ";
+         echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">NOME/RAZÃƒO SOCIAL</font></b></td> ";
+         echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">SERVIÃ‡O PRESTADO</font></b></td> ";
          echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">TOTAL</font></b></td> ";
          echo "    <td align=\"center\" bgcolor=\"#00436E\"><b><font color=\"#FFFFFF\">EMITE</font></b></td> ";
          echo "  </tr>";
@@ -265,18 +265,18 @@ db_estilosite();
                if($q20_numpre != 0){
                ?>
                <font color="<?=$w01_corfontesite?>" face="Arial, Helvetica, sans-serif">
-               Esta Planilha já possui recibo emitido, portanto sua alteração
-               não é permitida.
+               Esta Planilha jÃ¡ possui recibo emitido, portanto sua alteraÃ§Ã£o
+               nÃ£o Ã© permitida.
                O recibo poder&aacute; ser emitido at&eacute; a data
                de seu vencimento.<br>
                </font>
                <?php 
                }else{
                ?>
-               <font color="<?=$w01_corfontesite?>" face="Arial, Helvetica, sans-serif">Após
-               a Emissão do recibo para pagamento o sistema bloqueia
-               a planilha, não permitindo alteração da mesma. Para
-               correção da planilha após e emissão do bloqueto, entre
+               <font color="<?=$w01_corfontesite?>" face="Arial, Helvetica, sans-serif">ApÃ³s
+               a EmissÃ£o do recibo para pagamento o sistema bloqueia
+               a planilha, nÃ£o permitindo alteraÃ§Ã£o da mesma. Para
+               correÃ§Ã£o da planilha apÃ³s e emissÃ£o do bloqueto, entre
                em contato com a prefeitura.<br>
                </font>
                <?php 
@@ -306,7 +306,7 @@ db_estilosite();
          echo "  <tr>";
          echo "    <td align=\"center\" width=\"15%\" bgcolor=\"#cccccc\" ><small><b>Planilha</b></small></td> ";
          echo "    <td align=\"center\" width=\"15%\" bgcolor=\"#cccccc\" ><small><b>Ano</b></small></td> ";
-         echo "    <td align=\"center\" width=\"15%\" bgcolor=\"#cccccc\" ><small><b>Mês</b></small></td> ";
+         echo "    <td align=\"center\" width=\"15%\" bgcolor=\"#cccccc\" ><small><b>MÃªs</b></small></td> ";
          echo "    <td align=\"center\" width=\"15%\" bgcolor=\"#cccccc\" ><small><b>Emite</b></small></td> ";
          echo "    <td align=\"center\" width=\"15%\" bgcolor=\"#cccccc\" ><small><b>Valor</b></small></td> ";
          echo "    <td align=\"center\" width=\"10%\" bgcolor=\"#cccccc\" ><small><b>Selecionados</b></small></td> ";
@@ -342,7 +342,7 @@ db_estilosite();
 
 ?>
 <tr>
-  <td align="right" colspan="4"><b>Total à Pagar</b></td>
+  <td align="right" colspan="4"><b>Total Ã  Pagar</b></td>
   <td align="right">&nbsp;<?=db_formatar($tvalo,'f')?></td>
   <td align="center">&nbsp;</td>
 </tr>

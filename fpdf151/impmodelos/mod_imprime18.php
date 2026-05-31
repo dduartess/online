@@ -2,7 +2,7 @@
 	
         global $contapagina;
 	$contapagina=1;
-////////// MODELO 18  -  REQUISIÇÃO DE SAÍDA DE MATERIAIS 
+////////// MODELO 18  -  REQUISIÃ‡ÃƒO DE SAÃDA DE MATERIAIS 
 	$this->objpdf->AliasNbPages();
 //	$this->objpdf->AddPage();
 	$this->objpdf->settopmargin(1);
@@ -31,7 +31,7 @@
 	  $this->objpdf->setfillcolor(255,255,255);
 //		$this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
 	  $this->objpdf->Setfont('Arial','B',11);
-	  $this->objpdf->text(110,$xlin-13,'REQUISIÇÃO DE SAÍDA DE MATERIAIS N'.chr(176).' '.$this->Rnumero);
+	  $this->objpdf->text(110,$xlin-13,'REQUISIÃ‡ÃƒO DE SAÃDA DE MATERIAIS N'.chr(176).' '.$this->Rnumero);
 //		$this->objpdf->text(159,$xlin-8,$this->datacalc);
 	  $this->objpdf->Image('imagens/files/logo_boleto.png',10,$xlin-17,12);
 	  $this->objpdf->Setfont('Arial','B',9);
@@ -78,9 +78,9 @@
 	  $this->objpdf->Setfont('Arial','b',8);
 	  $this->objpdf->text($xcol+123,$xlin+23,'QUANTIDADES');
 	  $this->objpdf->Setfont('Arial','b',8);
-	  $this->objpdf->text($xcol+2,$xlin+26,'CÓDIGO');
-	  $this->objpdf->text($xcol+25,$xlin+26,'DESCRIÇÃO');
-	  $this->objpdf->text($xcol+80,$xlin+26,'UNID. SAÍDA');
+	  $this->objpdf->text($xcol+2,$xlin+26,'CÃ“DIGO');
+	  $this->objpdf->text($xcol+25,$xlin+26,'DESCRIÃ‡ÃƒO');
+	  $this->objpdf->text($xcol+80,$xlin+26,'UNID. SAÃDA');
 	  $this->objpdf->text($xcol+115,$xlin+26,'REQUISIT.');
 	  $this->objpdf->text($xcol+135,$xlin+26,'FORNECIDA');
 	  $this->objpdf->text($xcol+170,$xlin+26,'OBS. ITEM');
@@ -134,7 +134,7 @@
       }
       /*global $contapagina;
 	$contapagina=1;
-////////// MODELO 18  -  REQUISIÇÃO DE SAÍDA DE MATERIAIS 
+////////// MODELO 18  -  REQUISIÃ‡ÃƒO DE SAÃDA DE MATERIAIS 
 	$this->objpdf->AliasNbPages();
 	$this->objpdf->AddPage();
 	$this->objpdf->settopmargin(1);
@@ -146,15 +146,15 @@
 	$this->objpdf->setfillcolor(245);
 	$this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 
-        // Imprime o cabeçalho com dados sobre a prefeitura
+        // Imprime o cabeÃ§alho com dados sobre a prefeitura
 	$this->objpdf->setfillcolor(255,255,255);
 	$this->objpdf->Setfont('Arial','B',9);
-	$this->objpdf->text(122,$xlin-12,'REQUISIÇÃO DE SAÍDA DE MATERIAIS N'.CHR(176));
+	$this->objpdf->text(122,$xlin-12,'REQUISIÃ‡ÃƒO DE SAÃDA DE MATERIAIS N'.CHR(176));
 	$this->objpdf->text(190,$xlin-12,db_formatar($this->Rnumero,'s','0',6,'e'));
         $this->objpdf->Setfont('Arial','B',7);
 	$this->objpdf->text(  122,$xlin-8,'DEPART.');
 	$this->objpdf->text(133.5,$xlin-8,': '.substr($this->Rdepart,0,40));
-	$this->objpdf->text(  122,$xlin-4,'USUÁRIO');
+	$this->objpdf->text(  122,$xlin-4,'USUÃRIO');
 	$this->objpdf->text(133.5,$xlin-4,': '.substr($this->Rnomeus,0,40));
 	$this->objpdf->text(  122,$xlin  ,'DATA');
 	$this->objpdf->text(133.5,$xlin  ,': '.db_formatar($this->Rdata,"d"));
@@ -162,7 +162,7 @@
 	$this->objpdf->text(  170,$xlin  ,': '.substr($this->Rhora,0,40));
 
 	$this->objpdf->Setfont('Arial','B',6);
-	$this->objpdf->text(  122,  $xlin + 2,'Página '.$pagina);
+	$this->objpdf->text(  122,  $xlin + 2,'PÃ¡gina '.$pagina);
 
         $this->objpdf->Setfont('Arial','B',9);
 	$this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12);
@@ -175,7 +175,7 @@
 	$this->objpdf->text(40,$xlin- 2,$this->emailpref);
 	$this->objpdf->text(40,$xlin+ 1,db_formatar($this->cgcpref,'cnpj'));
 	
-	$numblines = $this->objpdf->NbLines(201,$this->Rresumo); // Número de linhas da OBSERVAÇÃO
+	$numblines = $this->objpdf->NbLines(201,$this->Rresumo); // NÃºmero de linhas da OBSERVAÃ‡ÃƒO
 	$alturabox = 15;
 	if($numblines >= 3){
 	  if($numblines > 3){
@@ -195,7 +195,7 @@
 
 	$this->objpdf->Setfont('Arial','',9);
 	$this->objpdf->rect($xcol,$xlin+12,202,9,2,'DF','34');
-	$this->objpdf->text(30,$xlin+18,"RECEBEMOS OS MATERIAIS ABAIXO ESPECIFICADOS RELATIVOS A REQUISIÇÃO N".CHR(176)." ".db_formatar($this->Rnumero,'s','0',6,'e'));
+	$this->objpdf->text(30,$xlin+18,"RECEBEMOS OS MATERIAIS ABAIXO ESPECIFICADOS RELATIVOS A REQUISIÃ‡ÃƒO N".CHR(176)." ".db_formatar($this->Rnumero,'s','0',6,'e'));
 
 	$this->objpdf->rect($xcol    ,$xlin+23,15,224-$alturabox,2,'DF','34');
 	$this->objpdf->rect($xcol+ 15,$xlin+23,58,224-$alturabox,2,'DF','34');
@@ -207,9 +207,9 @@
 	$this->objpdf->rect($xcol    ,$xlin+23,202,12,2,'DF','34');
 	$this->objpdf->rect($xcol+106,$xlin+23, 38,12,2,'DF','34');
 
-	$this->objpdf->text($xcol+    1,$xlin+33,"CÓDIGO");
-	$this->objpdf->text($xcol+   35,$xlin+33,"DESCRIÇÃO");
-	$this->objpdf->text($xcol+   80,$xlin+33,"UNID. SAÍDA");
+	$this->objpdf->text($xcol+    1,$xlin+33,"CÃ“DIGO");
+	$this->objpdf->text($xcol+   35,$xlin+33,"DESCRIÃ‡ÃƒO");
+	$this->objpdf->text($xcol+   80,$xlin+33,"UNID. SAÃDA");
 	$this->objpdf->text($xcol+113.3,$xlin+28,"QUANTIDADES");
 	$this->objpdf->text($xcol+  107,$xlin+33,"REQUISIT.");
 	$this->objpdf->text($xcol+  125,$xlin+33,"FORNECIDA");
@@ -238,10 +238,10 @@
 
           if((($alturaagora > $alturatotal-$alturabox || ($alturaagora+($numerodelinhas*3) > $alturatotal-$alturabox)) && $pagina==1) || (($alturaagora > $alturatotal || ($alturaagora+($numerodelinhas*3) > $alturatotal)) && $pagina != 1)){
 	    if(($alturaagora > $alturatotal-$alturabox || ($alturaagora+($numerodelinhas*3) > $alturatotal-$alturabox))&& $pagina==1){ 
-	      // Imprime o OBSERVAÇÃO
-	      // Caixa com OBESERVAÇÃO da requisição
+	      // Imprime o OBSERVAÃ‡ÃƒO
+	      // Caixa com OBESERVAÃ‡ÃƒO da requisiÃ§Ã£o
 	      $this->objpdf->Setfont('Arial','b',9);
-	      $this->objpdf->text(5,$xlin+253-$alturabox,"OBESERVAÇÃO DA REQUISIÇÃO:");
+	      $this->objpdf->text(5,$xlin+253-$alturabox,"OBESERVAÃ‡ÃƒO DA REQUISIÃ‡ÃƒO:");
 	      $this->objpdf->Setfont('Arial','',7);
 	      $this->objpdf->setleftmargin(4);
 	      $this->objpdf->sety($xlin+254-$alturabox);
@@ -268,15 +268,15 @@
 	    $this->objpdf->setfillcolor(245);
 	    $this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 
-	    // Imprime o cabeçalho com dados sobre a prefeitura
+	    // Imprime o cabeÃ§alho com dados sobre a prefeitura
 	    $this->objpdf->setfillcolor(255,255,255);
 	    $this->objpdf->Setfont('Arial','B',9);
-	    $this->objpdf->text(122,$xlin-12,'REQUISIÇÃO DE SAÍDA DE MATERIAIS N'.CHR(176));
+	    $this->objpdf->text(122,$xlin-12,'REQUISIÃ‡ÃƒO DE SAÃDA DE MATERIAIS N'.CHR(176));
 	    $this->objpdf->text(190,$xlin-12,db_formatar($this->Rnumero,'s','0',6,'e'));
 	    $this->objpdf->Setfont('Arial','B',7);
 	    $this->objpdf->text(  122,$xlin-8,'DEPART.');
 	    $this->objpdf->text(133.5,$xlin-8,': '.substr($this->Rdepart,0,40));
-	    $this->objpdf->text(  122,$xlin-4,'USUÁRIO');
+	    $this->objpdf->text(  122,$xlin-4,'USUÃRIO');
 	    $this->objpdf->text(133.5,$xlin-4,': '.substr($this->Rnomeus,0,40));
 	    $this->objpdf->text(  122,  $xlin,'DATA');
 	    $this->objpdf->text(133.5,  $xlin,': '.db_formatar($this->Rdata,"d"));
@@ -284,7 +284,7 @@
 	    $this->objpdf->text(  170,  $xlin,': '.substr($this->Rhora,0,40));
 
 	    $this->objpdf->Setfont('Arial','B',6);
-	    $this->objpdf->text(  122,  $xlin + 2,'Página '.$pagina);
+	    $this->objpdf->text(  122,  $xlin + 2,'PÃ¡gina '.$pagina);
 
 	    $this->objpdf->Setfont('Arial','B',9);
 	    $this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12);
@@ -309,9 +309,9 @@
 	    $this->objpdf->rect($xcol    ,$xlin+03,202,12,2,'DF','34');
 	    $this->objpdf->rect($xcol+106,$xlin+03, 38,12,2,'DF','34');
 
-	    $this->objpdf->text($xcol+    1,$xlin+ 13,"CÓDIGO");
-	    $this->objpdf->text($xcol+   35,$xlin+ 13,"DESCRIÇÃO");
-	    $this->objpdf->text($xcol+   80,$xlin+ 13,"UNID. SAÍDA");
+	    $this->objpdf->text($xcol+    1,$xlin+ 13,"CÃ“DIGO");
+	    $this->objpdf->text($xcol+   35,$xlin+ 13,"DESCRIÃ‡ÃƒO");
+	    $this->objpdf->text($xcol+   80,$xlin+ 13,"UNID. SAÃDA");
 	    $this->objpdf->text($xcol+113.3,$xlin+8.4,"QUANTIDADES");
 	    $this->objpdf->text($xcol+  107,$xlin+ 13,"REQUISIT.");
 	    $this->objpdf->text($xcol+  125,$xlin+ 13,"FORNECIDA");
@@ -339,10 +339,10 @@
 	}
         
 	if($pagina == 1){
-	  // Imprime o OBSERVAÇÃO
-	  // Caixa com OBESERVAÇÃO da requisição
+	  // Imprime o OBSERVAÃ‡ÃƒO
+	  // Caixa com OBESERVAÃ‡ÃƒO da requisiÃ§Ã£o
 	  $this->objpdf->Setfont('Arial','b',9);
-	  $this->objpdf->text(5,$xlin+253-$alturabox,"OBESERVAÇÃO DA REQUISIÇÃO:");
+	  $this->objpdf->text(5,$xlin+253-$alturabox,"OBESERVAÃ‡ÃƒO DA REQUISIÃ‡ÃƒO:");
 	  $this->objpdf->Setfont('Arial','',7);
 	  $this->objpdf->setleftmargin(4);
 	  $this->objpdf->sety($xlin+254-$alturabox);

@@ -64,7 +64,7 @@ class DBDate {
 	}
 
 	/**
-	 * Recebe um formato para convers„o de data.
+	 * Recebe um formato para convers√£o de data.
 	 * Formatos aceitos: Y-m-d
 	 *                   d/m/Y
 	 * @param string $sFormat
@@ -74,7 +74,7 @@ class DBDate {
 		
 		if (($sFormat != DBDate::DATA_EN) && ($sFormat != DBDate::DATA_PTBR)) {
 			
-			$sMsgErro  = "Formato de data inv·lida.\n";
+			$sMsgErro  = "Formato de data inv√°lida.\n";
 			$sMsgErro .= "Formatos aceito: \"Y-m-d\" ou \"d/m/Y\"";
 			throw new ParameterException($sMsgErro);
 		}
@@ -94,7 +94,7 @@ class DBDate {
 			list($ano, $mes, $dia) = explode("-", $sData);
 		} else {
 				
-			$sMsgErro  = "Data com formato inv·lido. \n";
+			$sMsgErro  = "Data com formato inv√°lido. \n";
 			$sMsgErro .= "Formatos aceito: \"Y-m-d\" ou \"d/m/Y\"";
 			throw new ParameterException($sMsgErro);
 		}

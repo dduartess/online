@@ -13,7 +13,7 @@
 	$this->objpdf->Setfont('Arial','B',10);
 	$this->objpdf->text(117,$xlin-13,'ESTORNO DE PAGAMENTO N'.CHR(176).': ');
 	$this->objpdf->text(175,$xlin-13,db_formatar($this->anulado,'s','0',6,'e'));
-	$this->objpdf->text(134,$xlin-8,'DATA DE EMISSÃO : ');
+	$this->objpdf->text(134,$xlin-8,'DATA DE EMISSÃƒO : ');
 	$this->objpdf->text(175,$xlin-8,$this->emissao);
 	$this->objpdf->text(128,$xlin-3,'NOTA DE EMPENHO N'.CHR(176).': ');
 	$this->objpdf->text(175,$xlin-3,db_formatar($this->codemp,'s','0',6,'e'));
@@ -27,12 +27,12 @@
 	$this->objpdf->text(40,$xlin-2,$this->emailpref);
 	$this->objpdf->text(40,$xlin,db_formatar($this->cgcpref,'cnpj'));
 
-        /// retangulo dos dados da dotação
+        /// retangulo dos dados da dotaÃ§Ã£o
 	$this->objpdf->rect($xcol,$xlin+2,$xcol+100,50,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','B',8);
-	$this->objpdf->text($xcol+2,$xlin+7,'Órgao');
+	$this->objpdf->text($xcol+2,$xlin+7,'Ã“rgao');
 	$this->objpdf->text($xcol+2,$xlin+10.5,'Unidade');
-	$this->objpdf->text($xcol+2,$xlin+14,'Função');
+	$this->objpdf->text($xcol+2,$xlin+14,'FunÃ§Ã£o');
 	
 	$this->objpdf->text($xcol+2,$xlin+20.5,'Proj/Ativ');
 	$this->objpdf->text($xcol+2,$xlin+27,'Rubrica');
@@ -45,7 +45,7 @@
         }
 	
 	$this->objpdf->text($xcol+2,$xlin+42.5,'Reduzido');
-	$this->objpdf->text($xcol+2,$xlin+48,'Licitação');
+	$this->objpdf->text($xcol+2,$xlin+48,'LicitaÃ§Ã£o');
 	
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text($xcol+17,$xlin+7,':  '.db_formatar($this->orgao,'orgao').' - '.$this->descr_orgao);
@@ -79,8 +79,8 @@
 	$this->objpdf->text($xcol+107,$xlin+7,'Numcgm');
         $this->objpdf->text($xcol+140,$xlin+7,(strlen($this->cnpj) == 11?'CPF':'CNPJ'));
 	$this->objpdf->text($xcol+107,$xlin+11,'Nome');
-	$this->objpdf->text($xcol+107,$xlin+15,'Endereço');
-	$this->objpdf->text($xcol+107,$xlin+19,'Município');
+	$this->objpdf->text($xcol+107,$xlin+15,'EndereÃ§o');
+	$this->objpdf->text($xcol+107,$xlin+19,'MunicÃ­pio');
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text($xcol+124,$xlin+7,': '.$this->numcgm);
 	$this->objpdf->text($xcol+149,$xlin+7,':  '.(strlen($this->cnpj) == 11?db_formatar($this->cnpj,'cpf'):db_formatar($this->cnpj,'cnpj')).'   Fone: '.$this->telefone);
@@ -100,7 +100,7 @@
 	$this->objpdf->text($xcol+108,$xlin+44.5,'Valor Estorno');
 	$this->objpdf->text($xcol+157,$xlin+44.5,'Data do Estorno');
 	$this->objpdf->Setfont('Arial','',8);
-	$this->objpdf->text($xcol+108,$xlin+27,'AUTORIZAÇÃO N'.chr(176).' '.db_formatar($this->numaut,'s','0',5,'e'));
+	$this->objpdf->text($xcol+108,$xlin+27,'AUTORIZAÃ‡ÃƒO N'.chr(176).' '.db_formatar($this->numaut,'s','0',5,'e'));
 	$this->objpdf->text($xcol+150,$xlin+27,'SEQ. DO EMPENHO N'.chr(176).' '.db_formatar($this->numemp,'s','0',6,'e'));
 //	$this->objpdf->text($xcol+108,$xlin+26.5,$this->texto);
 	$this->objpdf->text($xcol+130,$xlin+38.0,db_formatar($this->empenhado,'f'));
@@ -119,9 +119,9 @@
 	  
 	   $this->objpdf->SetFont('Arial','',7);
 	   $this->objpdf->setxy($xcol+1,$xlin+68);
-	   $this->objpdf->text($xcol+2,$xlin+64,'Histórico do Estorno : ',0,1,'L',0);
+	   $this->objpdf->text($xcol+2,$xlin+64,'HistÃ³rico do Estorno : ',0,1,'L',0);
 	   $this->objpdf->multicell(195,3.5,$this->descr_anu);
-	   $this->objpdf->text($xcol+2,$xlin+120,'Histórico do Empenho : ',0,1,'L',0);
+	   $this->objpdf->text($xcol+2,$xlin+120,'HistÃ³rico do Empenho : ',0,1,'L',0);
 	   $this->objpdf->setxy($xcol+1,$xlin+124);
 	   $this->objpdf->multicell(147,3.5,$this->resumo);
 	   $this->objpdf->text($xcol+2,$xlin+182,'DESTINO : ',0,1,'L',0);

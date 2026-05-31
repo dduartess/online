@@ -54,8 +54,8 @@ if (isset($oid_arq)&&$oid_arq!=""){
 ?>
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Expires" CONTENT="0">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -89,7 +89,7 @@ db_estilosite()
 			<tr><td class='texto'> Hora: $l20_horaaber </td></tr>
 		 	<tr><td class='texto'> Objeto: $l20_objeto </td></tr>
 			<tr><td>&nbsp;</td></tr>
-			<tr><td class='texto'> Documentos disponíveis para download:</td></tr>
+			<tr><td class='texto'> Documentos disponÃ­veis para download:</td></tr>
 ";
 		
 		$sqledital= "select l20_codigo,l27_arquivo, l27_arqnome

@@ -25,7 +25,7 @@
  *                                licenca/licenca_pt.txt 
  */
 
-error_reporting('** FAVOR FA«A SEU PEDIDO DE SENHA! **');
+error_reporting('** FAVOR FA√áA SEU PEDIDO DE SENHA! **');
 session_start();
 
 include("libs/db_conecta.php");
@@ -83,7 +83,7 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
   $total  = pg_num_rows($result);
 
 	if($total == 0){
-	   db_logs("","",0,"SolicitaÁ„o de senha para fornecedor: cgc ou cpf n„o encontrado. {$sCgcCpf}");
+	   db_logs("","",0,"Solicita√ß√£o de senha para fornecedor: cgc ou cpf n√£o encontrado. {$sCgcCpf}");
 	}
 
 	if($total > 0){
@@ -92,12 +92,12 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 
   if( $total > 0 ) {
 
-    db_logs("","",0,"SolicitaÁ„o de senha para fornecedor: cgc ou cpf - {$sCgcCpf}");
+    db_logs("","",0,"Solicita√ß√£o de senha para fornecedor: cgc ou cpf - {$sCgcCpf}");
 
 		// $mailpref = "$email_contribuinte,$email";
 		$mailpref = "{$sEmailServ}";
 
-		//verifica se usu·rio j· È cadastrado
+		//verifica se usu√°rio j√° √© cadastrado
 		$sqlUsuario = " select login from db_usuarios where login = '{$z01_numcgm}' and usuext = '1' ";
 
 		$queryUsuario = db_query($sqlUsuario);
@@ -108,7 +108,7 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 		  $sqlerro=false;
 		  db_inicio_transacao();
 
-		  //cadastra novo usu·rio
+		  //cadastra novo usu√°rio
 		  $sqlUsu     = " select nextval('db_usuarios_id_usuario_seq') as x ";
 		  $result     = db_query($sqlUsu);
 
@@ -175,11 +175,11 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 			                           Login Internet: {$z01_numcgm}
 			                           Senha Internet: {$sSenha}
 
-			                           Utilize Login e Senha para acessar suas informaÁıes no Portal da Prefeitura na Internet.
+			                           Utilize Login e Senha para acessar suas informa√ß√µes no Portal da Prefeitura na Internet.
 
 			                           $url/dbpref/
 
-			                           N„o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
+			                           N√£o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
 
 			                           --------------------------------------------------------
 			                           ".date("d/m/Y - H:i:s")." - ".getenv("REMOTE_ADDR");
@@ -191,7 +191,7 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 			    if(isset($sEmailServ) && $sEmailServ != '') {
 
 			       $msg   = "E-mail enviado com sucesso.\\n";
-			       $msg  .= "Suas informaÁıes foram enviadas para o e-mail: {$sEmailServ}";
+			       $msg  .= "Suas informa√ß√µes foram enviadas para o e-mail: {$sEmailServ}";
 			       msgbox($msg);
 
 			       $sTring = $clconfigdbpref->sql_record($clconfigdbpref->sql_query_file(db_getsession('DB_instit'),"w13_emailadmin"));
@@ -208,7 +208,7 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
     } else {
 
 			 // se ja tiver senha cadastrada........
-			 msgbox("VocÍ J· possui cadastro na Prefeitura!");
+			 msgbox("Voc√™ J√° possui cadastro na Prefeitura!");
 
 		   if (isset($sCgcCpf)) {
 
@@ -239,19 +239,19 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 			                            CPF:      {$sCpf}
 			                            E-mail:   {$sEmailServ}
 
-			                            AtenÁ„o!
-			                            AlguÈm tentou realizar um novo pedido de senha com seus dados.
+			                            Aten√ß√£o!
+			                            Algu√©m tentou realizar um novo pedido de senha com seus dados.
 			                            ".date("d/m/Y - H:i:s")." - ".getenv("REMOTE_ADDR")."
 			                            Uma nova senha foi gerada para acesso ao Portal.
 
 			                            Login Internet: {$z01_numcgm}
 			                            Senha Internet: {$sSenha}
 
-			                            Utilize Login e Senha para acessar suas informaÁıes no Portal da Prefeitura na Internet.
+			                            Utilize Login e Senha para acessar suas informa√ß√µes no Portal da Prefeitura na Internet.
 
 			                            $url/dbpref/
 
-			                            N„o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
+			                            N√£o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
 
 			                            --------------------------------------------------------
 			                           ";
@@ -275,8 +275,8 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 
   } else {
 
-		  $sMsg = "Dados informados N√O encontrados no cadastro da Prefeitura!\\n
-		           Procure o balc„o da Prefeitura para realizar seu cadastro.";
+		  $sMsg = "Dados informados N√ÉO encontrados no cadastro da Prefeitura!\\n
+		           Procure o balc√£o da Prefeitura para realizar seu cadastro.";
 		  msgbox($sMsg);
 
 		  db_redireciona("centro_pref.php");
@@ -310,7 +310,7 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 				  $total  = pg_num_rows($result);
 
 				  if($total == 0){
-				     db_logs("","",0,"Esqueci minha senha: cgc ou cpf n„o encontrado. {$sCgcCpf}");
+				     db_logs("","",0,"Esqueci minha senha: cgc ou cpf n√£o encontrado. {$sCgcCpf}");
 				  }
 
 				  if($total > 0){
@@ -319,7 +319,7 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 
 				if( $total > 0 ){
 
-	             //verifica se usu·rio existe.
+	             //verifica se usu√°rio existe.
               $sqlUsu = " select nextval('db_usuarios_id_usuario_seq') as x ";
 
               //die($sqlUsu);
@@ -358,19 +358,19 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 				                         CPF:      {$sCpf}
 				                         E-mail:   {$sEmailServ}
 
-				                         AtenÁ„o!
-				                         AlguÈm tentou realizar um novo pedido de senha com seus dados.
+				                         Aten√ß√£o!
+				                         Algu√©m tentou realizar um novo pedido de senha com seus dados.
 				                         ".date("d/m/Y - H:i:s")." - ".getenv("REMOTE_ADDR")."
 				                         Uma nova senha foi gerada para acesso ao Portal.
 
 				                         Login Internet: {$z01_numcgm}
 				                         Senha Internet: {$sSenha}
 
-				                         Utilize Login e Senha para acessar suas informaÁıes no Portal da Prefeitura na Internet.
+				                         Utilize Login e Senha para acessar suas informa√ß√µes no Portal da Prefeitura na Internet.
 
 				                         $url/dbpref/
 
-				                         N„o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
+				                         N√£o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
 
 				                         --------------------------------------------------------
 				";
@@ -391,15 +391,15 @@ if(isset($oGet->chave) && $oGet->chave == 't') {
 
 				} else {
 
-          $sMsg = "Dados informados N√O encontrados no cadastro da Prefeitura!\\n
-                   Procure o balc„o da Prefeitura para realizar seu cadastro.";
+          $sMsg = "Dados informados N√ÉO encontrados no cadastro da Prefeitura!\\n
+                   Procure o balc√£o da Prefeitura para realizar seu cadastro.";
           msgbox($sMsg);
 
           db_redireciona("centro_pref.php");
         }
 		 } else {
-        $sMsg = "Dados informados N√O encontrados no cadastro da Prefeitura!\\n
-                 Procure o balc„o da Prefeitura para realizar seu cadastro.";
+        $sMsg = "Dados informados N√ÉO encontrados no cadastro da Prefeitura!\\n
+                 Procure o balc√£o da Prefeitura para realizar seu cadastro.";
         msgbox($sMsg);
 
         db_redireciona("centro_pref.php");
@@ -441,7 +441,7 @@ if(isset($mostar) && $mostar == 1){
        cellpadding="5" cellspacing="1" bgcolor="<?php $w01_corbody?>"
        class="bold4">
   <tr>
-    <td width="5%">InformaÁıes Servidor:</td>
+    <td width="5%">Informa√ß√µes Servidor:</td>
     <td width="32%">
       <input type="text" id="matricula" name="matricula" value="<?= $sMatric; ?>" size="8" maxlength="10" disabled>
       <input type="text" id="nome" name="nome" size="29" value="<?= $sNome; ?>" maxlength="30" align="left" disabled>

@@ -60,7 +60,7 @@ else
   
   switch($campo) {
     case "tabela":
-      $sql = "select (codarq || '##' || nomearq) as db_codigo,codarq as código,nomearq as \"nome da tabela\"
+      $sql = "select (codarq || '##' || nomearq) as db_codigo,codarq as cÃ³digo,nomearq as \"nome da tabela\"
               from db_sysarquivo
 		      where nomearq like '".$arg[1]."%'
 		      order by nomearq";
@@ -70,7 +70,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
 function js_envia(campo1,campo2){
 

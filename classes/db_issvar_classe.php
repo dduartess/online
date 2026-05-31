@@ -51,7 +51,7 @@ class cl_issvar {
    var $q05_vlrinf = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 q05_codigo = int8 = CÛdigo 
+                 q05_codigo = int8 = C√≥digo 
                  q05_numpre = int4 = numpre 
                  q05_numpar = int4 = Parcela 
                  q05_valor = float8 = valor 
@@ -101,7 +101,7 @@ class cl_issvar {
        $this->erro_sql = " Campo numpre nao Informado.";
        $this->erro_campo = "q05_numpre";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -110,7 +110,7 @@ class cl_issvar {
        $this->erro_sql = " Campo Parcela nao Informado.";
        $this->erro_campo = "q05_numpar";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -119,7 +119,7 @@ class cl_issvar {
        $this->erro_sql = " Campo valor nao Informado.";
        $this->erro_campo = "q05_valor";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -128,7 +128,7 @@ class cl_issvar {
        $this->erro_sql = " Campo ano nao Informado.";
        $this->erro_campo = "q05_ano";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -137,7 +137,7 @@ class cl_issvar {
        $this->erro_sql = " Campo mes nao Informado.";
        $this->erro_campo = "q05_mes";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -146,7 +146,7 @@ class cl_issvar {
        $this->erro_sql = " Campo aliquota nao Informado.";
        $this->erro_campo = "q05_aliq";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -155,7 +155,7 @@ class cl_issvar {
        $this->erro_sql = " Campo valor bruto nao Informado.";
        $this->erro_campo = "q05_bruto";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -164,7 +164,7 @@ class cl_issvar {
        $this->erro_sql = " Campo valor contribuinte nao Informado.";
        $this->erro_campo = "q05_vlrinf";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -174,7 +174,7 @@ class cl_issvar {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: issvar_q05_codigo_seq do campo: q05_codigo"; 
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -183,9 +183,9 @@ class cl_issvar {
      }else{
        $result = @pg_query("select last_value from issvar_q05_codigo_seq");
        if(($result != false) && (pg_result($result,0,0) < $q05_codigo)){
-         $this->erro_sql = " Campo q05_codigo maior que ˙ltimo n˙mero da sequencia.";
-         $this->erro_banco = "Sequencia menor que este n˙mero.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo q05_codigo maior que √∫ltimo n√∫mero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este n√∫mero.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -196,7 +196,7 @@ class cl_issvar {
      if(($this->q05_codigo == null) || ($this->q05_codigo == "") ){ 
        $this->erro_sql = " Campo q05_codigo nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -230,13 +230,13 @@ class cl_issvar {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = " ($this->q05_codigo) nao IncluÌdo. Inclusao Abortada.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = " j· Cadastrado";
+         $this->erro_sql   = " ($this->q05_codigo) nao Inclu√≠do. Inclusao Abortada.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = " j√° Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = " ($this->q05_codigo) nao IncluÌdo. Inclusao Abortada.";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = " ($this->q05_codigo) nao Inclu√≠do. Inclusao Abortada.";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -245,7 +245,7 @@ class cl_issvar {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q05_codigo;
-     $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $resaco = $this->sql_record($this->sql_query_file($this->q05_codigo));
@@ -275,10 +275,10 @@ class cl_issvar {
        $sql  .= $virgula." q05_codigo = $this->q05_codigo ";
        $virgula = ",";
        if(trim($this->q05_codigo) == null ){ 
-         $this->erro_sql = " Campo CÛdigo nao Informado.";
+         $this->erro_sql = " Campo C√≥digo nao Informado.";
          $this->erro_campo = "q05_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -291,7 +291,7 @@ class cl_issvar {
          $this->erro_sql = " Campo numpre nao Informado.";
          $this->erro_campo = "q05_numpre";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -304,7 +304,7 @@ class cl_issvar {
          $this->erro_sql = " Campo Parcela nao Informado.";
          $this->erro_campo = "q05_numpar";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -317,7 +317,7 @@ class cl_issvar {
          $this->erro_sql = " Campo valor nao Informado.";
          $this->erro_campo = "q05_valor";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -330,7 +330,7 @@ class cl_issvar {
          $this->erro_sql = " Campo ano nao Informado.";
          $this->erro_campo = "q05_ano";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -343,7 +343,7 @@ class cl_issvar {
          $this->erro_sql = " Campo mes nao Informado.";
          $this->erro_campo = "q05_mes";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -360,7 +360,7 @@ class cl_issvar {
          $this->erro_sql = " Campo aliquota nao Informado.";
          $this->erro_campo = "q05_aliq";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -373,7 +373,7 @@ class cl_issvar {
          $this->erro_sql = " Campo valor bruto nao Informado.";
          $this->erro_campo = "q05_bruto";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -386,7 +386,7 @@ class cl_issvar {
          $this->erro_sql = " Campo valor contribuinte nao Informado.";
          $this->erro_campo = "q05_vlrinf";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -425,7 +425,7 @@ class cl_issvar {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = " nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->q05_codigo;
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -434,15 +434,15 @@ class cl_issvar {
          $this->erro_banco = "";
          $this->erro_sql = " nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->q05_codigo;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "AlteraÁ„o Efetivada com Sucesso\\n";
+         $this->erro_sql = "Altera√ß√£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q05_codigo;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -481,26 +481,26 @@ class cl_issvar {
      $result = pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = " nao ExcluÌdo. Exclus„o Abortada.\\n";
+       $this->erro_sql   = " nao Exclu√≠do. Exclus√£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$q05_codigo;
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = " nao Encontrado. Exclus„o n„o Efetuada.\\n";
+         $this->erro_sql = " nao Encontrado. Exclus√£o n√£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$q05_codigo;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclus„o Efetivada com Sucesso\\n";
+         $this->erro_sql = "Exclus√£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$q05_codigo;
-         $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -514,7 +514,7 @@ class cl_issvar {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -523,7 +523,7 @@ class cl_issvar {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:issvar";
-        $this->erro_msg   = "Usu·rio: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "Usu√°rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;
@@ -765,7 +765,7 @@ class cl_issvar {
       }	
     }else{
         $this->erro_status="0";
-        $this->erro_msg="Nenhum issvar encontrado com o cÛdigo $codigo.";
+        $this->erro_msg="Nenhum issvar encontrado com o c√≥digo $codigo.";
     }
   }
   function sql_query_lev ( $q05_codigo=null,$campos="*",$ordem=null,$dbwhere=""){ 

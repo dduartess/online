@@ -61,8 +61,8 @@ if(isset($anular)){
 ?>
 <html>
 <head>
-<title>Anulação de planilha</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>AnulaÃ§Ã£o de planilha</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 	function js_voltar(most){
@@ -124,9 +124,9 @@ if(isset($anular)){
 	if(isset($anular)){
 	  if($sqlerro == true){
 	  	//db_msgbox($erro_msg);
-			db_msgbox("Anulação não efetuada.");
+			db_msgbox("AnulaÃ§Ã£o nÃ£o efetuada.");
 	  }else{
-	  	db_msgbox("Anulação efetuada com sucesso");
+	  	db_msgbox("AnulaÃ§Ã£o efetuada com sucesso");
 			echo "<script> js_voltar(6); </script> ";
 	  }
  
@@ -155,7 +155,7 @@ function db_anulaPlanilha($planilha,$motivo, $ip){
 	$sqlerro = false;
 	db_inicio_transacao();
 	
-	//gravar na issplananula: os dados da anulação
+	//gravar na issplananula: os dados da anulaÃ§Ã£o
 	$clissplananula->q76_planilha   = $planilha;
 	$clissplananula->q76_data       = $data;
 	$clissplananula->q76_hora       = $hora;
@@ -169,7 +169,7 @@ function db_anulaPlanilha($planilha,$motivo, $ip){
     $erro_msg = $clissplananula->erro_msg;
   }
  
-	//alterar a situação da issplan para anulada
+	//alterar a situaÃ§Ã£o da issplan para anulada
 	$clissplan->q20_planilha = $planilha;
 	$clissplan->q20_situacao = 5;
 	$clissplan->alterar($planilha);
@@ -189,7 +189,7 @@ function db_anulaPlanilha($planilha,$motivo, $ip){
 			$sqlerro = true;
 			$erro_msg = "Deve-se configurar a planilha (db_confplan)";
 		}
-	  $clcancdebitos->k20_descr   = "anulação de planilha no dbpref.";
+	  $clcancdebitos->k20_descr   = "anulaÃ§Ã£o de planilha no dbpref.";
 		$clcancdebitos->k20_hora    = $hora;
 		$clcancdebitos->k20_data    = $data;
 		$clcancdebitos->k20_usuario = $usuario;

@@ -60,13 +60,13 @@ $oDadosConfMensagem = db_utils::fieldsMemory($rsConfMensagem, 0);
 $sConfMensagem      = $oDadosConfMensagem->mens;
 $sAlinhamento       = $oDadosConfMensagem->alinhamento;
 
-db_logs(0,0,0,"Simulação de Inscrição ISS");
+db_logs(0,0,0,"SimulaÃ§Ã£o de InscriÃ§Ã£o ISS");
 
 ?>
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda - P&aacute;gina Inicial</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Expires" CONTENT="0">
 	<script language="JavaScript" src="scripts/scripts.js"></script>
 	<script language="JavaScript" src="scripts/strings.js"></script>
@@ -281,8 +281,8 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  </tr>
 
 	  <tr>
-	  	<td title="Número de empregados">
-	  		<strong>Número de Empregados:</strong>
+	  	<td title="NÃºmero de empregados">
+	  		<strong>NÃºmero de Empregados:</strong>
 	  	</td>
 	  	<td>
 	  		<input type				  = "text"
@@ -290,19 +290,19 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  				 	 name			    = "numero_empregados"
 	  			     autocomplete = "off"
 	  		       onkeydown    = "return js_controla_tecla_enter(this,event);"
-	  					 onkeyup			= "js_ValidaCampos(this,1,'Número de Empregados','t','f',event);"
+	  					 onkeyup			= "js_ValidaCampos(this,1,'NÃºmero de Empregados','t','f',event);"
 	  					 onblur       = "js_ValidaMaiusculo(this,'f',event);"
 	  					 style        = "background-color:#E6E4F1"
 	  					 maxlength    = "6"
 	  		       size         = "10"
 	  		       value        = ""
-	  		       title        = "Número de empregados da empresa.">
+	  		       title        = "NÃºmero de empregados da empresa.">
 	  	</td>
 	  </tr>
 
 	  <tr>
-	  	<td title="Número de empregados">
-	  		<strong>Área:</strong>
+	  	<td title="NÃºmero de empregados">
+	  		<strong>Ãrea:</strong>
 	  	</td>
 	  	<td>
 	  		<input type				  = "text"
@@ -310,19 +310,19 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  				 	 name			    = "area"
 	  			     autocomplete = "off"
 	  		       onkeydown    = "return js_controla_tecla_enter(this,event);"
-	  					 onkeyup			= "js_ValidaCampos(this,4,'Área','t','f',event);"
+	  					 onkeyup			= "js_ValidaCampos(this,4,'Ãrea','t','f',event);"
 	  					 onblur       = "js_ValidaMaiusculo(this,'f',event);"
 	  					 style        = "background-color:#E6E4F1"
 	  					 maxlength    = "6"
 	  		       size         = "10"
 	  		       value        = ""
-	  		       title        = "Área">
+	  		       title        = "Ãrea">
 	  	</td>
 	  </tr>
 
 	  <tr>
 	  	<td>
-	  		<strong>Data Início</strong>
+	  		<strong>Data InÃ­cio</strong>
 	  	</td>
 	  	<td>
 	  	  <?php 
@@ -347,7 +347,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	  			db_input('q03_ativ' , 10, $Ij50_zona , true, 'hidden', 1);
 	  			db_input('q03_descr', 44, $Ij50_descr, true, 'text', 3);
 	  		?>
-	  		<input type="button" value="Lançar" name="lancar" id="lancar" onclick="js_lancar()" />
+	  		<input type="button" value="LanÃ§ar" name="lancar" id="lancar" onclick="js_lancar()" />
 	  	</td>
 	  </tr>
 
@@ -358,7 +358,7 @@ db_logs(0,0,0,"Simulação de Inscrição ISS");
 	        <legend><strong>Atividades Cadastradas:</strong></legend>
 				  <table id="atividades">
 				  	<tr style="background-color: #EEE; border:2px outset #DDD" id="headerAtividades">
-				  		<th width="15%" align="center" style="border:2px outset #DDD"><strong>Código    </strong></th>
+				  		<th width="15%" align="center" style="border:2px outset #DDD"><strong>CÃ³digo    </strong></th>
 				  		<th width="50%" align="center" style="border:2px outset #DDD"><strong>Atividade </strong></th>
 				  		<th width="15%" align="center" style="border:2px outset #DDD"><strong>Principal </strong></th>
 				  		<th width="15%" align="center" style="border:2px outset #DDD"><strong>Quantidade</strong></th>
@@ -394,7 +394,7 @@ function js_limparOutrosDados() {
 
 
 /**
- * função para retornal nome e email do copf cgc digitado.
+ * funÃ§Ã£o para retornal nome e email do copf cgc digitado.
  */
 function js_getDadosCpf(){
 
@@ -462,7 +462,7 @@ function js_validaEmail(oEmail){
 		if(ER.test(oEmail.value)){
 		  return true;
 		} else {
-		  alert('E-mail informado é invalido.')
+		  alert('E-mail informado Ã© invalido.')
 		  oEmail.value = '';
 			return false;
 		}
@@ -476,7 +476,7 @@ function js_defineAtividadePrincipal(iCodigoAtividade){
 function js_simular() {
 
   if (aSelecionados.length == 0) {
-    alert('Você deve selecionar ao menos uma atividade para simular o cálculo.');
+    alert('VocÃª deve selecionar ao menos uma atividade para simular o cÃ¡lculo.');
     return false;
   }
 
@@ -524,7 +524,7 @@ function js_simular() {
 
 	oParam.sExec = 'simular';
 
-	js_divCarregando('Processando informações, aguarde.', 'msgbox');
+	js_divCarregando('Processando informaÃ§Ãµes, aguarde.', 'msgbox');
 
 	var oAjax = new Ajax.Request(sUrl,
 			                        {
@@ -730,7 +730,7 @@ var aShowEvents     = ["onFocus", "onMouseOver"];
 var aHideEvents     = ["onBlur" , "onMouseOut" ];
 
 var oHintCpfCnpj     = new DBHint("oHintCpfCnpj");
-    oHintCpfCnpj    .setText("<b>Digite o CPF ou CNPJ. (Somente números)</b>");
+    oHintCpfCnpj    .setText("<b>Digite o CPF ou CNPJ. (Somente nÃºmeros)</b>");
     oHintCpfCnpj    .setShowEvents(aShowEvents);
     oHintCpfCnpj    .setHideEvents(aHideEvents);
     oHintCpfCnpj    .make($('z01_cgccpf'));
@@ -749,7 +749,7 @@ var oHintBairro      = new DBHint("oHintBairro");
     oHintBairro     .make($('j13_descr'));
 
 var oHintEscritorio  = new DBHint("oHintEscritorio");
-    oHintEscritorio .setText("<b>Selecione o Escritório Contábil clicando no link ao lado.</b>");
+    oHintEscritorio .setText("<b>Selecione o EscritÃ³rio ContÃ¡bil clicando no link ao lado.</b>");
     oHintEscritorio .setShowEvents(aShowEvents);
     oHintEscritorio .setHideEvents(aHideEvents);
     oHintEscritorio .make($('z01_nome_escritorio'));

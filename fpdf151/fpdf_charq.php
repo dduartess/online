@@ -12,21 +12,21 @@ define('FPDF_VERSION','1.51');
 
 class FPDF
 //|00|//FPDF
-//|10|//Esta é o construtor da classe. Ele permite que seja definido o formato da página, a orientação e a unidade de medida 
-//|10|//usada em todos os métodos (exeto para tamanhos de fonte).
+//|10|//Esta Ã© o construtor da classe. Ele permite que seja definido o formato da pÃ¡gina, a orientaÃ§Ã£o e a unidade de medida 
+//|10|//usada em todos os mÃ©todos (exeto para tamanhos de fonte).
 //|15|//$pdf = new FPDF($orientation='P',$unit='mm',$format='A4');
-//|20|//orientation  : Orientação padrão da página. Os valores possíveis são (diferenciando maiúsculas e 
-//|20|//               minúsculas):  O valor padrão é P.
+//|20|//orientation  : OrientaÃ§Ã£o padrÃ£o da pÃ¡gina. Os valores possÃ­veis sÃ£o (diferenciando maiÃºsculas e 
+//|20|//               minÃºsculas):  O valor padrÃ£o Ã© P.
 //|20|//                  - P(retrato)
 //|20|//                  - L(paisagem)
-//|20|//unit         : Unidade de medida do usuário. Os valores possíveis são:
+//|20|//unit         : Unidade de medida do usuÃ¡rio. Os valores possÃ­veis sÃ£o:
 //|20|//                  - pt: pontos
-//|20|//                  - mm: millímetros
-//|20|//                  - cm: centímetros
+//|20|//                  - mm: millÃ­metros
+//|20|//                  - cm: centÃ­metros
 //|20|//                  - in: polegada
-//|20|//               Um ponto é igual a 1/72 polegadas, isto é o mesmo que 0.35 mm (uma polegada são 2.54 cm). Ista é 
-//|20|//               uma unidade muito comum em tipografia; os tamanhos das fontes são medidos por esta unidade. 
-//|20|//format       : O formato usado pelas páginas. Pode ser um dos seguintes valores (diferenciando maiúsculas e minúsculas):
+//|20|//               Um ponto Ã© igual a 1/72 polegadas, isto Ã© o mesmo que 0.35 mm (uma polegada sÃ£o 2.54 cm). Ista Ã© 
+//|20|//               uma unidade muito comum em tipografia; os tamanhos das fontes sÃ£o medidos por esta unidade. 
+//|20|//format       : O formato usado pelas pÃ¡ginas. Pode ser um dos seguintes valores (diferenciando maiÃºsculas e minÃºsculas):
 //|20|//                  - A3
 //|20|//                  - A4
 //|20|//                  - A5
@@ -97,9 +97,9 @@ var $sum;		// variavel para os graficos
 var $NbVal;		// variavel para os graficos
 
 var $descricao;		// string para comparar o tamanho para preenchimento
-var $preech;		// string que será preenchida
+var $preech;		// string que serÃ¡ preenchida
 var $xtam;		// tamanho do campo para preenchimento
-var $imprime_rodape;	// Alterado para não imprimir rodape nos relatorios ppa
+var $imprime_rodape;	// Alterado para nÃ£o imprimir rodape nos relatorios ppa
 
 
 					
@@ -232,7 +232,7 @@ function FPDF($orientation='P',$unit='mm',$format='A4')
 }
 
 // $descricao          // string para comparar o tamanho para preenchimento
-// $preech             // string que será preenchida
+// $preech             // string que serÃ¡ preenchida
 // $xtam		// tamnaho da string a ser preenchida
 function preenchimento($descricao,$xtam,$preech='.')
 {
@@ -248,11 +248,11 @@ function preenchimento($descricao,$xtam,$preech='.')
 
 function SetMargins($left,$top,$right=-1)
 //#00#//setmargins
-//#10#//Define as margens esquerda, superior e direita. Por padrão elas são iguais a 1 cm. Chame este método para alerá-las.
+//#10#//Define as margens esquerda, superior e direita. Por padrÃ£o elas sÃ£o iguais a 1 cm. Chame este mÃ©todo para alerÃ¡-las.
 //#15#//setmargins($left,$top,$right=-1);
 //#20#//left         : Margem esquerda.
 //#20#//top          : Margem superior.
-//#20#//right        : Margem direita. O valor padrão é o mesmo da esquerda.
+//#20#//right        : Margem direita. O valor padrÃ£o Ã© o mesmo da esquerda.
 {
 	//Set left, top and right margins
 	$this->lMargin=$left;
@@ -264,8 +264,8 @@ function SetMargins($left,$top,$right=-1)
 
 function SetLeftMargin($margin)
 //#00#//setleftmargin
-//#10#//Define a margem esquerda. O método pode ser chamado antes de criar a primeira página.
-//#10#//Se a abscissa corrente sair da página, ela é trazida de volta para a margem.
+//#10#//Define a margem esquerda. O mÃ©todo pode ser chamado antes de criar a primeira pÃ¡gina.
+//#10#//Se a abscissa corrente sair da pÃ¡gina, ela Ã© trazida de volta para a margem.
 //#15#//setleftmargin(margin)
 //#20#//margin       : A margem.
 {
@@ -277,7 +277,7 @@ function SetLeftMargin($margin)
 
 function SetTopMargin($margin)
 //#00#//settopmargin 
-//#10#//Define a margem superior do documento. Este método pode ser chamado antes de criar a primeira página.
+//#10#//Define a margem superior do documento. Este mÃ©todo pode ser chamado antes de criar a primeira pÃ¡gina.
 //#15#//SetTopMargin($margin)
 //#20#//margin       : A margem.
 {
@@ -287,7 +287,7 @@ function SetTopMargin($margin)
 
 function SetRightMargin($margin)
 //#00#//setrightmargin
-//#10#//Define a margem direita. O método pode ser chamado antes de criar a primeira página.
+//#10#//Define a margem direita. O mÃ©todo pode ser chamado antes de criar a primeira pÃ¡gina.
 //#15#//setrightmargin(margin)
 //#20#//margin       : A margem.
 {
@@ -359,11 +359,11 @@ function SetCreator($creator)
 
 function AliasNbPages($alias='{nb}')
 //#00#//aliasnbpages
-//#10#//Define um apelido para o número total de páginas. Ele será substituído quando o documento for fechado.
+//#10#//Define um apelido para o nÃºmero total de pÃ¡ginas. Ele serÃ¡ substituÃ­do quando o documento for fechado.
 //#10#//aliasnbpages($alias='{nb}')
-//#15#//alias        : O apelido. Valor padrão: {nb}. 
-//#99#//No |footer| terá uma linha selhante a linha abaixo que imprime o número da página  corrente e o  total
-//#99#//de páginas do documento.
+//#15#//alias        : O apelido. Valor padrÃ£o: {nb}. 
+//#99#//No |footer| terÃ¡ uma linha selhante a linha abaixo que imprime o nÃºmero da pÃ¡gina  corrente e o  total
+//#99#//de pÃ¡ginas do documento.
 //#99#//  $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
 
 {
@@ -379,8 +379,8 @@ function Error($msg)
 
 function Open()
 //#00#//open
-//#10#//Este método inicia a geração de um documento PDF; ele deve ser chamado antes que qualquer comando de escrita. 
-//#10#//Nenhua página é criada com este método, para isto é necessário que se chame |addpage()|.
+//#10#//Este mÃ©todo inicia a geraÃ§Ã£o de um documento PDF; ele deve ser chamado antes que qualquer comando de escrita. 
+//#10#//Nenhua pÃ¡gina Ã© criada com este mÃ©todo, para isto Ã© necessÃ¡rio que se chame |addpage()|.
 //#15#//open()
 {
 	//Begin document
@@ -404,17 +404,17 @@ function Close()
 
 function AddPage($orientation='')
 //#00#//addpage
-//#10#//Adiciona uma página nova ao documento. Se uma página já existir, o método de Footer() é chamado antes para saída 
-//#10#//do rodapé. Então a página é adicionada, a posição atual é ajustada ao  canto  superior-esquerdo de acordo com as 
-//#10#//margens esquerdas e superiores, e Header() é chamado para montar o cabeçalho.
-//#10#//A fonte que foi ajustada antes de chamar é restaurada  automaticamente.  Não há nenhuma necessidade chamar outra 
-//#10#//vez |setfont()| se você quiser continuar com a mesma fonte. O mesmo é verdadeiro para cores e largura da linha.
-//#10#//A origem do sistema de coordenadas está no de canto superior-esquerdo e as ordenadas cescem para baixo.
+//#10#//Adiciona uma pÃ¡gina nova ao documento. Se uma pÃ¡gina jÃ¡ existir, o mÃ©todo de Footer() Ã© chamado antes para saÃ­da 
+//#10#//do rodapÃ©. EntÃ£o a pÃ¡gina Ã© adicionada, a posiÃ§Ã£o atual Ã© ajustada ao  canto  superior-esquerdo de acordo com as 
+//#10#//margens esquerdas e superiores, e Header() Ã© chamado para montar o cabeÃ§alho.
+//#10#//A fonte que foi ajustada antes de chamar Ã© restaurada  automaticamente.  NÃ£o hÃ¡ nenhuma necessidade chamar outra 
+//#10#//vez |setfont()| se vocÃª quiser continuar com a mesma fonte. O mesmo Ã© verdadeiro para cores e largura da linha.
+//#10#//A origem do sistema de coordenadas estÃ¡ no de canto superior-esquerdo e as ordenadas cescem para baixo.
 //#15#//addpage($orientation='')
-//#20#//orientation  : Orientação da página. Os valores possíveis são (diferenciando maiúsculas e minúsculas):
+//#20#//orientation  : OrientaÃ§Ã£o da pÃ¡gina. Os valores possÃ­veis sÃ£o (diferenciando maiÃºsculas e minÃºsculas):
 //#20#//                  - P para relrato
 //#20#//                  - L para paisagem
-//#20#//               O valor padrão é o que foi passado ao construtor. |fpdf|
+//#20#//               O valor padrÃ£o Ã© o que foi passado ao construtor. |fpdf|
 
     
 {
@@ -499,11 +499,11 @@ function PageNo()
 
 function SetDrawColor($r,$g=-1,$b=-1)
 //#00#//setdrawcolor
-//#10#//Define  uma cor  para  ser  usada em todas as operações de desenho  (linhas,  retângulos e  bordas de  células). 
-//#10#//Ela pode ser informada como componentes RGB ou tons de cinza.  O método  pode ser  chamado  antes   antes  que a
-//#10#//primeira página seja criada e o valor será mantido de uma página para outra.
+//#10#//Define  uma cor  para  ser  usada em todas as operaÃ§Ãµes de desenho  (linhas,  retÃ¢ngulos e  bordas de  cÃ©lulas). 
+//#10#//Ela pode ser informada como componentes RGB ou tons de cinza.  O mÃ©todo  pode ser  chamado  antes   antes  que a
+//#10#//primeira pÃ¡gina seja criada e o valor serÃ¡ mantido de uma pÃ¡gina para outra.
 //#15#//setdrawcolor($r,$g=-1,$b=-1)
-//#20#//r            : Se g e b estiverem preenchidos, informa o componente vermelho;  caso  contrário,  indica o tom de
+//#20#//r            : Se g e b estiverem preenchidos, informa o componente vermelho;  caso  contrÃ¡rio,  indica o tom de
 //#20#//               cinza. Valores entre 0 e 255.
 //#20#//g            : Componente verde (entre 0 e 255).
 //#20#//b            : Componente Azul (entre 0 e 255).
@@ -519,11 +519,11 @@ function SetDrawColor($r,$g=-1,$b=-1)
 
 function SetFillColor($r,$g=-1,$b=-1)
 //#00#//setfillcolor
-//#10#//Define a cor  a ser usada  em todas  as operações de preenchimento (retângulos preenchidos e fundos de células).
-//#10#//Ela pode ser informada como componentes RGB ou tons de  cinza.  O método  pode  ser chamado  antes  antes  que a
-//#10#//primeira página seja criada e o valor será mantido de uma página para outra.
+//#10#//Define a cor  a ser usada  em todas  as operaÃ§Ãµes de preenchimento (retÃ¢ngulos preenchidos e fundos de cÃ©lulas).
+//#10#//Ela pode ser informada como componentes RGB ou tons de  cinza.  O mÃ©todo  pode  ser chamado  antes  antes  que a
+//#10#//primeira pÃ¡gina seja criada e o valor serÃ¡ mantido de uma pÃ¡gina para outra.
 //#15#//setfillcolor($r,$g=-1,$b=-1)
-//#20#//r            : Se g e b estiverem preenchidos, informa o componente vermelho;  caso  contrário,  indica o tom de
+//#20#//r            : Se g e b estiverem preenchidos, informa o componente vermelho;  caso  contrÃ¡rio,  indica o tom de
 //#20#//               cinza. Valores entre 0 e 255.
 //#20#//g            : Componente verde (entre 0 e 255).
 //#20#//b            : Componente Azul (entre 0 e 255).
@@ -540,10 +540,10 @@ function SetFillColor($r,$g=-1,$b=-1)
 
 function SetTextColor($r,$g=-1,$b=-1)
 //#00#//settextcolor
-//#10#//Define a cor usada pelo texto. Ele pode ser informado como componentes RGB ou tons de cinza. O método  pode  ser
-//#10#//chamado antes que a primeira página seja criada e o valor será mantido para as páginas seguintes.
+//#10#//Define a cor usada pelo texto. Ele pode ser informado como componentes RGB ou tons de cinza. O mÃ©todo  pode  ser
+//#10#//chamado antes que a primeira pÃ¡gina seja criada e o valor serÃ¡ mantido para as pÃ¡ginas seguintes.
 //#15#//settextcolor($r,$g=-1,$b=-1)
-//#20#//r            : Se g e b estiverem preenchidos, informa o componente vermelho;  caso  contrário,  indica o tom de
+//#20#//r            : Se g e b estiverem preenchidos, informa o componente vermelho;  caso  contrÃ¡rio,  indica o tom de
 //#20#//               cinza. Valores entre 0 e 255.
 //#20#//g            : Componente verde (entre 0 e 255).
 //#20#//b            : Componente Azul (entre 0 e 255).
@@ -591,14 +591,14 @@ function Line($x1,$y1,$x2,$y2)
 
 function Rect($x,$y,$w,$h,$style='')
 //#00#//rect
-//#10#//Desenha um retângulo. Ele pode ser desenhado com linhas (somente borda), preenchido (sem bordas) ou ambos.
+//#10#//Desenha um retÃ¢ngulo. Ele pode ser desenhado com linhas (somente borda), preenchido (sem bordas) ou ambos.
 //#15#//rect($x,$y,$w,$h,$style='')
 //#20#//x            : Abscissa do canto superior-esquerdo. 
 //#20#//y            : Ordenada do canto superior-esquerdo. 
 //#20#//w	     : Largura. 
 //#20#//h            : Altura. 
-//#20#//style        : Estilo do retângulo. Os valores possíveis são:
-//#20#//                  - D ou um texto vazio: desenha só a borda. Este é o valor padrão.
+//#20#//style        : Estilo do retÃ¢ngulo. Os valores possÃ­veis sÃ£o:
+//#20#//                  - D ou um texto vazio: desenha sÃ³ a borda. Este Ã© o valor padrÃ£o.
 //#20#//                  - F: preenche
 //#20#//	          - DF ou FD: desenha a borda e preenche 
 {
@@ -614,22 +614,22 @@ function Rect($x,$y,$w,$h,$style='')
 
 function AddFont($family,$style='',$file='')
 //#00#//addfont
-//#10#//Importa uma fonte TrueType ou Type1 e a deixa disponível. Antes, é preciso gerar  um  arquivo  de definição   de
+//#10#//Importa uma fonte TrueType ou Type1 e a deixa disponÃ­vel. Antes, Ã© preciso gerar  um  arquivo  de definiÃ§Ã£o   de
 //#10#//fonte com a ferramenta makefont.php.
-//#10#//O arquivo de definição (e o próprio arquivo de fonte quando   embutido)  deve  estar no diretório atual ou em um
-//#10#//indicado por FPDF_FONTPATH se esta constante for definida. Se não for encontrado, o erro "Could not include font
-//#10#//definition file" (Não foi possível incluir o arquivo de definição de fonte) é gerado.
+//#10#//O arquivo de definiÃ§Ã£o (e o prÃ³prio arquivo de fonte quando   embutido)  deve  estar no diretÃ³rio atual ou em um
+//#10#//indicado por FPDF_FONTPATH se esta constante for definida. Se nÃ£o for encontrado, o erro "Could not include font
+//#10#//definition file" (NÃ£o foi possÃ­vel incluir o arquivo de definiÃ§Ã£o de fonte) Ã© gerado.
 //#15#//addfont($family,$style='',$file='')
-//#20#//family       : Família da fonte. O nome pode ser escolhido arbitrariamente. Se for um nome de família padrão ele
-//#20#//               irá sobrepor a fonte correspondente. 
-//#20#//style        : Estilo da fonte. Os valores possíveis são (maiúsculas e minúsculas são diferenciadas):
+//#20#//family       : FamÃ­lia da fonte. O nome pode ser escolhido arbitrariamente. Se for um nome de famÃ­lia padrÃ£o ele
+//#20#//               irÃ¡ sobrepor a fonte correspondente. 
+//#20#//style        : Estilo da fonte. Os valores possÃ­veis sÃ£o (maiÃºsculas e minÃºsculas sÃ£o diferenciadas):
 //#20#//                  - empty string: regular
 //#20#//		  - B: bold
 //#20#//		  - I: italic
 //#20#//	          - BI or IB: bold italic 
-//#20#//               O valor padrão é regular. 
-//#20#//file         : O arquivo de definição da fonte.
-//#20#//               Por padrão, o nome é composto pelo nome da fonte e o estilo, em minúsculas sem espaços. 
+//#20#//               O valor padrÃ£o Ã© regular. 
+//#20#//file         : O arquivo de definiÃ§Ã£o da fonte.
+//#20#//               Por padrÃ£o, o nome Ã© composto pelo nome da fonte e o estilo, em minÃºsculas sem espaÃ§os. 
 {
 	//Add a TrueType or Type1 font
 	$family=strtolower($family);
@@ -678,39 +678,39 @@ function AddFont($family,$style='',$file='')
 
 function SetFont($family,$style='',$size=0)
 //#00#//setfont
-//#10#//Define a fonte que será usada para imprimir os caracteres de texto. É obrigatória a chamada, ao menos   uma vez,
-//#10#//deste método antes de imprimir o texto ou o documento resultante não será válido.
-//#10#//A fonte pode ser uma padrão ou uma que foi adicionada  através do   método  |addfont|.  As  fontes  padrão  usam
-//#10#//codificação Windows cp1252 (Europa ocidental).
-//#10#//O método pode ser chamado antes que a primeira página esteja criada e a fonte será mantida  de uma  página  para
-//#10#//outra. Se você quiser mudar o tamanho da fonte atual, é mais simples chamar |setfontsize|. 
+//#10#//Define a fonte que serÃ¡ usada para imprimir os caracteres de texto. Ã‰ obrigatÃ³ria a chamada, ao menos   uma vez,
+//#10#//deste mÃ©todo antes de imprimir o texto ou o documento resultante nÃ£o serÃ¡ vÃ¡lido.
+//#10#//A fonte pode ser uma padrÃ£o ou uma que foi adicionada  atravÃ©s do   mÃ©todo  |addfont|.  As  fontes  padrÃ£o  usam
+//#10#//codificaÃ§Ã£o Windows cp1252 (Europa ocidental).
+//#10#//O mÃ©todo pode ser chamado antes que a primeira pÃ¡gina esteja criada e a fonte serÃ¡ mantida  de uma  pÃ¡gina  para
+//#10#//outra. Se vocÃª quiser mudar o tamanho da fonte atual, Ã© mais simples chamar |setfontsize|. 
 //#15#//setfont($family,$style='',$size=0)
-//#20#//family       : Família da  fonte. Pode   ser um  tanto  nome definido por AddFont() como uma das famílias padrão
-//#20#//               (maiúsculas e minúsculas não são diferenciadas):
+//#20#//family       : FamÃ­lia da  fonte. Pode   ser um  tanto  nome definido por AddFont() como uma das famÃ­lias padrÃ£o
+//#20#//               (maiÃºsculas e minÃºsculas nÃ£o sÃ£o diferenciadas):
 //#20#//                  - Courier (largura fixa)
-//#20#//                  - Helvetica ou Arial (sinônimos; sans serif)
+//#20#//                  - Helvetica ou Arial (sinÃ´nimos; sans serif)
 //#20#//                  - Times (serif)
-//#20#//                  - Symbol (símbolos)
-//#20#//                  - ZapfDingbats (símbolos)
-//#20#//               Também é possível passar um texto vazio. Neste caso, a família corrente é mantida.
-//#20#//style        : Estilo da fonte. Os valores possíveis são (maiúsculas e minúsculas são diferenciadas):
+//#20#//                  - Symbol (sÃ­mbolos)
+//#20#//                  - ZapfDingbats (sÃ­mbolos)
+//#20#//               TambÃ©m Ã© possÃ­vel passar um texto vazio. Neste caso, a famÃ­lia corrente Ã© mantida.
+//#20#//style        : Estilo da fonte. Os valores possÃ­veis sÃ£o (maiÃºsculas e minÃºsculas sÃ£o diferenciadas):
 //#20#//                  - texto vazio: normal
 //#20#//                  - B: negrito
-//#20#//	          - I: itálico
+//#20#//	          - I: itÃ¡lico
 //#20#//	          - U: sublinhado 
 //#20#//size         : Tamanho da fonte em pontos.
-//#20#//               O valor padrão é o tamanho atual. Se nenhum tamanho foi especificado desde o início do documento,
-//#20#//               o valor usado é 12. 
-//#99#//Nota: para as fontes padrão, os arquivos de definição das fontes devem estar acessíveis. Há três  possibilidades
+//#20#//               O valor padrÃ£o Ã© o tamanho atual. Se nenhum tamanho foi especificado desde o inÃ­cio do documento,
+//#20#//               o valor usado Ã© 12. 
+//#99#//Nota: para as fontes padrÃ£o, os arquivos de definiÃ§Ã£o das fontes devem estar acessÃ­veis. HÃ¡ trÃªs  possibilidades
 //#99#//para isto:
-//#99#//    - Eles estão no diretório atual (o mesmo aonde o script está rodando)
-//#99#//    - Eles estão em um dos diretórios definidos pelo parâmetro include_path
-//#99#//    - Eles estão no diretório definido pela constante FPDF_FONTPATH 
-//#99#//Exemplo para o último caso (observe a barra no final):
+//#99#//    - Eles estÃ£o no diretÃ³rio atual (o mesmo aonde o script estÃ¡ rodando)
+//#99#//    - Eles estÃ£o em um dos diretÃ³rios definidos pelo parÃ¢metro include_path
+//#99#//    - Eles estÃ£o no diretÃ³rio definido pela constante FPDF_FONTPATH 
+//#99#//Exemplo para o Ãºltimo caso (observe a barra no final):
 //#99#//define('FPDF_FONTPATH','/home/www/font/');
 //#99#//require('fpdf.php');
-//#99#//Se o arquivo que  corresponde à  fonte solicitada não existir, o erro "Could not include font metric file"  (não
-//#99#//foi possível incluir o arquivo de fonte) é gerado.
+//#99#//Se o arquivo que  corresponde Ã   fonte solicitada nÃ£o existir, o erro "Could not include font metric file"  (nÃ£o
+//#99#//foi possÃ­vel incluir o arquivo de fonte) Ã© gerado.
 {
 	//Select a font; size given in points
 	global $fpdf_charwidths;
@@ -810,9 +810,9 @@ function Link($x,$y,$w,$h,$link)
 
 function Text($x,$y,$txt)
 //#00#//text
-//#10#//Imprime um texto. O ponto de origem é a esquerda do primeiro caracter, na linha de  base.  Este  método  permite
-//#10#//colocar com precisão um texto na página, mas é normalmente mais fácil usar |cell|, |multicell| ou write| que são
-//#10#//os métodos padrões de impressão de texto.
+//#10#//Imprime um texto. O ponto de origem Ã© a esquerda do primeiro caracter, na linha de  base.  Este  mÃ©todo  permite
+//#10#//colocar com precisÃ£o um texto na pÃ¡gina, mas Ã© normalmente mais fÃ¡cil usar |cell|, |multicell| ou write| que sÃ£o
+//#10#//os mÃ©todos padrÃµes de impressÃ£o de texto.
 //#15#//text($x,$y,$txt)
 //#20#//x            : Abscissa da origem. 
 //#20#//y            : Ordenada da origem. 
@@ -836,16 +836,16 @@ function AcceptPageBreak()
 
 function Cell($w,$h=0,$txt='',$border=0,$ln=0,$align='',$fill=0,$link='',$preenc='')
 //#00#//cell
-//#10#//Imprime uma célula (área retangular) com bordas opcionais, cor de fundo e  texto. O  canto  superior-esquerdo da
-//#10#//célula corresponde à posição atual. O texto pode ser alinhado ou  centralizado.  Depois de  chamada,   a posição
-//#10#//atual se move para a direita ou para a linha seguinte. É possível pôr um link no texto.
-//#10#//Se a quebra de página automática está habilitada e a pilha for além do limite,  uma  quebra  de  página é  feita
-//#10#//antes da impressão.
+//#10#//Imprime uma cÃ©lula (Ã¡rea retangular) com bordas opcionais, cor de fundo e  texto. O  canto  superior-esquerdo da
+//#10#//cÃ©lula corresponde Ã  posiÃ§Ã£o atual. O texto pode ser alinhado ou  centralizado.  Depois de  chamada,   a posiÃ§Ã£o
+//#10#//atual se move para a direita ou para a linha seguinte. Ã‰ possÃ­vel pÃ´r um link no texto.
+//#10#//Se a quebra de pÃ¡gina automÃ¡tica estÃ¡ habilitada e a pilha for alÃ©m do limite,  uma  quebra  de  pÃ¡gina Ã©  feita
+//#10#//antes da impressÃ£o.
 //#15#//cell($w,$h=0,$txt='',$border=0,$ln=0,$align='',$fill=0,$link='')
-//#20#//w            : Largura da célula. Se 0, a célula se extende até a margem direita. 
-//#20#//h            : Altura da célula. Valor padrão: 0. 
-//#20#//txt          : Texto a ser impresso. Valor padrão: texto vazio. 
-//#20#//border       : Indica se as bordas devem ser desenhadas em volta da célula. O valor deve ser um número:
+//#20#//w            : Largura da cÃ©lula. Se 0, a cÃ©lula se extende atÃ© a margem direita. 
+//#20#//h            : Altura da cÃ©lula. Valor padrÃ£o: 0. 
+//#20#//txt          : Texto a ser impresso. Valor padrÃ£o: texto vazio. 
+//#20#//border       : Indica se as bordas devem ser desenhadas em volta da cÃ©lula. O valor deve ser um nÃºmero:
 //#20#//                  - 0: sem borda
 //#20#//                  - 1: com borda 
 //#20#//	       ou um texto contendo alguns ou todos os seguintes caracteres (em qualquer ordem):
@@ -853,28 +853,28 @@ function Cell($w,$h=0,$txt='',$border=0,$ln=0,$align='',$fill=0,$link='',$preenc
 //#20#//		  - T: acima
 //#20#// 	          - R: direita
 //#20#//		  - B: abaixo 
-//#20#//               Valor padrão: 0. 
-//#20#//ln           : Indica onde a posição corrente deve ficar depois que a função for chamada. Os  valores  possíveis
-//#20#//               são:
+//#20#//               Valor padrÃ£o: 0. 
+//#20#//ln           : Indica onde a posiÃ§Ã£o corrente deve ficar depois que a funÃ§Ã£o for chamada. Os  valores  possÃ­veis
+//#20#//               sÃ£o:
 //#20#//                  - 0: a direita
-//#20#//                  - 1: no início da próxima linha
+//#20#//                  - 1: no inÃ­cio da prÃ³xima linha
 //#20#//		  - 2: abaixo 
-//#20#//               Usar o valor 1 é equivalente a usar 0 e chamar a função Ln() logo após. Valor padrão: 0. 
-//#20#//align        : Permite centralizar ou alinhar o texto. Os valores possíveis são:
-//#20#//                  - L ou um texto vazio: alinhado à esquerda (valor padrão)
+//#20#//               Usar o valor 1 Ã© equivalente a usar 0 e chamar a funÃ§Ã£o Ln() logo apÃ³s. Valor padrÃ£o: 0. 
+//#20#//align        : Permite centralizar ou alinhar o texto. Os valores possÃ­veis sÃ£o:
+//#20#//                  - L ou um texto vazio: alinhado Ã  esquerda (valor padrÃ£o)
 //#20#//	          - C: centralizado
-//#20#//		  - R: alinhado à direita 
-//#20#//fill         : Indica se o fundo da célula deve ser preenchido (1) ou transparente (0). Valor padrão: 0. 
+//#20#//		  - R: alinhado Ã  direita 
+//#20#//fill         : Indica se o fundo da cÃ©lula deve ser preenchido (1) ou transparente (0). Valor padrÃ£o: 0. 
 //#20#//link         : URL ou identificador retornado por |addlink|. 
-//#20#//preenc       : indica se a célula terá preenchimento a esquerda.
+//#20#//preenc       : indica se a cÃ©lula terÃ¡ preenchimento a esquerda.
 //#20#//	       Ex.: $pdf->Cell(20,10,'Title',1,1,'C','','.')
-//#20#//               preenche com (.) a direita do 'Title' até alcançar o tamanho da célula (20).
+//#20#//               preenche com (.) a direita do 'Title' atÃ© alcanÃ§ar o tamanho da cÃ©lula (20).
 //#99#//Exemplo:
 //#99#//  - Escolhe a fonte
 //#99#//      $pdf->SetFont('Arial','B',16);
 //#99#//  - Move para 8 cm a direita
 //#99#//      $pdf->Cell(80);
-//#99#//  - Texto centralizado em uma célula de 20*10 mm com borda e quebra de linha
+//#99#//  - Texto centralizado em uma cÃ©lula de 20*10 mm com borda e quebra de linha
 //#99#//  -   $pdf->Cell(20,10,'Title',1,1,'C');
 {
 	//Output a cell
@@ -969,15 +969,15 @@ function Cell($w,$h=0,$txt='',$border=0,$ln=0,$align='',$fill=0,$link='',$preenc
 
 function MultiCell($w,$h,$txt,$border=0,$align='J',$fill=0,$indent=0)
 //#00#//multicell
-//#10#//Este método permite imprimir um texto com quebras de linha. Podem ser automática (assim que  o  texto  alcança a
-//#10#//margem direita da célula) ou explícita (através do caracter \n). Serão  geradas  tantas  células  quantas  forem
-//#10#//necessárias, uma abaixo da outra.
-//#10#//O texto pode ser alinhado, centralizado ou justificado. O bloco de células podem ter borda e um fundo colorido.
+//#10#//Este mÃ©todo permite imprimir um texto com quebras de linha. Podem ser automÃ¡tica (assim que  o  texto  alcanÃ§a a
+//#10#//margem direita da cÃ©lula) ou explÃ­cita (atravÃ©s do caracter \n). SerÃ£o  geradas  tantas  cÃ©lulas  quantas  forem
+//#10#//necessÃ¡rias, uma abaixo da outra.
+//#10#//O texto pode ser alinhado, centralizado ou justificado. O bloco de cÃ©lulas podem ter borda e um fundo colorido.
 //#15#//multicell($w,$h,$txt,$border=0,$align='J',$fill=0,$indent=0)
-//#20#//w            : Largura das células. Se 0, então serão extendidas até a margem direita da página. 
-//#20#//h            : Altura das células. 
+//#20#//w            : Largura das cÃ©lulas. Se 0, entÃ£o serÃ£o extendidas atÃ© a margem direita da pÃ¡gina. 
+//#20#//h            : Altura das cÃ©lulas. 
 //#20#//txt          : Texto a ser impresso. 
-//#20#//border       : Indica se as bordas devem ser desenhadas ao redor do bloco de células. O valor pode ser um número:
+//#20#//border       : Indica se as bordas devem ser desenhadas ao redor do bloco de cÃ©lulas. O valor pode ser um nÃºmero:
 //#20#//                  - 0: sem borda
 //#20#//		  - 1: com borda 
 //#20#//               ou um texto contendo alguns ou todos os seguintes caracteres (em qualquer ordem):
@@ -985,14 +985,14 @@ function MultiCell($w,$h,$txt,$border=0,$align='J',$fill=0,$indent=0)
 //#20#//		  - T: acima
 //#20#//		  - R: direita
 //#20#//                  - B: abaixo 
-//#20#//               Valor padrão: 0. 
-//#20#//align        : Estabelece o alinhamento do texto. Os valores possíveis são:
-//#20#//                  - L: alinhado à esquerda
+//#20#//               Valor padrÃ£o: 0. 
+//#20#//align        : Estabelece o alinhamento do texto. Os valores possÃ­veis sÃ£o:
+//#20#//                  - L: alinhado Ã  esquerda
 //#20#//                  - C: centralizado
-//#20#//		  - R: alinhado à direita
-//#20#//		  - J: justificado (valor padrão) 
-//#20#//fill         : Indica se o fundo das células deve ser colorido (1) ou transparente (0). Valor padrão: 0. 
-//#20#//indent       : Opção de paragrafo, indicando quantos espaçoes a linha começará a ser impressa a partir da margem. 
+//#20#//		  - R: alinhado Ã  direita
+//#20#//		  - J: justificado (valor padrÃ£o) 
+//#20#//fill         : Indica se o fundo das cÃ©lulas deve ser colorido (1) ou transparente (0). Valor padrÃ£o: 0. 
+//#20#//indent       : OpÃ§Ã£o de paragrafo, indicando quantos espaÃ§oes a linha comeÃ§arÃ¡ a ser impressa a partir da margem. 
 {
     //Output text with automatic or explicit line breaks
     $cw=&$this->CurrentFont['cw'];
@@ -1047,7 +1047,7 @@ function MultiCell($w,$h,$txt,$border=0,$align='J',$fill=0,$indent=0)
                 $this->ws=0;
                 $this->_out('0 Tw');
             }
-            //caso nãterminea linhas e tenha uma quebra \n ou \r... bY Iuri
+            //caso nÃ£terminea linhas e tenha uma quebra \n ou \r... bY Iuri
             //andrei Guntchnihh em 14/13/2006
             $SaveX = $this->x;
             if ($first and $indent > 0){
@@ -1151,7 +1151,7 @@ function MultiCell($w,$h,$txt,$border=0,$align='J',$fill=0,$indent=0)
         $b.='B';
 
     $SaveX = $this->x;
-    //se nãtem \n ou \r bY Iuri andrei Guntchnihh em 14/13/2006
+    //se nÃ£tem \n ou \r bY Iuri andrei Guntchnihh em 14/13/2006
     if ($first and $indent >0){
        $this->SetX($this->x + $indent);
        $first=false;
@@ -1185,10 +1185,10 @@ function MultiCell($w,$h,$txt,$border=0,$align='J',$fill=0,$indent=0)
 
 function Write($h,$txt,$link='')
 //#00#//write
-//#10#//Este método imprime um texto a partir da posição atual. Quando a margem direita é atingida (ou o caracter  \n  é
-//#10#//encontrado) uma quebra de linha ocorre e o texto continua a partir da margem esquerda. Quando o método finalizar,
-//#10#//a posição atual será imediatamente à esquerda do final do texto.
-//#10#//É possível colocar um link no texto.
+//#10#//Este mÃ©todo imprime um texto a partir da posiÃ§Ã£o atual. Quando a margem direita Ã© atingida (ou o caracter  \n  Ã©
+//#10#//encontrado) uma quebra de linha ocorre e o texto continua a partir da margem esquerda. Quando o mÃ©todo finalizar,
+//#10#//a posiÃ§Ã£o atual serÃ¡ imediatamente Ã  esquerda do final do texto.
+//#10#//Ã‰ possÃ­vel colocar um link no texto.
 //#15#//write($h,$txt,$link='')
 //#20#//h            : Altura da linha. 
 //#20#//txt          : Texto a ser impresso. 
@@ -1286,35 +1286,35 @@ function Write($h,$txt,$link='')
 
 function Image($file,$x,$y,$w,$h=0,$type='',$link='')
 //#00#//image
-//#10#//Imprime uma imagem na página. O canto superior-esquerdo e pelo menos uma das dimensões devem ser  especificadas;
-//#10#//a altura ou a largura podem ser calculadas automaticamente com o objetivo de manter as proporções da imagem.
-//#10#//Os formatos suportados são JPEG e PNG.
-//#10#//Para JPEG, todos os tipos são permitidos:
+//#10#//Imprime uma imagem na pÃ¡gina. O canto superior-esquerdo e pelo menos uma das dimensÃµes devem ser  especificadas;
+//#10#//a altura ou a largura podem ser calculadas automaticamente com o objetivo de manter as proporÃ§Ãµes da imagem.
+//#10#//Os formatos suportados sÃ£o JPEG e PNG.
+//#10#//Para JPEG, todos os tipos sÃ£o permitidos:
 //#10#//                  - tons de cinza
 //#10#//                  - true colors (24 bits)
 //#10#//                  - CMYK (32 bits) 
-//#10#//Para PNG, são permitidos:
-//#10#//                  - tons de cinza em pelo menos 8 bits (256 níveis)
+//#10#//Para PNG, sÃ£o permitidos:
+//#10#//                  - tons de cinza em pelo menos 8 bits (256 nÃ­veis)
 //#10#//                  - cores indexadas
 //#10#//                  - true colors (24 bits) 
-//#10#//mas não são suportados:
+//#10#//mas nÃ£o sÃ£o suportados:
 //#10#//                  - Interlacing
 //#10#//                  - Alpha channel 
-//#10#//Se uma cor transparente for definida, ela vai ser levada em conta (mas só será  interpretada  pelo  Acrobat  4 e
+//#10#//Se uma cor transparente for definida, ela vai ser levada em conta (mas sÃ³ serÃ¡  interpretada  pelo  Acrobat  4 e
 //#10#//superiores).
-//#10#//O formato pode ser especificado explicitamente ou inferido pela extensão do arquivo.
-//#10#//É possível colocar um link na imagem.
-//#10#//Nota: se uma imagem é usada muitas vezes, só uma cópia será embutida no arquivo.
+//#10#//O formato pode ser especificado explicitamente ou inferido pela extensÃ£o do arquivo.
+//#10#//Ã‰ possÃ­vel colocar um link na imagem.
+//#10#//Nota: se uma imagem Ã© usada muitas vezes, sÃ³ uma cÃ³pia serÃ¡ embutida no arquivo.
 //#15#//image($file,$x,$y,$w,$h=0,$type='',$link='')
-//#20#//file         : Nome do arquivo que contém a imagem. 
+//#20#//file         : Nome do arquivo que contÃ©m a imagem. 
 //#20#//x            : Abscissa do canto superior-esquerdo. 
 //#20#//y            : Ordenada do canto superior-esquerdo. 
-//#20#//w            : Largura da imagem na página. Se for igual a zero, ela será automaticamente calculada para  manter
-//#20#//               as proporções originais. 
-//#20#//h            : Altura da  imagem  na  página.  Se não for especificada ou igual a zero, ela será automaticamente
-//#20#//               calculada para manter as proporções originais. 
-//#20#//type         : Formato da imagem.  Os valores possíveis são (diferenciando maiúsculas e minúsculas) : JPG, JPEG,
-//#20#//               PNG. Se não for informado, o tipo será inferido pela extensão do arquivo. 
+//#20#//w            : Largura da imagem na pÃ¡gina. Se for igual a zero, ela serÃ¡ automaticamente calculada para  manter
+//#20#//               as proporÃ§Ãµes originais. 
+//#20#//h            : Altura da  imagem  na  pÃ¡gina.  Se nÃ£o for especificada ou igual a zero, ela serÃ¡ automaticamente
+//#20#//               calculada para manter as proporÃ§Ãµes originais. 
+//#20#//type         : Formato da imagem.  Os valores possÃ­veis sÃ£o (diferenciando maiÃºsculas e minÃºsculas) : JPG, JPEG,
+//#20#//               PNG. Se nÃ£o for informado, o tipo serÃ¡ inferido pela extensÃ£o do arquivo. 
 //#20#//link         : URL ou identificador retornado por AddLink(). 
 {
 	//Put an image on the page
@@ -1355,11 +1355,11 @@ function Image($file,$x,$y,$w,$h=0,$type='',$link='')
 
 function Ln($h='')
 //#00#//ln
-//#10#//Faz uma quebra de linha. A abscissa corrente volta para a margem esquerda e a ordenada é somada ao valor passado
-//#10#//como parâmetro.
+//#10#//Faz uma quebra de linha. A abscissa corrente volta para a margem esquerda e a ordenada Ã© somada ao valor passado
+//#10#//como parÃ¢metro.
 //#15#//ln($h='')
 //#20#//h            : A altura da quebra.
-//#20#//               Por padrão, o valor é igual a altura da última célula impressa. 
+//#20#//               Por padrÃ£o, o valor Ã© igual a altura da Ãºltima cÃ©lula impressa. 
 {
 	//Line feed; default value is last cell height
 	$this->x=$this->lMargin;
@@ -1371,7 +1371,7 @@ function Ln($h='')
 
 function GetX()
 //#00#//getx
-//#10#//Retorna a abscissa da posição corrente.
+//#10#//Retorna a abscissa da posiÃ§Ã£o corrente.
 {
 	//Get x position
 	return $this->x;
@@ -1379,8 +1379,8 @@ function GetX()
 
 function SetX($x)
 //#00#//setx
-//#10#//Define a abscissa da posição corrente. Se o valor passado for negativo, ele será relativo à  margem  direita  da
-//#10#//página. a abscissa da posição corrente.
+//#10#//Define a abscissa da posiÃ§Ã£o corrente. Se o valor passado for negativo, ele serÃ¡ relativo Ã   margem  direita  da
+//#10#//pÃ¡gina. a abscissa da posiÃ§Ã£o corrente.
 //#15#//setX($x)
 //#20#//x            : O valor da abscissa. 
 {
@@ -1393,7 +1393,7 @@ function SetX($x)
 
 function GetY()
 //#00#//gety
-//#10#//Retorna a ordenada da posição corrente.
+//#10#//Retorna a ordenada da posiÃ§Ã£o corrente.
 {
 	//Get y position
 	return $this->y;
@@ -1402,7 +1402,7 @@ function GetY()
 function SetY($y)
 //#00#//sety
 //#10#//Move a abscissa atual de volta para margem esquerda e define a ordenada. Se o valor passado  for  negativo,  ele
-//#10#//será relativo a margem inferior da página.
+//#10#//serÃ¡ relativo a margem inferior da pÃ¡gina.
 //#15#//sety($x)
 //#20#//x            : O valor da ordenada. 
 {
@@ -1416,8 +1416,8 @@ function SetY($y)
 
 function SetXY($x,$y)
 //#00#//setxy
-//#10#//Define a abscissa e a ordenada da posição atual. Se os valores passados forem negativos, eles  serão  relativos,
-//#10#//respectivamente, as magens direita e inferior da página.
+//#10#//Define a abscissa e a ordenada da posiÃ§Ã£o atual. Se os valores passados forem negativos, eles  serÃ£o  relativos,
+//#10#//respectivamente, as magens direita e inferior da pÃ¡gina.
 //#15#//setxy($x,$y)
 //#20#//x            : O valor da abscissa. 
 //#20#//y            : O valor da ordenada. 
@@ -1433,14 +1433,14 @@ function GeraArquivoTemp(){
 
 function Output($file='',$download=false,$mostrar=false)
 //#00#//output
-//#10#//Salva um documento PDF em um arquivo local ou envia-o para o browser. Neste último caso, o  plug-in  será  usado
-//#10#//(se instalado) ou um download (caixa de diálogo "Salvar como") será apresentada.
-//#10#//O método primeiro chama |close|, se necessário para terminar o documento.
+//#10#//Salva um documento PDF em um arquivo local ou envia-o para o browser. Neste Ãºltimo caso, o  plug-in  serÃ¡  usado
+//#10#//(se instalado) ou um download (caixa de diÃ¡logo "Salvar como") serÃ¡ apresentada.
+//#10#//O mÃ©todo primeiro chama |close|, se necessÃ¡rio para terminar o documento.
 //#15#//output($file='',$download=false)
-//#20#//file         : O nome do arquivo. Se vazio ou não informado, o documento será enviado ao browser para que ele  o
+//#20#//file         : O nome do arquivo. Se vazio ou nÃ£o informado, o documento serÃ¡ enviado ao browser para que ele  o
 //#20#//               use com o plug-in (se instalado). 
 //#20#//download     : Se file for informado, indica que ele deve ser salvo localmente  (false) ou  mostrar a  caixa  de
-//#20#//               diálogo "Salvar como" no browser. Valor padrão: false.
+//#20#//               diÃ¡logo "Salvar como" no browser. Valor padrÃ£o: false.
 
 {
     if($file=='')
@@ -1487,9 +1487,9 @@ function Output($file='',$download=false,$mostrar=false)
 	  else
 	  {
 	  	
-	  	    ////////// NÃO RETIRAR ESSE IF SEM FALAR COM MARLON
-	  	    ////////// NECESSÁRIO PARA PROGRAMA DO MÓDULO PESSOAL
-	  	    ////////// geração de arquivos BB
+	  	    ////////// NÃƒO RETIRAR ESSE IF SEM FALAR COM MARLON
+	  	    ////////// NECESSÃRIO PARA PROGRAMA DO MÃ“DULO PESSOAL
+	  	    ////////// geraÃ§Ã£o de arquivos BB
 	  	    if(1==2 && $mostrar == false){
 			  header('Content-Type: application/pdf');
 			  header("Expires: Mon, 26 Jul 2001 05:00:00 GMT");              // Date in the past
@@ -2472,11 +2472,11 @@ function Row($data,$altura=5,$borda=true,$espaco=5,$preenche=0,$naousaespaco=fal
        $this->SetXY($x+$w,$y);
      }
 
-     // Adicionado novo parâmetro:
-     // Parârametro: NAOUSAESPACO
-     // Se $naousaespaco não for setado ao chamar a função ROW ou for setado com FALSE, o ln() continuará
-     // usando a variável $h para pular para a próxima linha. Caso contrário, o ln() será a posição final
-     // do maior multicell menos a posição em que este começou a ser impresso...
+     // Adicionado novo parÃ¢metro:
+     // ParÃ¢rametro: NAOUSAESPACO
+     // Se $naousaespaco nÃ£o for setado ao chamar a funÃ§Ã£o ROW ou for setado com FALSE, o ln() continuarÃ¡
+     // usando a variÃ¡vel $h para pular para a prÃ³xima linha. Caso contrÃ¡rio, o ln() serÃ¡ a posiÃ§Ã£o final
+     // do maior multicell menos a posiÃ§Ã£o em que este comeÃ§ou a ser impresso...
      if($naousaespaco==true){
        //Go to the next line
        $this->Ln($posfinal-$posinicial);

@@ -45,7 +45,7 @@ $clrotulo->label("q02_inscr");
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
 </head>
@@ -139,7 +139,7 @@ td{
                  db_fieldsmemory($result,0);
                  echo "<script>".$funcao_js."(\"$z01_nome\",\"\",false);</script>";
               } else {                 
-                 echo "<script>".$funcao_js."('Inscrição ".$pesquisa_chave." não encontrado ou já está sendo utilizado','',true);</script>";
+                 echo "<script>".$funcao_js."('InscriÃ§Ã£o ".$pesquisa_chave." nÃ£o encontrado ou jÃ¡ estÃ¡ sendo utilizado','',true);</script>";
               }      	 	
       	 } else if (isset($sTipo) && $sTipo == 0) {
             $campos = "cgm.z01_nome,cgm.z01_cgccpf,q02_dtbaix";
@@ -154,7 +154,7 @@ td{
                  db_fieldsmemory($result,0);
                  echo "<script>".$funcao_js."(\"$z01_nome\",\"\",false);</script>";
               } else {
-                 echo "<script>".$funcao_js."('Inscrição ".$pesquisa_chave." não encontrado','',true);</script>";
+                 echo "<script>".$funcao_js."('InscriÃ§Ã£o ".$pesquisa_chave." nÃ£o encontrado','',true);</script>";
               }
       	 }
       }

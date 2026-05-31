@@ -38,7 +38,7 @@ class regraEmissao {
   private $iCodConvenioCobranca  = false;
   
   /**
-   * se Deve gerar novo objeto pdf, ou usar um j· existente
+   * se Deve gerar novo objeto pdf, ou usar um j√° existente
    *
    * @var boolean
    */
@@ -69,7 +69,7 @@ class regraEmissao {
   	
     $iCodModCarnePadrao     = '';
   	
-    // ValidaÁ„o de Tipo e Excess„o
+    // Valida√ß√£o de Tipo e Excess√£o
     
   	for ( $iInd=0; $iInd < $iNroLinhasTipoExcessao; $iInd++ ) {
   		
@@ -103,8 +103,8 @@ class regraEmissao {
 	 			  $iCodModCarnePadrao = $oTipoExcessao->k48_sequencial;
 	  		}
 	  		
-	  	// Caso n„o tenha retornado nenhum tipo ou excess„o e a vari·vel $iCodModCarnePadrao estiver vazia ent„o È atribuÌdo
-	  	// a ela o cÛdigo do molelo padr„o	
+	  	// Caso n√£o tenha retornado nenhum tipo ou excess√£o e a vari√°vel $iCodModCarnePadrao estiver vazia ent√£o √© atribu√≠do
+	  	// a ela o c√≥digo do molelo padr√£o	
   		} else if (trim($iCodModCarnePadrao) == '') {
         $iCodModCarnePadrao = $oTipoExcessao->k48_sequencial;  			
   		}
@@ -166,10 +166,10 @@ class regraEmissao {
 			  }
 			  
 			} else {
-			  throw new Exception("Nenhum convÍnio encontrado! TipoMod:{$iTipoMod}, Tipo DÈbito: {$iArretipo}");
+			  throw new Exception("Nenhum conv√™nio encontrado! TipoMod:{$iTipoMod}, Tipo D√©bito: {$iArretipo}");
 			}
   	} else {
-		  throw new Exception("Nenhum modelo padr„o encontrado! TipoMod:{$iTipoMod}, Tipo DÈbito: {$iArretipo}"); 
+		  throw new Exception("Nenhum modelo padr√£o encontrado! TipoMod:{$iTipoMod}, Tipo D√©bito: {$iArretipo}"); 
   	}
   }
   

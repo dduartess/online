@@ -25,9 +25,9 @@ for($i=0;$i<2;$i++){
     
     $this->objpdf->SetFont('Times', 'B', 14);
     $this->objpdf->cell(35,5,"",$sb,0,"C",0);
-//    $this->objpdf->cell(70,5,"Administração Popular",$sb,0,"C",0);
+//    $this->objpdf->cell(70,5,"AdministraÃ§Ã£o Popular",$sb,0,"C",0);
     	$this->objpdf->SetFont('Times', '', 8);
-    	$this->objpdf->cell(95,5,"* Válido até o vencimento, após retirar novo carnê",$sb,1,"C",0);
+    	$this->objpdf->cell(95,5,"* VÃ¡lido atÃ© o vencimento, apÃ³s retirar novo carnÃª",$sb,1,"C",0);
 //    $this->objpdf->cell(200,5,"",$sb,1,"C",0);
     
     $linha = $this->objpdf->GetY(); 
@@ -36,14 +36,14 @@ for($i=0;$i<2;$i++){
     $this->objpdf->RoundedRect($coluna+32,$linha,163,22,2,'1234'); // ok
     $this->objpdf->SetFont('Times', 'B', 12);
     $this->objpdf->cell(35,5,"",$sb,0,"C",0);
-    $this->objpdf->cell(40,5, "Descrição",$sb,0,"C",0);
+    $this->objpdf->cell(40,5, "DescriÃ§Ã£o",$sb,0,"C",0);
     $this->objpdf->cell(40,5, "Vencimento",$sb,0,"C",0);
-    $this->objpdf->cell(40,5, "Data de Emissão",$sb,0,"C",0);    
-    $this->objpdf->cell(40,5, "Exercício",$sb,1,"C",0);
+    $this->objpdf->cell(40,5, "Data de EmissÃ£o",$sb,0,"C",0);    
+    $this->objpdf->cell(40,5, "ExercÃ­cio",$sb,1,"C",0);
     
     $this->objpdf->SetFont('Times', '', 10);
     $this->objpdf->cell(35,5,"",$sb,0,"C",0);
-    $this->objpdf->cell(40,5,"Única",$sb,0,"C",0);
+    $this->objpdf->cell(40,5,"Ãšnica",$sb,0,"C",0);
     $this->objpdf->cell(40,5, $this->iptdtvencunic,$sb,0,"C",0);
     $this->objpdf->cell(40,5, $this->iptdataemis,$sb,0,"C",0);
     $this->objpdf->cell(40,5, $this->iptj23_anousu,$sb,1,"C",0);
@@ -88,12 +88,12 @@ for($i=0;$i<2;$i++){
     $linha = $this->objpdf->GetY(); 
     $coluna = $this->objpdf->GetX()-2;
         
-    $this->objpdf->RoundedRect($coluna,$linha,195,35,2,'1234'); // rect das observações
+    $this->objpdf->RoundedRect($coluna,$linha,195,35,2,'1234'); // rect das observaÃ§Ãµes
     $this->objpdf->SetFont('Times', 'B', 14);
-    $this->objpdf->cell(200,5,"Observações",$sb,1,"C",0);
+    $this->objpdf->cell(200,5,"ObservaÃ§Ãµes",$sb,1,"C",0);
     
     $this->objpdf->SetFont('Times', 'B', 12);
-    $this->objpdf->cell(50,5,"Matrícula : ",$sb,0,"R",0);
+    $this->objpdf->cell(50,5,"MatrÃ­cula : ",$sb,0,"R",0);
     $this->objpdf->SetFont('Times', '', 10);
     $this->objpdf->cell(50,5,$this->iptj01_matric,$sb,0,"L",0);
     
@@ -118,7 +118,7 @@ for($i=0;$i<2;$i++){
     $this->objpdf->cell(50,5,"R$ " . $this->iptuvlrdesconto,$sb,0,"L",0);
     
     $this->objpdf->SetFont('Times', 'B', 12);
-    $this->objpdf->cell(50,5,"Alíquota : ",$sb,0,"R",0);
+    $this->objpdf->cell(50,5,"AlÃ­quota : ",$sb,0,"R",0);
     $this->objpdf->SetFont('Times', '', 10);
     $this->objpdf->cell(50,5,$this->iptj23_aliq,$sb,1,"L",0);
     
@@ -128,7 +128,7 @@ for($i=0;$i<2;$i++){
     $this->objpdf->cell(150,5,$this->iptnomepri.", ".$this->iptcodpri . (trim($this->iptcompl)!=""?"/" . $this->iptcompl:""),$sb,1,"L",0);
     
     $this->objpdf->SetFont('Times', 'B', 12);
-    $this->objpdf->cell(50,5,"Proprietário : ",$sb,0,"R",0);
+    $this->objpdf->cell(50,5,"ProprietÃ¡rio : ",$sb,0,"R",0);
     $this->objpdf->SetFont('Times', '', 10);
     $this->objpdf->cell(150,5,$this->iptz01_numcgm . " - " . $this->iptproprietario,$sb,1,"L",0);
 
@@ -168,8 +168,8 @@ for($i=0;$i<2;$i++){
     $this->objpdf->RoundedRect($coluna-3,$linha-5,203,25,2,'1234');
 
     //linha 1
-    $this->objpdf->cell(100,4,"Endereço do CGM",$sb,0,"C",0);
-    $this->objpdf->cell(100,4,"Endereço do Imóvel","L",1,"C",0);
+    $this->objpdf->cell(100,4,"EndereÃ§o do CGM",$sb,0,"C",0);
+    $this->objpdf->cell(100,4,"EndereÃ§o do ImÃ³vel","L",1,"C",0);
 
     //linha 2  
     $this->objpdf->cell(100,3,"Nome : ".$this->iptz01_nome,$sb,0,"L",0);

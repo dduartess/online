@@ -39,7 +39,7 @@ class mail {
   
   function __construct() {
     /**
-     * Declaramos as vari·veis da classe de acordo com o que est· configurado no arquivo config.mail.php
+     * Declaramos as vari√°veis da classe de acordo com o que est√° configurado no arquivo config.mail.php
      */
      include_once('libs/config.mail.php');
     
@@ -122,7 +122,7 @@ class mail {
         
         	$sHeader = "From: {$this->sEmailFrom} <{$this->sEmailFrom}>";
         	if ( !mail($this->sEmailTo,$this->sSubject,$this->sMsg, $sHeader) ) {
-        		throw Exception("FunÁ„o mail");
+        		throw Exception("Fun√ß√£o mail");
         	}
         	
         break;
@@ -142,7 +142,7 @@ class mail {
     try {
       fclose($connection);       
     } catch (Exception $eException){
-      return "02 - Erro ao fechar conex„o";    
+      return "02 - Erro ao fechar conex√£o";    
     }
     
   }

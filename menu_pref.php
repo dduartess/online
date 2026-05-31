@@ -78,7 +78,7 @@ if(isset($login)){
     db_fieldsmemory($result,0,true,true);
     $HTTP_SESSION_VARS["DB_login"] = $cgmlogin;
     $DB_LOGADO = "";
-    db_logs("","","0","index.php - Usuário fez login.");
+    db_logs("","","0","index.php - UsuÃ¡rio fez login.");
     $sql = "select fc_permissaodbpref($cgmlogin,0,0)";
     $result = db_query($sql);
     if(pg_numrows($result)==0){
@@ -92,7 +92,7 @@ if(isset($login)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" type="text/javascript" src="scripts/md5.js"></script>
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
 </script>

@@ -33,8 +33,8 @@ parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 ?>
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -53,11 +53,11 @@ db_estilosite()
 		<tr><td>&nbsp;</td></tr>
 		<tr><td >&nbsp;</td></tr>
 		<tr>
-			<td colspan ="2" align= "center" > <b>Efetue cadastro para receber informações referentes ao edital solicitado</b>
+			<td colspan ="2" align= "center" > <b>Efetue cadastro para receber informaÃ§Ãµes referentes ao edital solicitado</b>
 			</td>
 		</tr>
 		<tr>
-			<td width="20%">Nome/Razão Social
+			<td width="20%">Nome/RazÃ£o Social
 			</td>
 			<td><input name="nome" type= "text" size ="70" >
 			</td>
@@ -89,7 +89,7 @@ db_estilosite()
 			</td>
 		</tr>
 		<tr>
-			<td width="20%">Endereço
+			<td width="20%">EndereÃ§o
 			</td>
 			<td><input name="endereco" type= "text" size ="70">
 			</td>

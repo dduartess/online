@@ -53,11 +53,11 @@ class cl_pcdotac {
    var $campos = "
                  pc13_anousu = int4 = Ano 
                  pc13_coddot = int4 = Dotacao orcamentaria 
-                 pc13_codigo = int8 = Código sequencial do registro 
+                 pc13_codigo = int8 = CÃ³digo sequencial do registro 
                  pc13_depto = int4 = Departamento 
                  pc13_quant = float8 = quantidade solicitada 
                  pc13_valor = float8 = Valor 
-                 pc13_codele = int4 = Código Elemento 
+                 pc13_codele = int4 = CÃ³digo Elemento 
                  ";
    //funcao construtor da classe 
    function cl_pcdotac() { 
@@ -97,7 +97,7 @@ class cl_pcdotac {
        $this->erro_sql = " Campo Departamento nao Informado.";
        $this->erro_campo = "pc13_depto";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -106,7 +106,7 @@ class cl_pcdotac {
        $this->erro_sql = " Campo quantidade solicitada nao Informado.";
        $this->erro_campo = "pc13_quant";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -115,16 +115,16 @@ class cl_pcdotac {
        $this->erro_sql = " Campo Valor nao Informado.";
        $this->erro_campo = "pc13_valor";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->pc13_codele == null ){ 
-       $this->erro_sql = " Campo Código Elemento nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo Elemento nao Informado.";
        $this->erro_campo = "pc13_codele";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -135,7 +135,7 @@ class cl_pcdotac {
      if(($this->pc13_codigo == null) || ($this->pc13_codigo == "") ){ 
        $this->erro_sql = " Campo pc13_codigo nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -143,7 +143,7 @@ class cl_pcdotac {
      if(($this->pc13_anousu == null) || ($this->pc13_anousu == "") ){ 
        $this->erro_sql = " Campo pc13_anousu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -151,7 +151,7 @@ class cl_pcdotac {
      if(($this->pc13_coddot == null) || ($this->pc13_coddot == "") ){ 
        $this->erro_sql = " Campo pc13_coddot nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -178,13 +178,13 @@ class cl_pcdotac {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "dotacoes por item de cada solicitacao ($this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "dotacoes por item de cada solicitacao já Cadastrado";
+         $this->erro_sql   = "dotacoes por item de cada solicitacao ($this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "dotacoes por item de cada solicitacao jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "dotacoes por item de cada solicitacao ($this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "dotacoes por item de cada solicitacao ($this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -194,7 +194,7 @@ class cl_pcdotac {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -227,7 +227,7 @@ class cl_pcdotac {
          $this->erro_sql = " Campo Ano nao Informado.";
          $this->erro_campo = "pc13_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -240,7 +240,7 @@ class cl_pcdotac {
          $this->erro_sql = " Campo Dotacao orcamentaria nao Informado.";
          $this->erro_campo = "pc13_coddot";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -250,10 +250,10 @@ class cl_pcdotac {
        $sql  .= $virgula." pc13_codigo = $this->pc13_codigo ";
        $virgula = ",";
        if(trim($this->pc13_codigo) == null ){ 
-         $this->erro_sql = " Campo Código sequencial do registro nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo sequencial do registro nao Informado.";
          $this->erro_campo = "pc13_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -266,7 +266,7 @@ class cl_pcdotac {
          $this->erro_sql = " Campo Departamento nao Informado.";
          $this->erro_campo = "pc13_depto";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -279,7 +279,7 @@ class cl_pcdotac {
          $this->erro_sql = " Campo quantidade solicitada nao Informado.";
          $this->erro_campo = "pc13_quant";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -292,7 +292,7 @@ class cl_pcdotac {
          $this->erro_sql = " Campo Valor nao Informado.";
          $this->erro_campo = "pc13_valor";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -302,10 +302,10 @@ class cl_pcdotac {
        $sql  .= $virgula." pc13_codele = $this->pc13_codele ";
        $virgula = ",";
        if(trim($this->pc13_codele) == null ){ 
-         $this->erro_sql = " Campo Código Elemento nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo Elemento nao Informado.";
          $this->erro_campo = "pc13_codele";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -350,7 +350,7 @@ class cl_pcdotac {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "dotacoes por item de cada solicitacao nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -360,16 +360,16 @@ class cl_pcdotac {
          $this->erro_banco = "";
          $this->erro_sql = "dotacoes por item de cada solicitacao nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->pc13_codigo."-".$this->pc13_anousu."-".$this->pc13_coddot;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -428,9 +428,9 @@ class cl_pcdotac {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "dotacoes por item de cada solicitacao nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "dotacoes por item de cada solicitacao nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$pc13_codigo."-".$pc13_anousu."-".$pc13_coddot;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -438,18 +438,18 @@ class cl_pcdotac {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "dotacoes por item de cada solicitacao nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "dotacoes por item de cada solicitacao nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$pc13_codigo."-".$pc13_anousu."-".$pc13_coddot;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$pc13_codigo."-".$pc13_anousu."-".$pc13_coddot;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -464,7 +464,7 @@ class cl_pcdotac {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -473,7 +473,7 @@ class cl_pcdotac {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:pcdotac";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

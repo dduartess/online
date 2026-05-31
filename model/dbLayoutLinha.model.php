@@ -26,7 +26,7 @@
  */
 
 /**
- * Model utilizado para indentificaÁ„o de um campo dentro de uma linha
+ * Model utilizado para indentifica√ß√£o de um campo dentro de uma linha
  * @package configuracao
  * @author Felipe Nunes Ribeiro 
  * @revision $Author: dbrafael.nery $
@@ -38,8 +38,8 @@ class DBLayoutLinha {
   
   private $aPropriedadesCampos;
  	/**
-   * Identifica se usa ou n„o o separador para quebrar a linha e determinar o valor do campo solicitado.
-   * Se estiver setado para true e o separador for vazio, pega o valor pelas posiÁ„o de inÌcio do campo.
+   * Identifica se usa ou n√£o o separador para quebrar a linha e determinar o valor do campo solicitado.
+   * Se estiver setado para true e o separador for vazio, pega o valor pelas posi√ß√£o de in√≠cio do campo.
    * @var boolean
    */
   private $lUsaSeparador;
@@ -55,9 +55,9 @@ class DBLayoutLinha {
    *                                            aPropriedadesCampos[nome_campo_layout][separador_campos]
    *                                            aPropriedadesCampos[nome_campo_layout][indice_campo] 
    *                                            (indice_campo somente para quando se utilizar o separador)
-   * @param boolean $lUsaSeparador Identifica se usa ou n„o o separador para quebrar a linha e determinar o valor 
-   * do campo solicitado. Se estiver setado para true e o separador for vazio, pega o valor pelas posiÁ„o de 
-   * inÌcio do campo.
+   * @param boolean $lUsaSeparador Identifica se usa ou n√£o o separador para quebrar a linha e determinar o valor 
+   * do campo solicitado. Se estiver setado para true e o separador for vazio, pega o valor pelas posi√ß√£o de 
+   * in√≠cio do campo.
    */
   function __construct($sLinha,$aPropriedadesCampos, $lUsaSeparador = false, $lUsaChr = false) {
     
@@ -70,15 +70,15 @@ class DBLayoutLinha {
   }
 
   /**
-   * MÈtodo m·gico utilizado para retornar o valor do campo dentro da linha
+   * M√©todo m√°gico utilizado para retornar o valor do campo dentro da linha
    *
    * @param  string $sName // Nome do Campo
-   * @return string        // Conte˙do do campo dentro da linha    
+   * @return string        // Conte√∫do do campo dentro da linha    
    */
   public function __get($sName){
 
     /**
-    * Se estiver setado para usar o separador e o separador n„o for vazio.
+    * Se estiver setado para usar o separador e o separador n√£o for vazio.
     */  	
     if ($this->lUsaSeparador 
         && isset($this->aPropriedadesCampos[$sName][2]) 
@@ -108,10 +108,10 @@ class DBLayoutLinha {
   }
 
   /**
-   * MÈtodo m·gico utizado para determinar se existe ou n„o um campo do layout
+   * M√©todo m√°gico utizado para determinar se existe ou n√£o um campo do layout
    *
    * @param  string $sName // Nome do Campo
-   * @return boolean       // Existe ou n„o o campo no layout
+   * @return boolean       // Existe ou n√£o o campo no layout
    */
   public function __isset($sName){
 

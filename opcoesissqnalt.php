@@ -36,7 +36,7 @@ $dblink="index.php";
 db_logs("","",0,"Digita Codigo do Contribuinte.");
 db_mensagem("contribuinte_cab","contribuinte_rod");
 postmemory($HTTP_POST_VARS);
-$matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"MarÁo","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
+$matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"Mar√ßo","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
 $mesx= $matri[$mes];
 $clquery = new cl_query;
 if(isset($alter)){
@@ -45,7 +45,7 @@ if(isset($alter)){
    if(pg_numrows($result) != 0){
      db_fieldsmemory($result,0);
    }else{
-    redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso a Rotina Inv·lido, verifique os dados digitados!"));
+    redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso a Rotina Inv√°lido, verifique os dados digitados!"));
    }  
 }elseif(isset($first)){
   $inscricaow!=""?"":$inscricaow = 0 ;
@@ -65,7 +65,7 @@ if(isset($alter)){
   if(pg_numrows($result) != 0){
     db_fieldsmemory($result,0);
   }else{
-    redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso a Rotina Inv·lido, verifique os dados digitados!"));
+    redireciona("digitaissqn.php?".base64_encode("erroscripts=Acesso a Rotina Inv√°lido, verifique os dados digitados!"));
   }  
 }  
   if(isset($primeiravez)){
@@ -151,7 +151,7 @@ if(isset($guarda)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesissqn.php");
@@ -162,7 +162,7 @@ function js_veri(){
     var vals = new Number(document.form1.valservico.value);
   }
   if(isNaN(vals)){
-    alert("verifique o valor do serviÁo!");
+    alert("verifique o valor do servi√ßo!");
     document.form1.valservico.focus();
     return false;
   } 
@@ -189,20 +189,20 @@ function js_vericampos(){
     alerta +="CNPJ\n";
   }
   if(jnomerazao==""){
-    alerta +="Nome/Raz„o Social\n";
+    alerta +="Nome/Raz√£o Social\n";
   }
   if(jvalservico==""){
-    alerta +="ServiÁo Prestado\n";
+    alerta +="Servi√ßo Prestado\n";
   }
   if(jnumnota==""){
     alerta +="Numero da Nota\n";
   }
   if(jnumserie==""){
-    alerta +="Numero da SÈrie\n";
+    alerta +="Numero da S√©rie\n";
   }
   var expr = /[^0-9]+/;
   if(jinscricao.match(expr) != null){
-    alerta+="InscriÁ„o Inv·lida";
+    alerta+="Inscri√ß√£o Inv√°lida";
   }
   if(alerta!=""){
     alert("Verfique os seguintes campos:\n"+alerta);
@@ -294,12 +294,12 @@ db_montamenus();
                                   <font color="white"> <?=$z01_nome?></font>
                                   </small>
 			        </td>
-                                <td width="19%" colspan="0" nowrap><small><b>InscriÁ„o 
+                                <td width="19%" colspan="0" nowrap><small><b>Inscri√ß√£o 
                                   </b> 
                                   <font color="white"> <?=$inscricaow?></font>
                                   </small>
 			        </td>
-                                <td width="19%" nowrap><small><b>CompetÍncia:</b> 
+                                <td width="19%" nowrap><small><b>Compet√™ncia:</b> 
                                  <font color="white">  <?=$mesx?>
                                   de 
                                   <?=$ano?></font>
@@ -324,7 +324,7 @@ db_montamenus();
                                 <td width="19%" align="left"><b><small>CNPJ</small></b></td>
                                 <td width="19%" align="left"><b><small>Inscri&ccedil;&atilde;o</small></b></td>
                                 <td width="62%" align="left"><b><small>Nome ou 
-                                  Raz„o Social</small></b></td>
+                                  Raz√£o Social</small></b></td>
                                 <td width="62%" align="left"><b><small>Servi&ccedil;o 
                                   Prestado</small></b></td>
                               </tr>
@@ -370,7 +370,7 @@ db_montamenus();
                         </tr>
                         <tr> 
                           <td colspan="5" > 
- 			              <input name="guarda" class="botao" type="submit"  value="LanÁa Valor" onclick="return js_vericampos() "> 
+ 			              <input name="guarda" class="botao" type="submit"  value="Lan√ßa Valor" onclick="return js_vericampos() "> 
                           <input name="grava" type="submit" id="grava" class="botao" value="Gravar e Gerar Planilha" style="visibility: hidden"> 
                           </td>
                         </tr>
@@ -393,15 +393,15 @@ if(!isset($alter)){
       echo "  <table width=\"99%\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" >\n";
       echo "      <tr>\n ";
       echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"6%\"><small><b>CNPJ</b></small></td>\n";
-      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"9%\"><small><b>InscriÁ„o</b></small></td>\n";
-      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"15%\"><small><b>Nome/Raz„o</b></small></td>\n";
-      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"18%\"><small><b>ServiÁo</b></small></td>\n";
+      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"9%\"><small><b>Inscri√ß√£o</b></small></td>\n";
+      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"15%\"><small><b>Nome/Raz√£o</b></small></td>\n";
+      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"18%\"><small><b>Servi√ßo</b></small></td>\n";
       echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"7%\"><small><b>Nota</b></small></td>\n";
-      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"7%\"><small><b>SÈrie</b></small></td>\n";
+      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"7%\"><small><b>S√©rie</b></small></td>\n";
       echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"10%\"><small><b>Valor</b></small></td>\n";
       echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"10%\"><small><b>Aliquota</b></small></td>\n";
       echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"10%\"><small><b>Total</b></small></td>\n";
-      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"8%\"><small><b>OpÁıes</b></small></td>\n";
+      echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"8%\"><small><b>Op√ß√µes</b></small></td>\n";
       echo "      </tr>\n";
      $mostra_gravar = true;			    
     }
@@ -503,15 +503,15 @@ if(isset($alter)){
   echo "  <table width=\"100%\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" >\n";
   echo "      <tr>\n ";
   echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"6%\"><small><b>CNPJ</b></small></td>\n";
-  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"9\"><small><b>InscriÁ„o</b></small></td>\n";
-  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"15%\"><small><b>Nome/Raz„o</b></small></td>\n";
-  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"18%\"><small><b>ServiÁo</b></small></td>\n";
+  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"9\"><small><b>Inscri√ß√£o</b></small></td>\n";
+  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"15%\"><small><b>Nome/Raz√£o</b></small></td>\n";
+  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"18%\"><small><b>Servi√ßo</b></small></td>\n";
   echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"7%\"><small><b>Nota</b></small></td>\n";
-  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"7%\"><small><b>SÈrie</b></small></td>\n";
+  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"7%\"><small><b>S√©rie</b></small></td>\n";
   echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"10%\"><small><b>Valor</b></small></td>\n";
   echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"10%\"><small><b>Aliquota</b></small></td>\n";
   echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"10%\"><small><b>Total</b></small></td>\n";
-  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"8%\"><small><b>OpÁıes</b></small></td>\n";
+  echo "        <td align=\"center\" bgcolor=\"#00436E\" width=\"8%\"><small><b>Op√ß√µes</b></small></td>\n";
   echo "      </tr>\n";
   $mostra_gravar = true;			    
   for($xi=0; $xi < $numrows2; $xi++){

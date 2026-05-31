@@ -32,8 +32,8 @@ db_postmemory($HTTP_SERVER_VARS);
 
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -56,8 +56,8 @@ $lin = pg_num_rows($result);
 
 ?>
 <table width="100%" border="0" align= "center">
-obs: ta mostrando todos com permição para publicar...idependente da data....
-	<tr><td align="center"><b>LICITAÇÕES EM ABERTO</b></td></tr><br>
+obs: ta mostrando todos com permiÃ§Ã£o para publicar...idependente da data....
+	<tr><td align="center"><b>LICITAÃ‡Ã•ES EM ABERTO</b></td></tr><br>
 </table>
 
 <table width="90%" border="0" align= "center">
@@ -68,10 +68,10 @@ obs: ta mostrando todos com permição para publicar...idependente da data....
 			db_fieldsmemory($result, $i);
 		
 		echo "<tr bgcolor='$w01_corfundomenu'>
-				<td>$l03_descr Nº $l20_numero </td>
+				<td>$l03_descr NÂº $l20_numero </td>
 			  </tr>
 			  <tr><td>Objeto: $l20_objeto </td></tr>";
-			  echo"<tr><td><a href='http://192.168.0.36/dbportal2/tmp/$l99_nomearq' target='_blank'> Baixar Mapa comparativo de preço </a></td></tr>";
+			  echo"<tr><td><a href='http://192.168.0.36/dbportal2/tmp/$l99_nomearq' target='_blank'> Baixar Mapa comparativo de preÃ§o </a></td></tr>";
 			  echo"<tr><td>   </td></tr>";	
 		}	
 	}

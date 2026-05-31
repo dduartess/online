@@ -1,6 +1,6 @@
 <?php 
 //===============================================================================//
-/////////////////   C E R T I D Ã O   D E   I S E N Ç Ã O   ///////////////////////
+/////////////////   C E R T I D Ãƒ O   D E   I S E N Ã‡ Ãƒ O   ///////////////////////
 //===============================================================================//
 
 	$this->objpdf->settopmargin(1);
@@ -44,7 +44,7 @@
     $this->objpdf->Multicell(185,8,"           		".$this->isenmsg4,$borda,"J",0);
     
     $this->objpdf->setfont('Arial','B',12);
-    $this->objpdf->cell(45,8,"Matrícula : ",$borda,0,"R",0);
+    $this->objpdf->cell(45,8,"MatrÃ­cula : ",$borda,0,"R",0);
     $this->objpdf->setfont('Arial','',12);
     $this->objpdf->cell(50,8,$this->isenmatric,$borda,0,"L",0);
     
@@ -59,7 +59,7 @@
 	$this->objpdf->cell(140,8,$this->isennome,$borda,1,"L",0); 
 	
 	$this->objpdf->setfont('Arial','B',12);
-	$this->objpdf->cell(45,8,"Endereço : ",$borda,0,"R",0);
+	$this->objpdf->cell(45,8,"EndereÃ§o : ",$borda,0,"R",0);
 	$this->objpdf->setfont('Arial','',12); 
     $this->objpdf->cell(140,8,$this->isenender,$borda,1,"L",0); 
 	
@@ -74,9 +74,9 @@
 	$this->objpdf->cell(140,8,$this->isenproc,$borda,1,"L",0);     
 	
 	$this->objpdf->setfont('Arial','B',12);
-	$this->objpdf->cell(185,8,"Periodo de isenção : ",$borda,1,"C",0);
+	$this->objpdf->cell(185,8,"Periodo de isenÃ§Ã£o : ",$borda,1,"C",0);
 	$this->objpdf->setfont('Arial','',12); 
-	$this->objpdf->cell(185,8,"De ".db_formatar($this->isendtini,'d')." à ".db_formatar($this->isendtfim,'d'),$borda,1,"C",0);     
+	$this->objpdf->cell(185,8,"De ".db_formatar($this->isendtini,'d')." Ã  ".db_formatar($this->isendtfim,'d'),$borda,1,"C",0);     
    
     $this->objpdf->cell(185,8,"",$borda,1,"C",0);
     $this->objpdf->cell(185,8,"",$borda,1,"C",0);

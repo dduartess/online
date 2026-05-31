@@ -34,7 +34,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_maiusculo(obj) {
@@ -43,7 +43,7 @@ function js_maiusculo(obj) {
 }
 function js_verilinhas(){
   if(document.getElementById('linhas').rows.length == 1){
-    alert("Não há valores registrados");
+    alert("NÃ£o hÃ¡ valores registrados");
     return false;
   }
 }  
@@ -71,7 +71,7 @@ function js_vericampos(){
     alerta +="Nome\n";
   }
   if(ender==""){
-    alerta +="Endereço\n";
+    alerta +="EndereÃ§o\n";
   }
   if(bairro==""){
     alerta +="Bairro\n";
@@ -184,9 +184,9 @@ mens_div();
 	      <td>
 	        <table cellpadding="3" cellspacing="0">
    	          <tr> 
-	            <td align="left">Endereço:&nbsp;<br>
+	            <td align="left">EndereÃ§o:&nbsp;<br>
 	            <input name="ender" type="text" size="40" maxlength="40" onKeyUp="js_maiusculo(this)"></td>
-	            <td align="left">Número:&nbsp;<br>
+	            <td align="left">NÃºmero:&nbsp;<br>
 	            <input name="numero" type="text" size="6" maxlength="6"></td>
 	            <td align="left">Compl.:&nbsp;<br>
 	            <input name="compl" type="text" size="10" maxlength="10" onKeyUp="js_maiusculo(this)"></td>
@@ -212,7 +212,7 @@ mens_div();
 	    </tr>  
             <tr> 
               <td> 
-    	        <input name="guarda" class="botao" type="button"  value="Incluir Ítem" onclick="return js_vericampos();"> 
+    	        <input name="guarda" class="botao" type="button"  value="Incluir Ãtem" onclick="return js_vericampos();"> 
  	        <input name="salvasocios" class="botao" type="submit"  value="Salvar" > 
               </td>
             </tr>
@@ -224,7 +224,7 @@ mens_div();
 		      Nome
 		    </td>
 		    <td width="50%">
-		      Endereço.
+		      EndereÃ§o.
 		    </td>
 		  </tr>
 		  <?php 

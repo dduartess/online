@@ -84,9 +84,9 @@ if(isset($verifica)){
 	$resultver=pg_query($sqlver);
 	$linhasver = pg_num_rows($resultver);
 	if($linhasver>0){
-		msgbox("Codigo de autenticação correto");
+		msgbox("Codigo de autenticaÃ§Ã£o correto");
 	}else{
-		msgbox("Codigo de autenticação incorreto");
+		msgbox("Codigo de autenticaÃ§Ã£o incorreto");
 	}
 }
 ?>
@@ -94,7 +94,7 @@ if(isset($verifica)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php 
@@ -107,27 +107,27 @@ db_estilosite();
 	<form name="form1" method="post" action="" >
 	<br><br>
 	<div align="center" class="titulo">Verificar autenticidade<br></div><br>
-	<div align="center" class="texto">Digite o número que se encontra acima do código de barras da certidão impressa</div><br>
+	<div align="center" class="texto">Digite o nÃºmero que se encontra acima do cÃ³digo de barras da certidÃ£o impressa</div><br>
 	<div align="center" class="texto" >
-		Código de autenticidade<input name="autent" type="text" size="40" value=""> <input name="verifica" type="submit" value="Verificar" class="botao">
+		CÃ³digo de autenticidade<input name="autent" type="text" size="40" value=""> <input name="verifica" type="submit" value="Verificar" class="botao">
 	</div><br><br>
 	<div><hr></div>
 	<br>
 	<div align="center" class="titulo">Consulta Aidofs liberadas<br></div><br>
 	<div align="center" class="texto" >
-		Código<input name="cod" type="text" value""> <b> OU </b>
-		Inscrição <input name="inscr" type="text" value"">
+		CÃ³digo<input name="cod" type="text" value""> <b> OU </b>
+		InscriÃ§Ã£o <input name="inscr" type="text" value"">
 		<input name="pesq" type="submit" value="Pesquisar" class="botao">
 	</div>
 	<br>	
 	<table class="tab" align="center" width="80%">
     <tr>
-    	<th align="center">Código</th>
+    	<th align="center">CÃ³digo</th>
     	<th align="center">Tipo de nota</th>
     	<th align="center">Data</th>
     	<th align="center">Quant. liberada</th>
-    	<th align="center">Numeração</th>
-    	<th align="center">Inscrição</th>
+    	<th align="center">NumeraÃ§Ã£o</th>
+    	<th align="center">InscriÃ§Ã£o</th>
     	<th align="center">Cliente</th>
     </tr>
   

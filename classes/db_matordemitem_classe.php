@@ -51,13 +51,13 @@ class cl_matordemitem {
    var $m52_vlruni = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 m52_codlanc = int8 = Código sequencial do lançamento 
-                 m52_codordem = int8 = Código da ordem de compra 
-                 m52_numemp = int4 = Número 
+                 m52_codlanc = int8 = CÃ³digo sequencial do lanÃ§amento 
+                 m52_codordem = int8 = CÃ³digo da ordem de compra 
+                 m52_numemp = int4 = NÃºmero 
                  m52_sequen = int4 = Sequencia 
                  m52_quant = float8 = Quantidade 
                  m52_valor = float8 = Valor 
-                 m52_vlruni = float8 = valor unitário 
+                 m52_vlruni = float8 = valor unitÃ¡rio 
                  ";
    //funcao construtor da classe 
    function cl_matordemitem() { 
@@ -92,19 +92,19 @@ class cl_matordemitem {
    function incluir ($m52_codlanc){ 
       $this->atualizacampos();
      if($this->m52_codordem == null ){ 
-       $this->erro_sql = " Campo Código da ordem de compra nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo da ordem de compra nao Informado.";
        $this->erro_campo = "m52_codordem";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->m52_numemp == null ){ 
-       $this->erro_sql = " Campo Número nao Informado.";
+       $this->erro_sql = " Campo NÃºmero nao Informado.";
        $this->erro_campo = "m52_numemp";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -113,7 +113,7 @@ class cl_matordemitem {
        $this->erro_sql = " Campo Sequencia nao Informado.";
        $this->erro_campo = "m52_sequen";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -122,7 +122,7 @@ class cl_matordemitem {
        $this->erro_sql = " Campo Quantidade nao Informado.";
        $this->erro_campo = "m52_quant";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -131,16 +131,16 @@ class cl_matordemitem {
        $this->erro_sql = " Campo Valor nao Informado.";
        $this->erro_campo = "m52_valor";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->m52_vlruni == null ){ 
-       $this->erro_sql = " Campo valor unitário nao Informado.";
+       $this->erro_sql = " Campo valor unitÃ¡rio nao Informado.";
        $this->erro_campo = "m52_vlruni";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -150,7 +150,7 @@ class cl_matordemitem {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: matordemitem_m52_codlanc_seq do campo: m52_codlanc"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -159,9 +159,9 @@ class cl_matordemitem {
      }else{
        $result = db_query("select last_value from matordemitem_m52_codlanc_seq");
        if(($result != false) && (pg_result($result,0,0) < $m52_codlanc)){
-         $this->erro_sql = " Campo m52_codlanc maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo m52_codlanc maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -172,7 +172,7 @@ class cl_matordemitem {
      if(($this->m52_codlanc == null) || ($this->m52_codlanc == "") ){ 
        $this->erro_sql = " Campo m52_codlanc nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -199,13 +199,13 @@ class cl_matordemitem {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Itens da ordem de compra ($this->m52_codlanc) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Itens da ordem de compra já Cadastrado";
+         $this->erro_sql   = "Itens da ordem de compra ($this->m52_codlanc) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Itens da ordem de compra jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Itens da ordem de compra ($this->m52_codlanc) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Itens da ordem de compra ($this->m52_codlanc) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -215,7 +215,7 @@ class cl_matordemitem {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->m52_codlanc;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -244,10 +244,10 @@ class cl_matordemitem {
        $sql  .= $virgula." m52_codlanc = $this->m52_codlanc ";
        $virgula = ",";
        if(trim($this->m52_codlanc) == null ){ 
-         $this->erro_sql = " Campo Código sequencial do lançamento nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo sequencial do lanÃ§amento nao Informado.";
          $this->erro_campo = "m52_codlanc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -257,10 +257,10 @@ class cl_matordemitem {
        $sql  .= $virgula." m52_codordem = $this->m52_codordem ";
        $virgula = ",";
        if(trim($this->m52_codordem) == null ){ 
-         $this->erro_sql = " Campo Código da ordem de compra nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo da ordem de compra nao Informado.";
          $this->erro_campo = "m52_codordem";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -270,10 +270,10 @@ class cl_matordemitem {
        $sql  .= $virgula." m52_numemp = $this->m52_numemp ";
        $virgula = ",";
        if(trim($this->m52_numemp) == null ){ 
-         $this->erro_sql = " Campo Número nao Informado.";
+         $this->erro_sql = " Campo NÃºmero nao Informado.";
          $this->erro_campo = "m52_numemp";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -286,7 +286,7 @@ class cl_matordemitem {
          $this->erro_sql = " Campo Sequencia nao Informado.";
          $this->erro_campo = "m52_sequen";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -299,7 +299,7 @@ class cl_matordemitem {
          $this->erro_sql = " Campo Quantidade nao Informado.";
          $this->erro_campo = "m52_quant";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -312,7 +312,7 @@ class cl_matordemitem {
          $this->erro_sql = " Campo Valor nao Informado.";
          $this->erro_campo = "m52_valor";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -322,10 +322,10 @@ class cl_matordemitem {
        $sql  .= $virgula." m52_vlruni = $this->m52_vlruni ";
        $virgula = ",";
        if(trim($this->m52_vlruni) == null ){ 
-         $this->erro_sql = " Campo valor unitário nao Informado.";
+         $this->erro_sql = " Campo valor unitÃ¡rio nao Informado.";
          $this->erro_campo = "m52_vlruni";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -363,7 +363,7 @@ class cl_matordemitem {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Itens da ordem de compra nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->m52_codlanc;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -373,16 +373,16 @@ class cl_matordemitem {
          $this->erro_banco = "";
          $this->erro_sql = "Itens da ordem de compra nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->m52_codlanc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->m52_codlanc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -428,9 +428,9 @@ class cl_matordemitem {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Itens da ordem de compra nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Itens da ordem de compra nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$m52_codlanc;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -438,18 +438,18 @@ class cl_matordemitem {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Itens da ordem de compra nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Itens da ordem de compra nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$m52_codlanc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$m52_codlanc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -464,7 +464,7 @@ class cl_matordemitem {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -473,7 +473,7 @@ class cl_matordemitem {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:matordemitem";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

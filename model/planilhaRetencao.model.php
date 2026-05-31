@@ -51,11 +51,11 @@ class planilhaRetencao {
     if (empty($iCodigoPlanilha)) {
         
       if (!db_utils::inTransaction()) {
-        throw new Exception("Erro [0] - Não Existe transação ativa");
+        throw new Exception("Erro [0] - NÃ£o Existe transaÃ§Ã£o ativa");
       }
       
       if (empty($iNumCgm)){
-        throw new Exception("Erro [1] - Código do fornecedor não informado.");
+        throw new Exception("Erro [1] - CÃ³digo do fornecedor nÃ£o informado.");
       }
       $this->iNumCgm               = $iNumCgm;
       $oDaoIssPlan                 = db_utils::getDao("issplan");
@@ -69,7 +69,7 @@ class planilhaRetencao {
       $oDaoIssPlan->q20_situacao   = 1;
       $oDaoIssPlan->incluir(null);
       if ($oDaoIssPlan->erro_status == 0) {
-        throw new Exception("Erro [2] - Não foi possível incluir planilha.\n{$oDaoIssPlan->erro_msg}");
+        throw new Exception("Erro [2] - NÃ£o foi possÃ­vel incluir planilha.\n{$oDaoIssPlan->erro_msg}");
       }
       $this->iCodigoPlanilha = $oDaoIssPlan->q20_planilha;
     } else {
@@ -84,7 +84,7 @@ class planilhaRetencao {
       $oDaoIssPlanInscri->incluir(null);
       
       if ($oDaoIssPlanInscri->erro_status == 0) {
-        throw new Exception("Erro [3] - Não foi possivel vincular a planilha a inscrição.\n{$oDaoIssPlan->erro_msg}");
+        throw new Exception("Erro [3] - NÃ£o foi possivel vincular a planilha a inscriÃ§Ã£o.\n{$oDaoIssPlan->erro_msg}");
       }
     }
     
@@ -112,7 +112,7 @@ class planilhaRetencao {
   function adicionaNota($oNota) {
     
     if (!db_utils::inTransaction()) {
-      throw new Exception("Erro [0] - Não Existe transação ativa");
+      throw new Exception("Erro [0] - NÃ£o Existe transaÃ§Ã£o ativa");
     }
     if (!is_object($oNota)) {
       throw new Exception("Erro [1] - oNota deve ser um objeto");
@@ -128,7 +128,7 @@ class planilhaRetencao {
     $oDaoNotas->q21_status   = 1;
     $oDaoNotas->q21_situacao = "0";
     /*
-     * informações que devem vir do objeto oNotas
+     * informaÃ§Ãµes que devem vir do objeto oNotas
      */
     $oDaoNotas->q21_datanota     = $oNota->dtNota;
     $oDaoNotas->q21_cnpj         = $oNota->sCnpj;
@@ -166,20 +166,20 @@ class planilhaRetencao {
   function gerarDebito($sHistorico=null) {
 
     if (!db_utils::inTransaction()) {
-      throw new Exception("Erro [0] - Não Existe transação ativa");
+      throw new Exception("Erro [0] - NÃ£o Existe transaÃ§Ã£o ativa");
     }
     //Criamos um novo Numpre 
     $rsNumpre      = pg_exec("select nextval('numpref_k03_numpre_seq') as k03_numpre");
     $this->iNumpre = db_utils::fieldsMemory($rsNumpre, 0)->k03_numpre;
     /*
-     *Buscamos as informações de configuração da db_confplam 
+     *Buscamos as informaÃ§Ãµes de configuraÃ§Ã£o da db_confplam 
      */
     $oDaoConfPlan = db_utils::getDao("db_confplan");
     $rsConfPlan   = $oDaoConfPlan->sql_record($oDaoConfPlan->sql_query_file());
     if ($oDaoConfPlan->numrows == 0) {
 
-      $sErro  = "Erro [1] - Não há configurações informadas para a planilha.";
-      $sErro .= "\nConfigure acessando  Prefeitura Online -> Procedimentos -> Manutenção de Planilhas.";
+      $sErro  = "Erro [1] - NÃ£o hÃ¡ configuraÃ§Ãµes informadas para a planilha.";
+      $sErro .= "\nConfigure acessando  Prefeitura Online -> Procedimentos -> ManutenÃ§Ã£o de Planilhas.";
       throw new Exception($sErro);
 
     }
@@ -199,7 +199,7 @@ class planilhaRetencao {
 
     $oDaoIssVar = db_utils::getDao("issvar");
     $oDaoIssVar->q05_numpre = $this->iNumpre;
-    $oDaoIssVar->q05_histor = "ISSQN retenção na fonte.";
+    $oDaoIssVar->q05_histor = "ISSQN retenÃ§Ã£o na fonte.";
     $oDaoIssVar->q05_numpar = 1;
     $oDaoIssVar->q05_ano    = $this->iAnoUsu;
     $oDaoIssVar->q05_mes    = $this->iMes;
@@ -209,11 +209,11 @@ class planilhaRetencao {
     $oDaoIssVar->q05_vlrinf = "0";
     $oDaoIssVar->incluir(null);
     if ($oDaoIssVar->erro_status == 0 ) {
-      throw new Exception("Erro [2] - Não foi possivel incluir issqn Variavel.");
+      throw new Exception("Erro [2] - NÃ£o foi possivel incluir issqn Variavel.");
     }
 
     /**
-     * Incluimos o débito no arrecad
+     * Incluimos o dÃ©bito no arrecad
      */
     $oDaoArrecad  = db_utils::getDao("arrecad");
     $oDaoArrecad->k00_dtoper = $this->getDatausu();
@@ -230,7 +230,7 @@ class planilhaRetencao {
     $oDaoArrecad->k00_valor  = $this->nValorTotal;
     $oDaoArrecad->incluir();
     if ($oDaoArrecad->erro_status == 0)  {
-      throw new Exception("Erro [3] - Não Foi possível incluir débito");
+      throw new Exception("Erro [3] - NÃ£o Foi possÃ­vel incluir dÃ©bito");
     }
 
     /**
@@ -261,11 +261,11 @@ class planilhaRetencao {
 
       $rsHistorico = db_query($sSqlhistorico);
       if (!$rsHistorico) {
-        throw new Exception("Erro [4] - Não foi possivel informar histórico do Recibo" );
+        throw new Exception("Erro [4] - NÃ£o foi possivel informar histÃ³rico do Recibo" );
       }
     }
     /**
-     * Incluimos na tabela issplannumpre - Ligação do numpre da planilha com o numpre;
+     * Incluimos na tabela issplannumpre - LigaÃ§Ã£o do numpre da planilha com o numpre;
      */
     $oDaoIssPlanNumpre = db_utils::getDao("issplannumpre");
     $oDaoIssPlanNumpre->q32_planilha = $this->iCodigoPlanilha;
@@ -275,7 +275,7 @@ class planilhaRetencao {
     $oDaoIssPlanNumpre->q32_status   = 1 ;
     $oDaoIssPlanNumpre->incluir(null);
     if ($oDaoIssPlanNumpre->erro_status == 0) {
-      throw new Exception("Erro [4] - Não Foi possível incluir débito");
+      throw new Exception("Erro [4] - NÃ£o Foi possÃ­vel incluir dÃ©bito");
     }
 
     /**
@@ -297,12 +297,12 @@ class planilhaRetencao {
       $oDaoNotaNumpre->q77_issplannumpre = $oDaoIssPlanNumpre-> q32_sequencial;
       $oDaoNotaNumpre->incluir(null);
       if ($oDaoNotaNumpre->erro_status == 0) {
-        throw new Exception("Erro [5] - Não Foi possível incluir débito");
+        throw new Exception("Erro [5] - NÃ£o Foi possÃ­vel incluir dÃ©bito");
       }
     }
 
     /**
-     * vinculamos o numpre a nota de liquidação
+     * vinculamos o numpre a nota de liquidaÃ§Ã£o
      */
     if ($this->iNotaLiquidacao != null) {
 
@@ -311,7 +311,7 @@ class planilhaRetencao {
       $oDaoCaiRetOrdem->k32_ordpag = $this->iNotaLiquidacao;
       $oDaoCaiRetOrdem->incluir(null);
       if ($oDaoCaiRetOrdem->erro_status == 0){
-        throw new Exception("Erro [6] - Não Foi possível incluir débito");
+        throw new Exception("Erro [6] - NÃ£o Foi possÃ­vel incluir dÃ©bito");
       }
     }
     return $this->iNumpre;
@@ -346,12 +346,12 @@ class planilhaRetencao {
   	if($linhas > 0){
   		$q20_numpre = pg_result($result,0,"q20_numpre");
   	} else {
-  	  throw new Exception("Planilha sem codigo de arrecadação!");
+  	  throw new Exception("Planilha sem codigo de arrecadaÃ§Ã£o!");
   	}
   	
   	$sqlerro = false;
   	
-  	//gravar na issplananula: os dados da anulação
+  	//gravar na issplananula: os dados da anulaÃ§Ã£o
   	$clissplananula->q76_planilha   = $planilha;
   	$clissplananula->q76_data       = $data;
   	$clissplananula->q76_hora       = $hora;
@@ -365,7 +365,7 @@ class planilhaRetencao {
       throw new Exception("Erro [1] - {$clissplananula->erro_msg}");
     }
    
-  	//alterar a situação da issplan para anulada
+  	//alterar a situaÃ§Ã£o da issplan para anulada
   	$clissplan->q20_planilha = $planilha;
   	$clissplan->q20_situacao = 5;
   	$clissplan->alterar($planilha);
@@ -385,7 +385,7 @@ class planilhaRetencao {
   			$sqlerro = true;
   			throw new Exception("Deve-se configurar a planilha (db_confplan)");
   		}
-  	    $clcancdebitos->k20_descr   = "anulação de planilha no dbpref.";
+  	    $clcancdebitos->k20_descr   = "anulaÃ§Ã£o de planilha no dbpref.";
   		$clcancdebitos->k20_hora    = $hora;
   		$clcancdebitos->k20_data    = $data;
   		$clcancdebitos->k20_usuario = $usuario;

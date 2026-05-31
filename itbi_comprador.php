@@ -94,7 +94,7 @@ if (isset($excluir)){
 <html>
 <head>
 <title>Comprador</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
 <?php db_estilosite(); ?>
 </style>
@@ -144,10 +144,10 @@ function js_verifica(){
 	if (nom=='') erro = erro+' Nome\n';
 	if (sex=='') erro = erro+' Sexo\n';
 	if (cpf=='') erro = erro+' CPF/CNPJ\n';
-	if (end=='') erro = erro+' Endereço\n';
-	if (num=='') erro = erro+' Número\n';
+	if (end=='') erro = erro+' EndereÃ§o\n';
+	if (num=='') erro = erro+' NÃºmero\n';
 	if (bai=='') erro = erro+' Bairro\n';
-	if (mun=='') erro = erro+' Município\n';
+	if (mun=='') erro = erro+' MunicÃ­pio\n';
 	if (uf =='') erro = erro+' UF\n';
 	if (cep=='') erro = erro+' CEP\n';
 		
@@ -171,7 +171,7 @@ function js_verifica(){
       	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" width="20%">Número da guia de ITBI:
+    	<td align="left" width="20%">NÃºmero da guia de ITBI:
     	</td>
     	<td align="left" > <?=@$cod?>
     	</td>
@@ -210,18 +210,18 @@ function js_verifica(){
     	Principal:
     	<select name="it03_princ"  >
           <option value='t'>Sim</option>
-          <option value='f'>Não</option>
+          <option value='f'>NÃ£o</option>
 	    </select>
     	
     	
     	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" >Endereço:
+    	<td align="left" >EndereÃ§o:
     	</td>
     	<td align="left" ><input name="it03_endereco" type="text" size="60">
     	&nbsp;&nbsp;&nbsp;
-    	Número:<input name="it03_numero" type="text" size="6">
+    	NÃºmero:<input name="it03_numero" type="text" size="6">
     	</td>
   	</tr>
   	
@@ -235,7 +235,7 @@ function js_verifica(){
     	</td>
   	</tr>
   	<tr class="texto"> 
-    	<td align="left" >Município:
+    	<td align="left" >MunicÃ­pio:
     	</td>
     	<td align="left" ><input name="it03_munic" type="text" size="60">
      	</td>
@@ -272,7 +272,7 @@ function js_verifica(){
     			Principal
       			</th>
       			<th align="center" >
-    			Opções
+    			OpÃ§Ãµes
       			</th>
   			</tr>
   			<?php 
@@ -318,7 +318,7 @@ function js_verifica(){
 							if($it03_princ=="t"){
 								$pri = "sim";
 							}else{
-								$pri = "não";
+								$pri = "nÃ£o";
 							}
 							echo"
 							<tr>

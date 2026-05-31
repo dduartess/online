@@ -111,7 +111,7 @@ class db_utils {
   }
 
   /**
-   * @description Metodo para carregar o arquivo de definição da classe requerida;
+   * @description Metodo para carregar o arquivo de definiÃ§Ã£o da classe requerida;
    * @param  string sClasse - nome da classe a ser carregada
    *
    */
@@ -132,7 +132,7 @@ class db_utils {
 
   /**
    * @description Metodo para retornar uma colecao de objetos por um record
-   * @param  recordset - recordset a ser convertido em cole��o de objetos db_utils
+   * @param  recordset - recordset a ser convertido em coleção de objetos db_utils
    * 
    * @return array()   - retorna um array(colecao de objetos) db_utils
    *

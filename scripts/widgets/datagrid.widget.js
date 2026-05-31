@@ -1,6 +1,6 @@
 /** 
- * @fileoverview Esse arquivo define classes para a construção de uma datagrid
- * para visualizaçao de dados tabulares
+ * @fileoverview Esse arquivo define classes para a construÃ§Ã£o de uma datagrid
+ * para visualizaÃ§ao de dados tabulares
  *
  * @author Iuri Guntchnigg iuri@dbseller.com.br
  * @version  $Revision: 1.2 $
@@ -126,7 +126,7 @@ function DBGrid(sName) {
   var sImgSelection    = "espaco.gif";
   
   /**
-   * callback paraa seleção de colunas
+   * callback paraa seleÃ§Ã£o de colunas
    * @type string
    * @private
    */
@@ -172,9 +172,9 @@ function DBGrid(sName) {
   
   
    /**
-   * Metodo para alinha o rodapé se este existir
+   * Metodo para alinha o rodapÃ© se este existir
    *
-   * @param {Object} Objéto da tabela do Cabeçalho
+   * @param {Object} ObjÃ©to da tabela do CabeÃ§alho
    * @return void 
    *
    */
@@ -218,9 +218,9 @@ function DBGrid(sName) {
   
   
    /**
-   * Retorna um {integer} com a primeira linha que estivér visível.
+   * Retorna um {integer} com a primeira linha que estivÃ©r visÃ­vel.
    *
-   * @param {Object} Objéto da tabela do Body
+   * @param {Object} ObjÃ©to da tabela do Body
    * @return Integer 
    *
    */
@@ -229,7 +229,7 @@ function DBGrid(sName) {
   
     var iFirstLineValid = 0; 
     
-    // Percorre as linhas da tabela localizando e retornando a primeira linha visível.
+    // Percorre as linhas da tabela localizando e retornando a primeira linha visÃ­vel.
     for (var iCont = 0; iCont < oBody.rows.length; iCont++) {
     
       if (oBody.rows[iCont].style.display != "none") {
@@ -244,11 +244,11 @@ function DBGrid(sName) {
   
   
   /**
-   * Garante que as colunas permaneçam alinhadas
+   * Garante que as colunas permaneÃ§am alinhadas
    *
-   * @param {Object} Objéto da tabela do header 
-   * @param {Object} Objéto da tabela do Body
-   * @param {Object} Objéto da tabela do Footer
+   * @param {Object} ObjÃ©to da tabela do header 
+   * @param {Object} ObjÃ©to da tabela do Body
+   * @param {Object} ObjÃ©to da tabela do Footer
    * @return void
    *
    */
@@ -266,11 +266,11 @@ function DBGrid(sName) {
     // Itera sobre todas as colunas criadas
     for (var iCont = 0; iCont < me.aHeaders.length; iCont++) {
       
-      // Garante que só será trabalhado sobre as colunas visiveis
+      // Garante que sÃ³ serÃ¡ trabalhado sobre as colunas visiveis
       if (oBody.rows[iFirstLineValid].cells[iCont].style.display != "none" && 
         oHeader.rows[me.iHeaderLineModel].cells[iCont].style.display != "none" ) {
        
-        //Se oa coluna x do Header e a Conluna x do Body for do mesmo tamanho, passa para o próxima volta do laço  
+        //Se oa coluna x do Header e a Conluna x do Body for do mesmo tamanho, passa para o prÃ³xima volta do laÃ§o  
         if (oBody.rows[iFirstLineValid].cells[iCont].scrollWidth == oHeader.rows[me.iHeaderLineModel].cells[iCont].scrollWidth) {
           continue;
         }
@@ -290,9 +290,9 @@ function DBGrid(sName) {
      me.iHeaderLineModel = iHeaderLineModel;
   }  
   /**
-   * Instancia os objétos das tabelas (Header, Body e Footer) e seta o tamnho do Container em cada uma delas,
+   * Instancia os objÃ©tos das tabelas (Header, Body e Footer) e seta o tamnho do Container em cada uma delas,
    * garantindo assim que todas tenham o mesmo tamanho.
-   * Garante que as tabelas não iram mudar de tamanho e realiza chamada para método alinhar as colunas.
+   * Garante que as tabelas nÃ£o iram mudar de tamanho e realiza chamada para mÃ©todo alinhar as colunas.
    *
    * @return void
    *
@@ -300,7 +300,7 @@ function DBGrid(sName) {
   this.resizeCols = function() {
      
      /**
-      * Caso a grid não seja renderizada antes do carregamento, o valor de "me.gridContainerWidth" será 0.
+      * Caso a grid nÃ£o seja renderizada antes do carregamento, o valor de "me.gridContainerWidth" serÃ¡ 0.
       * Esse teste verifica este caso e atribui seu width inicial. 
       */ 
      if (me.gridContainerWidth <= 0) {
@@ -321,7 +321,7 @@ function DBGrid(sName) {
    * adiciona uma linha ao corpo da grid 
    * @param {Array} aRow array com as colunas da linha 
    * @param {boolean} lRender renderiza apos adicionar a coluna
-   * @param {boolean} Se o checkbox está desabilitado 
+   * @param {boolean} Se o checkbox estÃ¡ desabilitado 
    * @return void
    * @see tableRow
    */
@@ -364,7 +364,7 @@ function DBGrid(sName) {
           
      }
          
-     //Iteramos sobre as posições do array Criado.
+     //Iteramos sobre as posiÃ§Ãµes do array Criado.
      for (var iLength = 0; iLength < aRow.length; iLength++) {
       
         sId        = me.sName+'row'+me.iRowCount+'cell'+iLength;
@@ -461,7 +461,7 @@ function DBGrid(sName) {
   }
   
   /**
-   * Renderiza a grid no nó especificado no parametro
+   * Renderiza a grid no nÃ³ especificado no parametro
    * @param  {HTMLNode} oNode onde a grid sera incluida.  
    * @return void
    * @type   void
@@ -586,7 +586,7 @@ function DBGrid(sName) {
   
   /**
    * Seta se a grid mostrara um checkbox, no inicio de cada linha
-   * @param integer iCell Posição da array que contem o valor da checkbox (sera usado com indice.)
+   * @param integer iCell PosiÃ§Ã£o da array que contem o valor da checkbox (sera usado com indice.)
    */
   this.setCheckbox = function(iCell) {
   
@@ -651,7 +651,7 @@ function DBGrid(sName) {
    *
    * Busca elementos pela className
    * @param {string} searchClass nome da classe que deve ser pesquisada
-   * @param {string} domNode nó que deve iniciar a busca default é document.
+   * @param {string} domNode nÃ³ que deve iniciar a busca default Ã© document.
    * @param {string} tagName tag que deve ser verificada default "*" 
    *
    * @return array com todos os objetos encontrados 
@@ -739,7 +739,7 @@ function DBGrid(sName) {
   }
  
   /**
-   * reseta as informações da grid, 
+   * reseta as informaÃ§Ãµes da grid, 
    * @param {bool} lDeleteRows se exclui as linhas cadastradas. caso false apenas limpa o corpo da grid
    * @return void
    */
@@ -797,7 +797,7 @@ function DBGrid(sName) {
   /**
    * Mostra a opcao para marcar todos os checkboxes
    *    
-   * @param {bool} lSelectAll true para mostrar a opção
+   * @param {bool} lSelectAll true para mostrar a opÃ§Ã£o
    * @see #getSelectAll 
    * @return void;
    */
@@ -808,7 +808,7 @@ function DBGrid(sName) {
     
   }
   /**
-   * retorna se deve  mostrar opção para selecionar todos os checkbox
+   * retorna se deve  mostrar opÃ§Ã£o para selecionar todos os checkbox
    * @see #setSelectAll
    * @type bool
    * @return boolean
@@ -820,7 +820,7 @@ function DBGrid(sName) {
   /**
    * Realiza a soma de valores de toda uma coluna;
    * @param  {int} iCol Indice da coluna.
-   * @param  {bool} lInSelection se leva em consideração apenas o que está selecionado
+   * @param  {bool} lInSelection se leva em consideraÃ§Ã£o apenas o que estÃ¡ selecionado
    * @type   Number
    * @return total da soma das colunas;
    */
@@ -936,8 +936,8 @@ function DBGrid(sName) {
     var y = el.offsetHeight;
     
     /*
-     * calculamos a distancia do dropdown em relação a página, 
-     * para podemos renderiza-lo na posição correta.
+     * calculamos a distancia do dropdown em relaÃ§Ã£o a pÃ¡gina, 
+     * para podemos renderiza-lo na posiÃ§Ã£o correta.
      */
     while (el.offsetParent && el.id.toUpperCase() != 'wndAuxiliar') {
       
@@ -953,13 +953,13 @@ function DBGrid(sName) {
     x += new Number(el.offsetLeft);
     y += new Number(el.offsetTop)+4;
     /*
-     * Pegamos a largura do dropdown, e diminuimos da posiçao do cursors
+     * Pegamos a largura do dropdown, e diminuimos da posiÃ§ao do cursors
      */
     var iTamObj = $('columns'+me.sName).scrollWidth-1;
     $('columns'+me.sName).style.left = x - iTamObj;
     $('columns'+me.sName).style.top  = y;
     /*
-     * decidimos se mostramos ou não o dropdown, conforme o seu estado.
+     * decidimos se mostramos ou nÃ£o o dropdown, conforme o seu estado.
      */
     if ($('columns'+me.sName).style.visibility == 'visible') {
       $('columns'+me.sName).style.visibility = 'hidden';
@@ -1126,7 +1126,7 @@ function tableCell(sContent, sId, sWidth, sClasse) {
   this.content = sContent;
   
   /**
-   * Adiciona uma class na TD através do Id passado.
+   * Adiciona uma class na TD atravÃ©s do Id passado.
    */
   this.addClassName = function(sClass){
     
@@ -1138,7 +1138,7 @@ function tableCell(sContent, sId, sWidth, sClasse) {
   }
   
   /**
-   * Remove a class na TD através do ID passado
+   * Remove a class na TD atravÃ©s do ID passado
    */
   this.removeClassName = function( sClass){
     if ($(me.sId)) {
@@ -1216,7 +1216,7 @@ function tableCell(sContent, sId, sWidth, sClasse) {
   
   /**
    * Retorna o valor da celula.
-   * analisa o no filho da celula, para decidir qual informação deve pegar.
+   * analisa o no filho da celula, para decidir qual informaÃ§Ã£o deve pegar.
    * @return string 
    */
   this.getValue = function() {
@@ -1236,7 +1236,7 @@ function tableCell(sContent, sId, sWidth, sClasse) {
         sValue = $F(oCelulaAtiva.childNodes[0].id);
         break;
         
-      case "#text" : //nó padrao, a TD possui apenas texto, sem nenhuma tag html.
+      case "#text" : //nÃ³ padrao, a TD possui apenas texto, sem nenhuma tag html.
       
         sValue = oCelulaAtiva.childNodes[0].nodeValue;
         break;
@@ -1285,9 +1285,9 @@ function tableCell(sContent, sId, sWidth, sClasse) {
   }
 
   /**
-   * Define a Utilização de Colspan pela Célula
+   * Define a UtilizaÃ§Ã£o de Colspan pela CÃ©lula
    * @param lUtilizaColspan      bool      
-   * @param iQuantidadeMesclagem integer - Quantidade de Colunas que vão ser mescladas 
+   * @param iQuantidadeMesclagem integer - Quantidade de Colunas que vÃ£o ser mescladas 
    */
   this.setUseColspan     = function( lUtilizaColspan, iQuantidadeMesclagem ) {
 
@@ -1317,7 +1317,7 @@ function tableHeader(sContent, sWidth, iCol, classe) {
   this.content = sContent;
   
   /**
-   * Define se a coluna está visível ou não
+   * Define se a coluna estÃ¡ visÃ­vel ou nÃ£o
    * @type bool
    */
   this.lDisplayed = true;
@@ -1422,7 +1422,7 @@ function tableRow (sId) {
   var me          = this;
   
   /**
-   * Adiciona uma class na TD através do Id passado.
+   * Adiciona uma class na TD atravÃ©s do Id passado.
    */
   this.addClassName = function(sClass){
     
@@ -1433,7 +1433,7 @@ function tableRow (sId) {
   }
   
   /**
-   * Remove a class na TD através do ID passado
+   * Remove a class na TD atravÃ©s do ID passado
    */
   this.removeClassName = function( sClass){
   

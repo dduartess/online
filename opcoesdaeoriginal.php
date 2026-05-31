@@ -56,7 +56,7 @@ if(isset($nova)){
      $clquery->sql_record($clquery->sql);  // conta as linhas no banco
      db_fieldsmemory($clquery->result,0);  // cria variaveis (z01_nome, z01_numcgm) apartir dos campos
    }else{
-     redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv·lido, verifique os dados digitados!'));
+     redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv√°lido, verifique os dados digitados!'));
    }  
 
 }else{
@@ -82,18 +82,18 @@ if(isset($nova)){
     if(pg_numrows($result) != 0){
       db_fieldsmemory($result,0);
     }else{
-      redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv·lido, verifique os dados digitados!'));
+      redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv√°lido, verifique os dados digitados!'));
     }  
     if(!isset($DB_LOGADO)  && $m_publico !='t'){
       $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricaow)";
       $result = pg_exec($sql);
       if(pg_numrows($result)==0){
-        db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n„o Permitido. Contate a Prefeitura.'));
+        db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.'));
         exit;
       }
       $result = pg_result($result,0,0);
       if($result=="0"){
-        db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n„o Permitido. Contate a Prefeitura.'));
+        db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.'));
         exit;
       }
     } 
@@ -108,20 +108,20 @@ if(pg_numrows($result) == 0){
   $result = pg_exec("select * from db_dae where w04_inscr = $inscricaow");
   db_fieldsmemory($result,0);// transforma o campo em variavel...todos?
   if($w04_enviado == 't'){ // se enviado = t , ja foi enviada
-    echo "<script>var confirma = confirm('DAI j· enviada, deseja reemitir o relatÛrio?');
+    echo "<script>var confirma = confirm('DAI j√° enviada, deseja reemitir o relat√≥rio?');
             if(confirma == true){
               window.open('daerelatorio.php?codigo=$w04_codigo','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');
             }
           </script>  ";
     db_redireciona("digitadae.php");
     exit;
-  }else{  // se DAI n„o foi enviada
+  }else{  // se DAI n√£o foi enviada
     $codigo = $w04_codigo;  // codigo da DAI
   }  
 }else{
   db_fieldsmemory($result,0);// transforma campos da tabela db_dae
-  if($w04_enviado == 't'){  //################### n„o entendi porque denovo ###################
-    echo "<script>var confirma = confirm('DAI j· enviada, deseja reemitir o relatÛrio?');
+  if($w04_enviado == 't'){  //################### n√£o entendi porque denovo ###################
+    echo "<script>var confirma = confirm('DAI j√° enviada, deseja reemitir o relat√≥rio?');
             if(confirma == true){
               window.open('daerelatorio.php?codigo=$w04_codigo','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');
             }
@@ -136,7 +136,7 @@ if(pg_numrows($result) == 0){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js">
 </script>
 <script>
@@ -182,7 +182,7 @@ mens_div();
       <table id="endereco1" width="100%" bgcolor="<?=$w01_corfundomenu?>" style=" border-bottom: none" border="0" cellspacing="0" cellpadding="0" onClick="js_trocaframe('endereco',this)">
         <tr>
           <td width="25%" align="center">
-            <strong>EndereÁo</strong>
+            <strong>Endere√ßo</strong>
           </td>
         </tr>
       </table>
@@ -191,7 +191,7 @@ mens_div();
       <table id="socios1" width="100%" bgcolor="<?=$w01_corfundomenuativo?>" border="0" cellspacing="0" cellpadding="0" onClick="js_trocaframe('socios',this)">
         <tr>
           <td width="25%" align="center">
-            <strong>SÛcios</strong>
+            <strong>S√≥cios</strong>
           </td>
         </tr>
       </table>

@@ -53,7 +53,7 @@ parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -163,26 +163,26 @@ function js_data(){
   if ((diaval!='')&& (mesval!='')&&(anoval!='')){
  
 	  if(isNaN(diaval)){
-	    alert('dia Inválido');
+	    alert('dia InvÃ¡lido');
 	    
 	    erro = "s";
 	    return false;
 	  }    
 	  if(isNaN(mesval)){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	   
 	    erro = "s";
 	    return false;
 	  }  
 	  if(isNaN(anoval)){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	   
 	    erro = "s";
 	    return false;
 	  }  
 	  data = new Date(anoval,(mesval-1),diaval);
 	  if((data.getMonth() + 1) != mesval || data.getFullYear() != anoval){
-	    alert('Data Inválida');
+	    alert('Data InvÃ¡lida');
 	    
 	    erro = "s";
 	    return false;
@@ -227,7 +227,7 @@ function js_verificacomp(){
 	dataval = (anoval+''+mesval);
 	datadai = (anodae+''+mesdai);
 	if (dataval < datadai){
-		alert ('Data informada inferior a competência :'+ mesdai+'/'+anodae);
+		alert ('Data informada inferior a competÃªncia :'+ mesdai+'/'+anodae);
 		obj3.dia.value="";
 		obj3.mes.value="";
 		obj3.ano.value="";
@@ -248,7 +248,7 @@ db_estilosite();
 
 <?php 
 
-// ############## função  ################
+// ############## funÃ§Ã£o  ################
 	
 function monta_tabela($sql, $array_formata = array()){
 	$result = pg_query($sql);
@@ -273,7 +273,7 @@ function monta_tabela($sql, $array_formata = array()){
  			
 
 	 	
-	 	// Para montar a Tabela de acordo com formatação
+	 	// Para montar a Tabela de acordo com formataÃ§Ã£o
 	 	foreach($array_formata as $campo => $conteudo) {
 	 		
 	 		//echo $campo . "=" .$$campo."<br>"; 
@@ -317,7 +317,7 @@ function monta_tabela($sql, $array_formata = array()){
 		
 	 	echo "</tr>";
  	}
-}//######################## termina a função #######################################
+}//######################## termina a funÃ§Ã£o #######################################
 
 //echo "codigo = $codigo";
 //echo "novo mes = $novomes xx";
@@ -462,28 +462,28 @@ if (isset($salvar)){
 <tr>
 	
 	<td align = "center" colspan="7"><strong>
-	Competência: <?php  if(isset($mesdai2)) echo" ".db_mes($mesdai2)." ";?>
+	CompetÃªncia: <?php  if(isset($mesdai2)) echo" ".db_mes($mesdai2)." ";?>
 	</strong>
 	</td>
 </tr>
 <tr class="titulo2">
 	<td >
-		Mês
+		MÃªs
 	</td>
 	<td colspan ="2" >
 		CPF ou CNPJ
 	</td>
 	<td colspan ="2" >
-		Nome ou Razão Social
+		Nome ou RazÃ£o Social
 	</td>
 	<td colspan ="2" >
-		Serviço
+		ServiÃ§o
 	</td>
 </tr>
 <tr>
 	<td >
 		<select  name="mesdai" onChange="document.form1.cnpj.focus();" onblur= "js_mes();" >
-	    	<option value="0">Mês</option>
+	    	<option value="0">MÃªs</option>
 	    	<?php 
 	    	for ($m=1; $m<=12;$m++){
 	    		echo "<option value = \"$m\"".($m==$mesdai?" selected":"").">".db_mes($m)." </option>";
@@ -508,7 +508,7 @@ if (isset($salvar)){
 		Nota
 	</td>
 	<td>
-		Série
+		SÃ©rie
 	</td>
 	<td>
 		Valor
@@ -587,16 +587,16 @@ if (isset($salvar)){
 					CPF ou CNPJ
 				</th>
 				<th >
-					Nome ou Razão Social
+					Nome ou RazÃ£o Social
 				</th>
 				<th >
-					Serviço
+					ServiÃ§o
 				</th>
 				<th >
 					Nota
 				</th>
 				<th >
-					Série
+					SÃ©rie
 				</th>
 				
 				<th >
@@ -628,7 +628,7 @@ if (isset($salvar)){
 		'w08_valreceita' => "db_formatar(\$w08_valreceita, 'f');",
 		'w08_aliquota'   => "\$w08_aliquota . '%';",
 		'w08_imposto'    => "db_formatar(\$w08_imposto, 'f');",
-		'w09_dtpaga'     => "(\$w09_dtpaga != ''?db_formatar(\$w09_dtpaga,'d'):'não efetuado');",
+		'w09_dtpaga'     => "(\$w09_dtpaga != ''?db_formatar(\$w09_dtpaga,'d'):'nÃ£o efetuado');",
 		'w09_valpago'    => "db_formatar(\$w09_valpago, 'f');"
 		);
 		
@@ -637,9 +637,9 @@ if (isset($salvar)){
 if (isset($novomes))
 if($novomes=="sim"){ // escolheu o mes
 
-//############ verificar existe notas lançadas para este mês na retenção como tomador (daí tomador)
+//############ verificar existe notas lanÃ§adas para este mÃªs na retenÃ§Ã£o como tomador (daÃ­ tomador)
 		
-	// parametros para a função monta tabela
+	// parametros para a funÃ§Ã£o monta tabela
 	$sql = $cldb_daitomador->sql_query_paga("","w08_origem,w08_cnpj,w08_nome,w08_servico,w08_nota,w08_serie,w08_valreceita,w08_aliquota,w08_imposto,w09_dtpaga,w09_valpago,w08_sequencial,w09_sequencial,w08_mes","","w08_dai = $codigo and W08_mes=$mesdai2");
 	//die($sql);
 	$res = pg_query($sql); 	
@@ -653,15 +653,15 @@ if($novomes=="sim"){ // escolheu o mes
 	}else{
 //########################################### ARRUMAR AQUI #######################################################
 
- // ######## se não existe dados na db_daitomador... buscar na issplan e issplanit ..OK
+ // ######## se nÃ£o existe dados na db_daitomador... buscar na issplan e issplanit ..OK
    	//if ($linhas == 0 ) 
-    	//echo " <br>não existe dados na db_daitomador COD= $codigo";
+    	//echo " <br>nÃ£o existe dados na db_daitomador COD= $codigo";
 		
 		$sql = "select * from db_dae where w04_codigo=$codigo";
 		$result = pg_exec($sql);
 		db_fieldsmemory($result,0);
 			
-//busca na issplan e issplanit pelo mes, ano , inscriçao... da problema no campo inscr q não existe mais
+//busca na issplan e issplanit pelo mes, ano , inscriÃ§ao... da problema no campo inscr q nÃ£o existe mais
 		$sql2 = "select * from issplan 
 							inner join issplanit on q21_planilha=q20_planilha 
 							inner join issplaninscr on q20_planilha=q24_planilha 
@@ -673,9 +673,9 @@ if($novomes=="sim"){ // escolheu o mes
 	//	die($sql2);
 		$result2 = pg_query($sql2);
 		$linhas2 = pg_num_rows($result2); 
-// se não tiver dados na issplan e issplanit para esta isncrição... buscar pelo cgm ...OK
+// se nÃ£o tiver dados na issplan e issplanit para esta isncriÃ§Ã£o... buscar pelo cgm ...OK
 		if ($linhas2 == 0){
-			//echo "<br> não existe dados na issplan e issplanit para esta isncrição";
+			//echo "<br> nÃ£o existe dados na issplan e issplanit para esta isncriÃ§Ã£o";
 			$sql3 = "select q02_numcgm from issbase where q02_inscr =$w04_inscr";
 			$result3 = pg_query($sql3);
 			db_fieldsmemory($result3,0);
@@ -693,7 +693,7 @@ if($novomes=="sim"){ // escolheu o mes
 			//echo " <br> existe pelo cgm ...tem $linhas4 linhas no issplan pelo cgm";
 		}else{$linhas4 = 0;}
 
-    // se tiver na issplan e issplanit ou pelo inscrição ou pelo cgm
+    // se tiver na issplan e issplanit ou pelo inscriÃ§Ã£o ou pelo cgm
 		if ($linhas2 != 0 || $linhas4!=0){
 			//echo " <br>Buscou dados do ISSQN retido na fonte<br> ";
 			if ($linhas2!=0){
@@ -715,7 +715,7 @@ if($novomes=="sim"){ // escolheu o mes
 				if($res==4){
 					db_fieldsmemory($result4,$i);
 				}	
-			// se a planilha não estiver paga.........	
+			// se a planilha nÃ£o estiver paga.........	
 						
 				
 //########### inclui na tabela db_daitomador ...OK
@@ -735,9 +735,9 @@ if($novomes=="sim"){ // escolheu o mes
 			
 			
 		
-		    // se a planilha não estiver paga.........	
+		    // se a planilha nÃ£o estiver paga.........	
 				if($q20_numpre==0 || $q20_numpre==""){
-					//echo "<br>a planilha $q20_planilha não tem numpre";
+					//echo "<br>a planilha $q20_planilha nÃ£o tem numpre";
 				}else{
 					// se a planilha ja tiver um numpre, verificar se esta paga, buscar a data de pagamento e o valor.	
 					//$sql="select k00_dtoper,k00_dtpaga,k00_valor,k00_dtvenc,k00_numpre from issplan inner join arrepaga on q20_numpre=k00_numpre where k00_numpre= $q20_numpre";	
@@ -780,9 +780,9 @@ monta_tabela($sql, $parametro);
 		
 		
     }	
-} // se não escolheu o mes 	
+} // se nÃ£o escolheu o mes 	
  
-//if (!isset($mesdai)){ // se não foi selecionado o mes é a primeira vez que entrei	
+//if (!isset($mesdai)){ // se nÃ£o foi selecionado o mes Ã© a primeira vez que entrei	
 //echo "nada";	
 //}
 

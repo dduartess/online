@@ -184,7 +184,7 @@ if(isset($cancelar)){
         $clissvarsemmov->excluir($issvarsemmov2[$x]);
         if($clissvarsemmov->erro_status==0){
           $sqlerro=true;
-          $erro = "exclução da issvarsemmov...".$clissvarsemmov->erro_sql;
+          $erro = "excluÃ§Ã£o da issvarsemmov...".$clissvarsemmov->erro_sql;
          
         }
       }
@@ -204,7 +204,7 @@ if(isset($cancelar)){
         $clcancdebitosproc->excluir($cancdebitosproc2[$a]);
         if($clcancdebitosproc->erro_status==0){
           $sqlerro=true;
-          $erro = "exclução da cancdebitosproc...".$clcancdebitosproc->erro_sql;
+          $erro = "excluÃ§Ã£o da cancdebitosproc...".$clcancdebitosproc->erro_sql;
           
         }
       }
@@ -225,7 +225,7 @@ if(isset($cancelar)){
         $clcancdebitos->excluir($cancdebitos2[$b]);
         if($clcancdebitos->erro_status==0){
           $sqlerro=true;
-          $erro = "exclução da cancdebitos...".$clcancdebitos->erro_sql;
+          $erro = "excluÃ§Ã£o da cancdebitos...".$clcancdebitos->erro_sql;
           
         }
       }
@@ -255,7 +255,7 @@ $linhas = pg_num_rows($result);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
@@ -282,7 +282,7 @@ function js_marca(){
 <input name='inscr' type='hidden' value='<?=@$inscr?>'>
 <table width="100%" border="0" cellpadding="1" cellspacing="0" align = "center">
 	<tr>
-		<td align = "center"><br><font class = "titulo3"  >Cancelamento de lançamentos sem movimentos</font><br><br></td>
+		<td align = "center"><br><font class = "titulo3"  >Cancelamento de lanÃ§amentos sem movimentos</font><br><br></td>
 	</tr>
 	<tr>
 		<td>
@@ -296,10 +296,10 @@ function js_marca(){
 				<td>&nbsp;</td>
 				<td align = "center">Numpre</td>
 				<td align = "center">Parcela</td>
-				<td align = "center">Mês</td>
+				<td align = "center">MÃªs</td>
 				<td align = "center">Ano</td>
 				<td align = "center">Valor</td>
-				<td align = "center">Histórico</td>
+				<td align = "center">HistÃ³rico</td>
 				
 			</tr>
 			
@@ -330,7 +330,7 @@ echo "</tr>";
 
 }else{
 	echo"<tr>";
-		echo "<td align = 'center'>Não existe lançamentos sem movimento</td>";
+		echo "<td align = 'center'>NÃ£o existe lanÃ§amentos sem movimento</td>";
 	echo"</tr>";
 }
   

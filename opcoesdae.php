@@ -56,7 +56,7 @@ if(isset($nova)){
 	     $clquery->sql_record($clquery->sql);  // conta as linhas no banco
 	     db_fieldsmemory($clquery->result,0);  // cria variaveis (z01_nome, z01_numcgm) apartir dos campos
    	}else{
-    	redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv·lido, verifique os dados digitados!'));
+    	redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv√°lido, verifique os dados digitados!'));
    	}  
 }else{
 	if(isset($first)){
@@ -84,18 +84,18 @@ if(isset($nova)){
     if(pg_numrows($result) != 0){
     	db_fieldsmemory($result,0);
     }else{
-      	redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv·lido, verifique os dados digitados!!!!!!!!!!!!'));
+      	redireciona("digitadae.php?".base64_encode('erroscripts=Acesso a Rotina Inv√°lido, verifique os dados digitados!!!!!!!!!!!!'));
     }  
     if(!isset($DB_LOGADO)  && $m_publico !='t'){
       	$sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricaow)";
       	$result = db_query($sql);
       	if(pg_numrows($result)==0){
-        	db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n„o Permitido. Contate a Prefeitura.'));
+        	db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.'));
         	exit;
       	}
       	$result = pg_result($result,0,0);
       		if($result=="0"){
-        		db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n„o Permitido. Contate a Prefeitura.'));
+        		db_redireciona("digitadae.php?".base64_encode('erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.'));
         		exit;
       		}
     } 
@@ -103,7 +103,7 @@ if(isset($nova)){
 }
 $result = db_query("select * from db_dae where w04_inscr = $inscricaow and w04_ano=$ano");
 //$ano = date("Y");
-if(pg_numrows($result) == 0){// se n„o  tiver dai para este ano ele insere	
+if(pg_numrows($result) == 0){// se n√£o  tiver dai para este ano ele insere	
 
 	$result = db_query("select nextval('seq_db_dae')");   
   	$codigo = pg_result($result,0,0);
@@ -114,7 +114,7 @@ if(pg_numrows($result) == 0){// se n„o  tiver dai para este ano ele insere
   
 /*echo "
 		<script>
-			var confirma = confirm('DAI j· enviada, deseja reemitir o relatÛrio?');
+			var confirma = confirm('DAI j√° enviada, deseja reemitir o relat√≥rio?');
             if(confirma == true){
             	window.open('daerelatorio.php?codigo=$w04_codigo','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');
             }
@@ -122,7 +122,7 @@ if(pg_numrows($result) == 0){// se n„o  tiver dai para este ano ele insere
 ";
     db_redireciona("digitadae.php");
     exit;*/
-	}else{  // se DAI n„o foi enviada
+	}else{  // se DAI n√£o foi enviada
     	$codigo = $w04_codigo;  // codigo da DAI
     	
   	}  
@@ -131,7 +131,7 @@ if(pg_numrows($result) == 0){// se n„o  tiver dai para este ano ele insere
   	db_fieldsmemory($result,0);// transforma campos da tabela db_dae
   	if($w04_enviado == 't'){  
 echo "
-		<script>var confirma = confirm('DAI j· enviada, deseja reemitir o relatÛrio?');
+		<script>var confirma = confirm('DAI j√° enviada, deseja reemitir o relat√≥rio?');
         if(confirma == true){
             window.open('daerelatorio.php?codigo=$w04_codigo','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');
         }
@@ -156,7 +156,7 @@ echo "
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js">
 </script>
 <script>
@@ -229,13 +229,13 @@ div.tabIframeWrapper {
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom: 0px">
 	<tr>
     	<td colspan="5" align="center" style="font-family:arial; font-size:12px">
-      		<b><?=$q02_inscr." - ".$z01_nome?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>CompetÍncia:<?=$ano?> <br><br>
+      		<b><?=$q02_inscr." - ".$z01_nome?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Compet√™ncia:<?=$ano?> <br><br>
     	</td>
   	</tr>
    	<tr>
   		<td colspan="5">
     		<div class="tabArea">
-       	      	<a id="1" class="tab activeTab" href= "enderecodae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae"  onClick="trocacor('1')" >EndereÁo</a>
+       	      	<a id="1" class="tab activeTab" href= "enderecodae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae"  onClick="trocacor('1')" >Endere√ßo</a>
 			    <?php 
 			    $sqlsocio="select * from configdbpref";
 			    $resultsocio = db_query($sqlsocio);
@@ -247,8 +247,8 @@ div.tabIframeWrapper {
 			    }
 			    ?>
 			    <a id="3" class="tab" href="valoresdae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('3')" >Valores</a>
-			    <a id="4" class="tab" href="daitomador.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('4')">RetenÁ„o como tomador</a>
-			    <a id="5" class="tab" href="dairetido.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('5')">RetenÁ„o como prestador</a>
+			    <a id="4" class="tab" href="daitomador.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('4')">Reten√ß√£o como tomador</a>
+			    <a id="5" class="tab" href="dairetido.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('5')">Reten√ß√£o como prestador</a>
 			    <a id="6" class="tab" href="enviadae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('6')"  >Envia DAI</a>
 			    <a id="7" class="tab" href="ajudadae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo.'&primeira=1')?>" target="dae" onClick="trocacor('7')"  >Ajuda</a>
       	    </div>

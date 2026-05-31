@@ -43,30 +43,30 @@ mens_help();
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 $cod_matricula = 0 + $matricula;
 if ( !is_int($cod_matricula) or $cod_matricula == "" ){
-   db_msgbox2("CÛdigo MatrÌcula Inv·lido.");
-   db_logs("","",0,"MatrÌcula Inv·lida.");
+   db_msgbox2("C√≥digo Matr√≠cula Inv√°lido.");
+   db_logs("","",0,"Matr√≠cula Inv√°lida.");
    redireciona('index.php');
 }
 $result = pg_exec("select * from db_itbi where matricula = $cod_matricula and libpref = '1'");
 if (pg_numrows($result) > 0){
-   db_msgbox2("SocilitaÁ„o de Guia de ITBI est· em processo de avaliaÁ„o. Volte mais tarde.");
-   db_logs("$cod_matricula","",0,"SocilitaÁ„o de Guia de ITBI est· em processo de avaliaÁ„o. Volte mais tarde. Numero: $cod_matricula");
+   db_msgbox2("Socilita√ß√£o de Guia de ITBI est√° em processo de avalia√ß√£o. Volte mais tarde.");
+   db_logs("$cod_matricula","",0,"Socilita√ß√£o de Guia de ITBI est√° em processo de avalia√ß√£o. Volte mais tarde. Numero: $cod_matricula");
    redireciona("opcoesitbi.php?".base64_encode("matricula=".$cod_matricula));
 }
 
 $result = pg_exec("select * from db_itbi where matricula = $cod_matricula and ( datavencimento >= CURRENT_DATE or datavencimento is null)");
 if (pg_numrows($result) == 0){
-   db_msgbox2("SocilitaÁ„o de Guia de ITBI n„o Efetuada ou Vencida. Solicite Novamente.");
-   db_logs("$cod_matricula","",0,"SocilitaÁ„o de Guia de ITBI n„o Efetuada ou Vencida. Solicite Novamente. Numero: $cod_matricula");
+   db_msgbox2("Socilita√ß√£o de Guia de ITBI n√£o Efetuada ou Vencida. Solicite Novamente.");
+   db_logs("$cod_matricula","",0,"Socilita√ß√£o de Guia de ITBI n√£o Efetuada ou Vencida. Solicite Novamente. Numero: $cod_matricula");
    redireciona("opcoesitbi.php?".base64_encode("matricula=".$cod_matricula));
 }
 db_fieldsmemory($result,0);
-db_logs("$cod_matricula","",0,"Verifica SocilitaÁ„o. Numero: $id_itbi");
+db_logs("$cod_matricula","",0,"Verifica Socilita√ß√£o. Numero: $id_itbi");
 ?>
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesitbi.php");
@@ -105,7 +105,7 @@ mens_div();
           <td nowrap width="90%">
             &nbsp;<a href="index.php" class="links">Principal &gt;</a>
              &nbsp;<a href="digitaitbi.php" class="links">I.T.B.I &gt;</a>
-             &nbsp;<a href="javascript:history.back()" class="links">OpÁıes I.T.B.I &gt;</a>
+             &nbsp;<a href="javascript:history.back()" class="links">Op√ß√µes I.T.B.I &gt;</a>
           </td>
           <td align="center" width="10%" onClick="MM_showHideLayers('<?=$nome_help?>','',(document.getElementById('<?=$nome_help?>').style.visibility == 'visible'?'hide':'show'));">
             <a href="#" class="links">Ajuda</a>
@@ -214,16 +214,16 @@ mens_div();
             if( $liberado == null ){
                 ?>
                         <font color="black">
-                        &nbsp;Enquanto n„o entrar em processo de AvaliaÁ„o, os 
-                        dados desta Guia de &nbsp;ITBI poder„o ser modificados 
-                        na seÁ„o de SOLICITA«√O DE ITBI. 
+                        &nbsp;Enquanto n√£o entrar em processo de Avalia√ß√£o, os 
+                        dados desta Guia de &nbsp;ITBI poder√£o ser modificados 
+                        na se√ß√£o de SOLICITA√á√ÉO DE ITBI. 
                         </font>
             <?php 
                     }
                   }
                   /*
           if($liberado != null) {
-                    ?><font color="black">&nbsp;Guia em Processo de AvaliaÁ„o. Aguarde liberaÁ„o.</font><?php 
+                    ?><font color="black">&nbsp;Guia em Processo de Avalia√ß√£o. Aguarde libera√ß√£o.</font><?php 
           }
                   */
                   ?>

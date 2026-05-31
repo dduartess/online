@@ -49,7 +49,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -62,7 +62,7 @@ function js_confirma(){
   nome=document.form1.responsavel.value;
   tel=document.form1.telcontato.value;
   if(nome==""){
-    alerta +="Responsável\n";
+    alerta +="ResponsÃ¡vel\n";
   }
   if(tel==""){
     alerta +="Telefone de contato\n";
@@ -71,7 +71,7 @@ function js_confirma(){
     alert("Verifique os seguintes campos:\n"+alerta);
     return false;
   }else{
-    var confirma = confirm("Confirma o envio da DAI?\nApós o envio os dados não poderão mais ser alterados!");
+    var confirma = confirm("Confirma o envio da DAI?\nApÃ³s o envio os dados nÃ£o poderÃ£o mais ser alterados!");
     if(confirma==true)
       return true;
   }
@@ -97,8 +97,8 @@ mens_div();
       <form name="form1" action="enviadae.php?<?=base64_encode('inscricaow='.$inscricaow.'&codigo='.$codigo)?>" method="post" >
         <tr class="titulo2" >
           <td align="center" valign="top"><br><br>
-	    Informe o responsável e o telefone de contato nos campos abaixo<br><br><br>
-	    Responsável:
+	    Informe o responsÃ¡vel e o telefone de contato nos campos abaixo<br><br><br>
+	    ResponsÃ¡vel:
 	    <input type="text" name="responsavel" value="" size="40" maxlength="40" onKeyUp="js_maiusculo(this)">
 	    Telefone:
 	    <input type="text" name="telcontato" value="" size="10" maxlength="10" onKeyUp="js_maiusculo(this)">
@@ -106,13 +106,13 @@ mens_div();
         </tr>
         <tr class="titulo2" >
           <td align="center" valign="top"><br><br>
-	   <strong> Após o envio da DAI você não poderá mais alterá-la,<br>
+	   <strong> ApÃ³s o envio da DAI vocÃª nÃ£o poderÃ¡ mais alterÃ¡-la,<br>
 	    confira todos os dados salvos.</strong> 
           </td>
         </tr>
 	<tr valign="top">
 	  <td align="center">
-	    <input type="submit" name="ver_rel" value="Verificar relatório antes de enviar" class="botao"> 
+	    <input type="submit" name="ver_rel" value="Verificar relatÃ³rio antes de enviar" class="botao"> 
 	    <input type="submit" name="enviadae" value="Enviar DAI" class="botao" onclick="return js_confirma()">
 	  </td>
 	</tr>
@@ -130,7 +130,7 @@ if(isset($enviadae)){
   $data = date("Y-m-d");
   pg_exec("update db_dae set w04_enviado = 't', w04_resp = '$responsavel', w04_telcontato = '$telcontato' where w04_codigo = $codigo");
   pg_exec("update db_dae set w04_data = '$data' where w04_codigo = $codigo");
-  echo "<script>var relatorio = confirm(\"Deseja imprimir o relatório da DAI informada?\");
+  echo "<script>var relatorio = confirm(\"Deseja imprimir o relatÃ³rio da DAI informada?\");
                   if(relatorio == true){
                   window.open('daerelatorio.php?codigo=$codigo','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');
     }</script>";  
@@ -141,7 +141,7 @@ if(isset($enviadae)){
 
 if(isset($ver_rel)){
   $data = date("Y-m-d");
-  echo "<script>var relatorio = confirm(\"Deseja imprimir o relatório da DAI informada?\");
+  echo "<script>var relatorio = confirm(\"Deseja imprimir o relatÃ³rio da DAI informada?\");
                   if(relatorio == true){
                   window.open('daerelatorio2.php?codigo=$codigo','','width='+(screen.availWidth-5)+',height='+(screen.availHeight-40)+',scrollbars=1,location=0 ');
     }</script>";  

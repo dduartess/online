@@ -89,7 +89,7 @@ function db_getcadbancobranca($arretipo,$ip,$datahj,$instit,$tipomod){
   
 }
 
-// André TI - Prefeitura de Maricá 
+// AndrÃ© TI - Prefeitura de MaricÃ¡ 
 abstract class DBTributario {
 
   /**
@@ -100,7 +100,7 @@ abstract class DBTributario {
    *                | C - CGM
    *                | N - Numpre
    * @param integer $iChavePesquisa - Numero base para Pesquisa
-   * @return stdClass[] Com as Definições dos Tipos de Débito encontrados
+   * @return stdClass[] Com as DefiniÃ§Ãµes dos Tipos de DÃ©bito encontrados
    */
   public static function getTiposDebitoByOrigem( $sTipoOrigem, $iChavePesquisa, $iInstituicao = null ) {
 
@@ -142,7 +142,7 @@ abstract class DBTributario {
     $rsTipos = db_query($sSqlArretipo);
 
     if (!$rsTipos) {
-      throw new DBException("Erro ao Buscar dados dos Tipos de Débitos:".pg_last_error());
+      throw new DBException("Erro ao Buscar dados dos Tipos de DÃ©bitos:".pg_last_error());
     }
 
     return db_utils::getCollectionByRecord($rsTipos);
@@ -164,7 +164,7 @@ abstract class DBTributario {
   }
   
   /**
-   * Retorna dados Basicos Referentes a Parcela de Débito 
+   * Retorna dados Basicos Referentes a Parcela de DÃ©bito 
    * 
    * @param mixed $iNumpre 
    * @param mixed $iNumpar 
@@ -178,7 +178,7 @@ abstract class DBTributario {
     $oRetorno->sMensagemContribuinte = "";
     $oRetorno->sMensagemCaixa        = "";
     /**
-     * Para Buscar valor deve-se implentar busca na função debitos_numpre
+     * Para Buscar valor deve-se implentar busca na funÃ§Ã£o debitos_numpre
      */
     $sSql  = "select distinct                                                    ";
     if ( !empty($iNumpar) ) {
@@ -200,7 +200,7 @@ abstract class DBTributario {
     $rsSql = db_query($sSql);
    
     if ( !$rsSql ) {
-      throw new DBException("Erro ao Buscar os Dados da Parcela. Descrição do Erro:". pg_last_error());
+      throw new DBException("Erro ao Buscar os Dados da Parcela. DescriÃ§Ã£o do Erro:". pg_last_error());
     }
 
     $oDadosDebito = db_utils::fieldsMemory($rsSql, 0);
@@ -231,5 +231,5 @@ abstract class DBTributario {
   }
 
 }
-// André TI - Prefeitura de Maricá 
+// AndrÃ© TI - Prefeitura de MaricÃ¡ 
 ?>

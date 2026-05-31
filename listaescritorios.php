@@ -85,7 +85,7 @@ if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function maiusculo(obj) {
@@ -131,7 +131,7 @@ return false;
                   //die($clcgm->sql_query($z01_numcgm));
                   if($clcgm->numrows > 0 ){
                     db_fieldsmemory($result,0);
-                    echo "<p><font size='2'><strong>Escritório Contábil</strong> ".@$z01_nome."</font></p>";
+                    echo "<p><font size='2'><strong>EscritÃ³rio ContÃ¡bil</strong> ".@$z01_nome."</font></p>";
                   
                   $sqllista = "select * from listainscrcab where p11_numcgm=$z01_numcgm";
                   
@@ -146,7 +146,7 @@ return false;
 	                  if($linhas == 0 ){
 	                   	  $mostra_contato= 't';
 	                  }	  
-                  }else{ // se não tiver nenhuma lista...se for a primeira lista
+                  }else{ // se nÃ£o tiver nenhuma lista...se for a primeira lista
                    	  $mostra_contato= 't';
                   }
                   ?>
@@ -183,13 +183,13 @@ return false;
                     <table width="80%" class="tab">
                       <tr bgcolor="#3366cc"> 
                         <th align="center" nowrap colspan="3">
-                          <strong>Lista(s) do escritório</strong>
+                          <strong>Lista(s) do escritÃ³rio</strong>
                         </th>
                       </tr>
                       <tr>
                         <td align="center" colspan="3">
                           <!--<fieldset style="border: 1px solid black">
-                          <legend align="center"><strong>Inscrições da lista</strong></legend>-->
+                          <legend align="center"><strong>InscriÃ§Ãµes da lista</strong></legend>-->
                           <iframe frameborder="0" scrolling="auto" src="escritolista.php?<?=base64_encode('z01_numcgm='.$z01_numcgm)?>" name="inscricoes" width="100%" height="200">
                           </iframe>
                           <!--</fieldset>-->
@@ -218,8 +218,8 @@ onLoad = document.form1.p11_contato.focus();
 </center>
 </body>
 <?php 
-db_logs("","",0,"Listas do escritório.");
+db_logs("","",0,"Listas do escritÃ³rio.");
 }else{
-	msgbox("Somente para usuários logados.");
+	msgbox("Somente para usuÃ¡rios logados.");
 }
 ?>

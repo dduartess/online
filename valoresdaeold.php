@@ -49,7 +49,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdae.php,sociosdae.php,enderecodae.php,valoresdae.php,enviadae.php");
@@ -79,26 +79,26 @@ function js_data(dia,mes,ano){
   mesval = new Number(mes.value);
   anoval = new Number(ano.value);
   if(isNaN(diaval)){
-    alert('dia Inválido');
+    alert('dia InvÃ¡lido');
     dia.value = '';
     dia.focus();
     return false;
   }    
   if(isNaN(mesval)){
-    alert('Data Inválida');
+    alert('Data InvÃ¡lida');
     mes.value = '';
     mes.focus();
     return false;
   }  
   if(isNaN(anoval)){
-    alert('Data Inválida');
+    alert('Data InvÃ¡lida');
     ano.value = '';
     ano.focus();
     return false;
   }  
   data = new Date(anoval,(mesval-1),diaval);
   if((data.getMonth() + 1) != mesval || data.getFullYear() != anoval){
-    alert('Data Inválida');
+    alert('Data InvÃ¡lida');
     dia.focus();
     dia.select();
     return false;
@@ -120,7 +120,7 @@ function js_vericampos(){
         alerta +="Dia de Pagamento\n";
       }
       if(datam.length == "" || isNaN(datam)){
-        alerta +="Mês de Pagamento\n";
+        alerta +="MÃªs de Pagamento\n";
       }
       if(dataa.length == "" || isNaN(dataa)){
         alerta +="Ano de Pagamento\n";
@@ -133,10 +133,10 @@ function js_vericampos(){
       alerta +="Valor da Receita\n";
     }
     if(mes=="mes"){
-      alerta +="Mês\n";
+      alerta +="MÃªs\n";
     }
     if(aliquota==""){
-      alerta +="Alíquota\n";
+      alerta +="AlÃ­quota\n";
     }
     if(imposto==""){
       alerta +="Imposto\n";
@@ -186,7 +186,7 @@ mens_div();
 				  <b><small></small></b>
 				</td>
                                 <td align="center" >
-				  <b><small>Mês</small></b>
+				  <b><small>MÃªs</small></b>
 				</td>
                                 <td align="center" nowrap >
 				  <b><small>Valor Rec.</small></b>
@@ -207,7 +207,7 @@ mens_div();
 			        </td>
                                 <td align="center" nowrap>
                                   <select class="digitacgccpf" name="mes" id="mes">
-	                            <option value="mes">Mês</option>
+	                            <option value="mes">MÃªs</option>
                                   </select>
                                 </td>
 	                        <script>
@@ -270,13 +270,13 @@ mens_div();
 	      <input type="hidden" name="linhas">
 	      <tr bgcolor="<?=$w01_corfundomenuativo?>" align="center">
 	        <td width="20%" >
-		  Mês
+		  MÃªs
 		</td>
 	        <td width="20%">
 		  Valor Rec.
 		</td>
 	        <td width="10%">
-		  Alíquota
+		  AlÃ­quota
 		</td>
 	        <td width="20%">
 		  Imposto

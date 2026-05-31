@@ -42,7 +42,7 @@ $iMatric  = $aRetorno['iMatric'];
 	 	
 if ( isset($aRetorno['averba']) ) {
  $sWhereAssenta = " and h12_reltot != 0 ";
- $sTituloTela   = 'Averbação de Tempo'; 
+ $sTituloTela   = 'AverbaÃ§Ã£o de Tempo'; 
 } else {
  $sWhereAssenta = " and h12_reltot = 0  ";
  $sTituloTela   = 'Assentamentos';
@@ -62,7 +62,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"></script>
@@ -87,7 +87,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
       ?>
             <tr>
               <td class="labelForm" width="10%">
-                Descrição:
+                DescriÃ§Ã£o:
               </td>
               <td class="dadosForm" colspan="5">
                 <?=$oAssenta->h12_descr?>
@@ -121,7 +121,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
             </tr> 
             <tr>
               <td class="labelForm">
-                Nº do Ato:
+                NÂº do Ato:
               </td>
               <td class="dadosForm">
                 <?=$oAssenta->h16_nrport?>              
@@ -135,7 +135,7 @@ $iNroAssenta  = pg_num_rows($rsAssenta);
             </tr>
             <tr>  
               <td class="labelForm">
-                Histórico:
+                HistÃ³rico:
               </td>
               <td class="dadosForm" colspan="5">
                 <?=$oAssenta->h16_histor." ".$oAssenta->h16_hist2?>              

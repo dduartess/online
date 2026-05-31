@@ -50,9 +50,9 @@ class cl_pcorcam {
    var $pc20_hrate = null; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 pc20_codorc = int4 = Código do orçamento 
-                 pc20_dtate = date = Prazo limite para entrega do orçamento 
-                 pc20_hrate = char(5) = Hora limite para entrega do orçamento 
+                 pc20_codorc = int4 = CÃ³digo do orÃ§amento 
+                 pc20_dtate = date = Prazo limite para entrega do orÃ§amento 
+                 pc20_hrate = char(5) = Hora limite para entrega do orÃ§amento 
                  ";
    //funcao construtor da classe 
    function cl_pcorcam() { 
@@ -90,19 +90,19 @@ class cl_pcorcam {
    function incluir ($pc20_codorc){ 
       $this->atualizacampos();
      if($this->pc20_dtate == null ){ 
-       $this->erro_sql = " Campo Prazo limite para entrega do orçamento nao Informado.";
+       $this->erro_sql = " Campo Prazo limite para entrega do orÃ§amento nao Informado.";
        $this->erro_campo = "pc20_dtate_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->pc20_hrate == null ){ 
-       $this->erro_sql = " Campo Hora limite para entrega do orçamento nao Informado.";
+       $this->erro_sql = " Campo Hora limite para entrega do orÃ§amento nao Informado.";
        $this->erro_campo = "pc20_hrate";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -112,7 +112,7 @@ class cl_pcorcam {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: pcorcam_pc20_codorc_seq do campo: pc20_codorc"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -121,9 +121,9 @@ class cl_pcorcam {
      }else{
        $result = @pg_query("select last_value from pcorcam_pc20_codorc_seq");
        if(($result != false) && (pg_result($result,0,0) < $pc20_codorc)){
-         $this->erro_sql = " Campo pc20_codorc maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo pc20_codorc maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -134,7 +134,7 @@ class cl_pcorcam {
      if(($this->pc20_codorc == null) || ($this->pc20_codorc == "") ){ 
        $this->erro_sql = " Campo pc20_codorc nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -154,13 +154,13 @@ class cl_pcorcam {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Orçamentos de compras ($this->pc20_codorc) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Orçamentos de compras já Cadastrado";
+         $this->erro_sql   = "OrÃ§amentos de compras ($this->pc20_codorc) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "OrÃ§amentos de compras jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Orçamentos de compras ($this->pc20_codorc) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "OrÃ§amentos de compras ($this->pc20_codorc) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -170,7 +170,7 @@ class cl_pcorcam {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->pc20_codorc;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -194,10 +194,10 @@ class cl_pcorcam {
        $sql  .= $virgula." pc20_codorc = $this->pc20_codorc ";
        $virgula = ",";
        if(trim($this->pc20_codorc) == null ){ 
-         $this->erro_sql = " Campo Código do orçamento nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do orÃ§amento nao Informado.";
          $this->erro_campo = "pc20_codorc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -207,10 +207,10 @@ class cl_pcorcam {
        $sql  .= $virgula." pc20_dtate = '$this->pc20_dtate' ";
        $virgula = ",";
        if(trim($this->pc20_dtate) == null ){ 
-         $this->erro_sql = " Campo Prazo limite para entrega do orçamento nao Informado.";
+         $this->erro_sql = " Campo Prazo limite para entrega do orÃ§amento nao Informado.";
          $this->erro_campo = "pc20_dtate_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -220,10 +220,10 @@ class cl_pcorcam {
          $sql  .= $virgula." pc20_dtate = null ";
          $virgula = ",";
          if(trim($this->pc20_dtate) == null ){ 
-           $this->erro_sql = " Campo Prazo limite para entrega do orçamento nao Informado.";
+           $this->erro_sql = " Campo Prazo limite para entrega do orÃ§amento nao Informado.";
            $this->erro_campo = "pc20_dtate_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -234,10 +234,10 @@ class cl_pcorcam {
        $sql  .= $virgula." pc20_hrate = '$this->pc20_hrate' ";
        $virgula = ",";
        if(trim($this->pc20_hrate) == null ){ 
-         $this->erro_sql = " Campo Hora limite para entrega do orçamento nao Informado.";
+         $this->erro_sql = " Campo Hora limite para entrega do orÃ§amento nao Informado.";
          $this->erro_campo = "pc20_hrate";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -264,9 +264,9 @@ class cl_pcorcam {
      $result = @pg_exec($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Orçamentos de compras nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "OrÃ§amentos de compras nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->pc20_codorc;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -274,18 +274,18 @@ class cl_pcorcam {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Orçamentos de compras nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "OrÃ§amentos de compras nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->pc20_codorc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->pc20_codorc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -326,9 +326,9 @@ class cl_pcorcam {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Orçamentos de compras nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "OrÃ§amentos de compras nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$pc20_codorc;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -336,18 +336,18 @@ class cl_pcorcam {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Orçamentos de compras nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "OrÃ§amentos de compras nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$pc20_codorc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$pc20_codorc;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -362,7 +362,7 @@ class cl_pcorcam {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -371,7 +371,7 @@ class cl_pcorcam {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:pcorcam";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

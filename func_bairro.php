@@ -36,7 +36,7 @@ $clbairro->rotulo->label("j13_descr");
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
 <style>
@@ -112,7 +112,7 @@ $clbairro->rotulo->label("j13_descr");
             db_fieldsmemory($result,0);
             echo "<script>".$funcao_js."('$j13_descr',false);</script>";
           }else{
-                 echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") não Encontrado',true);</script>";
+                 echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") nÃ£o Encontrado',true);</script>";
           }
         }else{
                echo "<script>".$funcao_js."('',false);</script>";

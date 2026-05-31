@@ -36,9 +36,9 @@
 	$this->objpdf->text($xcol+109,$xlin+8,'Numcgm');
 	$this->objpdf->text($xcol+150,$xlin+8,(strlen($this->cnpj) == 11?'CPF':'CNPJ'));
 	$this->objpdf->text($xcol+  2,$xlin+8,'Nome');
-	$this->objpdf->text($xcol+  2,$xlin+12,'Endereço');
+	$this->objpdf->text($xcol+  2,$xlin+12,'EndereÃ§o');
 	$this->objpdf->text($xcol+102,$xlin+12,'Complemento');
-	$this->objpdf->text($xcol+  2,$xlin+16,'Município');
+	$this->objpdf->text($xcol+  2,$xlin+16,'MunicÃ­pio');
 	$this->objpdf->text($xcol+115,$xlin+16,'CEP');
 	$this->objpdf->text($xcol+  2,$xlin+20,'Contato');
 	$this->objpdf->text($xcol+110,$xlin+20,'Telefone');
@@ -108,7 +108,7 @@
         if ($this->obs!=""){
           $this->objpdf->sety($xlin+24);
 	  $posicao_atual=$this->objpdf->gety();
-	  $this->objpdf->multicell(202,4,"OBSERVAÇÕES:  ".$this->obs,1);
+	  $this->objpdf->multicell(202,4,"OBSERVAÃ‡Ã•ES:  ".$this->obs,1);
 	  $posicao_depois=$this->objpdf->gety();
           $xlin+=$posicao_depois-$posicao_atual+2;
 	}
@@ -142,8 +142,8 @@
 	$this->objpdf->text($xcol+   2,$xlin+28,'ITEM');
 	$this->objpdf->text($xcol+12.5,$xlin+28,'EMPENHO');
 	$this->objpdf->text($xcol+30.5,$xlin+28,'QUANT');  //$this->objpdf->text($xcol+27.5,$xlin+28,'QUANT');
-	$this->objpdf->text($xcol+  67,$xlin+28,'MATERIAL OU SERVIÇO'); //$this->objpdf->text($xcol+  70,$xlin+28,'MATERIAL OU SERVIÇO');
-	$this->objpdf->text($xcol+ 145,$xlin+28,'VALOR UNITÁRIO');
+	$this->objpdf->text($xcol+  67,$xlin+28,'MATERIAL OU SERVIÃ‡O'); //$this->objpdf->text($xcol+  70,$xlin+28,'MATERIAL OU SERVIÃ‡O');
+	$this->objpdf->text($xcol+ 145,$xlin+28,'VALOR UNITÃRIO');
 	$this->objpdf->text($xcol+ 176,$xlin+28,'VALOR TOTAL');
     $maiscol = 0;
 
@@ -177,12 +177,12 @@
 	  if( ( $this->objpdf->gety() > $this->objpdf->h - 85 && $pagina == 1 ) || ( $this->objpdf->gety() > $this->objpdf->h - 40 && $pagina != 1 )){
             if ($this->objpdf->PageNo() == 1){
 	       if ($this->obs!=""){
-	         $this->objpdf->text(110,268-$xlin,'Continua na Página '.($pagina+1));
+	         $this->objpdf->text(110,268-$xlin,'Continua na PÃ¡gina '.($pagina+1));
              //$this->objpdf->rect($xcol,$xlin+217,202,55,2,'DF','1234');
-	       }else $this->objpdf->text(110,$xlin+243,'Continua na Página '.($pagina+1));
+	       }else $this->objpdf->text(110,$xlin+243,'Continua na PÃ¡gina '.($pagina+1));
 	       
             }else{
-	       $this->objpdf->text(110,$xlin+320,'Continua na Página '.($pagina+1));
+	       $this->objpdf->text(110,$xlin+320,'Continua na PÃ¡gina '.($pagina+1));
 	    }
 	    if($pagina == 1){
 	      $xlin = 20;
@@ -190,7 +190,7 @@
 	      $this->objpdf->rect($xcol,    $xlin+205,142, 10,2,'DF','34');
 	      $this->objpdf->rect($xcol+142,$xlin+205,30, 10,2,'DF','34');
 	      $this->objpdf->rect($xcol+172,$xlin+205,30, 10,2,'DF','34');
-	      $this->objpdf->text($xcol+100 ,$xlin+211,'T O T A L   D A   P Á G I N A');
+	      $this->objpdf->text($xcol+100 ,$xlin+211,'T O T A L   D A   P Ã G I N A');
 
 	      $this->objpdf->SetXY(172,$xlin+205);
 	      $this->objpdf->cell(30 ,10,db_formatar($xtotal,'f'),0,0,"R");   
@@ -244,10 +244,10 @@
 	    $this->objpdf->text($xcol+   2,$xlin+59,'ITEM');
 	    $this->objpdf->text($xcol+12.5,$xlin+59,'EMPENHO');
 	    $this->objpdf->text($xcol+30.5,$xlin+59,'QUANT');
-	    $this->objpdf->text($xcol+  70,$xlin+59,'MATERIAL OU SERVIÇO');
-	    $this->objpdf->text($xcol+ 145,$xlin+59,'VALOR UNITÁRIO');
+	    $this->objpdf->text($xcol+  70,$xlin+59,'MATERIAL OU SERVIÃ‡O');
+	    $this->objpdf->text($xcol+ 145,$xlin+59,'VALOR UNITÃRIO');
 	    $this->objpdf->text($xcol+ 176,$xlin+59,'VALOR TOTAL');
-	    $this->objpdf->text($xcol+  43,$xlin+63,'Continuação da Página '.($pagina-1));
+	    $this->objpdf->text($xcol+  43,$xlin+63,'ContinuaÃ§Ã£o da PÃ¡gina '.($pagina-1));
 
 	    $maiscol = 0;
 
@@ -284,7 +284,7 @@
 	  $this->objpdf->text($xcol+100 ,$xlin+319,'T O T A L   G E R A L');
 	  $this->objpdf->text($xcol+172 ,$xlin+319,db_formatar($xtotal,'f'));
 	}
-//	$this->objpdf->multicell(202,4,"A) PARA INFORMAÇÕES SOBRE O PRESENTE ORDEM, FAVOR ENTRAR EM CONTATO COM MARA, PELO TELEFONE (055) 3961 1616, OU EM NOSSA SEDE: MAJOR JOÃO CEZIMBRA JACQUES, 200\n",1);
+//	$this->objpdf->multicell(202,4,"A) PARA INFORMAÃ‡Ã•ES SOBRE O PRESENTE ORDEM, FAVOR ENTRAR EM CONTATO COM MARA, PELO TELEFONE (055) 3961 1616, OU EM NOSSA SEDE: MAJOR JOÃƒO CEZIMBRA JACQUES, 200\n",1);
 //	$this->objpdf->multicell(202,4,"B) AS NOTAS FISCAIS DEVEM SER ENCAMMINHADAS AO SETOR DE ALMOXARIFADO CENTRAL - CAM, EM 2 VIAS COM NUMERO DE EMPENHO E CONTA BANCARIA.",1);
 //	$this->objpdf->multicell(202,4,"NAO SERAO ACEITAS NOTAS FISCAIS CONTENDO ITENS DE MAIS DE UMA ORDEM DE COMPRA",1);
 //	$this->objpdf->multicell(202,4,"OS PRODUTOS DEVERAO SER ENTREGUES NO ALMOXARIFADO CENTRAL - CAM - CENTRO ADM MUNICIPAL NO PRAZO MAXIMO DE " . $this->prazoent. " DIAS A CONTAR DA DATA DO RECEBIMENTO DESTA ORDEM DE COMPRA",1);

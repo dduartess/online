@@ -62,7 +62,7 @@ if($db_verificaip == "0"){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php db_estilosite();?>
@@ -84,7 +84,7 @@ if($db_verificaip == "0"){
 <?=$DB_mens1?>
 <br><br>
 <?php 
-  //verifica se está logado
+  //verifica se estÃ¡ logado
   if(@$id_usuario!="" ){
    @$usuario = $id_usuario;
    @$result  = $clcgm->sql_record($clcgm->sql_query("","cgm.z01_cgccpf, cgm.z01_nome, cgm.z01_numcgm","","cgm.z01_numcgm = $usuario"));
@@ -118,7 +118,7 @@ if($db_verificaip == "0"){
          <img src="imagens/icone.gif" border="0">
         </td><td>
          CNPJ/CPF: <span class="bold3"><?=$z01_cgccpf?></span><br>
-         Nº Contribuinte / CGM: <span class="bold3"><?=$z01_numcgm?></span><br>
+         NÂº Contribuinte / CGM: <span class="bold3"><?=$z01_numcgm?></span><br>
         </td></tr>
        </table>
       </td>
@@ -141,7 +141,7 @@ if($db_verificaip == "0"){
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
    <?php if(@$w13_permconscgm=="t"){?>
    <tr>
-    <td width="50%" height="30" align="right">Nº Contribuinte / CGM:&nbsp;</td>
+    <td width="50%" height="30" align="right">NÂº Contribuinte / CGM:&nbsp;</td>
     <td width="50%" height="30"><input name="codigo_cgm" type="text" class="digitacgccpf" id="codigo_cgm" size="10" maxlength="10"></td>
    </tr>
    <?php }?>
@@ -169,7 +169,7 @@ if($db_verificaip == "0"){
  <?php }?>
 <?php 
 if(isset($funcao)){
-  echo "<script>alert('Código identificador dever ser preenchido')</script>";
+  echo "<script>alert('CÃ³digo identificador dever ser preenchido')</script>";
 }
 db_logs("","",0,"Digita Codigo do Contribuinte.");
 if(isset($erroscripts)){

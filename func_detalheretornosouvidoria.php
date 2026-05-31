@@ -34,7 +34,7 @@ $clouvidoriaatendimento = new cl_ouvidoriaatendimento;
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 	<script language="JavaScript" src="scripts/db_script.js"></script>
 	<script language="JavaScript" src="scripts/prototype.js"></script>
@@ -62,7 +62,7 @@ $clouvidoriaatendimento = new cl_ouvidoriaatendimento;
 	      $sCampos .= "         ov22_descricao,  ";
 	      $sCampos .= "         ov20_informa,    ";
 	      $sCampos .= "         ov20_resposta,   ";
-	      $sCampos .= "         case when ov20_confirma is true then 'Sim' else 'Não' end as ov20_confirma";
+	      $sCampos .= "         case when ov20_confirma is true then 'Sim' else 'NÃ£o' end as ov20_confirma";
         
         $sql = $clouvidoriaatendimento->sql_query_retorno("",$sCampos,"ov01_numero",$sWhere);
         db_lovrot($sql,15);

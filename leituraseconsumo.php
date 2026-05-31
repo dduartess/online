@@ -47,7 +47,7 @@ $rotulo = new rotulocampo();
  
 $db_datausu = date("Y-m-d");
 /*
- * consulta se o par‚metro do mÛdulo prefeitura online est· habilidado como true
+ * consulta se o par√¢metro do m√≥dulo prefeitura online est√° habilidado como true
 */
 $instit     = db_getsession("DB_instit");
 
@@ -58,7 +58,7 @@ $sqlinst    = "select codigo as instituicao, db21_regracgmiptu from db_config wh
 $resultinst = pg_query($sqlinst);
 db_fieldsmemory($resultinst, 0);
 
-// valida se o n˙mero da matrÌcula fornecida È v·lida
+// valida se o n√∫mero da matr√≠cula fornecida √© v√°lida
 if ( isset($matric) ) {
 
   $sql = "select q02_numcgm, j01_matric 
@@ -66,7 +66,7 @@ if ( isset($matric) ) {
            inner join cgm       on z01_numcgm = j01_numcgm 
            left  join issbase   on q02_numcgm = j01_numcgm 
 		   where j01_matric = {$matric}";
-  //Se o par‚metro "Exige CPF/CNPJ na consulta de imÛveis" do mÛd. Prefeitura On-line estiver como "Sim" verifica o CPF/CNPJ  		   
+  //Se o par√¢metro "Exige CPF/CNPJ na consulta de im√≥veis" do m√≥d. Prefeitura On-line estiver como "Sim" verifica o CPF/CNPJ  		   
   if ($sConfig["w13_exigecpfcnpj"] == "t") {
    $sql .= " and trim(z01_cgccpf) = '{$cgccpf}' ";
   }		  
@@ -75,7 +75,7 @@ if ( isset($matric) ) {
   $sResultadoValMat  = pg_num_rows($rsValidaMatricula);
 
   if ($sResultadoValMat == 0 ) {
-      db_redireciona("digitamatricula.php?".base64_encode("erroscripts=Aviso: Os dados informados n„o conferem. Verifique o n˙mero da matrÌcula ou o CPF/CNPJ indicado!"));
+      db_redireciona("digitamatricula.php?".base64_encode("erroscripts=Aviso: Os dados informados n√£o conferem. Verifique o n√∫mero da matr√≠cula ou o CPF/CNPJ indicado!"));
   }
   
 }
@@ -92,7 +92,7 @@ function js_voltar(){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -128,8 +128,8 @@ db_estilosite();
 					<tr class="texto">
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: <span class="bold3"><?=$cgccpf?></span><br>
-						<?php  if(@$inscricao!=""){?> InscriÁ„o:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
-						<?php }else if(@$matricula!=""){?> MatrÌcula:&nbsp; <span
+						<?php  if(@$inscricao!=""){?> Inscri√ß√£o:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
+						<?php }else if(@$matricula!=""){?> Matr√≠cula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
 							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
 							<?php }?></td>
@@ -140,7 +140,7 @@ db_estilosite();
 						if($acao == 'leitura'){
 							echo "Leituras e Consumo";
 						}else if($acao == 'hidrometros'){
-							echo "HidrÙmetros";
+							echo "Hidr√¥metros";
 						}						
 						?>
 						</td>

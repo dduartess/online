@@ -50,7 +50,7 @@ $db_verificaip = db_verifica_ip();
 <html>  
 <head>
   <title><?php echo $w01_titulo ?></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="estilos/grid.style.css" rel="stylesheet" type="text/css">
   <link href="config/estilos.css" rel="stylesheet" type="text/css">
   <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -82,7 +82,7 @@ $db_verificaip = db_verifica_ip();
         <legend>Consulta Ouvidoria</legend>
         <tr>
           <td width = "50%" height = "30" align = "right">
-            Número do Atendimento:
+            NÃºmero do Atendimento:
           </td>
           
           <td width = "50%" height = "30">
@@ -98,7 +98,7 @@ $db_verificaip = db_verifica_ip();
         
         <tr>
           <td width = "50%" height = "30" align = "right">
-            Número Processo:
+            NÃºmero Processo:
           </td>
           
           <td width = "50%" height = "30">
@@ -170,7 +170,7 @@ $db_verificaip = db_verifica_ip();
     <fieldset style="width:98%" id='fieldsetGrid'>
     <legend class="title"><b>Atendimentos Encontrados</b></legend>
       <div id="listaResultados" style="width: 100%;"></div>
-      <div style='text-align:left;'><b>* Clique sob o número do atendimento para visualizar a consulta</b></div>
+      <div style='text-align:left;'><b>* Clique sob o nÃºmero do atendimento para visualizar a consulta</b></div>
     </fieldset>
   </center>
   
@@ -192,13 +192,13 @@ var lPesquisaAutomatica = '<?php echo $lRetornoAutomatico; ?>';
 
 var oDBGridListaResultados = new DBGrid('gridDBGridListaResultados');
 oDBGridListaResultados.nameInstance = 'oDBGridListaResultados';
-oDBGridListaResultados.setHeader(new Array('Nº Atendimento',
-                                           'Nº Processo',
+oDBGridListaResultados.setHeader(new Array('NÂº Atendimento',
+                                           'NÂº Processo',
                                            'Processo',
                                            'CPF/CNPJ',
                                            'Requerente',
                                            'Depto Atual',
-                                           'Data de Criação'));
+                                           'Data de CriaÃ§Ã£o'));
 oDBGridListaResultados.setCellWidth(new Array('10%', 
                                            '10%',
                                            '20%', 

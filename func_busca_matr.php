@@ -75,7 +75,7 @@ if($total > 0){
 } else {
 ?>
 <script>   
-   str  = "<span><font color='#E9000'> OS DADOS DIGITADOS S√O INCONSISTENTES! </font></span>";
+   str  = "<span><font color='#E9000'> OS DADOS DIGITADOS S√ÉO INCONSISTENTES! </font></span>";
    
    var msgerro = str;
    

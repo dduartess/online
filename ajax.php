@@ -25,12 +25,12 @@
  *                                licenca/licenca_pt.txt 
  */
 
-//faz a inclus„o da biblioteca Sajax
+//faz a inclus√£o da biblioteca Sajax
 require("include/Sajax.php");
 
 // Baseado nos exemplos desenvolvidos por Leonardo Lorieri
 
-/* funcao PHP que recebe o cÛdigo e faz a pesquisa no banco de dados retornando o nome*/
+/* funcao PHP que recebe o c√≥digo e faz a pesquisa no banco de dados retornando o nome*/
 function mostra_nome($codpes) {
         $con = mysql_connect("localhost","elton","elton");
         mysql_select_db("elton");
@@ -60,8 +60,8 @@ function mostra(nome) { //esta funcao retorna o valor para o campo do formulario
 
 function get_nome(c) { //esta funcao chama a funcao PHP exportada pelo Ajax
         cod = c.value;
-        //chama a funcao x_mostra_nome que ser· gerada pelo sajax. 
-		  //o primeiro parametro È o codigo e o segundo È a 
+        //chama a funcao x_mostra_nome que ser√° gerada pelo sajax. 
+		  //o primeiro parametro √© o codigo e o segundo √© a 
         //funcao JavaScript que tratara o retorno, no caso a mostra
         x_mostra_nome(cod, mostra);
 }
@@ -75,7 +75,7 @@ function get_nome(c) { //esta funcao chama a funcao PHP exportada pelo Ajax
 </body>
 </html>
 
-Analisando o cÛdigo fonte visualizado pelo navegador È possÌvel verificar todo o cÛdigo Javascript gerado pelo Sajax:
+Analisando o c√≥digo fonte visualizado pelo navegador √© poss√≠vel verificar todo o c√≥digo Javascript gerado pelo Sajax:
 
 <html>
 <head>
@@ -169,8 +169,8 @@ function mostra(nome) { //esta funcao retorna o valor para o campo do formulario
 
 function get_nome(c) { //esta funcao chama a funcao PHP exportada pelo Ajax
         cod = c.value;
-        //chama a funcao x_mostra_nome que ser· gerada pelo sajax. 
-		  //o primeiro parametro È o codigo e o segundo È a 
+        //chama a funcao x_mostra_nome que ser√° gerada pelo sajax. 
+		  //o primeiro parametro √© o codigo e o segundo √© a 
         //funcao JavaScript que tratara o retorno, no caso a mostra
         x_mostra_nome(cod, mostra);
 }

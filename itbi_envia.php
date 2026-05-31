@@ -66,19 +66,19 @@ db_estilosite(); ?>
 <form name="form1" method="post" action="">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" >  
     <tr class="titulo">
-      <td align="center">NÚMERO DA GUIA ITBI <?=$cod?></td>
+      <td align="center">NÃšMERO DA GUIA ITBI <?=$cod?></td>
     </tr>
     <tr>
       <td align="center">&nbsp;</td>
     </tr>
     <tr class="titulo">
-      <td align="center">Confirme a solicitação da ITBI, após o envio da solicitação não podera mais alterar as informações.</td>
+      <td align="center">Confirme a solicitaÃ§Ã£o da ITBI, apÃ³s o envio da solicitaÃ§Ã£o nÃ£o podera mais alterar as informaÃ§Ãµes.</td>
     </tr>
     <tr>
       <td align="center">&nbsp;</td>
     </tr>
     <tr>
-      <td align="center"><input type="submit" name="envia" value="Enviar solicitação de ITBI" class="botao"></td>
+      <td align="center"><input type="submit" name="envia" value="Enviar solicitaÃ§Ã£o de ITBI" class="botao"></td>
     </tr>
 </table>
 </form >

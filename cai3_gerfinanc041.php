@@ -81,7 +81,7 @@ if(isset($certid)){
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -89,7 +89,7 @@ if(isset($certid)){
 <center>
 <table>
     <tr>
-      <td  align='left'><b>RESUMO POR ANO E PROCEDÊNCIA</b></td>
+      <td  align='left'><b>RESUMO POR ANO E PROCEDÃŠNCIA</b></td>
     </tr>
 <tr>
   <td>

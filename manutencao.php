@@ -28,7 +28,7 @@
 <html>
 <head>
 <title>Prefeitura On-Line</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
@@ -39,7 +39,7 @@
   <tr height="300">
    <td align="center" class="red">
     <img src="imagens/atencao.gif"><br><br>
-    Estamos em manutenção, por favor volte mais tarde.
+    Estamos em manutenÃ§Ã£o, por favor volte mais tarde.
    </td>
   </tr>
  </table>

@@ -27,13 +27,13 @@
 		
 		$this->objpdf->rect($xcol+2,$xlin+50,110,$alt);
 		$this->objpdf->Setfont('Arial','',5);
-		$this->objpdf->text($xcol+4,$xlin+52,'2 - Nome / Raz„o Social');
+		$this->objpdf->text($xcol+4,$xlin+52,'2 - Nome / Raz√£o Social');
 		$this->objpdf->Setfont('Arial','b',7);
 		$this->objpdf->text($xcol+4,$xlin+56,$this->prefeitura);
 
 		$this->objpdf->rect($xcol+2,$xlin+57,110,$alt);
 		$this->objpdf->Setfont('Arial','',5);
-		$this->objpdf->text($xcol+4,$xlin+59,'3 - EndereÁo');
+		$this->objpdf->text($xcol+4,$xlin+59,'3 - Endere√ßo');
 		$this->objpdf->Setfont('Arial','b',7);
 		$this->objpdf->text($xcol+4,$xlin+63,$this->enderpref);
 
@@ -45,7 +45,7 @@
 		
 		$this->objpdf->rect($xcol+32,$xlin+64,70,$alt);
 		$this->objpdf->Setfont('Arial','',5);
-		$this->objpdf->text($xcol+34,$xlin+66,'5 - MunicÌpio');
+		$this->objpdf->text($xcol+34,$xlin+66,'5 - Munic√≠pio');
 		$this->objpdf->Setfont('Arial','b',7);
 		$this->objpdf->text($xcol+34,$xlin+70,$this->municpref);
 		
@@ -57,10 +57,10 @@
 		
 		$this->objpdf->rect($xcol+2,$xlin+77,110,45);
 		$this->objpdf->Setfont('Arial','',5);
-		$this->objpdf->text($xcol+4,$xlin+79,'7 - Outras InformaÁıes');
+		$this->objpdf->text($xcol+4,$xlin+79,'7 - Outras Informa√ß√µes');
 		
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+9,$xlin+89.8,'N∞ de Funcion·rios');
+		$this->objpdf->text($xcol+9,$xlin+89.8,'N¬∞ de Funcion√°rios');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+58,$xlin+89.5,db_formatar($this->func,'f',' ',2,'e',0));
 		$this->objpdf->rect($xcol+7,$xlin+85,45,$alt);
@@ -68,17 +68,17 @@
 
 		$this->objpdf->rect($xcol+7,$xlin+95,100,$alt);
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+39,$xlin+99.5,'Sal·rio ContribuiÁ„o');
+		$this->objpdf->text($xcol+39,$xlin+99.5,'Sal√°rio Contribui√ß√£o');
 
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+9,$xlin+106.5,'Funcion·rios');
+		$this->objpdf->text($xcol+9,$xlin+106.5,'Funcion√°rios');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+58,$xlin+106.5,'R$'.db_formatar($this->base,'f'));
 		$this->objpdf->rect($xcol+7,$xlin+102,45,$alt);
 		$this->objpdf->rect($xcol+52,$xlin+102,55,$alt);
 
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+9,$xlin+113.5,'AutÙnomos');
+		$this->objpdf->text($xcol+9,$xlin+113.5,'Aut√¥nomos');
 		$this->objpdf->rect($xcol+7,$xlin+109,45,$alt);
 		$this->objpdf->rect($xcol+52,$xlin+109,55,$alt);
 
@@ -92,14 +92,14 @@
 		$this->objpdf->rect($xcol+150,$xlin-13,50,$alt);
 
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+116,$xlin-1.5,'9 - M S/ANO');
+		$this->objpdf->text($xcol+116,$xlin-1.5,'9 - M√äS/ANO');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+155,$xlin-1.5,db_formatar($this->mes,'s','0',2,'e',0).'/'.$this->ano);
 		$this->objpdf->rect($xcol+115,$xlin-6,35,$alt);
 		$this->objpdf->rect($xcol+150,$xlin-6,50,$alt);
 
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+116,$xlin+5.5,'10 - C”D. PAGTO');
+		$this->objpdf->text($xcol+116,$xlin+5.5,'10 - C√ìD. PAGTO');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+155,$xlin+5.5,$this->cod_pagto);
 		$this->objpdf->rect($xcol+115,$xlin+1,35,$alt);
@@ -128,7 +128,7 @@
 		$this->objpdf->rect($xcol+150,$xlin+29,50,$alt);
 
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+116,$xlin+40.5,'14 - DEDU«’ES');
+		$this->objpdf->text($xcol+116,$xlin+40.5,'14 - DEDU√á√ïES');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+155,$xlin+40.5,'R$'.db_formatar($this->deducao,'f'));
 		$this->objpdf->rect($xcol+115,$xlin+36,35,$alt);
@@ -136,14 +136,14 @@
 
 		$this->objpdf->Setfont('Arial','',8);
 		$liquido = $this->desconto + $this->patronal - $this->deducao;
-		$this->objpdf->text($xcol+116,$xlin+47.5,'15 - TOTAL LÕQUIDO');
+		$this->objpdf->text($xcol+116,$xlin+47.5,'15 - TOTAL L√çQUIDO');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+155,$xlin+47.5,'R$'.db_formatar($liquido,'f'));
 		$this->objpdf->rect($xcol+115,$xlin+43,35,$alt);
 		$this->objpdf->rect($xcol+150,$xlin+43,50,$alt);
 
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+116,$xlin+54.5,'16 - ATUAL. MONET¡RIA');
+		$this->objpdf->text($xcol+116,$xlin+54.5,'16 - ATUAL. MONET√ÅRIA');
 		$this->objpdf->Setfont('Arial','B',10);
                 $this->objpdf->text($xcol+155,$xlin+54.5,'R$'.db_formatar($this->atu_monetaria,'f'));
 		$this->objpdf->rect($xcol+115,$xlin+50,35,$alt);
@@ -167,7 +167,7 @@
 
 		
 		$this->objpdf->Setfont('Arial','B',11);
-//		$this->objpdf->text(150,$xlin-13,'RECIBO V¡LIDO AT…: ');
+//		$this->objpdf->text(150,$xlin-13,'RECIBO V√ÅLIDO AT√â: ');
 
 	        $xlin = 169;
 

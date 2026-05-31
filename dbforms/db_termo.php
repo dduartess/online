@@ -62,7 +62,7 @@ else
   
   switch($campo) {
     case "codigo":
-      $sql = "select (v07_parcel || '##' || v07_parcel) as db_codigo,v07_parcel as \"Código da Parcela\",v07_numpre as numpre
+      $sql = "select (v07_parcel || '##' || v07_parcel) as db_codigo,v07_parcel as \"CÃ³digo da Parcela\",v07_numpre as numpre
               from termo
 		      where v07_parcel like '".$arg[1]."%'
 		      order by v07_parcel";
@@ -72,7 +72,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onFocus="document.form5.filtro.focus()">

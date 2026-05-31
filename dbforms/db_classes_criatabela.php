@@ -36,7 +36,7 @@ $sql=base64_decode($sql);
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
 .cabec {
        text-align: center;
@@ -65,7 +65,7 @@ td{
         $coluna="x_".$colunas[$i];
         echo "<th class='cabec' width=\"\" id='w' align=\"\" nowrap ><small>".str_replace(":","",$$coluna)."</small></th>";
       } 	
-        echo "<th class='cabec'  title='Alterar ou Excluir'><b><small>Opções</small></b></td>";
+        echo "<th class='cabec'  title='Alterar ou Excluir'><b><small>OpÃ§Ãµes</small></b></td>";
       
     ?>
     </tr>
@@ -93,13 +93,13 @@ td{
               }
               if(empty($db_opcao) || $db_opcao==1 || $db_opcao==2){  
               echo "<td>
-                       <a title='ALTERAR CONTEÚDO DA LINHA' href='' onclick=\"parent.js_alterarlinhas($i);return false;\">&nbsp;A&nbsp;</a>
-                       <a title='EXCLUIR CONTEÚDO DA LINHA' href='' onclick=\"parent.js_excluirlinhas($i);return false;\">&nbsp;E&nbsp;</a> 
+                       <a title='ALTERAR CONTEÃšDO DA LINHA' href='' onclick=\"parent.js_alterarlinhas($i);return false;\">&nbsp;A&nbsp;</a>
+                       <a title='EXCLUIR CONTEÃšDO DA LINHA' href='' onclick=\"parent.js_excluirlinhas($i);return false;\">&nbsp;E&nbsp;</a> 
                     </td>"; 
               }else{
               echo "<td>
-                       <a title='ALTERAR CONTEÚDO DA LINHA' href='' onclick=\"return false;\">&nbsp;A&nbsp;</a>
-                       <a title='EXCLUIR CONTEÚDO DA LINHA' href='' onclick=\"return false;\">&nbsp;E&nbsp;</a> 
+                       <a title='ALTERAR CONTEÃšDO DA LINHA' href='' onclick=\"return false;\">&nbsp;A&nbsp;</a>
+                       <a title='EXCLUIR CONTEÃšDO DA LINHA' href='' onclick=\"return false;\">&nbsp;E&nbsp;</a> 
                     </td>"; 
               }
               echo "</tr>";

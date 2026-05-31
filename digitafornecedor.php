@@ -55,7 +55,7 @@ if($db_verificaip == "0"){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -94,12 +94,12 @@ if($db_verificaip == "0"){
   <tr height="220">
    <td align="center">
     <img src="imagens/atencao.gif"><br>
-    Para acessar suas informações, efetue login.
+    Para acessar suas informaÃ§Ãµes, efetue login.
    </td>
   </tr>
  </table>
 <?php }elseif($w13_permfornsemlog == "t"){
-//verifica se está logado
+//verifica se estÃ¡ logado
 if(@$codigo_cgm!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
  $usuario = $codigo_cgm==""?$_COOKIE["cookie_codigo_cgm"]:$codigo_cgm;
 // die($clcgm->sql_query("","cgm.z01_cgccpf, cgm.z01_nome, cgm.z01_numcgm","","cgm.z01_numcgm = $usuario"));
@@ -121,7 +121,7 @@ if(@$codigo_cgm!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
  <form name="form1" method="post" action="digitafornecedor.php">
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="texto">
    <tr>
-    <td width="50%" height="30" align="right">Nº Fornecedor / CGM:&nbsp;</td>
+    <td width="50%" height="30" align="right">NÂº Fornecedor / CGM:&nbsp;</td>
     <td width="50%" height="30"><input name="codigo_cgm" type="text" class="digitacgccpf" id="codigo_cgm" size="10" maxlength="10"></td>
    </tr>
    <tr>

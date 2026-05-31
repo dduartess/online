@@ -41,7 +41,7 @@ if($cllistainscr->numrows > 0 ){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -51,10 +51,10 @@ if($cllistainscr->numrows > 0 ){
       <table width="100%" border="1" cellpadding="0" cellspacing="0">
 	<tr>
 	  <td align="center">
-	    <strong>Inscrição</strong>
+	    <strong>InscriÃ§Ã£o</strong>
 	  </td>
 	  <td align="center">
-	    <strong>Data de início da inscrição</strong>
+	    <strong>Data de inÃ­cio da inscriÃ§Ã£o</strong>
 	  </td>
 	  <td align="center">
 	    <strong>Nome</strong>
@@ -63,7 +63,7 @@ if($cllistainscr->numrows > 0 ){
 	    <strong>CNPJ</strong>
 	  </td>
 	  <td align="center">
-	    <strong>Opções</strong>
+	    <strong>OpÃ§Ãµes</strong>
 	  </td>
 	</tr>
 <?php 

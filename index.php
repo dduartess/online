@@ -66,7 +66,7 @@ if (isset ($again)) {
 if (isset ($DB_login)) { //echo" entra aqui qd  o usuario esta logado no sistema";
 
 /**
- * Adicionada verificação para usuário externo
+ * Adicionada verificaÃ§Ã£o para usuÃ¡rio externo
  */
   $sqllog  = "select db_usuarios.id_usuario, senha, u.cgmlogin, usuarioativo         ";
   $sqllog .= "  from db_usuarios                                                     ";
@@ -122,7 +122,7 @@ if (isset ($DB_login)) { //echo" entra aqui qd  o usuario esta logado no sistema
 if (@$cgm != "") {
 
  /**
-  * Adicionada verificação para usuário externo e se esta ativo
+  * Adicionada verificaÃ§Ã£o para usuÃ¡rio externo e se esta ativo
   */
   $sql1  = "select nome,d.id_usuario as id_usuario                       ";
   $sql1 .= "  from db_usuarios d                                         ";
@@ -319,7 +319,7 @@ if ( (isset($usuario) && $usuario !="") || (isset($id_usuario) && $id_usuario !=
 			db_fieldsmemory($result, 0);
 
 			if (strtolower($login) =='contribuinte' || strtolower($login) =='escritorio'|| strtolower($login) =='imobiliaria' || strtolower($login) =='fornecedor' || strtolower($login) =='funcionario' ){
-				// deletar somente os que são perfis de dbpref
+				// deletar somente os que sÃ£o perfis de dbpref
 				$del="delete from db_permherda where id_usuario='$usu'and id_perfil =$id_perfil";
 				$resdel = db_query($del);
 			}
@@ -492,11 +492,11 @@ $HTTP_SESSION_VARS["DB_codperfil"] = $id_usuario;
 
 if (isset ($erroscripts) && !isset ($DB_LOGADO)) {
 	if (@ $erroscripts == 1)
-	echo "<script>alert('Login Inválido');</script>\n";
-	elseif (@ $erroscripts == 2) echo "<script>alert('Senha Inválida');</script>\n";
-	elseif (@ $erroscripts == 3) echo "<script>alert('Acesso a rotina inválido.');</script>\n";
-	elseif (@ $erroscripts == 4) echo "<script>alert('Sem permissão de acesso, Contate a Prefeitura.');</script>\n";
-  elseif (@ $erroscripts == 5) echo "<script>alert('Usuário com Login Desativado, Contate a Prefeitura.');</script>\n";
+	echo "<script>alert('Login InvÃ¡lido');</script>\n";
+	elseif (@ $erroscripts == 2) echo "<script>alert('Senha InvÃ¡lida');</script>\n";
+	elseif (@ $erroscripts == 3) echo "<script>alert('Acesso a rotina invÃ¡lido.');</script>\n";
+	elseif (@ $erroscripts == 4) echo "<script>alert('Sem permissÃ£o de acesso, Contate a Prefeitura.');</script>\n";
+  elseif (@ $erroscripts == 5) echo "<script>alert('UsuÃ¡rio com Login Desativado, Contate a Prefeitura.');</script>\n";
 }
 
 ?>

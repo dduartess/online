@@ -468,7 +468,7 @@ function criaJanela(nomeJan,arquivo,cabecalho,visivel,topo,esquerda,altura,largu
   tab2Coluna1.style.color = 'white';
   tab2Coluna1.style.fontFamily = 'Arial, Helvetica, sans-serif';
   tab2Coluna1.style.fontSize = '11px';
-  tab2Coluna1.innerHTML =  (typeof(cabecalho)=="undefined" || cabecalho=="")?'&nbsp; DBSeller Inform·tica Ltda':('&nbsp;' + cabecalho);
+  tab2Coluna1.innerHTML =  (typeof(cabecalho)=="undefined" || cabecalho=="")?'&nbsp; DBSeller Inform√°tica Ltda':('&nbsp;' + cabecalho);
 //  tab2Coluna1.innerHTML =  (typeof(cabecalho)=="undefined" || cabecalho=="")?'&nbsp;' + nomeJan:('&nbsp;' + cabecalho);
   tab2Coluna1.setAttribute("nowrap","1");
   tab2Coluna2.setAttribute("nowrap","1");
@@ -505,54 +505,54 @@ function criaJanela(nomeJan,arquivo,cabecalho,visivel,topo,esquerda,altura,largu
 }
 function js_OpenJanelaIframe(aondeJanela,nomeJanela,arquivoJanela,tituloJanela,mostraJanela,topoJanela,leftJanela,widthJanela,heigthJanela){
 //#01#//js_OpenJanelaIframe
-//#10#//Func„o para gerar uma janela de iframe autom·tica
+//#10#//Func√£o para gerar uma janela de iframe autom√°tica
 //#15#//js_OpenJanelaIframe(aondeJanela,nomeJanela,arquivoJanela,tituloJanela,mostraJanela,topoJanela,leftJanela,widthJanela,heigthJanela);
-//#20#//aondeJanela   : Objeto (local) onde ser· gerada a janela, normalmente "top.corpo" 
-//#20#//nomeJanela    : Nome do Objeto gerado, objeto que ser· utilizado para manipulaÁ„o da janela e dados da janela 
-//#20#//arquivoJanela : Nome do arquivo com os par‚metros necess·rios para apresentar no iframe
-//#20#//tituloJanela  : TÌtulo que ser· mostrado na janela
-//#20#//mostraJanela  : True se janela ser· apresentada ou false se n„o for mostrada
-//#20#//topoJanela    : Valor da posiÁ„o em px do topo da janela no formul·rio que est· sendo criada
-//#20#//leftJanela    : Valor da posiÁ„o em px do lado esquerdo da janela iframe
+//#20#//aondeJanela   : Objeto (local) onde ser√° gerada a janela, normalmente "top.corpo" 
+//#20#//nomeJanela    : Nome do Objeto gerado, objeto que ser√° utilizado para manipula√ß√£o da janela e dados da janela 
+//#20#//arquivoJanela : Nome do arquivo com os par√¢metros necess√°rios para apresentar no iframe
+//#20#//tituloJanela  : T√≠tulo que ser√° mostrado na janela
+//#20#//mostraJanela  : True se janela ser√° apresentada ou false se n√£o for mostrada
+//#20#//topoJanela    : Valor da posi√ß√£o em px do topo da janela no formul√°rio que est√° sendo criada
+//#20#//leftJanela    : Valor da posi√ß√£o em px do lado esquerdo da janela iframe
 //#20#//widthJanela   : Valor da largura da janela a ser apresentada
 //#20#//heigthJanela  : Valor da altura da janela a ser apresentada
-//#99#//Os par‚metros obrigatÛrios s„o atÈ titulo da janela, ficando os demais com os seguintes valores:
+//#99#//Os par√¢metros obrigat√≥rios s√£o at√© titulo da janela, ficando os demais com os seguintes valores:
 //#99#//mostraJanela = true - se mostra
-//#99#//topoJanela   = 20   - posiÁ„o em relaÁ„o ao topo do formul·rio
-//#99#//leftJanela   = 1    - posiÁ„o em relaÁ„o ao lado esquerdo do formul·rio
+//#99#//topoJanela   = 20   - posi√ß√£o em rela√ß√£o ao topo do formul√°rio
+//#99#//leftJanela   = 1    - posi√ß√£o em rela√ß√£o ao lado esquerdo do formul√°rio
 //#99#//widthJanela  = 780  - Largura da janela
 //#99#//heigthJanela = 430  - Altera da janela
 //#99#//Exemplo:  
 //#99#//js_OpenJanelaIframe('top.corpo','db_janelaCgm','prot3_conscgm002.php?fechar=top.corpo.db_janelaCgm&numcgm='+qchave,'Dados Cadastrais');
 //#99#//
-//#99#//Para manipular dados de retorno de uma janela, dever· ser criada funÁ„o para receber os dados no formul·rio onde
-//#99#//a janela ser· criada e criado uma vari·vel junto com o par‚metro arquivoJanela indicando qual a funÁ„o a ser 
-//#99#//executada, colocando os devidos par‚metros que forem necess·rios
+//#99#//Para manipular dados de retorno de uma janela, dever√° ser criada fun√ß√£o para receber os dados no formul√°rio onde
+//#99#//a janela ser√° criada e criado uma vari√°vel junto com o par√¢metro arquivoJanela indicando qual a fun√ß√£o a ser 
+//#99#//executada, colocando os devidos par√¢metros que forem necess√°rios
 //#99#//
-//#99#//No formul·rio onde a janela vai ser criada:
+//#99#//No formul√°rio onde a janela vai ser criada:
 //#99#// <script>
 //#99#// js_OpenJanelaIframe('top.corpo','db_janelaCgm','[programa].php?js_funcao=parent.js_MINHA_FUNCAO&fechar=top.corpo.db_janelaCgm&numcgm='+qchave,'Dados Cadastrais');
-//#99#// function js_MINHA_FUNCAO (codigo) { // Note que foi passado para o programa uma vari·vel js_funcao que ser· executada dentro do iframe 
+//#99#// function js_MINHA_FUNCAO (codigo) { // Note que foi passado para o programa uma vari√°vel js_funcao que ser√° executada dentro do iframe 
 //#99#//   alert(codigo);
 //#99#// }
 //#99#// </script>
 //#99#//
-//#99#//No programa que ser· executado dentro do iframe:
+//#99#//No programa que ser√° executado dentro do iframe:
 //#99#// <script>
 //#99#// <? // tag php
 //#99#// echo $js_funcao."('1')";
 //#99#// ?>
 //#99#// </script>
 //#99#//
-//#99#//O resultado deste programa dever· ser um alert na tela com o n˙mero 1
+//#99#//O resultado deste programa dever√° ser um alert na tela com o n√∫mero 1
 //#99#//
-//#99#//FunÁıes de manipulaÁ„o de uma janela iframe:
-//#99#// [nome da janela].hide();     - Esconde a janela no formul·rio
-//#99#// [nome da janela].show();     - Mostra a janela no formul·rio e da foco para ela
+//#99#//Fun√ß√µes de manipula√ß√£o de uma janela iframe:
+//#99#// [nome da janela].hide();     - Esconde a janela no formul√°rio
+//#99#// [nome da janela].show();     - Mostra a janela no formul√°rio e da foco para ela
 //#99#// [nome da janela].mostraMsg() - Mostra a mensagem de processando no centro da janela iframe
 //#99#// [nome da janela].focus()     - Passa o foco para esta janela
-//#99#// [nome da janela].jan.location.href = 'pagina de programa' - Executa a p·gina dentro do iframe
-//#99#// [nome da janela].setTitulo('descricao do titulo') - Troca o tÌtulo da janela
+//#99#// [nome da janela].jan.location.href = 'pagina de programa' - Executa a p√°gina dentro do iframe
+//#99#// [nome da janela].setTitulo('descricao do titulo') - Troca o t√≠tulo da janela
 //#99#// [nome da janela].setAltura('valor') - Altera da janela
 //#99#// [nome da janela].setLargura('valor') - Largura da janela
 
@@ -600,7 +600,7 @@ if ( xmes == '1' ) {
         Mes = 'fevereiro';
    }
    if ( xmes == '3') {
-        Mes = 'marÁo';
+        Mes = 'mar√ßo';
    }
    if ( xmes == '4') {
         Mes = 'abril';
@@ -634,11 +634,11 @@ if ( xmes == '1' ) {
 
 function js_controla_tecla_enter(obj,evt){
 //#01#//js_controla_tecla_enter
-//#10#//Funcao para controlar quando a tecla enter È precionada
+//#10#//Funcao para controlar quando a tecla enter √© precionada
 //#15#//js_controla_tecla_enter(obj,evt);
-//#20#//obj : Objeto que esta com a funÁ„o
-//#20#//evt : Este par‚metro n„o dever· ser passado, pois È autom·tico do javascript
-//#30#//Retorna false quando a tecla presionada È igual a 13
+//#20#//obj : Objeto que esta com a fun√ß√£o
+//#20#//evt : Este par√¢metro n√£o dever√° ser passado, pois √© autom√°tico do javascript
+//#30#//Retorna false quando a tecla presionada √© igual a 13
   
   var evt = (evt) ? evt : (window.event) ? window.event : "";
 
@@ -653,11 +653,11 @@ function js_controla_tecla_enter(obj,evt){
 
 function js_ValidaMaiusculo(obj,maiusculo,evt) {
 //#01#//js_ValidaMaiusculo
-//#10#//Funcao validar se maiusculo ou n„o
+//#10#//Funcao validar se maiusculo ou n√£o
 //#15#//js_ValidaMaiusculo(obj,maiusculo,evt);
-//#20#//obj       : Objeto que ser· testado
-//#20#//maiusculo : Se maiusculo ou n„o (t = verdadeiro e f = falso )
-//#99#//Esta funlÁ„o coloca a letra digitado para mai˙sculo e È executada no onkeypres e no onblur dos objetos
+//#20#//obj       : Objeto que ser√° testado
+//#20#//maiusculo : Se maiusculo ou n√£o (t = verdadeiro e f = falso )
+//#99#//Esta funl√ß√£o coloca a letra digitado para mai√∫sculo e √© executada no onkeypres e no onblur dos objetos
   evt = (evt)?evt:(event)?event:'';
   if(evt.keyCode < 37 || evt.keyCode > 40){
     if(maiusculo =='t'){
@@ -669,20 +669,20 @@ function js_ValidaMaiusculo(obj,maiusculo,evt) {
 ////////////////////////////////////
 function js_ValidaCampos(obj,tipo,nome,aceitanulo,maiusculo,evt) {
 //#01#//js_ValidaCampos
-//#10#//Funcao para validar o conte˙do do campo quando digitado no formul·rio
+//#10#//Funcao para validar o conte√∫do do campo quando digitado no formul√°rio
 //#15#//js_ValidaCampos(obj,tipo,nome,aceitanulo,maiusculo,evt);
-//#20#//objeto      : Nome do objeto do formul·rio
-//#20#//tipo        : Cıdigo do tipo de consistencia do objeto gerado
-//#20#//              0 - N„o consistencia o campo
-//#20#//              1 - N˙meros  = RegExp("[^0-9]+")
-//#20#//              2 - Letras   = RegExp("[^A-Za-z‡-˙¡-⁄¸‹ %]+")
-//#20#//              3 - N˙meros, Letras, espao e vÌrgula = RegExp("[^A-Za-z0-9‡-˙¡-⁄¸‹ \.,;:@&%-\_]+")
-//#20#//              4 - N˙meros do tipo flutuante (valores monet·rio ou com casas decimais) = RegExp("[^0-9\.]+")
+//#20#//objeto      : Nome do objeto do formul√°rio
+//#20#//tipo        : C√µdigo do tipo de consistencia do objeto gerado
+//#20#//              0 - N√£o consistencia o campo
+//#20#//              1 - N√∫meros  = RegExp("[^0-9]+")
+//#20#//              2 - Letras   = RegExp("[^A-Za-z√†-√∫√Å-√ö√º√ú %]+")
+//#20#//              3 - N√∫meros, Letras, espao e v√≠rgula = RegExp("[^A-Za-z0-9√†-√∫√Å-√ö√º√ú \.,;:@&%-\_]+")
+//#20#//              4 - N√∫meros do tipo flutuante (valores monet√°rio ou com casas decimais) = RegExp("[^0-9\.]+")
 //#20#//              5 - Campo deve ser somente falso ou verdadeiro = RegExp("fmFM")
-//#20#//Nome        : DescriÁ„o do campo para mensagem de erro
-//#20#//Aceitanuulo : Se aceita o campo nulo ou n„o true = aceita false = n„o aceita
+//#20#//Nome        : Descri√ß√£o do campo para mensagem de erro
+//#20#//Aceitanuulo : Se aceita o campo nulo ou n√£o true = aceita false = n√£o aceita
 //#20#//Maiusculo   : Se campo deve ser maiusculo, quando digita a sistema troca para maiusculo
-//#20#//evt         : este par‚metro n„o deve ser passado para a funÁ„o, pois È autom·tico do javascript
+//#20#//evt         : este par√¢metro n√£o deve ser passado para a fun√ß√£o, pois √© autom√°tico do javascript
   evt = (evt)?evt:(event)?event:'';
   if(maiusculo =='t'){
     var maiusc = new String(obj.value);
@@ -691,7 +691,7 @@ function js_ValidaCampos(obj,tipo,nome,aceitanulo,maiusculo,evt) {
   /*
   if(obj.value ==''){
     if(aceitanulo!='t'){
-      alert(nome+' dever· ser preenchido');
+      alert(nome+' dever√° ser preenchido');
       obj.select();        
       obj.focus();        
     }
@@ -701,29 +701,29 @@ function js_ValidaCampos(obj,tipo,nome,aceitanulo,maiusculo,evt) {
     var expr = new RegExp("[^0-9]+");
     if(obj.value.match(expr)) {
        if(obj.value!= ''){
-          alert(nome+" deve ser preenchido somente com n˙meros!");
+          alert(nome+" deve ser preenchido somente com n√∫meros!");
           obj.select();        
           obj.focus();        
         }
      }
   } else if(tipo == 2) {
-    var expr = new RegExp("[^A-Za-z‡-˙¡-⁄¸‹ %]+");
+    var expr = new RegExp("[^A-Za-z√†-√∫√Å-√ö√º√ú %]+");
     if(obj.value.match(expr)) {
           alert(nome+" deve ser preenchido somente com Letras!");
           obj.select();        
           obj.focus();        
         }  
   } else if(tipo == 3) {
-    var expr = new RegExp("[^A-Za-z0-9‡-˙¡-⁄¸‹ \.,;:@&%-\_]+");
+    var expr = new RegExp("[^A-Za-z0-9√†-√∫√Å-√ö√º√ú \.,;:@&%-\_]+");
         if(obj.value.match(expr)) {
-          alert(nome+" deve ser preenchido somente com Letras, n˙meros, espaÁo, virgula, ponto-e-virgula, hÌfen,2 pontos,arroba,sublinhado!");
+          alert(nome+" deve ser preenchido somente com Letras, n√∫meros, espa√ßo, virgula, ponto-e-virgula, h√≠fen,2 pontos,arroba,sublinhado!");
           obj.select();        
           obj.focus();        
         }  
   } else  if(tipo == 4) {
     var expr = new RegExp("[^0-9\.]+");
     if(obj.value.match(expr)) {
-          alert(nome+" deve ser preenchido somente com n˙meros decimais!");
+          alert(nome+" deve ser preenchido somente com n√∫meros decimais!");
           obj.select();        
           obj.focus();        
         }
@@ -772,7 +772,7 @@ function js_in_array(elem,vetor) {
   return false;
 }
 
-//tipo o parse int, sÛ que pega o numero se tiver na final da straing tb!!
+//tipo o parse int, s√≥ que pega o numero se tiver na final da straing tb!!
 function js_parse_int(str) {
   var num = new Array("0","1","2","3","4","5","6","7","8","9");
   var tam = str.length;
@@ -847,7 +847,7 @@ function js_verificapagina(pagina){
         }
   }
   if(existe == 0) {
-  //  alert("VocÍ esta acessando a p·gina de uma URL inv·lida e ser· redirecionado.");
+  //  alert("Voc√™ esta acessando a p√°gina de uma URL inv√°lida e ser√° redirecionado.");
   //  top.location.href = "index.php";
   }
 }
@@ -865,7 +865,7 @@ function js_emiteboleto(alias,pagredirect) {
     }
   }
   if(x == "")
-    alert("VocÍ dever· Selecionar os valores a emitir");
+    alert("Voc√™ dever√° Selecionar os valores a emitir");
   else
     window.open("emiteboleto.php?alias="+alias+"&numpres="+ x,"","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,height="+(screen.height-100)+",width="+(screen.width-100));
         document.href = pagredirect;
@@ -887,7 +887,7 @@ function js_selecionavar(alias,cod_inscr) {
         }
   }
   if( x == "")
-    alert("VocÍ dever· Selecionar Digitar os valores a Pagar");
+    alert("Voc√™ dever√° Selecionar Digitar os valores a Pagar");
   else {
     location.href = "pagaissvarsel.php?inscricao="+cod_inscr+"&alias="+alias+"&issvar="+ x + "&issvarvlr=" + vx;
   }
@@ -907,7 +907,7 @@ function js_emiteboletovar(alias) {
     }
   }
   if(x == "")
-    alert("VocÍ dever· Selecionar os valores a emitir");
+    alert("Voc√™ dever√° Selecionar os valores a emitir");
   else
     window.open("emiteboleto.php?alias="+alias+"&issvar="+ x + "&issvarvlr=" + xx,"","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,height="+(screen.height-100)+",width="+(screen.width-100));
 }
@@ -952,7 +952,7 @@ function js_emiteboletovarold(alias) {
 
   if( x == "")
 
-    alert("VocÍ dever· Selecionar Digitar os valores a Pagar");
+    alert("Voc√™ dever√° Selecionar Digitar os valores a Pagar");
 
   else {
 
@@ -1347,14 +1347,14 @@ function TestaNI(cNI,iTipo){
         switch (iTipo) {
                 case 1:
                         if (NI.length != 14){
-                                alert('O n˙mero do CNPJ informado est· incorreto');
+                                alert('O n√∫mero do CNPJ informado est√° incorreto');
                                 cNI.select();
                                 cNI.focus();
                                 return(false);
                                 }
 
                         if (NI.substr(12,2) != CalcularDV(NI.substr(0,12), 9)){
-                                alert('O n˙mero do CNPJ informado est· incorreto');
+                                alert('O n√∫mero do CNPJ informado est√° incorreto');
                                 cNI.select();
                                 cNI.focus();
                                 return(false);
@@ -1363,14 +1363,14 @@ function TestaNI(cNI,iTipo){
 
                 case 2:
                         if (NI.length != 11){
-                                alert('O n˙mero do CPF informado est· incorreto');
+                                alert('O n√∫mero do CPF informado est√° incorreto');
                                 cNI.select();
                                 cNI.focus();
                                 return(false);
                                 }
 
                         if (NI.substr(9,2) != CalcularDV(NI.substr(0,9), 11)){
-                                alert('O n˙mero do CPF informado est· incorreto');
+                                alert('O n√∫mero do CPF informado est√° incorreto');
                                 cNI.select();
                                 cNI.focus();
                                 return(false);
@@ -1521,7 +1521,7 @@ function js_validaAlfaNumerico(obvalida){
         pValor = pValor.replace('.','');
         for(var j=0;j<AuxTam;j++){
                 if ((!IndAlfaNumerico(pValor.charAt(j))) || (pValor.charAt(j) == " ")){
-            alert("Voce dever· digitar o valor separando os centavos com PONTO");
+            alert("Voce dever√° digitar o valor separando os centavos com PONTO");
                         obvalida.value = "";          
                         obvalida.focus();  
                 } 

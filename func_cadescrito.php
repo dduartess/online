@@ -34,7 +34,7 @@ $clcadescrito = new cl_cadescrito;
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
 <style>
@@ -81,7 +81,7 @@ $clcadescrito = new cl_cadescrito;
             db_fieldsmemory($result,0);
             echo "<script>".$funcao_js."('$oid',false);</script>";
           }else{
-	         echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") não Encontrado',true);</script>";
+	         echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") nÃ£o Encontrado',true);</script>";
           }
         }else{
 	       echo "<script>".$funcao_js."('',false);</script>";

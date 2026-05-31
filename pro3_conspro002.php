@@ -66,7 +66,7 @@ $arqant = false;
 $sWhere = "";
 $sAnd   = "";
 
-// seleciona o nome da instituição pelo código do processo e coloca o resultado na váriavel $nomeinstabrev
+// seleciona o nome da instituiÃ§Ã£o pelo cÃ³digo do processo e coloca o resultado na vÃ¡riavel $nomeinstabrev
 if (isset($codproc) && !empty($codproc)) {
           
   $sWhere .= " {$sAnd} p58_codproc = {$codproc} ";
@@ -95,7 +95,7 @@ $nomeinstabrev = $rsResultado["nomeinstabrev"];
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda - P&aacute;gina Inicial</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Expires" CONTENT="0">
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
@@ -141,7 +141,7 @@ db_estilosite();
 
 		  if (isset($codproc) || isset($numeroprocesso)) {
 		                    
-        //Validação se o CPF/CNPJ passado para pesquisa do processo de protocolo é o mesmo do titular do processo.
+        //ValidaÃ§Ã£o se o CPF/CNPJ passado para pesquisa do processo de protocolo Ã© o mesmo do titular do processo.
         if (isset($cpf) && !empty($cpf)) {
         	
 				  $sWhere .= " {$sAnd} z01_cgccpf = '".ereg_replace("[./-]", "", $cpf)."' ";
@@ -154,7 +154,7 @@ db_estilosite();
 
         $sSqlProtProcesso    = $clprotprocesso->sql_query(null, "*", null, $sWhere);
         $result_protprocesso = $clprotprocesso->sql_record($sSqlProtProcesso);
-        // se existem linhas processa, se não exibe mensagem que não encontrou processos com o código fornecido
+        // se existem linhas processa, se nÃ£o exibe mensagem que nÃ£o encontrou processos com o cÃ³digo fornecido
         
         if ($clprotprocesso->numrows > 0) {
         	
@@ -166,11 +166,11 @@ db_estilosite();
           
 				  echo "<table width='100%' class='texto'border=0>
                 <tr>
-                  <td width=280px><b>NÚMERO DE CONTROLE DO PROCESSO:</b></td>
+                  <td width=280px><b>NÃšMERO DE CONTROLE DO PROCESSO:</b></td>
                   <td nowrap colspan='3'>$codproc</td>
                 </tr>
 	              <tr>
-			            <td width=280px><b>NÚMERO DO PROCESSO:</b></td>
+			            <td width=280px><b>NÃšMERO DO PROCESSO:</b></td>
                   <td width=350pxnowrap>$p58_numero/$p58_ano </td>
                   <td width=100px><b>NOME:</b></td>
                   <td nowrap>$z01_nome</td>
@@ -192,7 +192,7 @@ db_estilosite();
                   <td colspan='3' nowrap>$p58_coddepto-$descrdepto</td>
                 </tr>
                 <tr>  
-                  <td><b>INSTITUIÇÃO:</b> </td>
+                  <td><b>INSTITUIÃ‡ÃƒO:</b> </td>
                   <td colspan='3' nowrap>$p58_instit-$nomeinst</td>
 		            </tr>
 		            <tr>  
@@ -204,7 +204,7 @@ db_estilosite();
 	 		            </td>
 		            </tr>
 		            <tr> 
-                  <td ><b>OBSERVAÇÃO:</b> </td>
+                  <td ><b>OBSERVAÃ‡ÃƒO:</b> </td>
                   <td colspan='3'>". ($p58_obs == "" ? "&nbsp;" : nl2br($p58_obs))."</td>
                 </tr>  
                 </table>";
@@ -324,7 +324,7 @@ db_estilosite();
 	                          <td>$p62_hora&nbsp</td>
 	                          <td>$p62_coddepto-$deptoatual</td>
 	                          <td>$nomeinstabrev</td>
-	                          <td>Transferência $p62_codtran p/ o Departamento: $coddeptodestino - $deptodestino" . ((int) $idusuariodestino > 0?" - usuário especificado: $idusuariodestino - $loginusuariodestino":" (sem usuário especificado)") . "</td>
+	                          <td>TransferÃªncia $p62_codtran p/ o Departamento: $coddeptodestino - $deptodestino" . ((int) $idusuariodestino > 0?" - usuÃ¡rio especificado: $idusuariodestino - $loginusuariodestino":" (sem usuÃ¡rio especificado)") . "</td>
 	                          <td>&nbsp</td>
 	                        </tr>";
 									} else {
@@ -334,7 +334,7 @@ db_estilosite();
                             <td>$p62_coddepto-$deptoatual</td>
                             <td>$nomeinstabrev</td>
                             <td>$nome </td>
-                            <td>Transferência $p62_codtran p/ o Departamento: $coddeptodestino - $deptodestino" . ((int) $idusuariodestino > 0?" - usuário especificado: $idusuariodestino - $loginusuariodestino":" (sem usuário especificado)") . "</td>
+                            <td>TransferÃªncia $p62_codtran p/ o Departamento: $coddeptodestino - $deptodestino" . ((int) $idusuariodestino > 0?" - usuÃ¡rio especificado: $idusuariodestino - $loginusuariodestino":" (sem usuÃ¡rio especificado)") . "</td>
                             <td>&nbsp</td>
                           </tr>";
 									}
@@ -383,7 +383,7 @@ db_estilosite();
                     }
 											
 									} else {
-                    echo "<td>Recebeu Transferência</td>";
+                    echo "<td>Recebeu TransferÃªncia</td>";
 									}
 									
 									echo "<td>$p61_despacho&nbsp</td> </tr>";
@@ -441,7 +441,7 @@ db_estilosite();
 	                                <td>$p88_hora&nbsp</td>
 	                                <td>$p61_coddepto-$descrdepto</td>
 	                                <td>$nomeinstabrev</td>
-	                                <td>Transferência Interna para $usudestino</td>";
+	                                <td>TransferÃªncia Interna para $usudestino</td>";
 													
 												} else {
 													
@@ -451,7 +451,7 @@ db_estilosite();
                                   <td>$p61_coddepto-$descrdepto</td>
                                   <td>$nomeinstabrev</td>
                                   <td>$usuatual</td>
-                                  <td>Transferência Interna para $usudestino</td>";
+                                  <td>TransferÃªncia Interna para $usudestino</td>";
 												}
 												
                         if ( $p88_publico != "f" ) {
@@ -488,7 +488,7 @@ db_estilosite();
 	                                        <td>$p78_hora&nbsp</td>
 			                                    <td> $p61_coddepto-$descrdepto</td>
 			                                    <td>$nomeinstabrev</td>
-			                                    <td>Recebeu Transferência Interna</td>
+			                                    <td>Recebeu TransferÃªncia Interna</td>
 	                                        <td></td>
 	                                      </tr>";
                               	} else {
@@ -498,7 +498,7 @@ db_estilosite();
                                           <td> $p61_coddepto-$descrdepto</td>
                                           <td>$nomeinstabrev</td>
                                           <td>$nome</td>
-                                          <td>Recebeu Transferência Interna</td>
+                                          <td>Recebeu TransferÃªncia Interna</td>
                                           <td></td>
                                         </tr>";
                               	}	
@@ -542,7 +542,7 @@ db_estilosite();
 								}
 							}
 						}/* else {
-						db_msgbox("Processo não encontrado para as informações!");
+						db_msgbox("Processo nÃ£o encontrado para as informaÃ§Ãµes!");
 						echo"<script>location.href='digitaconsultaprocesso.php?outro=123456'</script>";
 						}*/
 							
@@ -653,7 +653,7 @@ db_estilosite();
                               <td>$p88_hora&nbsp</td>
                               <td>$p61_coddepto-$descrdepto</td>
                               <td>$nomeinstabrev</td>
-                              <td>Transferência Interna para $usudestino</td>";
+                              <td>TransferÃªncia Interna para $usudestino</td>";
 											
 										} else {
 											echo "<tr>
@@ -662,7 +662,7 @@ db_estilosite();
                               <td>$p61_coddepto-$descrdepto</td>
 		                          <td>$nomeinstabrev</td>
 		                          <td>$usuatual</td>
-                              <td>Transferência Interna para $usudestino</td>";
+                              <td>TransferÃªncia Interna para $usudestino</td>";
 										}
 										if ( $p88_publico != "f" ) {
 											echo "<td>$p88_despacho</td>";
@@ -697,7 +697,7 @@ db_estilosite();
                                       <td>$p78_hora&nbsp</td>
 			                                <td>$p61_coddepto-$descrdepto</td>
 			                                <td>$nomeinstabrev</td>
-			                                <td>Recebeu Transferência Interna</td>
+			                                <td>Recebeu TransferÃªncia Interna</td>
 			                                <td>$p78_despacho</td>
                                     </tr>";
 														} else {
@@ -707,7 +707,7 @@ db_estilosite();
 		                                  <td>$p61_coddepto-$descrdepto</td>
 		                                  <td>$nomeinstabrev</td>
 		                                  <td>$nome</td>
-		                                  <td>Recebeu Transferência Interna</td>
+		                                  <td>Recebeu TransferÃªncia Interna</td>
 		                                  <td>$p78_despacho</td>
                                     </tr>";
 														}
@@ -764,10 +764,10 @@ db_estilosite();
 			} else {
 					
 				if (isset($cgc) && $cgc != "" || isset($cpf) && $cpf != "" ) {
-					db_msgbox("AVISO:\\nNenhum registro encontrado para o número de processo com o CNPJ/CPF informado!");
+					db_msgbox("AVISO:\\nNenhum registro encontrado para o nÃºmero de processo com o CNPJ/CPF informado!");
 					echo"<script>location.href='digitaconsultaprocesso.php?outro=123456'</script>";
 				} else {
-					db_msgbox("AVISO:\\nNenhum registro encontrado para o número de processo informado!");
+					db_msgbox("AVISO:\\nNenhum registro encontrado para o nÃºmero de processo informado!");
 					echo"<script>location.href='digitaconsultaprocesso.php?outro=123456'</script>";
 				}
 			}

@@ -25,7 +25,7 @@
  *                                licenca/licenca_pt.txt 
  */
 
-error_reporting('** FAVOR FA«A SEU PEDIDO DE SENHA! **');
+error_reporting('** FAVOR FA√áA SEU PEDIDO DE SENHA! **');
 include("libs/db_conecta.php");
 include("libs/db_stdlib.php");
 include("libs/db_utils.php");
@@ -54,7 +54,7 @@ if($oGet->chave == 't'){
             db_fieldsmemory($queryCgm,0);   
           }		   
 		   
-       //verifica se usu·rio j· È cadastrado
+       //verifica se usu√°rio j√° √© cadastrado
        $sqlUsuario = " select login 
                          from db_usuarios 
                         where nome   = '{$z01_nome}' 
@@ -149,7 +149,7 @@ if($sMatric             == $rh01_regist      && $rh01_regist  != '' &&
    trim($oGet->z01_mae) == trim($z01_mae)    && $z01_mae      != '') {
 ?>
 <script>  
-str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÕNIMO 6 CARACTERES, LETRAS E N⁄MEROS! </font></span>";
+str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO M√çNIMO 6 CARACTERES, LETRAS E N√öMEROS! </font></span>";
 
    var msgerro = str; 
 
@@ -188,8 +188,8 @@ str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÕNIMO 6 CARACTERES,
 	if(isset($sErroUsuario) && $sErroUsuario == 't'){
 ?>
 <script> 
-   str  = "<span><font color='#E9000'> OS DADOS DIGITADOS S√O INCONSISTENTES! </font><BR />";
-   str += "<font color='#E9000'> FAVOR FA«A SEU PEDIDO DE SENHA! </font></span>";
+   str  = "<span><font color='#E9000'> OS DADOS DIGITADOS S√ÉO INCONSISTENTES! </font><BR />";
+   str += "<font color='#E9000'> FAVOR FA√áA SEU PEDIDO DE SENHA! </font></span>";
    
    var msgerro = str; 
  
@@ -201,7 +201,7 @@ str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÕNIMO 6 CARACTERES,
   } else {
 ?>
 <script> 
-   str  = "<span><font color='#E9000'> OS DADOS DIGITADOS S√O INCONSISTENTES! </font></span>";
+   str  = "<span><font color='#E9000'> OS DADOS DIGITADOS S√ÉO INCONSISTENTES! </font></span>";
    
    var msgerro = str; 
  

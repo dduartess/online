@@ -28,17 +28,17 @@
 //#00#//documentacao
 //#10#//Como documentar ou funcao ou classe
 //#99#////#10#//
-//#99#//DescriÁ„o da funÁ„o ou mÈtodo gerada no *//#00#//*
+//#99#//Descri√ß√£o da fun√ß√£o ou m√©todo gerada no *//#00#//*
 //#99#////#15#//
-//#99#//Sintaxe da funÁ„o ou mÈtodo
+//#99#//Sintaxe da fun√ß√£o ou m√©todo
 //#99#////#20#//
-//#99#//Par‚metros fornecidos para a funÁ„o ou mÈtodo, como mostra a sintaxe *//#10#//*
+//#99#//Par√¢metros fornecidos para a fun√ß√£o ou m√©todo, como mostra a sintaxe *//#10#//*
 //#99#////#30#//
-//#99#//Propriedades ou variaveis de funÁ„o
+//#99#//Propriedades ou variaveis de fun√ß√£o
 //#99#////#40#//
-//#99#//Retorno da funÁ„o ou mÈtodo
+//#99#//Retorno da fun√ß√£o ou m√©todo
 //#99#////#99#//
-//#99#//ObservaÁ„o sobre a funÁ„o ou mÈtodo
+//#99#//Observa√ß√£o sobre a fun√ß√£o ou m√©todo
 
 
 
@@ -49,29 +49,29 @@
 
 
 //#00#//db_opcao
-//#10#//OpÁ„o do sistema para inclus„o, alteraÁ„o ou exclus„o em formul·rios
-//#99#// 1 - Inclus„o
-//#99#// 2 - AlteraÁ„o
-//#99#//22 - Inicio do formul·rio antes de selecionar um Ìtem para alterar
-//#99#// 3 - Exclus„o
-//#99#//33 - Inicio do formul·rio antes de selecionar um Ìtem para excluir
-//#99#// 5 - Objeto desabilitado no formul·rio ( disabled )
+//#10#//Op√ß√£o do sistema para inclus√£o, altera√ß√£o ou exclus√£o em formul√°rios
+//#99#// 1 - Inclus√£o
+//#99#// 2 - Altera√ß√£o
+//#99#//22 - Inicio do formul√°rio antes de selecionar um √≠tem para alterar
+//#99#// 3 - Exclus√£o
+//#99#//33 - Inicio do formul√°rio antes de selecionar um √≠tem para excluir
+//#99#// 5 - Objeto desabilitado no formul√°rio ( disabled )
 
 function db_inicio_transacao(){
 //#00#//db_inicio_transacao
-//#10#//funÁ„o para abrir uma transaÁ„o
+//#10#//fun√ß√£o para abrir uma transa√ß√£o
 //#15#//db_inicio_transacao();
-//#99#//Uma transaÁ„o È um conjunto de execuÁıes no banco de dados que dever„o ser gravadas somente
-//#99#//se todas as execuÁıes tiverem sucesso, caso contr·rio, nenhuma das execuÁıes dever· ser
+//#99#//Uma transa√ß√£o √© um conjunto de execu√ß√µes no banco de dados que dever√£o ser gravadas somente
+//#99#//se todas as execu√ß√µes tiverem sucesso, caso contr√°rio, nenhuma das execu√ß√µes dever√° ser
 //#99#//confirmada
   pg_query('BEGIN');
 }
 function db_fim_transacao($erro=false){
 //#00#//db_fim_transacao
-//#10#//funÁ„o para finalizar uma transaÁ„o
+//#10#//fun√ß√£o para finalizar uma transa√ß√£o
 //#15#//db_fim_transacao($erro=false);
-//#20#//false : Finaliza transaÁ„o com sucesso (commit)
-//#20#//true  : TransaÁ„o com erro, desfaz os procedimentos executados (rollback)
+//#20#//false : Finaliza transa√ß√£o com sucesso (commit)
+//#20#//true  : Transa√ß√£o com erro, desfaz os procedimentos executados (rollback)
   if($erro==true){
       pg_query('ROLLBACK');
   }else{
@@ -81,7 +81,7 @@ function db_fim_transacao($erro=false){
 }
 
 // Parametros do $tipo
-// 1  Bota as contas do plano que n„o existem no saltes
+// 1  Bota as contas do plano que n√£o existem no saltes
 // 2  Bota as contas do saltes
 // 3  Bota as contas do plano
 function db_contas($nome,$valor="",$tipo=1) {
@@ -153,17 +153,17 @@ function db_contas($nome,$valor="",$tipo=1) {
 //////////////////////////////////////
 function db_input($nome, $dbsize, $dbvalidatipo, $dbcadastro, $dbhidden = 'text', $db_opcao = 3, $js_script = "", $nomevar = "", $bgcolor = "", $css="") {
 		//#00#//db_input
-		//#10#//FunÁ„o para montar um input na tela, utilizando a documentaÁ„o do sistema
+		//#10#//Fun√ß√£o para montar um input na tela, utilizando a documenta√ß√£o do sistema
 		//#15#//db_input($nome,$dbsize,$dbvalidatipo,$dbcadastro,$dbhidden='text',$db_opcao=3,$js_script="",$nomevar="",$bgcolor="");
 		//#20#//Nome            : Nome do campo da documentacao do sistema ou do arquivo
-		//#20#//Tamanho         : Tamanho do objeto na tela (default tamanho na documentaÁ„o)
-		//#20#//Valid·Á„o       : Tipo de validaÁ„o JAVASCRIPT para o campo, retirado da documentaÁ„o 
-		//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr„o: true )
-		//#20#//Type            : Tipo do objeto INPUT a ser mostrado na tela (text,hidden,file,submit,button,...) Padr„o: text
-		//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3) 
-		//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os mÈtodos
-		//#20#//Nome Secund·rio : Nome do input que ser· gerado, assumindo somente as caracterÌsticas do campo Nome
-		//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser· "#DEB887"
+		//#20#//Tamanho         : Tamanho do objeto na tela (default tamanho na documenta√ß√£o)
+		//#20#//Valid√°√ß√£o       : Tipo de valida√ß√£o JAVASCRIPT para o campo, retirado da documenta√ß√£o 
+		//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr√£o: true )
+		//#20#//Type            : Tipo do objeto INPUT a ser mostrado na tela (text,hidden,file,submit,button,...) Padr√£o: text
+		//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3) 
+		//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os m√©todos
+		//#20#//Nome Secund√°rio : Nome do input que ser√° gerado, assumindo somente as caracter√≠sticas do campo Nome
+		//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser√° "#DEB887"
 ?>    
   <input title="<?=@$GLOBALS['T'.$nome]?>" name="<?=($nomevar==""?$nome:$nomevar)?>"  type="<?=$dbhidden?>" <?=($dbhidden=="checkbox"?(@$GLOBALS[($nomevar==""?$nome:$nomevar)]=="t"?"checked":""):"")?>
     id="<?=($nomevar==""?$nome:$nomevar)?>"  value="<?=@$GLOBALS[($nomevar==""?$nome:$nomevar)]?>"  size="<?=$dbsize?>" 
@@ -175,7 +175,7 @@ function db_input($nome, $dbsize, $dbvalidatipo, $dbcadastro, $dbhidden = 'text'
 	echo $js_script;
 	if ($dbcadastro == true) {
 		/*
-		    if ($db_opcao==3 || $db_opcao==22 || $db_opcao == 33){ sÛ coloquei a opcao 11...  dia 28-10-2004
+		    if ($db_opcao==3 || $db_opcao==22 || $db_opcao == 33){ s√≥ coloquei a opcao 11...  dia 28-10-2004
 		*/
 		if ($db_opcao == 3 || $db_opcao == 22 || $db_opcao == 33 || $db_opcao == 11) {
 			echo " readonly ";
@@ -231,18 +231,18 @@ function db_input($nome, $dbsize, $dbvalidatipo, $dbcadastro, $dbhidden = 'text'
 /*************************************/
 function db_textarea($nome,$dbsizelinha=1,$dbsizecoluna=1,$dbvalidatipo,$dbcadastro=true,$dbhidden='text',$db_opcao=3,$js_script="",$nomevar="",$bgcolor="") {
 //#00#//db_textarea
-//#10#//FunÁ„o para montar um textarea na tela do programa
+//#10#//Fun√ß√£o para montar um textarea na tela do programa
 //#15#//db_textarea($nome,$dbsizelinha=1,$dbsizecoluna=1,$dbvalidatipo,$dbcadastro=true,$dbhidden='text',$db_opcao=3,$js_script="",$nomevar="",$bgcolor="");
 //#20#//Nome            : Nome do campo da documentacao do sistema ou do arquivo
-//#20#//Numero Linhas   : N˙mero de linhas do objeto textarea
-//#20#//Numero Colunas  : N˙mero de Coluna do objeto textarea
-//#20#//Valid·Á„o       : Tipo de validaÁ„o JAVASCRIPT para o campo, retirado da documentaÁ„o
-//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr„o: true )
-//#20#//Type            : Tipo do objeto INPUT a ser mostrado na tela (text,hidden,type,submit,...) Padr„o: text
-//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3)
-//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os mÈtodos
-//#20#//Nome Secund·rio : Nome do input que ser· gerado, assumindo somente as caracterÌsticas do campo Nome
-//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser· "#DEB887"
+//#20#//Numero Linhas   : N√∫mero de linhas do objeto textarea
+//#20#//Numero Colunas  : N√∫mero de Coluna do objeto textarea
+//#20#//Valid√°√ß√£o       : Tipo de valida√ß√£o JAVASCRIPT para o campo, retirado da documenta√ß√£o
+//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr√£o: true )
+//#20#//Type            : Tipo do objeto INPUT a ser mostrado na tela (text,hidden,type,submit,...) Padr√£o: text
+//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3)
+//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os m√©todos
+//#20#//Nome Secund√°rio : Nome do input que ser√° gerado, assumindo somente as caracter√≠sticas do campo Nome
+//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser√° "#DEB887"
 
   ?>
   <textarea title="<?=@$GLOBALS['T'.$nome]?>" name="<?=($nomevar==""?$nome:$nomevar)?>"  type="<?=$dbhidden?>"
@@ -269,12 +269,12 @@ function db_textarea($nome,$dbsizelinha=1,$dbsizecoluna=1,$dbvalidatipo,$dbcadas
 }
 function db_ancora($nome, $js_script, $db_opcao, $style = "") {
   //#00#//db_ancora
-  //#10#//Coloca uma ‚ncora no Label do campo e executa uma funÁ„o JAVASCRIPT para pesquisa do arquivo em referencia
+  //#10#//Coloca uma √¢ncora no Label do campo e executa uma fun√ß√£o JAVASCRIPT para pesquisa do arquivo em referencia
   //#15#//db_ancora($nome,$js_script,$db_opcao,$style="");
-  //#20#//Nome : Nome do campo da documentaÁ„o do sistema ou do arquivo
-  //#20#//Script : FunÁ„o JAVASCRIPT que ser· executado no onclik do objeto label
-  //#20#//Opcao : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3)
-  //#20#//Style : OpÁ„o para programador mudar o estilo da ‚ncora
+  //#20#//Nome : Nome do campo da documenta√ß√£o do sistema ou do arquivo
+  //#20#//Script : Fun√ß√£o JAVASCRIPT que ser√° executado no onclik do objeto label
+  //#20#//Opcao : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3)
+  //#20#//Style : Op√ß√£o para programador mudar o estilo da √¢ncora
   if (($db_opcao < 3) || ($db_opcao == 4)) {
   ?>
     <a href='#' class="titulo" onclick="<?=$js_script?>"><?=$nome?></a>
@@ -288,31 +288,31 @@ function db_ancora($nome, $js_script, $db_opcao, $style = "") {
 
 function db_selectrecord($nome,$record,$dbcadastro,$db_opcao=3,$js_script="",$nomevar="",$bgcolor="",$todos="",$onchange="",$numcol=2){
 //#00#//db_selectrecord
-//#10#//FunÁ„o para montar um ou dois objetos select na tela, recebendo dados de um recordset
+//#10#//Fun√ß√£o para montar um ou dois objetos select na tela, recebendo dados de um recordset
 //#15#//db_selectrecord($nome,$record,$dbcadastro,$db_opcao=3,$js_script="",$nomevar="",$bgcolor="",$todos="",$onchange="",$numcol=2);
 //#20#//Nome            : Nome do ca po da documentacao do sistema ou do arquivo
-//#20#//Record Set      : Recordset que gerar· os objetos select, sendo o primeiro campo do recordset o campo chave
+//#20#//Record Set      : Recordset que gerar√° os objetos select, sendo o primeiro campo do recordset o campo chave
 //#20#//                  e o segundo campo a descricao.
-//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr„o: true )
-//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3)
-//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os mÈtodos
-//#20#//Nome Secund·rio : Nome do input que ser· gerado, assumindo somente as caracterÌsticas do campo Nome
-//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser· "#DEB887"
-//#20#//Todos           : Indica de ser· colocado um Ìtem inicial com opÁ„o de todos "Todos ..." com valor zero (0)
-//#20#//OnChange        : FunÁ„o que ser· incluÌda no mÈtodo onchange dos objetos select, alÈm das funÁıe ja incluÌdas
+//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr√£o: true )
+//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3)
+//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os m√©todos
+//#20#//Nome Secund√°rio : Nome do input que ser√° gerado, assumindo somente as caracter√≠sticas do campo Nome
+//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser√° "#DEB887"
+//#20#//Todos           : Indica de ser√° colocado um √≠tem inicial com op√ß√£o de todos "Todos ..." com valor zero (0)
+//#20#//OnChange        : Fun√ß√£o que ser√° inclu√≠da no m√©todo onchange dos objetos select, al√©m das fun√ß√µe ja inclu√≠das
 //#20#//                  que servem para movimentar os select. Sempre que alterar um deles, o sistema altera o outro
-//#20#//Numero Select   : N˙mero de select que ser„o mostrados na tela. O padr„o È dois, caso seja indicado este
-//#20#//                  par‚metro, o sistema mostrar· somente o select do segundo campo (descriÁ„o) e retornar· o
-//#20#//                  cÛdigo do Ìtem, o valor do primeiro campo
-//#99#//Quando o par‚metro *db_opcao* for de alteraÁ„o (Opcao = 22) ou exclus„o (OpÁ„o = 33) o sistema
-//#99#//n„o mostrar· os objetos desta funÁ„o e sim executar· o objeto INPUT com as opÁıes deste
-//#99#//objeto. Isto faz com que o usu·rio n„o movimente um select enquanto n„o selecionar um
-//#99#//cÛdigo de registro para alterar ou excluir
+//#20#//Numero Select   : N√∫mero de select que ser√£o mostrados na tela. O padr√£o √© dois, caso seja indicado este
+//#20#//                  par√¢metro, o sistema mostrar√° somente o select do segundo campo (descri√ß√£o) e retornar√° o
+//#20#//                  c√≥digo do √≠tem, o valor do primeiro campo
+//#99#//Quando o par√¢metro *db_opcao* for de altera√ß√£o (Opcao = 22) ou exclus√£o (Op√ß√£o = 33) o sistema
+//#99#//n√£o mostrar√° os objetos desta fun√ß√£o e sim executar√° o objeto INPUT com as op√ß√µes deste
+//#99#//objeto. Isto faz com que o usu√°rio n√£o movimente um select enquanto n√£o selecionar um
+//#99#//c√≥digo de registro para alterar ou excluir
 //#99#//
-//#99#//O tamanho do objeto na tela depender· do tamanho do campo inserido no select
+//#99#//O tamanho do objeto na tela depender√° do tamanho do campo inserido no select
 //#99#//
-//#99#//ApÛs montar o select, sistema executa uma funÁ„o javascript para selecionar o elemento
-//#99#//do select que possui o mesmo valor do campo indicado na vari·vel Nome
+//#99#//Ap√≥s montar o select, sistema executa uma fun√ß√£o javascript para selecionar o elemento
+//#99#//do select que possui o mesmo valor do campo indicado na vari√°vel Nome
   if($nomevar!=""){
     $nome = $nomevar;
         $nomedescr = $nomevar."descr";
@@ -459,22 +459,22 @@ function db_selectrecord($nome,$record,$dbcadastro,$db_opcao=3,$js_script="",$no
 
 function db_selectmultiple($nome,$record,$size,$db_opcao=3,$js_script="",$nomevar="",$bgcolor="",$record_select="",$onchange=""){
 //#00#//db_selectmultiple
-//#10#//FunÁ„o para montar um objeto select do tipo multiple (multiplas linhas) na tela, recebendo dados de um recordset
+//#10#//Fun√ß√£o para montar um objeto select do tipo multiple (multiplas linhas) na tela, recebendo dados de um recordset
 //#15#//db_selectmultiple($nome,$record,$size,$db_opcao=3,$js_script="",$nomevar="",$bgcolor="",$record_select="",$onchange="");
 //#20#//Nome            : Nome do ca po da documentacao do sistema ou do arquivo
 //#20#//Record Set      : Recordset que gera o objeto select, sendo o primeiro campo do recordset o campo chave
-//#20#//                  e o segundo campo a descricao que aparecer· na tela
-//#20#//Tamanho         : N˙mero de linhas que o objeto ocupar· na tela
-//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3)
-//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os mÈtodos
-//#20#//Nome Secund·rio : Nome do input que ser· gerado, assumindo somente as caracterÌsticas do campo Nome
-//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser· "#DEB887"
-//#20#//Record Set      : Este recordset enviado para a funÁ„o ter· os valores que ser„o habilitados no objeto select
+//#20#//                  e o segundo campo a descricao que aparecer√° na tela
+//#20#//Tamanho         : N√∫mero de linhas que o objeto ocupar√° na tela
+//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3)
+//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os m√©todos
+//#20#//Nome Secund√°rio : Nome do input que ser√° gerado, assumindo somente as caracter√≠sticas do campo Nome
+//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser√° "#DEB887"
+//#20#//Record Set      : Este recordset enviado para a fun√ß√£o ter√° os valores que ser√£o habilitados no objeto select
 //#20#//                  multiple, colocandos-os com a propriedade selected habilidata
-//#20#//OnChange        : FunÁ„o ou funÁıes que ser„o incluÌdas no mÈtodo onchange dos objetos select.
-//#99#//Quando o par‚metro OpÁ„o for de alteraÁ„o (Opcao = 22) ou exclus„o (OpÁ„o = 33) o sistema
-//#99#//n„o mostrar· os objetos desta funÁ„o e sim executar· o objeto SELECT com as opÁıes do
-//#99#//segundo recordset, mostrando somente os dados cadastrados no cÛdigo de registro para alterar
+//#20#//OnChange        : Fun√ß√£o ou fun√ß√µes que ser√£o inclu√≠das no m√©todo onchange dos objetos select.
+//#99#//Quando o par√¢metro Op√ß√£o for de altera√ß√£o (Opcao = 22) ou exclus√£o (Op√ß√£o = 33) o sistema
+//#99#//n√£o mostrar√° os objetos desta fun√ß√£o e sim executar√° o objeto SELECT com as op√ß√µes do
+//#99#//segundo recordset, mostrando somente os dados cadastrados no c√≥digo de registro para alterar
 //#99#//ou excluir
 if($nomevar!=""){
     $nome = $nomevar;
@@ -536,23 +536,23 @@ if($nomevar!=""){
 
 function db_select($nome,$db_matriz,$dbcadastro,$db_opcao=3,$js_script="",$nomevar="",$bgcolor=""){
 //#00#//db_select
-//#10#//FunÁ„o para montar um objeto select na tela, recebendo dados de uma matriz
+//#10#//Fun√ß√£o para montar um objeto select na tela, recebendo dados de uma matriz
 //#15#//db_select($nome,$db_matriz,$dbcadastro,$db_opcao=3,$js_script="",$nomevar="",$bgcolor="");
 //#20#//Nome            : Nome do campo da documentacao do sistema ou do arquivo
 //#20#//Matriz          : Matriz com os dados a serem colocados no select, sendo a chave (key) da matriz o valor
-//#20#//                  a ser retornado e o conte˙do da matriz o valor a ser mostrado na tela
-//#20#//                  ex: $x = array("1"=>"um") 1=key e um=conte˙do;
-//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr„o: true )
-//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3)
-//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os mÈtodos
-//#20#//Nome Secund·rio : Nome do input que ser· gerado, assumindo somente as caracterÌsticas do campo Nome
-//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser· "#DEB887"
-//#99#//Quando o par‚metro OpÁ„o for de alteraÁ„o (Opcao = 22) ou exclus„o (OpÁ„o = 33) o sistema
-//#99#//n„o mostrar· o objeto desta funÁ„o e sim executar· o objeto INPUT e colocar· o valor do
-//#99#//conte˙do para este bjeto
+//#20#//                  a ser retornado e o conte√∫do da matriz o valor a ser mostrado na tela
+//#20#//                  ex: $x = array("1"=>"um") 1=key e um=conte√∫do;
+//#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr√£o: true )
+//#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3)
+//#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os m√©todos
+//#20#//Nome Secund√°rio : Nome do input que ser√° gerado, assumindo somente as caracter√≠sticas do campo Nome
+//#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser√° "#DEB887"
+//#99#//Quando o par√¢metro Op√ß√£o for de altera√ß√£o (Opcao = 22) ou exclus√£o (Op√ß√£o = 33) o sistema
+//#99#//n√£o mostrar√° o objeto desta fun√ß√£o e sim executar√° o objeto INPUT e colocar√° o valor do
+//#99#//conte√∫do para este bjeto
 //#99#//
-//#99#//O sistema verifica o valor do campo Nome (conte˙do do campo) e verifica se algum dos
-//#99#//campos key da matriz È igual a ele, ent„o coloca a propriedade SELECTED habilitada
+//#99#//O sistema verifica o valor do campo Nome (conte√∫do do campo) e verifica se algum dos
+//#99#//campos key da matriz √© igual a ele, ent√£o coloca a propriedade SELECTED habilitada
 //#99#//para este elemento, deixando-o selecionado na tela
   if($db_opcao != 3 && $db_opcao != 5 && $db_opcao!=22 && $db_opcao !=33){
     ?>
@@ -616,31 +616,31 @@ function db_select($nome,$db_matriz,$dbcadastro,$db_opcao=3,$js_script="",$nomev
 
 function db_inputdata($nome, $dia = "", $mes = "", $ano = "", $dbcadastro = true, $dbtype = 'text', $db_opcao = 3, $js_script = "", $nomevar = "", $bgcolor = "",$shutdown_function="none",$onclickBT="", $onfocus="", $jsRetornoCal=""){
     //#00#//db_inputdata
-    //#10#//FunÁ„o para montar um objeto tipo data. Ser„o trÍs objetos input na tela mais um objeto input tipo button para 
-    //#10#//acessar o calend·rio do sistema
+    //#10#//Fun√ß√£o para montar um objeto tipo data. Ser√£o tr√™s objetos input na tela mais um objeto input tipo button para 
+    //#10#//acessar o calend√°rio do sistema
     //#15#//db_inputdata($nome,$dia="",$mes="",$ano="",$dbcadastro=true,$dbtype='text',$db_opcao=3,$js_script="",$nomevar="",$bgcolor="",$shutdown_funcion="none",$onclickBT="",$onfocus"");
     //#20#//Nome            : Nome do campo da documentacao do sistema ou do arquivo
     //#20#//Dia             : Valor para o objeto |db_input| do dia
-    //#20#//MÍs             : Valor para o objeto |db_input| do mÍs
+    //#20#//M√™s             : Valor para o objeto |db_input| do m√™s
     //#20#//Ano             : Valor para o objeto |db_input| do ano
-    //#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr„o: true 
-    //#20#//Type            : Tipo a ser incluido para a data Padr„o: text
-    //#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus„o(1) alteraÁ„o(2) exclus„o(3)
-    //#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os mÈtodos
-    //#20#//Nome Secund·rio : Nome do input que ser· gerado, assumindo somente as caracterÌsticas do campo Nome
-    //#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser· "#DEB887"
-    //#20#//shutdown_funcion : funÁ„o que ser· executada apos o retorno do calend·rio
-    //#20#//onclickBT       : FunÁ„o que ser· executada ao clicar no bot„o que abre o calend·rio
-    //#20#//onfocus         : FunÁ„o que ser· executada ao focar os campos
-    //#99#//Quando o par‚metro OpÁ„o for de alteraÁ„o (Opcao = 22) ou exclus„o (OpÁ„o = 33) o sistema
-    //#99#//colocar· a sem acesso ao calend·rio
-    //#99#//Para *db_opcao* 3 e 5 o sistema colocar· sem o calend·rio e com readonly
+    //#20#//Cadastro        : True se cadastro ou false se nao cadastro Padr√£o: true 
+    //#20#//Type            : Tipo a ser incluido para a data Padr√£o: text
+    //#20#//Opcao           : *db_opcao* do programa a ser executado neste objeto input, inclus√£o(1) altera√ß√£o(2) exclus√£o(3)
+    //#20#//Script          : JAVASCRIPT  a ser executado juntamento com o objeto, indicando os m√©todos
+    //#20#//Nome Secund√°rio : Nome do input que ser√° gerado, assumindo somente as caracter√≠sticas do campo Nome
+    //#20#//Cor Background  : Cor de fundo da tela, no caso de *db_opcao*=3 ser√° "#DEB887"
+    //#20#//shutdown_funcion : fun√ß√£o que ser√° executada apos o retorno do calend√°rio
+    //#20#//onclickBT       : Fun√ß√£o que ser√° executada ao clicar no bot√£o que abre o calend√°rio
+    //#20#//onfocus         : Fun√ß√£o que ser√° executada ao focar os campos
+    //#99#//Quando o par√¢metro Op√ß√£o for de altera√ß√£o (Opcao = 22) ou exclus√£o (Op√ß√£o = 33) o sistema
+    //#99#//colocar√° a sem acesso ao calend√°rio
+    //#99#//Para *db_opcao* 3 e 5 o sistema colocar√° sem o calend√°rio e com readonly
     //#99#//
-    //#99#//Os trÍs input gerados para a data ter„o o nome do campo acrescido do [Nome]_dia, [Nome]_mes e
-    //#99#//[Nome]_ano os quais ser„o acessados pela classe com estes nome.
+    //#99#//Os tr√™s input gerados para a data ter√£o o nome do campo acrescido do [Nome]_dia, [Nome]_mes e
+    //#99#//[Nome]_ano os quais ser√£o acessados pela classe com estes nome.
     //#99#//
-    //#99#//O sistema ger· para a primeira data incluÌda um formul·rio, um objeto de JanelaIframe do nosso
-    //#99#//sistema para que sej· mostrado o calend·rio.
+    //#99#//O sistema ger√° para a primeira data inclu√≠da um formul√°rio, um objeto de JanelaIframe do nosso
+    //#99#//sistema para que sej√° mostrado o calend√°rio.
 
   global $DataJavaScript;
   //  if(!isset($DataJavaScript)) {
@@ -649,7 +649,7 @@ function db_inputdata($nome, $dia = "", $mes = "", $ano = "", $dbcadastro = true
   //    $DataJavaScript->posY=200;
   //    $DataJavaScript->largura=140;
   //    $DataJavaScript->altura=210;
-  //    $DataJavaScript->titulo="Calend·rio";
+  //    $DataJavaScript->titulo="Calend√°rio";
   //    $DataJavaScript->iniciarVisivel = false;
   //    $DataJavaScript->scrollbar = "no";
   //    $DataJavaScript->janBotoes = "001";
@@ -717,7 +717,7 @@ function db_inputdata($nome, $dia = "", $mes = "", $ano = "", $dbcadastro = true
     $DataJavaScript->posY=1;
     $DataJavaScript->largura=140;
     $DataJavaScript->altura=210;
-    $DataJavaScript->titulo="Calend·rio";
+    $DataJavaScript->titulo="Calend√°rio";
     $DataJavaScript->iniciarVisivel = false;
     $DataJavaScript->scrollbar = "no";
     $DataJavaScript->janBotoes = "001";
@@ -808,7 +808,7 @@ function db_getfile($arq,$text,$funcao="0") {
           return "";
         }
   } else if($name != "" && $size == 0) {
-      db_erro("O arquivo $name n„o foi encontrado ou ele est· vazio. Verifique o seu caminho e o seu tamanho e tente novamente.");
+      db_erro("O arquivo $name n√£o foi encontrado ou ele est√° vazio. Verifique o seu caminho e o seu tamanho e tente novamente.");
   } else {
     copy($tmp_name,"$DB_FILES/$text");
     return $text;

@@ -57,19 +57,19 @@ class cl_protparam {
    var $p90_imprimevar = 'f'; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 p90_emiterecib = bool = Emite recibo na inclusão do processo 
-                 p90_alteracgmprot = bool = Obriga alterar CGM durante a inclusão de processo 
-                 p90_valcpfcnpj = bool = Valida CPF/CNPJ na inclusão de Processo 
-                 p90_impusuproc = bool = Imprime o usuário na capa do processo 
+                 p90_emiterecib = bool = Emite recibo na inclusÃ£o do processo 
+                 p90_alteracgmprot = bool = Obriga alterar CGM durante a inclusÃ£o de processo 
+                 p90_valcpfcnpj = bool = Valida CPF/CNPJ na inclusÃ£o de Processo 
+                 p90_impusuproc = bool = Imprime o usuÃ¡rio na capa do processo 
                  p90_debiaber = bool = Verifica se o contribuinte tem debitos em aberto 
-                 p90_taxagrupo = int4 = Código do grupo 
-                 p90_histpadcert = text = Historico padrão para certidões 
-                 p90_despachoob = bool = Despacho Obrigatório 
-                 p90_minchardesp = int4 = Minímo de Caracteres p/ o despacho 
+                 p90_taxagrupo = int4 = CÃ³digo do grupo 
+                 p90_histpadcert = text = Historico padrÃ£o para certidÃµes 
+                 p90_despachoob = bool = Despacho ObrigatÃ³rio 
+                 p90_minchardesp = int4 = MinÃ­mo de Caracteres p/ o despacho 
                  p90_andatual = bool = Mostra andamento atual 
-                 p90_traminic = int4 = Trâmite 
+                 p90_traminic = int4 = TrÃ¢mite 
                  p90_modelcapaproc = int4 = Modelo da Capa do Processo 
-                 p90_imprimevar = bool = Impressão de variáveis 
+                 p90_imprimevar = bool = ImpressÃ£o de variÃ¡veis 
                  ";
    //funcao construtor da classe 
    function cl_protparam() { 
@@ -109,37 +109,37 @@ class cl_protparam {
    function incluir (){ 
       $this->atualizacampos();
      if($this->p90_emiterecib == null ){ 
-       $this->erro_sql = " Campo Emite recibo na inclusão do processo nao Informado.";
+       $this->erro_sql = " Campo Emite recibo na inclusÃ£o do processo nao Informado.";
        $this->erro_campo = "p90_emiterecib";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_alteracgmprot == null ){ 
-       $this->erro_sql = " Campo Obriga alterar CGM durante a inclusão de processo nao Informado.";
+       $this->erro_sql = " Campo Obriga alterar CGM durante a inclusÃ£o de processo nao Informado.";
        $this->erro_campo = "p90_alteracgmprot";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_valcpfcnpj == null ){ 
-       $this->erro_sql = " Campo Valida CPF/CNPJ na inclusão de Processo nao Informado.";
+       $this->erro_sql = " Campo Valida CPF/CNPJ na inclusÃ£o de Processo nao Informado.";
        $this->erro_campo = "p90_valcpfcnpj";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_impusuproc == null ){ 
-       $this->erro_sql = " Campo Imprime o usuário na capa do processo nao Informado.";
+       $this->erro_sql = " Campo Imprime o usuÃ¡rio na capa do processo nao Informado.";
        $this->erro_campo = "p90_impusuproc";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -148,34 +148,34 @@ class cl_protparam {
        $this->erro_sql = " Campo Verifica se o contribuinte tem debitos em aberto nao Informado.";
        $this->erro_campo = "p90_debiaber";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_taxagrupo == null ){ 
-       $this->erro_sql = " Campo Código do grupo nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo do grupo nao Informado.";
        $this->erro_campo = "p90_taxagrupo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_histpadcert == null ){ 
-       $this->erro_sql = " Campo Historico padrão para certidões nao Informado.";
+       $this->erro_sql = " Campo Historico padrÃ£o para certidÃµes nao Informado.";
        $this->erro_campo = "p90_histpadcert";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_despachoob == null ){ 
-       $this->erro_sql = " Campo Despacho Obrigatório nao Informado.";
+       $this->erro_sql = " Campo Despacho ObrigatÃ³rio nao Informado.";
        $this->erro_campo = "p90_despachoob";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -187,16 +187,16 @@ class cl_protparam {
        $this->erro_sql = " Campo Mostra andamento atual nao Informado.";
        $this->erro_campo = "p90_andatual";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_traminic == null ){ 
-       $this->erro_sql = " Campo Trâmite nao Informado.";
+       $this->erro_sql = " Campo TrÃ¢mite nao Informado.";
        $this->erro_campo = "p90_traminic";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -205,16 +205,16 @@ class cl_protparam {
        $this->erro_sql = " Campo Modelo da Capa do Processo nao Informado.";
        $this->erro_campo = "p90_modelcapaproc";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p90_imprimevar == null ){ 
-       $this->erro_sql = " Campo Impressão de variáveis nao Informado.";
+       $this->erro_sql = " Campo ImpressÃ£o de variÃ¡veis nao Informado.";
        $this->erro_campo = "p90_imprimevar";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -253,13 +253,13 @@ class cl_protparam {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Manutenção de Parametros do Protocolo () nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Manutenção de Parametros do Protocolo já Cadastrado";
+         $this->erro_sql   = "ManutenÃ§Ã£o de Parametros do Protocolo () nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "ManutenÃ§Ã£o de Parametros do Protocolo jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Manutenção de Parametros do Protocolo () nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "ManutenÃ§Ã£o de Parametros do Protocolo () nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -268,7 +268,7 @@ class cl_protparam {
      }
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -283,10 +283,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_emiterecib = '$this->p90_emiterecib' ";
        $virgula = ",";
        if(trim($this->p90_emiterecib) == null ){ 
-         $this->erro_sql = " Campo Emite recibo na inclusão do processo nao Informado.";
+         $this->erro_sql = " Campo Emite recibo na inclusÃ£o do processo nao Informado.";
          $this->erro_campo = "p90_emiterecib";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -296,10 +296,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_alteracgmprot = '$this->p90_alteracgmprot' ";
        $virgula = ",";
        if(trim($this->p90_alteracgmprot) == null ){ 
-         $this->erro_sql = " Campo Obriga alterar CGM durante a inclusão de processo nao Informado.";
+         $this->erro_sql = " Campo Obriga alterar CGM durante a inclusÃ£o de processo nao Informado.";
          $this->erro_campo = "p90_alteracgmprot";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -309,10 +309,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_valcpfcnpj = '$this->p90_valcpfcnpj' ";
        $virgula = ",";
        if(trim($this->p90_valcpfcnpj) == null ){ 
-         $this->erro_sql = " Campo Valida CPF/CNPJ na inclusão de Processo nao Informado.";
+         $this->erro_sql = " Campo Valida CPF/CNPJ na inclusÃ£o de Processo nao Informado.";
          $this->erro_campo = "p90_valcpfcnpj";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -322,10 +322,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_impusuproc = '$this->p90_impusuproc' ";
        $virgula = ",";
        if(trim($this->p90_impusuproc) == null ){ 
-         $this->erro_sql = " Campo Imprime o usuário na capa do processo nao Informado.";
+         $this->erro_sql = " Campo Imprime o usuÃ¡rio na capa do processo nao Informado.";
          $this->erro_campo = "p90_impusuproc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -338,7 +338,7 @@ class cl_protparam {
          $this->erro_sql = " Campo Verifica se o contribuinte tem debitos em aberto nao Informado.";
          $this->erro_campo = "p90_debiaber";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -348,10 +348,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_taxagrupo = $this->p90_taxagrupo ";
        $virgula = ",";
        if(trim($this->p90_taxagrupo) == null ){ 
-         $this->erro_sql = " Campo Código do grupo nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do grupo nao Informado.";
          $this->erro_campo = "p90_taxagrupo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -361,10 +361,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_histpadcert = '$this->p90_histpadcert' ";
        $virgula = ",";
        if(trim($this->p90_histpadcert) == null ){ 
-         $this->erro_sql = " Campo Historico padrão para certidões nao Informado.";
+         $this->erro_sql = " Campo Historico padrÃ£o para certidÃµes nao Informado.";
          $this->erro_campo = "p90_histpadcert";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -374,10 +374,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_despachoob = '$this->p90_despachoob' ";
        $virgula = ",";
        if(trim($this->p90_despachoob) == null ){ 
-         $this->erro_sql = " Campo Despacho Obrigatório nao Informado.";
+         $this->erro_sql = " Campo Despacho ObrigatÃ³rio nao Informado.";
          $this->erro_campo = "p90_despachoob";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -397,7 +397,7 @@ class cl_protparam {
          $this->erro_sql = " Campo Mostra andamento atual nao Informado.";
          $this->erro_campo = "p90_andatual";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -407,10 +407,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_traminic = $this->p90_traminic ";
        $virgula = ",";
        if(trim($this->p90_traminic) == null ){ 
-         $this->erro_sql = " Campo Trâmite nao Informado.";
+         $this->erro_sql = " Campo TrÃ¢mite nao Informado.";
          $this->erro_campo = "p90_traminic";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -423,7 +423,7 @@ class cl_protparam {
          $this->erro_sql = " Campo Modelo da Capa do Processo nao Informado.";
          $this->erro_campo = "p90_modelcapaproc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -433,10 +433,10 @@ class cl_protparam {
        $sql  .= $virgula." p90_imprimevar = '$this->p90_imprimevar' ";
        $virgula = ",";
        if(trim($this->p90_imprimevar) == null ){ 
-         $this->erro_sql = " Campo Impressão de variáveis nao Informado.";
+         $this->erro_sql = " Campo ImpressÃ£o de variÃ¡veis nao Informado.";
          $this->erro_campo = "p90_imprimevar";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -446,8 +446,8 @@ class cl_protparam {
 $sql .= "oid = '$oid'";     $result = @pg_exec($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Manutenção de Parametros do Protocolo nao Alterado. Alteracao Abortada.\\n";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_sql   = "ManutenÃ§Ã£o de Parametros do Protocolo nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -455,16 +455,16 @@ $sql .= "oid = '$oid'";     $result = @pg_exec($sql);
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Manutenção de Parametros do Protocolo nao foi Alterado. Alteracao Executada.\\n";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = "ManutenÃ§Ã£o de Parametros do Protocolo nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -485,8 +485,8 @@ $sql .= "oid = '$oid'";     $result = @pg_exec($sql);
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Manutenção de Parametros do Protocolo nao Excluído. Exclusão Abortada.\\n";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_sql   = "ManutenÃ§Ã£o de Parametros do Protocolo nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -494,16 +494,16 @@ $sql .= "oid = '$oid'";     $result = @pg_exec($sql);
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Manutenção de Parametros do Protocolo nao Encontrado. Exclusão não Efetuada.\\n";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = "ManutenÃ§Ã£o de Parametros do Protocolo nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -518,7 +518,7 @@ $sql .= "oid = '$oid'";     $result = @pg_exec($sql);
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -527,7 +527,7 @@ $sql .= "oid = '$oid'";     $result = @pg_exec($sql);
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:protparam";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

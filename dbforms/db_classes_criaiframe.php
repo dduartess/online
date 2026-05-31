@@ -124,7 +124,7 @@ function js_retorna(qtipo,<?php  $virgula = "";
 	    $Llabel="L$campo";
 	    echo "   <td class='cabec' ".($cabecnowrap=="true"?"nowrap":"")." title='".$$Tlabel."'>".str_replace(":","",$$Llabel)."</td>\n";
 	  }  
-          echo  "    <td class='cabec' title='Alterar ou Excluir'><b>Opções</b></td>";
+          echo  "    <td class='cabec' title='Alterar ou Excluir'><b>OpÃ§Ãµes</b></td>";
           echo "   </tr>"; 	   
           $cabec=true;
        }elseif(!$numrows>0){
@@ -160,14 +160,14 @@ function js_retorna(qtipo,<?php  $virgula = "";
   	         echo "<td class='corpo'><span >&nbsp;A&nbsp;</span>&nbsp;&nbsp;&nbsp;<span class='x'>&nbsp;E&nbsp;</span></td>\n";
 	       }else{
     	         $coluna = "<td class='corpo'>";
-       	         $coluna.= "<a title='ALTERAR CONTEÚDO DA LINHA' href='#' onclick='js_retorna(\"alterar\"";
+       	         $coluna.= "<a title='ALTERAR CONTEÃšDO DA LINHA' href='#' onclick='js_retorna(\"alterar\"";
 	         $virgula = ",";
 	         for($ww=0;$ww<sizeof($quais_chaves);$ww++){
 	           $coluna .= $virgula."\"".$$quais_chaves[$ww]."\"";
                  }
 	         $coluna.= ");return false;'>&nbsp;A&nbsp;</a>\n";
 	         $coluna.="&nbsp;&nbsp;&nbsp;"; 
-     	         $coluna.="<a title='EXCLUIR CONTEÚDO DA LINHA' href='#' onclick='js_retorna(\"excluir\"";
+     	         $coluna.="<a title='EXCLUIR CONTEÃšDO DA LINHA' href='#' onclick='js_retorna(\"excluir\"";
 	         $virgula = ",";
 	         for($ww=0;$ww<sizeof($quais_chaves);$ww++){
 	           $coluna .= $virgula."\"".$$quais_chaves[$ww]."\"";

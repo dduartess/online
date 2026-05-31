@@ -150,7 +150,7 @@ else
 	  break;
     case "receita":
       if($chave_valor!= "" && $lista == ""){
-        $sql = "select (k02_codigo || '##' || k02_drecei|| '##'  || k02_codigo ||'##' || k02_descr::varchar|| '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'Orçamentária' else 'Extra-Orçamentária' end
+        $sql = "select (k02_codigo || '##' || k02_drecei|| '##'  || k02_codigo ||'##' || k02_descr::varchar|| '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'OrÃ§amentÃ¡ria' else 'Extra-OrÃ§amentÃ¡ria' end
 	            from tabrec
   			         inner join tabrecjm on tabrecjm.k02_codjm = tabrec.k02_codjm
 			    where k02_codigo = ".$chave_valor."
@@ -203,20 +203,20 @@ else
 		  }
 		}
 	    if($sqltem == true){
-          $sql = "select (k02_codigo || '##' || k02_drecei|| '##'  || k02_codigo ||'##' || k02_descr::varchar|| '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'Orçamentária' else 'Extra-Orçamentária' end
+          $sql = "select (k02_codigo || '##' || k02_drecei|| '##'  || k02_codigo ||'##' || k02_descr::varchar|| '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'OrÃ§amentÃ¡ria' else 'Extra-OrÃ§amentÃ¡ria' end
 	              from tabrec
 				       inner join tabrecjm on tabrecjm.k02_codjm = tabrec.k02_codjm
 		          order by k02_codigo";
 		}
 	  }else{
-        $sql = "select ( k02_codigo || '##' || k02_drecei|| '##'  || k02_codigo ||'##' || k02_descr::varchar || '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'Orçamentária' else 'Extra-Orçamentária' end
+        $sql = "select ( k02_codigo || '##' || k02_drecei|| '##'  || k02_codigo ||'##' || k02_descr::varchar || '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'OrÃ§amentÃ¡ria' else 'Extra-OrÃ§amentÃ¡ria' end
 	            from tabrec
   			         inner join tabrecjm on tabrecjm.k02_codjm = tabrec.k02_codjm
 		        order by k02_codigo";
       }
 	  break;
     case "descrreceita":
-      $sql = "select ( k02_drecei || '##' || k02_codigo || '##' || k02_codigo || '##' || k02_descr::varchar || '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'Orçamentária' else 'Extra-Orçamentária' end
+      $sql = "select ( k02_drecei || '##' || k02_codigo || '##' || k02_codigo || '##' || k02_descr::varchar || '##' || k02_tipo::varchar) as db_receita,k02_codigo as Codigo,k02_drecei as Descricao,k02_descr as Compl,case when k02_tipo = 'O' then 'OrÃ§amentÃ¡ria' else 'Extra-OrÃ§amentÃ¡ria' end
 	          from tabrec
   			       inner join tabrecjm on tabrecjm.k02_codjm = tabrec.k02_codjm
 			  where k02_drecei like '".$chave_valor."%'
@@ -227,7 +227,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
 function js_verificavalor(){
     opener.parent.corpo.document.form1.dbh_receita.value = '<?=$rec[0]?>';

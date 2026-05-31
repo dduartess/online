@@ -71,16 +71,16 @@ if($cllistainscr->numrows > 0){
   $result1 = $clcgm->sql_record($clcgm->sql_query($p11_numcgm));
   db_fieldsmemory($result1,0);
   
-  $pdf->MultiCell(190,4,"".$z01_nome.", vem pela presente requerer habilitação e/ou desabilitação de acesso via internet do Cadastro Fiscal do Município de ".@$munic." ( ".@$url."/dbpref) dos contribuintes a seguir relacionados conforme o tipo de lançamento:",0,"J",0,15);
+  $pdf->MultiCell(190,4,"".$z01_nome.", vem pela presente requerer habilitaÃ§Ã£o e/ou desabilitaÃ§Ã£o de acesso via internet do Cadastro Fiscal do MunicÃ­pio de ".@$munic." ( ".@$url."/dbpref) dos contribuintes a seguir relacionados conforme o tipo de lanÃ§amento:",0,"J",0,15);
   $pdf->ln(5);
   $posicao = $pdf->getY();
   $pdf->SetFont($Letra,'B',7);
   $pdf->SetFillColor(235);
-  $pdf->Cell(25,4,"INSCRIÇÃO ",1,0,"C",1);
+  $pdf->Cell(25,4,"INSCRIÃ‡ÃƒO ",1,0,"C",1);
   $pdf->Cell(35,4,"CNPJ / CPF",1,0,"C",1);
   $pdf->Cell(26,4,"TELEFONE ",1,0,"C",1);
   $pdf->Cell(70,4,"NOME ",1,0,"C",1);
-  $pdf->Cell(34,4,"TIPO LANÇAMENTO ",1,1,"C",1);
+  $pdf->Cell(34,4,"TIPO LANÃ‡AMENTO ",1,1,"C",1);
   $pdf->SetFillColor(255);
   
   for($x=0;$x<$numrows;$x++){
@@ -113,19 +113,19 @@ if($cllistainscr->numrows > 0){
     if ($pdf->GetY() > 270) {
       $pdf->AddPage();
       $pdf->SetFillColor(235);
-      $pdf->Cell(25,4,"INSCRIÇÃO ",1,0,"C",1);
+      $pdf->Cell(25,4,"INSCRIÃ‡ÃƒO ",1,0,"C",1);
       $pdf->Cell(35,4,"CNPJ ",1,0,"C",1);
       $pdf->Cell(26,4,"TELEFONE ",1,0,"C",1);
       $pdf->Cell(70,4,"NOME ",1,1,"C",1);
-      $pdf->Cell(34,4,"TIPO LANÇAMENTO ",1,1,"C",1);
+      $pdf->Cell(34,4,"TIPO LANÃ‡AMENTO ",1,1,"C",1);
       $pdf->SetFillColor(255);
     }
   }
   
   if($p11_processado == 't'){
-    $situacao = "Lista já Processada pela Prefeitura";
+    $situacao = "Lista jÃ¡ Processada pela Prefeitura";
   } else if ($p11_fechado == 't'){
-    $situacao = "Lista fechada pelo escritório";
+    $situacao = "Lista fechada pelo escritÃ³rio";
   } else {
     $situacao = "";
   }
@@ -141,24 +141,24 @@ if($cllistainscr->numrows > 0){
   $pdf->Rect(110,$posicao,90,50,"DF");
   $pdf->SetFillColor(255);
   $pdf->Text(140,($posicao + 25),"COLAR ETIQUETA DO CRC");
-  $pdf->Cell(95,4,"SITUAÇÃO: ".$situacao,0,1,"L",1);
-  $pdf->Cell(95,4,"TOTAL DE INSCRIÇÕES: ".$total,0,1,"L",1);
+  $pdf->Cell(95,4,"SITUAÃ‡ÃƒO: ".$situacao,0,1,"L",1);
+  $pdf->Cell(95,4,"TOTAL DE INSCRIÃ‡Ã•ES: ".$total,0,1,"L",1);
 } else {
   $result = $cllistainscrcab->sql_record($cllistainscrcab->sql_query($p12_codigo));
   db_fieldsmemory($result,0);
   $result1 = $clcgm->sql_record($clcgm->sql_query($p11_numcgm));
   db_fieldsmemory($result1,0);
-  $pdf->Cell(190,4,"LISTA ".$p12_codigo." SEM INSCRIÇÕES CADASTRADAS - ESCRITÓRIO CONTÁBIL ".$z01_nome."",1,1,"C",1);
+  $pdf->Cell(190,4,"LISTA ".$p12_codigo." SEM INSCRIÃ‡Ã•ES CADASTRADAS - ESCRITÃ“RIO CONTÃBIL ".$z01_nome."",1,1,"C",1);
 }
 
 $pdf->SetFillColor(255);
-$pdf->Cell(40,4,"CÓDIGO DA LISTA: ".$p11_codigo,0,1,"L",1);
+$pdf->Cell(40,4,"CÃ“DIGO DA LISTA: ".$p11_codigo,0,1,"L",1);
 $pdf->Cell(35,4,"DATA: ".db_formatar($p11_data,'d'),0,1,"L",1);
 $pdf->Cell(35,4,"HORA: ".$p11_hora,0,1,"L",1);
 $pdf->Cell(80,4,"CONTATO: ".$p11_contato,0,1,"L",1);
 $pdf->Ln(40);
 $pdf->Cell(190,4,"---------------------------------------------------------------------------------------------------------------------------",0,1,"R",1);
-$pdf->Cell(190,4,"NOME E ASSINATURA DO RESPONSÁVEL                                      ",0,1,"R",1);
+$pdf->Cell(190,4,"NOME E ASSINATURA DO RESPONSÃVEL                                      ",0,1,"R",1);
 $pdf->output();
 
 function convert_CPFCNPJ($cgccpf) {

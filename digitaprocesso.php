@@ -60,7 +60,7 @@ if($db_verificaip == "0"){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_num_processo(){
@@ -68,22 +68,22 @@ function js_num_processo(){
  var cpf   = document.form1.cpf.value;
 
   if (document.form1.codproc.value == "" || isNaN(document.form1.codproc.value)){
-     alert("Codigo do Processo Inválido.");
+     alert("Codigo do Processo InvÃ¡lido.");
      return false;
   }
 
   if (cgc == "" && cpf == "" ){
-       alert("Codigo de CNPJ ou CPF Inválido.");
+       alert("Codigo de CNPJ ou CPF InvÃ¡lido.");
        return false;
   } else {  
   var icnpj = js_CNPJ(cgc);
   var icpf  = js_CPF(cpf);   
     if ( cgc != "" && icnpj != 14 ){
-       alert("Codigo de CNPJ Inválido.");
+       alert("Codigo de CNPJ InvÃ¡lido.");
        document.form1.cgc.value = '';
        return false;    
     } else if ( cpf != "" && icpf != 11 ){
-       alert("Codigo de CPF Inválido.");
+       alert("Codigo de CPF InvÃ¡lido.");
        document.form1.cpf.value = '';
        return false;       
     } else {
@@ -133,7 +133,7 @@ function js_CPF(campo){
 <br>
 <center>
 <?php 
-//verifica se está logado
+//verifica se estÃ¡ logado
 if(@$id_usuario!=""){
  $result  = $clprotprocesso->sql_record( $clprotprocesso->sql_query("","distinct cgm.z01_numcgm,cgm.z01_cgccpf,cgm.z01_nome,protprocesso.p58_codproc,protprocesso.p58_dtproc,protprocesso.p58_obs",
  "protprocesso.p58_dtproc desc","cgm.z01_numcgm = $id_usuario"));
@@ -155,7 +155,7 @@ if(@$id_usuario!=""){
    <b><?=$z01_numcgm." - ".$z01_nome?></b>
    <table width="90%"  class="tab">
    <?php 
-   //busca clientes do escritório
+   //busca clientes do escritÃ³rio
    for($x=0;$x<$linhas;$x++){
     if($x==0){
      ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><th colspan="4">Meus Processos</th></tr><?php 
@@ -173,7 +173,7 @@ if(@$id_usuario!=""){
   ?></table><?php 
 	
  }else{
-  //não tem processo
+  //nÃ£o tem processo
   ?>
   <br><br>
   <table width="350"  class="tab">

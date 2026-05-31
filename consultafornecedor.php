@@ -42,7 +42,7 @@ db_postmemory($_GET);
 <html>
 <head>
 <title>digitafornecedor.php</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -62,7 +62,7 @@ db_postmemory($_GET);
 
 
 
-//verifica se está logado
+//verifica se estÃ¡ logado
 if (@$numcgm!="") {
   if (@$tipo_consulta=="todos") {
    //ver todos
@@ -102,16 +102,16 @@ if (@$numcgm!="") {
    ?>
    <tr bgcolor="#99bbff" class="bold4" align="center">
     <td>Empenho</td>
-    <td>Dotação</td>
-    <td>Emissão</td>
+    <td>DotaÃ§Ã£o</td>
+    <td>EmissÃ£o</td>
     <td>Ordem</td>
-    <td>Nº Lic.</td>
+    <td>NÂº Lic.</td>
     <td>NF</td>
     <td>Valor Emp.</td>
     <td>Valor Liq.</td>
     <td>Valor Pago</td>
     <td>Valor Anul.</td>
-    <td>Instituição</td>
+    <td>InstituiÃ§Ã£o</td>
    </tr>
    <?php 
    $cor2="#99ccff";
@@ -149,7 +149,7 @@ if (@$numcgm!="") {
   <tr height="220">
    <td align="center" class="red">
     <img src="imagens/atencao.gif"><br>
-    Para acessar suas informações, efetue login.
+    Para acessar suas informaÃ§Ãµes, efetue login.
    </td>
   </tr>
   <?php 

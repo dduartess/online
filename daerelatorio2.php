@@ -33,7 +33,7 @@ $result = pg_exec("select * from db_dae where w04_codigo = $codigo");
 if(pg_numrows($result) != 0){
   db_fieldsmemory($result,0);
 }else{
-	die("Dai não encontrada");
+	die("Dai nÃ£o encontrada");
 }
 $result = pg_exec("select * from issbase inner join cgm on q02_numcgm = z01_numcgm where q02_inscr = $w04_inscr");
 if(pg_numrows($result) != 0){
@@ -59,8 +59,8 @@ $hora = db_formatar($data['hours'],'s',0,2,'e');
 $min  = db_formatar($data['minutes'],'s',0,2,'e');
 $sec  = db_formatar($data['seconds'],'s',0,2,'e');
 $pdf = new PDF(); // abre a classe
-$head1 = "DECLARAÇÃO ANUAL DE ISSQN";
-$head2 = "DAI NÃO ENVIADA";
+$head1 = "DECLARAÃ‡ÃƒO ANUAL DE ISSQN";
+$head2 = "DAI NÃƒO ENVIADA";
 $Letra = 'arial';
 $pdf->Open(); // abre o relatorio
 $pdf->SetFont('arial','B',10);
@@ -70,13 +70,13 @@ $pdf->SetTextColor(0,0,0);
 $pdf->SetFillColor(235);
 $pdf->Ln(5);
 $pdf->SetFont($Letra,'B',10);
-$pdf->Cell(190,6,"INSCRIÇÃO: ".$w04_inscr,"0",0,"L",1);
+$pdf->Cell(190,6,"INSCRIÃ‡ÃƒO: ".$w04_inscr,"0",0,"L",1);
 $pdf->Ln(10);
 $pdf->SetFont($Letra,'',8);
 $pdf->Cell(110,6,'NOME: '.@$z01_nome,0,0,"J",0);
 $pdf->MultiCell(0,6,'CIDADE: '.@$z01_munic,0,"J",0);
-$pdf->Cell(110,6,'ENDEREÇO: '.@$w05_rua,0,0,"J",0);
-$pdf->MultiCell(0,6,'NÚMERO: '.@$w05_numero,0,"J",0);
+$pdf->Cell(110,6,'ENDEREÃ‡O: '.@$w05_rua,0,0,"J",0);
+$pdf->MultiCell(0,6,'NÃšMERO: '.@$w05_numero,0,"J",0);
 $pdf->Cell(110,6,'COMPLEMENTO: '.@$w05_compl,0,0,"J",0);
 $pdf->Cell(0,6,'BAIRRO: '.@$w05_bairro,0,0,"J",0);
 $pdf->Ln(10);
@@ -86,9 +86,9 @@ $pdf->SetFont($Letra,'B',10);
 
 
 if(pg_numrows($resultsocios)==0){
-  $pdf->MultiCell(0,6,'SEM SÓCIOS LANÇADOS',0,"J",1);
+  $pdf->MultiCell(0,6,'SEM SÃ“CIOS LANÃ‡ADOS',0,"J",1);
 }else{
-  $pdf->Cell(3,1,"SÓCIOS: ",0,0,"L",1);
+  $pdf->Cell(3,1,"SÃ“CIOS: ",0,0,"L",1);
 }
 $pdf->Ln(3);
 $pdf->SetFont($Letra,'',8);
@@ -99,7 +99,7 @@ if(pg_numrows($resultsocios)!=0){
     $pdf->Cell(100,6,'Nome: '.$w06_nome,1,0,"J",1);
     $pdf->MultiCell(0,6,'RG: '.$w06_rg,1,"J",1);
     $pdf->Cell(110,6,'Rua: '.$w06_ender,1,0,"J",0);
-    $pdf->Cell(40,6,'Número: '.$w06_numero,1,0,"J",0);
+    $pdf->Cell(40,6,'NÃºmero: '.$w06_numero,1,0,"J",0);
     $pdf->MultiCell(0,6,'Complemento: '.$w06_compl,1,"J",0);
     $pdf->Cell(80,6,'Bairro: '.$w06_bairro,1,0,"J",0);
     $pdf->Cell(30,6,'CEP: '.$w06_cep,1,0,"J",0);
@@ -112,7 +112,7 @@ $pdf->MultiCell(0,6,'','B','',0);
 $pdf->Ln(10);
 $pdf->SetFont($Letra,'B',10);
 if(pg_numrows($resultval)==0){
-  $pdf->MultiCell(0,6,'SEM VALORES LANÇADOS',0,"J",1);
+  $pdf->MultiCell(0,6,'SEM VALORES LANÃ‡ADOS',0,"J",1);
 }else{ 
   $pdf->Cell(3,1,"VALORES: ",0,0,"L",1);
 }
@@ -120,9 +120,9 @@ $pdf->Ln(3);
 $pdf->SetFont($Letra,'',8);
 if(pg_numrows($resultval)!=0){
     $pdf->SetFillColor(200);
-    $pdf->Cell(25,6,'Mês',1,0,"C",1);
+    $pdf->Cell(25,6,'MÃªs',1,0,"C",1);
     $pdf->Cell(40,6,'Valor',1,0,"C",1);
-    $pdf->Cell(35,6,'Alíquota - %',1,0,"C",1);
+    $pdf->Cell(35,6,'AlÃ­quota - %',1,0,"C",1);
     $pdf->Cell(40,6,'Imposto',1,0,"C",1);
     $pdf->Cell(50,6,'Data pagto:',1,1,"C",1);
     $total = 0;
@@ -137,7 +137,7 @@ if(pg_numrows($resultval)!=0){
 	    if($w07_dtpaga != ""){
 	      $w07_dtpaga = db_formatar($w07_dtpaga,'d');
 	    }else{
-	      $w07_dtpaga = "Não efetuado";
+	      $w07_dtpaga = "NÃ£o efetuado";
 	    }  
     $pdf->Cell(50,6,''.$w07_dtpaga,1,1,"C",0);
     $total += $w07_valor;
@@ -156,9 +156,9 @@ $pdf->Ln(10);
 $pdf->SetFont($Letra,'B',10);
 $linhasprestador = pg_numrows($resultretido);
 if($linhasprestador==0){
-  $pdf->MultiCell(0,6,'SEM VALORES NA RETENÇÃO COMO PRESTADOR LANÇADOS',0,"J",1);
+  $pdf->MultiCell(0,6,'SEM VALORES NA RETENÃ‡ÃƒO COMO PRESTADOR LANÃ‡ADOS',0,"J",1);
 }else{ 
-  $pdf->Cell(3,1,"RETENÇÃO COMO PRESTADOR: ",0,0,"L",1);
+  $pdf->Cell(3,1,"RETENÃ‡ÃƒO COMO PRESTADOR: ",0,0,"L",1);
 }
 $pdf->Ln(3);
 $pdf->SetFont($Letra,'',8);
@@ -166,11 +166,11 @@ $pdf->SetFont($Letra,'',8);
     $total = 0;
     $totali = 0;
     $pdf->SetFillColor(200);
-    $pdf->Cell(25,6,'Mês',1,0,"C",1);
+    $pdf->Cell(25,6,'MÃªs',1,0,"C",1);
     $pdf->Cell(40,6,'Valor',1,0,"C",1);
     $pdf->Cell(50,6,'CPF ou CNPJ',1,0,"C",1);
     $pdf->Cell(20,6,'Nota',1,0,"C",1);
-    $pdf->Cell(20,6,'Série',1,0,"C",1);
+    $pdf->Cell(20,6,'SÃ©rie',1,0,"C",1);
     $pdf->Cell(35,6,'Data',1,1,"C",1);
     for($p=0;$p<$linhasprestador;$p++){
 	    db_fieldsmemory($resultretido,$p);
@@ -195,9 +195,9 @@ $pdf->Ln(10);
 $pdf->SetFont($Letra,'B',10);
 $linhastomador = pg_numrows($resulttomador); 
 if($linhastomador==0){
-  $pdf->MultiCell(0,6,'SEM VALORES NA RETENÇÃO COMO TOMADOR TOMADOR LANÇADOS',0,"J",1);
+  $pdf->MultiCell(0,6,'SEM VALORES NA RETENÃ‡ÃƒO COMO TOMADOR TOMADOR LANÃ‡ADOS',0,"J",1);
 }else{ 
-  $pdf->Cell(3,1,"RETENÇÃO COMO TOMADOR: ",0,0,"L",1);
+  $pdf->Cell(3,1,"RETENÃ‡ÃƒO COMO TOMADOR: ",0,0,"L",1);
 }
 $pdf->Ln(3);
 
@@ -210,18 +210,18 @@ $pdf->SetFont($Letra,'',8);
   	for($t=0;$t<$linhastomador;$t++){
   	    db_fieldsmemory($resulttomador,$t);
 	    $pdf->SetFillColor(200);
-	    $pdf->Cell(26,6,'Mês: '.db_mes($w08_mes),1,0,"L",1);
+	    $pdf->Cell(26,6,'MÃªs: '.db_mes($w08_mes),1,0,"L",1);
 	    $pdf->Cell(50,6,'CPF ou CNPJ: '.db_cgccpf($w08_cnpj),1,0,"L",1);
-	    $pdf->Cell(114,6,'Nome ou Razão Social: '.$w08_nome,1,1,"L",1);
+	    $pdf->Cell(114,6,'Nome ou RazÃ£o Social: '.$w08_nome,1,1,"L",1);
 	    $pdf->SetFillColor(235);
-	    $pdf->Cell(114,6,'Serviço: '.$w08_servico,1,0,"L",0);
+	    $pdf->Cell(114,6,'ServiÃ§o: '.$w08_servico,1,0,"L",0);
 	    $pdf->Cell(38,6,'Nota: '.$w08_nota,1,0,"L",0);
 	    $pdf->Cell(38,6,'Serie: '.$w08_serie,1,1,"L",0);
 	    $pdf->Cell(38,6,'Valor: '.db_formatar($w08_valreceita,'f'),1,0,"L",0);
-	    $pdf->Cell(38,6,'Alíquota: '.$w08_aliquota." %",1,0,"L",0);
+	    $pdf->Cell(38,6,'AlÃ­quota: '.$w08_aliquota." %",1,0,"L",0);
 	    $pdf->Cell(38,6,'Imposto: '.db_formatar($w08_imposto,'f'),1,0,"L",0);
-	    $pdf->Cell(38,6,'Data do pagto: '.($w09_dtpaga != ''?db_formatar($w09_dtpaga,'d'):'não efetuado'),1,0,"L",0);
-	    $pdf->Cell(38,6,'Valor pago: '.($w09_valpago!=''?db_formatar($w09_valpago,'f'):'nâo efetuado'),1,1,"L",0);
+	    $pdf->Cell(38,6,'Data do pagto: '.($w09_dtpaga != ''?db_formatar($w09_dtpaga,'d'):'nÃ£o efetuado'),1,0,"L",0);
+	    $pdf->Cell(38,6,'Valor pago: '.($w09_valpago!=''?db_formatar($w09_valpago,'f'):'nÃ¢o efetuado'),1,1,"L",0);
 	    
 	    $total += $w08_valreceita;
 	    $totali += $w08_imposto;
@@ -242,9 +242,9 @@ $pdf->SetFont($Letra,'',8);
 $pdf->SetFont($Letra,'',9);
 $pdf->SetY(270);
 $pdf->SetFont($Letra,'',9);
-//$pdf->MultiCell(0,6,'DAI NÃO ENVIADA',0,"C",0);
+//$pdf->MultiCell(0,6,'DAI NÃƒO ENVIADA',0,"C",0);
 
-//$pdf->MultiCell(0,6,"DATA DE ENVIO: ".($w04_data != ""?db_formatar($w04_data,'d'):"")." - EXERCÍCIO: ".$w04_ano,0,"C",0);
+//$pdf->MultiCell(0,6,"DATA DE ENVIO: ".($w04_data != ""?db_formatar($w04_data,'d'):"")." - EXERCÃCIO: ".$w04_ano,0,"C",0);
 if ( $pdf->GetY() > 280) {
   $pdf->AddPage();
   $pdf->Ln(40);

@@ -45,7 +45,7 @@ if ( $oPost->tipo == "consultaMes" ) {
   $sSqlCalculoMes = " select distinct rh02_mesusu as codigo, 
                                       case when rh02_mesusu = 1  then 'Janeiro'  
                                            when rh02_mesusu = 2  then 'Fevereiro' 
-                                           when rh02_mesusu = 3  then 'Março'
+                                           when rh02_mesusu = 3  then 'MarÃ§o'
                                            when rh02_mesusu = 4  then 'Abril'
                                            when rh02_mesusu = 5  then 'Maio'
                                            when rh02_mesusu = 6  then 'Junho'
@@ -88,7 +88,7 @@ if ( $oPost->tipo == "consultaMes" ) {
 } else if ( $oPost->tipo == "consultaTipoCalc" ) {
   
   
-    $sSqlTipoCalculo = "select distinct 'r14' as codigo ,case when r14_regist is not null then 'Salário' end as descr 
+    $sSqlTipoCalculo = "select distinct 'r14' as codigo ,case when r14_regist is not null then 'SalÃ¡rio' end as descr 
                            from gerfsal 
                           where r14_regist = {$oPost->matric} 
                             and r14_anousu = {$oPost->anousu}
@@ -106,13 +106,13 @@ if ( $oPost->tipo == "consultaMes" ) {
                             and r48_anousu = {$oPost->anousu}
                             and r48_mesusu = {$oPost->mesusu}
                        union all
-                       select distinct 'r35' as codigo,case when r35_regist is not null then '13º Salário' end as descr 
+                       select distinct 'r35' as codigo,case when r35_regist is not null then '13Âº SalÃ¡rio' end as descr 
                            from gerfs13
                           where r35_regist = {$oPost->matric} 
                             and r35_anousu = {$oPost->anousu}
                             and r35_mesusu = {$oPost->mesusu}
                         union all
-                       select distinct 'r20' as codigo,case when r20_regist is not null then 'Rescisão' end as descr 
+                       select distinct 'r20' as codigo,case when r20_regist is not null then 'RescisÃ£o' end as descr 
                            from gerfres
                           where r20_regist = {$oPost->matric} 
                             and r20_anousu = {$oPost->anousu}

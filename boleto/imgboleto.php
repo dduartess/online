@@ -119,7 +119,7 @@ $preto = imagecolorallocate($img,0,0,0);
 
 //Banco
 ImageString($img,10,125,12,$k00_codbco."-0",$preto);
-//Linha Digit·vel
+//Linha Digit√°vel
 ImageString($img,4,220,12,$linha_digitavel,$preto);
 //Local de Pagamento
 ImageString($img,3,12,55,$k15_local,$preto);

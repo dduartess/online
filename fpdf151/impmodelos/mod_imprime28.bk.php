@@ -1,7 +1,7 @@
 <?php
 /*
  
-/////   VARIÁVEIS PARA EMISSAO DE CARNES DE PARCELA UNICA
+/////   VARIÃVEIS PARA EMISSAO DE CARNES DE PARCELA UNICA
 
   var $quant_parcelas = 0;
   var $agencias       = null;
@@ -9,15 +9,15 @@
   var $munic          = null;
   var $texto2         = null;
   
-  var $estado         = 'TIPO DE DÉBITO';
-  var $titulo9   = 'Cód. de Arrecadação';
+  var $estado         = 'TIPO DE DÃ‰BITO';
+  var $titulo9   = 'CÃ³d. de ArrecadaÃ§Ã£o';
   var $descr9    = null;
   var $titulo10  = 'Parcela';
   var $descr10   = null;
-  var $titulo11  = 'Contribuinte/Endereço';
+  var $titulo11  = 'Contribuinte/EndereÃ§o';
   var $descr11_1 = null;
   var $descr11_2 = null;
-  var $titulo12  = 'Instruções';
+  var $titulo12  = 'InstruÃ§Ãµes';
   var $descr12_1 = null;
   var $descr12_2 = null;
   
@@ -25,12 +25,12 @@
 	
 	$this->objpdf->Text(25, 37, "- Parcelado - em $this->quant_parcelas vezes - sem desconto");
 	$this->objpdf->SetFont('Times', 'B', 10);
-	$this->objpdf->Text(15, 45, "LOCAIS DE PAGAMENTO ATÉ O VENCIMENTO:");
+	$this->objpdf->Text(15, 45, "LOCAIS DE PAGAMENTO ATÃ‰ O VENCIMENTO:");
 	$this->objpdf->SetFont('Times', 'B', 7);
 	$this->objpdf->Text(25, 50, @$this->agencias);
 	$this->objpdf->Text(25, 55, "-  Via Internet e Home Banking");
 	$this->objpdf->SetFont('Times', 'BI', 8);
-	$this->objpdf->Text(15, 60, "* VALOR CONSTANTE NOS TICKETS DE PAGAMENTO PARA COTA ÚNICA JÁ CONCEDE O DESCONTO PREVISTO");
+	$this->objpdf->Text(15, 60, "* VALOR CONSTANTE NOS TICKETS DE PAGAMENTO PARA COTA ÃšNICA JÃ CONCEDE O DESCONTO PREVISTO");
 	$this->objpdf->SetFont('Times', 'B', 12);
 	$pref = $this->prefeitura;
 	$estado = "ESTADO DO RIO GRANDE DO SUL"; 
@@ -53,13 +53,13 @@
 	$this->objpdf->SetFillColor(220);
 	$this->objpdf->Rect(15, 130, 180, 40, 'DF');
 	$this->objpdf->SetFont('Times', 'B', 12);
-	$this->objpdf->Text(150, 140, "Inscrição : ".$this->matric);
+	$this->objpdf->Text(150, 140, "InscriÃ§Ã£o : ".$this->matric);
 	$this->objpdf->SetFont('Times', 'B', 8);
 	$this->objpdf->Text(25, 140, "Nome:     ".$this->nome);
-	$this->objpdf->Text(25, 145, "Endereço:  ".$endereco->ender. ($this->numero == "" ? "" : ", ".$this->numero."  ".$this->compl));
-	$this->objpdf->Text(25, 150, "Município:".$this->munic);
+	$this->objpdf->Text(25, 145, "EndereÃ§o:  ".$endereco->ender. ($this->numero == "" ? "" : ", ".$this->numero."  ".$this->compl));
+	$this->objpdf->Text(25, 150, "MunicÃ­pio:".$this->munic);
 	$this->objpdf->Text(70, 150, "Cep:".$this->cep);
-	$this->objpdf->Text(25, 167, "Proprietário:".$this->proprietario);
+	$this->objpdf->Text(25, 167, "ProprietÃ¡rio:".$this->proprietario);
 
 	$this->objpdf->Rect(15, 180, 180, 30, '');
 	$this->objpdf->SetXY(15, 180);
@@ -69,29 +69,29 @@
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
 	$this->objpdf->Cell(40, 3, 'Mudou-se', 0, 0, 'L', 0);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
-	$this->objpdf->Cell(40, 3, 'Não procurado', 0, 1, 'L', 0);
+	$this->objpdf->Cell(40, 3, 'NÃ£o procurado', 0, 1, 'L', 0);
 	$this->objpdf->SetXY(18, 191);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
-	$this->objpdf->Cell(40, 3, 'Endereço Insuficiente', 0, 0, 'L', 0);
+	$this->objpdf->Cell(40, 3, 'EndereÃ§o Insuficiente', 0, 0, 'L', 0);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
 	$this->objpdf->Cell(40, 3, 'Ausente', 0, 1, 'L', 0);
 	$this->objpdf->SetXY(18, 195);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
-	$this->objpdf->Cell(40, 3, 'Não exite o n'.chr(176).' indicado', 0, 0, 'L', 0);
+	$this->objpdf->Cell(40, 3, 'NÃ£o exite o n'.chr(176).' indicado', 0, 0, 'L', 0);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
 	$this->objpdf->Cell(40, 3, 'Falecido', 0, 1, 'L', 0);
 	$this->objpdf->SetXY(18, 199);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
 	$this->objpdf->Cell(40, 3, 'Desconhecido', 0, 0, 'L', 0);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
-	$this->objpdf->Cell(40, 3, 'Informação escrita pelo porteiro/síndico', 0, 1, 'L', 0);
+	$this->objpdf->Cell(40, 3, 'InformaÃ§Ã£o escrita pelo porteiro/sÃ­ndico', 0, 1, 'L', 0);
 	$this->objpdf->SetXY(18, 203);
 	$this->objpdf->Cell(4, 3, '', 1, 0, 'C', 0);
 	$this->objpdf->Cell(40, 3, 'Recusado', 0, 1, 'L', 0);
 	$this->objpdf->SetXY(113, 184);
 	$this->objpdf->SetFont('Times', '', 5);
 	$this->objpdf->Cell(40, 3, 'Data', 0, 0, 'C', 0);
-	$this->objpdf->Cell(40, 3, 'Reintegrado ao serviço postal em:', 0, 0, 'C', 0);
+	$this->objpdf->Cell(40, 3, 'Reintegrado ao serviÃ§o postal em:', 0, 0, 'C', 0);
 	$this->objpdf->line(110, 184, 110, 210);
 	$this->objpdf->line(155, 184, 155, 197);
 	$this->objpdf->line(110, 197, 195, 197);
@@ -141,14 +141,14 @@
 				$this->objpdf->int25(5, $linha, $codigo_barras, 15, 0.341);
 				$this->objpdf->SetFont('Times', 'B', 18);
 				$this->objpdf->Text(130, $linha +3, "Cota");
-				$this->objpdf->Text(130, $linha +13, "Única");
+				$this->objpdf->Text(130, $linha +13, "Ãšnica");
 				$this->objpdf->SetFont('Times', 'B', 5);
-				$this->objpdf->Text(125, $linha +17, "NÃO RECEBER APÓS O VENCIMENTO");
+				$this->objpdf->Text(125, $linha +17, "NÃƒO RECEBER APÃ“S O VENCIMENTO");
 				$this->objpdf->SetFont('Times', 'B', 8);
 				$this->objpdf->Rect(163, $linha -15, 40, 11);
 				$this->objpdf->Rect(163, $linha -4, 40, 11);
 				$this->objpdf->Rect(163, $linha +7, 40, 11);
-				$this->objpdf->Text(167, $linha -12, "Cód. de Arrecadação");
+				$this->objpdf->Text(167, $linha -12, "CÃ³d. de ArrecadaÃ§Ã£o");
 				$this->objpdf->SetFont('Times', 'B', 10);
 				$this->objpdf->Text(167, $linha -6, db_numpre($k00_numpre).'.000');
 				$this->objpdf->SetFont('Times', 'B', 8);
@@ -187,7 +187,7 @@
 	$this->objpdf->Text(70, $xlin +26, $z01_ender. ($z01_numero == "" ? "" : ", ".$z01_numero."  ".$z01_compl));
 	$this->objpdf->Text(70, $xlin +29, $z01_munic);
 	$this->objpdf->setfont('Times', '', 5);
-	$this->objpdf->Text(50, $xlin +40, 'ENDEREÇO DO IMÓVEL');
+	$this->objpdf->Text(50, $xlin +40, 'ENDEREÃ‡O DO IMÃ“VEL');
 	$this->objpdf->setfont('Times', 'B', 8);
 	$this->objpdf->Text(70, $xlin +45, $nomepri.",".$j39_numero." ".$j39_compl);
 
@@ -196,7 +196,7 @@
 	//  echo 'sandro'.$j40_refant;exit;		  
 	$dadosma = split("\.", trim($j40_refant));
 
-	$this->objpdf->Text(166, 9, 'INSCRIÇÃO');
+	$this->objpdf->Text(166, 9, 'INSCRIÃ‡ÃƒO');
 	$this->objpdf->Text(144, 16, 'ZONA');
 	$this->objpdf->Text(155, 16, 'SETOR');
 	$this->objpdf->Text(167, 16, 'QUADRA');
@@ -242,8 +242,8 @@
 	pg_free_result($sqlres);
 
 	$this->objpdf->setfont('Times', '', 4);
-	$this->objpdf->Text(148, 23, 'BASE DE CÁLCULO');
-	$this->objpdf->Text(180, 23, 'ALÍQUOTA');
+	$this->objpdf->Text(148, 23, 'BASE DE CÃLCULO');
+	$this->objpdf->Text(180, 23, 'ALÃQUOTA');
 	$this->objpdf->setfont('Times', 'B', 9);
 	$this->objpdf->Text(149, 27, db_formatar($j23_vlrter, 'f'));
 	$this->objpdf->Text(180, 27, $j23_aliq);
@@ -284,19 +284,19 @@
 	$this->objpdf->line(171, 21, 171, 28);
 	$xlin = 65;
 	$this->objpdf->SetFont('Times', 'B', 9);
-	$this->objpdf->Text(15, $xlin +9, "O PAGAMENTO EM ATRASO SOMENTE PODERÁ SE EFETUADO NA PREFEITURA MUNICIPAL DE $munic");
+	$this->objpdf->Text(15, $xlin +9, "O PAGAMENTO EM ATRASO SOMENTE PODERÃ SE EFETUADO NA PREFEITURA MUNICIPAL DE $munic");
 	$this->objpdf->SetFont('Times', 'B', 7);
 	$this->objpdf->Text(15, $xlin +19, "FORMAS DE PAGAMENTO:");
 
 	$resultunica = pg_exec("select * from recibounica where k00_numpre = $codigos[0]");
 	for ($contadorunica = 0; $contadorunica < pg_numrows($resultunica); $contadorunica ++) {
 		db_fieldsmemory($resultunica, $contadorunica);
-		$this->objpdf->Text(25, $xlin +24 + ($contadorunica * 4), "- Cota Única com pagamento até ".db_formatar($k00_dtvenc, "d")." - ".$k00_percdes."% de desconto *");
+		$this->objpdf->Text(25, $xlin +24 + ($contadorunica * 4), "- Cota Ãšnica com pagamento atÃ© ".db_formatar($k00_dtvenc, "d")." - ".$k00_percdes."% de desconto *");
 	}
 
 	$this->objpdf->Text(25, $xlin +33, "-  Parcelado - em $quant_parcelas vezes - sem desconto");
 	$this->objpdf->SetFont('Times', 'B', 7);
-	$this->objpdf->Text(15, $xlin +39, "LOCAIS DE PAGAMENTO ATÉ O VENCIMENTO:");
+	$this->objpdf->Text(15, $xlin +39, "LOCAIS DE PAGAMENTO ATÃ‰ O VENCIMENTO:");
 
 	$this->objpdf->Text(25, $xlin +46, @$agencias);
 	$this->objpdf->Text(25, $xlin +51, "-  Via Internet e Home Banking");
@@ -357,10 +357,10 @@
 			$this->objpdf->SetFont('Times', '', 12);
 			$this->objpdf->Text(130, $linha +13, $j01_tipoimp);
 			$this->objpdf->SetFont('Times', 'B', 5);
-			$this->objpdf->Text(125, $linha +17, "NÃO RECEBER APÓS O VENCIMENTO");
+			$this->objpdf->Text(125, $linha +17, "NÃƒO RECEBER APÃ“S O VENCIMENTO");
 
 			$this->objpdf->SetFont('Times', '', 8);
-			$this->objpdf->Text(165, $linha -9, "Cód. Arrec.");
+			$this->objpdf->Text(165, $linha -9, "CÃ³d. Arrec.");
 			$this->objpdf->SetFont('Times', 'B', 9);
 			$this->objpdf->Text(164, $linha -5, db_numpre($k00_numpre, $k00_numpar), 0);
 			//$this->objpdf->Text(169,$linha-7,$q03_numpre);
@@ -416,24 +416,24 @@
 	$this->objpdf->Image('imagens/files/'.$this->logo,8,$y-14,8);
 	$this->objpdf->Image('imagens/files/'.$this->logo,95,$y-14,8);
 	$this->objpdf->SetFont('Times','',5);
-	$this->objpdf->RoundedRect(10,$y+1,32,6,2,'DF','1234'); // matricula/ inscrição
-	$this->objpdf->RoundedRect(43,$y+1,27,6,2,'DF','1234'); // cod. de arrecadação
+	$this->objpdf->RoundedRect(10,$y+1,32,6,2,'DF','1234'); // matricula/ inscriÃ§Ã£o
+	$this->objpdf->RoundedRect(43,$y+1,27,6,2,'DF','1234'); // cod. de arrecadaÃ§Ã£o
 	$this->objpdf->RoundedRect(71,$y+1,20,6,2,'DF','1234'); // parcela
 
-	$this->objpdf->RoundedRect(10,$y+8,81,12,2,'DF','1234'); // nome / endereço
+	$this->objpdf->RoundedRect(10,$y+8,81,12,2,'DF','1234'); // nome / endereÃ§o
 	
-	$this->objpdf->RoundedRect(10,$y+21,81,14,2,'DF','1234'); // instruçoes
+	$this->objpdf->RoundedRect(10,$y+21,81,14,2,'DF','1234'); // instruÃ§oes
 
 	$this->objpdf->RoundedRect(10,$y+36,39,7,2,'DF','1234'); // vencimento
 	$this->objpdf->RoundedRect(50,$y+36,41,7,2,'DF','1234'); // valor
 
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(13,$y+3,$this->titulo1); // matricula/ inscrição
+	$this->objpdf->Text(13,$y+3,$this->titulo1); // matricula/ inscriÃ§Ã£o
 	$this->objpdf->SetFont('Arial','B',7);
 	$this->objpdf->Text(13,$y+6,$this->descr1); // numero da matricula ou inscricao
 
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(45,$y+3,$this->titulo2); // cod. de arrecadação
+	$this->objpdf->Text(45,$y+3,$this->titulo2); // cod. de arrecadaÃ§Ã£o
 	$this->objpdf->SetFont('Arial','B',7);
 	$this->objpdf->Text(47,$y+6,$this->descr2); // numpre
 	
@@ -443,21 +443,21 @@
 	$this->objpdf->Text(76,$y+6,$this->descr5); // Parcela inicial e total de parcelas
 
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(13,$y+10,$this->titulo3); // contribuinte/endereço
+	$this->objpdf->Text(13,$y+10,$this->titulo3); // contribuinte/endereÃ§o
 	$this->objpdf->SetFont('Arial','B',7);
 	$this->objpdf->Text(13,$y+13,$this->descr3_1); // nome do contribuinte
-	$this->objpdf->Text(13,$y+16,$this->descr3_2); // endereço
+	$this->objpdf->Text(13,$y+16,$this->descr3_2); // endereÃ§o
 
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(13,$y+23,$this->titulo4); // Instruções
+	$this->objpdf->Text(13,$y+23,$this->titulo4); // InstruÃ§Ãµes
 	$this->objpdf->SetFont('Arial','B',7);
         $xx = $this->objpdf->getx();
         $yy = $this->objpdf->gety();
         $this->objpdf->setleftmargin(10);
         $this->objpdf->setrightmargin(120);
         $this->objpdf->sety($y+23);
-        $this->objpdf->multicell(0,3,$this->descr4_1); // Instruções 1 - linha 1
-        $this->objpdf->multicell(0,3,$this->descr4_2); // Instruções 1 - linha 2
+        $this->objpdf->multicell(0,3,$this->descr4_1); // InstruÃ§Ãµes 1 - linha 1
+        $this->objpdf->multicell(0,3,$this->descr4_2); // InstruÃ§Ãµes 1 - linha 2
         $this->objpdf->setxy($xx,$yy);
 
 	$this->objpdf->SetFont('Arial','',5);
@@ -489,7 +489,7 @@
 	$this->objpdf->Text(97,$y+6,$this->descr8); // numero da matricula ou inscricao
 	
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(131,$y+3,$this->titulo9); // cod. de arrecadação
+	$this->objpdf->Text(131,$y+3,$this->titulo9); // cod. de arrecadaÃ§Ã£o
 	$this->objpdf->SetFont('Arial','B',7);
 	$this->objpdf->Text(133,$y+6,$this->descr9); // numpre
 	
@@ -504,21 +504,21 @@
 	$this->objpdf->Text(183,$y+6,$this->descr13); // livre
 	
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(97,$y+10,$this->titulo11); // contribuinte / endereço
+	$this->objpdf->Text(97,$y+10,$this->titulo11); // contribuinte / endereÃ§o
 	$this->objpdf->SetFont('Arial','B',7);
 	$this->objpdf->Text(97,$y+13,$this->descr11_1); // nome do contribuinte
-	$this->objpdf->Text(97,$y+16,$this->descr11_2); // endereço
+	$this->objpdf->Text(97,$y+16,$this->descr11_2); // endereÃ§o
 	
 	$this->objpdf->SetFont('Arial','',5);
-	$this->objpdf->Text(97,$y+24,$this->titulo12); // instruções
+	$this->objpdf->Text(97,$y+24,$this->titulo12); // instruÃ§Ãµes
 	$this->objpdf->SetFont('Arial','B',7);
         $xx = $this->objpdf->getx();
         $yy = $this->objpdf->gety();
         $this->objpdf->setleftmargin(97);
         $this->objpdf->setrightmargin(2);
         $this->objpdf->sety($y+24);
-        $this->objpdf->multicell(0,3,$this->descr12_1); // Instruções 2 - linha 1
-        $this->objpdf->multicell(0,3,$this->descr12_2); // Instruções 2 - linha 2
+        $this->objpdf->multicell(0,3,$this->descr12_1); // InstruÃ§Ãµes 2 - linha 1
+        $this->objpdf->multicell(0,3,$this->descr12_2); // InstruÃ§Ãµes 2 - linha 2
         $this->objpdf->setxy($xx,$yy);
 		
 	$this->objpdf->SetFont('Arial','',5);

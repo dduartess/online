@@ -51,11 +51,11 @@ class cl_listainscrcab {
    var $p11_contato = null; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 p11_codigo = int4 = Código 
-                 p11_numcgm = int4 = Escritório Contábil 
-                 p11_data = date = Data da inclusão 
-                 p11_hora = varchar(5) = Hora da inclusão 
-                 p11_fechado = bool = Lista concluída 
+                 p11_codigo = int4 = CÃ³digo 
+                 p11_numcgm = int4 = EscritÃ³rio ContÃ¡bil 
+                 p11_data = date = Data da inclusÃ£o 
+                 p11_hora = varchar(5) = Hora da inclusÃ£o 
+                 p11_fechado = bool = Lista concluÃ­da 
                  p11_processado = bool = Lista processada 
                  p11_contato = varchar(40) = Contato 
                  ";
@@ -99,37 +99,37 @@ class cl_listainscrcab {
    function incluir ($p11_codigo){ 
       $this->atualizacampos();
      if($this->p11_numcgm == null ){ 
-       $this->erro_sql = " Campo Escritório Contábil nao Informado.";
+       $this->erro_sql = " Campo EscritÃ³rio ContÃ¡bil nao Informado.";
        $this->erro_campo = "p11_numcgm";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p11_data == null ){ 
-       $this->erro_sql = " Campo Data da inclusão nao Informado.";
+       $this->erro_sql = " Campo Data da inclusÃ£o nao Informado.";
        $this->erro_campo = "p11_data_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p11_hora == null ){ 
-       $this->erro_sql = " Campo Hora da inclusão nao Informado.";
+       $this->erro_sql = " Campo Hora da inclusÃ£o nao Informado.";
        $this->erro_campo = "p11_hora";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->p11_fechado == null ){
-       $this->erro_sql = " Campo Lista concluída nao Informado.";
+       $this->erro_sql = " Campo Lista concluÃ­da nao Informado.";
        $this->erro_campo = "p11_fechado";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -138,7 +138,7 @@ class cl_listainscrcab {
        $this->erro_sql = " Campo Lista processada nao Informado.";
        $this->erro_campo = "p11_processado";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -147,7 +147,7 @@ class cl_listainscrcab {
        $this->erro_sql = " Campo Contato nao Informado.";
        $this->erro_campo = "p11_contato";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -157,7 +157,7 @@ class cl_listainscrcab {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: listainscrcab_p11_codigo_seq do campo: p11_codigo"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -166,9 +166,9 @@ class cl_listainscrcab {
      }else{
        $result = @pg_query("select last_value from listainscrcab_p11_codigo_seq");
        if(($result != false) && (pg_result($result,0,0) < $p11_codigo)){
-         $this->erro_sql = " Campo p11_codigo maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo p11_codigo maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -179,7 +179,7 @@ class cl_listainscrcab {
      if(($this->p11_codigo == null) || ($this->p11_codigo == "") ){ 
        $this->erro_sql = " Campo p11_codigo nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -206,13 +206,13 @@ class cl_listainscrcab {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "cabeçalho da lista de inscrições dos escritorios ($this->p11_codigo) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "cabeçalho da lista de inscrições dos escritorios já Cadastrado";
+         $this->erro_sql   = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios ($this->p11_codigo) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "cabeçalho da lista de inscrições dos escritorios ($this->p11_codigo) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios ($this->p11_codigo) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -221,7 +221,7 @@ class cl_listainscrcab {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->p11_codigo;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $resaco = $this->sql_record($this->sql_query_file($this->p11_codigo));
@@ -248,10 +248,10 @@ class cl_listainscrcab {
        $sql  .= $virgula." p11_codigo = $this->p11_codigo ";
        $virgula = ",";
        if(trim($this->p11_codigo) == null ){ 
-         $this->erro_sql = " Campo Código nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo nao Informado.";
          $this->erro_campo = "p11_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -261,10 +261,10 @@ class cl_listainscrcab {
        $sql  .= $virgula." p11_numcgm = $this->p11_numcgm ";
        $virgula = ",";
        if(trim($this->p11_numcgm) == null ){ 
-         $this->erro_sql = " Campo Escritório Contábil nao Informado.";
+         $this->erro_sql = " Campo EscritÃ³rio ContÃ¡bil nao Informado.";
          $this->erro_campo = "p11_numcgm";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -274,10 +274,10 @@ class cl_listainscrcab {
        $sql  .= $virgula." p11_data = '$this->p11_data' ";
        $virgula = ",";
        if(trim($this->p11_data) == null ){ 
-         $this->erro_sql = " Campo Data da inclusão nao Informado.";
+         $this->erro_sql = " Campo Data da inclusÃ£o nao Informado.";
          $this->erro_campo = "p11_data_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -287,10 +287,10 @@ class cl_listainscrcab {
          $sql  .= $virgula." p11_data = null ";
          $virgula = ",";
          if(trim($this->p11_data) == null ){ 
-           $this->erro_sql = " Campo Data da inclusão nao Informado.";
+           $this->erro_sql = " Campo Data da inclusÃ£o nao Informado.";
            $this->erro_campo = "p11_data_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -301,10 +301,10 @@ class cl_listainscrcab {
        $sql  .= $virgula." p11_hora = '$this->p11_hora' ";
        $virgula = ",";
        if(trim($this->p11_hora) == null ){ 
-         $this->erro_sql = " Campo Hora da inclusão nao Informado.";
+         $this->erro_sql = " Campo Hora da inclusÃ£o nao Informado.";
          $this->erro_campo = "p11_hora";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -314,10 +314,10 @@ class cl_listainscrcab {
        $sql  .= $virgula." p11_fechado = '$this->p11_fechado' ";
        $virgula = ",";
        if(trim($this->p11_fechado) == null ){ 
-         $this->erro_sql = " Campo Lista concluída nao Informado.";
+         $this->erro_sql = " Campo Lista concluÃ­da nao Informado.";
          $this->erro_campo = "p11_fechado";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -330,7 +330,7 @@ class cl_listainscrcab {
          $this->erro_sql = " Campo Lista processada nao Informado.";
          $this->erro_campo = "p11_processado";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -343,7 +343,7 @@ class cl_listainscrcab {
          $this->erro_sql = " Campo Contato nao Informado.";
          $this->erro_campo = "p11_contato";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -373,26 +373,26 @@ class cl_listainscrcab {
      $result = @pg_exec($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "cabeçalho da lista de inscrições dos escritorios nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->p11_codigo;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "cabeçalho da lista de inscrições dos escritorios nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->p11_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->p11_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -428,26 +428,26 @@ class cl_listainscrcab {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "cabeçalho da lista de inscrições dos escritorios nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$p11_codigo;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "cabeçalho da lista de inscrições dos escritorios nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "cabeÃ§alho da lista de inscriÃ§Ãµes dos escritorios nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$p11_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$p11_codigo;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -461,7 +461,7 @@ class cl_listainscrcab {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -470,7 +470,7 @@ class cl_listainscrcab {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:listainscrcab";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

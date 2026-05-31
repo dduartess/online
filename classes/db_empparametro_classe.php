@@ -58,19 +58,19 @@ class cl_empparametro {
    var $e30_verificarmatordem = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 e39_anousu = int4 = Exercício 
-                 e30_codemp = int8 = Código Empenho 
-                 e30_nroviaaut = int4 = Vias na Autorização 
+                 e39_anousu = int4 = ExercÃ­cio 
+                 e30_codemp = int8 = CÃ³digo Empenho 
+                 e30_nroviaaut = int4 = Vias na AutorizaÃ§Ã£o 
                  e30_nroviaemp = int4 = Vias no Empenho 
                  e30_nroviaord = int4 = Vias da Ordem 
                  e30_numdec = int4 = Casas decimais a imprimir 
                  e30_opimportaresumo = bool = Importar resumo do empenho 
                  e30_permconsempger = bool = Permite consulta empenho geral 
-                 e30_autimportahist = bool = Importa Historico da ultima Autorização 
+                 e30_autimportahist = bool = Importa Historico da ultima AutorizaÃ§Ã£o 
                  e30_trazobsultop = int4 = Traz observacoes da ultima ordem de pagamento 
                  e30_empdataemp = bool = Empenho c/ data anterior ao ultimo empenho 
                  e30_empdataserv = bool = Empenho c/ data superior ao servidor 
-                 e30_formvisuitemaut = int4 = Visualização dos itens na autorização 
+                 e30_formvisuitemaut = int4 = VisualizaÃ§Ã£o dos itens na autorizaÃ§Ã£o 
                  e30_verificarmatordem = int4 = Permite anular empenho com ordem de compra 
                  ";
    //funcao construtor da classe 
@@ -113,19 +113,19 @@ class cl_empparametro {
    function incluir ($e39_anousu){ 
       $this->atualizacampos();
      if($this->e30_codemp == null ){ 
-       $this->erro_sql = " Campo Código Empenho nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo Empenho nao Informado.";
        $this->erro_campo = "e30_codemp";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->e30_nroviaaut == null ){ 
-       $this->erro_sql = " Campo Vias na Autorização nao Informado.";
+       $this->erro_sql = " Campo Vias na AutorizaÃ§Ã£o nao Informado.";
        $this->erro_campo = "e30_nroviaaut";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -134,7 +134,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Vias no Empenho nao Informado.";
        $this->erro_campo = "e30_nroviaemp";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -143,7 +143,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Vias da Ordem nao Informado.";
        $this->erro_campo = "e30_nroviaord";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -152,7 +152,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Casas decimais a imprimir nao Informado.";
        $this->erro_campo = "e30_numdec";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -161,7 +161,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Importar resumo do empenho nao Informado.";
        $this->erro_campo = "e30_opimportaresumo";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -170,16 +170,16 @@ class cl_empparametro {
        $this->erro_sql = " Campo Permite consulta empenho geral nao Informado.";
        $this->erro_campo = "e30_permconsempger";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->e30_autimportahist == null ){ 
-       $this->erro_sql = " Campo Importa Historico da ultima Autorização nao Informado.";
+       $this->erro_sql = " Campo Importa Historico da ultima AutorizaÃ§Ã£o nao Informado.";
        $this->erro_campo = "e30_autimportahist";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -188,7 +188,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Traz observacoes da ultima ordem de pagamento nao Informado.";
        $this->erro_campo = "e30_trazobsultop";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -197,7 +197,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Empenho c/ data anterior ao ultimo empenho nao Informado.";
        $this->erro_campo = "e30_empdataemp";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -206,16 +206,16 @@ class cl_empparametro {
        $this->erro_sql = " Campo Empenho c/ data superior ao servidor nao Informado.";
        $this->erro_campo = "e30_empdataserv";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->e30_formvisuitemaut == null ){ 
-       $this->erro_sql = " Campo Visualização dos itens na autorização nao Informado.";
+       $this->erro_sql = " Campo VisualizaÃ§Ã£o dos itens na autorizaÃ§Ã£o nao Informado.";
        $this->erro_campo = "e30_formvisuitemaut";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -224,7 +224,7 @@ class cl_empparametro {
        $this->erro_sql = " Campo Permite anular empenho com ordem de compra nao Informado.";
        $this->erro_campo = "e30_verificarmatordem";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -233,7 +233,7 @@ class cl_empparametro {
      if(($this->e39_anousu == null) || ($this->e39_anousu == "") ){ 
        $this->erro_sql = " Campo e39_anousu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -274,13 +274,13 @@ class cl_empparametro {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Parametros do empenho ($this->e39_anousu) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Parametros do empenho já Cadastrado";
+         $this->erro_sql   = "Parametros do empenho ($this->e39_anousu) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Parametros do empenho jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Parametros do empenho ($this->e39_anousu) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Parametros do empenho ($this->e39_anousu) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -290,7 +290,7 @@ class cl_empparametro {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
      $this->erro_sql .= "Valores : ".$this->e39_anousu;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -324,10 +324,10 @@ class cl_empparametro {
        $sql  .= $virgula." e39_anousu = $this->e39_anousu ";
        $virgula = ",";
        if(trim($this->e39_anousu) == null ){ 
-         $this->erro_sql = " Campo Exercício nao Informado.";
+         $this->erro_sql = " Campo ExercÃ­cio nao Informado.";
          $this->erro_campo = "e39_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -337,10 +337,10 @@ class cl_empparametro {
        $sql  .= $virgula." e30_codemp = $this->e30_codemp ";
        $virgula = ",";
        if(trim($this->e30_codemp) == null ){ 
-         $this->erro_sql = " Campo Código Empenho nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo Empenho nao Informado.";
          $this->erro_campo = "e30_codemp";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -350,10 +350,10 @@ class cl_empparametro {
        $sql  .= $virgula." e30_nroviaaut = $this->e30_nroviaaut ";
        $virgula = ",";
        if(trim($this->e30_nroviaaut) == null ){ 
-         $this->erro_sql = " Campo Vias na Autorização nao Informado.";
+         $this->erro_sql = " Campo Vias na AutorizaÃ§Ã£o nao Informado.";
          $this->erro_campo = "e30_nroviaaut";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -366,7 +366,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Vias no Empenho nao Informado.";
          $this->erro_campo = "e30_nroviaemp";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -379,7 +379,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Vias da Ordem nao Informado.";
          $this->erro_campo = "e30_nroviaord";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -392,7 +392,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Casas decimais a imprimir nao Informado.";
          $this->erro_campo = "e30_numdec";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -405,7 +405,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Importar resumo do empenho nao Informado.";
          $this->erro_campo = "e30_opimportaresumo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -418,7 +418,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Permite consulta empenho geral nao Informado.";
          $this->erro_campo = "e30_permconsempger";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -428,10 +428,10 @@ class cl_empparametro {
        $sql  .= $virgula." e30_autimportahist = '$this->e30_autimportahist' ";
        $virgula = ",";
        if(trim($this->e30_autimportahist) == null ){ 
-         $this->erro_sql = " Campo Importa Historico da ultima Autorização nao Informado.";
+         $this->erro_sql = " Campo Importa Historico da ultima AutorizaÃ§Ã£o nao Informado.";
          $this->erro_campo = "e30_autimportahist";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -444,7 +444,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Traz observacoes da ultima ordem de pagamento nao Informado.";
          $this->erro_campo = "e30_trazobsultop";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -457,7 +457,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Empenho c/ data anterior ao ultimo empenho nao Informado.";
          $this->erro_campo = "e30_empdataemp";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -470,7 +470,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Empenho c/ data superior ao servidor nao Informado.";
          $this->erro_campo = "e30_empdataserv";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -480,10 +480,10 @@ class cl_empparametro {
        $sql  .= $virgula." e30_formvisuitemaut = $this->e30_formvisuitemaut ";
        $virgula = ",";
        if(trim($this->e30_formvisuitemaut) == null ){ 
-         $this->erro_sql = " Campo Visualização dos itens na autorização nao Informado.";
+         $this->erro_sql = " Campo VisualizaÃ§Ã£o dos itens na autorizaÃ§Ã£o nao Informado.";
          $this->erro_campo = "e30_formvisuitemaut";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -496,7 +496,7 @@ class cl_empparametro {
          $this->erro_sql = " Campo Permite anular empenho com ordem de compra nao Informado.";
          $this->erro_campo = "e30_verificarmatordem";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -545,7 +545,7 @@ class cl_empparametro {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Parametros do empenho nao Alterado. Alteracao Abortada.\\n";
        $this->erro_sql  .= "Valores : ".$this->e39_anousu;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -555,16 +555,16 @@ class cl_empparametro {
          $this->erro_banco = "";
          $this->erro_sql = "Parametros do empenho nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->e39_anousu;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->e39_anousu;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -615,9 +615,9 @@ class cl_empparametro {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Parametros do empenho nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Parametros do empenho nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql  .= "Valores : ".$e39_anousu;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -625,18 +625,18 @@ class cl_empparametro {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Parametros do empenho nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Parametros do empenho nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$e39_anousu;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$e39_anousu;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -651,7 +651,7 @@ class cl_empparametro {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -660,7 +660,7 @@ class cl_empparametro {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:empparametro";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

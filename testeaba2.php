@@ -62,7 +62,7 @@ a.tab:hover {
 
 
 <div class="tabArea">
-  <a class="tab">Endereço</a>
+  <a class="tab">EndereÃ§o</a>
   <a class="tab" href="testekk.php" target="tabIframe1">News</a>
   <a class="tab">Socios</a>
   <a class="tab">Valores</a>

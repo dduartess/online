@@ -35,7 +35,7 @@ db_fieldsmemory($resultuf,0);
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body>
@@ -223,7 +223,7 @@ db_fieldsmemory($resultuf,0);
       m&ecirc;s subseq&uuml;ente ao da compet&ecirc;ncia<br>
       e a respectiva guia de recolhimento solicitada junto ao Setor de Tributos.<br>
       * Preenchimento obrigat&oacute;rio apenas para empresas sediadas no munic&iacute;pio 
-      de Guaíba - RS.</font></td>
+      de GuaÃ­ba - RS.</font></td>
   </tr>
   <tr align="center"> 
     <td colspan="10"><font size="2" face="Arial, Helvetica, sans-serif">MAIORES 

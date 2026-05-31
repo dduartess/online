@@ -29,7 +29,7 @@ session_start();
 require("libs/db_stdlib.php");
 include("dbforms/db_funcoes.php");
 parse_str($HTTP_SERVER_VARS['QUERY_STRING']);
-//busca base de cálculo
+//busca base de cÃ¡lculo
 
 $sql_base = "select issbase.q02_inscr,
                     tabativ.q07_ativ,
@@ -48,15 +48,15 @@ $linhas = pg_num_rows($query);
 if($linhas==0){
          ?>
          <script>
-          alert("Base de cálculo NÃO pode ser encontrada!\n\nComunique a Prefeitura.");
+          alert("Base de cÃ¡lculo NÃƒO pode ser encontrada!\n\nComunique a Prefeitura.");
          </script>
          <?php 
 }else{
         ?>
         <html>
         <head>
-        <title> Prefeitura On-Line - Cálculo do ISSQN </title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title> Prefeitura On-Line - CÃ¡lculo do ISSQN </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="config/estilos.css" rel="stylesheet" type="text/css">
         <script language="JavaScript" src="scripts/scripts.js"></script>
 				<script>
@@ -80,11 +80,11 @@ if($linhas==0){
 				    tempto = valor.indexOf(".");
 				    if (valor.length > 9){
 				      if (tempto == -1){
-	  			       alert('Valor inválido. Verifique.');
+	  			       alert('Valor invÃ¡lido. Verifique.');
 								// document.getElementById(btn).disabled = true;
 								 return false;
 						  }else if(valor.length > 12) {
-	  			       alert('Valor inválido. Verifique.');
+	  			       alert('Valor invÃ¡lido. Verifique.');
 							  //  document.getElementById(btn).disabled = false;
 							    return false;
 				      }else{
@@ -102,12 +102,12 @@ if($linhas==0){
         <body bgcolor="#ccffcc" onblur="foco()">
          <form name="form">
                 <Table width="100%" border="1" cellpadding="0" cellspacing="0">
-                  <caption align="center" class="bold3">Cálculo do ISSQN</caprion>
+                  <caption align="center" class="bold3">CÃ¡lculo do ISSQN</caprion>
                  <tr height="100%"></tr>
                   <td align="center" class="texto" id="calcula">
                    Valor Bruto: R$<br>
                    <input type="text"   onkeypress="return js_teclas(event)" name="valorbruto" id="valorbruto" size="20" value="" style="text-align:right;"><br><br>
-                   Informe a Alíquota:<br>
+                   Informe a AlÃ­quota:<br>
                    <select name="base1" onChange="EscolheAliquota();calcular()">
                     <option value="">Escolha</option>
                     <?php 
@@ -121,14 +121,14 @@ if($linhas==0){
                     ?>
                    </select>
                    <input type="text" name="base2" size="5" value="" style="text-align:center"><br><br>
-                   Valor à Pagar: R$<br>
+                   Valor Ã  Pagar: R$<br>
                    <input type="text" name="valorpagar" id="valorpagar" size="15" value="0.00" readonly style="text-align:right; BACKGROUND-COLOR: #eaeaea; font-weight: bold;"><br><br><br>
                    <input type="button" name="calc" id='calc' value="Calcular" onclick="calcular()"><br><br>
                   </td>
                   
 				   <?php 
-		   // faz consulta para ver se o parâmetro do movimento do ISSQN está habilitado nas 
-		   // configurações se estiver exibe tela normalmente, se não é exibida a mensagem do usuário	   
+		   // faz consulta para ver se o parÃ¢metro do movimento do ISSQN estÃ¡ habilitado nas 
+		   // configuraÃ§Ãµes se estiver exibe tela normalmente, se nÃ£o Ã© exibida a mensagem do usuÃ¡rio	   
 		   $sql  = " select configdbpref.w13_liberalancisssemmov, db_confmensagem.mens ";
 		   $sql .= " from configdbpref "; 
 		   $sql .= " inner join db_confmensagem on db_confmensagem.cod = 'issqnsemmov_cab' and ";
@@ -148,9 +148,9 @@ if($linhas==0){
 			       } else{		   
 				   ?>
          		   <td width="65%" id="sem_movimento">
-    		       <br>&nbsp;&nbsp;Declara lançamento sem Movimento:<input type="checkbox" name="chk_movimento" id="chk_movimento" onclick="sem_movimento()"><p>
+    		       <br>&nbsp;&nbsp;Declara lanÃ§amento sem Movimento:<input type="checkbox" name="chk_movimento" id="chk_movimento" onclick="sem_movimento()"><p>
                    <fieldset id="fld_movimento" disabled><Legend>&nbsp;Justificativa&nbsp;</legend>
-                   <div id="caracteres" name="caracteres" align="center">256 caracteres disponíveis</div>
+                   <div id="caracteres" name="caracteres" align="center">256 caracteres disponÃ­veis</div>
                    <textarea name="txt_movimento" id="txt_movimento"="txt_movimento" rows="6" cols="45%" onKeyUp="js_caracteres(this)" disabled></textarea>
 				   </fieldset>
                    </td >
@@ -197,7 +197,7 @@ if($linhas==0){
          function calcular(){
 					
           if(document.form.base2.value==""){
-           alert("Selecione a Alíquota!");
+           alert("Selecione a AlÃ­quota!");
            document.form.base2.focus();
            return false;
           }
@@ -222,7 +222,7 @@ if($linhas==0){
            var xx = document.getElementById("chk_movimento") != null;
            if( xx == true && document.getElementById("chk_movimento").checked==true ){
              if( document.form.txt_movimento.value == "" ){
-                 alert('É obrigatóriamente o preenchimento da Justificativa');
+                 alert('Ã‰ obrigatÃ³riamente o preenchimento da Justificativa');
                  document.getElementById("txt_movimento").focus();
                  return false;
              }else{

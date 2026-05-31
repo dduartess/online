@@ -13,7 +13,7 @@
 	$this->objpdf->setfillcolor(255,255,255);
 	$this->objpdf->Setfont('Arial','B',9);
 	$this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12); //.$this->logo
-        $this->objpdf->text(130,$xlin-15,"ORÇAMENTO N".CHR(176));
+        $this->objpdf->text(130,$xlin-15,"ORÃ‡AMENTO N".CHR(176));
 	$this->objpdf->text(185,$xlin-15,db_formatar($this->orccodigo,'s','0',6,'e'));	
 	$this->objpdf->text(130,$xlin-11,$this->labdados.CHR(176));
 	$this->objpdf->text(185,$xlin-11,db_formatar($this->Snumero,'s','0',6,'e'));	
@@ -34,12 +34,12 @@
 	$this->objpdf->text(40,$xlin- 2,$this->emailpref);
 	$this->objpdf->text(40,$xlin+ 1,db_formatar($this->cgcpref,'cnpj'));
 
-        // Caixa com dados do orçamento e solicitação 
+        // Caixa com dados do orÃ§amento e solicitaÃ§Ã£o 
 	$this->objpdf->rect($xcol,$xlin+3,$xcol+198,27,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','',6);
-	$this->objpdf->text($xcol+2,$xlin+5,'Dados do Orçamento/'.$this->labtitulo);
+	$this->objpdf->text($xcol+2,$xlin+5,'Dados do OrÃ§amento/'.$this->labtitulo);
 	$this->objpdf->Setfont('Arial','B',8);
-	$this->objpdf->text($xcol+  2,$xlin+ 8,'Orçamento');
+	$this->objpdf->text($xcol+  2,$xlin+ 8,'OrÃ§amento');
 	$this->objpdf->text($xcol+109,$xlin+ 8,'Data Limite');
 	$this->objpdf->text($xcol+150,$xlin+ 8,'Hora Limite');
 	$this->objpdf->text($xcol+  2,$xlin+13,$this->labtitulo);
@@ -49,7 +49,7 @@
 	$this->objpdf->text($xcol+  2,$xlin+21,'Resumo');
 	$this->objpdf->Setfont('Arial','',8);
 	
-        // Imprime dados do orçamento e solicitação
+        // Imprime dados do orÃ§amento e solicitaÃ§Ã£o
 	$this->objpdf->text($xcol+ 23,$xlin+ 8,':  '.$this->orccodigo);
 	$this->objpdf->text($xcol+125,$xlin+ 8,':  '.$this->orcdtlim);
 	$this->objpdf->text($xcol+166,$xlin+ 8,':  '.$this->orchrlim);
@@ -79,9 +79,9 @@
 	$this->objpdf->text($xcol+109,$xlin+38,'Numcgm');
 	$this->objpdf->text($xcol+150,$xlin+38,(strlen($this->cnpj) == 11?'CPF':'CNPJ'));
 	$this->objpdf->text($xcol+  2,$xlin+38,'Nome');
-	$this->objpdf->text($xcol+  2,$xlin+42,'Endereço');
+	$this->objpdf->text($xcol+  2,$xlin+42,'EndereÃ§o');
 	$this->objpdf->text($xcol+102,$xlin+42,'Complemento');
-	$this->objpdf->text($xcol+  2,$xlin+46,'Município');
+	$this->objpdf->text($xcol+  2,$xlin+46,'MunicÃ­pio');
 	$this->objpdf->text($xcol+115,$xlin+46,'CEP');
 	$this->objpdf->text($xcol+150,$xlin+42,'Contato');
 	$this->objpdf->text($xcol+150,$xlin+46,'Fone/Fax');
@@ -115,7 +115,7 @@
 	  $this->objpdf->Setfont('Arial','B',8);
 	  // Caixa de texto para labels 
 	  $this->objpdf->rect($xcol    ,$setaut,202,6,2,'DF','12');
-	  $this->objpdf->text($xcol+  4,$setaut+4,'DEPARTAMENTOS DAS SOLICITAÇÕES');
+	  $this->objpdf->text($xcol+  4,$setaut+4,'DEPARTAMENTOS DAS SOLICITAÃ‡Ã•ES');
 
 	  $this->objpdf->rect($xcol    ,$setaut+6,30,6,2,'DF','12');
 	  $this->objpdf->rect($xcol+30 ,$setaut+6,30,6,2,'DF','12');
@@ -127,11 +127,11 @@
 	  $this->objpdf->sety($xlin+66);
 
 	  // Label das colunas
-	  $this->objpdf->text($xcol+   6,$setaut+11,'SOLICITAÇÃO');
-	  $this->objpdf->text($xcol+  39,$setaut+11,'CÓDIGO');
-	  $this->objpdf->text($xcol+ 125,$setaut+11,'DESCRIÇÃO');
+	  $this->objpdf->text($xcol+   6,$setaut+11,'SOLICITAÃ‡ÃƒO');
+	  $this->objpdf->text($xcol+  39,$setaut+11,'CÃ“DIGO');
+	  $this->objpdf->text($xcol+ 125,$setaut+11,'DESCRIÃ‡ÃƒO');
 
-	  // Seta altura nova para impressão dos dados
+	  // Seta altura nova para impressÃ£o dos dados
 	  $this->objpdf->sety($setaut+13);
 	  $this->objpdf->setx($xcol);
 	  $this->objpdf->setleftmargin(4);
@@ -149,7 +149,7 @@
 	}
 
 
-        // Caixa com Labels item, quantidade, descrição, valor 
+        // Caixa com Labels item, quantidade, descriÃ§Ã£o, valor 
 	$this->objpdf->Setfont('Arial','B',8);
 	$this->objpdf->rect($xcol    ,$xlin+$getdoy,14,6,2,'DF','12');
 	$this->objpdf->rect($xcol+ 14,$xlin+$getdoy,12,6,2,'DF','12');
@@ -175,11 +175,11 @@
 	$this->objpdf->rect($xcol+ 14,$xlin+$getdoy+6,12,$alturaini,2,'DF','34');
         // Caixa da referencia	
 	$this->objpdf->rect($xcol+ 26,$xlin+$getdoy+6,20,$alturaini,2,'DF','34');
-        // Caixa dos materiais ou serviços
+        // Caixa dos materiais ou serviÃ§os
 	$this->objpdf->rect($xcol+ 46,$xlin+$getdoy+6,90,$alturaini,2,'DF','34');
         // Caixa das marcas
 	$this->objpdf->rect($xcol+136,$xlin+$getdoy+6,28,$alturaini,2,'DF','');
-        // Caixa dos valores unitários
+        // Caixa dos valores unitÃ¡rios
 	$this->objpdf->rect($xcol+164,$xlin+$getdoy+6,19,$alturaini,2,'DF','');
         // Caixa dos valores totais dos itens
 	$this->objpdf->rect($xcol+183,$xlin+$getdoy+6,19,$alturaini,2,'DF','34');
@@ -192,7 +192,7 @@
 	$this->objpdf->text($xcol+   4,$xlin+$getdoy+4,'ITEM');
 	$this->objpdf->text($xcol+  15,$xlin+$getdoy+4,'QUANT');
 	$this->objpdf->text($xcol+  33,$xlin+$getdoy+4,'REF');
-	$this->objpdf->text($xcol+  72,$xlin+$getdoy+4,'MATERIAL OU SERVIÇO');
+	$this->objpdf->text($xcol+  72,$xlin+$getdoy+4,'MATERIAL OU SERVIÃ‡O');
 	$this->objpdf->text($xcol+ 145,$xlin+$getdoy+4,'OBS');
 	$this->objpdf->text($xcol+ 164,$xlin+$getdoy+4,'VALOR UNIT.');
 	$this->objpdf->text($xcol+ 184,$xlin+$getdoy+4,'VALOR TOT.');
@@ -225,7 +225,7 @@
 	  }
 	  if(trim(pg_result($this->recorddositens,$ii,$this->spgto))!=""){
 	    $pgto  = pg_result($this->recorddositens,$ii,$this->spgto);
-	    $pgto = "CONDIÇÃO: ".trim($pgto);
+	    $pgto = "CONDIÃ‡ÃƒO: ".trim($pgto);
 	  }
 	  if(trim(pg_result($this->recorddositens,$ii,$this->sresum)!="")){
 	    $resumo = "RESUMO: ".pg_result($this->recorddositens,$ii,$this->sresum);
@@ -257,7 +257,7 @@
 	      $resumo = str_replace("\n","",$resumo);
 	    }
 	  }else if($servico=="t"){
-	    $unid = "SERVIÇO";
+	    $unid = "SERVIÃ‡O";
 	  }
 
 	  $this->objpdf->Setfont('Arial','',8);
@@ -291,7 +291,7 @@
 		$this->objpdf->rect($xcol+136,$xlin+262, 28,10,2,'DF','34');
 		$this->objpdf->rect($xcol+164,$xlin+262, 19,10,2,'DF','34');
 		$this->objpdf->rect($xcol+183,$xlin+262, 19,10,2,'DF','34');
-		$this->objpdf->text($xcol+137,$xlin+268,'T O T A L   P Á G I N A');
+		$this->objpdf->text($xcol+137,$xlin+268,'T O T A L   P Ã G I N A');
 		$this->objpdf->Setfont('Arial','',7);
 	      }
 	      $this->objpdf->addpage();
@@ -305,7 +305,7 @@
 	      $this->objpdf->setfillcolor(255,255,255);
 	      $this->objpdf->Setfont('Arial','B',9);
 	      $this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12); //.$this->logo
-	      $this->objpdf->text(130,$xlin-13,"ORÇAMENTO N".CHR(176));
+	      $this->objpdf->text(130,$xlin-13,"ORÃ‡AMENTO N".CHR(176));
 	      $this->objpdf->text(185,$xlin-13,db_formatar($this->orccodigo,'s','0',6,'e'));	
 	      $this->objpdf->text(130,$xlin-9,$this->labdados.CHR(176));
 	      $this->objpdf->text(185,$xlin-9,db_formatar($this->Snumero,'s','0',6,'e'));	
@@ -334,11 +334,11 @@
 /*
         // Caixa da referencia	
 	$this->objpdf->rect($xcol+ 26,$xlin+$getdoy+6,20,$alturaini,2,'DF','34');
-        // Caixa dos materiais ou serviços
+        // Caixa dos materiais ou serviÃ§os
 	$this->objpdf->rect($xcol+ 46,$xlin+$getdoy+6,90,$alturaini,2,'DF','34');
         // Caixa das marcas
 	$this->objpdf->rect($xcol+136,$xlin+$getdoy+6,28,$alturaini,2,'DF','');
-        // Caixa dos valores unitários
+        // Caixa dos valores unitÃ¡rios
 	$this->objpdf->rect($xcol+164,$xlin+$getdoy+6,19,$alturaini,2,'DF','');
         // Caixa dos valores totais dos itens
 	$this->objpdf->rect($xcol+183,$xlin+$getdoy+6,19,$alturaini,2,'DF','34');
@@ -360,7 +360,7 @@
 	      $this->objpdf->text($xcol+   4,$xlin+58,'ITEM');
 	      $this->objpdf->text($xcol+  15,$xlin+58,'QUANT');
 	      $this->objpdf->text($xcol+  33,$xlin+58,'REF');
-	      $this->objpdf->text($xcol+  72,$xlin+58,'MATERIAL OU SERVIÇO');
+	      $this->objpdf->text($xcol+  72,$xlin+58,'MATERIAL OU SERVIÃ‡O');
 	      $this->objpdf->text($xcol+ 145,$xlin+58,'OBS');
 	      $this->objpdf->text($xcol+ 164,$xlin+58,'VALOR UNIT.');
 	      $this->objpdf->text($xcol+ 184,$xlin+58,'VALOR TOT.');

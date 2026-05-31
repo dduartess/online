@@ -53,7 +53,7 @@ if($m_publico != 't'){
 $db_verificaip = db_verifica_ip();
 mens_help();
 $dblink="atualizaendereco.php";
-db_logs("","",0,"Atualiza endereço CGM.");
+db_logs("","",0,"Atualiza endereÃ§o CGM.");
 db_mensagem("endereco_cab","endereco_rod");
 if($db_verificaip == "0"){
   $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc),'');\"";
@@ -77,7 +77,7 @@ if(isset($incluir)){
  if($cldb_cgmatualiza->numrows == 0){
   //insert
   $cldb_cgmatualiza->incluir(null);
-  //cgmatualizaliga se cgm não for novo
+  //cgmatualizaliga se cgm nÃ£o for novo
   if($w11_cgmnovo=="f"){
    $cldb_cgmatualizaliga->w12_cgmatualiza = $cldb_cgmatualiza->w11_sequencial;
    $cldb_cgmatualizaliga->w12_numcgm = $w11_numcgm;
@@ -92,34 +92,34 @@ if(isset($incluir)){
  if($cldb_cgmatualiza->erro_status=="0"){
   @$cldb_cgmatualiza->erro();
  }else{
-  db_msgbox("Seus dados foram encaminhados para análise.");
+  db_msgbox("Seus dados foram encaminhados para anÃ¡lise.");
   //encaminhar email
   $mensagemDestinatario = "
 $nomeinst
-Atualização/Pedido de CGM - Prefeitura On-Line
+AtualizaÃ§Ã£o/Pedido de CGM - Prefeitura On-Line
 ----------------------------
 Nome:     $w11_nome
 CPF/CNPJ: $w11_cgccpf
 E-mail:   $w11_email
 
 ".date("d/m/Y - H:i:s")." - ".getenv("REMOTE_ADDR")."
-Seus dados do CGM foram encaminhados para análise.
+Seus dados do CGM foram encaminhados para anÃ¡lise.
 Aguarde retorno sobre seu pedido.
 
 $url
 
-Não responda este e-mail, ele foi gerado automaticamente pelo Servidor.
+NÃ£o responda este e-mail, ele foi gerado automaticamente pelo Servidor.
 ----------------------------
 ";
 
   //$headers   = "Content-Type:text\n Bcc: $email";
-  //$enviando  = mail($w11_email,"Prefeitura On-Line - Atualização/Pedido de CGM",$mensagemDestinatario,$headers);
+  //$enviando  = mail($w11_email,"Prefeitura On-Line - AtualizaÃ§Ã£o/Pedido de CGM",$mensagemDestinatario,$headers);
     
   $rsConsultaConfigDBPref = $clconfigdbpref->sql_record($clconfigdbpref->sql_query_file(db_getsession('DB_instit'),"w13_emailadmin"));
   db_fieldsmemory($rsConsultaConfigDBPref,0);
  
   $oMail = new Smtp();
-  $oMail->Send($w11_email,$w13_emailadmin,'Prefeitura On-Line - Atualização/Pedido de CGM',$mensagemDestinatario);
+  $oMail->Send($w11_email,$w13_emailadmin,'Prefeitura On-Line - AtualizaÃ§Ã£o/Pedido de CGM',$mensagemDestinatario);
   
   
   db_redireciona("centro_pref.php");
@@ -129,7 +129,7 @@ Não responda este e-mail, ele foi gerado automaticamente pelo Servidor.
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <style type="text/css">
@@ -157,12 +157,12 @@ Não responda este e-mail, ele foi gerado automaticamente pelo Servidor.
   <input type="hidden" name="cgmlogin" value="<?=$cgmlogin?>">
   <?=strlen(@$w11_cgccpf)>=14?"CNPJ":"CPF"?>:
   <input type="text" name="w11_cgccpf" value="<?=@$w11_cgccpf?>"><br><br>
-  CGM no Município:
+  CGM no MunicÃ­pio:
   <select name="tipo">
    <option value="s">Sim</option>
-   <option value="n">Não</option>
+   <option value="n">NÃ£o</option>
   </select><br><br><br>
-  <input type="submit" value="Próximo">
+  <input type="submit" value="PrÃ³ximo">
  </form>
 <?php 
 }else{
@@ -246,7 +246,7 @@ db_input('w11_nome',50,$Iw11_nome,true,'text',"","")
   <tr>
     <td nowrap title="<?=@$Tw11_ender?>">
        <?php 
-       db_ancora("<b>Endereço:</b>","js_pesquisaw11_ender(true);","");
+       db_ancora("<b>EndereÃ§o:</b>","js_pesquisaw11_ender(true);","");
        ?>
     </td>
     <td>
@@ -257,7 +257,7 @@ db_input('w11_ender',50,$Iw11_ender,true,'text',"",'');
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_numero?>">
-      Número:
+      NÃºmero:
     </td>
     <td>
 <?php 
@@ -349,7 +349,7 @@ db_input('w11_ident',20,$Iw11_ident,true,'text',$db_opcao,"")
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_incest?>">
-      Inscrição Estadual:
+      InscriÃ§Ã£o Estadual:
     </td>
     <td>
 <?php 
@@ -379,7 +379,7 @@ db_input('w11_email',50,$Iw11_email,true,'text',$db_opcao,"")
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_endcon?>">
-      Endereço Comercial:
+      EndereÃ§o Comercial:
     </td>
     <td>
 <?php 
@@ -389,7 +389,7 @@ db_input('w11_endcon',50,$Iw11_endcon,true,'text',$db_opcao,"")
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_numcon?>">
-     Número:
+     NÃºmero:
     </td>
     <td>
 <?php 
@@ -419,7 +419,7 @@ db_input('w11_baicon',20,$Iw11_baicon,true,'text',$db_opcao,"")
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_muncon?>">
-      Município:
+      MunicÃ­pio:
     </td>
     <td>
 <?php 
@@ -510,7 +510,7 @@ db_input('w11_estciv',4,$Iw11_estciv,true,'text',$db_opcao,"")
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_profis?>">
-      Profissão:
+      ProfissÃ£o:
     </td>
     <td>
 <?php 
@@ -524,7 +524,7 @@ db_input('w11_profis',40,$Iw11_profis,true,'text',$db_opcao,"")
     </td>
     <td>
 <?php 
-$x = array('2'=>'Empresa Privada','1'=>'Empresa Pública');
+$x = array('2'=>'Empresa Privada','1'=>'Empresa PÃºblica');
 db_select('w11_tipcre',$x,true,$db_opcao,"");
 ?>
     </td>
@@ -561,7 +561,7 @@ db_inputdata('w11_nasc',@$w11_nasc_dia,@$w11_nasc_mes,@$w11_nasc_ano,true,'text'
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_mae?>">
-      Nome da Mãe:
+      Nome da MÃ£e:
     </td>
     <td>
 <?php 
@@ -622,7 +622,7 @@ db_input('w11_categoria',2,$Iw11_categoria,true,'text',$db_opcao,"")
   </tr>
   <tr>
     <td nowrap title="<?=@$Tw11_dtemissao?>">
-     Data Emissão:
+     Data EmissÃ£o:
     </td>
     <td>
 <?php 

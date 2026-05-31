@@ -52,7 +52,7 @@
 
 
   if(pg_numrows($clquery->result)==0){
-    echo "<script>window.close();window.opener.alert('Não é possivel gerar recibo. Por favor, contate com a prefeitura.');window.opener.location.href='digitaissqn.php'</script>";
+    echo "<script>window.close();window.opener.alert('NÃ£o Ã© possivel gerar recibo. Por favor, contate com a prefeitura.');window.opener.location.href='digitaissqn.php'</script>";
     exit;
   }
 
@@ -73,7 +73,7 @@
     db_fieldsmemory($clquery->result,0); 
     $result = pg_query("insert into issvar (q05_codigo,
             q05_numpre,q05_numpar,q05_valor,q05_ano,q05_mes,q05_histor,q05_aliq,q05_bruto,q05_vlrinf)
-              values(nextval('issvar_q05_codigo_seq'),$q20_numpre,1,$sum,".$q20_ano.",".$q20_mes.",'issqn retenção na fonte',0,0,0)");
+              values(nextval('issvar_q05_codigo_seq'),$q20_numpre,1,$sum,".$q20_ano.",".$q20_mes.",'issqn retenÃ§Ã£o na fonte',0,0,0)");
     $q20_mes += 1;
     if($q20_mes > 12){ 
       $q20_mes = 1;
@@ -193,7 +193,7 @@ exit;*/
     $clquery->sql_query("issplan"," * ","","q20_planilha =$planilha");
     $clquery->sql_record($clquery->sql);
     db_fieldsmemory($clquery->result,0);
-    //echo("situação = $q20_situacao");
+    //echo("situaÃ§Ã£o = $q20_situacao");
     if ($q20_situacao==2){ //  se foi alterado os dados depois de emitido o recibo #################################
     	    	
     	// select no arrecad pelo numpre para trazer os dados para gravar no arreold....................
@@ -326,7 +326,7 @@ exit;*/
 				
 				
 				
-		    // alterar o numpre e a  situação da issplan para reemitido.(4) ok
+		    // alterar o numpre e a  situaÃ§Ã£o da issplan para reemitido.(4) ok
 		    $clquery->sql_update("issplan","q20_numpre = $q20_numpre, q20_situacao= 4","q20_planilha = $planilha");
 		    $clquery->sql_query("issplan left join issplanit on q20_planilha = q21_planilha ","q20_ano,q20_mes,q20_numcgm,sum(q21_valor) ",""," q20_numpre = $q20_numpre and q21_status = 1 group by q20_ano,q20_mes,q20_numcgm");
 		   // die($clquery->sql_query("issplan left join issplanit on q20_planilha = q21_planilha ","q20_ano,q20_mes,q20_numcgm,sum(q21_valor) ",""," q20_numpre = $q20_numpre group by q20_ano,q20_mes,q20_numcgm"));
@@ -337,7 +337,7 @@ exit;*/
 		    // gerar um novo registro na issvar ok
 		    $result = pg_query("insert into issvar (q05_codigo,
 		            q05_numpre,q05_numpar,q05_valor,q05_ano,q05_mes,q05_histor,q05_aliq,q05_bruto,q05_vlrinf)
-		              values(nextval('issvar_q05_codigo_seq'),$q20_numpre,1,$sum,".$q20_ano.",".$q20_mes.",'issqn retenção na fonte',0,0,0)");
+		              values(nextval('issvar_q05_codigo_seq'),$q20_numpre,1,$sum,".$q20_ano.",".$q20_mes.",'issqn retenÃ§Ã£o na fonte',0,0,0)");
 		    $q20_mes += 1;
 		    if($q20_mes > 12){ 
 		      $q20_mes = 1;
@@ -412,14 +412,14 @@ exit;*/
 		db_fim_transacao($sqlerro);
     	   		
     
-    }else{ // se não foi alterado os dados da planilha depois de emitir o recibo
-	    // alterar a situação para 4 .........................................................
+    }else{ // se nÃ£o foi alterado os dados da planilha depois de emitir o recibo
+	    // alterar a situaÃ§Ã£o para 4 .........................................................
 	    $clquery->sql_update("issplan","q20_situacao= 4","q20_planilha = $planilha");
 	    $clquery->sql_query("issvar left join arreinscr on q05_numpre = k00_numpre inner join arrecad on arrecad.k00_numpre = issvar.q05_numpre"," q05_ano,q05_mes,k00_dtvenc ",""," q05_numpre = ".$q20_numpre);
 		$clquery->sql_record($clquery->sql);
 	
 	    if($clquery->numrows==0){
-	      echo "<script>window.close();window.opener.alert(' Não é possivel gerar recibo. Por favor, contate com a prefeitura.');window.opener.location.href='digitaissqn.php'</script>";
+	      echo "<script>window.close();window.opener.alert(' NÃ£o Ã© possivel gerar recibo. Por favor, contate com a prefeitura.');window.opener.location.href='digitaissqn.php'</script>";
 	      exit;
 	    }
 	    db_fieldsmemory($clquery->result,0);

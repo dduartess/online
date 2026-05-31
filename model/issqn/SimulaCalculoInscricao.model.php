@@ -58,7 +58,7 @@ class SimulaCalculoInscricao {
       $sSqlIssSimulaCalculo  = $oDaoIssSimulaCalculo->sql_query_file($iCodigoSimulacao); 
       $rsIssSimulacaoCalculo = $oDaoIssSimulaCalculo->sql_record($sSqlIssSimulaCalculo);
       if ($oDaoIssSimulaCalculo->numrows == 0 ) {
-        throw new Exception("[ Erro 1 ] - N„o encontrados dados para processamento do calculo de simulaÁ„o");
+        throw new Exception("[ Erro 1 ] - N√£o encontrados dados para processamento do calculo de simula√ß√£o");
       }  
       
       $oDadosSimulacao =  db_utils::fieldsMemory($rsIssSimulacaoCalculo,0);
@@ -73,7 +73,7 @@ class SimulaCalculoInscricao {
   
   function setCodigoSimulacao($iCodigoSimulacao){
     
-    $sMsgLog = "CÛdigo da SimulaÁ„o: {$iCodigoSimulacao}";
+    $sMsgLog = "C√≥digo da Simula√ß√£o: {$iCodigoSimulacao}";
     $this->logCalculo($sMsgLog);
     
     $this->iCodigoSimulacao = $iCodigoSimulacao;
@@ -92,7 +92,7 @@ class SimulaCalculoInscricao {
     $sSqlCISSQN = $oDaoCISSQN->sql_query($iAno, "*");
     $rsCISSQN   = $oDaoCISSQN->sql_record($sSqlCISSQN);
     if ($oDaoCISSQN->numrows == 0 ){
-       $sMsg = "[ Erro 2 ] - Verifique o cadastro dos parametros do mÛdulo ISSQN!";
+       $sMsg = "[ Erro 2 ] - Verifique o cadastro dos parametros do m√≥dulo ISSQN!";
        $this->logCalculo($sMsg);
        throw new Exception($sMsg);
     }
@@ -100,7 +100,7 @@ class SimulaCalculoInscricao {
     $oDadosCISSQN = db_utils::fieldsMemory($rsCISSQN,0);
     $this->nValorBase       = $oDadosCISSQN->q04_vbase;
     if(empty($this->nValorBase)) {
-      $sMsg = "[ Erro 2.1 ] - Valor Base n„o configurado nos par‚metros do ISSQN";
+      $sMsg = "[ Erro 2.1 ] - Valor Base n√£o configurado nos par√¢metros do ISSQN";
       $this->logCalculo($sMsg);
       throw new Exception($sMsg);
     }
@@ -109,14 +109,14 @@ class SimulaCalculoInscricao {
     
     $this->iDiasParaVencimento  = $oDadosCISSQN->q04_diasvcto;
     if($this->iDiasParaVencimento == "") {
-      $sMsg = "[ Erro 2.2 ] - Dias de Vencimento n„o configurados nos par‚metros do ISSQN";
+      $sMsg = "[ Erro 2.2 ] - Dias de Vencimento n√£o configurados nos par√¢metros do ISSQN";
       $this->logCalculo($sMsg);
       throw new Exception($sMsg);
     }
     
     $this->dDataBase        = $oDadosCISSQN->q04_dtbase;
     if(empty($this->dDataBase)) {
-      $sMsg = "[ Erro 2.3 ] - Data Base n„o configurada nos par‚metros do ISSQN";
+      $sMsg = "[ Erro 2.3 ] - Data Base n√£o configurada nos par√¢metros do ISSQN";
       $this->logCalculo($sMsg);
       throw new Exception($sMsg);
     }
@@ -133,7 +133,7 @@ class SimulaCalculoInscricao {
       $sSqlValorInflator .= "   and date_part('y',i02_data) = {$iAno}           ";
       $rsValorInflator   = db_query($sSqlValorInflator);
       if(pg_num_rows($rsValorInflator) == 0) {
-        $sMsg = "[ Erro 2.4 ] - Valor do Inflator {$oDadosCISSQN->q04_inflat} n„o encontrado";
+        $sMsg = "[ Erro 2.4 ] - Valor do Inflator {$oDadosCISSQN->q04_inflat} n√£o encontrado";
         $this->logCalculo($sMsg);
         throw new Exception($sMsg);
       }
@@ -143,16 +143,16 @@ class SimulaCalculoInscricao {
     $sSqlParISSQN = $oDaoParISSQN->sql_query_file(null, "q60_campoutilcalc");
     $rsParISSQN   = $oDaoParISSQN->sql_record($sSqlParISSQN);
     if ($oDaoParISSQN->numrows == 0){
-       $sMsg = "[ Erro 2.5 ] - Verifique o cadastro dos parametros do mÛdulo ISSQN!";
+       $sMsg = "[ Erro 2.5 ] - Verifique o cadastro dos parametros do m√≥dulo ISSQN!";
        $this->logCalculo($sMsg);
        throw new Exception($sMsg);
     }    
     
     $this->iTipoQuantidade = db_utils::fieldsMemory($rsParISSQN,0)->q60_campoutilcalc;
     
-    $sMsgLog = "Par‚metros do ISSQN : <br>";
+    $sMsgLog = "Par√¢metros do ISSQN : <br>";
     $sMsgLog .= "Valor Base ..................: {$this->nValorBase}          <br>";
-    $sMsgLog .= "Calcula Fixo e Vari·vel .....: {$this->iCalculaFixVar}      <br>"; 
+    $sMsgLog .= "Calcula Fixo e Vari√°vel .....: {$this->iCalculaFixVar}      <br>"; 
     $sMsgLog .= "Dias para Vencimento ........: {$this->iDiasParaVencimento}     <br>";
     $sMsgLog .= "Data base para calculo ......: {$this->dDataBase}           <br>";
     $sMsgLog .= "Inflator ....................: {$oDadosCISSQN->q04_inflat}  <br>";      
@@ -186,7 +186,7 @@ class SimulaCalculoInscricao {
   
   function setDataInicioAtividade($dData) {
     
-    $sMsgLog = "Data de InÌcio da Atividade: {$dData}";
+    $sMsgLog = "Data de In√≠cio da Atividade: {$dData}";
     $this->logCalculo($sMsgLog);
     
     $this->dDataInicioAtividade = $dData;
@@ -270,7 +270,7 @@ class SimulaCalculoInscricao {
       
     $oAtividadeSimulacao = db_utils::getCollectionByRecord($rsIssSimulaCalculoAtividade);
     
-    $sMsgLog = "Atividades para SimulaÁ„o: <br>";
+    $sMsgLog = "Atividades para Simula√ß√£o: <br>";
     foreach ($oAtividadeSimulacao as $oAtividade) {
       $sMsgLog .= "($oAtividade->sequencia) - Atividade: {$oAtividade->atividade} - ".str_pad($oAtividade->descricao,40," ");
       $sMsgLog .= "Quantidade: {$oAtividade->quantidade} Permanente: {$oAtividade->permanente} <br>"; 
@@ -297,7 +297,7 @@ class SimulaCalculoInscricao {
     
     $rsQuantidadeSimulacao   = $oDaoIssSimulaCalculo->sql_record($sSqlQuantidadeSimulacao);
     if ($oDaoIssSimulaCalculo->numrows == 0) {
-      throw new Exception ("[ Erro 4 ] - Erro ao buscar quantidades informadas para a simulaÁ„o do calculo");
+      throw new Exception ("[ Erro 4 ] - Erro ao buscar quantidades informadas para a simula√ß√£o do calculo");
     }
     
     $oDadosQuantidadeSimulacao = db_utils::fieldsMemory($rsQuantidadeSimulacao,0);
@@ -320,7 +320,7 @@ class SimulaCalculoInscricao {
         
       case 3:
         /*
-         * PontuaÁ„o por area
+         * Pontua√ß√£o por area
          */
         $iAreaPont = 0;
         $sWhere = "$oDadosQuantidadeSimulacao->q130_area between q28_quantini and q28_quantfim";
@@ -332,7 +332,7 @@ class SimulaCalculoInscricao {
         
         
         /*
-         * PontuaÁ„o por quantidade de empregados 
+         * Pontua√ß√£o por quantidade de empregados 
          */
         $iEmpregPont = 0;
         $sWhere = "$oDadosQuantidadeSimulacao->q130_empregados between q27_quantini and q27_quantfim";
@@ -343,7 +343,7 @@ class SimulaCalculoInscricao {
         } 
         
         /*
-         * PontuaÁ„o por Zona
+         * Pontua√ß√£o por Zona
          */ 
         $iZonaPont = 0;
         $sWhere = "zonapont.q26_zona = $oDadosQuantidadeSimulacao->q130_zona ";
@@ -355,7 +355,7 @@ class SimulaCalculoInscricao {
         
         
          /*
-          * PontuaÁ„o das Classes da Atividade
+          * Pontua√ß√£o das Classes da Atividade
           */ 
         $iClassePont = 0;
         $sWhere = "clasativ.q82_ativ = {$iCodigoAtividade} ";
@@ -428,8 +428,8 @@ class SimulaCalculoInscricao {
       $iQuantidadeAtividade = $this->buscaPontuacaoSimulacao($oAtividade->atividade, $this->iTipoQuantidade);
       if ($iQuantidadeAtividade == 0 && $this->iTipoQuantidade == 3) {
            
-        $sMsgLog  = "[ Erro 6 ] - N„o encontrada pontuaÁ„o para a Atividade {$oAtividade->atividade}. <br>";
-        $sMsgLog .= "Verifique o cadastro de pontuaÁ„o das Classes, Areas, Zonas e Empregados";
+        $sMsgLog  = "[ Erro 6 ] - N√£o encontrada pontua√ß√£o para a Atividade {$oAtividade->atividade}. <br>";
+        $sMsgLog .= "Verifique o cadastro de pontua√ß√£o das Classes, Areas, Zonas e Empregados";
         $this->logCalculo($sMsgLog);
         throw new Exception($sMsgLog);
            
@@ -451,13 +451,13 @@ class SimulaCalculoInscricao {
          /*
           * Verificamos os calculos dos tipos de calculos encontrados
           * 
-          * Caso seja encontrado um tipo de calculo vari·vel e outro fixo, 
-          * utilizaremos apenas o tipo de calculo vari·vel.
+          * Caso seja encontrado um tipo de calculo vari√°vel e outro fixo, 
+          * utilizaremos apenas o tipo de calculo vari√°vel.
           * 
           */
          if ($lCalculoVariavel == true && $this->iCalculaFixVar == 1) {
            if ($oDadosTipoCalculo->calculo == 2) {
-             $sMsgLog = "Dois calculos encontrados (fixo/var), utilizando somente Vari·vel para calculo";
+             $sMsgLog = "Dois calculos encontrados (fixo/var), utilizando somente Vari√°vel para calculo";
              $this->logCalculo($sMsgLog);    
              continue;
            }
@@ -466,7 +466,7 @@ class SimulaCalculoInscricao {
          /*
           * 
           * Comparamos o ano do inicio da atividade com o ano do Calculo
-          * Para sabermos quais os dados utilizar, o exercÌcio atual ou do prÛximo
+          * Para sabermos quais os dados utilizar, o exerc√≠cio atual ou do pr√≥ximo
           *  
           */
          if ( $this->getAnoInicioAtividade() == $this->getAnoCalculo() ) {
@@ -489,16 +489,16 @@ class SimulaCalculoInscricao {
          $this->logCalculo($sMsgLog);
          
          /*
-          * Verificamos a pontuaÁ„o da atividade para saber se ela est· no intervalo de pontuaÁ„o/quantidade configurado para calculo
+          * Verificamos a pontua√ß√£o da atividade para saber se ela est√° no intervalo de pontua√ß√£o/quantidade configurado para calculo
           */
          if ( $iQuantidadeAtividade >= $iQuantidadeInicial && $iQuantidadeAtividade <= $iQuantidadeFinal ) {
 
            /*
-            * Verificamos se o ano de inÌcio da atividade È maior que a data de calculo
+            * Verificamos se o ano de in√≠cio da atividade √© maior que a data de calculo
             */
            if ( $oDadosTipoCalculo->configuracaogeracao == 1 && $this->getAnoInicioAtividade() < $this->getAnoCalculo() ) {
              
-             $sMsgLog = " N„o ir· Processar o tipo de Calculo ";
+             $sMsgLog = " N√£o ir√° Processar o tipo de Calculo ";
              $this->logCalculo($sMsgLog);
              
            } else {
@@ -506,7 +506,7 @@ class SimulaCalculoInscricao {
              /*
               * Verificamos a quantidade a ser utilizada para o tipo de calculo
               * 
-              * Se o par‚metro utilizaquantidadeatividade for 'f' o valor default È 1 do contr·rio utilizaremos 
+              * Se o par√¢metro utilizaquantidadeatividade for 'f' o valor default √© 1 do contr√°rio utilizaremos 
               * a quantidade da atividade
               */
              $iQuantidadeCalculo = 1;
@@ -529,7 +529,7 @@ class SimulaCalculoInscricao {
              /*
               * Verificamos se utiliza multiplicador
               * 
-              * Para simulaÁ„o n„o È utilizado, por isso sempre ser· 1;
+              * Para simula√ß√£o n√£o √© utilizado, por isso sempre ser√° 1;
               */
               $iMultiplicador = 1;
               if ($oDadosTipoCalculo->utilizamultiplicador == "t") {
@@ -537,16 +537,16 @@ class SimulaCalculoInscricao {
               }
              
              /*
-              * Verificamos se ser· Integral ou n„o
+              * Verificamos se ser√° Integral ou n√£o
               */
-             $sMsgLog = "Integral (t = SIM - f = N√O): {$oDadosTipoCalculo->integral}";
+             $sMsgLog = "Integral (t = SIM - f = N√ÉO): {$oDadosTipoCalculo->integral}";
              $this->logCalculo($sMsgLog);
              
              /*
-              * Verificamos se o cadcalc È vari·vel ou n„o
+              * Verificamos se o cadcalc √© vari√°vel ou n√£o
               */
              if (empty($oDadosTipoCalculo->variavel)) {
-               $sMsgLog = "[ Erro 7 ] - N„o definido no cadastro do calculo {$oDadosTipoCalculo->calculo} se È Vari·vel ou N„o";
+               $sMsgLog = "[ Erro 7 ] - N√£o definido no cadastro do calculo {$oDadosTipoCalculo->calculo} se √© Vari√°vel ou N√£o";
                $this->logCalculo($sMsgLog);
                throw new Exception($sMsgLog);
              }   
@@ -555,7 +555,7 @@ class SimulaCalculoInscricao {
               * Verificamos qual a forma de calculo
               */
              if (empty($oDadosTipoCalculo->formacalculo)) {
-               $sMsgLog = "[ Erro 8] - N„o definido no cadastro de calculo {$oDadosTipoCalculo->calculo} a forma de calculo";
+               $sMsgLog = "[ Erro 8] - N√£o definido no cadastro de calculo {$oDadosTipoCalculo->calculo} a forma de calculo";
                $this->logCalculo($sMsgLog);
                throw new Exception($sMsgLog);  
              }
@@ -563,7 +563,7 @@ class SimulaCalculoInscricao {
              $this->logCalculo($sMsgLog);
              
              /*
-              * Verificamos se o calculo se trata de permanente ou provisÛrio 
+              * Verificamos se o calculo se trata de permanente ou provis√≥rio 
               */
              $iPercentualProvisorio = 1;
              if ($oDadosTipoCalculo->permanente == "t" && $oAtividade->permanente == "f") {
@@ -577,10 +577,10 @@ class SimulaCalculoInscricao {
              $this->logCalculo($sMsgLog);
              
              /*
-              * Verificamos se existe cadastro de vencimento v·lido
+              * Verificamos se existe cadastro de vencimento v√°lido
               */
              if ($oDadosTipoCalculo->codigovencimento == "") {
-               $sMsgLog = "[ Erro 9 ] - Vencimento n„o encontrado no cadastro do tipo de calculo";
+               $sMsgLog = "[ Erro 9 ] - Vencimento n√£o encontrado no cadastro do tipo de calculo";
                $this->logCalculo($sMsgLog);
                throw new Exception($sMsgLog);
              }
@@ -593,7 +593,7 @@ class SimulaCalculoInscricao {
              
              /*
               * Calculando o valor do tipo de calculo de acordo com o tipo de proporcionalidade
-              * Integral: sim ou n„o
+              * Integral: sim ou n√£o
               * 
               */
              if ($oDadosTipoCalculo->integral == 'f') {
@@ -627,7 +627,7 @@ class SimulaCalculoInscricao {
              $this->logCalculo($sMsgLog);             
              
              /*
-              * Apenas processamos um tipo de calculo, nunca um mesmo tipo de calculo ser· calculado mais de uma vez
+              * Apenas processamos um tipo de calculo, nunca um mesmo tipo de calculo ser√° calculado mais de uma vez
               *  
               */
              if ($oDadosTipoCalculo->variavel == "f") {
@@ -793,7 +793,7 @@ class SimulaCalculoInscricao {
              } else {
                
                /*
-                * Vari·vel
+                * Vari√°vel
                 */
                 if ( !in_array($oDadosTipoCalculo->calculo."-".$oDadosTipoCalculo->formacalculo."-".$oDadosTipoCalculo->variavel, $aTipoCalculoProcessado) ) {
                 
@@ -833,8 +833,8 @@ class SimulaCalculoInscricao {
              
          } else {
            
-          $sMsgLog  = " N„o ir· Processar o tipo de Calculo! <br>"; 
-          $sMsgLog .= " Quantidades da Atividade est„o fora do intervalo configurado para o tipo de calculo";
+          $sMsgLog  = " N√£o ir√° Processar o tipo de Calculo! <br>"; 
+          $sMsgLog .= " Quantidades da Atividade est√£o fora do intervalo configurado para o tipo de calculo";
           $this->logCalculo($sMsgLog); 
            
          }
@@ -862,10 +862,10 @@ class SimulaCalculoInscricao {
       $this->logCalculo($sMsgLog);
       
       
-      //Processamos os calculos de vari·vel
+      //Processamos os calculos de vari√°vel
       if ($oDadosCalculo->sVariavel == 't') {
         
-        $sMsgLog = "Processando calculo de ISSQN Vari·vel <br>";
+        $sMsgLog = "Processando calculo de ISSQN Vari√°vel <br>";
         $this->logCalculo($sMsgLog);
         
         $sSqlVencimentos        = $oDaoCadVenc->sql_query($oDadosCalculo->iCodigoVencimento, null, "*", "q82_parc asc");
@@ -904,7 +904,7 @@ class SimulaCalculoInscricao {
           } else {
             
             $sMsgLog  = "Parcela : {$oDadosVencimento->q82_parc} Vencimento : {$oDadosVencimento->q82_venc} ";
-            $sMsgLog .= "n„o calculada pois o ano/mes de vencimento È menor ou igual ao ano/mes do inÌcio da ativiade {$this->getDataInicioAtividade()} <br>";
+            $sMsgLog .= "n√£o calculada pois o ano/mes de vencimento √© menor ou igual ao ano/mes do in√≠cio da ativiade {$this->getDataInicioAtividade()} <br>";
             $this->logCalculo($sMsgLog);
             
           }
@@ -912,12 +912,12 @@ class SimulaCalculoInscricao {
         }
         
         
-        $sMsgLog = "FIM DO PROCESSAMENTO DO ISSQN VARI¡VEL";
+        $sMsgLog = "FIM DO PROCESSAMENTO DO ISSQN VARI√ÅVEL";
         $this->logCalculo($sMsgLog);
         
       } else {
         
-        $sMsgLog = "Processando calculo de ISSQN N√O VARI¡VEL<br>";
+        $sMsgLog = "Processando calculo de ISSQN N√ÉO VARI√ÅVEL<br>";
         $this->logCalculo($sMsgLog);
         
 
@@ -1005,7 +1005,7 @@ class SimulaCalculoInscricao {
           }
           
           /*
-           * Verificamos se ser· gerada parcela vencida
+           * Verificamos se ser√° gerada parcela vencida
            */
           if ($oDadosVencimento->q92_formacalcparcvenc == 1) {
             

@@ -29,7 +29,7 @@ include("libs/db_conecta.php");
 include("classes/db_db_certidaoweb_classe.php");
 
 db_mensagem("certidaonegativa","");
-$meses = array("","JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO");
+$meses = array("","JANEIRO", "FEVEREIRO", "MARÃ‡O", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO");
 $data = getdate();
 $mes1 = $data['mon'];
 if((strlen($mes1)) == 1)
@@ -120,7 +120,7 @@ $fd = fopen($arquivo,"w");
 $ffputs = ( '<html>'."\n");
 $ffputs .= ( '<head>'."\n");
 $ffputs .= ( '<title>Documento sem t&iacute;tulo</title>'."\n");
-$ffputs .= ( '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">'."\n");
+$ffputs .= ( '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'."\n");
 $ffputs .= ( '</head>'."\n");
 $ffputs .= ( '<STYLE>'."\n");
 $ffputs .= ( '  .link color: white;'."\n");
@@ -161,10 +161,10 @@ $ffputs .= ( '        </strong></font></p>'."\n");
 $ffputs .= ( '      <table width="100%" border="1" cellspacing="5" cellpadding="5">'."\n");
 $ffputs .= ( '        <tr>'."\n");
 $ffputs .= ( '          <td height="647"><font face="Verdana" size="2" color="#000000">'."\n");
-$ffputs .= ( '            <font size="5"><p align="center"><b>CERTIDÃO NEGATIVA</b></p></font><br><b>IDENTIFICAÇÃO DO CONTRIBUINTE:</b><font face="courier new" size="2"><table width="500" border="1" cellspacing="1" cellpadding="1" class="texto">'."\n");
+$ffputs .= ( '            <font size="5"><p align="center"><b>CERTIDÃƒO NEGATIVA</b></p></font><br><b>IDENTIFICAÃ‡ÃƒO DO CONTRIBUINTE:</b><font face="courier new" size="2"><table width="500" border="1" cellspacing="1" cellpadding="1" class="texto">'."\n");
 $ffputs .= ( '                            <tr>'."\n");
 $ffputs .= ( '<td width="200" align="right" nowrap>'."\n");
-$ffputs .= ( '                              NÚMERO DE CADASTRO:'."\n");
+$ffputs .= ( '                              NÃšMERO DE CADASTRO:'."\n");
 $ffputs .= ( '                             </td>'."\n");
 $ffputs .= ( '                             <td>'."\n");
 $ffputs .= ( '                              <b>'.$z01_numcgm.'</b>'."\n");
@@ -180,7 +180,7 @@ $ffputs .= ( '                             </td>'."\n");
 $ffputs .= ( '                            </tr>'."\n");
 $ffputs .= ( '                            <tr>'."\n");
 $ffputs .= ( '                             <td width="200" align="right">'."\n");
-$ffputs .= ( '                              ENDEREÇO:'."\n");
+$ffputs .= ( '                              ENDEREÃ‡O:'."\n");
 $ffputs .= ( '                             </td>'."\n");
 $ffputs .= ( '                             <td>'."\n");
 $ffputs .= ( '                              <b>'.$z01_ender.'</b>'."\n");
@@ -236,7 +236,7 @@ $ffputs .= ( '         <td><b>'.$matric.'</b></td>'."\n");
 $ffputs .= ( '       </tr>'."\n");
 }elseif(isset($inscr)){
 $ffputs .= ( ' <tr> '."\n");
-$ffputs .= ( '         <td width="200" align="right">INSCRIÇÃO:</td>'."\n");
+$ffputs .= ( '         <td width="200" align="right">INSCRIÃ‡ÃƒO:</td>'."\n");
 $ffputs .= ( '         <td><b>'.$inscr.'</b></td>'."\n");
 $ffputs .= ( '       </tr>'."\n");
 }
@@ -245,10 +245,10 @@ $ffputs .= ( ''."\n");
 $ffputs .= ( '                           </font><br><p align="left">'."\n");
 $ffputs .= ( '                              '.$DB_mens1.''."\n");
 $ffputs .= ( '<br>'."\n");
-$ffputs .= ( '                                &nbsp;&nbsp;&nbsp;<b>OBS.: A Fazenda Municipal se reserva o direito de lançar débitos'."\n");
-$ffputs .= ( ' independentemente da data desta certidão.'."\n");
+$ffputs .= ( '                                &nbsp;&nbsp;&nbsp;<b>OBS.: A Fazenda Municipal se reserva o direito de lanÃ§ar dÃ©bitos'."\n");
+$ffputs .= ( ' independentemente da data desta certidÃ£o.'."\n");
 $ffputs .= ( '<br>'."\n");
-$ffputs .= ( '                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Validade: 90 dias da data de sua emissão.'."\n");
+$ffputs .= ( '                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Validade: 90 dias da data de sua emissÃ£o.'."\n");
 $ffputs .= ( ' </p>                                                                                         <p align="right">'.$munic.',&nbsp;'.$dia.'&nbsp;DE&nbsp;'.$mes.'&nbsp;DE&nbsp;'.$ano.'</p>'."\n");
 $ffputs .= ( '                       <table width="100%" border="0" cellspacing="5" cellpadding="5">'."\n");
 $ffputs .= ( '                           <tr valign="top">'."\n");
@@ -316,7 +316,7 @@ $clcertidao->incluir();
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <style>
 A:hover {color:gray; cursor:hand};
@@ -346,7 +346,7 @@ window.print();
       </tr>
     </table>
   </td>
-<div align="center" id="botao"><a onClick="imprimir()">Clique aqui para imprimir a Certidão</a></div>
+<div align="center" id="botao"><a onClick="imprimir()">Clique aqui para imprimir a CertidÃ£o</a></div>
   </tr>
   <tr>
     <td> <p><font face="Courier New, Courier, mono"><strong>N&ordm;: 
@@ -355,13 +355,13 @@ window.print();
       <table width="100%" border="0" cellspacing="5" cellpadding="5">
         <tr>
           <td height="647"> <font size='5'>
-            <p align='center'><b>CERTIDÃO NEGATIVA</b></p>
-            </font><b>IDENTIFICAÇÃO DO CONTRIBUINTE:</b><br>
+            <p align='center'><b>CERTIDÃƒO NEGATIVA</b></p>
+            </font><b>IDENTIFICAÃ‡ÃƒO DO CONTRIBUINTE:</b><br>
             <font face='courier new' size='2'>
                           <table width="500" border="0" cellspacing="1" cellpadding="1" class="texto">
                             <tr>
                              <td width="200" align="right">
-                              NÚMERO DE CADASTRO:
+                              NÃšMERO DE CADASTRO:
                              </td>
                              <td>
                               <b><?=$z01_numcgm?></b>
@@ -377,7 +377,7 @@ window.print();
                             </tr>
                             <tr>
                              <td width="200" align="right">
-                              ENDEREÇO:
+                              ENDEREÃ‡O:
                              </td>
                              <td>
                               <b><?=$z01_ender?></b>
@@ -434,7 +434,7 @@ window.print();
                     </tr>";
                           }elseif(isset($inscr)){
                             echo "<tr> 
-                        <td align=\"right\">INSCRIÇÃO:</td>
+                        <td align=\"right\">INSCRIÃ‡ÃƒO:</td>
                         <td><b>".$inscr."</b></td>
                       </tr>";
                           }
@@ -448,9 +448,9 @@ window.print();
               ?>
               <br><b>
               <font size="1" face="Arial, Helvetica, sans-serif">
-                          OBS.: A Fazenda Municipal se reserva o direito de lançar débitos 
-              independentemente da data desta certidão. Validade: 90 dias da data 
-              de sua emissão.</font> </p>                                                                                         
+                          OBS.: A Fazenda Municipal se reserva o direito de lanÃ§ar dÃ©bitos 
+              independentemente da data desta certidÃ£o. Validade: 90 dias da data 
+              de sua emissÃ£o.</font> </p>                                                                                         
             <p align='right'><?=$munic.","?><?php  echo "&nbsp;".$dia."&nbsp;DE&nbsp;".$mes."&nbsp;DE&nbsp;".$ano; ?></p>
             <table width='100%' border='0' cellspacing='5' cellpadding='5'>
                            <tr valign='top'>

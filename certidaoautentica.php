@@ -80,7 +80,7 @@ if ($clcertidaoweb->numrows > 0) {
    $oCertidaoWeb = db_utils::fieldsMemory($rsCertidaoWeb,0);
    
    /**
-   * $sStatus = 1-Vencida, 2-Não Vencida, 3-Inválida
+   * $sStatus = 1-Vencida, 2-NÃ£o Vencida, 3-InvÃ¡lida
    * @return int
    */
   
@@ -152,14 +152,14 @@ if ($clcertidaoweb->numrows > 0) {
 
   if (isset($oPost->verificador) && $oPost->verificador == "") {
     $sErro = true;
-    db_msgbox('Código Identificador dever ser Preenchido!');
+    db_msgbox('CÃ³digo Identificador dever ser Preenchido!');
   } else {
     if (isset($oPost->verificador) && $oPost->verificador != "") {	  
       $clcertidaoweb->sql_record($clcertidaoweb->sql_query("","codcert,cerdtvenc,ceracesso","","ceracesso = '".$oPost->verificador."'"));
 
       if ($clcertidaoweb->numrows == 0) {
         $sErro = true;
-        db_msgbox('Código de Autenticidade Inválido');
+        db_msgbox('CÃ³digo de Autenticidade InvÃ¡lido');
       } else {
   	    $sUrl = "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,height=500,width=700";
         flush();
@@ -175,7 +175,7 @@ if ($clcertidaoweb->numrows > 0) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -198,7 +198,7 @@ if ($clcertidaoweb->numrows > 0) {
       <table width="100%" border="0" class="texto">
         <tr>
           <td width="42%" align="right">
-            Código:&nbsp;
+            CÃ³digo:&nbsp;
           </td>
           <td width="58%" align="left">
             <input id="verificador" name="verificador" type="text" value="" size="50" maxlength="50">
@@ -222,7 +222,7 @@ if ($clcertidaoweb->numrows > 0) {
 </table>
 </center>
 <?php 
-  db_logs("","",0,"Verifica Codigo Autenticidade de Certidão.");
+  db_logs("","",0,"Verifica Codigo Autenticidade de CertidÃ£o.");
 ?>
 </body>
 </html>

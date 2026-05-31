@@ -32,7 +32,7 @@ include("classes/db_cgm_classe.php");
 $head1 = "";
 $head2 = "";
 $head3 = "";
-$head4 = "Relatório Total dos Débitos Analítico";
+$head4 = "RelatÃ³rio Total dos DÃ©bitos AnalÃ­tico";
 $head5 = "";
 $head7 = "";
 $head8 = "";
@@ -64,7 +64,7 @@ $tipostodos = split(",",$tipostodos);
 //echo array_search(8,$tipos);
 //exit;
 //echo $tipos[1];
-$head6 = "Débitos Calculados até: ".db_formatar($db_datausu,'d');
+$head6 = "DÃ©bitos Calculados atÃ©: ".db_formatar($db_datausu,'d');
 $where = "";
 $and = " and ";
 
@@ -83,19 +83,19 @@ if (!empty($numcgm)) {
 	$result_teste = debitos_matricula($matric,0,0,$DB_DATACALC,$DB_anousu,'','k00_tipo,k00_numpre,k00_numpar,k00_receit');
 	
   $result = debitos_matricula($matric,0,0,$DB_DATACALC,$DB_anousu,'','k00_tipo,k00_numpre,k00_numpar,k00_receit', $where);
-  $outros = "Matrícula: ".$matric.
+  $outros = "MatrÃ­cula: ".$matric.
   $cliptubase = new cl_iptubase;
   $result_inf = $cliptubase->proprietario_record($cliptubase->proprietario_query($matric,"j34_setor#j34_quadra#j34_lote#tipopri#j39_numero#j39_compl#nomepri#z01_nome#z01_numcgm#z01_cgmpri"));
   if ($cliptubase->numrows!=0) {
     db_fieldsmemory($result_inf,0);
     $z01_numcgm = $z01_cgmpri;
-    $outros = "Matrícula: ".$matric." - SQL: ".$j34_setor."/".$j34_quadra."/".$j34_lote." - Logradouro: ".$tipopri." ".$nomepri.", ".$j39_numero." ".$j39_compl;
+    $outros = "MatrÃ­cula: ".$matric." - SQL: ".$j34_setor."/".$j34_quadra."/".$j34_lote." - Logradouro: ".$tipopri." ".$nomepri.", ".$j39_numero." ".$j39_compl;
   } else {
   }
 } else if (!empty($inscr)) {
 	$result_teste = debitos_inscricao($inscr,0,0,$DB_DATACALC,$DB_anousu,'','k00_tipo,k00_numpre,k00_numpar,k00_receit');
   $result = debitos_inscricao($inscr,0,0,$DB_DATACALC,$DB_anousu,'','k00_tipo,k00_numpre,k00_numpar,k00_receit', $where);
-  $outros = "Inscrição: ".$inscr;
+  $outros = "InscriÃ§Ã£o: ".$inscr;
   $clissbase = new cl_issbase; 
   $result_inf = pg_exec("select * from empresa where q02_inscr = $inscr");
   //      if($clissbase->numrows!=0){
@@ -106,7 +106,7 @@ if (!empty($numcgm)) {
   }
 } else if (!empty($numpre)) {
 	$result_teste = debitos_numpre($numpre,0,0,$DB_DATACALC,$DB_anousu,0,'','k00_tipo,k00_numpre,k00_numpar,k00_receit');  
-  $outros = "Código Arrecadação: ".$numpre;
+  $outros = "CÃ³digo ArrecadaÃ§Ã£o: ".$numpre;
   $result = debitos_numpre($numpre,0,0,$DB_DATACALC,$DB_anousu,0,'','k00_tipo,k00_numpre,k00_numpar,k00_receit');
   $z01_numcgm = pg_result($result,0,"k00_numcgm");
   $clcgm = new cl_cgm;
@@ -138,10 +138,10 @@ $pdf->Text($X+40,$Y,$outros);
 $pdf->Text($X,$Y + 4,"Nome:");
 $pdf->Text($X,$Y + 8,"CNPJ/CPF:");
 $pdf->Text($X + 45,$Y + 8,"Identidade:");
-$pdf->Text($X,$Y + 12,"Endereço:");
-$pdf->Text($X+100,$Y + 12,"Número:");
+$pdf->Text($X,$Y + 12,"EndereÃ§o:");
+$pdf->Text($X+100,$Y + 12,"NÃºmero:");
 $pdf->Text($X+140,$Y + 12,"Complemento:");
-$pdf->Text($X,$Y + 16,"Município:");
+$pdf->Text($X,$Y + 16,"MunicÃ­pio:");
 $pdf->Text($X + 55,$Y + 16,"UF:");
 $pdf->SetFont('Arial','I',8);
 $pdf->Text($X + 18,$Y,pg_result($dados,0,"z01_numcgm"));
@@ -185,9 +185,9 @@ $pdf->Cell($TamNumtot,5,"T",1,0,"C",0);
 $pdf->Cell(13,5,"OPER.",1,0,"C",0);
 $pdf->Cell(13,5,"VENC.",1,0,"C",0);
 $pdf->Cell(13,5,"ORIGEM",1,0,"C",0);
-$pdf->Cell($TamK01_descr,5,"DESCRIÇÃO",1,0,"C",0);
+$pdf->Cell($TamK01_descr,5,"DESCRIÃ‡ÃƒO",1,0,"C",0);
 $pdf->Cell($TamReceit,5,"REC",1,0,"C",0);
-$pdf->Cell($TamK02_descr,5,"DESCRIÇÃO",1,0,"C",0);
+$pdf->Cell($TamK02_descr,5,"DESCRIÃ‡ÃƒO",1,0,"C",0);
 $pdf->Cell($TamVlrhis + 6,5,"VALOR",1,0,"C",0);
 $pdf->Cell($TamVlrcor + 6,5,"CORRIGIDO",1,0,"C",0);
 $pdf->Cell($TamVlrjuros + 6,5,"JUROS",1,0,"C",0);
@@ -256,10 +256,10 @@ for ($i = 0; $i < $numrows; $i++) {
       $pdf->Text($X,$Y + 4,"Nome:");
       $pdf->Text($X,$Y + 8,"CNPJ/CPF:");
       $pdf->Text($X + 45,$Y + 8,"Identidade:");
-      $pdf->Text($X,$Y + 12,"Endereço:");
-      $pdf->Text($X + 110,$Y + 12,"Número:");
+      $pdf->Text($X,$Y + 12,"EndereÃ§o:");
+      $pdf->Text($X + 110,$Y + 12,"NÃºmero:");
       $pdf->Text($X + 155,$Y + 12,"Complemento:");
-      $pdf->Text($X,$Y + 16,"Município:");
+      $pdf->Text($X,$Y + 16,"MunicÃ­pio:");
       $pdf->Text($X + 55,$Y + 16,"UF:");
       $pdf->SetFont('Arial','I',8);
       $pdf->Text($X + 18,     $Y     ,pg_result($dados,0,"z01_numcgm"));
@@ -282,9 +282,9 @@ for ($i = 0; $i < $numrows; $i++) {
     $pdf->Cell(13,5,"OPER.",1,0,"C",0);
     $pdf->Cell(13,5,"VENC.",1,0,"C",0);
     $pdf->Cell(13,5,"ORIGEM",1,0,"C",0);
-    $pdf->Cell($TamK01_descr,5,"DESCRIÇÃO",1,0,"C",0);
+    $pdf->Cell($TamK01_descr,5,"DESCRIÃ‡ÃƒO",1,0,"C",0);
     $pdf->Cell($TamReceit,5,"REC",1,0,"C",0);
-    $pdf->Cell($TamK02_descr,5,"DESCRIÇÃO",1,0,"C",0);
+    $pdf->Cell($TamK02_descr,5,"DESCRIÃ‡ÃƒO",1,0,"C",0);
     $pdf->Cell($TamVlrhis + 6,5,"VALOR",1,0,"C",0);
     $pdf->Cell($TamVlrcor + 6,5,"CORRIGIDO",1,0,"C",0);
     $pdf->Cell($TamVlrjuros + 6,5,"JUROS",1,0,"C",0);
@@ -298,9 +298,9 @@ for ($i = 0; $i < $numrows; $i++) {
     $pdf->Cell($TamNumtot,5,"T",1,0,"C",0);
     $pdf->Cell(17,5,"Dt oper.",1,0,"C",0);
     $pdf->Cell(17,5,"Dt venc.",1,0,"C",0);
-    $pdf->Cell($TamK01_descr,5,"DESCRIÇÃO",1,0,"C",0);
+    $pdf->Cell($TamK01_descr,5,"DESCRIÃ‡ÃƒO",1,0,"C",0);
     $pdf->Cell($TamReceit,5,"REC",1,0,"C",0);
-    $pdf->Cell($TamK02_descr,5,"DESCRIÇÃO",1,0,"C",0);
+    $pdf->Cell($TamK02_descr,5,"DESCRIÃ‡ÃƒO",1,0,"C",0);
     $pdf->Cell($TamVlrhis + 6,5,"VALOR",1,0,"C",0);
     $pdf->Cell($TamVlrcor + 6,5,"VAL COR",1,0,"C",0);
     $pdf->Cell($TamVlrjuros + 6,5,"JUROS",1,0,"C",0);
@@ -577,12 +577,12 @@ $pdf->ln();
 /*if ($tipostodos != $tipos) {
   $pdf->SetFont('arial','B',11);
   $pdf->setx(7);
-  $pdf->Cell(195,5,"*** EXISTEM MAIS TIPOS DE DÉBITOS LANÇADOS QUE NÃO FORAM LISTADOS NESTE RELATÓRIO ***",0,1,"L",1);
+  $pdf->Cell(195,5,"*** EXISTEM MAIS TIPOS DE DÃ‰BITOS LANÃ‡ADOS QUE NÃƒO FORAM LISTADOS NESTE RELATÃ“RIO ***",0,1,"L",1);
 }*/
 if (pg_numrows($result_teste)>pg_numrows($result)) {
 	$pdf->SetFont('arial', 'B', 11);
 	$pdf->setx(7);
-	$pdf->Cell(195, 5, "*** EXISTEM MAIS DÉBITOS LANÇADOS QUE NÃO FORAM LISTADOS NESTE RELATÓRIO ***", 0, 1, "L", 1);
+	$pdf->Cell(195, 5, "*** EXISTEM MAIS DÃ‰BITOS LANÃ‡ADOS QUE NÃƒO FORAM LISTADOS NESTE RELATÃ“RIO ***", 0, 1, "L", 1);
 }
    $pdf->Ln();
    
@@ -667,7 +667,7 @@ if (pg_numrows($result_teste)>pg_numrows($result)) {
 	 $nTotSusptot    = 0;	 
 	 
      $pdf->SetFont('Arial', 'BI', 12);
-     $pdf->Cell(0,5,'Débitos Suspensos',0,1,"C",0);
+     $pdf->Cell(0,5,'DÃ©bitos Suspensos',0,1,"C",0);
      $pdf->Ln();
      $pdf->SetFont('arial','B',6);
      $pdf->setx(5);
@@ -677,9 +677,9 @@ if (pg_numrows($result_teste)>pg_numrows($result)) {
      $pdf->Cell(13,5,"OPER."		,1,0,"C",0);
      $pdf->Cell(13,5,"VENC."		,1,0,"C",0);
      $pdf->Cell(13,5,"ORIGEM"		,1,0,"C",0);
-     $pdf->Cell(30,5,"DESCRIÇÃO"	,1,0,"C",0);
+     $pdf->Cell(30,5,"DESCRIÃ‡ÃƒO"	,1,0,"C",0);
      $pdf->Cell(6 ,5,"REC"			,1,0,"C",0);
-     $pdf->Cell(23,5,"DESCRIÇÃO"	,1,0,"C",0);
+     $pdf->Cell(23,5,"DESCRIÃ‡ÃƒO"	,1,0,"C",0);
      $pdf->Cell(15,5,"VALOR"		,1,0,"C",0);
      $pdf->Cell(15,5,"CORRIGIDO"	,1,0,"C",0);
      $pdf->Cell(15,5,"JUROS"		,1,0,"C",0);

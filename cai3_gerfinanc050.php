@@ -46,16 +46,16 @@ if(isset($HTTP_POST_VARS["inicial"])) {
   if(isset($db_datausu)){
 
     if(!checkdate(substr($db_datausu,5,2),substr($db_datausu,8,2),substr($db_datausu,0,4))){
-       echo "Data para c·lculo inv·lida. <br><br>";
-       echo "Data dever· se superior a : ".date('Y-m-d',$HTTP_SESSION_VARS["DB_datausu"]);
+       echo "Data para c√°lculo inv√°lida. <br><br>";
+       echo "Data dever√° se superior a : ".date('Y-m-d',$HTTP_SESSION_VARS["DB_datausu"]);
     }
     
     $sTimeParamGet     = mktime(0,0,0,substr($db_datausu,5,2),substr($db_datausu,8,2),substr($db_datausu,0,4));
     $sTimeParamSession = mktime(0,0,0,date('m',db_getsession("DB_datausu")),date('d',db_getsession("DB_datausu")),date('Y',db_getsession("DB_datausu")));
     
     if($sTimeParamGet < $sTimeParamSession){
-       echo "Data n„o permitida para c·lculo. <br><br>";
-       echo "Data dever· se superior a : ".date('Y-m-d',db_getsession("DB_datausu"));
+       echo "Data n√£o permitida para c√°lculo. <br><br>";
+       echo "Data dever√° se superior a : ".date('Y-m-d',db_getsession("DB_datausu"));
     }
     
     $DB_DATACALC = mktime(0,0,0,substr($db_datausu,5,2),substr($db_datausu,8,2),substr($db_datausu,0,4));
@@ -134,7 +134,7 @@ if(isset($matric) and !empty($matric)){
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <style type="text/css">
 <!--
@@ -154,21 +154,21 @@ if(isset($matric) and !empty($matric)){
   if($numrows>0){
   
     /**
-     *  Monta o cabeÁalho que lista as iniciais.
+     *  Monta o cabe√ßalho que lista as iniciais.
      */
     echo "
           <tr bgcolor=\"#FFCC66\">   \n          
             <th class=\"borda\" style=\"font-size:11px\" nowrap>O</td>\n            
             <th title=\"Marca/Desmarca Todas\" class=\"borda\" style=\"font-size:12px\" nowrap><a id=\"marca\" href=\"\" style=\"color:black\" onclick=\"js_marca();return false\">M</a>
-            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv50_inicial."' nowrap>Inicial N˙mero</th>\n
+            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv50_inicial."' nowrap>Inicial N√∫mero</th>\n
             <th class=\"borda\" style=\"font-size:11px\" title='Valor Total' nowrap>Valor Total</th>\n
             <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv50_advog."' nowrap>Data inicial</th>\n
-            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv70_codforo."' nowrap>CÛdigo do Processo</th>\n
-            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tnome."' nowrap>Nome do usu·rio</th>\n
-            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv54_descr."' nowrap>LocalizaÁ„o</th>\n
+            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv70_codforo."' nowrap>C√≥digo do Processo</th>\n
+            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tnome."' nowrap>Nome do usu√°rio</th>\n
+            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv54_descr."' nowrap>Localiza√ß√£o</th>\n
             <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv53_descr."' nowrap>Vara</th>\n
             <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv50_codmov."' nowrap>Movimento</th>\n
-            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv52_descr."' nowrap>DescriÁ„o</th>\n
+            <th class=\"borda\" style=\"font-size:11px\" title='".@$Tv52_descr."' nowrap>Descri√ß√£o</th>\n
           </tr>  
             ";          
     $valor_total = 0;
@@ -299,7 +299,7 @@ if(isset($matric) and !empty($matric)){
     for(i = 0;i < F.elements.length;i++) {
       if(F.elements[i].type == "checkbox"){
         if(F.elements[i].style.visibility!="hidden"){
-         	if(F.elements[i].name == "NM") { // se o name do checkbox for NM(N„o Marcar) n„o deixa somar os valor tbem
+         	if(F.elements[i].name == "NM") { // se o name do checkbox for NM(N√£o Marcar) n√£o deixa somar os valor tbem
          		F.elements[i].checked = false;
          	}else {   
           	F.elements[i].checked = dis;
@@ -328,7 +328,7 @@ if(isset($matric) and !empty($matric)){
   var vcto_calc = "";
   var mostraemite = <?=$k00_recibodbpref?>;
   if(mostraemite==2){
-  alert('Este tipo de debito n„o permite emitir recibo.');
+  alert('Este tipo de debito n√£o permite emitir recibo.');
     parent.document.getElementById("enviar").disabled = true;//botao emite recibo
   }else{
  		parent.document.getElementById("enviar").disabled = false;//botao emite recibo

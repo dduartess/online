@@ -29,7 +29,7 @@ require("libs/db_stdlib.php");
 require("libs/db_conecta.php");
 
 //@ 08/09/2005
-//@ DBSeller Informática LTDA
+//@ DBSeller InformÃ¡tica LTDA
 //@
 
 parse_str($HTTP_SERVER_VARS['QUERY_STRING']); // ta com o globals desativado no php -- Crestani
@@ -64,17 +64,17 @@ function checa_eventos($dia,$mes,$ano){
 // --
 
 class calendario{ 
-   var $sem;//Array com os dias da semana como índice 
+   var $sem;//Array com os dias da semana como Ã­ndice 
    var $mes;//Array com os meses do ano 
    var $nome_objeto_data;
    var $shutdown_function = "";
 
    function inicializa(){//Atribui valores para $sem e $mes.
        $this->sem=array('Sun'=>1,'Mon'=>2,'Tue'=>3,'Wed'=>4,'Thu'=>5,'Fri'=>6,'Sat'=>7);
-       $this->mes=array('1'=>'JANEIRO','2'=>'FEVEREIRO','3'=>'MARÇO','4'=>'ABRIL','5'=>'MAIO','6'=>'JUNHO','7'=>'JULHO','8'=>'AGOSTO','9'=>'SETEMBRO','10'=>'OUTUBRO','11'=>'NOVEMBRO','12'=>'DEZEMBRO');
+       $this->mes=array('1'=>'JANEIRO','2'=>'FEVEREIRO','3'=>'MARÃ‡O','4'=>'ABRIL','5'=>'MAIO','6'=>'JUNHO','7'=>'JULHO','8'=>'AGOSTO','9'=>'SETEMBRO','10'=>'OUTUBRO','11'=>'NOVEMBRO','12'=>'DEZEMBRO');
    } 
 
-   function aux($i){//Complementa a tabela com espaços em branco 
+   function aux($i){//Complementa a tabela com espaÃ§os em branco 
       $retval=""; 
       for($k=0;$k < $i;$k++){ 
          $retval.="<td width=\"20\">&nbsp;</td>"; 
@@ -83,7 +83,7 @@ class calendario{
    }
    function cria($dia,$mes,$ano,$marca=0){
       $this->inicializa(); 
-      $last  =date ("d", mktime (0,0,0,$mes+1,0,$ano));/*Inteiro do ultimo dia do mês*/
+      $last  =date ("d", mktime (0,0,0,$mes+1,0,$ano));/*Inteiro do ultimo dia do mÃªs*/
       if($last<$dia) {
         $dia = $last;
       }
@@ -92,7 +92,7 @@ class calendario{
       $dia=$pieces[0]; 
       $mes=$pieces[1]; 
       $ano=$pieces[2]; 
-      $diasem=date ("D", mktime (0,0,0,$mes,1,$ano));/*String com dia da semana em inglês*/ 
+      $diasem=date ("D", mktime (0,0,0,$mes,1,$ano));/*String com dia da semana em inglÃªs*/ 
       $str = "";
       if($this->sem[$diasem] != 1){/*Se dia semana diferente de domingo,completa com colunas em branco*/ 
          $valor=$this->sem[$diasem]-1; 

@@ -27,7 +27,7 @@
 
 //MODULO: issqn
 //|00|//cl_iframe_seleciona
-//|10|//È gerado uma tabela bot„o para selecionar  as linhas desejadas
+//|10|//√© gerado uma tabela bot√£o para selecionar  as linhas desejadas
 //|15|//[variavel] = new cl_iframe_seleciona;
 class cl_iframe_seleciona { 
    var $sql        = null;
@@ -38,17 +38,17 @@ class cl_iframe_seleciona {
    var $chaves     = null;
    //|30|//campos que deseja retorna num input apenas
    var $campos     = null;
-   //|30|//campos que ser„o mostrados
+   //|30|//campos que ser√£o mostrados
    var $legenda    = "DADOS";
    //|30|//legenda do fieldset 
    var $msg_vazio  = "<small><b>Nenhum registro encontrado.</b><small>";
-   //|30|//mensagem a ser mostrada quando o sql n„o retornar nenhum registro
+   //|30|//mensagem a ser mostrada quando o sql n√£o retornar nenhum registro
    var $textocabec = 'darkblue';
-   //|30|//cor do texto do cabeÁalho
+   //|30|//cor do texto do cabe√ßalho
    var $textocorpo = 'black'; 
    //|30|//cor do texto do corpo
    var $fundocabec = '#aacccc ';
-   //|30|//cor do fundo do cabeÁalho
+   //|30|//cor do fundo do cabe√ßalho
    var $fundocorpo = '#ccddcc';
    //|30|//cor do fundo do corpo
    var $iframe_width = '750';
@@ -58,15 +58,15 @@ class cl_iframe_seleciona {
    var $iframe_nome =   'nome_iframe '; 
    //|30|//nome do iframe
    var $cabecnowrap     = "false";
-   //|30|//quebrar linha ou n„o do cabeÁalho
+   //|30|//quebrar linha ou n√£o do cabe√ßalho
    var $corponowrap     = "false";
-   //|30|//quebrar linha ou n„o do corpo
+   //|30|//quebrar linha ou n√£o do corpo
    var $tamfontecabec = '10'; 
-   //|30|//tamanho da fonte do cabeÁalho
+   //|30|//tamanho da fonte do cabe√ßalho
    var $tamfontecorpo = '9';
     //|30|//tamanho da fonte do corpo
    var $checked = false;
-    //|30|// se o estado inicial do checkbox È checked ou n„o.
+    //|30|// se o estado inicial do checkbox √© checked ou n√£o.
    function iframe_seleciona($db_opcao){
          $arquivo = tempnam ("/tmp", "iframe");   
          $arquivo.=".php";
@@ -137,7 +137,7 @@ class cl_iframe_seleciona {
           }";
         } 
 ##########################################################################################################################
-####################ao chamar esta funÁ„o ser· gerado um input para cada linha com os valores da coluna###################
+####################ao chamar esta fun√ß√£o ser√° gerado um input para cada linha com os valores da coluna###################
         echo "     
 	  function js_gera_dados(){
             tabela=".$this->iframe_nome.".document.getElementById('tabela_seleciona');
@@ -170,21 +170,21 @@ class cl_iframe_seleciona {
 }
 
 //|00|//cl_criatabela
-//|10|//Cria um iframe com as opÁıes de alterar e excluir por java script. Quando usar a funÁ„o "js_criaelementos()" ser· criado um input com os dados de cada linha 
+//|10|//Cria um iframe com as op√ß√µes de alterar e excluir por java script. Quando usar a fun√ß√£o "js_criaelementos()" ser√° criado um input com os dados de cada linha 
 //|15|//[variavel] = new cl_alterar_excluir_html;
 class cl_iframe_alterar_excluir_html{ 
    var $load = '1=1';
-   //|30|//funÁ„o a ser executada no onload do iframe
+   //|30|//fun√ß√£o a ser executada no onload do iframe
    var $fontecabec = '10px';
-   //|30|//tamanho do texto do cabeÁalho
+   //|30|//tamanho do texto do cabe√ßalho
    var $fontecorpo = '10px';
    //|30|//tamanho do texto do corpo
    var $textocabec = 'darkblue';
-   //|30|//cor do texto do cabeÁalho
+   //|30|//cor do texto do cabe√ßalho
    var $textocorpo = 'black';  
    //|30|//cor do texto do corpo
    var $fundocabec = '#BDC6BD';
-   //|30|//cor do fundo do cabeÁalho
+   //|30|//cor do fundo do cabe√ßalho
    var $fundocorpo = '#cccccc';
    //|30|//cor do fundo do corpo
    var $iframe_width = '750';
@@ -196,15 +196,15 @@ class cl_iframe_alterar_excluir_html{
    var $colunas     = null; //nome da colunas
    //|30|//nome das colunas
    var $js_ex01     = null;
-   //|30|//funÁ„o executada antes de excluir uma linha, caso esta funÁ„o retorne false, a exclus„o da linha ser· abortada
+   //|30|//fun√ß√£o executada antes de excluir uma linha, caso esta fun√ß√£o retorne false, a exclus√£o da linha ser√° abortada
    var $js_ex02     = null;
-   //|30|//funÁ„o executada depois de excluir uma linha
+   //|30|//fun√ß√£o executada depois de excluir uma linha
    var $sql         = null;
    //|30|//sql com dados a seresm colocados na tabela por PHP
    var $db_opcao    =  null;  
-   //|30|//n„o È obrogatÛrio
+   //|30|//n√£o √© obrogat√≥rio
    var $tamfontecabec = '10'; 
-   //|30|//tamanho da fonte do cabeÁalho
+   //|30|//tamanho da fonte do cabe√ßalho
    var $tamfontecorpo = '9';
     //|30|//tamanho da fonte do corpo
     //|30|//js_incluirlinhas(campos que deseja incluir);
@@ -341,7 +341,7 @@ class cl_iframe_alterar_excluir_html{
             }
             NovaColuna = NovaLinha.insertCell($totcol);
             NovaColuna.align = 'center';
-            NovaColuna.innerHTML = '<a title=\'ALTERAR CONTE⁄DO DA LINHA\' href=\'\' onclick=\"return false;\">&nbsp;A&nbsp;</a><a title=\'EXCLUIR CONTE⁄DO DA LINHA\' href=\'\' onclick=\"return false;\">&nbsp;E&nbsp;</a>';
+            NovaColuna.innerHTML = '<a title=\'ALTERAR CONTE√öDO DA LINHA\' href=\'\' onclick=\"return false;\">&nbsp;A&nbsp;</a><a title=\'EXCLUIR CONTE√öDO DA LINHA\' href=\'\' onclick=\"return false;\">&nbsp;E&nbsp;</a>';
             conta_linha++;
           }
 	  \n";
@@ -365,7 +365,7 @@ class cl_iframe_alterar_excluir_html{
             }
             NovaColuna = NovaLinha.insertCell($totcol);
             NovaColuna.align = 'center';
-            NovaColuna.innerHTML = '<a title=\'ALTERAR CONTE⁄DO DA LINHA\' href=\'\' onclick=\"parent.js_alterarlinhas(\''+conta_linha+'\');return false;\">&nbsp;A&nbsp;</a><a title=\'EXCLUIR CONTE⁄DO DA LINHA\' href=\'\' onclick=\"parent.js_excluirlinhas(\''+conta_linha+'\');return false;\">&nbsp;E&nbsp;</a>';
+            NovaColuna.innerHTML = '<a title=\'ALTERAR CONTE√öDO DA LINHA\' href=\'\' onclick=\"parent.js_alterarlinhas(\''+conta_linha+'\');return false;\">&nbsp;A&nbsp;</a><a title=\'EXCLUIR CONTE√öDO DA LINHA\' href=\'\' onclick=\"parent.js_excluirlinhas(\''+conta_linha+'\');return false;\">&nbsp;E&nbsp;</a>';
             conta_linha++;
           }
 	  \n";
@@ -383,11 +383,11 @@ class cl_iframe_alterar_excluir_html{
 //|15|//[variavel] = new cl_criaabas;
 class cl_criaabas { 
    var $identifica = null;
-   //|30|//nome e label do iframes. … passado por um array, È passado com array
+   //|30|//nome e label do iframes. √â passado por um array, √© passado com array
    var $abas_top  = "44";
-   //|30|//Dist„ncia  ‡ que os iframes ficar„o em relaÁ„o as abas
+   //|30|//Dist√£ncia  √† que os iframes ficar√£o em rela√ß√£o as abas
    var $abas_left  = "0";
-   //|30|//Dist„ncia  ‡ que os iframes ficar„o em relaÁ„o ao canto esquerdo
+   //|30|//Dist√£ncia  √† que os iframes ficar√£o em rela√ß√£o ao canto esquerdo
    var $src       = null;
    //|30|//src dos iframes
    var $title     = null;
@@ -405,8 +405,8 @@ class cl_criaabas {
    var $iframe_height = '405';
    //|30|//altura do iframe
    var $scrolling = "no"; 
-   //|30|//Se o iframe ter· ou n„o scrolling
-   //|30|//Nunca chame a funÁ„o dentro de outro formulario
+   //|30|//Se o iframe ter√° ou n√£o scrolling
+   //|30|//Nunca chame a fun√ß√£o dentro de outro formulario
   function cria_abas(){
 ?> 
         <script>
@@ -583,7 +583,7 @@ class cl_criaabas {
 
 
 //|00|//cl_iframe_alterar_excluir
-//|10|//Cria um iframe com as opÁıes de alterar e excluir por PHP.
+//|10|//Cria um iframe com as op√ß√µes de alterar e excluir por PHP.
 //|15|//[variavel] = new cl_iframe_alterar_excluir;
 class cl_iframe_alterar_excluir { 
    var $sql        = null;
@@ -593,21 +593,21 @@ class cl_iframe_alterar_excluir {
    //sql para desabilitar os campos que nao podem ser alterados ou excluidos
    //|30|//nome e label dos campos
    var $campos     = null;
-   //|30|//campos que ser„o mostrados
+   //|30|//campos que ser√£o mostrados
    var $opcoes    = 1;
-   //|30|//quais opcoes poder„o ter. Se for sÛ alterar È 2, se for sÛ excluir È 3 se for os dois È 1
+   //|30|//quais opcoes poder√£o ter. Se for s√≥ alterar √© 2, se for s√≥ excluir √© 3 se for os dois √© 1
    var $legenda    = "DADOS";
    //|30|//legenda do fieldset 
    var $chavepri   = null;
-   //|30|//chaves que ser„o usadas para identificar
+   //|30|//chaves que ser√£o usadas para identificar
    var $msg_vazio  = "Nenhum registro encontrado.";
-   //|30|//mensagem a ser mostrada quando o sql n„o retornar nenhum registro
+   //|30|//mensagem a ser mostrada quando o sql n√£o retornar nenhum registro
    var $textocabec = 'darkblue';
-   //|30|//cor do texto do cabeÁalho
+   //|30|//cor do texto do cabe√ßalho
    var $textocorpo = 'black'; 
    //|30|//cor do texto do corpo
    var $fundocabec = '#aacccc ';
-   //|30|//cor do fundo do cabeÁalho
+   //|30|//cor do fundo do cabe√ßalho
    var $fundocorpo = '#ccddcc';
    //|30|//cor do fundo do corpo
    var $iframe_width = '750';
@@ -617,11 +617,11 @@ class cl_iframe_alterar_excluir {
    var $iframe_nome =   'nome_iframe '; 
    //|30|//nome do iframe
    var $cabecnowrap     = "false";
-   //|30|//quebrar linha ou n„o do cabeÁalho
+   //|30|//quebrar linha ou n√£o do cabe√ßalho
    var $corponowrap     = "false";
-   //|30|//quebrar linha ou n„o do corpo
+   //|30|//quebrar linha ou n√£o do corpo
    var $tamfontecabec = '10'; 
-   //|30|//tamanho da fonte do cabeÁalho
+   //|30|//tamanho da fonte do cabe√ßalho
    var $tamfontecorpo = '9';
     //|30|//tamanho da fonte do corpo
 
@@ -685,31 +685,31 @@ class cl_arquivo_auxiliar {
 //|10|//Gera no formulario um select multiple com um campo de ancora para inclusao e selecao de item
 //|15|//[variavel] = new cl_arquivo_auxiliar;
   var $cabecalho = null;
-//|30|//Cabecalho : DescriÁ„o que ser· utilizada no FieldSet
+//|30|//Cabecalho : Descri√ß√£o que ser√° utilizada no FieldSet
   var $codigo = null;
-//|30|//CÛdigo    : Nome do campo para o cÛdigo da ‚ncora
+//|30|//C√≥digo    : Nome do campo para o c√≥digo da √¢ncora
   var $descr  = null;
-//|30|//DescriÁ„o : Nome do campo da descriÁ„o para a descriÁ„o do cÛdigo ‚ncora
+//|30|//Descri√ß√£o : Nome do campo da descri√ß√£o para a descri√ß√£o do c√≥digo √¢ncora
   var $nomeobjeto = 'itens_selecao';
 //|30|//Nome do objeto javascript para o select multiple
   var $funcao_js = null;
-//|30|//Nome da funÁ„o javascript que ser· utilizada quando clicar na ‚ncora
+//|30|//Nome da fun√ß√£o javascript que ser√° utilizada quando clicar na √¢ncora
   var $funcao_js_hide = null;
-//|30|//Nome da funÁ„o javascript que ser· utilizada quando colocar um cÛdigo e sair do campo
+//|30|//Nome da fun√ß√£o javascript que ser√° utilizada quando colocar um c√≥digo e sair do campo
   var $sql_exec  = null;
-//|30|//Sql que ser· executado quando entrar em alteraÁ„o do formul·rio
+//|30|//Sql que ser√° executado quando entrar em altera√ß√£o do formul√°rio
   var $func_arquivo = null;
-//|30|//FunÁ„o que ser· incluÌda no iframe quando clicado na ‚ncora
+//|30|//Fun√ß√£o que ser√° inclu√≠da no iframe quando clicado na √¢ncora
   var $nomeiframe = "";
-//|30|//Nome do objeto Javascript do Iframe para manipulaÁ„o do mesmo
+//|30|//Nome do objeto Javascript do Iframe para manipula√ß√£o do mesmo
   var $db_opcao = 2;
-//|30|//CÛdigo da opÁ„o do programa Padr„o = 2
+//|30|//C√≥digo da op√ß√£o do programa Padr√£o = 2
   var $tipo = 1;
-//|30|//Tipo de montagem do formul·rio, 1=vertical ou 2=horizontal
+//|30|//Tipo de montagem do formul√°rio, 1=vertical ou 2=horizontal
    var $linhas = 15;
-//|30|//Numero de linhas do objeto select Padr„o = 15
+//|30|//Numero de linhas do objeto select Padr√£o = 15
    var $vwidth = 250;
-//|30|//Largura do objeto select Padr„o = 250
+//|30|//Largura do objeto select Padr√£o = 250
   
    var $sTarget = "top.corpo";
    
@@ -737,7 +737,7 @@ class cl_arquivo_auxiliar {
     db_input($this->descr,25,'',true,'text',3);
     if($this->tipo==1)
       echo "<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-    echo "  <input name=\"db_lanca\" type=\"button\" value=\"LanÁar\" >\n";
+    echo "  <input name=\"db_lanca\" type=\"button\" value=\"Lan√ßar\" >\n";
     echo "  </td>\n";
     echo "</tr> \n";
     echo "<tr>  \n ";
@@ -754,7 +754,7 @@ class cl_arquivo_auxiliar {
     echo "         </tr>\n";
     echo "         </tr>\n";
     echo " 	   <td align=\"center\"><strong>\n";
-    echo " 		   Dois Clicks sobre o Ìtem Exclui</strong>\n";
+    echo " 		   Dois Clicks sobre o √≠tem Exclui</strong>\n";
     echo "	   </td>\n";
     echo "         </tr>\n";
     echo "       </table>\n";
@@ -768,7 +768,7 @@ class cl_arquivo_auxiliar {
     echo "function js_atualiza_item(){\n";
     echo "  var F = document.getElementById(\"".$this->nomeobjeto."\").options;\n";
     echo "  if(F.length==0){\n";
-    echo "    alert('Cadastre um Ìtem para proceguir.');\n";
+    echo "    alert('Cadastre um √≠tem para proceguir.');\n";
     echo "    document.form1.".$this->codigo.".focus();\n";
     echo "    return false;\n";
     echo "  }else{  \n";

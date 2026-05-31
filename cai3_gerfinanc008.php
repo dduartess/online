@@ -48,7 +48,7 @@ $oPost = db_utils::postMemory($_POST);
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script>
@@ -306,9 +306,9 @@ MM_reloadPage(true);
 	echo " <th class='borda' style='font-size:12px' >Dt.Oper. </th>";
 	echo " <th class='borda' style='font-size:12px' >Dt.Venc. </th>";
 	echo " <th class='borda' style='font-size:12px' >Receita  </th>";
-	echo " <th class='borda' style='font-size:12px' >Descrição</th>";
+	echo " <th class='borda' style='font-size:12px' >DescriÃ§Ã£o</th>";
 	echo " <th class='borda' style='font-size:12px' >Tipo	  </th>";
-	echo " <th class='borda' style='font-size:12px' >Descrição</th>";
+	echo " <th class='borda' style='font-size:12px' >DescriÃ§Ã£o</th>";
 	echo " <th class='borda' style='font-size:12px' >Val. 	  </th>";
 	echo " <th class='borda' style='font-size:12px' >Val Cor. </th>";
 	echo " <th class='borda' style='font-size:12px' >Jur. 	  </th>";

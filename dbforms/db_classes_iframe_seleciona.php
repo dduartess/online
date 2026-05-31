@@ -111,9 +111,9 @@ if(isset($sql) && $sql!=""){
           $numcolunas=sizeof($matriz_campos);
           echo "   <tr class='cabec'>";
           if($db_opcao!=3){  
-            echo "     <td align='center'><a  title='Inverte Marcação' href='' onclick='return js_marca(this);return false;'>M</a></td>";
+            echo "     <td align='center'><a  title='Inverte MarcaÃ§Ã£o' href='' onclick='return js_marca(this);return false;'>M</a></td>";
           }else{
-            echo "     <td align='center'><a  title='Inverte Marcação' href='' onclick='return false;'>M</a></td>";
+            echo "     <td align='center'><a  title='Inverte MarcaÃ§Ã£o' href='' onclick='return false;'>M</a></td>";
           }
 	  for($w=0; $w<$numcolunas; $w++){
 	    $campo=str_replace(" ","",$matriz_campos[$w]);

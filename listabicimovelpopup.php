@@ -30,7 +30,7 @@ parse_str(base64_decode($HTTP_SERVER_VARS['QUERY_STRING']));
 <html>
 <head>
 <title>Foto</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onBlur="window.focus()">

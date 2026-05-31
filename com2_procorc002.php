@@ -99,7 +99,7 @@ if($numrows_pcorcamforne==0){
 		$numrows_pcorcamforne = 1;
 		$branco=true;
 	}else{
-  		db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum registro encontrado ou orçamento sem fornecedores!");
+  		db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum registro encontrado ou orÃ§amento sem fornecedores!");
 	}
 } 
 
@@ -134,7 +134,7 @@ $result_itens = $clpcorcamitemproc->sql_record($clpcorcamitemproc->sql_query_sol
                                                                                        "pc81_codprocitem",$sWhere));
 $numrows_itens= $clpcorcamitemproc->numrows;
 if($numrows_itens==0){
-  db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum item encontrado neste orçamento!");
+  db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum item encontrado neste orÃ§amento!");
 }
 
 

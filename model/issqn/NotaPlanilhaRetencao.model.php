@@ -44,7 +44,7 @@ class NotaPlanilhaRetencao {
   const STATUS_INATIVO_EXCLUSAO  = 3;
 
   /**
-   * Código da planilha de retencao
+   * CÃ³digo da planilha de retencao
    * 
    * @var integer
    * @access private
@@ -140,7 +140,7 @@ class NotaPlanilhaRetencao {
   private $iNumeroNota;       
 
   /**
-   * Valor do Serviço
+   * Valor do ServiÃ§o
    * 
    * @var numeric
    * @access private
@@ -188,7 +188,7 @@ class NotaPlanilhaRetencao {
   private $nValorImposto;
 
   /**
-   * Descricao do Serviço 
+   * Descricao do ServiÃ§o 
    * 
    * @var srting
    * @access private
@@ -204,7 +204,7 @@ class NotaPlanilhaRetencao {
   private $sObservacoes;        
   
   /**
-   * Codigo da Nota de Liquidação 
+   * Codigo da Nota de LiquidaÃ§Ã£o 
    * @var mixed
    * @access private
    */
@@ -229,7 +229,7 @@ class NotaPlanilhaRetencao {
   public function salvar() {
 
     if (!db_utils::inTransaction()) {
-      throw new Exception("Erro [0] - Não Existe transação ativa");
+      throw new Exception("Erro [0] - NÃ£o Existe transaÃ§Ã£o ativa");
     }
     
     $oDaoNotas = db_utils::getDao("issplanit");
@@ -468,7 +468,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Retorna o Valor do Serviço
+   * Retorna o Valor do ServiÃ§o
    * @return 
    */
   public function getValorServico() {
@@ -476,7 +476,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Define o Valor do Serviço
+   * Define o Valor do ServiÃ§o
    * @param $nValorServico
    */
   public function setValorServico($nValorServico) {
@@ -484,7 +484,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Retorna o Valor da Retenção na Nota Fiscal
+   * Retorna o Valor da RetenÃ§Ã£o na Nota Fiscal
    * @return 
    */
   public function getValorRetencao() {
@@ -564,7 +564,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Retorna a Descriacao do serviço da Nota
+   * Retorna a Descriacao do serviÃ§o da Nota
    * @return 
    */
   public function getDescricaoServico() {
@@ -580,7 +580,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Retorna as Observações da Nota
+   * Retorna as ObservaÃ§Ãµes da Nota
    * @return 
    */
   public function getObservacoes() {
@@ -588,7 +588,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Define as Observações da Nota
+   * Define as ObservaÃ§Ãµes da Nota
    * @param $sObservacoes
    */
   public function setObservacoes($sObservacoes) {
@@ -597,7 +597,7 @@ class NotaPlanilhaRetencao {
 
    
   /**
-   * Retorna do Código da Liquidacao
+   * Retorna do CÃ³digo da Liquidacao
    * 
    * @access public
    * @return integer
@@ -607,7 +607,7 @@ class NotaPlanilhaRetencao {
   }
 
   /**
-   * Define o Código da Liquidacao
+   * Define o CÃ³digo da Liquidacao
    * 
    * @param  integer $iNotaLiquidacao 
    * @access public

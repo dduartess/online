@@ -44,7 +44,7 @@ $cod=@$_SESSION["itbi"];
 			db_fieldsmemory($resultcgm,0);
 			
 		}else{
-			msgbox("CPF/CNPJ inválido, verificar se este possui cadastro na Prefeitura.");
+			msgbox("CPF/CNPJ invÃ¡lido, verificar se este possui cadastro na Prefeitura.");
 		}
 	}
 	
@@ -80,11 +80,11 @@ if(isset($excluir)){
 <table width="70%" border="0" cellspacing="2" cellpadding="2" align="center">
 	<tr class="titulo">
     	<td colspan="2" align="center" >
-    	Dados do Proprietário
+    	Dados do ProprietÃ¡rio
       	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" width="30%">Número da guia de ITBI:
+    	<td align="left" width="30%">NÃºmero da guia de ITBI:
     	</td>
     	<td align="left" > <?=@$cod?>
     	</td>
@@ -113,7 +113,7 @@ if(isset($excluir)){
     	<td align="left" > 
     	<select name="it20_pri"  >
           <option value='t'>Sim</option>
-          <option value='f'>Não</option>
+          <option value='f'>NÃ£o</option>
 	    </select>
     	</td>
   	</tr>
@@ -134,7 +134,7 @@ if(isset($excluir)){
     			Principal
       			</th>
       			<th align="center" >
-    			Opções
+    			OpÃ§Ãµes
       			</th>
   			</tr>
   			<?php 
@@ -148,7 +148,7 @@ if(isset($excluir)){
 							if($it20_pri=="t"){
 								$pri = "sim";
 							}else{
-								$pri = "não";
+								$pri = "nÃ£o";
 							}
 							echo"
 							<tr>

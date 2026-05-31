@@ -78,43 +78,43 @@ class cl_plano {
    var $c01_clarec = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 c01_anousu = int4 = Exercício 
-                 c01_estrut = varchar(13) = Código Estrutural 
-                 c01_reduz = int4 = Código Reduzido 
-                 c01_descr = varchar(40) = Descrição da Conta 
-                 c01_dbabre = float8 = Valor do Débito de  Abertura 
+                 c01_anousu = int4 = ExercÃ­cio 
+                 c01_estrut = varchar(13) = CÃ³digo Estrutural 
+                 c01_reduz = int4 = CÃ³digo Reduzido 
+                 c01_descr = varchar(40) = DescriÃ§Ã£o da Conta 
+                 c01_dbabre = float8 = Valor do DÃ©bito de  Abertura 
                  c01_crabre = float8 = Valor do Credito de Abertura 
-                 c01_db01 = float8 = Valor do Débito Mes de Janeiro 
-                 c01_cr01 = float8 = Valor do Crédito do mes de Janeiro 
-                 c01_db02 = float8 = Valor do Débito Mes de Fevereiro 
-                 c01_cr02 = float8 = Valor do Crédito do Mes de Fevereiro 
-                 c01_db03 = float8 = Valor do Débito Mes de Março 
-                 c01_cr03 = float8 = Valor do Crédito do Mes de  Março 
-                 c01_db04 = float8 = Valor do Débito do Mes de Abril 
+                 c01_db01 = float8 = Valor do DÃ©bito Mes de Janeiro 
+                 c01_cr01 = float8 = Valor do CrÃ©dito do mes de Janeiro 
+                 c01_db02 = float8 = Valor do DÃ©bito Mes de Fevereiro 
+                 c01_cr02 = float8 = Valor do CrÃ©dito do Mes de Fevereiro 
+                 c01_db03 = float8 = Valor do DÃ©bito Mes de MarÃ§o 
+                 c01_cr03 = float8 = Valor do CrÃ©dito do Mes de  MarÃ§o 
+                 c01_db04 = float8 = Valor do DÃ©bito do Mes de Abril 
                  c01_cr04 = float8 = Valor do Credito mes de Abril 
-                 c01_db05 = float8 = Valor do Débito Mes de Maio 
+                 c01_db05 = float8 = Valor do DÃ©bito Mes de Maio 
                  c01_cr05 = float8 = Valor do Credito Mes de Maio 
-                 c01_db06 = float8 = Valor do Débito do Mes de Junho 
-                 c01_cr06 = float8 = Valor do Crédito do Mes de Junho 
+                 c01_db06 = float8 = Valor do DÃ©bito do Mes de Junho 
+                 c01_cr06 = float8 = Valor do CrÃ©dito do Mes de Junho 
                  c01_db07 = float8 = Valor do Debito do Mes de Julho 
                  c01_cr07 = float8 = Valor do Credito do Mes de Julho 
                  c01_db08 = float8 = Valor do Debito do Mes de Agosto 
-                 c01_cr08 = float8 = Valor  do Crédito do Mes de Agosto 
-                 c01_db09 = float8 = Valor do Débito do Mes de Setembro 
-                 c01_cr09 = float8 = Valor do Crédito do Mes de Setembro 
-                 c01_db10 = float8 = Valor do Débito do Mes de Outubro 
-                 c01_cr10 = float8 = Valor do Crédito do Mes de Outubro 
-                 c01_db11 = float8 = Valor do Débito do Mes de Novembro 
-                 c01_cr11 = float8 = Valor do Crédito do mes de Novembro 
-                 c01_db12 = float8 = Valor do Crédito do Mes de Dezembro 
-                 c01_cr12 = float8 = valor do Crédito do Mes de Dezembro 
-                 c01_codtce = char(13) = Código do TCE 
-                 c01_recurs = char(4) = Código do Recurso 
-                 c01_codbco = char(5) = Código do Banco 
-                 c01_codage = char(5) = Código da Agência 
-                 c01_codcta = char(20) = Código da Conta Bancaria 
+                 c01_cr08 = float8 = Valor  do CrÃ©dito do Mes de Agosto 
+                 c01_db09 = float8 = Valor do DÃ©bito do Mes de Setembro 
+                 c01_cr09 = float8 = Valor do CrÃ©dito do Mes de Setembro 
+                 c01_db10 = float8 = Valor do DÃ©bito do Mes de Outubro 
+                 c01_cr10 = float8 = Valor do CrÃ©dito do Mes de Outubro 
+                 c01_db11 = float8 = Valor do DÃ©bito do Mes de Novembro 
+                 c01_cr11 = float8 = Valor do CrÃ©dito do mes de Novembro 
+                 c01_db12 = float8 = Valor do CrÃ©dito do Mes de Dezembro 
+                 c01_cr12 = float8 = valor do CrÃ©dito do Mes de Dezembro 
+                 c01_codtce = char(13) = CÃ³digo do TCE 
+                 c01_recurs = char(4) = CÃ³digo do Recurso 
+                 c01_codbco = char(5) = CÃ³digo do Banco 
+                 c01_codage = char(5) = CÃ³digo da AgÃªncia 
+                 c01_codcta = char(20) = CÃ³digo da Conta Bancaria 
                  c01_tpcont = char(1) = Tipo de Conta 
-                 c01_clarec = int4 = Classificação 
+                 c01_clarec = int4 = ClassificaÃ§Ã£o 
                  ";
    //funcao construtor da classe 
    function cl_plano() { 
@@ -180,28 +180,28 @@ class cl_plano {
    function incluir ($c01_anousu,$c01_estrut){ 
       $this->atualizacampos();
      if($this->c01_reduz == null ){ 
-       $this->erro_sql = " Campo Código Reduzido nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo Reduzido nao Informado.";
        $this->erro_campo = "c01_reduz";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_descr == null ){ 
-       $this->erro_sql = " Campo Descrição da Conta nao Informado.";
+       $this->erro_sql = " Campo DescriÃ§Ã£o da Conta nao Informado.";
        $this->erro_campo = "c01_descr";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_dbabre == null ){ 
-       $this->erro_sql = " Campo Valor do Débito de  Abertura nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito de  Abertura nao Informado.";
        $this->erro_campo = "c01_dbabre";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -210,70 +210,70 @@ class cl_plano {
        $this->erro_sql = " Campo Valor do Credito de Abertura nao Informado.";
        $this->erro_campo = "c01_crabre";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db01 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito Mes de Janeiro nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito Mes de Janeiro nao Informado.";
        $this->erro_campo = "c01_db01";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr01 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do mes de Janeiro nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do mes de Janeiro nao Informado.";
        $this->erro_campo = "c01_cr01";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db02 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito Mes de Fevereiro nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito Mes de Fevereiro nao Informado.";
        $this->erro_campo = "c01_db02";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr02 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do Mes de Fevereiro nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Fevereiro nao Informado.";
        $this->erro_campo = "c01_cr02";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db03 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito Mes de Março nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito Mes de MarÃ§o nao Informado.";
        $this->erro_campo = "c01_db03";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr03 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do Mes de  Março nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de  MarÃ§o nao Informado.";
        $this->erro_campo = "c01_cr03";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db04 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito do Mes de Abril nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Abril nao Informado.";
        $this->erro_campo = "c01_db04";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -282,16 +282,16 @@ class cl_plano {
        $this->erro_sql = " Campo Valor do Credito mes de Abril nao Informado.";
        $this->erro_campo = "c01_cr04";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db05 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito Mes de Maio nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito Mes de Maio nao Informado.";
        $this->erro_campo = "c01_db05";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -300,25 +300,25 @@ class cl_plano {
        $this->erro_sql = " Campo Valor do Credito Mes de Maio nao Informado.";
        $this->erro_campo = "c01_cr05";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db06 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito do Mes de Junho nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Junho nao Informado.";
        $this->erro_campo = "c01_db06";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr06 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do Mes de Junho nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Junho nao Informado.";
        $this->erro_campo = "c01_cr06";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -327,7 +327,7 @@ class cl_plano {
        $this->erro_sql = " Campo Valor do Debito do Mes de Julho nao Informado.";
        $this->erro_campo = "c01_db07";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -336,7 +336,7 @@ class cl_plano {
        $this->erro_sql = " Campo Valor do Credito do Mes de Julho nao Informado.";
        $this->erro_campo = "c01_cr07";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -345,133 +345,133 @@ class cl_plano {
        $this->erro_sql = " Campo Valor do Debito do Mes de Agosto nao Informado.";
        $this->erro_campo = "c01_db08";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr08 == null ){ 
-       $this->erro_sql = " Campo Valor  do Crédito do Mes de Agosto nao Informado.";
+       $this->erro_sql = " Campo Valor  do CrÃ©dito do Mes de Agosto nao Informado.";
        $this->erro_campo = "c01_cr08";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db09 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito do Mes de Setembro nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Setembro nao Informado.";
        $this->erro_campo = "c01_db09";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr09 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do Mes de Setembro nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Setembro nao Informado.";
        $this->erro_campo = "c01_cr09";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db10 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito do Mes de Outubro nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Outubro nao Informado.";
        $this->erro_campo = "c01_db10";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr10 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do Mes de Outubro nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Outubro nao Informado.";
        $this->erro_campo = "c01_cr10";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db11 == null ){ 
-       $this->erro_sql = " Campo Valor do Débito do Mes de Novembro nao Informado.";
+       $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Novembro nao Informado.";
        $this->erro_campo = "c01_db11";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr11 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do mes de Novembro nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do mes de Novembro nao Informado.";
        $this->erro_campo = "c01_cr11";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_db12 == null ){ 
-       $this->erro_sql = " Campo Valor do Crédito do Mes de Dezembro nao Informado.";
+       $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Dezembro nao Informado.";
        $this->erro_campo = "c01_db12";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_cr12 == null ){ 
-       $this->erro_sql = " Campo valor do Crédito do Mes de Dezembro nao Informado.";
+       $this->erro_sql = " Campo valor do CrÃ©dito do Mes de Dezembro nao Informado.";
        $this->erro_campo = "c01_cr12";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_codtce == null ){ 
-       $this->erro_sql = " Campo Código do TCE nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo do TCE nao Informado.";
        $this->erro_campo = "c01_codtce";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_recurs == null ){ 
-       $this->erro_sql = " Campo Código do Recurso nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo do Recurso nao Informado.";
        $this->erro_campo = "c01_recurs";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_codbco == null ){ 
-       $this->erro_sql = " Campo Código do Banco nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo do Banco nao Informado.";
        $this->erro_campo = "c01_codbco";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_codage == null ){ 
-       $this->erro_sql = " Campo Código da Agência nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo da AgÃªncia nao Informado.";
        $this->erro_campo = "c01_codage";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_codcta == null ){ 
-       $this->erro_sql = " Campo Código da Conta Bancaria nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo da Conta Bancaria nao Informado.";
        $this->erro_campo = "c01_codcta";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -480,16 +480,16 @@ class cl_plano {
        $this->erro_sql = " Campo Tipo de Conta nao Informado.";
        $this->erro_campo = "c01_tpcont";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->c01_clarec == null ){ 
-       $this->erro_sql = " Campo Classificação nao Informado.";
+       $this->erro_sql = " Campo ClassificaÃ§Ã£o nao Informado.";
        $this->erro_campo = "c01_clarec";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -499,7 +499,7 @@ class cl_plano {
      if(($this->c01_anousu == null) || ($this->c01_anousu == "") ){ 
        $this->erro_sql = " Campo c01_anousu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -507,7 +507,7 @@ class cl_plano {
      if(($this->c01_estrut == null) || ($this->c01_estrut == "") ){ 
        $this->erro_sql = " Campo c01_estrut nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -593,13 +593,13 @@ class cl_plano {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Plano de Contas ($this->c01_anousu."-".$this->c01_estrut) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Plano de Contas já Cadastrado";
+         $this->erro_sql   = "Plano de Contas ($this->c01_anousu."-".$this->c01_estrut) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Plano de Contas jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Plano de Contas ($this->c01_anousu."-".$this->c01_estrut) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Plano de Contas ($this->c01_anousu."-".$this->c01_estrut) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -608,7 +608,7 @@ class cl_plano {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      return true;
@@ -622,10 +622,10 @@ class cl_plano {
        $sql  .= $virgula." c01_anousu = $this->c01_anousu ";
        $virgula = ",";
        if($this->c01_anousu == null ){ 
-         $this->erro_sql = " Campo Exercício nao Informado.";
+         $this->erro_sql = " Campo ExercÃ­cio nao Informado.";
          $this->erro_campo = "c01_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -635,10 +635,10 @@ class cl_plano {
        $sql  .= $virgula." c01_estrut = '$this->c01_estrut' ";
        $virgula = ",";
        if($this->c01_estrut == null ){ 
-         $this->erro_sql = " Campo Código Estrutural nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo Estrutural nao Informado.";
          $this->erro_campo = "c01_estrut";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -648,10 +648,10 @@ class cl_plano {
        $sql  .= $virgula." c01_reduz = $this->c01_reduz ";
        $virgula = ",";
        if($this->c01_reduz == null ){ 
-         $this->erro_sql = " Campo Código Reduzido nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo Reduzido nao Informado.";
          $this->erro_campo = "c01_reduz";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -661,10 +661,10 @@ class cl_plano {
        $sql  .= $virgula." c01_descr = '$this->c01_descr' ";
        $virgula = ",";
        if($this->c01_descr == null ){ 
-         $this->erro_sql = " Campo Descrição da Conta nao Informado.";
+         $this->erro_sql = " Campo DescriÃ§Ã£o da Conta nao Informado.";
          $this->erro_campo = "c01_descr";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -674,10 +674,10 @@ class cl_plano {
        $sql  .= $virgula." c01_dbabre = $this->c01_dbabre ";
        $virgula = ",";
        if($this->c01_dbabre == null ){ 
-         $this->erro_sql = " Campo Valor do Débito de  Abertura nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito de  Abertura nao Informado.";
          $this->erro_campo = "c01_dbabre";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -690,7 +690,7 @@ class cl_plano {
          $this->erro_sql = " Campo Valor do Credito de Abertura nao Informado.";
          $this->erro_campo = "c01_crabre";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -700,10 +700,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db01 = $this->c01_db01 ";
        $virgula = ",";
        if($this->c01_db01 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito Mes de Janeiro nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito Mes de Janeiro nao Informado.";
          $this->erro_campo = "c01_db01";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -713,10 +713,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr01 = $this->c01_cr01 ";
        $virgula = ",";
        if($this->c01_cr01 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do mes de Janeiro nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do mes de Janeiro nao Informado.";
          $this->erro_campo = "c01_cr01";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -726,10 +726,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db02 = $this->c01_db02 ";
        $virgula = ",";
        if($this->c01_db02 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito Mes de Fevereiro nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito Mes de Fevereiro nao Informado.";
          $this->erro_campo = "c01_db02";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -739,10 +739,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr02 = $this->c01_cr02 ";
        $virgula = ",";
        if($this->c01_cr02 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do Mes de Fevereiro nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Fevereiro nao Informado.";
          $this->erro_campo = "c01_cr02";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -752,10 +752,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db03 = $this->c01_db03 ";
        $virgula = ",";
        if($this->c01_db03 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito Mes de Março nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito Mes de MarÃ§o nao Informado.";
          $this->erro_campo = "c01_db03";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -765,10 +765,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr03 = $this->c01_cr03 ";
        $virgula = ",";
        if($this->c01_cr03 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do Mes de  Março nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de  MarÃ§o nao Informado.";
          $this->erro_campo = "c01_cr03";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -778,10 +778,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db04 = $this->c01_db04 ";
        $virgula = ",";
        if($this->c01_db04 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito do Mes de Abril nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Abril nao Informado.";
          $this->erro_campo = "c01_db04";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -794,7 +794,7 @@ class cl_plano {
          $this->erro_sql = " Campo Valor do Credito mes de Abril nao Informado.";
          $this->erro_campo = "c01_cr04";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -804,10 +804,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db05 = $this->c01_db05 ";
        $virgula = ",";
        if($this->c01_db05 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito Mes de Maio nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito Mes de Maio nao Informado.";
          $this->erro_campo = "c01_db05";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -820,7 +820,7 @@ class cl_plano {
          $this->erro_sql = " Campo Valor do Credito Mes de Maio nao Informado.";
          $this->erro_campo = "c01_cr05";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -830,10 +830,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db06 = $this->c01_db06 ";
        $virgula = ",";
        if($this->c01_db06 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito do Mes de Junho nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Junho nao Informado.";
          $this->erro_campo = "c01_db06";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -843,10 +843,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr06 = $this->c01_cr06 ";
        $virgula = ",";
        if($this->c01_cr06 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do Mes de Junho nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Junho nao Informado.";
          $this->erro_campo = "c01_cr06";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -859,7 +859,7 @@ class cl_plano {
          $this->erro_sql = " Campo Valor do Debito do Mes de Julho nao Informado.";
          $this->erro_campo = "c01_db07";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -872,7 +872,7 @@ class cl_plano {
          $this->erro_sql = " Campo Valor do Credito do Mes de Julho nao Informado.";
          $this->erro_campo = "c01_cr07";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -885,7 +885,7 @@ class cl_plano {
          $this->erro_sql = " Campo Valor do Debito do Mes de Agosto nao Informado.";
          $this->erro_campo = "c01_db08";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -895,10 +895,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr08 = $this->c01_cr08 ";
        $virgula = ",";
        if($this->c01_cr08 == null ){ 
-         $this->erro_sql = " Campo Valor  do Crédito do Mes de Agosto nao Informado.";
+         $this->erro_sql = " Campo Valor  do CrÃ©dito do Mes de Agosto nao Informado.";
          $this->erro_campo = "c01_cr08";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -908,10 +908,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db09 = $this->c01_db09 ";
        $virgula = ",";
        if($this->c01_db09 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito do Mes de Setembro nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Setembro nao Informado.";
          $this->erro_campo = "c01_db09";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -921,10 +921,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr09 = $this->c01_cr09 ";
        $virgula = ",";
        if($this->c01_cr09 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do Mes de Setembro nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Setembro nao Informado.";
          $this->erro_campo = "c01_cr09";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -934,10 +934,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db10 = $this->c01_db10 ";
        $virgula = ",";
        if($this->c01_db10 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito do Mes de Outubro nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Outubro nao Informado.";
          $this->erro_campo = "c01_db10";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -947,10 +947,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr10 = $this->c01_cr10 ";
        $virgula = ",";
        if($this->c01_cr10 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do Mes de Outubro nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Outubro nao Informado.";
          $this->erro_campo = "c01_cr10";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -960,10 +960,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db11 = $this->c01_db11 ";
        $virgula = ",";
        if($this->c01_db11 == null ){ 
-         $this->erro_sql = " Campo Valor do Débito do Mes de Novembro nao Informado.";
+         $this->erro_sql = " Campo Valor do DÃ©bito do Mes de Novembro nao Informado.";
          $this->erro_campo = "c01_db11";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -973,10 +973,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr11 = $this->c01_cr11 ";
        $virgula = ",";
        if($this->c01_cr11 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do mes de Novembro nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do mes de Novembro nao Informado.";
          $this->erro_campo = "c01_cr11";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -986,10 +986,10 @@ class cl_plano {
        $sql  .= $virgula." c01_db12 = $this->c01_db12 ";
        $virgula = ",";
        if($this->c01_db12 == null ){ 
-         $this->erro_sql = " Campo Valor do Crédito do Mes de Dezembro nao Informado.";
+         $this->erro_sql = " Campo Valor do CrÃ©dito do Mes de Dezembro nao Informado.";
          $this->erro_campo = "c01_db12";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -999,10 +999,10 @@ class cl_plano {
        $sql  .= $virgula." c01_cr12 = $this->c01_cr12 ";
        $virgula = ",";
        if($this->c01_cr12 == null ){ 
-         $this->erro_sql = " Campo valor do Crédito do Mes de Dezembro nao Informado.";
+         $this->erro_sql = " Campo valor do CrÃ©dito do Mes de Dezembro nao Informado.";
          $this->erro_campo = "c01_cr12";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1012,10 +1012,10 @@ class cl_plano {
        $sql  .= $virgula." c01_codtce = '$this->c01_codtce' ";
        $virgula = ",";
        if($this->c01_codtce == null ){ 
-         $this->erro_sql = " Campo Código do TCE nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do TCE nao Informado.";
          $this->erro_campo = "c01_codtce";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1025,10 +1025,10 @@ class cl_plano {
        $sql  .= $virgula." c01_recurs = '$this->c01_recurs' ";
        $virgula = ",";
        if($this->c01_recurs == null ){ 
-         $this->erro_sql = " Campo Código do Recurso nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do Recurso nao Informado.";
          $this->erro_campo = "c01_recurs";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1038,10 +1038,10 @@ class cl_plano {
        $sql  .= $virgula." c01_codbco = '$this->c01_codbco' ";
        $virgula = ",";
        if($this->c01_codbco == null ){ 
-         $this->erro_sql = " Campo Código do Banco nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do Banco nao Informado.";
          $this->erro_campo = "c01_codbco";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1051,10 +1051,10 @@ class cl_plano {
        $sql  .= $virgula." c01_codage = '$this->c01_codage' ";
        $virgula = ",";
        if($this->c01_codage == null ){ 
-         $this->erro_sql = " Campo Código da Agência nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo da AgÃªncia nao Informado.";
          $this->erro_campo = "c01_codage";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1064,10 +1064,10 @@ class cl_plano {
        $sql  .= $virgula." c01_codcta = '$this->c01_codcta' ";
        $virgula = ",";
        if($this->c01_codcta == null ){ 
-         $this->erro_sql = " Campo Código da Conta Bancaria nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo da Conta Bancaria nao Informado.";
          $this->erro_campo = "c01_codcta";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1080,7 +1080,7 @@ class cl_plano {
          $this->erro_sql = " Campo Tipo de Conta nao Informado.";
          $this->erro_campo = "c01_tpcont";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1090,10 +1090,10 @@ class cl_plano {
        $sql  .= $virgula." c01_clarec = $this->c01_clarec ";
        $virgula = ",";
        if($this->c01_clarec == null ){ 
-         $this->erro_sql = " Campo Classificação nao Informado.";
+         $this->erro_sql = " Campo ClassificaÃ§Ã£o nao Informado.";
          $this->erro_campo = "c01_clarec";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1107,7 +1107,7 @@ class cl_plano {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Plano de Contas nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -1116,15 +1116,15 @@ class cl_plano {
          $this->erro_banco = "";
          $this->erro_sql = "Plano de Contas nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração Efetivada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -1140,26 +1140,26 @@ class cl_plano {
                     ");
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Plano de Contas nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Plano de Contas nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Plano de Contas nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Plano de Contas nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão Efetivada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o Efetivada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->c01_anousu."-".$this->c01_estrut;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          return true;
@@ -1173,7 +1173,7 @@ class cl_plano {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -1182,7 +1182,7 @@ class cl_plano {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Dados do Grupo nao Encontrado";
-        $this->erro_msg   = "Usuário: \n\n ".$this->erro_sql." \n\n";
+        $this->erro_msg   = "UsuÃ¡rio: \n\n ".$this->erro_sql." \n\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

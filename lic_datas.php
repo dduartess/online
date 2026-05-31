@@ -31,8 +31,8 @@ $clempautitem = new cl_empautitem;
 ?>
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -44,10 +44,10 @@ $clempautitem = new cl_empautitem;
 <table width="600px" border="1" cellspacing="0" cellpadding="0" style="border-bottom: 0px" align= "center">
 
 	<form name="form1" method="post" action="">
-	obs: coloquei só os do mês de agosto, tem que ver quais serão mostradas
+	obs: coloquei sÃ³ os do mÃªs de agosto, tem que ver quais serÃ£o mostradas
 	<tr bgcolor="<?=$w01_corfundomenu?>">
-		<td> Licitação</td>
-		<td> Data de Adjudicação</td>
+		<td> LicitaÃ§Ã£o</td>
+		<td> Data de AdjudicaÃ§Ã£o</td>
 	</tr>
 <?php 
 /*
@@ -55,7 +55,7 @@ $result_dataaut=$clempautitem->sql_record($clempautitem->sql_query_lic(null,null
 die ($clempautitem->sql_query_lic(null,null,"distinct e54_emiss,e54_autori","e54_autori","l20_codigo=36"));
 if($clempautitem->numrows>0){// die("nnnnnnnn");
 db_fieldsmemory($result_dataaut,0);	
-echo "data de adjudicação: $e54_emiss ";
+echo "data de adjudicaÃ§Ã£o: $e54_emiss ";
 
 }	*/
 

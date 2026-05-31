@@ -54,17 +54,17 @@ db_fieldsmemory($resultcgm,0);
 
 $ip= $HTTP_SERVER_VARS["REMOTE_ADDR"];
 
-// pegar a instituição....................
+// pegar a instituiÃ§Ã£o....................
 $sql="select * from configdbpref"; 
 $result = pg_query($sql);
 db_fieldsmemory($result,0);
 $instit= $w13_instit;
-//echo "<br>instituição= $instit";
+//echo "<br>instituiÃ§Ã£o= $instit";
  
 $data=date("Y-m-d");
 $hora= date("H:i"); 
 
-// verificar se numpres ja estão em debito em conta.....
+// verificar se numpres ja estÃ£o em debito em conta.....
 $np = split("N",$numpres);
   	$total=count($np);
   	$msg="";
@@ -88,7 +88,7 @@ $np = split("N",$numpres);
 	  	}
   	}
   	if (isset($imp)){
-  		db_msgbox("Parcela(s) $msg ja estão em debito em conta");
+  		db_msgbox("Parcela(s) $msg ja estÃ£o em debito em conta");
   		$disabled = 'disabled';
   		
   	}else{
@@ -166,7 +166,7 @@ if(isset($incluir)){
 //  5- incluir na debcontapedidoinscr...........
 
 	if(isset($inscr)){
-		$tipomi="INSCRIÇÃO";
+		$tipomi="INSCRIÃ‡ÃƒO";
 		$mat_ins = $inscr;
 		$cl_debcontapedidoinscr-> d69_codigo = $cl_debcontapedido->d63_codigo;
 		$cl_debcontapedidoinscr-> d69_inscr  = $inscr;
@@ -248,7 +248,7 @@ db_fim_transacao($sqlerro);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
 <style type="text/css">
@@ -298,7 +298,7 @@ db_estilosite()
 		echo "<td colspan='2'>Matricula: $matric</td>";
 	 }
  	 if(isset($inscr)){
-		echo "<td colspan='2'>Inscrição: $inscr</td>";
+		echo "<td colspan='2'>InscriÃ§Ã£o: $inscr</td>";
 	 }
 	 echo"</tr>";
 	 ?>

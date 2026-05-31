@@ -46,7 +46,7 @@ $clrotulo->label('k50_notifica');
 
 $clnumpref  = new cl_numpref;
 
-// Carrega informações da sessão
+// Carrega informaÃ§Ãµes da sessÃ£o
 $instit = db_getsession("DB_instit");
 $anousu = db_getsession("DB_anousu");
 $data   = date("Y-m-d");
@@ -64,7 +64,7 @@ if (isset($matricula)) {
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda - P&aacute;gina Inicial</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Expires" CONTENT="0">
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
 <script>
@@ -132,7 +132,7 @@ digitaco...zdWFyaW89 (linha 143)
 </head>
 <body bgcolor="<?=$w01_corbody?>" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <br><br>
-<div class="bold2" align="center">Clique na Certidão abaixo para imprimir:</div>
+<div class="bold2" align="center">Clique na CertidÃ£o abaixo para imprimir:</div>
 <br><br><br><br>
 <table  align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
@@ -144,7 +144,7 @@ digitaco...zdWFyaW89 (linha 143)
 
 $resnumpref = $clnumpref->sql_record($clnumpref->sql_query_file($anousu, $instit,"k03_certissvar"));
 if($resnumpref==false || $clnumpref->numrows==0){
-	db_msgbox("Tabela de parâmetro (numpref) não configurada! Verifique com administrador");	
+	db_msgbox("Tabela de parÃ¢metro (numpref) nÃ£o configurada! Verifique com administrador");	
 	exit;
 }else{
 	db_fieldsmemory($resnumpref,0);
@@ -235,22 +235,22 @@ for($i=0; $i<$nrovias; $i++) {
 	if($certidao == "positiva" ) {
 		if($w13_libcertpos == 't'){
 			if($iNumRowns == 0) {
-			  $sMsg  = "As informações e/ou condições disponíveis são insuficientes para a emissão de certidão negativa por meio da Internet."; 
-        $sMsg .= "Para maiores informações, dirija-se ao órgão competente da Administração Municipal.";
+			  $sMsg  = "As informaÃ§Ãµes e/ou condiÃ§Ãµes disponÃ­veis sÃ£o insuficientes para a emissÃ£o de certidÃ£o negativa por meio da Internet."; 
+        $sMsg .= "Para maiores informaÃ§Ãµes, dirija-se ao Ã³rgÃ£o competente da AdministraÃ§Ã£o Municipal.";
 				db_msgbox($sMsg);
 			}
 			echo "
 			<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
 			<tr>
 			<td align='center'>
-				<a href=\"javascript:js_certidao(1,'$titulo','$origem', '$individualconjunta')\">CERTIDÃO POSITIVA $link</a>
+				<a href=\"javascript:js_certidao(1,'$titulo','$origem', '$individualconjunta')\">CERTIDÃƒO POSITIVA $link</a>
 			</td>
 			</tr>
 			</table>\n";
 		}else{	
-			//db_msgbox("Certidão não liberada pelo site, procure a Prefeitura.");
+			//db_msgbox("CertidÃ£o nÃ£o liberada pelo site, procure a Prefeitura.");
 			if($i==0) {
-				db_msgbox("As informações e/ou condições disponíveis são insuficientes para a emissão de certidão negativa por meio da Internet. Para maiores informações, dirija-se ao órgão competente da Administração Municipal.");
+				db_msgbox("As informaÃ§Ãµes e/ou condiÃ§Ãµes disponÃ­veis sÃ£o insuficientes para a emissÃ£o de certidÃ£o negativa por meio da Internet. Para maiores informaÃ§Ãµes, dirija-se ao Ã³rgÃ£o competente da AdministraÃ§Ã£o Municipal.");
 			}
 		}
 	}elseif($certidao	== "regular"){
@@ -258,7 +258,7 @@ for($i=0; $i<$nrovias; $i++) {
 		<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
 		<tr>
 		<td align='center'>
-			<a href=\"javascript:js_certidao(0,'$titulo','$origem', '$individualconjunta')\">CERTIDÃO REGULAR $link</a>
+			<a href=\"javascript:js_certidao(0,'$titulo','$origem', '$individualconjunta')\">CERTIDÃƒO REGULAR $link</a>
 		</td>
 		</tr>
 		</table>\n";
@@ -267,7 +267,7 @@ for($i=0; $i<$nrovias; $i++) {
 		<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
 		<tr>
 		<td align='center'>
-			<a href=\"javascript:js_certidao(2,'$titulo','$origem', '$individualconjunta')\">CERTIDÃO NEGATIVA $link</a>
+			<a href=\"javascript:js_certidao(2,'$titulo','$origem', '$individualconjunta')\">CERTIDÃƒO NEGATIVA $link</a>
 		</td>
 		</tr>
 		</table>\n";

@@ -64,7 +64,7 @@ else
   
   switch($campo) {
     case "funcao":
-      $sql = "select (codfuncao || '##' || nomefuncao) as db_codigo,codfuncao as código,nomefuncao as \"Nome da Função\"
+      $sql = "select (codfuncao || '##' || nomefuncao) as db_codigo,codfuncao as cÃ³digo,nomefuncao as \"Nome da FunÃ§Ã£o\"
               from db_sysfuncoes
 		      where nomefuncao like '".$arg[1]."%'
 			  and triggerfuncao = '1'
@@ -75,7 +75,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onFocus="document.form5.filtro.focus()">

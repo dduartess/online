@@ -93,7 +93,7 @@ try{
         $rsBuscaAtendimentos     = $oDaoOuvidoriaAtendimento->sql_record($sSqlBuscaAtendimentos);
     
         if ($oDaoOuvidoriaAtendimento->numrows == 0) {
-          throw new Exception("Não encontrado atendimentos para os filtros selecionados.");
+          throw new Exception("NÃ£o encontrado atendimentos para os filtros selecionados.");
         }
   
         $aResultados                     = array();

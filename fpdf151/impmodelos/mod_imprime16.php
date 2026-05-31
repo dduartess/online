@@ -19,7 +19,7 @@ $this->objpdf->AliasNbPages();
 //		$this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
 		$this->objpdf->Setfont('Arial','B',11);
 		$this->objpdf->text(130,$xlin-13,'RECIBO DE PAGAMENTO');
-		$this->objpdf->text(130,$xlin-8,'REF. AO MÊS '.db_formatar($this->mes,'s','0',2,'e',0).'/'.$this->ano);
+		$this->objpdf->text(130,$xlin-8,'REF. AO MÃŠS '.db_formatar($this->mes,'s','0',2,'e',0).'/'.$this->ano);
 		$this->objpdf->text(130,$xlin-3,$this->qualarquivo);
 		
 		$this->objpdf->Image('imagens/files/'.$this->logo,15,$xlin-17,12); //.$this->logo
@@ -49,7 +49,7 @@ $this->objpdf->AliasNbPages();
 		$this->objpdf->line($xcol+15,$xlin+14,$xcol+15,$xlin+96);
 
 		$this->objpdf->Setfont('Arial','',6);
-		$this->objpdf->text($xcol+2,$xlin+3,'Matrícula:');
+		$this->objpdf->text($xcol+2,$xlin+3,'MatrÃ­cula:');
 		$this->objpdf->Setfont('Arial','B',7);
     $this->objpdf->text($xcol+12,$xlin+3,$this->registro);
 
@@ -59,17 +59,17 @@ $this->objpdf->AliasNbPages();
     $this->objpdf->text($xcol+31,$xlin+3,$this->nome);
 
 		$this->objpdf->Setfont('Arial','',6);
-		$this->objpdf->text($xcol+100,$xlin+3,'Função:');
+		$this->objpdf->text($xcol+100,$xlin+3,'FunÃ§Ã£o:');
 		$this->objpdf->Setfont('Arial','B',7);
 		$this->objpdf->text($xcol+110,$xlin+3,$this->descr_funcao);
 
 		$this->objpdf->Setfont('Arial','',6);
-		$this->objpdf->text($xcol+170,$xlin+3,'Padrão:');
+		$this->objpdf->text($xcol+170,$xlin+3,'PadrÃ£o:');
 		$this->objpdf->Setfont('Arial','B',7);
 		$this->objpdf->text($xcol+180,$xlin+3,$this->padrao);
 
     $this->objpdf->Setfont('Arial','',6);
-		$this->objpdf->text($xcol+2,$xlin+7,'Lotação:');
+		$this->objpdf->text($xcol+2,$xlin+7,'LotaÃ§Ã£o:');
 		$this->objpdf->Setfont('Arial','B',7);
 		$this->objpdf->text($xcol+12,$xlin+7,$this->descr_lota);
     
@@ -79,29 +79,29 @@ $this->objpdf->AliasNbPages();
 		$this->objpdf->text($xcol+112,$xlin+7,$this->banco.' / '.$this->agencia.' / '.$this->conta);
 
 		$this->objpdf->Setfont('Arial','',6);
-		$this->objpdf->text($xcol+170,$xlin+7,'Admissão:');
+		$this->objpdf->text($xcol+170,$xlin+7,'AdmissÃ£o:');
 		$this->objpdf->Setfont('Arial','B',7);
 		$this->objpdf->text($xcol+180,$xlin+7,$this->admissao);
 				
 		$this->objpdf->Setfont('Arial','',8);
-		$this->objpdf->text($xcol+ 5 ,$xlin+18,'Cód.');
-		$this->objpdf->text($xcol+ 55,$xlin+18,'Descrição');
-		$this->objpdf->text($xcol+116,$xlin+18,'Referência');
+		$this->objpdf->text($xcol+ 5 ,$xlin+18,'CÃ³d.');
+		$this->objpdf->text($xcol+ 55,$xlin+18,'DescriÃ§Ã£o');
+		$this->objpdf->text($xcol+116,$xlin+18,'ReferÃªncia');
 		$this->objpdf->text($xcol+135,$xlin+18,'Proventos');
 		$this->objpdf->text($xcol+157,$xlin+18,'Descontos');
 		$this->objpdf->Setfont('Arial','',6);
 		$this->objpdf->text($xcol+155,$xlin+98,'Total dos Descontos');
 		$this->objpdf->text($xcol+131,$xlin+98,'Total dos Vencimentos');
-		$this->objpdf->text($xcol+133,$xlin+111,'Líquido a Receber');
+		$this->objpdf->text($xcol+133,$xlin+111,'LÃ­quido a Receber');
 		$this->objpdf->setfillcolor(225);
 		$this->objpdf->rect($xcol+153,$xlin+105,23,10,'DF');
 		$this->objpdf->setfillcolor(255,255,255);
 
 		$this->objpdf->text($xcol+5 ,$xlin+117,'Margem Consignavel');
 		$this->objpdf->text($xcol+40,$xlin+117,'Sal. Base');
-		$this->objpdf->text($xcol+70,$xlin+117,'Base Previdência');
+		$this->objpdf->text($xcol+70,$xlin+117,'Base PrevidÃªncia');
 		$this->objpdf->text($xcol+100,$xlin+117,'Base FGTS');
-		$this->objpdf->text($xcol+130,$xlin+117,'FGTS do Mês');
+		$this->objpdf->text($xcol+130,$xlin+117,'FGTS do MÃªs');
 		$this->objpdf->text($xcol+160,$xlin+117,'Base IRRF');
 
 		
@@ -221,14 +221,14 @@ $this->objpdf->AliasNbPages();
 		$this->objpdf->setx(15);
     $this->objpdf->setfillcolor(0);
 		$this->objpdf->Setfont('Arial','',5);
-		$this->objpdf->TextWithDirection(185,$xlin+120,'DECLARO TER RECEBIDO A IMPORTÂNCIA LÍQUIDA DISCRIMIDA NESTE RECIBO.','U'); // texto no canhoto do carne
+		$this->objpdf->TextWithDirection(185,$xlin+120,'DECLARO TER RECEBIDO A IMPORTÃ‚NCIA LÃQUIDA DISCRIMIDA NESTE RECIBO.','U'); // texto no canhoto do carne
 		$this->objpdf->line($xcol+193,$xlin+25,$xcol+193,$xlin+70);
 		$this->objpdf->line($xcol+193,$xlin+75,$xcol+193,$xlin+115);
 		$this->objpdf->TextWithDirection(200,$xlin+97,'DATA','U'); // texto no canhoto do carne
-		$this->objpdf->TextWithDirection(200,$xlin+60,'ASSINATURA DO FUNCIONÁRIO','U'); // texto no canhoto do carne
+		$this->objpdf->TextWithDirection(200,$xlin+60,'ASSINATURA DO FUNCIONÃRIO','U'); // texto no canhoto do carne
 		$this->objpdf->TextWithDirection(209.7,$xlin,$this->total.' / '.$this->numero,'U'); // numero do contra-cheque
 		$this->objpdf->TextWithDirection(205,$xlin+120,"Para Verificar Autenticidade Acesse: ".$this->url,'U');
-    $this->objpdf->TextWithDirection(205,$xlin+60,"Código da Autenticação: ",'U');
+    $this->objpdf->TextWithDirection(205,$xlin+60,"CÃ³digo da AutenticaÃ§Ã£o: ",'U');
     $this->objpdf->Setfont('Arial','B',5); 
     $this->objpdf->TextWithDirection(205,$xlin+40,$this->codautent,'U');		  	
 

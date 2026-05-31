@@ -32,9 +32,9 @@ include_once ("libs/db_utils.php");
 
 require_once("std/DBDate.php");
 
-// AndrÈ TI - Prefeitura de Maric·
+// Andr√© TI - Prefeitura de Maric√°
 require_once("libs/db_libtributario.php");
-// AndrÈ TI - Prefeitura de Maric·
+// Andr√© TI - Prefeitura de Maric√°
 
 include ("classes/db_db_config_classe.php");
 include ("classes/db_db_bancos_classe.php");
@@ -96,7 +96,7 @@ $resul = $cldb_config->sql_record($sqlpref);
 if($cldb_config->numrows>0){
   db_fieldsmemory($resul, 0); // pega o dados da prefa
 }else{
-  db_redireciona('db_erros.php?fechar=true&db_erro=Contate Suporte. A configuraÁ„o do sistema n„o esta completa.');
+  db_redireciona('db_erros.php?fechar=true&db_erro=Contate Suporte. A configura√ß√£o do sistema n√£o esta completa.');
   exit;
 } 
 $pdf2->uf_config     = $db12_uf;
@@ -117,7 +117,7 @@ if ((int) $codmodelo > 0) {
 if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
   
   if (!isset ($matric)) {
-    db_redireciona('db_erros.php?fechar=true&db_erro=Para Emiss„o de CarnÍ do IPTU Consulte Dados Pela MatrÌcula.');
+    db_redireciona('db_erros.php?fechar=true&db_erro=Para Emiss√£o de Carn√™ do IPTU Consulte Dados Pela Matr√≠cula.');
     exit;
   }
   $cliptubase = new cl_iptubase;
@@ -163,7 +163,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
   $rsResulant = db_query($sql);
   $numlin = pg_numrows($rsResulant);
   if ($numlin > 0) {
-    $pdf2->iptdebant = "H· DÈbitos Anteriores, favor procurar Setor de DÌvida Ativa";
+    $pdf2->iptdebant = "H√° D√©bitos Anteriores, favor procurar Setor de D√≠vida Ativa";
   }
   
   unset ($resultpro);
@@ -273,7 +273,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         if (substr($datavencimento, 0, 4) > db_getsession('DB_anousu') && $k00_valor > 0 && ( $ninfla_ant != "" && $ninfla_ant != "REAL") ) {
           $k00_valor = 0;
           $especie   = $ninfla;
-          $histinf   = "\n AtenÁ„o : entre em contato com o municipio para saber o valor da $ninfla.";
+          $histinf   = "\n Aten√ß√£o : entre em contato com o municipio para saber o valor da $ninfla.";
         }else{
           $especie   = 'R$';
           $histinf   = "";
@@ -281,7 +281,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         
         
         if($datavencimento < date('Ymd',db_getsession('DB_datausu'))){
-          $msgvencida = "\n Parcela vencida, valor calculado com juros e multa atÈ a data atual. Vencimento original ".$k00_dtvenc;
+          $msgvencida = "\n Parcela vencida, valor calculado com juros e multa at√© a data atual. Vencimento original ".$k00_dtvenc;
           $k00_dtvenc = date('d/m/Y',$H_DATAUSU);
         }else{
           $msgvencida = "";         
@@ -334,7 +334,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
   }
   
 // ###################### BUSCA OS DADOS PARA IMPRIMIR O LOGO DO BANCO #########################
-//verifica se È ficha e busca o codigo do banco
+//verifica se √© ficha e busca o codigo do banco
   if($oRegraEmissao->isCobranca()){
       
   $rsConsultaBanco  = $cldb_bancos->sql_record($cldb_bancos->sql_query_file($oConvenio->getCodBanco()));
@@ -357,7 +357,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
 } else {
 
   ////////////////////////////////////////////////////////////////////////////////  
-  ////////  C O M E « O   D A  G E R A « √ O  D O S   C A R N E S   //////////////
+  ////////  C O M E √á O   D A  G E R A √á √É O  D O S   C A R N E S   //////////////
   ////////////////////////////////////////////////////////////////////////////////
   
   /********************* R O T I N A   P A R A   B U S C A R   O   M O D E L O   D E   C A R N E *****************************************************/
@@ -368,7 +368,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
   db_fieldsmemory($result, 0);
   
   /***************************************************************************************************************************************************/
-  // FUNCAO Q RETORNA O PDF ESTANCIADO JA COM O MODELO CERTO TESTANDO AS RESTRI«’ES
+  // FUNCAO Q RETORNA O PDF ESTANCIADO JA COM O MODELO CERTO TESTANDO AS RESTRI√á√ïES
   
   
   try{
@@ -394,7 +394,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
   $resparag = db_query($sqlparag);
   
   if (pg_numrows($resparag) == 0) {
-    $pdf1->secretaria = 'SECRETARIA DE FINAN«AS';
+    $pdf1->secretaria = 'SECRETARIA DE FINAN√áAS';
   } else {
     db_fieldsmemory($resparag, 0);
     $pdf1->secretaria = $db02_texto;
@@ -566,11 +566,11 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
       }
       
       if ($dv05_procdiver == 1284) {
-        $pdf1->secretaria = 'FUNDO MUNICIPAL DE HABITA«√O';
-        $k00_hist1 = 'ConvÍnio SEHAB n∫ 72/99 - Programa Especial do Funco de Desenvolvimento Social. AprovaÁ„o do Conselho Estadual de HabitaÁ„o em 08/09/1999';
+        $pdf1->secretaria = 'FUNDO MUNICIPAL DE HABITA√á√ÉO';
+        $k00_hist1 = 'Conv√™nio SEHAB n¬∫ 72/99 - Programa Especial do Funco de Desenvolvimento Social. Aprova√ß√£o do Conselho Estadual de Habita√ß√£o em 08/09/1999';
       } else if ($dv05_procdiver == 221) {
-        $pdf1->secretaria = 'FUNDO MUNICIPAL DE HABITA«√O';
-        $k00_hist1 = 'Lei Municipal n∫ 3049/2002, de 04/12/2002. AprovaÁ„o do Conselho Estadual de HabitaÁ„o em dez/2002';
+        $pdf1->secretaria = 'FUNDO MUNICIPAL DE HABITA√á√ÉO';
+        $k00_hist1 = 'Lei Municipal n¬∫ 3049/2002, de 04/12/2002. Aprova√ß√£o do Conselho Estadual de Habita√ß√£o em dez/2002';
       }
     }
     
@@ -601,9 +601,9 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
     $sqlorigem .= "        end as origem, ";
     $sqlorigem .= "        case ";
     $sqlorigem .= "          when arrematric.k00_matric is not null ";
-    $sqlorigem .= "            then 'MatrÌcula' ";
+    $sqlorigem .= "            then 'Matr√≠cula' ";
     $sqlorigem .= "          when arreinscr.k00_inscr is not null ";
-    $sqlorigem .= "            then 'InscriÁ„o' ";
+    $sqlorigem .= "            then 'Inscri√ß√£o' ";
     $sqlorigem .= "        else ";
     $sqlorigem .= "         'CGM' ";
     $sqlorigem .= "        end as descr ";
@@ -619,7 +619,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
       db_msgbox("Nao encontrou registros do numpre: $k00_numpre!");
     }
     
-    if (!empty ($descr) && $descr == 'MatrÌcula') {
+    if (!empty ($descr) && $descr == 'Matr√≠cula') {
       $Identificacao = db_query("select * from proprietario where j01_matric = $origem limit 1");
 
       if(pg_numrows($Identificacao)==0) {
@@ -661,11 +661,11 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
           $numero = $j01_matric.'  SQL:'.$j34_setor.'-'.$j34_quadra.'-'.$j34_lote;
         }
       }
-    } else if (!empty ($descr) && $descr == 'InscriÁ„o') {
+    } else if (!empty ($descr) && $descr == 'Inscri√ß√£o') {
       $Identificacao = db_query("select * from empresa where q02_inscr = $origem");
 
       if(pg_numrows($Identificacao)==0) {
-        db_redireciona('db_erros.php?fechar=true&db_erro=Problemas no Cadastro da InscriÁ„o ' . $origem);
+        db_redireciona('db_erros.php?fechar=true&db_erro=Problemas no Cadastro da Inscri√ß√£o ' . $origem);
       }
 
       db_fieldsmemory($Identificacao, 0);
@@ -785,11 +785,11 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
       if ($resultfin != false) {
         for ($unicont = 0; $unicont < pg_numrows($resultfin); $unicont ++) {
 			
-		// AndrÈ TI - Prefeitura de Maric·
+		// Andr√© TI - Prefeitura de Maric√°
 		  $oMensagem                   = DBTributario::getMensagensParcela($k00_numpre, null, null );
           $pdf1->sMensagemContribuinte = $oMensagem->sMensagemContribuinte;
           $pdf1->sMensagemCaixa        = $oMensagem->sMensagemCaixa;
-		// AndrÈ TI - Prefeitura de Maric·
+		// Andr√© TI - Prefeitura de Maric√°
           
           $pdf1->arraycodhist       = array();
           $pdf1->arrayreduzreceitas = array();
@@ -847,14 +847,14 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
             if (substr($dtvencunic, 0, 4) > db_getsession('DB_anousu') && $k00_valor > 0 && ( $ninfla_ant != "" && $ninfla_ant != "REAL")) {
               $k00_valor = 0;
               $especie   = $ninfla;
-              $histinf   = "\n AtenÁ„o : entre em contato com o municipio para saber o valor da $ninfla.";
+              $histinf   = "\n Aten√ß√£o : entre em contato com o municipio para saber o valor da $ninfla.";
             }else{
               $especie   = 'R$';
               $histinf   = "";
             }
             
             if($dtvencunic < date('Ymd',db_getsession('DB_datausu'))){
-              $msgvencida = "\n Parcela vencida, valor calculado com juros e multa atÈ a data atual. Vencimento original ".$k00_dtvenc;         
+              $msgvencida = "\n Parcela vencida, valor calculado com juros e multa at√© a data atual. Vencimento original ".$k00_dtvenc;         
               $k00_dtvenc = date('d/m/Y',$H_DATAUSU);
             }else{
               $msgvencida = "";         
@@ -893,7 +893,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
           $pdf1->descr1 = $numero;
           $pdf1->descr2 = db_numpre($k00_numpre, 0).'000'; //.db_formatar($k00_numpar,'s',"0",3,"e"); 
           if (isset ($obs)) {
-            $pdf1->titulo13 = 'ObservaÁ„o';
+            $pdf1->titulo13 = 'Observa√ß√£o';
             $pdf1->descr13 = $obs;
           }
           /////////////// ISSQN FIXO //////////////////////////////
@@ -935,13 +935,13 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
             }
 
 
-            $pdf1->pretipocompl  = 'N˙mero:'; 
+            $pdf1->pretipocompl  = 'N√∫mero:'; 
             $pdf1->tipobairro    = 'Bairro:';
             $pdf1->bairropri     = $j13_descr;
             $pdf1->nomepriimo = $j43_ender;
             $pdf1->tipocompl  = $j43_compl;
             $pdf1->tipocompl  = $j43_compl;
-            $pdf1->tipocompl     = 'N˙mero:'; 
+            $pdf1->tipocompl     = 'N√∫mero:'; 
 
             $pdf1->descr11_1    = $z01_cgmpri." - ".$proprietario;
             $pdf1->descr11_2    = $xender;
@@ -976,8 +976,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
             
           } else {
             
-            $pdf1->pretipocompl  = 'N˙mero:';
-            $pdf1->tipocompl     = 'N˙mero:';
+            $pdf1->pretipocompl  = 'N√∫mero:';
+            $pdf1->tipocompl     = 'N√∫mero:';
             $pdf1->tipobairro    = 'Bairro:';
             $pdf1->bairropri     = $z01_bairro;
             $pdf1->descr11_1     = $z01_numcgm." - ".$z01_nome;
@@ -1102,17 +1102,17 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
             										$pdf1->titulo1    ." - ".
             										$pdf1->descr1     ." / ".
                                 $pdf1->titulo4    . " " .
-                                $pdf1->descr4_1   ." Parcela ⁄nica \n";
+                                $pdf1->descr4_1   ." Parcela √önica \n";
             (isset($bql)&&$bql!=""?" - ".$bql."\n":"\n").
             (isset($obsdiver)&&$obsdiver!=""?$obsdiver:"")."\n";
             (isset($pdf1->predescr12_1)?$pdf1->predescr12_1 .= $pdf1->pretipodebito."\n":"").
             $pdf1->titulo1." - ".$pdf1->descr1." / ".
-            $pdf1->titulo4." ".$pdf1->descr4_1." Parcela ⁄nica \n";
+            $pdf1->titulo4." ".$pdf1->descr4_1." Parcela √önica \n";
             (isset($bql)&&$bql!=""?" - ".$bql."\n":"\n").
             (isset($obsdiver)&&$obsdiver!=""?$obsdiver:"")."\n";
           }
          
-          ///////// PEGA A MSG DE PAGAMENTO E AS INSTRU«’ES DA TABELA NUMPREF
+          ///////// PEGA A MSG DE PAGAMENTO E AS INSTRU√á√ïES DA TABELA NUMPREF
           $rsmsgcarne = db_query("select k03_msgcarne, k03_msgbanco from numpref where k03_anousu = ".db_getsession("DB_anousu"));
           if (pg_numrows($rsmsgcarne) > 0) {
             db_fieldsmemory($rsmsgcarne, 0);
@@ -1141,20 +1141,20 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
               $rsIssvarano = db_query($sqlaliq);
               $intNumrows = pg_numrows($rsIssvarano);
               if ($intNumrows == 0) {
-                db_redireciona('db_erros.php?fechar=true&db_erro=Ano n„o encontrado na tabela issvar. Contate o suporte');
+                db_redireciona('db_erros.php?fechar=true&db_erro=Ano n√£o encontrado na tabela issvar. Contate o suporte');
                 exit;
               }
               db_fieldsmemory($rsIssvarano, 0);
-              $pdf1->descr4_1 = $k00_numpar.'a PARCELA   -   AlÌquota '.$q05_aliq.'%     EXERCÕCIO : '.$q05_ano;
-              //$pdf1->descr4_1   = $k00_numpar.'a PARCELA   -   AlÌquota '.pg_result(db_query($sqlaliq),"q05_aliq").'%     EXERCÕCIO : '.pg_result(db_query($sqlaliq),"q05_ano");
+              $pdf1->descr4_1 = $k00_numpar.'a PARCELA   -   Al√≠quota '.$q05_aliq.'%     EXERC√çCIO : '.$q05_ano;
+              //$pdf1->descr4_1   = $k00_numpar.'a PARCELA   -   Al√≠quota '.pg_result(db_query($sqlaliq),"q05_aliq").'%     EXERC√çCIO : '.pg_result(db_query($sqlaliq),"q05_ano");
             }
             $pdf1->titulo7 = 'Valor Pago';
             $pdf1->titulo15 = 'Valor Pago';
-            $pdf1->titulo13 = 'Valor da Receita Tribut·vel';
+            $pdf1->titulo13 = 'Valor da Receita Tribut√°vel';
           
 
 //*******************************************************************
-           //alterado para passar os valores para o carnÍ (Anderson) ...
+           //alterado para passar os valores para o carn√™ (Anderson) ...
 
             $pdf1->descr7    = db_formatar($k00_valor, 'f');
             $pdf1->descr15   = db_formatar($k00_valor, 'f');
@@ -1170,8 +1170,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
             $pdf1->predescr7 = db_formatar($k00_valor, 'f'); //($ninfla==''?'R$'.db_formatar($k00_valor,'f'):$ninfla.''.$k00_valor); 
           }
       
-          $pdf1->descr12_2 = '- PARCELA ⁄NICA COM '.$k00_percdes.'% DE DESCONTO';
-          $pdf1->prehistoricoparcela = ' PARCELA ⁄NICA COM '.$k00_percdes.'% DE DESCONTO';
+          $pdf1->descr12_2 = '- PARCELA √öNICA COM '.$k00_percdes.'% DE DESCONTO';
+          $pdf1->prehistoricoparcela = ' PARCELA √öNICA COM '.$k00_percdes.'% DE DESCONTO';
 
           $pdf1->linha_digitavel = $oConvenio->getLinhaDigitavel();
           $pdf1->codigo_barras = $oConvenio->getCodigoBarra();
@@ -1205,7 +1205,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
           
           
 // ###################### BUSCA OS DADOS PARA IMPRIMIR O LOGO DO BANCO #########################
-//verifica se È ficha e busca o codigo do banco
+//verifica se √© ficha e busca o codigo do banco
    if($oRegraEmissao->isCobranca()){
       
   $rsConsultaBanco  = $cldb_bancos->sql_record($cldb_bancos->sql_query_file($oConvenio->getCodBanco()));
@@ -1244,8 +1244,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
 /******************************************************** FIM PARCELA UNICA ************************************************************************/
     
     if ($k00_codbco == "" || $k00_codage == "") {
-      $errobco = "CÛdigo do banco e ou agÍncia zerado ou nulo!";
-      db_redireciona("db_erros.php?fechar=true&db_erro=Verifique cadastro do tipo de dÈbito - $tipo_debito <br> $errobco");
+      $errobco = "C√≥digo do banco e ou ag√™ncia zerado ou nulo!";
+      db_redireciona("db_erros.php?fechar=true&db_erro=Verifique cadastro do tipo de d√©bito - $tipo_debito <br> $errobco");
       //.$tipo_debito."\n $errobco");
       exit;
     }
@@ -1301,7 +1301,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
 
     db_fieldsmemory(db_query($sql1), 0);
     $k00_dtvenc = db_formatar($k00_dtvenc, 'd');
-    $pdf1->data_processamento = db_formatar($k00_dtoper,'d'); // agora È a data de operaÁ„o
+    $pdf1->data_processamento = db_formatar($k00_dtoper,'d'); // agora √© a data de opera√ß√£o
     
     // alterei para buscar o terceiro digito pelo tipo de debito da tabela arretipo
     $sqlvalor = "select k00_impval,k00_tercdigcarnenormal from arretipo where k00_tipo = $tipo_debito";
@@ -1395,14 +1395,14 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         if (substr($datavencimento, 0, 4) > db_getsession('DB_anousu') && $k00_valor > 0 && ( $ninfla_ant != "" && $ninfla_ant != "REAL")) {
           $k00_valor = 0;
           $especie   = $ninfla;
-          $histinf   = "\n AtenÁ„o : entre em contato com o municipio para saber o valor da $ninfla.";
+          $histinf   = "\n Aten√ß√£o : entre em contato com o municipio para saber o valor da $ninfla.";
         }else{
           $especie   = 'R$';
           $histinf   = "";
         }
       
         if($dtvenc < date('Ymd',db_getsession('DB_datausu'))){
-          $msgvencida = "\n Parcela vencida, valor calculado com juros e multa atÈ a data atual. Vencimento original ".$k00_dtvenc;         
+          $msgvencida = "\n Parcela vencida, valor calculado com juros e multa at√© a data atual. Vencimento original ".$k00_dtvenc;         
           $k00_dtvenc = date('d/m/Y',$H_DATAUSU);
         }else{
           $msgvencida = "";
@@ -1497,7 +1497,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
                           from arrecad where k00_numpre = $k00_numpre";
         $rsReceitas = db_query($sqlReceitas);
         if(pg_numrows($rsReceitas)==0){
-          db_msgbox("N„o encontrado arrecad ($k00_numpre).");   
+          db_msgbox("N√£o encontrado arrecad ($k00_numpre).");   
           exit;
         }
         db_fieldsmemory($rsReceitas,0);
@@ -1605,8 +1605,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         if($intNumrowsEnder > 0){
           db_fieldsmemory($rsresultender,0);  
         }
-        $pdf1->pretipocompl  = 'N˙mero:';
-        $pdf1->tipocompl     = 'N˙mero:';
+        $pdf1->pretipocompl  = 'N√∫mero:';
+        $pdf1->tipocompl     = 'N√∫mero:';
         $pdf1->tipobairro    = 'Bairro:';
         $pdf1->bairropri     = $j13_descr;
         $pdf1->descr11_1     = $z01_cgmpri." - ".$proprietario;
@@ -1664,8 +1664,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         $rsInscr = db_query($sSqlInscr) or die($sSqlInscr);
         db_fieldsmemory($rsInscr,0);  
         
-        $pdf1->pretipocompl  = 'N˙mero:';
-        $pdf1->tipocompl     = 'N˙mero:';
+        $pdf1->pretipocompl  = 'N√∫mero:';
+        $pdf1->tipocompl     = 'N√∫mero:';
         $pdf1->tipobairro    = 'Bairro:';
         $pdf1->bairropri     = $j13_descr;
         $pdf1->descr11_1     = $z01_numcgm." - ".$z01_nome;
@@ -1680,7 +1680,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         $pdf1->predescr3_1   = $z01_numcgm." - ".$z01_nome;
         $pdf1->predescr3_2   = $z01_ender." ".$z01_numero;
         $pdf1->descr3_3      = $z01_bairro;
-        $pdf1->tipoinscr     = 'InscriÁ„o';
+        $pdf1->tipoinscr     = 'Inscri√ß√£o';
         $pdf1->nrinscr       = $iNumInscr;
         $pdf1->tipolograd    = 'Rua ';
         $pdf1->pretipolograd = 'Rua ';
@@ -1716,8 +1716,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         $rsNumCgm = db_query($sSqlNumCgm) or die($sSqlNumCgm);
         db_fieldsmemory($rsNumCgm,0); 
         
-        $pdf1->pretipocompl  = 'N˙mero:';
-        $pdf1->tipocompl     = 'N˙mero:';
+        $pdf1->pretipocompl  = 'N√∫mero:';
+        $pdf1->tipocompl     = 'N√∫mero:';
         $pdf1->tipobairro    = 'Bairro:';
         $pdf1->bairropri     = $z01_bairro;
         $pdf1->descr11_1     = $z01_numcgm." - ".$z01_nome;
@@ -1837,7 +1837,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
       
       if (isset ($obs)) {
         
-        $pdf1->titulo13 = 'ObservaÁ„o';
+        $pdf1->titulo13 = 'Observa√ß√£o';
         $pdf1->descr13 = $obs;
       
       }
@@ -1854,12 +1854,12 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         $pdf1->descr13  = $v07_parcel;
       }
       
-	  // AndrÈ TI - Prefeitura de Maric·
+	  // Andr√© TI - Prefeitura de Maric√°
 	    $oMensagem = DBTributario::getMensagensParcela($k00_numpre, $k00_numpar, $k00_dtoper);
 
   		$pdf1->sMensagemContribuinte = $oMensagem->sMensagemContribuinte;
   		$pdf1->sMensagemCaixa        = $oMensagem->sMensagemCaixa;
-      // AndrÈ TI - Prefeitura de Maric·
+      // Andr√© TI - Prefeitura de Maric√°
 	  
       $pdf1->descr5 = $k00_numpar.' / '.$k00_numtot;
       $tmpdta       = split("/",$k00_dtvenc);
@@ -1905,15 +1905,15 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
           $rsIssvarano = db_query($sqlaliq);
           $intNumrows = pg_numrows($rsIssvarano);
           if ($intNumrows == 0) {
-            db_redireciona('db_erros.php?fechar=true&db_erro=Ano n„o encontrado na tabela issvar. Contate o suporte');
+            db_redireciona('db_erros.php?fechar=true&db_erro=Ano n√£o encontrado na tabela issvar. Contate o suporte');
             exit;
           }
           db_fieldsmemory($rsIssvarano, 0);
-          $pdf1->descr4_1 = $k00_numpar.'a PARCELA   -   AlÌquota '.$q05_aliq.'%     EXERCÕCIO : '.$q05_ano;
+          $pdf1->descr4_1 = $k00_numpar.'a PARCELA   -   Al√≠quota '.$q05_aliq.'%     EXERC√çCIO : '.$q05_ano;
         }
         $pdf1->titulo7   = 'Valor Pago';
         $pdf1->titulo15  = 'Valor Pago';
-        $pdf1->titulo13  = 'Valor da Receita Tribut·vel';
+        $pdf1->titulo13  = 'Valor da Receita Tribut√°vel';
         $pdf1->descr15   = '';
         $pdf1->valtotal  = '';
         $pdf1->descr7    = '';
@@ -1958,8 +1958,8 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
             $pdf1->descr12_1 .= $k00_msgparc2." ".$histinf." ".$msgvencida;
             (isset($pdf1->predescr12_1)?$pdf1->predescr12_1 .= $k00_msgparc2." ".$histinf." ".$msgvencida:"");
           } elseif (isset ($k03_msgbanco) && $k03_msgbanco != "") {
-            $pdf1->descr12_1    .= $k03_msgbanco." N„o aceitar apÛs vencimento.";
-            $pdf1->predescr12_1 .= $k03_msgbanco." N„o aceitar apÛs vencimento.";
+            $pdf1->descr12_1    .= $k03_msgbanco." N√£o aceitar ap√≥s vencimento.";
+            $pdf1->predescr12_1 .= $k03_msgbanco." N√£o aceitar ap√≥s vencimento.";
           }
         }
       } else {
@@ -1968,9 +1968,9 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
         } elseif (isset ($k00_msgparc2) && $k00_msgparc2 != "") {
           $pdf1->descr12_1 .= $k00_msgparc2." ".$histinf." ".$msgvencida;
         } elseif (isset ($k03_msgbanco) && $k03_msgbanco != "") {
-          $pdf1->descr12_1 .= $k03_msgbanco." ApÛs o vencimento cobrar juros de 1%a.m e multa de 2% ";
+          $pdf1->descr12_1 .= $k03_msgbanco." Ap√≥s o vencimento cobrar juros de 1%a.m e multa de 2% ";
         } else {
-          $pdf1->descr12_1 .= '- O PAGAMENTO DEVER¡ SER EFETUADO SOMENTE NA PREFEITURA.'." ".$histinf." ".$msgvencida;
+          $pdf1->descr12_1 .= '- O PAGAMENTO DEVER√Å SER EFETUADO SOMENTE NA PREFEITURA.'." ".$histinf." ".$msgvencida;
         }
       }
       
@@ -2067,7 +2067,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
 
       @$pdf1->especie = @$especie;    
       
-      // VERIFICA SE … UM PARCELAMENTO COM DESCONTO, SE FOR MOSTRAR O DESCONTO NO CARNE.
+      // VERIFICA SE √â UM PARCELAMENTO COM DESCONTO, SE FOR MOSTRAR O DESCONTO NO CARNE.
       
       $sqlVerParcel = "select k00_numpre,k00_numpar,k00_receit,k00_valor,k00_dtvenc,k00_tipo,v07_totpar,k40_aplicacao 
                        from termo 
@@ -2106,7 +2106,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
                      <br> desconto = $valorDesconto
                      <br> valor com desconto = $total <br><br>";
              */
-               $pdf1->descr4_2 = "Valor da parcela                    R$".db_formatar($valortotal,"f")." \nDesconto atÈ o vencimento R$".db_formatar($valorDesconto,"f")."";
+               $pdf1->descr4_2 = "Valor da parcela                    R$".db_formatar($valortotal,"f")." \nDesconto at√© o vencimento R$".db_formatar($valorDesconto,"f")."";
               
             }else{
               $pdf1->descr4_2="";
@@ -2116,7 +2116,7 @@ if ($k03_tipo == 1 && $impmodelo <> 1 && $impmodelo <> 30) {
       }    
     
 // ###################### BUSCA OS DADOS PARA IMPRIMIR O LOGO DO BANCO #########################
-//verifica se È ficha e busca o codigo do banco
+//verifica se √© ficha e busca o codigo do banco
   if($oRegraEmissao->isCobranca()){
       
   $rsConsultaBanco  = $cldb_bancos->sql_record($cldb_bancos->sql_query_file($oConvenio->getCodBanco()));

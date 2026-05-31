@@ -39,7 +39,7 @@ $linhasdeb=pg_num_rows($resultdeb);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
 <style type="text/css">
@@ -61,8 +61,8 @@ function js_cod(cod){
 	<input name="cod" type="hidden" value="">
 	<tr class="titulo">
 		<td align= 'center'>Codigo do debito</td>
-		<td align= 'center'>Data de lançamento</td>
-		<td align= 'center'>Opção</td>
+		<td align= 'center'>Data de lanÃ§amento</td>
+		<td align= 'center'>OpÃ§Ã£o</td>
 	</tr>
 	<?php for ($i = 0; $i < $linhasdeb; $i++) {
 		db_fieldsmemory($resultdeb,$i);
@@ -95,7 +95,7 @@ if(isset($imprime)){
 		$tipomi="MATRICULA";
 		$mat_ins = $d68_matric;
 	}else{
-		$tipomi="INSCRIÇÃO";
+		$tipomi="INSCRIÃ‡ÃƒO";
 		$mat_ins = $d69_inscr;
 	}
 	//echo"<br> tip = $tipomi";

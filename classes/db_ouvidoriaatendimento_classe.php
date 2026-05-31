@@ -63,19 +63,19 @@ class cl_ouvidoriaatendimento {
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
                  ov01_sequencial = int4 = Sequencial 
-                 ov01_situacaoouvidoriaatendimento = int4 = Situação 
+                 ov01_situacaoouvidoriaatendimento = int4 = SituaÃ§Ã£o 
                  ov01_tipoprocesso = int4 = Tipo de Processo 
-                 ov01_formareclamacao = int4 = Forma de Reclamação 
-                 ov01_tipoidentificacao = int4 = Tipo de Identificação 
-                 ov01_usuario = int4 = Usuário 
+                 ov01_formareclamacao = int4 = Forma de ReclamaÃ§Ã£o 
+                 ov01_tipoidentificacao = int4 = Tipo de IdentificaÃ§Ã£o 
+                 ov01_usuario = int4 = UsuÃ¡rio 
                  ov01_depart = int4 = Departamento 
-                 ov01_instit = int4 = Instituição 
-                 ov01_numero = int4 = Número do Atendimento 
+                 ov01_instit = int4 = InstituiÃ§Ã£o 
+                 ov01_numero = int4 = NÃºmero do Atendimento 
                  ov01_anousu = int4 = Ano 
                  ov01_dataatend = date = Data Atendimento 
                  ov01_horaatend = char(5) = Hora Atendimento 
                  ov01_requerente = varchar(100) = Requerente 
-                 ov01_solicitacao = text = Solicitação 
+                 ov01_solicitacao = text = SolicitaÃ§Ã£o 
                  ov01_executado = text = Executado 
                  ";
    //funcao construtor da classe 
@@ -126,10 +126,10 @@ class cl_ouvidoriaatendimento {
    function incluir ($ov01_sequencial){ 
       $this->atualizacampos();
      if($this->ov01_situacaoouvidoriaatendimento == null ){ 
-       $this->erro_sql = " Campo Situação nao Informado.";
+       $this->erro_sql = " Campo SituaÃ§Ã£o nao Informado.";
        $this->erro_campo = "ov01_situacaoouvidoriaatendimento";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -138,34 +138,34 @@ class cl_ouvidoriaatendimento {
        $this->erro_sql = " Campo Tipo de Processo nao Informado.";
        $this->erro_campo = "ov01_tipoprocesso";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->ov01_formareclamacao == null ){ 
-       $this->erro_sql = " Campo Forma de Reclamação nao Informado.";
+       $this->erro_sql = " Campo Forma de ReclamaÃ§Ã£o nao Informado.";
        $this->erro_campo = "ov01_formareclamacao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->ov01_tipoidentificacao == null ){ 
-       $this->erro_sql = " Campo Tipo de Identificação nao Informado.";
+       $this->erro_sql = " Campo Tipo de IdentificaÃ§Ã£o nao Informado.";
        $this->erro_campo = "ov01_tipoidentificacao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->ov01_usuario == null ){ 
-       $this->erro_sql = " Campo Usuário nao Informado.";
+       $this->erro_sql = " Campo UsuÃ¡rio nao Informado.";
        $this->erro_campo = "ov01_usuario";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -174,25 +174,25 @@ class cl_ouvidoriaatendimento {
        $this->erro_sql = " Campo Departamento nao Informado.";
        $this->erro_campo = "ov01_depart";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->ov01_instit == null ){ 
-       $this->erro_sql = " Campo Instituição nao Informado.";
+       $this->erro_sql = " Campo InstituiÃ§Ã£o nao Informado.";
        $this->erro_campo = "ov01_instit";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->ov01_numero == null ){ 
-       $this->erro_sql = " Campo Número do Atendimento nao Informado.";
+       $this->erro_sql = " Campo NÃºmero do Atendimento nao Informado.";
        $this->erro_campo = "ov01_numero";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -201,7 +201,7 @@ class cl_ouvidoriaatendimento {
        $this->erro_sql = " Campo Ano nao Informado.";
        $this->erro_campo = "ov01_anousu";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -210,7 +210,7 @@ class cl_ouvidoriaatendimento {
        $this->erro_sql = " Campo Data Atendimento nao Informado.";
        $this->erro_campo = "ov01_dataatend_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -219,7 +219,7 @@ class cl_ouvidoriaatendimento {
        $this->erro_sql = " Campo Hora Atendimento nao Informado.";
        $this->erro_campo = "ov01_horaatend";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -228,7 +228,7 @@ class cl_ouvidoriaatendimento {
        $this->erro_sql = " Campo Requerente nao Informado.";
        $this->erro_campo = "ov01_requerente";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -238,7 +238,7 @@ class cl_ouvidoriaatendimento {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: ouvidoriaatendimento_ov01_sequencial_seq do campo: ov01_sequencial"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -247,9 +247,9 @@ class cl_ouvidoriaatendimento {
      }else{
        $result = db_query("select last_value from ouvidoriaatendimento_ov01_sequencial_seq");
        if(($result != false) && (pg_result($result,0,0) < $ov01_sequencial)){
-         $this->erro_sql = " Campo ov01_sequencial maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo ov01_sequencial maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -260,7 +260,7 @@ class cl_ouvidoriaatendimento {
      if(($this->ov01_sequencial == null) || ($this->ov01_sequencial == "") ){ 
        $this->erro_sql = " Campo ov01_sequencial nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -303,13 +303,13 @@ class cl_ouvidoriaatendimento {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria ($this->ov01_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Cadastro de Atendimentos da Ouvidoria já Cadastrado";
+         $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria ($this->ov01_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Cadastro de Atendimentos da Ouvidoria jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria ($this->ov01_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria ($this->ov01_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -319,7 +319,7 @@ class cl_ouvidoriaatendimento {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->ov01_sequencial;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -359,7 +359,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Sequencial nao Informado.";
          $this->erro_campo = "ov01_sequencial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -369,10 +369,10 @@ class cl_ouvidoriaatendimento {
        $sql  .= $virgula." ov01_situacaoouvidoriaatendimento = $this->ov01_situacaoouvidoriaatendimento ";
        $virgula = ",";
        if(trim($this->ov01_situacaoouvidoriaatendimento) == null ){ 
-         $this->erro_sql = " Campo Situação nao Informado.";
+         $this->erro_sql = " Campo SituaÃ§Ã£o nao Informado.";
          $this->erro_campo = "ov01_situacaoouvidoriaatendimento";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -385,7 +385,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Tipo de Processo nao Informado.";
          $this->erro_campo = "ov01_tipoprocesso";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -395,10 +395,10 @@ class cl_ouvidoriaatendimento {
        $sql  .= $virgula." ov01_formareclamacao = $this->ov01_formareclamacao ";
        $virgula = ",";
        if(trim($this->ov01_formareclamacao) == null ){ 
-         $this->erro_sql = " Campo Forma de Reclamação nao Informado.";
+         $this->erro_sql = " Campo Forma de ReclamaÃ§Ã£o nao Informado.";
          $this->erro_campo = "ov01_formareclamacao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -408,10 +408,10 @@ class cl_ouvidoriaatendimento {
        $sql  .= $virgula." ov01_tipoidentificacao = $this->ov01_tipoidentificacao ";
        $virgula = ",";
        if(trim($this->ov01_tipoidentificacao) == null ){ 
-         $this->erro_sql = " Campo Tipo de Identificação nao Informado.";
+         $this->erro_sql = " Campo Tipo de IdentificaÃ§Ã£o nao Informado.";
          $this->erro_campo = "ov01_tipoidentificacao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -421,10 +421,10 @@ class cl_ouvidoriaatendimento {
        $sql  .= $virgula." ov01_usuario = $this->ov01_usuario ";
        $virgula = ",";
        if(trim($this->ov01_usuario) == null ){ 
-         $this->erro_sql = " Campo Usuário nao Informado.";
+         $this->erro_sql = " Campo UsuÃ¡rio nao Informado.";
          $this->erro_campo = "ov01_usuario";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -437,7 +437,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Departamento nao Informado.";
          $this->erro_campo = "ov01_depart";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -447,10 +447,10 @@ class cl_ouvidoriaatendimento {
        $sql  .= $virgula." ov01_instit = $this->ov01_instit ";
        $virgula = ",";
        if(trim($this->ov01_instit) == null ){ 
-         $this->erro_sql = " Campo Instituição nao Informado.";
+         $this->erro_sql = " Campo InstituiÃ§Ã£o nao Informado.";
          $this->erro_campo = "ov01_instit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -460,10 +460,10 @@ class cl_ouvidoriaatendimento {
        $sql  .= $virgula." ov01_numero = $this->ov01_numero ";
        $virgula = ",";
        if(trim($this->ov01_numero) == null ){ 
-         $this->erro_sql = " Campo Número do Atendimento nao Informado.";
+         $this->erro_sql = " Campo NÃºmero do Atendimento nao Informado.";
          $this->erro_campo = "ov01_numero";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -476,7 +476,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Ano nao Informado.";
          $this->erro_campo = "ov01_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -489,7 +489,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Data Atendimento nao Informado.";
          $this->erro_campo = "ov01_dataatend_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -502,7 +502,7 @@ class cl_ouvidoriaatendimento {
            $this->erro_sql = " Campo Data Atendimento nao Informado.";
            $this->erro_campo = "ov01_dataatend_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -516,7 +516,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Hora Atendimento nao Informado.";
          $this->erro_campo = "ov01_horaatend";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -529,7 +529,7 @@ class cl_ouvidoriaatendimento {
          $this->erro_sql = " Campo Requerente nao Informado.";
          $this->erro_campo = "ov01_requerente";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -591,7 +591,7 @@ class cl_ouvidoriaatendimento {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->ov01_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -601,16 +601,16 @@ class cl_ouvidoriaatendimento {
          $this->erro_banco = "";
          $this->erro_sql = "Cadastro de Atendimentos da Ouvidoria nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->ov01_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->ov01_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -664,9 +664,9 @@ class cl_ouvidoriaatendimento {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Cadastro de Atendimentos da Ouvidoria nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$ov01_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -674,18 +674,18 @@ class cl_ouvidoriaatendimento {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Cadastro de Atendimentos da Ouvidoria nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Cadastro de Atendimentos da Ouvidoria nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$ov01_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$ov01_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -700,7 +700,7 @@ class cl_ouvidoriaatendimento {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -709,7 +709,7 @@ class cl_ouvidoriaatendimento {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:ouvidoriaatendimento";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

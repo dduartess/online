@@ -182,14 +182,14 @@ if (isset($incluir)) {
 	     $cl_pcorcamval->pc23_validmin   = $val;
 	     $cl_pcorcamval->incluir($forne,$orcamitem);
 	     if ($cl_pcorcamval->erro_status == "0") {
-	    	$erro_msg = "Erro ao lançar valores do orçamento";
+	    	$erro_msg = "Erro ao lanÃ§ar valores do orÃ§amento";
 	    	$sqlerro  = true;
 	     }
       }
 	}
 	
 	if($sqlerro == false){
-		db_msgbox("Operação realizada com sucesso!");
+		db_msgbox("OperaÃ§Ã£o realizada com sucesso!");
 	} else {
     db_msgbox($erro_msg);
     
@@ -256,7 +256,7 @@ if (isset($alterar)) {
     }
 	  
 	  if($sqlerro == false){
-	    db_msgbox("Operação realizada com sucesso!");
+	    db_msgbox("OperaÃ§Ã£o realizada com sucesso!");
 	  } else {
 	  	db_msgbox($erro_msg);
 	  }
@@ -267,8 +267,8 @@ if (isset($alterar)) {
 ?>
 <html>
 <head>
-<title>Orçamento</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>OrÃ§amento</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <style type="text/css">
@@ -320,13 +320,13 @@ if (isset($alterar)) {
 	<td colspan="2">&nbsp;</td>
 </tr>
 <tr bgcolor="<?=$w01_corfundomenu?>" class="titulo">
-	<td colspan="2"  align="center" >Dados do Orçamento</td>
+	<td colspan="2"  align="center" >Dados do OrÃ§amento</td>
 </tr>
 <tr>
 	<td colspan="2">&nbsp;</td>
 </tr>
 <tr class="texto">
-	<td colspan="2">Orçamento:<?=$orc?></td>
+	<td colspan="2">OrÃ§amento:<?=$orc?></td>
 </tr>
 
 <tr class="texto">
@@ -369,7 +369,7 @@ $sql= "select z01_cgccpf,
 $result= pg_exec($sql);
 db_fieldsmemory($result,0);
 	
-if ($sol==1) {// se for orçamento por solicitação
+if ($sol==1) {// se for orÃ§amento por solicitaÃ§Ã£o
 $sol= 1;
 
 $sqlitens="select pc11_codigo,
@@ -445,7 +445,7 @@ $linhas= pg_num_rows($result);
 <tr class="texto">
  	<td>Prazo de entrega:<?php if($pc21_prazoent!=""){ echo db_formatar($pc21_prazoent, 'd');}?>
 	</td>
-	<td>Validade do orçamento:<?php  if($pc21_validadorc!=""){ echo db_formatar($pc21_validadorc, 'd');}?>
+	<td>Validade do orÃ§amento:<?php  if($pc21_validadorc!=""){ echo db_formatar($pc21_validadorc, 'd');}?>
 	</td>
 	<td></td>
 </tr>
@@ -458,10 +458,10 @@ $linhas= pg_num_rows($result);
 		<tr>
 			<th>Item</th>
 			<th>Quant.</th>
-			<th>Material ou serviço</th>
+			<th>Material ou serviÃ§o</th>
 			<th>Obs.</th>
-			<th>Validade mínima</th>
-			<th>Valor unitário</th>
+			<th>Validade mÃ­nima</th>
+			<th>Valor unitÃ¡rio</th>
 			<th>Valor total</th>
 			
 		</tr>
@@ -488,13 +488,13 @@ $linhas= pg_num_rows($result);
 <tr><td colspan="2">&nbsp;</td></tr>
 <tr>
 	<td colspan="2" align="center">
-		<input name='imprimir' type='button' value="Imprimir orçamento" class="botao" onclick="js_imprime(<?=$orc?>,<?=$cgm?>,<?=$sol?>)">
+		<input name='imprimir' type='button' value="Imprimir orÃ§amento" class="botao" onclick="js_imprime(<?=$orc?>,<?=$cgm?>,<?=$sol?>)">
 		<input name="voltar" type="button" value="Voltar"class="botao" onclick="js_volta(<?=$cgm?>)">
 	</td>
 </tr>
 
 <?php 
-}else{ // se não clicou no alterar ou incluir
+}else{ // se nÃ£o clicou no alterar ou incluir
 ?>
 
 <tr class="texto">
@@ -524,7 +524,7 @@ $linhas= pg_num_rows($result);
 ?>
 	<td>Prazo de entrega: <?php db_inputdata("p",$dia2[$i],$mes2[$i],$ano2[$i],true,"text",1)?>
 	</td>
-	<td>Validade do orçamento: <?php db_inputdata("v",$dia1[$i],$mes1[$i],$ano1[$i],true,"text",1)?>
+	<td>Validade do orÃ§amento: <?php db_inputdata("v",$dia1[$i],$mes1[$i],$ano1[$i],true,"text",1)?>
 	</td>
 	<td></td>
 </tr>
@@ -537,10 +537,10 @@ $linhas= pg_num_rows($result);
 		<tr>
 			<th>Item</th>
 			<th>Quant.</th>
-			<th>Material ou serviço</th>
+			<th>Material ou serviÃ§o</th>
 			<th>Obs.</td>
-			<th>Validade mínima</th>
-			<th>Valor unitário</th>
+			<th>Validade mÃ­nima</th>
+			<th>Valor unitÃ¡rio</th>
 			<th>Valor total</th>
 			
 		</tr>
@@ -571,7 +571,7 @@ $linhas= pg_num_rows($result);
 		    <?php db_inputdata("o$i",$dia[$i],$mes[$i],$ano[$i],true,"text",1)?>
 		 </td>
 		 <td>
-		  <input name="valor<?=$i?>" type='text' style="text-align:right" size='10' value="<?=$pc23_vlrun?>" onBlur="js_calcula(<?=$i?>,1)" onKeyUp="js_ValidaCampos(this,4,'Valor Unitário',false,false,event);"> 
+		  <input name="valor<?=$i?>" type='text' style="text-align:right" size='10' value="<?=$pc23_vlrun?>" onBlur="js_calcula(<?=$i?>,1)" onKeyUp="js_ValidaCampos(this,4,'Valor UnitÃ¡rio',false,false,event);"> 
 		 </td>
 		 <td>
  		  <input name="valortotal<?=$i?>" type='text' style="text-align:right" size='10' value="<?=$pc23_valor?>" onBlur="js_calcula(<?=$i?>,2)">   
@@ -586,9 +586,9 @@ $linhas= pg_num_rows($result);
 	<td colspan="2" align="center">
 	<?php 
 	if ($pc23_vlrun==""){
-		echo "<input name='incluir' type='submit' value='Incluir orçamento' class='botao' >";
+		echo "<input name='incluir' type='submit' value='Incluir orÃ§amento' class='botao' >";
 	}else{
-		echo"<input name='alterar' type='submit' value='Alterar orçamento' class='botao' >";
+		echo"<input name='alterar' type='submit' value='Alterar orÃ§amento' class='botao' >";
 	}
 	?>
 		

@@ -25,7 +25,7 @@
  *                                licenca/licenca_pt.txt 
  */
 
-error_reporting('** FAVOR FA«A SEU PEDIDO DE SENHA! **');
+error_reporting('** FAVOR FA√áA SEU PEDIDO DE SENHA! **');
 session_start();
 
 include("libs/db_conecta.php");
@@ -77,28 +77,28 @@ if (isset($cgccpf)) {
   $result = @db_query($sql) or die(@pg_errormessage());
 
   if(@pg_num_rows($result) == 0){
-     db_logs("","",0,"SolicitaÁ„o de senha para fornecedor: cgc ou cpf n„o encontrado. $cgccpf");
+     db_logs("","",0,"Solicita√ß√£o de senha para fornecedor: cgc ou cpf n√£o encontrado. $cgccpf");
 		   if($w13_liberaatucgm=="t"){
-		    $sMsg  = "Dados informados N√O encontrados/atualizados no cadastro da Prefeitura!";
-		    $sMsg .= "VocÍ ser· direcionado para realizar o pedido de cadastro ou atualizaÁ„o de CGM agora.";
+		    $sMsg  = "Dados informados N√ÉO encontrados/atualizados no cadastro da Prefeitura!";
+		    $sMsg .= "Voc√™ ser√° direcionado para realizar o pedido de cadastro ou atualiza√ß√£o de CGM agora.";
 		    msgbox($sMsg);
 		    db_redireciona("atualizaendereco.php?w11_cgccpf=$cgccpf&w11_email=$email_contribuinte&cgmlogin=0");
 		    db_redireciona("pedido_senha.php");
 		   }else{
-		    $sMsg  = "Dados informados N√O encontrados no cadastro da Prefeitura!";
-		    $sMsg .= "Procure o balc„o da Prefeitura para realizar seu cadastro.";
+		    $sMsg  = "Dados informados N√ÉO encontrados no cadastro da Prefeitura!";
+		    $sMsg .= "Procure o balc√£o da Prefeitura para realizar seu cadastro.";
 		    msgbox($sMsg);
 		   }
      exit;
 
   } else {
 
-   db_logs("","",0,"SolicitaÁ„o de senha para fornecedor: cgc ou cpf - $cgccpf");
+   db_logs("","",0,"Solicita√ß√£o de senha para fornecedor: cgc ou cpf - $cgccpf");
    db_fieldsmemory($result,0);
 		   //verifica se email confere com o cadastrado no cgm
 	 if ($emailContr != $z01_email || empty($z01_email)) {
 
-		 $sMsg  = "Seu e-mail cadastrado na Prefeitura N√O confere ou est· em branco.";
+		 $sMsg  = "Seu e-mail cadastrado na Prefeitura N√ÉO confere ou est√° em branco.";
 		 $sMsg .= "Entre em contato com a Prefeitura para atualizar seu cadastrado.";
 		 msgbox($sMsg);
 
@@ -111,18 +111,18 @@ if (isset($cgccpf)) {
 
    }
 
-   //gera senha para o usu·rio
+   //gera senha para o usu√°rio
    $sConso = 'bcdfghjklmnpqrstvwxyzbcdfghjklmnpqrstvwxyz';
    $sVogal = 'aeiou';
    $sNum   = '123456789';
    $passwd = '';
-   $y = strlen($sConso)-1; //conta o n∫ de caracteres da vari·vel $sConso
-   $z = strlen($sVogal)-1; //conta o n∫ de caracteres da vari·vel $sVogal
-   $r = strlen($sNum)-1; //conta o n∫ de caracteres da vari·vel $sNum
+   $y = strlen($sConso)-1; //conta o n¬∫ de caracteres da vari√°vel $sConso
+   $z = strlen($sVogal)-1; //conta o n¬∫ de caracteres da vari√°vel $sVogal
+   $r = strlen($sNum)-1; //conta o n¬∫ de caracteres da vari√°vel $sNum
 
 	 for ($x=0;$x<=1;$x++) {
 
-		 $rand = rand(0,$y); //FunÁao rand() - gera um valor randÙmico
+		 $rand = rand(0,$y); //Fun√ßao rand() - gera um valor rand√¥mico
 		 $rand1 = rand(0,$z);
 		 $rand2 = rand(0,$r);
 		 $str = substr($sConso,$rand,1); // substr() - retorna parte de uma string
@@ -135,12 +135,12 @@ if (isset($cgccpf)) {
 
    $mailpref = "$emailContr";
 
-   //verifica se usu·rio j· È cadastrado
+   //verifica se usu√°rio j√° √© cadastrado
    $result1 = @db_query("select login from db_usuarios where login = '$z01_numcgm'");
    $linhas1 = @pg_num_rows($result1);
 
 	 if ($linhas1==0) {
-		    //cadastra novo usu·rio
+		    //cadastra novo usu√°rio
 
 		 $sqlusu = "select nextval('db_usuarios_id_usuario_seq') as x";
 		 $result = db_query($sqlusu);
@@ -176,16 +176,16 @@ if (isset($cgccpf)) {
     		                         Login Internet: $z01_numcgm\n
     		                         Senha Internet: $passwd\n
     													   \n
-    		                         Utilize Login e Senha para acessar suas informaÁıes no Portal da Prefeitura na Internet.\n
+    		                         Utilize Login e Senha para acessar suas informa√ß√µes no Portal da Prefeitura na Internet.\n
     														 \n
     		                         $url/dbpref/\n
     														 \n
-    		                         N„o responda este e-mail, ele foi gerado automaticamente pelo Servidor.\n
+    		                         N√£o responda este e-mail, ele foi gerado automaticamente pelo Servidor.\n
     														 \n
     		                         --------------------------------------------------------\n
     		                         ".date("d/m/Y - H:i:s")." - ".getenv("REMOTE_ADDR");
 		   } else {// se ja tiver senha cadastrada........
-  		    msgbox("VocÍ J· possui cadastro na Prefeitura!");
+  		    msgbox("Voc√™ J√° possui cadastro na Prefeitura!");
   		    $dados = pg_fetch_array($result1);
   		    $result3 = @db_query("update db_usuarios set senha = '$passwd2' where login = '$dados[0]'");
 
@@ -198,19 +198,19 @@ if (isset($cgccpf)) {
       		                         CPF/CNPJ: $sCpf\n
       		                         E-mail:   $z01_email\n
       														 \n
-      		                         AtenÁ„o!\n
-      		                         AlguÈm tentou realizar um novo pedido de senha com seus dados.\n
+      		                         Aten√ß√£o!\n
+      		                         Algu√©m tentou realizar um novo pedido de senha com seus dados.\n
       		                         ".date("d/m/Y - H:i:s")." - ".getenv("REMOTE_ADDR")."\n
       		                         Uma nova senha foi gerada para acesso ao Portal.\n
       														 \n
       		                         Login Internet: $z01_numcgm\n
       		                         Senha Internet: $passwd\n
       														 \n
-      		                         Utilize Login e Senha para acessar suas informaÁıes no Portal da Prefeitura na Internet.\n
+      		                         Utilize Login e Senha para acessar suas informa√ß√µes no Portal da Prefeitura na Internet.\n
       														 \n
       		                         $url/dbpref/\n
       														\n
-      		                         N„o responda este e-mail, ele foi gerado automaticamente pelo Servidor.\n
+      		                         N√£o responda este e-mail, ele foi gerado automaticamente pelo Servidor.\n
       														\n
       		                         --------------------------------------------------------\n
       		";
@@ -363,7 +363,7 @@ function formataCpf($sCpf){
     </td>
   </tr>
   <tr>
-    <td width="15%">Nome da M„e:</td>
+    <td width="15%">Nome da M√£e:</td>
     <td width="1%"><span><font color='#E9000'> * </font></span></td>
     <td width="32%">
       <input type="text" id="nomemae" name="nomemae" size="41" maxlength="255"
@@ -405,7 +405,7 @@ function formataCpf($sCpf){
   <tr>
   <td id="msg" colspan="10">
     <div align="left">
-      <span><font color='#E9000'> PREENCHIMENTO OBRIGAT”RIO(*) </font></span>
+      <span><font color='#E9000'> PREENCHIMENTO OBRIGAT√ìRIO(*) </font></span>
     </div>
   </td>
   </tr>
@@ -564,8 +564,8 @@ function js_Maiusculo(obj,maiusculo,evt){
 
 // Verifica integridade da senha e valida campos de senha
 function js_verifica_integridade_senha(tipo){
-str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO MÕNIMO 6 CARACTERES, LETRAS E N⁄MEROS! </font></span>";
-   var msgerro      = "<span><font color='#E9000'> SENHAS N√O CONFEREM, VERIFICAR CAMPOS(*)! </font></span>";
+str = "<span><font color='#E9000'> SUA SENHA DEVE CONTER NO M√çNIMO 6 CARACTERES, LETRAS E N√öMEROS! </font></span>";
+   var msgerro      = "<span><font color='#E9000'> SENHAS N√ÉO CONFEREM, VERIFICAR CAMPOS(*)! </font></span>";
    var msgerrosenha = str;
    var sT           = tipo;
    var senha        = document.getElementById("senhasrv").value;

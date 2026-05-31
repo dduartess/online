@@ -22,11 +22,11 @@ var DBHint = function(sInstancia) {
   me.sPositionLeft   = 'L';
   me.oDivContainer   = null;
   /**
-   * Escreve as funções no elemento
+   * Escreve as funÃ§Ãµes no elemento
    */
   var setEvents      = function(oElemento) {
     /**
-     * Percorre eventos de Exibição
+     * Percorre eventos de ExibiÃ§Ã£o
      */
     for (var i = 0; i < aShowEvents.length; i++) {
       
@@ -37,7 +37,7 @@ var DBHint = function(sInstancia) {
       oElemento.setAttribute(aShowEvents[i], sNameInstance + ".show(this);" + sAttr);
     }
     /**
-     * Percorre eventos de Ocultação
+     * Percorre eventos de OcultaÃ§Ã£o
      */
     for (var i = 0; i < aHideEvents.length; i++) {
         
@@ -71,7 +71,7 @@ var DBHint = function(sInstancia) {
   };
   
   /**
-   * Constrói o componente
+   * ConstrÃ³i o componente
    */
   this.make          = function(oElemento) {
     

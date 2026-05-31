@@ -37,7 +37,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdae.php,sociosdae.php,enderecodae.php,valoresdae.php,enviadae.php");
@@ -64,7 +64,7 @@ function maiusculo(obj) {
 }
 function js_verilinhas(){
   if(document.getElementById('linhas').rows.length == 1){
-    alert("Não há valores registrados");
+    alert("NÃ£o hÃ¡ valores registrados");
     return false;
   }
 }  
@@ -73,23 +73,23 @@ function js_data(dia,mes,ano){
   mesval = new Number(mes.value);
   anoval = new Number(ano.value);
   if(isNaN(diaval)){
-    alert('dia Inválido');
+    alert('dia InvÃ¡lido');
     dia.value = '';
     dia.focus();
   }    
   if(isNaN(mesval)){
-    alert('Data Inválida');
+    alert('Data InvÃ¡lida');
     mes.value = '';
     mes.focus();
   }  
   if(isNaN(anoval)){
-    alert('Data Inválida');
+    alert('Data InvÃ¡lida');
     ano.value = '';
     ano.focus();
   }  
   data = new Date(anoval,(mesval-1),diaval);
   if((data.getMonth() + 1) != mesval || data.getFullYear() != anoval){
-    alert('Data Inválida');
+    alert('Data InvÃ¡lida');
     dia.focus();
     dia.select();
     return false;
@@ -108,13 +108,13 @@ if(js_data(document.form1.dia,document.form1.mes1,document.form1.ano)){
   datam=document.form1.mes1.value;
   dataa=document.form1.ano.value;
   if(mes=="mes"){
-    alerta +="Mês\n";
+    alerta +="MÃªs\n";
   }
   if(valor==""){
     alerta +="Valor da Receita\n";
   }
   if(aliquota==""){
-    alerta +="Alíquota\n";
+    alerta +="AlÃ­quota\n";
   }
   if(imposto==""){
     alerta +="Imposto\n";
@@ -230,7 +230,7 @@ mens_div();
 				  <b><small></small></b>
 				</td>
                                 <td align="center" >
-				  <b><small>Mês</small></b>
+				  <b><small>MÃªs</small></b>
 				</td>
                                 <td align="center" nowrap >
 				  <b><small>Valor Rec.</small></b>
@@ -251,7 +251,7 @@ mens_div();
 			        </td>
                                 <td align="center" nowrap>
                                   <select class="digitacgccpf" name="mes" id="mes">
-	                            <option value="mes">Mês</option>
+	                            <option value="mes">MÃªs</option>
                                   </select>
                                 </td>
 	                        <script>
@@ -294,7 +294,7 @@ mens_div();
                         </tr>
                         <tr> 
                           <td colspan="4" > 
- 			    <input name="guarda" class="botao" type="button"  value="Incluir Ítem" onclick="return js_vericampos();"> 
+ 			    <input name="guarda" class="botao" type="button"  value="Incluir Ãtem" onclick="return js_vericampos();"> 
                           </td>
                           <td > 
  			    <input name="salvavalores" class="botao" type="submit"  value="Salvar" > 
@@ -310,13 +310,13 @@ mens_div();
             <table id="linhas" width="490" cellpadding="0" cellspacing="0" border="1" >
 	      <tr bgcolor="<?=$w01_corfundomenuativo?>" align="center">
 	        <td width="20%" id="colocar">
-		  Mês
+		  MÃªs
 		</td>
 	        <td width="20%">
 		  Valor Rec.
 		</td>
 	        <td width="10%">
-		  Alíquota
+		  AlÃ­quota
 		</td>
 	        <td width="20%">
 		  Imposto

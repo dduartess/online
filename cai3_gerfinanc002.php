@@ -47,12 +47,12 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
   global $HTTP_SESSION_VARS;
   if (isset($db_datausu)) {
     if (!checkdate(substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4))) {
-      echo "Data para c·lculo inv·lida. <br><br>";
-      echo "Data dever· ser superior a: ".date('Y-m-d', @$HTTP_SESSION_VARS["DB_datausu"]);
+      echo "Data para c√°lculo inv√°lida. <br><br>";
+      echo "Data dever√° ser superior a: ".date('Y-m-d', @$HTTP_SESSION_VARS["DB_datausu"]);
     }
     if (mktime(0, 0, 0, substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4)) < mktime(0, 0, 0, date('m', @$HTTP_SESSION_VARS["DB_datausu"]), date('d', @$HTTP_SESSION_VARS["DB_datausu"]), date('Y', @$HTTP_SESSION_VARS["DB_datausu"]))) {
-      echo "Data n„o permitida para c·lculo. <br><br>";
-      echo "Data dever· ser superior a: ".date('Y-m-d', @$HTTP_SESSION_VARS["DB_datausu"]);
+      echo "Data n√£o permitida para c√°lculo. <br><br>";
+      echo "Data dever√° ser superior a: ".date('Y-m-d', @$HTTP_SESSION_VARS["DB_datausu"]);
     }
     $DB_DATACALC = mktime(0, 0, 0, substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4));
   } else {
@@ -94,7 +94,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
 	  db_fieldsmemory($resultmostra,0);
 	}
 
-//Verifica se usa o modulo agua para fazer as demais verificaÁıes
+//Verifica se usa o modulo agua para fazer as demais verifica√ß√µes
 	$lExibe           = true;
 	$db21_usasisagua  = 'f';
 	$mostramsgdaeb    = 'false';
@@ -105,16 +105,16 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
 		db_fieldsmemory($rsUsaSisAgua,0);
 	}
 	
-	//Se utilizar o mÛdulo agua tem que verificar a situaÁ„o do contribuinte.
+	//Se utilizar o m√≥dulo agua tem que verificar a situa√ß√£o do contribuinte.
 	if ($db21_usasisagua == 't'){
-		//Verifico a situaÁ„o de corte da matrÌcula em quest„o.
+		//Verifico a situa√ß√£o de corte da matr√≠cula em quest√£o.
 		require_once("agu3_conscadastro_002_classe.php");
 		$Consulta = new ConsultaAguaBase($matric);
 		$sqlcorte = $Consulta->GetAguaCorteMatMovSQL();
 	  $resultcorte = db_query($sqlcorte) or die($sqlcorte);
       if (pg_numrows($resultcorte) > 0) {
         $x42_codsituacao = pg_result($resultcorte, 0, "x42_codsituacao");
-	      //Verifico se o codigo da situaÁ„o da matricula esta na tabela de restriÁoes configdbprefagua
+	      //Verifico se o codigo da situa√ß√£o da matricula esta na tabela de restri√ßoes configdbprefagua
 	      $w16_recibodbpref = false;
 	      $sExibeDebitos = "select w16_recibodbpref 
 	      									from configdbprefagua 
@@ -184,7 +184,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
 
       if (sizeof($valores) != sizeof($numpres)) {
         
-        db_erro("<br> Matriz inv·lida!", 1);
+        db_erro("<br> Matriz inv√°lida!", 1);
         
       }
       $tam = sizeof($valores);
@@ -194,7 +194,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
       db_inicio_transacao();
       //for($i = 0;$i < $tam;$i++) {
 
-      // LanÁamento sem movimento - parte I
+      // Lan√ßamento sem movimento - parte I
       if (!empty($str_movimento) and $str_movimento != 'Sem Movimento') {
         // ######################### TEM QUE INCLUIR NA cancdebitos, cancdebitosproc #########################
         include("classes/db_cancdebitos_classe.php");
@@ -254,7 +254,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
         $sql = "update issvar set q05_vlrinf = ".$valores[$i]." where q05_numpre = $numpre and q05_numpar = $numpar";
         db_query($sql) or die("Erro(37) atualizando issvar: ".pg_errormessage());
 
-        //grava informaÁıes dos valores
+        //grava informa√ß√µes dos valores
 
        /* $str_sql = "select issvar.*, db_usuarios.id_usuario
 				            from issvar
@@ -292,7 +292,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
           $clissvarlancval->erro(true, false);
         }
 
-        // LanÁamento sem movimento - parte II
+        // Lan√ßamento sem movimento - parte II
         if (!empty($str_movimento) and $str_movimento != 'Sem Movimento') {
           $clarrehist->k00_numpre     = $q05_numpre;
           $clarrehist->k00_numpar     = $q05_numpar;
@@ -375,7 +375,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
             }
           }
 
-        } //fim sem lanÁamento
+        } //fim sem lan√ßamento
       } //fim for 
       db_fim_transacao($sqlerro);
       db_redireciona($_SERVER["REQUEST_URI"]);
@@ -386,12 +386,12 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
   }
   if (isset($db_datausu)) {
     if (!checkdate(substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4))) {
-      echo "Data para C·lculo Inv·lida. <br><br>";
-      echo "Data dever· ser superior a: ".date('Y-m-d', db_getsession("DB_datausu"));
+      echo "Data para C√°lculo Inv√°lida. <br><br>";
+      echo "Data dever√° ser superior a: ".date('Y-m-d', db_getsession("DB_datausu"));
     }
     if (mktime(0, 0, 0, substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4)) < mktime(0, 0, 0, date('m', db_getsession("DB_datausu")), date('d', db_getsession("DB_datausu")), date('Y', db_getsession("DB_datausu")))) {
-      echo "Data n„o permitida para c·lculo. <br><br>";
-      echo "Data dever· ser superior a: ".date('Y-m-d', db_getsession("DB_datausu"));
+      echo "Data n√£o permitida para c√°lculo. <br><br>";
+      echo "Data dever√° ser superior a: ".date('Y-m-d', db_getsession("DB_datausu"));
     }
     $DB_DATACALC = mktime(0, 0, 0, substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4));
   } else {
@@ -404,7 +404,7 @@ if (isset($HTTP_POST_VARS["ver_matric"]) && !isset($HTTP_POST_VARS["calculavalor
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <script>
@@ -413,7 +413,7 @@ function js_emiteunica(numpre){
   var mostraemite = <?=$k00_recibodbpref?>;
   
   if(mostraemite==2){
-    alert('Este tipo de debito n„o permite emitir recibo.');
+    alert('Este tipo de debito n√£o permite emitir recibo.');
     parent.document.getElementById("enviar").disabled = true;//botao emite recibo
     return false;
   }else{
@@ -477,11 +477,11 @@ function js_soma(linha,dt_agrupadebito) {
   var mostramsgdaeb 	= '<?=$mostramsgdaeb?>';
 
   if((mostramsgdaeb == 'true') && (mostraemitedaeb == '2')){
-	    alert('Emiss„o n„o disponÌvel. Favor dirigir-se ao Setor de Cadastro e Atendimento ao P˙blico do DAEB.');
+	    alert('Emiss√£o n√£o dispon√≠vel. Favor dirigir-se ao Setor de Cadastro e Atendimento ao P√∫blico do DAEB.');
 	    parent.document.getElementById("enviar").disabled = true;//botao emite recibo
 	    return false;	  
   }else if(mostraemite==2){
-    alert('Este tipo de debito n„o permite emitir recibo.');
+    alert('Este tipo de debito n√£o permite emitir recibo.');
     parent.document.getElementById("enviar").disabled = true;//botao emite recibo
     return false;
   }else{
@@ -489,7 +489,7 @@ function js_soma(linha,dt_agrupadebito) {
   }
 
   /*if(mostraemite==2){
-    alert('Este tipo de debito n„o permite emitir recibo.');
+    alert('Este tipo de debito n√£o permite emitir recibo.');
     parent.document.getElementById("enviar").disabled = true;//botao emite recibo
   }else{
     parent.document.getElementById("enviar").disabled = false;//botao emite recibo
@@ -613,7 +613,7 @@ function js_marca() {
   for(i = 0;i < F.elements.length;i++) {
     if(F.elements[i].type == "checkbox"){
       if(F.elements[i].style.visibility!="hidden"){
-       	if(F.elements[i].name == "NM") { // se o name do checkbox for NM(N„o Marcar) n„o deixa somar os valor tbem
+       	if(F.elements[i].name == "NM") { // se o name do checkbox for NM(N√£o Marcar) n√£o deixa somar os valor tbem
        		F.elements[i].checked = false;
        	}else {   
         	F.elements[i].checked = dis;
@@ -630,7 +630,7 @@ function pop_valorbruto(id,inscr, id_usuario){
  // js_OpenJanelaIframe('corpo','db_iframe_teste','calcula_issqn2.php','issqn',true);
  window.open('calcula_issqn.php?id='+id+'&inscr='+inscr+'&id_usuario='+id_usuario,'pop','top=150,left=150,width=600,height=300,toolbar=no,menubar=no,resizable=no,scrollbars=no');
  }else{
-  if(confirm("Valores j· foram Agrupados!\n\nDeseja atualizar valores informados?")){
+  if(confirm("Valores j√° foram Agrupados!\n\nDeseja atualizar valores informados?")){
    parent.location.reload();
    return true;
   }else{
@@ -650,9 +650,9 @@ function msgNaoLiberada(id) {
 	var instit = '<?=$DB_INSTITUICAO?>';
 	document.getElementById(id).checked = false;
 	if(instit == '4') {
-		alert('Emiss„o n„o disponÌvel. Favor dirigir-se ao Setor de Cadastro e Atendimento ao P˙blico do DAEB.');
+		alert('Emiss√£o n√£o dispon√≠vel. Favor dirigir-se ao Setor de Cadastro e Atendimento ao P√∫blico do DAEB.');
 	} else {
-		alert('DÈbito n„o disponÌvel para emiss„o nesta data.');
+		alert('D√©bito n√£o dispon√≠vel para emiss√£o nesta data.');
 	}
 }
 </script>
@@ -673,7 +673,7 @@ function msgNaoLiberada(id) {
   <?php 
 
 
-  //verifica se clicou no link da matricula ou inscriÁ„o
+  //verifica se clicou no link da matricula ou inscri√ß√£o
   if (isset($inscricao) && !empty($inscricao)) { 
     $inscr = $inscricao;
     $tipo = $tipo2;
@@ -683,7 +683,7 @@ function msgNaoLiberada(id) {
     $tipo = $tipo2;
   }
   
-  //verifica o tipo e da o select dependendo se È numcgm, matric numpre ou inscr
+  //verifica o tipo e da o select dependendo se √© numcgm, matric numpre ou inscr
   if (isset($tipo)) {
   	
     if ($tipo == 3) {       
@@ -764,12 +764,12 @@ function msgNaoLiberada(id) {
     echo "<input type=\"hidden\" name=\"k03_parcelamento\" value=\"".$k03_parcelamento."\">\n";
     echo "<input type=\"hidden\" name=\"k03_permparc\" value=\"".$k03_permparc."\">\n";
     echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"3\" id=\"tabdebitos\">\n";
-    //cria o cabeÁalho
+    //cria o cabe√ßalho
     echo "<tr bgcolor=\"#FFCC66\">\n";
     echo "<th title=\"Parcela\" class=\"borda\" style=\"font-size:12px\" nowrap>P</th>\n";
     echo "<th title=\"Total de Parcela\" class=\"borda\" style=\"font-size:12px\" nowrap>T</th>\n";
     echo "<th title=\"Data de Vencimento\" class=\"borda\" style=\"font-size:12px\" nowrap>Dt. Venc.</th>\n";
-    echo "<th title=\"HistÛrico do LanÁamento\" class=\"borda\" style=\"font-size:12px\" nowrap>HistÛrico</th>\n";
+    echo "<th title=\"Hist√≥rico do Lan√ßamento\" class=\"borda\" style=\"font-size:12px\" nowrap>Hist√≥rico</th>\n";
     //Verifica se agrupado por numpre, cria link pra passar pro nivel 2, mostrando todos os numpres
     if (!empty($inscr))
     $arg = "inscr=".$inscr;
@@ -787,8 +787,8 @@ function msgNaoLiberada(id) {
 				} else {
 				  echo "<th title=\"Receita\" class=\"borda\" style=\"font-size:12px\" nowrap>Rec</th>\n";
 				}
-				echo "<th title=\"DescriÁ„o Receita\" class=\"borda\" style=\"font-size:12px\" nowrap>Receita</th>\n";
-				echo "<th title=\"Valor LanÁado\" class=\"borda\" style=\"font-size:12px\" nowrap>Val.</th>\n";
+				echo "<th title=\"Descri√ß√£o Receita\" class=\"borda\" style=\"font-size:12px\" nowrap>Receita</th>\n";
+				echo "<th title=\"Valor Lan√ßado\" class=\"borda\" style=\"font-size:12px\" nowrap>Val.</th>\n";
 				echo "<th title=\"Valor Corrigido\" class=\"borda\" style=\"font-size:12px\" nowrap>Val Cor.</th>\n";
 				echo "<th title=\"Valor Juros\" class=\"borda\" style=\"font-size:12px\" nowrap>Jur.</th>\n";
 				echo "<th title=\"Valor Multa\" class=\"borda\" style=\"font-size:12px\" nowrap>Mul.</th>\n";
@@ -830,12 +830,12 @@ function msgNaoLiberada(id) {
 
     echo "<input type=\"hidden\" name=\"totregistros\" value=\"".@$totregistros."\">\n";
 
-    //if com 3 partes. Primeiro se È pra agrupar por numpre, segundo se È pra agrupar por parcela e terceiro mostra o default
+    //if com 3 partes. Primeiro se √© pra agrupar por numpre, segundo se √© pra agrupar por parcela e terceiro mostra o default
     //agrupar por numpre
     if (@ $agnum == 't') {
 
       /******************************************************************************************/
-      //cria um array com os elementos n„o repetidos
+      //cria um array com os elementos n√£o repetidos
       $j = 0;
       $vlrtotal = 0;
       $elementos[0] = "";
@@ -893,7 +893,7 @@ function msgNaoLiberada(id) {
           else
           $corDtvenc = "";
         }
-        //*****CABE«ALHO  ;border:none
+        //*****CABE√áALHO  ;border:none
 
         // unica
 
@@ -937,7 +937,7 @@ function msgNaoLiberada(id) {
             echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
             echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
             echo "<td class=\"borda\" id=\"vcto_parcela$i\" name=\"vcto_parcela$i\" style=\"font-size:11px\" nowrap>".$dtvencunic."</td>\n";
-            echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcela ⁄nica com $k00_percdes% desconto</td>\n";
+            echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcela √önica com $k00_percdes% desconto</td>\n";
             echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrhis, 2, ".", ",")."</td>\n";
             echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrcorr, 2, ".", ",")."</td>\n";
             echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrjuros, 2, ".", ",")."</td>\n";
@@ -1013,7 +1013,7 @@ function msgNaoLiberada(id) {
 } else
 if ($agpar == 't') {
   /**********************************************************************************************/
-  //cria um array com os numpres n„o repetidos
+  //cria um array com os numpres n√£o repetidos
   $j = 0;
   $elementos_numpres[0] = "";
   for ($i = 0; $i < $numrows; $i ++) {
@@ -1026,7 +1026,7 @@ if ($agpar == 't') {
   $bool = 1;
   //faz a mao..
   for ($x = 0; $x < sizeof($elementos_numpres); $x ++) {
-    //cria um array com as parcelas do numpre n„o repetidos
+    //cria um array com as parcelas do numpre n√£o repetidos
     if ($bool == 0) {
 						$ConfCor1 = "#77EE20";
 						$ConfCor2 = "#A9F471";
@@ -1134,7 +1134,7 @@ if ($agpar == 't') {
 						      echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
 						      echo "<td class=\"borda\" id=\"U$i\" name=\"U$i\" style=\"font-size:11px\" nowrap>".$dtvencunic."</td>\n";
-						      echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcela ⁄nica com $k00_percdes% desconto</td>\n";
+						      echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcela √önica com $k00_percdes% desconto</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrhis, 2, ".", ",")."</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrcorr, 2, ".", ",")."</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrjuros, 2, ".", ",")."</td>\n";
@@ -1209,7 +1209,7 @@ if ($agpar == 't') {
 } else {
   //NIVEL NORMAL
   /**************************************************************************************************************/
-  //cria um array com os numpres n„o repetidos
+  //cria um array com os numpres n√£o repetidos
   $j = 0;
   $elementos_numpres[0] = "";
   for ($i = 0; $i < $numrows; $i ++) {
@@ -1354,7 +1354,7 @@ if ($agpar == 't') {
 						      echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
 						      echo "<td class=\"borda\" id=\"vcto_parcela$i\" name=\"vcto_parcela$i\" style=\"font-size:11px\" nowrap>".$dtvencunic."</td>\n";
-						      echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcela ⁄nica com $k00_percdes% desconto</td>\n";
+						      echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcela √önica com $k00_percdes% desconto</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrhis, 2, ".", ",")."</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrcorr, 2, ".", ",")."</td>\n";
 						      echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrjuros, 2, ".", ",")."</td>\n";
@@ -1409,7 +1409,7 @@ if ($agpar == 't') {
     $iAnoOperacao = date('Y',strtotime(pg_result($result, $i, "k00_dtoper")));
 
     
-    ////colocar validaÁ„o da data de emissao aqui 
+    ////colocar valida√ß√£o da data de emissao aqui 
     
     if(isset($w17_dtini) || isset($w17_dtfim)){
     	$dtVctoInicial 	= str_replace("-", "", $w17_dtini);
@@ -1432,7 +1432,7 @@ if ($agpar == 't') {
     	if($checkLibera == true) {
 	      echo "<td class=\"borda\" style=\"font-size:11px\" id=\"coluna$i\" nowrap>". ($tipo == 3 ? "<input type=\"submit\" name=\"calculavalor\" id=\"calculavalor$i\" style=\"visibility:hidden\"  value=\"C\"  >" : "")."<input style=\"visibility:'visible'\" type=\"". ($tipo == 3 ? "hidden" : "checkbox")."\" value=\"".pg_result($result, $i, "k00_numpre")."P".pg_result($result, $i, "k00_numpar")."\" onclick=\"js_soma(2,'$dt_agrupadebitosrecibo');\" id=\"CHECK$i\" name=\"CHECK$i\" ". ((abs(pg_result($result, $i, "k00_valor")) != 0 && $tipo == 3) ? "disabled" : "")."></td>\n";
 	      $verf_parc = str_pad(pg_result($result, $i, "k00_numpar"),2,"0",STR_PAD_LEFT) . $iAnoOperacao;
-    	}else {//caso parcela n esteja dentro da data de liberaÁ„o para emiss„o
+    	}else {//caso parcela n esteja dentro da data de libera√ß√£o para emiss√£o
     		echo "<td class=\"borda\" style=\"font-size:11px\" id=\"coluna$i\" nowrap>";
     		echo "".($tipo == 3 ? "<input type=\"submit\" name=\"calculavalor\" id=\"calculavalor$i\" style=\"visibility:hidden\"  value=\"C\"  >" : "");
     		echo "<input style=\"visibility:'visible'\" type=\"". ($tipo == 3 ? "hidden" : "checkbox")."\" value=\"s\" onclick=\"msgNaoLiberada(this.id)\" id=\"CHECK$i\" name=\"NM\" ". ((abs(pg_result($result, $i, "k00_valor")) != 0 && $tipo == 3) ? "disabled" : "").">";

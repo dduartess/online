@@ -126,7 +126,7 @@ class cl_estrutura {
     
     global $$label, $$title, $$picture, $mascara;
     if (!class_exists('cl_orcparametro')) {
-      db_msgbox('Classe orcparametro não incluida!');
+      db_msgbox('Classe orcparametro nÃ£o incluida!');
       exit;
     }
     $result = $clorcparametro->sql_record($clorcparametro->sql_query_file(db_getsession("DB_anousu"), "$picture as mascara"));
@@ -134,7 +134,7 @@ class cl_estrutura {
       db_fieldsmemory($result, 0);
       $tamanho = strlen($mascara);
     } else {
-      db_msgbox('Tabela Parametros Vazia, verifique as configurações do sistema ! ');
+      db_msgbox('Tabela Parametros Vazia, verifique as configuraÃ§Ãµes do sistema ! ');
       exit;
     }
     if ($this->funcao_onchange != null) {
@@ -149,8 +149,8 @@ class cl_estrutura {
     if ($this->mascara == true) {
       ?>    
       <tr>
-      <td nowrap title="Máscara do campo <?=@$picture?>">
-      <b>Máscara:</b>
+      <td nowrap title="MÃ¡scara do campo <?=@$picture?>">
+      <b>MÃ¡scara:</b>
       </td>
       <td> 
       
@@ -270,18 +270,18 @@ class cl_estrutura {
 }
 function db_selinstit($dbclick = '', $largura = 500, $altura = 100) {
   //#00#//db_selinstit
-  //#10#//Esta funcao mostra as instituiçoes para os usuarios que forem da prefeitura
+  //#10#//Esta funcao mostra as instituiÃ§oes para os usuarios que forem da prefeitura
   //#15#//db_selinstit($dbclick='',$largura=500, $altura=100)
-  //#20#//$dbclick    : Funcao java script que será executada no onclick do da selecao dentro do iframa na func_selinstit.php
-  //#20#//$largura    : Largura em px que será gerado o iframe
-  //#20#//$altura     : Altura em px que será gerado o iframe
-  //#99#//Esta funcao lista as instituicoe para que o usuário possa selecionar os filtros nos relatiorios
-  //#99#//Para os usuário da prefeitura, sempre será listado as instituições.
+  //#20#//$dbclick    : Funcao java script que serÃ¡ executada no onclick do da selecao dentro do iframa na func_selinstit.php
+  //#20#//$largura    : Largura em px que serÃ¡ gerado o iframe
+  //#20#//$altura     : Altura em px que serÃ¡ gerado o iframe
+  //#99#//Esta funcao lista as instituicoe para que o usuÃ¡rio possa selecionar os filtros nos relatiorios
+  //#99#//Para os usuÃ¡rio da prefeitura, sempre serÃ¡ listado as instituiÃ§Ãµes.
   $sql = "select * from db_config where codigo = ".db_getsession("DB_instit")." and prefeitura = true";
   $result = pg_exec($sql);
   if (pg_numrows($result) > 0) {
     echo "<input name='db_selinstit' type='hidden' value='' ><br>";
-    echo "<strong>Selecione a(s) Instituição(ões):</strong><br>";
+    echo "<strong>Selecione a(s) InstituiÃ§Ã£o(Ãµes):</strong><br>";
     echo "<iframe name='db_selinstit_iframe' width='".$largura."px' height='".$altura."px' src='func_selinstit.php?funcao=$dbclick'></iframe>";
   } else {
     
@@ -297,7 +297,7 @@ function db_selorcbalanco($balanco = true, $orcamento = true, $empliqpag = false
     echo "<tr>\n";
     echo "  <td align=\"center\" colspan=\"2\">\n";
     echo "  <fieldset id=\"tabelabalanco\"  align=\"center\">\n";
-    echo "  <legend align=\"center\"><strong>Balanço</strong></legend>\n";
+    echo "  <legend align=\"center\"><strong>BalanÃ§o</strong></legend>\n";
     echo "	  <table>\n";
     if ($empliqpag == true) {
       echo " 	   <tr>\n";
@@ -320,10 +320,10 @@ function db_selorcbalanco($balanco = true, $orcamento = true, $empliqpag = false
     /*    echo "	    <td>\n";
     echo "	     <table border=\"0\" width=\"220\"  height=\"100\" style=\"border: 1px solid black\" cellpadding=\"0\" cellspacing=\"1\" >\n";
     echo "	      <tr>\n";
-    echo "          <td align=\"center\" colspan=\"2\" title=\"Gera o saldo em um intervalo de meses\"><strong>Saldo Por Mês</strong></td>\n";
+    echo "          <td align=\"center\" colspan=\"2\" title=\"Gera o saldo em um intervalo de meses\"><strong>Saldo Por MÃªs</strong></td>\n";
     echo "	      </tr>\n";
     echo "	      <tr>\n";
-    echo "           <td align=\"right\" ><strong>Mês Início :</strong> </td>\n";
+    echo "           <td align=\"right\" ><strong>MÃªs InÃ­cio :</strong> </td>\n";
     echo "	         <td>\n";
     echo "            <script>\n";
     echo "             function js_criames(obj){\n";
@@ -347,15 +347,15 @@ function db_selorcbalanco($balanco = true, $orcamento = true, $empliqpag = false
       echo "               document.form1.mesfin.options[0].selected = true;\n";
     echo "             }\n";
     echo "           </script>\n";
-    $result1=array("1"=>"Janeiro","2"=>"Fevereiro","3"=>"Março","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
+    $result1=array("1"=>"Janeiro","2"=>"Fevereiro","3"=>"MarÃ§o","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
     db_select("mesini",$result1,true,2,'onchange="js_criames(this)"',"","","","");
     echo "	       </td>\n";
     echo "	     </tr>\n";
     echo "	     <tr>\n";
-    echo "          <td align=\"right\" ><strong>Mês Fim :</strong></td>\n";
+    echo "          <td align=\"right\" ><strong>MÃªs Fim :</strong></td>\n";
     echo "	        <td>\n";
     echo "           <select  name=\"mesfin\" id=\"mes\" >\n";
-    echo "            <option value=\"mes\">Mês Final</option>\n";
+    echo "            <option value=\"mes\">MÃªs Final</option>\n";
     echo "            <script>\n";
     echo "              js_criames(document.form1.mesini);\n";
     echo "            </script>\n";
@@ -411,7 +411,7 @@ function db_selorcbalanco($balanco = true, $orcamento = true, $empliqpag = false
   if ($orcamento == true) {
     echo "  <td align=\"center\" colspan=\"2\">";
     echo "	 <fieldset id=\"tabelabalanco\"  align=\"center\">";
-    echo "   <legend align=\"center\"><strong>Orçamento</strong></legend>";
+    echo "   <legend align=\"center\"><strong>OrÃ§amento</strong></legend>";
     echo "	   <table border=\"0\"  width=\"220\" height=\"100\" style=\"border: 1px solid black\" cellpadding=\"0\" cellspacing=\"1\" >";
     echo "      <tr>";
     echo "        <td align = \"center\">";
@@ -786,7 +786,7 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
       $tot_a4 = $a4;
       
       $key = array_search("$estrut_mae", $work_planomae);
-      if ($key === false) { // não achou  
+      if ($key === false) { // nÃ£o achou  
         $work_planomae[$seq] = $estrut_mae;
         $work_planoestrut[$seq] = $estrut;
         $work_plano[$seq] = array (0 => "$descr_rece", 1 => "$recurso   ", 2 => "$descr_recu", 3 => "$a1        ", 4 => "$a2        ", 5 => "$a3        ", 6 => "$a4        ");
@@ -803,13 +803,13 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
         $nivel = db_le_mae_conplano($estrutural, true);
         
         $key = array_search("$estrutural", $work_planomae);
-        if ($key === false) { // não achou  
+        if ($key === false) { // nÃ£o achou  
           // busca no banco e inclui
           //echo "\n".$estrutural;
           //echo "\n".$descr_rece;exit;
           $res = pg_query("select c60_descr as descr_rece,c60_finali,c60_codcon from conplano where c60_anousu = ".db_getsession("DB_anousu")." and c60_estrut = '$estrutural'");
           if ($res == false || pg_numrows($res) == 0) {
-            db_redireciona("db_erros.php?fechar=true&db_erro=Está faltando cadastrar esse estrutural na contabilidade. Nível : $nivel  Estrutural : $estrutural");
+            db_redireciona("db_erros.php?fechar=true&db_erro=EstÃ¡ faltando cadastrar esse estrutural na contabilidade. NÃ­vel : $nivel  Estrutural : $estrutural");
             exit;
           }
           db_fieldsmemory($res, 0);
@@ -869,7 +869,7 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
   }
   
   //#00#// db_rpsaldo()
-  //#10#// Esta funcao retorna o recordset dos restos a Pagar, reclamações > Carlos 
+  //#10#// Esta funcao retorna o recordset dos restos a Pagar, reclamaÃ§Ãµes > Carlos 
   //#15#// db_rpsaldo($anousu,$w_instit,$dt_ini,$dt_fin)
   //#20#//  $anousu  $w_instit  $dt_ini   $dt_fim 
   //#20#//  $where = exemplo ->  " and o58_funcao=10" 
@@ -959,10 +959,10 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
   
   /////////////////////////
   
-  // funcao copiada por causa do codigo do programa em carazinho que é zero (0)
-  // quando for zero o sistema trata como se não existisse e portanto da erro nos relatorios
+  // funcao copiada por causa do codigo do programa em carazinho que Ã© zero (0)
+  // quando for zero o sistema trata como se nÃ£o existisse e portanto da erro nos relatorios
   // tive que colocar em vez de zero, -1 para nao ficar fora de ordem
-  // para funcionar corretamente deverá ser alterado todos os relatorios que utilizam esta funcao
+  // para funcionar corretamente deverÃ¡ ser alterado todos os relatorios que utilizam esta funcao
   function db_dotacaosaldo($nivel = 8, $tipo_nivel = 1, $tipo_saldo = 2, $descr = true, $where = '', $anousu = null, $dataini = null, $datafim = null, $primeiro_fim = 8, $segundo_inicio = 0, $retsql = false, $tipo_balanco = 1, $desmembra_segundo_inicio = true, $subelemento = 'nao') {
     
     if ($anousu == null)
@@ -991,41 +991,41 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     }
     
     //#00#//db_dotacaosaldo
-    //#10#//Esta funcao retorna o recordset do saldo das dotações
+    //#10#//Esta funcao retorna o recordset do saldo das dotaÃ§Ãµes
     //#15#//db_dotacaosaldo($nivel=8, $tipo_nivel=1, $tipo_saldo=2, $descr=true, $where='', $anousu=null, $dataini=null, $datafim=null)
-    //#20#//$nivel      : Até qual o nível será apurado o saldo, pode ser:
-    //#20#//              1 - órgão
+    //#20#//$nivel      : AtÃ© qual o nÃ­vel serÃ¡ apurado o saldo, pode ser:
+    //#20#//              1 - Ã³rgÃ£o
     //#20#//              2 - unidade
-    //#20#//              3 - função
+    //#20#//              3 - funÃ§Ã£o
     //#20#//              4 - subfuncao
     //#20#//              5 - programa
     //#20#//              6 - projeto de atividade
     //#20#//              7 - elemento
     //#20#//              8 - recurso
     //#20#//        
-    //#20#//              ex. quando solicitar nivel=8 usar tipo_nivel=2 para evitar duplicação de valores	           
+    //#20#//              ex. quando solicitar nivel=8 usar tipo_nivel=2 para evitar duplicaÃ§Ã£o de valores	           
     //#20#//
-    //#20#//$tipo_nivel : especifica a maneira de como será apurado o resultado, pode ser:
-    //#20#//              1 - traz a árvore de elementos até o nível solicitado
+    //#20#//$tipo_nivel : especifica a maneira de como serÃ¡ apurado o resultado, pode ser:
+    //#20#//              1 - traz a Ã¡rvore de elementos atÃ© o nÃ­vel solicitado
     //#20#//                  Ex.: 01                  300
     //#20#//                       01.01               100
     //#20#//                       01.01.01             50
-    //#20#//              2 - traz o saldo do nível escolhido
+    //#20#//              2 - traz o saldo do nÃ­vel escolhido
     //#20#//                  Ex.: 01.01.01             50
-    //#20#//              3 - totaliza o saldo pelo nível escolhido
+    //#20#//              3 - totaliza o saldo pelo nÃ­vel escolhido
     //#20#//                  Ex.: 00.00.01           1000 
     //#20#//
     //#20#//			 	
-    //#20#//$tipo_saldo : 1 - dotação inicial                  
+    //#20#//$tipo_saldo : 1 - dotaÃ§Ã£o inicial                  
     //#20#//              2 - saldo no mes da dataini
-    //#20#//              3 - saldo por período
-    //#20#//              4 - saldo por período + acumulado do período
+    //#20#//              3 - saldo por perÃ­odo
+    //#20#//              4 - saldo por perÃ­odo + acumulado do perÃ­odo
     //#20#//
-    //#20#//$descr      : retorna o record set com as descrições ou não, o default é 'true'
+    //#20#//$descr      : retorna o record set com as descriÃ§Ãµes ou nÃ£o, o default Ã© 'true'
     //#20#//
-    //#20#//$where      : condição
+    //#20#//$where      : condiÃ§Ã£o
     //#20#//
-    //#20#//$anousu     : ano do orçamento
+    //#20#//$anousu     : ano do orÃ§amento
     //#20#//
     //#20#//$dataini    : data inicial do intervalo
     //#20#//
@@ -2246,7 +2246,7 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     //#00#//db_receitaosaldo
     //#10#//Esta funcao retorna o recordset do saldo das receitas
     //#15#//db_receitasaldo($nivel=8, $tipo_nivel=1, $tipo_saldo=2, $descr=true, $where='', $anousu=null, $dataini=null, $datafim=null,$query=false)
-    //#20#//$nivel      : Até qual o nível será apurado o saldo, pode ser:
+    //#20#//$nivel      : AtÃ© qual o nÃ­vel serÃ¡ apurado o saldo, pode ser:
     //#20#//              1 - classe
     //#20#//              2 - grupo
     //#20#//              3 - subgrupo
@@ -2259,8 +2259,8 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     //#20#//             10 - desdobramento3
     //#20#//             11 - recurso
     //#20#//
-    //#20#//$tipo_nivel : especifica a maneira de como será apurado o resultado, pode ser:
-    //#20#//              1 - traz a árvore de elementos até o nível solicitado
+    //#20#//$tipo_nivel : especifica a maneira de como serÃ¡ apurado o resultado, pode ser:
+    //#20#//              1 - traz a Ã¡rvore de elementos atÃ© o nÃ­vel solicitado
     //#20#//                  Ex.: 4.1                  200
     //#20#//                       4.1.1                100
     //#20#//                       4.1.1.1               50
@@ -2268,9 +2268,9 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     //#20#//                       4.1.2                100
     //#20#//                       4.1.2.1               50
     //#20#//                       4.1.2.2               50	
-    //#20#//              2 - traz o saldo do nível escolhido
+    //#20#//              2 - traz o saldo do nÃ­vel escolhido
     //#20#//                  Ex.: 4.1.1.1               50
-    //#20#//              3 - totaliza o saldo pelo nível escolhido
+    //#20#//              3 - totaliza o saldo pelo nÃ­vel escolhido
     //#20#//                  Ex.: 0.0.0.1             1000 
     //#20#//                  
     //#20#//$tipo_saldo : 
@@ -2279,17 +2279,17 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     //#20#//   	      3 - SALDO DA RECEITA  PELA CONTABILIDADE ...
     //#20#//   	      4 - SALDO ACUMULADO POR MES
     //#20#//
-    //#20#//$descr         : retorna o record set com as descrições ou não, o default é 'true'
+    //#20#//$descr         : retorna o record set com as descriÃ§Ãµes ou nÃ£o, o default Ã© 'true'
     //#20#//
-    //#20#//$where         : condição
+    //#20#//$where         : condiÃ§Ã£o
     //#20#//
-    //#20#//$anousu        : ano do orçamento
+    //#20#//$anousu        : ano do orÃ§amento
     //#20#//
     //#20#//$dataini       : data inicial do intervalo
     //#20#//
     //#20#//$datafim       : data final do intervalo
     //#20#//
-    //#20#//$query         : retorna somente o sql, o default é retornar o recordset
+    //#20#//$query         : retorna somente o sql, o default Ã© retornar o recordset
     //#20#//
     //#20#//$nivel_agrupar : 0 - normal
     //#20#//                 1 - agrupa na receita
@@ -4197,7 +4197,7 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
       
       $result = pg_query($sqle);
       if (pg_numrows($result) == 0) {
-        $this->msg_erro = "Parametro do orçamento não encontrado para o exercício: $anousu";
+        $this->msg_erro = "Parametro do orÃ§amento nÃ£o encontrado para o exercÃ­cio: $anousu";
         return false;
       }
       $subele = pg_result($result, 0, 0);
@@ -4376,7 +4376,7 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     }
   }
   /**
-  *  usada para gerar a condição de pesquisa
+  *  usada para gerar a condiÃ§Ã£o de pesquisa
   *  retornada pela func_selorcdotacao_aba.php
   *
   */
@@ -4493,11 +4493,11 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
     function getParametros($nomes = false) {
       global $nomeinst, $o40_descr, $o41_unidade, $o41_descr, $o15_descr;
       if ($nomes == true) {
-        $txt = "Instituição : ".$this->instit."\n";
+        $txt = "InstituiÃ§Ã£o : ".$this->instit."\n";
         $txt .= "Orgao : ".$this->orgao."\n";
         $txt .= "Unidade: ".$this->unidade."\n";
-        $txt .= "Função: ".$this->funcao."\n";
-        $txt .= "Sub-Função: ".$this->subfuncao."\n";
+        $txt .= "FunÃ§Ã£o: ".$this->funcao."\n";
+        $txt .= "Sub-FunÃ§Ã£o: ".$this->subfuncao."\n";
         $txt .= "Programa: ".$this->programa."\n";
         $txt .= "Proj-Ativ: ".$this->projativ."\n";
         $txt .= "Elemento: ".$this->elemento."\n";
@@ -4552,11 +4552,11 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
           }
         }
         
-        $txt = "Instituição : ".$it."\n";
+        $txt = "InstituiÃ§Ã£o : ".$it."\n";
         $txt .= "Orgao : ".$og."\n";
         $txt .= "Unidade: ".$un."\n";
-        $txt .= "Função: ".$this->funcao."\n";
-        $txt .= "Sub-Função: ".$this->subfuncao."\n";
+        $txt .= "FunÃ§Ã£o: ".$this->funcao."\n";
+        $txt .= "Sub-FunÃ§Ã£o: ".$this->subfuncao."\n";
         $txt .= "Programa: ".$this->programa."\n";
         $txt .= "Proj-Ativ: ".$this->projativ."\n";
         $txt .= "Elemento: ".$this->elemento."\n";
@@ -4663,7 +4663,7 @@ function db_receitappa($anoini, $db_where = false, $retsql = false) {
         $sele_work_recurso .= ")";
         //echo $sele_work_elemento; exit;
       }
-      // atualiza instituição
+      // atualiza instituiÃ§Ã£o
       if ($sepi != "")
       $this->instit = $sele_work_instit;
       if ($sep != "")

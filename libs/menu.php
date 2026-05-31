@@ -30,10 +30,10 @@ function db_menu_dbpref($usuario, $modulo, $anousu, $instit,$cgm, $nomeusuario) 
 	//#00#//db_menu
 	//#10#//Esta funcao cria o menu nos programas
 	//#15#//db_menu($usuario,$modulo,$anousu,$instit);
-	//#20#//Usuario  : Id do usu·rio do arquivo |db_usuarios|
-	//#20#//Modulo   : CÛdigo do MÛdulo
-	//#20#//Anousu   : ExercÌcio de Acesso
-	//#20#//Instit   : N˙mero da instituiÁ„o
+	//#20#//Usuario  : Id do usu√°rio do arquivo |db_usuarios|
+	//#20#//Modulo   : C√≥digo do M√≥dulo
+	//#20#//Anousu   : Exerc√≠cio de Acesso
+	//#20#//Instit   : N√∫mero da institui√ß√£o
 
 	global $HTTP_SERVER_VARS, $HTTP_SESSION_VARS;
 	global $conn, $DB_SELLER;
@@ -94,13 +94,13 @@ if($li>0){
 	$help_descricao = "";
 	$rotinadb = "";
 	// entra aqui
-	if ($NumMenu != 0) { //position:absolute;left:0px;top:0px... tirei para n„o ficar la em cima
+	if ($NumMenu != 0) { //position:absolute;left:0px;top:0px... tirei para n√£o ficar la em cima
 		echo "<div class=\"menuBar\" style=\"width:100%\" >\n";
 		$gera_helps = "";
 		for ($i = 0; $i < $NumMenu; $i ++) {
 			//$URI = pg_result($menu,$i,5) == ""?"":"http://".$HTTP_SERVER_VARS["HTTP_HOST"].substr($HTTP_SERVER_VARS["PHP_SELF"],0,strrpos($HTTP_SERVER_VARS["PHP_SELF"],"/"))."/".pg_result($menu,$i,5);
 			//entra aqui
-			if (pg_result($menu, $i, 0) == $modulo) {  // esses s„o os menus principais
+			if (pg_result($menu, $i, 0) == $modulo) {  // esses s√£o os menus principais
 				$funcao=trim(pg_result($menu, $i, 'funcao'));
 				if ($funcao==""){
 					echo "<a class=\"menuButton\" onmouseover=\"return buttonClick(event, 'Ijoao".pg_result($menu, $i, 1)."');\" onmouseover=\"buttonMouseover(event, 'Ijoao".pg_result($menu, $i, "id_item_filho")."');\">".pg_result($menu, $i, "descricao")."</a>\n";
@@ -108,14 +108,14 @@ if($li>0){
 					echo "<a class=\"menuButton\" href=\"$funcao?".base64_encode("id_usuario=".@$cgm."&nomeusuario=".@$nomeusuario)."\" target=\"CentroPref\" onmouseover=\"return buttonClick(event, 'Ijoao".pg_result($menu, $i, 1)."');\" onmouseover=\"buttonMouseover(event, 'Ijoao".pg_result($menu, $i, "id_item_filho")."');\">".pg_result($menu, $i, "descricao") ."</a>\n";
 				}
 			}
-			// n„o entra aqui
+			// n√£o entra aqui
 			if (strtolower(basename($HTTP_SERVER_VARS["PHP_SELF"])) == strtolower(pg_result($menu, $i, 5))) { 
 				$rotinadb = pg_result($menu, $i, 4);
 			}
-			// funÁıes que o menu vai chamar
+			// fun√ß√µes que o menu vai chamar
 			$db_funcao = trim(pg_result($menu, $i, 'funcao')); 
 			
-			if ($gera_helps == "" && $db_funcao == basename($HTTP_SERVER_VARS["PHP_SELF"])) {// n„o entra aki db_funcao È diferente de basename
+			if ($gera_helps == "" && $db_funcao == basename($HTTP_SERVER_VARS["PHP_SELF"])) {// n√£o entra aki db_funcao √© diferente de basename
 				$gera_helps = pg_result($menu, $i, 'id_item_filho');
 				$help_descricao = pg_result($menu, $i, 'desctec');
 			}
@@ -124,7 +124,7 @@ if($li>0){
 		
 		// aqui coloca o menu modulos e help...........
 		/*
-		echo "<a class=\"menuButton\" id=\"menuModulosTela\" href=\"\" onclick=\"return buttonClick(event,'IListaModulos');return false\">MÛdulos</a>\n";
+		echo "<a class=\"menuButton\" id=\"menuModulosTela\" href=\"\" onclick=\"return buttonClick(event,'IListaModulos');return false\">M√≥dulos</a>\n";
 		echo "<a class=\"menuButton\" id=\"menuMostraHelp\" href=\"\" onclick=\"return buttonClick(event,'IMostraHelpMenu');return false\">Help</a>\n";
 		*/
 		echo "</div>\n";
@@ -141,11 +141,11 @@ if($li>0){
 					echo "<div id=\"Ijoao".pg_result($menu, $i, "id_item_filho")."\" class=\"menu\" onmouseover=\"menuMouseover(event)\">\n";
 					for ($a = 0; $a < $NumMenu; $a ++) {
 						if (pg_result($menu, $j, "id_item") == pg_result($menu, $a, "id_item")) { 
-							//n„o entra..
+							//n√£o entra..
 							$verifica = 1;
 							for ($b = 0; $b < $NumMenu; $b ++) {
 								if (pg_result($menu, $a, "id_item_filho") == pg_result($menu, $b, "id_item")) { 
-									// .....aqui È os nivel2 com filho
+									// .....aqui √© os nivel2 com filho
 									echo "<a class=\"menuItem\" href=\"\" target=\"CentroPref\" onclick=\"return false;\"  onmouseover=\"menuItemMouseover(event, 'Ijoao".pg_result($menu, $a, "id_item_filho")."');\">\n";
 									echo "<span class=\"menuItemText\">".pg_result($menu, $a, "descricao")."</span>\n";
 									$sub = 1;
@@ -172,7 +172,7 @@ if($li>0){
 				}
 			}
 		}
-		// aqui n„o entra
+		// aqui n√£o entra
 	 // entra aqui...
 	
 			$sqlmodulo = "select id_item, nome_modulo, max(anousu) as anousu from (
@@ -242,7 +242,7 @@ if($li>0){
 
 		echo "<div id=\"IMostraHelpMenu\" class=\"menu\" onmouseover=\"menuMouseover(event)\">\n";
 		echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('help','$help_descricao')\" onMouseout=\"js_remove_objeto_div('help')\" id=\"menuhelp\" href=\"\" onclick=\"buttonHelp('".basename($HTTP_SERVER_VARS["PHP_SELF"])."','".$gera_helps."','".$modulo."',true);return false\">Help</a>\n";
-		echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('versao','$help_descricao')\" onMouseout=\"js_remove_objeto_div('versao')\" id=\"menuMostraVersao\" href=\"\" onclick=\"buttonHelp('".basename($HTTP_SERVER_VARS["PHP_SELF"])."','".$gera_helps."','".$modulo."',false);return false\">Versıes</a>\n";
+		echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('versao','$help_descricao')\" onMouseout=\"js_remove_objeto_div('versao')\" id=\"menuMostraVersao\" href=\"\" onclick=\"buttonHelp('".basename($HTTP_SERVER_VARS["PHP_SELF"])."','".$gera_helps."','".$modulo."',false);return false\">Vers√µes</a>\n";
 		echo "</div>\n";
 
 		//$msg = ucfirst(db_getsession("DB_nome_modulo"))." -> ".ucfirst($rotinadb)." -> ".basename($HTTP_SERVER_VARS["PHP_SELF"]);
@@ -264,7 +264,7 @@ if($li>0){
 
 
 		//if(db_getsession("DB_anousu")!=date("Y")){
-		//  echo "<script>alert('VocÍ esta acessando um exercÌcio diferente. Verifique!')</script>";
+		//  echo "<script>alert('Voc√™ esta acessando um exerc√≠cio diferente. Verifique!')</script>";
 		//}
 
  
@@ -285,7 +285,7 @@ if($li>0){
        x.style.visibility = 'hidden';
     }
 
-// n„o usa
+// n√£o usa
 function js_menu1() { 
   for(i = 0; i < document.getElementsByTagName('div').length; i++){ 
 	  obj = document.element[i]; 
@@ -294,7 +294,7 @@ function js_menu1() {
       } 
    }
 }
-// n„o usa
+// n√£o usa
 				  function js_db_menu_confirma () { 
 		            
 					if( js_db_menu_retorno != null ){

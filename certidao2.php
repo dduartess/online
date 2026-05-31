@@ -58,17 +58,17 @@ a:hover { color: black;
 <script>
 js_verificapagina("certidaonome.php,certidaoinscr.php,certidaomatric.php,certidaoautentica.php");
 function js_erromatric(matric){
-  alert('Matrícula '+matric+' inválida');
+  alert('MatrÃ­cula '+matric+' invÃ¡lida');
 }
 function js_errocgc(cgc){
-  alert('Número CNPJ/CPF '+cgc+' inválido');
+  alert('NÃºmero CNPJ/CPF '+cgc+' invÃ¡lido');
 }
 function js_erroinscr(inscr){
-  alert('Inscrição '+inscr+' inválida');
+  alert('InscriÃ§Ã£o '+inscr+' invÃ¡lida');
 }
 </script>
-<title>Emissão de Certid&atilde;o</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>EmissÃ£o de Certid&atilde;o</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="itbi.css" type="text/css">
 <style type="text/css">
 .unnamed1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; line-height: normal; font-weight: bold; color: #996633; text-decoration: none}

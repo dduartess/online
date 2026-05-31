@@ -15,15 +15,15 @@ if(!defined('DB_BIBLIOT')){
    define('FPDF_FONTPATH','fpdf151/font/');
 class pdf2 extends fpdf {
 //|00|//pdf1
-//|10|//Esta classe È uma extens„o da classe |fpdf| e difere da mesma pelo fato de que nesta  classe
-//|10|//foi alterado o mÈtodo |header| (cabeÁalho da p·gina) que atendesse  as  nossas  necessidades
-//|10|//da seguinte maneira (muito semelhante a classe |pdf1|, com a diferenÁa de esta  n„o  possui)
+//|10|//Esta classe √© uma extens√£o da classe |fpdf| e difere da mesma pelo fato de que nesta  classe
+//|10|//foi alterado o m√©todo |header| (cabe√ßalho da p√°gina) que atendesse  as  nossas  necessidades
+//|10|//da seguinte maneira (muito semelhante a classe |pdf1|, com a diferen√ßa de esta  n√£o  possui)
 //|10|//|footer|):
 //|10|//|header|     :    - O logotipo da prefeitura ficou centralizado;
 //|10|//                  - Os dados da prefeitura tais como: estado,nome e departamento ficaram
 //|10|//                    prefeitura;
-//|10|//               Contem ainda vari·veis livres para o desenvolvedor as quais  ser„o  impressas
-//|10|//               na parte superior direita da tela, s„o elas:
+//|10|//               Contem ainda vari√°veis livres para o desenvolvedor as quais  ser√£o  impressas
+//|10|//               na parte superior direita da tela, s√£o elas:
 //|10|//                  - head1
 //|10|//
 
@@ -104,7 +104,7 @@ $this->SetLeftMargin($S);
     global $conn;
 	global $result;
 	global $url;
-	//Dados da instituiÁ„o
+	//Dados da institui√ß√£o
     $dados = @pg_exec("select nomeinst,ender,munic,uf,telef,email,url,logo from db_config where codigo = ".@$GLOBALS["DB_instit"]);
 	$url = @pg_result($dados,0,"url");
 	$this->SetXY(1,1);
@@ -153,14 +153,14 @@ $this->SetLeftMargin($S);
     $this->SetFont('Arial','I',8);
     $this->SetY(-10);
 //    $this->Text(10,292.7,$url);	
-//    $this->Cell(0,10,'p·gina '.$this->PageNo().' de {nb}',"T",0,'C');
+//    $this->Cell(0,10,'p√°gina '.$this->PageNo().' de {nb}',"T",0,'C');
     $nome = @$GLOBALS["HTTP_SERVER_VARS"]["PHP_SELF"];
 	$nome = substr($nome,strrpos($nome,"/")+1);
 //    $this->Cell(0,10,$nome.'       Emissor: '.@$GLOBALS["DB_login"],"T",0,'C');
 //    $this->Write("100",$url);
-//    $this->Cell(0,10,'P·gina '.$this->PageNo().' de {nb}',0,1,'R');
-    $this->Cell(0,10,$url.'   '.$nome.'   Emissor: '.@$GLOBALS["DB_login"].'   ExercÌcio: '.db_getsession("DB_anousu").'   Data: '.date("d-m-Y - H:i:s"),"T",0,'L');
-    $this->Cell(0,10,'P·gina '.$this->PageNo().' de {nb}',0,1,'R');
+//    $this->Cell(0,10,'P√°gina '.$this->PageNo().' de {nb}',0,1,'R');
+    $this->Cell(0,10,$url.'   '.$nome.'   Emissor: '.@$GLOBALS["DB_login"].'   Exerc√≠cio: '.db_getsession("DB_anousu").'   Data: '.date("d-m-Y - H:i:s"),"T",0,'L');
+    $this->Cell(0,10,'P√°gina '.$this->PageNo().' de {nb}',0,1,'R');
     $this->SetLeftMargin($S);
 
   }
@@ -630,9 +630,9 @@ $this->SetLeftMargin($S);
 function db_extenso($valor=0, $maiusculas=false) {
  
     $rt = '';
-    $singular = array("centavo", "real", "mil", "milh„o", "bilh„o", "trilh„o", "quatrilh„o"); 
-    $plural = array("centavos", "reais", "mil", "milhıes", "bilhıes", "trilhıes", 
-"quatrilhıes"); 
+    $singular = array("centavo", "real", "mil", "milh√£o", "bilh√£o", "trilh√£o", "quatrilh√£o"); 
+    $plural = array("centavos", "reais", "mil", "milh√µes", "bilh√µes", "trilh√µes", 
+"quatrilh√µes"); 
 
     $c = array("", "cem", "duzentos", "trezentos", "quatrocentos", 
 "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"); 
@@ -640,7 +640,7 @@ function db_extenso($valor=0, $maiusculas=false) {
 "sessenta", "setenta", "oitenta", "noventa"); 
     $d10 = array("dez", "onze", "doze", "treze", "quatorze", "quinze", 
 "dezesseis", "dezesete", "dezoito", "dezenove"); 
-    $u = array("", "um", "dois", "trÍs", "quatro", "cinco", "seis", 
+    $u = array("", "um", "dois", "tr√™s", "quatro", "cinco", "seis", 
 "sete", "oito", "nove"); 
 
     $z=0; 
@@ -672,7 +672,7 @@ $ru) ? " e " : "").$ru;
          if(!$maiusculas){ 
                           return($rt ? $rt : "zero"); 
          } else { /*
-	                 Trocando o " E " por " e ", fica muito + apresent·vel! 
+	                 Trocando o " E " por " e ", fica muito + apresent√°vel! 
                      Rodrigo Cerqueira, rodrigobc@fte.com.br
                     */
 			  if ($rt) $rt=ereg_replace(" E "," e ",ucwords($rt));

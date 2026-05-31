@@ -54,7 +54,7 @@ $result  = $clempempenho->sql_record($clempempenho->sql_query_notas("","*","empe
 if($clempempenho->numrows == 0){
  ?>
  <script>
-  alert("Você não possui Empenho para gerar o relatório.");
+  alert("VocÃª nÃ£o possui Empenho para gerar o relatÃ³rio.");
   window.close();
  </script>
  <?php 
@@ -63,7 +63,7 @@ if($clempempenho->numrows == 0){
 $pdf = new PDF();
 $pdf->Open();
 $pdf->AliasNbPages();
-$head2 = "Relatório de Empenhos por CGM";
+$head2 = "RelatÃ³rio de Empenhos por CGM";
 $head3 = "CGM:".$numcgm;
 $pri = true;
 $p = 0;
@@ -79,10 +79,10 @@ for($x=0; $x < $clempempenho->numrows; $x++){
         $pdf->setfillcolor(235);
         $pdf->setfont('arial','b',7);
         $pdf->cell(19,4,"Empenho",1,0,"C",1);
-        $pdf->cell(19,4,"Dotação",1,0,"C",1);
-        $pdf->cell(20,4,"Emissão",1,0,"C",1);
+        $pdf->cell(19,4,"DotaÃ§Ã£o",1,0,"C",1);
+        $pdf->cell(20,4,"EmissÃ£o",1,0,"C",1);
         $pdf->cell(19,4,"Ordem",1,0,"C",1);
-        $pdf->cell(19,4,"Nº Lic.",1,0,"C",1);
+        $pdf->cell(19,4,"NÂº Lic.",1,0,"C",1);
         $pdf->cell(19,4,"NF",1,0,"C",1);
         $pdf->cell(19,4,"Valor Emp.",1,0,"C",1);
         $pdf->cell(19,4,"Valor Liq.",1,0,"C",1);

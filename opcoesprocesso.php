@@ -53,9 +53,9 @@ if ( !isset($cod_processo) ){
   $cod_processo = 0 + $cod_processo;
 }
 if (!isset($cod_processo) or !is_int($cod_processo) or $cod_processo == "" ){
-   msgbox("Código Inválido.");
-   db_logs("","",0,"Código do Processo Invalido. Numero: $cod_processo ");
-   db_redireciona("digitaconsultaprocesso.php?".base64_encode("erroscripts=Código do Processo Inválido. Número: $cod_processo"));
+   msgbox("CÃ³digo InvÃ¡lido.");
+   db_logs("","",0,"CÃ³digo do Processo Invalido. Numero: $cod_processo ");
+   db_redireciona("digitaconsultaprocesso.php?".base64_encode("erroscripts=CÃ³digo do Processo InvÃ¡lido. NÃºmero: $cod_processo"));
 }
 
 $cgc = $HTTP_POST_VARS["cgc"];
@@ -74,7 +74,7 @@ $cgccpf = str_replace("/","",$cgccpf);
 $cgccpf = str_replace("-","",$cgccpf);  
 if (!isset($cgccpf) or empty($cgccpf) ){
   db_logs("","",0,"Variavel CGCCPF Invalida.");
-  db_redireciona("digitaconsultaprocesso.php?".base64_encode("erroscripts=Variável CNPJ/CPF Inválida."));
+  db_redireciona("digitaconsultaprocesso.php?".base64_encode("erroscripts=VariÃ¡vel CNPJ/CPF InvÃ¡lida."));
 }
 $result = pg_exec("select ident from db_config");
 if (pg_numrows($result) == 0){
@@ -97,7 +97,7 @@ if($cgccpf != "" ) {
 $result = pg_exec($sql_exe);
 if (pg_numrows($result) == 0 ){
   db_logs("$cod_processo","",0,"Dados Inconsistentes. Processo : $cod_processo");
-  db_redireciona("digitaconsultaprocesso.php?".base64_encode("erroscripts=Processo não Cadastrado. Número: $cod_processo, verifique CNPJ/CPC"));
+  db_redireciona("digitaconsultaprocesso.php?".base64_encode("erroscripts=Processo nÃ£o Cadastrado. NÃºmero: $cod_processo, verifique CNPJ/CPC"));
   $script = false; 
 }else if(pg_result($result,0,"z01_cgccpf") == "00000000000000" || pg_result($result,0,"z01_cgccpf") == "              " || trim(pg_result($result,0,"z01_cgccpf")) !=  "$cgccpf" ) {
   $script = true; 
@@ -107,7 +107,7 @@ db_fieldsmemory($result,0);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("digitaconsultaprocesso.php");
@@ -169,7 +169,7 @@ db_estilosite();
            <tr>
             <td colspan="3">
              <fieldset width="100%" style="border: 1px solid black">
-             <legend><strong>Situação Atual</strong></legend>
+             <legend><strong>SituaÃ§Ã£o Atual</strong></legend>
              <table class="texto">
               <tr>
                <td width="120" colspan="1">Departamento</td>
@@ -188,7 +188,7 @@ db_estilosite();
                <td><?=$p61_despacho?></td>
               </tr>
               <tr>
-               <td>Observações:</td>
+               <td>ObservaÃ§Ãµes:</td>
                <td colspan="3"><?=$p58_despacho?></td>
               </tr>
              </table>

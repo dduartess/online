@@ -42,12 +42,12 @@ $oPost = db_utils::postMemory($_POST);
 $oDaoCfpess = new cl_cfpess;
 
 /**
- * Modelo de impress„o de relatÛrio contra cheque
+ * Modelo de impress√£o de relat√≥rio contra cheque
  * Retorna false caso der erro na consulta
  */   
 $iTipoRelatorio = $oDaoCfpess->buscaCodigoRelatorio('contracheque', db_anofolha(), db_mesfolha());
 if(!$iTipoRelatorio) {
-  db_redireciona('db_erros.php?fechar=true&db_erro=Modelo de impress„o invalido, verifique parametros.');
+  db_redireciona('db_erros.php?fechar=true&db_erro=Modelo de impress√£o invalido, verifique parametros.');
 }
 
 validaUsuarioLogado();
@@ -113,17 +113,17 @@ $qualarquivo = '';
 if ( $opcao == 'salario' ){
   $sigla   = 'r14_';
   $arquivo = 'gerfsal';
-  $qualarquivo = 'SAL¡RIO';
+  $qualarquivo = 'SAL√ÅRIO';
 }elseif ( $opcao == 'ferias' ){
   $sigla   = 'r31_';
   $arquivo = 'gerffer';
   $xtipo   = ' r31_tpp ';
-  $qualarquivo = 'F…RIAS';
+  $qualarquivo = 'F√âRIAS';
 }elseif ( $opcao == 'rescisao' ){
   $sigla   = 'r20_';
   $arquivo = 'gerfres';
   $xtipo   = ' r20_tpp ';
-  $qualarquivo = 'RESCIS√O';
+  $qualarquivo = 'RESCIS√ÉO';
 }elseif ($opcao == 'adiantamento'){
   $sigla   = 'r22_';
   $arquivo = 'gerfadi';
@@ -131,7 +131,7 @@ if ( $opcao == 'salario' ){
 }elseif ($opcao == '13salario'){
   $sigla   = 'r35_';
   $arquivo = 'gerfs13';
-  $qualarquivo = '13o. SAL¡RIO';
+  $qualarquivo = '13o. SAL√ÅRIO';
 }elseif ($opcao == 'complementar'){
   $sigla   = 'r48_';
   $arquivo = 'gerfcom';
@@ -143,7 +143,7 @@ if ( $opcao == 'salario' ){
 }elseif ($opcao == 'previden'){
   $sigla   = 'r60_';
   $arquivo = 'previden';
-  $qualarquivo = 'AJUSTE DA PREVID NCIA';
+  $qualarquivo = 'AJUSTE DA PREVID√äNCIA';
 }elseif ($opcao == 'irf'){
   $sigla   = 'r61_';
   $arquivo = 'ajusteir';
@@ -250,7 +250,7 @@ $res = pg_query($sql);
 //db_criatabela($res);
 $num = pg_numrows($res);
 if ($num == 0){
-   db_redireciona('db_erros.php?fechar=true&db_erro=N„o existe C·lculo no perÌodo de '.$mes.' / '.$ano);
+   db_redireciona('db_erros.php?fechar=true&db_erro=N√£o existe C√°lculo no per√≠odo de '.$mes.' / '.$ano);
 }
   global $pdf;
   $pdf = new scpdf();

@@ -72,7 +72,7 @@
   
   $dtvenc = date('Y-m-d',mktime(0,0,0,$mesv,10,$anov));
   if($dtvenc < date("Y-m-d")){
-    echo "<script>window.opener.alert('Documento Vencido. Emiss„o n„o Permitida.');window.close()</script>";
+    echo "<script>window.opener.alert('Documento Vencido. Emiss√£o n√£o Permitida.');window.close()</script>";
     exit;
   }
   if(isset($valortotal)){
@@ -109,8 +109,8 @@
   $quantidade = "";
   $valor = "";
   $valor_documento = "R$".db_formatar($tot,'f');
-  $instrucoes1 = "             DOCUMENTO V¡LIDO AT… O VENCIMENTO ";
-  $instrucoes2 = "            AP”S PAG¡VEL SOMENTE NA PREFEITURA"; 
+  $instrucoes1 = "             DOCUMENTO V√ÅLIDO AT√â O VENCIMENTO ";
+  $instrucoes2 = "            AP√ìS PAG√ÅVEL SOMENTE NA PREFEITURA"; 
   $instrucoes3 = "    PAGUE SEUS TRIBUTOS EM DIA, EVITANDO JUROS E MULTA";
   $instrucoes4 = "                     CONTRIBUINTE!";
   $instrucoes5 = "Caso nao esteja exercendo atividade solicite a baixa do alvara,";
@@ -128,7 +128,7 @@
   $sacado3 = $z01_munic;
 
    
-  $matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"MarÁo","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
+  $matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"Mar√ßo","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
   $mesx= $matri[$q20_mes];
 
   $pdf = new FPDF();
@@ -152,18 +152,18 @@
  
   $pdf->sety(25);
   $pdf->setfont('arial','B',10);
-  $pdf->multicell(0,4,'ISSQN COM RETEN«√O NA FONTE',0,"C",0); 
+  $pdf->multicell(0,4,'ISSQN COM RETEN√á√ÉO NA FONTE',0,"C",0); 
   $pdf->ln(5);
   $altura = 6;
   $pdf->setfont('arial','B',8);
-  $pdf->cell(130,$altura,'TOMADOR DO SERVI«O',1,0,"C",0);
+  $pdf->cell(130,$altura,'TOMADOR DO SERVI√áO',1,0,"C",0);
   $pdf->cell(60,$altura,'DADOS DA PLANILHA',1,1,"C",0);
   $pdf->setfont('arial','',8);
   $pdf->cell(130,$altura,'NOME : '.strtoupper($z01_nome),1,0,"L",0);
   $pdf->cell(60,$altura,'CODIGO : '.db_formatar($planilha,'s','0',4,'e'),1,1,"L",0);
-  $pdf->cell(130,$altura,'INSCRI«√O : '.$q20_inscr,1,0,"L",0);
-  $pdf->cell(60,$altura,'COMPET NCIA : '.db_formatar($q20_mes,'s','0',2,'e').'/'.$q20_ano,1,1,"L",0);
-  $pdf->multicell(190,$altura,'OBSERVA«√O :  Os valores registrados nesta planilha somente ser„o considerados apÛs o pagamento desta guia.',1,"L",0);  
+  $pdf->cell(130,$altura,'INSCRI√á√ÉO : '.$q20_inscr,1,0,"L",0);
+  $pdf->cell(60,$altura,'COMPET√äNCIA : '.db_formatar($q20_mes,'s','0',2,'e').'/'.$q20_ano,1,1,"L",0);
+  $pdf->multicell(190,$altura,'OBSERVA√á√ÉO :  Os valores registrados nesta planilha somente ser√£o considerados ap√≥s o pagamento desta guia.',1,"L",0);  
 
   $linha = 65; 
   for($i=0;$i<2;$i++){
@@ -220,28 +220,28 @@
   $pdf->Text(151,$linha+11,"Parcela");
   $pdf->Text(171,$linha+11,"Vencimento");
   $pdf->Text(13,$linha+19,"Cedente");
-  $pdf->Text(151,$linha+19,"AgÍncia/CÛdigo Cedente");
+  $pdf->Text(151,$linha+19,"Ag√™ncia/C√≥digo Cedente");
   $pdf->Text(13,$linha+27,"Data do Documento");
-  $pdf->Text(42,$linha+27,"N˙mero do Documento");
-  $pdf->Text(88,$linha+27,"EspÈcie Doc.");
+  $pdf->Text(42,$linha+27,"N√∫mero do Documento");
+  $pdf->Text(88,$linha+27,"Esp√©cie Doc.");
   $pdf->Text(114,$linha+27,"Aceite");
   $pdf->Text(127,$linha+27,"Data do Processamento");
-  $pdf->Text(151,$linha+27,"Nosso N˙mero");
-  $pdf->Text(13,$linha+35,"CÛdigo do Cedente");
+  $pdf->Text(151,$linha+27,"Nosso N√∫mero");
+  $pdf->Text(13,$linha+35,"C√≥digo do Cedente");
   $pdf->Text(47,$linha+35,"Carteira");
-  $pdf->Text(67,$linha+35,"EspÈcie");
+  $pdf->Text(67,$linha+35,"Esp√©cie");
   $pdf->Text(93,$linha+35,"Quantidade");
   $pdf->Text(123,$linha+35,"Valor");
   $pdf->Text(151,$linha+35,"( = ) Valor do Documento");
-  $pdf->Text(13,$linha+43,"InstruÁıes");
+  $pdf->Text(13,$linha+43,"Instru√ß√µes");
   $pdf->Text(151,$linha+43,"( - ) Desconto / Abatimento");
-  $pdf->Text(151,$linha+51,"( - ) Outras DeduÁıes");
+  $pdf->Text(151,$linha+51,"( - ) Outras Dedu√ß√µes");
   $pdf->Text(151,$linha+59,"( + ) Mora / Multa");
-  $pdf->Text(151,$linha+67,"( + ) Outros AcrÈcimos");
+  $pdf->Text(151,$linha+67,"( + ) Outros Acr√©cimos");
   $pdf->Text(151,$linha+75,"( = ) Valor Cobrado");
   $pdf->Text(13,$linha+83,"Sacado");
   $pdf->Text(13,$linha+91,"Sacador/Avalista");
-  $pdf->Text(160,$linha+99,"AutenticaÁ„o Mec‚nica");
+  $pdf->Text(160,$linha+99,"Autentica√ß√£o Mec√¢nica");
 
   $pdf->SetFont('Arial','b',8);
   $pdf->Text(13,$linha+15,@$localPagamento);

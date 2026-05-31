@@ -32,7 +32,7 @@ include("classes/db_db_dairetido_classe.php");
 $cldb_dairetido= new cl_db_dairetido;
 $result = $cldb_dairetido->sql_record($cldb_dairetido->sql_query_file(null, "*", null, "w15_cnpj= '$cnpj' and w15_nota = '$nota' and w15_serie='$serie'"));
 if ($cldb_dairetido->numrows > 0) {
-	echo " <script> alert('CNPJ, Nota e Série ja lançadas');
+	echo " <script> alert('CNPJ, Nota e SÃ©rie ja lanÃ§adas');
   	parent.js_notaexiste()
  	 </script>";
 } 

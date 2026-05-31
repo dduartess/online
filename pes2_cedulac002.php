@@ -35,12 +35,12 @@ require_once("classes/db_cfpess_classe.php");
 $oDaoCfpess = new cl_cfpess;
 
 /**
- * Tipo de relatÛrio comprovante de rendimento
+ * Tipo de relat√≥rio comprovante de rendimento
  * Retorna false caso der erro na consulta
  */
 $iTipoRelatorio = $oDaoCfpess->buscaCodigoRelatorio('comprovanterendimentos', db_anofolha(), db_mesfolha());
 if(!$iTipoRelatorio) {
-	db_redireciona('db_erros.php?fechar=true&db_erro=Modelo de impress„o invalido, verifique parametros.');
+	db_redireciona('db_erros.php?fechar=true&db_erro=Modelo de impress√£o invalido, verifique parametros.');
 }
 
 validaUsuarioLogado();
@@ -245,7 +245,7 @@ $iNumRows        = pg_num_rows($rsSqlRendimento);
 
 if ($iNumRows == 0) {
 
-  db_redireciona('db_erros.php?fechar=true&db_erro=Registros n„o Processados para o Ano Calend·rio, entre em contato com o setor respons·vel.');
+  db_redireciona('db_erros.php?fechar=true&db_erro=Registros n√£o Processados para o Ano Calend√°rio, entre em contato com o setor respons√°vel.');
   exit;
 }
 
@@ -277,7 +277,7 @@ for ($iInd = 0; $iInd < $iNumRows; $iInd++) {
   }
  
   /**
-   * InformaÁıes de CabeÁalho
+   * Informa√ß√µes de Cabe√ßalho
    */
   $pdf1->prefeitura      = $prefeitura;
   $pdf1->enderpref       = $enderpref;
@@ -286,7 +286,7 @@ for ($iInd = 0; $iInd < $iNumRows; $iInd++) {
   $pdf1->cgcpref         = $cgcpref;
   
   /**
-   * InformaÁıes Contribuintes
+   * Informa√ß√µes Contribuintes
    */
   $pdf1->cpf             = $oRendimento->rh96_cpfcnpj; 
   $pdf1->nome            = db_translate($oRendimento->z01_nome);
@@ -298,7 +298,7 @@ for ($iInd = 0; $iInd < $iNumRows; $iInd++) {
   $pdf1->num_comprovante = ($iInd+1);
      
   /**
-   * InformaÁıes Bloco Rendimentos Isentos e N„o Tribut·veis
+   * Informa√ß√µes Bloco Rendimentos Isentos e N√£o Tribut√°veis
    */
   $oRendimento->rendimento -= ($oRendimento->aposentadoria_65 + $oRendimento->molestia_grave_inativos +
                                $oRendimento->molestia_grave_ativos
@@ -315,8 +315,8 @@ for ($iInd = 0; $iInd < $iNumRows; $iInd++) {
   $pdf1->w_outros5       = $oRendimento->molestia_grave_ativos;
   
   /**
-   * InformaÁıes Bloco Rendimentos Sujeitos a TributaÁ„o Exclusiva
-   * @var $n13Salario È a diferenÁa entre os campos:
+   * Informa√ß√µes Bloco Rendimentos Sujeitos a Tributa√ß√£o Exclusiva
+   * @var $n13Salario √© a diferen√ßa entre os campos:
    *  1(rendimento), 
    *  2(prev_oficial), 
    *  3(prev_privada), 
@@ -339,7 +339,7 @@ for ($iInd = 0; $iInd < $iNumRows; $iInd++) {
   $pdf1->w_outros6       = 0;
   
   /**
-   * InformaÁıes Bloco Complementares
+   * Informa√ß√µes Bloco Complementares
    */
   $pdf1->w_dmedic        = $oRendimento->plano_saude;
    

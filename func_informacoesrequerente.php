@@ -39,7 +39,7 @@ $oDadosAtendimento        = db_utils::fieldsMemory($rsBuscaAtendimento, 0);
 
 $oStdDadosRequerente = new stdClass();
 $oStdDadosRequerente->codigo         = "";
-$oStdDadosRequerente->nomerequerente = "Anônimo";
+$oStdDadosRequerente->nomerequerente = "AnÃ´nimo";
 $oStdDadosRequerente->cpfcnpj        = "";
 $oStdDadosRequerente->municipio      = "";
 $oStdDadosRequerente->cep            = "";
@@ -122,7 +122,7 @@ if ($oDadosAtendimento->ov05_sequencial == 2) {
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 	<script language="JavaScript" src="scripts/db_script.js"></script>
 	<script language="JavaScript" src="scripts/prototype.js"></script>
@@ -139,7 +139,7 @@ if ($oDadosAtendimento->ov05_sequencial == 2) {
 <body bgcolor="<?=$w01_corbody?>" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <div align="center">
 <fieldset style="width: 600px">
-  <legend class="titulo"><b>Informações do Requerente</b></legend>
+  <legend class="titulo"><b>InformaÃ§Ãµes do Requerente</b></legend>
   <table style="width: 98%" class="texto">
     <tr>
       <td width="120px"><b>Requerente:</b></td>
@@ -162,7 +162,7 @@ if ($oDadosAtendimento->ov05_sequencial == 2) {
     </tr>    
     
     <tr>
-      <td nowrap="nowrap"><b>Município / Estado:</b></td>
+      <td nowrap="nowrap"><b>MunicÃ­pio / Estado:</b></td>
       <td class="valores">
         <input class="valores" name="input" value="<?=$oStdDadosRequerente->municipio ." / ".$oStdDadosRequerente->estado;?>" readonly="readonly" />
       </td>
@@ -174,7 +174,7 @@ if ($oDadosAtendimento->ov05_sequencial == 2) {
       </td>
     </tr>
     <tr>
-      <td><b>Endereço:</b></td>
+      <td><b>EndereÃ§o:</b></td>
       <td class="valores">
         <input class="valores" name="input" value="<?=$oStdDadosRequerente->endereco;?>" readonly="readonly" />
       </td>

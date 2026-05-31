@@ -82,7 +82,7 @@ if(@$_COOKIE["cookie_codigo_cgm"]==""){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_vericampos(){
@@ -95,12 +95,12 @@ function js_vericampos(){
   	var inscricaow = new Number(inscricaow.replace(expReg,"")); 
   
  	 f
-	    alert("Favor preencher um dos campos de identificação!");
+	    alert("Favor preencher um dos campos de identificaÃ§Ã£o!");
 	    document.form1.inscricaow.focus();
 	    return false  
   	}
  	if(isNaN(inscricaow)){
-    	alert("Verifique o campo Inscricão!");
+    	alert("Verifique o campo InscricÃ£o!");
      	return false
   	}
 }
@@ -134,17 +134,17 @@ echo "<script>
 
 
 <?php 
-  //verifica se está logado
+  //verifica se estÃ¡ logado
   if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
 	   @$usuario = $id_usuario==""?$_COOKIE["cookie_codigo_cgm"]:$id_usuario;
-	   //é escritório?
+	   //Ã© escritÃ³rio?
 	   $result  = $clescrito->sql_record($clescrito->sql_query("","q02_inscr,a.z01_nome as z01_nome,a.z01_cgccpf as z01_cgccpf","","q10_numcgm = $usuario"));
 	   $escrito = $clescrito->numrows;
-	   //é issbase
+	   //Ã© issbase
 	   $result2 = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,z01_nome,z01_cgccpf","","q02_numcgm = $usuario"));
 	   //$result2 = $clissbase->sql_record($clissbase->sqlinscricoes_socios(0,$cookie_codigo_cgm,"*"));
 	   $issbase = $clissbase->numrows;
-	   //sócios
+	   //sÃ³cios
 	   //$sql = $clissbase->sqlinscricoes_socios(0,$cookie_codigo_cgm,"*");
   }
   if((@$escrito==0 && @$issbase==0) || @$usuario==""){
@@ -167,7 +167,7 @@ echo "<script>
                  onKeyPress='FormataCPFeCNPJ(this,event); return js_teclas(event);'></td>
  		</tr>
   <tr>
-    <td>Exercício:</td>
+    <td>ExercÃ­cio:</td>
   	<td>
   	
   	<select name="ano" size="1">
@@ -202,7 +202,7 @@ echo "<script>
   
   	$result2= pg_exec("select z01_cgccpf,z01_nome,q02_inscr,q02_numcgm from issbase inner join cgm on z01_numcgm=q02_numcgm where z01_numcgm=$usuario");
   	db_fieldsmemory($result2,0);
-  //	echo "<br><br>inscrição=  $z01_nome ";
+  //	echo "<br><br>inscriÃ§Ã£o=  $z01_nome ";
   
   
   //onKeyDown="FormataCNPJ(this,event)"

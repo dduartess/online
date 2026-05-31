@@ -49,7 +49,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
                        where id_usuario = $id_usuario") or die("Erro(38) alterando db_usuarios: ".pg_errormessage());
     db_query("COMMIT");
   }else{
-    db_msgbox("campo senha atual não confere!");
+    db_msgbox("campo senha atual nÃ£o confere!");
     db_redireciona($HTTP_SERVER_VARS['PHP_SELF']."?".base64_encode("id_usuario=".$id_usuario));
   }
   if(isset($enviaemail) && ($enviaemail == "sim")){
@@ -58,7 +58,7 @@ echo"
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda.</title>
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
 </head>
 
 <body bgcolor=\"#FFFFFF\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\">
@@ -76,7 +76,7 @@ echo"
               </tr>
               <tr>
                 <td><ul>
-                    <li><font size=\"2\" face=\"Arial, Helvetica, sans-serif\">Você alterou sua senha no site Prefeitura-OnLine,<br> este e-mail foi enviado conforme solicitado no site para verificação</li>
+                    <li><font size=\"2\" face=\"Arial, Helvetica, sans-serif\">VocÃª alterou sua senha no site Prefeitura-OnLine,<br> este e-mail foi enviado conforme solicitado no site para verificaÃ§Ã£o</li>
                   </ul></td>
               </tr>
               <tr>
@@ -87,7 +87,7 @@ echo"
               </tr>
               <tr>
                 <td><ul>
-                    <li>Usuário : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>$nome</strong></font></li>
+                    <li>UsuÃ¡rio : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>$nome</strong></font></li>
                   </ul></td>
               </tr>
               <tr>
@@ -102,7 +102,7 @@ echo"
               </tr>
               <tr>
                 <td><ul>
-                    <li>Data da alteração : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>".db_formatar(date("Y-m-d"),'d')."</strong></font></li>
+                    <li>Data da alteraÃ§Ã£o : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>".db_formatar(date("Y-m-d"),'d')."</strong></font></li>
                   </ul></td>
               </tr>
               <tr>
@@ -118,7 +118,7 @@ echo"
               </tr>
               <tr>
                 <td align=\"center\"><p><font size=\"1\">Este e-mail foi enviado automaticamente
-                    por favor não responda-o</font></p></td>
+                    por favor nÃ£o responda-o</font></p></td>
               </tr>
               <tr>
                 <td align=\"center\"><p><a href=\"http://www.dbseller.com.br\"><font size=\"1\">DBSeller Inform&aacute;tica
@@ -137,7 +137,7 @@ echo"
     db_fieldsmemory($rsConsultaConfigDBPref,0);
 
     $oMail = new Smtp();
-    $oMail->Send($email,$w13_emailadmin,'Alteração de senha do site Prefeitura On-Line',$mensagemDestinatario);
+    $oMail->Send($email,$w13_emailadmin,'AlteraÃ§Ã£o de senha do site Prefeitura On-Line',$mensagemDestinatario);
 
   }
   db_msgbox("Senha alterada com sucesso!");
@@ -147,20 +147,20 @@ echo"
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_versenha(){
   var senha = new String(document.form1.senha.value);
   var versenha = new String(document.form1.ver_senha.value);
   if(senha == "" || versenha == ""){
-    alert('Campo senha e verificação devem ser preenchidos!');
+    alert('Campo senha e verificaÃ§Ã£o devem ser preenchidos!');
     return false;
   }
   if(senha.toString() == versenha.toString()){
     return true;
   }else{
-    alert('A senha e sua verificação devem ser iguais!');
+    alert('A senha e sua verificaÃ§Ã£o devem ser iguais!');
     return false;
     document.form1.senha.focus();
   }
@@ -223,7 +223,7 @@ mens_div();
             <tr>
               <td height="25" nowrap><strong>Senha:</strong></td>
               <td height="25" nowrap><input name="senha" type="password" id="senha" size="20" maxlength="20" onkeyup="return js_forcaDaSenha();"/>
-              <strong>Força da senha: <span id="forcaSenha"></span></strong>
+              <strong>ForÃ§a da senha: <span id="forcaSenha"></span></strong>
               </td>
             </tr>
             <tr>
@@ -256,7 +256,7 @@ mens_div();
 <script type="text/javascript">
 
 /**
- * Verifica força de senha do campo senha
+ * Verifica forÃ§a de senha do campo senha
  * @return void
  */
 function js_forcaDaSenha() {
@@ -276,7 +276,7 @@ function js_forcaDaSenha() {
     oCampoForca.innerHTML = "<span style='color:blue;'>Forte</span>";
   } else if ( oMedio.test( oCampoSenha.value ) ) {
 
-    oCampoForca.innerHTML = "<span style='color:orange;'>Média</span>";
+    oCampoForca.innerHTML = "<span style='color:orange;'>MÃ©dia</span>";
   } else {
 
     oCampoForca.innerHTML = "<span style='color:red;'>Fraca</span>";

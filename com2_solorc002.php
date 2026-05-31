@@ -77,14 +77,14 @@ if(isset($forne) && $forne != "branco"){
 $result_pcorcamforne = $clpcorcamforne->sql_record($clpcorcamforne->sql_query(null,"pc20_codorc,pc20_dtate,pc20_hrate,z01_nome,z01_numcgm,z01_cgccpf,z01_ender,z01_compl,z01_munic,z01_uf,z01_cep,z01_telef,z01_fax,z01_contato","z01_numcgm","pc21_codorc=$pc20_codorc and pc21_numcgm=$cgm $fornecedores"));
 $numrows_pcorcamforne = $clpcorcamforne->numrows;
 if($numrows_pcorcamforne==0){
-  db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum registro encontrado ou orçamento sem fornecedores!");
+  db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum registro encontrado ou orÃ§amento sem fornecedores!");
 } 
 //die($clpcorcamitemsol->sql_query_pcmater(null,null,"pc23_valor,pc23_obs,pc23_vlrun,pc23_validmin,pc11_codigo,pc11_quant,pc01_descrmater,pc11_resum,pc11_pgto,pc11_prazo,pc11_seq,pc10_numero,m61_usaquant,m61_descr,pc17_codigo,pc17_quant,pc05_servico","pc11_seq","pc22_codorc=$pc20_codorc"));
 $result_itens = $clpcorcamitemsol->sql_record($clpcorcamitemsol->sql_query_pcmater(null,null,"pc23_valor,pc23_obs,pc23_vlrun,pc23_validmin,pc11_codigo,pc11_quant,pc01_descrmater,pc11_resum,pc11_pgto,pc11_prazo,pc11_seq,pc10_numero,m61_usaquant,m61_descr,pc17_codigo,pc17_quant,pc05_servico","pc11_seq","pc22_codorc=$pc20_codorc"));
 $numrows_itens= $clpcorcamitemsol->numrows;
 
 if($numrows_itens==0){
-  db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum item encontrado neste orçamento!");
+  db_redireciona("db_erros.php?fechar=true&db_erro=Nenhum item encontrado neste orÃ§amento!");
 }
 
 $pdf = new scpdf();
@@ -107,8 +107,8 @@ for($i=0;$i<$numrows_pcorcamforne;$i++){
   $result_solicitemunid = $clsolicitemunid->sql_record($clsolicitemunid->sql_query(null,"pc17_codigo,m61_descr","","pc17_codigo in (".$clpcorcamitemsol->sql_query_pcmater(null,null,"pc11_codigo","","pc22_codorc=$pc20_codorc").") "));
 */
 
-  $pdf1->labdados   = "SOLICITAÇÃO DE COMPRAS N";
-  $pdf1->labtitulo  = "Solicitação";
+  $pdf1->labdados   = "SOLICITAÃ‡ÃƒO DE COMPRAS N";
+  $pdf1->labtitulo  = "SolicitaÃ§Ã£o";
   $pdf1->labtipo    = "Tipo";
 
   $pdf1->prefeitura = $nomeinst;

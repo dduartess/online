@@ -92,7 +92,7 @@ $cllistainscr = new cl_listainscr;
 $cllistainscrcab = new cl_listainscrcab;
 $db_opcao = 1;
 $db_botao = true;
-if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir Inscrição na Lista"){
+if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir InscriÃ§Ã£o na Lista"){
   $p12_cnpj = str_replace(".","",$p12_cnpj);
   $p12_cnpj = str_replace("/","",$p12_cnpj);
   $p12_cnpj = str_replace("-","",$p12_cnpj);  
@@ -126,7 +126,7 @@ if(isset($fechar)){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 function js_vericampos(){
@@ -134,7 +134,7 @@ function js_vericampos(){
   jcnpj=document.form1.p12_cnpj.value;
   jinscricao=document.form1.p12_inscr.value;
   if(jinscricao==""){
-    alerta+="Inscrição\n";
+    alerta+="InscriÃ§Ã£o\n";
   }
   if(jcnpj==""){
     alerta +="CNPJ\n";
@@ -193,12 +193,12 @@ function js_cnpj(obj){
                   
                   if($linhas > 0 ){
                     db_fieldsmemory($result,0);
-                    echo "<p><font size='2'><strong>Escritório Contábil</strong> ".@$z01_nome."</font></p>";
+                    echo "<p><font size='2'><strong>EscritÃ³rio ContÃ¡bil</strong> ".@$z01_nome."</font></p>";
                   ?>
                     <table width="80%" border="1" cellspacing="0" cellpadding="0" class="texto">
                       <tr bgcolor="#3366cc"> 
                         <td align="center" nowrap colspan="2">
-                          <strong>Dados da Inscrição</strong>
+                          <strong>Dados da InscriÃ§Ã£o</strong>
                         </td>
                       </tr>
                       <tr> 
@@ -206,11 +206,11 @@ function js_cnpj(obj){
                           <table width="100%" border="0" cellspacing="2" cellpadding="0">
                             <tr>
                               <td align='right'>
-                                <strong>Inscrição:</strong>
+                                <strong>InscriÃ§Ã£o:</strong>
                               </td>
                               <td>
-                                <input type="text" name="p12_inscr" title="clique no botão ao lado para pesquisar as inscrição" size="6" >
-                                <input type="button" name="pesquisa" class="botao" value="Busca Dados" onClick="(document.form1.p12_inscr.value == ''?alert('Preencha uma inscrição'):js_inscr())"><br>
+                                <input type="text" name="p12_inscr" title="clique no botÃ£o ao lado para pesquisar as inscriÃ§Ã£o" size="6" >
+                                <input type="button" name="pesquisa" class="botao" value="Busca Dados" onClick="(document.form1.p12_inscr.value == ''?alert('Preencha uma inscriÃ§Ã£o'):js_inscr())"><br>
                               </td>
                             </tr>
                             <tr>
@@ -237,10 +237,10 @@ function js_cnpj(obj){
                               </td>
                               <td align="left" colspan="3" nowrap>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="submit" name="db_opcao" class="botao" value="Incluir Inscrição na Lista" onClick="return js_vericampos()">
+                                <input type="submit" name="db_opcao" class="botao" value="Incluir InscriÃ§Ã£o na Lista" onClick="return js_vericampos()">
                               </td>
                               <td align="right">
-                                <input type="submit" name="fechar" class="botao" value="Fechar Lista" <?=(isset($p12_codigo) && $p12_codigo != ""?"":"disabled")?> onClick="return confirm('Após fechar a lista ela não pode mais ser alterada\ndeseja fechar a lista?')"><br>
+                                <input type="submit" name="fechar" class="botao" value="Fechar Lista" <?=(isset($p12_codigo) && $p12_codigo != ""?"":"disabled")?> onClick="return confirm('ApÃ³s fechar a lista ela nÃ£o pode mais ser alterada\ndeseja fechar a lista?')"><br>
                               </td>
                             </tr>
                           </table>  
@@ -267,7 +267,7 @@ function js_cnpj(obj){
                       <tr>
                         <td align="center">
                           <fieldset style="border: 1px solid black">
-                          <legend align="center"><strong>Inscrições da lista</strong></legend>
+                          <legend align="center"><strong>InscriÃ§Ãµes da lista</strong></legend>
                           <iframe frameborder="0" scrolling="auto" src="inscrlista.php?<?=base64_encode('p12_codigo='.$p12_codigo)?>" name="inscricoes" width="100%" height="200">
                           </iframe>
                           </fieldset>
@@ -294,10 +294,10 @@ function js_cnpj(obj){
 </body>
 </html>
 <?php 
-if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir Inscrição na Lista"){
+if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir InscriÃ§Ã£o na Lista"){
   //$cllistainscr->erro(true,false);
   if($erro == true){
-    echo "<script>alert('Este CNPJ já esta cadastrado na lista\\nverifique!')</script>";
+    echo "<script>alert('Este CNPJ jÃ¡ esta cadastrado na lista\\nverifique!')</script>";
   }
   db_redireciona("listaescritorios001.php?".base64_encode('p12_codigo='.($cllistainscr->p12_codigo == ""?$p12_codigo:$cllistainscr->p12_codigo))."");
 }elseif((isset($HTTP_POST_VARS["opcao"]) && $HTTP_POST_VARS["opcao"])=="Excluir"){
@@ -307,5 +307,5 @@ if((isset($HTTP_POST_VARS["db_opcao"]) && $HTTP_POST_VARS["db_opcao"])=="Incluir
   //$cllistainscrcab->erro(true,false);
   db_redireciona("listaescritorios.php");
 }
-db_logs("","",0,"Digita inscrições na Lista de inscrições do escritório.");
+db_logs("","",0,"Digita inscriÃ§Ãµes na Lista de inscriÃ§Ãµes do escritÃ³rio.");
 ?>

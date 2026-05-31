@@ -55,7 +55,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"></script>

@@ -72,11 +72,11 @@ function js_verifica(){
 <table width="70%" border="0" cellspacing="2" cellpadding="2" align="center">
 	<tr class="titulo">
     	<td colspan="2" align="center" >
-    	Dados do Imóvel
+    	Dados do ImÃ³vel
       	</td>
   	</tr>
   	<tr class="texto">
-    	<td align="left" width="30%">Número da guia de ITBI:
+    	<td align="left" width="30%">NÃºmero da guia de ITBI:
     	</td>
     	<td align="left" > <?=@$cod?>
     	</td>

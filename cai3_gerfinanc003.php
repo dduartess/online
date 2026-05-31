@@ -62,14 +62,14 @@ try {
 }
 
 /*
- * Verificamos se a regra de emiss„o configurada para o tipo de dÈbito se trata de cobranÁa registrada
- * Caso seja cobranÁa registrada ent„o bloqueamos a emiss„o do recibo  
+ * Verificamos se a regra de emiss√£o configurada para o tipo de d√©bito se trata de cobran√ßa registrada
+ * Caso seja cobran√ßa registrada ent√£o bloqueamos a emiss√£o do recibo  
  */
 $sSqlCadTipoConvenio = "select ar11_cadtipoconvenio from cadconvenio where ar11_sequencial = {$oRegraEmissao->getConvenio()}";
 $rsCadTipoConvenio   = db_query($sSqlCadTipoConvenio);
 $iCadTipoConvenio    = db_utils::fieldsMemory($rsCadTipoConvenio,0)->ar11_cadtipoconvenio;
 if ($iCadTipoConvenio == 7) {
-  db_redireciona("db_erros.php?fechar=true&db_erro='A emiss„o do recibo deste tipo de dÈbito pode ser realizado apenas na Prefeitura'");
+  db_redireciona("db_erros.php?fechar=true&db_erro='A emiss√£o do recibo deste tipo de d√©bito pode ser realizado apenas na Prefeitura'");
   exit;
 }
 
@@ -87,7 +87,7 @@ if(!isset($emite_recibo_protocolo)){
   
   
   if(pg_numrows($result)==0){
-    echo "O cÛdigo do banco n„o esta cadastrado no arquivo arretipo para este tipo.";
+    echo "O c√≥digo do banco n√£o esta cadastrado no arquivo arretipo para este tipo.";
     exit;
   }
   db_fieldsmemory($result,0);
@@ -400,13 +400,13 @@ if(!isset($emite_recibo_protocolo)){
   
   if(isset($db_datausu)) {
     if(!checkdate(substr($db_datausu,5,2),substr($db_datausu,8,2),substr($db_datausu,0,4))){
-      echo "Data para C·lculo Inv·lida. <br><br>";
-      echo "Data dever· se superior a : ".date('Y-m-d',db_getsession("DB_datausu"));
+      echo "Data para C√°lculo Inv√°lida. <br><br>";
+      echo "Data dever√° se superior a : ".date('Y-m-d',db_getsession("DB_datausu"));
       exit;
     }
     if(mktime(0,0,0,substr($db_datausu,5,2),substr($db_datausu,8,2),substr($db_datausu,0,4)) < mktime(0,0,0,date('m',db_getsession("DB_datausu")),date('d',db_getsession("DB_datausu")),date('Y',db_getsession("DB_datausu"))) ){
-      echo "Data n„o permitida para c·lculo. <br><br>";
-      echo "Data dever· se superior a : ".date('Y-m-d',db_getsession("DB_datausu"));
+      echo "Data n√£o permitida para c√°lculo. <br><br>";
+      echo "Data dever√° se superior a : ".date('Y-m-d',db_getsession("DB_datausu"));
       exit;
     }
     $DB_DATACALC = mktime(0,0,0,substr($db_datausu,5,2),substr($db_datausu,8,2),substr($db_datausu,0,4));
@@ -481,7 +481,7 @@ for($i = 0;$i < pg_numrows($DadosPagamento);$i++) {
 //seleciona da tabela db_config, o numero do banco e a taxa bancaria e concatena em variavel
 
 $DadosInstit = db_query("select nomeinst,ender,munic,email,telef,cgc,uf,logo,to_char(tx_banc,'99.99') as tx_banc,numbanco from db_config where codigo = $instit");
-//cria codigo de barras e linha digit·vel
+//cria codigo de barras e linha digit√°vel
 $NumBanco = pg_result($DadosInstit,0,"numbanco");
 $taxabancaria = pg_result($DadosInstit,0,"tx_banc");
 $src = pg_result($DadosInstit,0,'logo');
@@ -499,7 +499,7 @@ if ( $total_recibo == 0 ){
 }
 $valor_parm = $total_recibo;
 
-//seleciona dados de identificacao. Verifica se È inscr ou matric e da o respectivo select
+//seleciona dados de identificacao. Verifica se √© inscr ou matric e da o respectivo select
 //essa variavel vem do cai3_gerfinanc002.php, pelo window open, criada por parse_str
 if(!empty($HTTP_POST_VARS["ver_matric"]) || $matricularecibo > 0 ) {
   $numero = @$HTTP_POST_VARS["ver_matric"] + $matricularecibo;
@@ -535,7 +535,7 @@ if(!empty($HTTP_POST_VARS["ver_matric"]) || $matricularecibo > 0 ) {
   db_fieldsmemory($Identificacao,0);
   
   $sPQLLocal     = "PQL: {$j05_codigoproprio} - {$j05_descr} / {$j06_quadraloc} / {$j06_lote}";
-  $ident_tipo_ii = 'ImÛvel';
+  $ident_tipo_ii = 'Im√≥vel';
 } else if(!empty($HTTP_POST_VARS["ver_inscr"]) || $inscricaorecibo > 0 ) {
   $numero = @$HTTP_POST_VARS["ver_inscr"] + $inscricaorecibo;
   $tipoidentificacao = "Inscricao :";
@@ -577,7 +577,7 @@ if(!empty($HTTP_POST_VARS["ver_matric"]) || $matricularecibo > 0 ) {
   where issbase.q02_inscr = $numero";
   $Identificacao = db_query($sqlidentificacao) or die($sqlidentificacao);
   
-  $ident_tipo_ii = 'Alvar·';
+  $ident_tipo_ii = 'Alvar√°';
   db_fieldsmemory($Identificacao,0);
 } else if(!empty($HTTP_POST_VARS["ver_numcgm"]) || $numcgmrecibo > 0 ) {
   $numero = @$HTTP_POST_VARS["ver_numcgm"] + $numcgmrecibo ;
@@ -678,7 +678,7 @@ if(isset($tipo_debito)) {
       for($xy=0;$xy<pg_numrows($result);$xy++){
         if( $exercv != pg_result($result,$xy,0)){
           $exercv = pg_result($result,$xy,0);
-          $histparcela .= "  ".pg_result($result,$xy,0).": MÍs:";
+          $histparcela .= "  ".pg_result($result,$xy,0).": M√™s:";
         }
         $histparcela .= "-".pg_result($result,$xy,1);
         
@@ -911,8 +911,8 @@ $pdf1->tipolograd    = 'Logradouro:';
 $pdf1->pretipolograd = 'Logradouro:';
 $pdf1->nomepri       = $nomepri;
 $pdf1->prenomepri    = $nomepri;
-$pdf1->tipocompl     = 'N˙mero:';
-$pdf1->pretipocompl  = 'N˙mero:';
+$pdf1->tipocompl     = 'N√∫mero:';
+$pdf1->pretipocompl  = 'N√∫mero:';
 $pdf1->nrpri         = $j39_numero;
 $pdf1->prenrpri      = $j39_numero;
 $pdf1->complpri      = $j39_compl;
@@ -1072,13 +1072,13 @@ $pdf1->linha_digitavel = $linhadigitavel;
 $pdf1->codigo_barras   = $codigobarras;
 $pdf1->descr6 = $datavencimento;  // Data de Vencimento
 $pdf1->descr7 = db_formatar(@$valor_parm,'f');  // qtd de URM ou valor
-//$pdf1->descr9 = $k03_numpre."001"; // cod. de arrecadaÁ„o
-$pdf1->descr9 = str_pad($k03_numpre."000",11,0,STR_PAD_LEFT); // cod. de arrecadaÁ„o
+//$pdf1->descr9 = $k03_numpre."001"; // cod. de arrecada√ß√£o
+$pdf1->descr9 = str_pad($k03_numpre."000",11,0,STR_PAD_LEFT); // cod. de arrecada√ß√£o
 
 
 $pdf1->predescr6 = $datavencimento;  // Data de Vencimento
 $pdf1->predescr7 = db_formatar(@$valor_parm,'f');  // qtd de URM ou valor
-$pdf1->predescr9 = str_pad($k03_numpre."000",11,0,STR_PAD_LEFT); // cod. de arrecadaÁ„o
+$pdf1->predescr9 = str_pad($k03_numpre."000",11,0,STR_PAD_LEFT); // cod. de arrecada√ß√£o
 /***************************************************************************************************************************************/
 $rsMsgcarne = db_query("select k03_msgbanco from numpref where k03_anousu = ".db_getsession('DB_anousu'));
 
@@ -1128,10 +1128,10 @@ if ($temdesconto == false) {
   $k00_mensagemdesconto = "";
 }
 
-// AndrÈ TI - Prefeitura de Maric· 
+// Andr√© TI - Prefeitura de Maric√° 
 $pdf1->sMensagemCaixa        = $k00_msgrecibo;
 $pdf1->sMensagemContribuinte = $k00_msgrecibo;
-// AndrÈ TI - Prefeitura de Maric· 
+// Andr√© TI - Prefeitura de Maric√° 
 
 $pdf1->descr12_1= "\n".$historico."\n".$k00_mensagemdesconto;
 $pdf1->pqllocal = $sPQLLocal;
@@ -1144,7 +1144,7 @@ $pdf1->dtparapag= $datavencimento; //date('d/m/Y',db_getsession('DB_datausu'));
 $pdf1->loteamento = $loteador;
 
 // ###################### BUSCA OS DADOS PARA IMPRIMIR O LOGO DO BANCO #########################
-//verifica se È ficha e busca o codigo do banco
+//verifica se √© ficha e busca o codigo do banco
 if($oRegraEmissao->isCobranca()){
       
   $rsConsultaBanco  = $cldb_bancos->sql_record($cldb_bancos->sql_query_file($oConvenio->getCodBanco()));
@@ -1271,7 +1271,7 @@ function MensagemCarne($exerc, $arretipo, $dtbase, $matric, $arrematric="w_arrem
 
     if($oDebito->qtdatraso >= 2) {
       // se tem duas ou mais parcelas em aberto...
-      $mensagem = "AVISO DE SUSPENS√O DO FORNECIMENTO DE ¡GUA: Fica o usu·rio avisado que a n„o regularizaÁ„o dos dÈbitos do imÛvel no prazo de 30 (trinta) dias, a contar do vencimento da segunda parcela em atraso, acarretar· na suspens„o do fornecimento de ·gua (art. 40, V, ß2∫ da Lei n.∫ 11.445/07).";
+      $mensagem = "AVISO DE SUSPENS√ÉO DO FORNECIMENTO DE √ÅGUA: Fica o usu√°rio avisado que a n√£o regulariza√ß√£o dos d√©bitos do im√≥vel no prazo de 30 (trinta) dias, a contar do vencimento da segunda parcela em atraso, acarretar√° na suspens√£o do fornecimento de √°gua (art. 40, V, ¬ß2¬∫ da Lei n.¬∫ 11.445/07).";
       break;
     } else {
 
@@ -1297,7 +1297,7 @@ function MensagemCarne($exerc, $arretipo, $dtbase, $matric, $arrematric="w_arrem
           }
           break;
         
-        // Saneamento B·sico (Agua Exercicio)
+        // Saneamento B√°sico (Agua Exercicio)
         case 20:
           if(empty($mensagem)) {
             $mensagem = "Imovel possui Debito no Exercicio";
@@ -1306,7 +1306,7 @@ function MensagemCarne($exerc, $arretipo, $dtbase, $matric, $arrematric="w_arrem
           }
           break;
 
-        // Outros DÈbitos
+        // Outros D√©bitos
         default:
           if(empty($mensagem)) {
             $mensagem = "Imovel possui Outros Debitos em Atraso";

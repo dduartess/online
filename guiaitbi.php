@@ -159,7 +159,7 @@ db_fieldsmemory($config,0);
       &nbsp; <font size="1">m2</font></td>
   </tr>
   <tr> 
-    <td colspan="4" nowrap><b>&nbsp;Características:</b>&nbsp;&nbsp;</td>
+    <td colspan="4" nowrap><b>&nbsp;CaracterÃ­sticas:</b>&nbsp;&nbsp;</td>
   </tr>
   <tr> 
     <td colspan="4"> 
@@ -216,7 +216,7 @@ db_fieldsmemory($config,0);
 </table>
 <table width="630" border="1" cellpadding="0" cellspacing="0">
 <tr>
-    <td><strong>&nbsp;Observações:</strong></td>
+    <td><strong>&nbsp;ObservaÃ§Ãµes:</strong></td>
 </tr>
   <tr> 
     <td style="font-size:10px"><?=str_replace("\n","<br>",$obsliber)?></td>

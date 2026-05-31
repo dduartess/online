@@ -41,7 +41,7 @@ function db_data($nome,$dia="",$mes="",$ano="") {
 		var expr = new RegExp("[0-"+(data.getMonth()==1?2:3)+"][0-9]");
 		var dia = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
 		if(str.match(expr) == null || str > dia[data.getMonth()] || str == "00") {
-		  alert("Dia inv·lido");
+		  alert("Dia inv√°lido");
 		  F.elements[nome].select();
 		  return false;
 		} else
@@ -49,7 +49,7 @@ function db_data($nome,$dia="",$mes="",$ano="") {
 	  } else if(nome.indexOf("mes") != -1) {
         var expr = new RegExp("[01][0-9]");	  
 		if(str.match(expr) == null || str > 12) {
-		  alert("Mes inv·lido");
+		  alert("Mes inv√°lido");
 		  F.elements[nome].select();
 		  return false;
 		} else
@@ -57,13 +57,13 @@ function db_data($nome,$dia="",$mes="",$ano="") {
 	  } else if(nome.indexOf("ano") != -1) {
         var expr = new RegExp("[12][0-9][0-9][0-9]");
 		if(str.match(expr) == null) {
-		  alert("Ano inv·lido");
+		  alert("Ano inv√°lido");
 		  F.elements[nome].select();
 		  return false;
 		} else
 		  return true;
 	  } else
-	    alert("Erro fatal na funÁ„o de verificaÁ„o de datas!!!!");
+	    alert("Erro fatal na fun√ß√£o de verifica√ß√£o de datas!!!!");
 	}
     function js_Passa(nome) {	
       var F = document.form1;
@@ -129,7 +129,7 @@ function db_getfile($arq,$text,$funcao="0") {
 	  return "";
 	}
   } else if($name != "" && $size == 0) {
-      db_erro("O arquivo $name n„o foi encontrado ou ele est· vazio. Verifique o seu caminho e o seu tamanho e tente novamente.");
+      db_erro("O arquivo $name n√£o foi encontrado ou ele est√° vazio. Verifique o seu caminho e o seu tamanho e tente novamente.");
   } else {
     copy($tmp_name,"$DB_FILES/$text");
     return $text;

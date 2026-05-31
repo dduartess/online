@@ -51,8 +51,8 @@ db_postmemory($_POST);
 $tipo_debito = $tipo;
 
 /**
- *  Verifica se a vari·vel $inicial est· setada. Se estiver, busca os numpres
- *  e numpar para as iniciais e faz um for para montar a vari·vel que È utilizada
+ *  Verifica se a vari√°vel $inicial est√° setada. Se estiver, busca os numpres
+ *  e numpar para as iniciais e faz um for para montar a vari√°vel que √© utilizada
  *  durante o processo.
  */
 if (isset($inicial)) {
@@ -96,7 +96,7 @@ if(!isset($emite_recibo_protocolo)){
  $result = pg_exec("select k00_codbco,k00_codage,k00_descr,k00_hist1,k00_hist2,k00_hist3,k00_hist4,k00_hist5,k00_hist6,k00_hist7,k00_hist8,k03_tipo,k00_tipoagrup from arretipo where k00_tipo = $tipo");
     
   if(pg_numrows($result)==0){
-    echo "O cÛdigo do banco n„o esta cadastrado no arquivo arretipo para este tipo.";
+    echo "O c√≥digo do banco n√£o esta cadastrado no arquivo arretipo para este tipo.";
     exit;
   }
   db_fieldsmemory($result,0);

@@ -50,7 +50,7 @@ db_fieldsmemory($resultbanco,0);
 
 $pdf = new PDF(); // abre a classe
 $pdf->SetFont('arial','B',10);
-$head1 = "CODIGO PARA DÉBITO ";
+$head1 = "CODIGO PARA DÃ‰BITO ";
 $head2 = "$cod ";
 $Letra = 'arial';
 $pdf->Open(); // abre o relatorio
@@ -61,7 +61,7 @@ $pdf->SetTextColor(0,0,0);
 $pdf->SetFillColor(235);
 $pdf->Ln(5);
 $pdf->SetFont('arial','B',12);
-$pdf->Cell(190,6,"CÓDIGO PARA DEBITO EM CONTA: ". $cod,1,1,"C",1);
+$pdf->Cell(190,6,"CÃ“DIGO PARA DEBITO EM CONTA: ". $cod,1,1,"C",1);
 $pdf->Ln(5);
 $pdf->SetFont('arial','B',8);
 $pdf->Cell(190,6,"DADOS DO CONTRIBUINTE",0,0,"C",1);
@@ -74,12 +74,12 @@ $pdf->Cell(110,6,$tipomi.": ".$mat_ins,0,1,"J",0);
 $pdf->Cell(110,6,'CGM: '.@$z01_numcgm,0,1,"J",0);
 $pdf->Ln(5);
 $pdf->SetFont('arial','B',8);
-$pdf->Cell(190,6,"DADOS DOS DÉBITOS",0,0,"C",1);
+$pdf->Cell(190,6,"DADOS DOS DÃ‰BITOS",0,0,"C",1);
 $pdf->Ln(5);
 $pdf->Cell(100,6,"DATA:".date("d/m/Y"),0,1,"J",0);
 $pdf->Cell(100,6,"BANCO:". $nomebco,0,1,"J",0);
 $pdf->Ln(5);
-$pdf->Cell(50,6,"CÓDIGO DE ARRECADAÇÃO",1,0,"C",1);
+$pdf->Cell(50,6,"CÃ“DIGO DE ARRECADAÃ‡ÃƒO",1,0,"C",1);
 $pdf->Cell(30,6,"PARCELA",1,0,"C",1);
 $pdf->Cell(30,6,"VENCIMENTO",1,0,"C",1);
 $pdf->Cell(30,6,"VALOR",1,1,"C",1);

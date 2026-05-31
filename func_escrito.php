@@ -39,7 +39,7 @@ $clescrito->rotulo->label("q10_numcgm");
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
 </head>
@@ -101,7 +101,7 @@ $clescrito->rotulo->label("q10_numcgm");
           db_fieldsmemory($result,0);
           echo "<script>".$funcao_js."('$q10_numcgm',false);</script>";
         }else{
-	       echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") não Encontrado',true);</script>";
+	       echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") nÃ£o Encontrado',true);</script>";
         }
       }
       ?>

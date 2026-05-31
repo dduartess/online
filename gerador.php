@@ -43,7 +43,7 @@ include("classes/db_db_certidaoweb_classe.php");
 $clcertidao = new cl_db_certidaoweb;
 $result = $clcertidao->sql_record($clcertidao->sql_query("","*","","ceracesso = '".$cod."'"));
 if($clcertidao->numrows == 0){
-  echo"<script>window.opener.alert('CNPJ ou CPF inv·lidos')</script>";
+  echo"<script>window.opener.alert('CNPJ ou CPF inv√°lidos')</script>";
   echo"<script>window.close()</script>";
   db_redireciona("certidaoautentica.php");
 }  
@@ -70,7 +70,7 @@ if(strcmp($dtat, $dtvenc)<"0"){
      <link href="config/estilos.css" rel="stylesheet" type="text/css">
     <body leftmargin="0" topmargin="50" marginwidth="0" marginheight="0" bgcolor="<?=$w01_corbody?>">
     <div align="center" class="bold2">
-     Certid„o v·lida!<br><br><br>
+     Certid√£o v√°lida!<br><br><br>
      <span class="verde"><?=$cod?>
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

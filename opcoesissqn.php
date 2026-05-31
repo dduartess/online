@@ -65,13 +65,13 @@ if( isset($planilha) ) {
 	} 
 }
 
-//Máximo de s lançadas
+//MÃ¡ximo de s lanÃ§adas
 $datahj= date("Y-m-d");
 $ip = db_verifica_ip();
 
 $ficha = db_getcadbancobranca(31,$ip,$datahj,db_getsession("DB_instit"),5);
 if($ficha == true){
-  //  ficha de compensação
+  //  ficha de compensaÃ§Ã£o
   $int_max = 54;
 
 }else if($ficha == false){
@@ -117,7 +117,7 @@ $dblink="digitaissqn.php";
 db_logs("","",0,"Digita Codigo do Contribuinte.");
 postmemory($HTTP_POST_VARS);
 
-//  tira a formatação do cnpj
+//  tira a formataÃ§Ã£o do cnpj
 $cgccpf = str_replace(".","",$cgc);
 $cgccpf = str_replace("/","",$cgccpf);
 $cgccpf = str_replace("-","",$cgccpf);
@@ -132,7 +132,7 @@ $sqlVerificaCgcPref = "
 $resultVerificaCgcPref = db_query($sqlVerificaCgcPref);
 $linhasVerificaCgcPref = pg_num_rows($resultVerificaCgcPref);
 if($linhasVerificaCgcPref > 0){
-	// não deixar acessar 
+	// nÃ£o deixar acessar 
 	db_msgbox("CNPJ Prefeitura, sendo utilizado para mais de um cgm.");
 	db_redireciona("digitaissqn.php?");
 	exit;
@@ -144,21 +144,21 @@ if(isset($primeiravez)){
   $cgccpf = str_replace("-","",$cgccpf);
 
 
-  //#################### se foi preenchido a inscrição #################################
+  //#################### se foi preenchido a inscriÃ§Ã£o #################################
   if ($inscricaow!=""){
   		$sql = "select * from issbase inner join cgm on z01_numcgm = q02_numcgm where q02_inscr=$inscricaow and z01_cgccpf = '$cgccpf'";
   		$result = db_query($sql);
-  		if(pg_numrows($result)!=0){  // cnpj e inscriçõs corretos
+  		if(pg_numrows($result)!=0){  // cnpj e inscriÃ§Ãµs corretos
    			db_fieldsmemory($result,0);
-  		}else{ // cnpj ou inscrição invalido
-   			redireciona("digitaissqn.php?".base64_encode('erroscripts=1Acesso a Rotina Inválido, verifique os dados digitados!'));
+  		}else{ // cnpj ou inscriÃ§Ã£o invalido
+   			redireciona("digitaissqn.php?".base64_encode('erroscripts=1Acesso a Rotina InvÃ¡lido, verifique os dados digitados!'));
   		}
   }
-  //#################### se não foi preenchido a inscrição #################################
+  //#################### se nÃ£o foi preenchido a inscriÃ§Ã£o #################################
   if ($inscricaow==""){
   		$sql1 = "select z01_numcgm,z01_cgccpf,z01_nome from cgm where z01_cgccpf = '$cgccpf'";
   		$result1 = db_query($sql1);
-  		if(pg_numrows($result1)!=0){  // cnpj correto... buscar inscrição
+  		if(pg_numrows($result1)!=0){  // cnpj correto... buscar inscriÃ§Ã£o
    			db_fieldsmemory($result1,0);
    			$sql2= "select * from issbase where q02_numcgm = '$z01_numcgm' and  q02_dtbaix is null";
    			$result2 = db_query($sql2);
@@ -171,13 +171,13 @@ if(isset($primeiravez)){
    			  //$inscricaow= "f";
    			}
   		}else{ // cnpj invalido
-  		  redireciona("digitaissqn.php?".base64_encode('erroscripts=Acesso a rotina inválido! Verifique os dados digitados!'));
+  		  redireciona("digitaissqn.php?".base64_encode('erroscripts=Acesso a rotina invÃ¡lido! Verifique os dados digitados!'));
   		  	
   		}
   }
 
    
-  // vê se ja existe alguma planilha para este mes e ano selecionado
+  // vÃª se ja existe alguma planilha para este mes e ano selecionado
    
   $sIssplan = " select * from issplan where q20_ano = $ano and q20_mes=$mes and q20_numcgm= $z01_numcgm order by q20_mes";
   $result3 = db_query($sIssplan);
@@ -196,7 +196,7 @@ if(isset($primeiravez)){
         <title>
             <?=$w01_titulo?>
         </title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script language="JavaScript" src="scripts/scripts.js"></script>
         <script language="JavaScript" src="scripts/db_script.js"></script>
         <script>
@@ -361,24 +361,24 @@ if(isset($primeiravez)){
                     alerta += "CNPJ\n";
                 }
                 if (jnomerazao == "") {
-                    alerta += "Nome/Razão Social\n";
+                    alerta += "Nome/RazÃ£o Social\n";
                 }
                 if (jsprestado == "") {
-                    alerta += "Serviço Prestado\n";
+                    alerta += "ServiÃ§o Prestado\n";
                 }
                 if (jvalservico == "") {
-                    alerta += "Serviço Prestado\n";
+                    alerta += "ServiÃ§o Prestado\n";
                 }
                 if (jnumnota == "") {
                     alerta += "Numero da Nota\n";
                 }
                 
                 if (jaliquota == "") {
-                    alerta += "Valor da Alíquota\n";
+                    alerta += "Valor da AlÃ­quota\n";
                 }
                 var expr = /[^0-9]+/;
                 if (jinscricao.match(expr) != null) {
-                    alerta += "Inscrição Inválida";
+                    alerta += "InscriÃ§Ã£o InvÃ¡lida";
                 }
 				if (jcnpj.value.length > 11) {
                    var retorna = js_verificaCGCCPF(jcnpj,'');					
@@ -402,7 +402,7 @@ if(isset($primeiravez)){
                 else 
                     if (retorna == true) {
                     
-                        if (document.form1.grava.value == 'Lança Registro') {
+                        if (document.form1.grava.value == 'LanÃ§a Registro') {
                             document.form1.gravadados.value = "inclui";
                         }
                         else {
@@ -426,12 +426,12 @@ if(isset($primeiravez)){
             function js_buscainscr(ins){
             
                 if (document.form1.inscricao.value == "") {
-                    alert('Preencha uma inscrição antes de efetuar a busca.');
+                    alert('Preencha uma inscriÃ§Ã£o antes de efetuar a busca.');
                 }
                 else {
                 
                     if (document.form1.inscricao.value == ins) {
-                        alert('Você não deve preencher aqui a sua própria inscrição!\nEste campo deve ser preenchido com a inscrição da empresa da qual o imposto foi retido.\nEsta regra vale somente para empresas do município.\nCaso a empresa da qual o imposto foi retido não seja do município este campo ficará em branco.');
+                        alert('VocÃª nÃ£o deve preencher aqui a sua prÃ³pria inscriÃ§Ã£o!\nEste campo deve ser preenchido com a inscriÃ§Ã£o da empresa da qual o imposto foi retido.\nEsta regra vale somente para empresas do municÃ­pio.\nCaso a empresa da qual o imposto foi retido nÃ£o seja do municÃ­pio este campo ficarÃ¡ em branco.');
                         document.form1.inscricao.value = '';
                         document.form1.inscricao.focus();
                         
@@ -446,7 +446,7 @@ if(isset($primeiravez)){
             
             function js_buscaop(codord){
                 if (codord == "") {
-                    alert('Preencha o código da ordem.');
+                    alert('Preencha o cÃ³digo da ordem.');
                 }
                 else {
                     pesquisaordem.location.href = 'pesquisaordem.php?codord=' + codord + '&ano=' + document.form1.ano.value + '&mes=' + document.form1.mes.value + '&planilha=' + document.form1.planilha.value;
@@ -461,7 +461,7 @@ if(isset($primeiravez)){
             }
             
             function js_erropesquisa(inscr){
-                alert('Inscrição:' + inscr + ' não encontrada');
+                alert('InscriÃ§Ã£o:' + inscr + ' nÃ£o encontrada');
                 document.form1.inscricao.value = '';
                 document.form1.inscricao.focus();
             }
@@ -509,7 +509,7 @@ if(isset($primeiravez)){
                     document.form1.q21_retido.checked = true;
                     var obj = document.form1;
                     if (obj.q21_situacao.checked == true) {
-                        alert('Para alterar o tipo de serviço desmarque a opção cancelado.');
+                        alert('Para alterar o tipo de serviÃ§o desmarque a opÃ§Ã£o cancelado.');
                         document.form1.q21_tipolanc.value = 2;
                     }
                     else {
@@ -566,7 +566,7 @@ if(isset($primeiravez)){
                     var ano = document.form1.ano.value;
                     //alert(' mes= '+mes+'   mes1= '+mes1+'  ano='+ano+'  ano1='+ano1);
                     if (mes != mes1 || ano != ano1) {
-                        alert('Data da nota fora do período da competência.');
+                        alert('Data da nota fora do perÃ­odo da competÃªncia.');
                         document.form1.q21_datanota_dia.value = "";
                         document.form1.q21_datanota_mes.value = "";
                         document.form1.q21_datanota_ano.value = "";
@@ -580,7 +580,7 @@ if(isset($primeiravez)){
         </script>
         <?php 
 
-// ################# função ######################################
+// ################# funÃ§Ã£o ######################################
 function monta_tabela($sql, $array_formata = array()){
   $result = db_query($sql);
   $lin = pg_num_rows($result);
@@ -611,7 +611,7 @@ function monta_tabela($sql, $array_formata = array()){
  	   
 
  	   
- 	  // Para montar a Tabela de acordo com formatação
+ 	  // Para montar a Tabela de acordo com formataÃ§Ã£o
  	  foreach($array_formata as $campo => $conteudo) {
 
  	    //echo $campo . "=" .$$campo."<br>";
@@ -643,7 +643,7 @@ function monta_tabela($sql, $array_formata = array()){
 
  	  echo "</tr>";
  	}
-}//######################## termina a função #######################################
+}//######################## termina a funÃ§Ã£o #######################################
 
 if ((isset ($numcgm)) and ($numcgm!="")){
   $sql="select z01_cgccpf, z01_nome,z01_numcgm from cgm where z01_numcgm = $numcgm";
@@ -685,7 +685,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 								<input name="pkq31_sequencial" type="hidden" value="">
                 <tr>
                     <td width="100%" colspan="5">
-                        <!-- ############ aki começa a montar a tabela do declarante ############################################# -->
+                        <!-- ############ aki comeÃ§a a montar a tabela do declarante ############################################# -->
                         <table width="100%" border="0" class="texto">
                             <tr>
                                 <td colspan="3" align="center" style="border: 1px solid">
@@ -704,18 +704,18 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 </small>
                             </td>
                             <?php 
-				//echo "inscrição = $inscricaow";
+				//echo "inscriÃ§Ã£o = $inscricaow";
 				if ($inscricaow =="" || $inscricaow=="f"){
 
 				  echo"
             		<td width='19%' <small>
-	             	<font color='$w01_corfontesite'> Empresa de fora do município</font>
+	             	<font color='$w01_corfontesite'> Empresa de fora do municÃ­pio</font>
 	              	</small>
 					";
 				  	
 				}else{
 				  echo"
-            		<td width='19%' <small><b>Inscrição:</b>
+            		<td width='19%' <small><b>InscriÃ§Ã£o:</b>
 	             	<font color='$w01_corfontesite'> $inscricaow</font>
 	              	</small>";
 				}
@@ -723,7 +723,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                             </td>
                             <td width="19%" nowrap>
                                 <small>
-                                <b>Competência:</b>
+                                <b>CompetÃªncia:</b>
                                 <font color="<?=$w01_corfontesite?>">
                                     <?=db_mes($mes)?>
                                     de 
@@ -753,14 +753,14 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                             <tr>
                                 <td colspan="4" align="center" style="border: 1px solid">
                                     <strong>DADOS
-                                        DOS SERVIÇOS (PRESTADOS/TOMADOS)</strong>
+                                        DOS SERVIÃ‡OS (PRESTADOS/TOMADOS)</strong>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left">
                                     <b>
                                         <small>
-                                            Tipo de serviço:
+                                            Tipo de serviÃ§o:
                                         </small>
                                     </b>
                                 </td>
@@ -773,7 +773,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                     </select>
                                     &nbsp;&nbsp;&nbsp;&nbsp; 
                                     <?php 
-				//verifica se é a prefeitura
+				//verifica se Ã© a prefeitura
 				$where = "";
 				//echo"numcgm = $numcgm   ...... cgc = $cgc ........  cnpj $cgccpf";
 				if((isset($cgc))and ($cgc!="")){
@@ -791,7 +791,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 				$resultpref = db_query($sqlpref);
 				$linhaspref = pg_num_rows($resultpref);
 				if($linhaspref>0){
-				  echo " <b><small>&nbsp;&nbsp;&nbsp;&nbsp; Código da ordem de pagamento :</small></b>
+				  echo " <b><small>&nbsp;&nbsp;&nbsp;&nbsp; CÃ³digo da ordem de pagamento :</small></b>
                           </td>
                           <td colspan='2'><input name='codord' type='text' size= '15' value=''>
                                           <input name= 'buscaop' type= 'button' value='Busca dados da ordem' class='botao' onclick = 'js_buscaop(document.form1.codord.value)'; >
@@ -826,7 +826,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                     <font size="1">
                                         * Este campo deve ser
                                         preenchido somente em casos em que a empresa da qual o imposto foi
-                                        retido seja do município. Caso você não tenha esta informação deixe
+                                        retido seja do municÃ­pio. Caso vocÃª nÃ£o tenha esta informaÃ§Ã£o deixe
                                         o campo em branco.
                                     </font>
                                 </td>
@@ -845,7 +845,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 <td align="left" width="140px">
                                     <b>
                                         <small>
-                                            Série:
+                                            SÃ©rie:
                                         </small>
                                     </b>
                                 </td>
@@ -893,7 +893,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 <td align="left">
                                     <b>
                                         <small>
-                                            Nome ou Razão Social:
+                                            Nome ou RazÃ£o Social:
                                         </small>
                                     </b>
                                 </td>
@@ -915,14 +915,14 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 <td align="left">
                                     <b>
                                         <small>
-                                            Dedução:
+                                            DeduÃ§Ã£o:
                                         </small>
                                     </b>
                                 </td>
                                 <td align="left">
                                     <input name="q21_valordeducao" type="text" id="q21_valordeducao" size="10" onChange="return js_veri();">&nbsp;&nbsp;&nbsp;&nbsp; <b>
                                         <small>
-                                            Base cálculo:
+                                            Base cÃ¡lculo:
                                         </small>
                                     </b>
                                     <input name="q21_valorbase" type="text" id="q21_valorbase" size="10" readonly class="readonly"> &nbsp;&nbsp;&nbsp;&nbsp;<b>
@@ -951,7 +951,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                         <?php }?>
                                     </select>
                                     <?php 
-}else{// não entra aki
+}else{// nÃ£o entra aki
   db_fieldsmemory($query,0);
   ?>
                                     <select name="aliquota" onBlur="return js_veri();" onselect="return js_veri();">
@@ -1065,7 +1065,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                 <td align="left">
                                     <b>
                                         <small>
-                                            Observação:
+                                            ObservaÃ§Ã£o:
                                         </small>
                                     </b>
                                 </td>
@@ -1075,24 +1075,24 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                             </tr>
                             <tr>
                                 <td align="left" colspan="4">
-                                    <input name="grava" class="botao" type="button" value="Lança Registro" style="visibility: visible" onclick="js_vericampos()">&nbsp;&nbsp; <input name="limpa" class="botao" type="button" value="Limpa Campos" onclick=" if (confirm('Confirma a limpeza dos campos?')){js_limpa()}"> &nbsp;&nbsp;<input name="proximo" class="botao" type="button" value="Próxima Etapa" onclick="js_proximo();" style="visibility: hidden">
+                                    <input name="grava" class="botao" type="button" value="LanÃ§a Registro" style="visibility: visible" onclick="js_vericampos()">&nbsp;&nbsp; <input name="limpa" class="botao" type="button" value="Limpa Campos" onclick=" if (confirm('Confirma a limpeza dos campos?')){js_limpa()}"> &nbsp;&nbsp;<input name="proximo" class="botao" type="button" value="PrÃ³xima Etapa" onclick="js_proximo();" style="visibility: hidden">
                                 </td>
                             </tr>
                         </table>
                         <?php 
 		
 		
-		// ######### botão proximo ###############
+		// ######### botÃ£o proximo ###############
 
 		if (isset($passaproximo)&& $passaproximo=="sim"){
 
 
-			// verifica se a matrícula já está cadastrada, caso já possuir dados cadastrados faz a alteração dos registros
+			// verifica se a matrÃ­cula jÃ¡ estÃ¡ cadastrada, caso jÃ¡ possuir dados cadastrados faz a alteraÃ§Ã£o dos registros
  		  $cl_issplan->sql_record($cl_issplan->sql_query_file(null, "q20_planilha", null, "q20_planilha = {$planilha}"));
 			
 			if ( $cl_issplan->numrows > 0) {
 				
-				// seta os campos que serão alterados
+				// seta os campos que serÃ£o alterados
 				$cl_issplan->q20_nomecontri = $nomecontri;
 				$cl_issplan->q20_fonecontri = $fonecontri;
 				$cl_issplan->q20_planilha   = $planilha;
@@ -1128,12 +1128,12 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                 document.form1.nova.value = nova1+(1);	
 	            document.form1.proximo.style.visibility='visible';
         </script>"; 
-    // se tiver incluindo uma nota de uma planilha alterada.. deve alterar o campo situação para alterado(2)
-    // se situação  for == emitido ou reemitido ...mudar para alterado
+    // se tiver incluindo uma nota de uma planilha alterada.. deve alterar o campo situaÃ§Ã£o para alterado(2)
+    // se situaÃ§Ã£o  for == emitido ou reemitido ...mudar para alterado
     $sqlerro = false;
     db_inicio_transacao();
    
-    if($nova==""){ // se for a primeira nota a ser lançada
+    if($nova==""){ // se for a primeira nota a ser lanÃ§ada
 
       $cl_issplan-> q20_numcgm = $z01_numcgm;
       $cl_issplan-> q20_ano = $ano;
@@ -1196,7 +1196,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
         if($linhaspla > 0){
           db_fieldsmemory($resultpla,0);
           if($q96_pagordem != $codord){
-            // não pode incluir
+            // nÃ£o pode incluir
             db_msgbox("Ja existe uma ordem de pagamento ($q96_pagordem) para esta planilha");
             $sqlerro = true;
             //$erro_msg ="Ja existe uma ordem de pagamento ($q96_pagordem) para esta planilha";
@@ -1207,8 +1207,8 @@ if ((isset ($numcgm)) and ($numcgm!="")){
         }else{
           
           if($nova!=""){
-          // se a planilha não tem op... não pode inclui, pois ela ja tem notas sem op... so pode incluir sem op
-          db_msgbox("Esta planilha ja possui notas lançadas sem ordem de compra, para incluir por ordem deve criar uma nova planilha.");
+          // se a planilha nÃ£o tem op... nÃ£o pode inclui, pois ela ja tem notas sem op... so pode incluir sem op
+          db_msgbox("Esta planilha ja possui notas lanÃ§adas sem ordem de compra, para incluir por ordem deve criar uma nova planilha.");
           $sqlerro = true;
           }
         }
@@ -1218,7 +1218,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
     ##################### tirar depois ########### 
     //$sqlerro = true;
      
-    // se situação for igual a emitir ou reemitir
+    // se situaÃ§Ã£o for igual a emitir ou reemitir
     if(isset($q20_situacao)){
 	    if (($q20_situacao==3 )||( $q20_situacao==4)){
 	      $cl_issplan->q20_situacao = 2;
@@ -1334,7 +1334,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 		  $resultexc = db_query($sqlexc);
 		  db_fieldsmemory($resultexc,0);
 
-     //TEMOS QUE VERIFICAR SE É A ULTIMA NOTA EXCLUIDA... SE FOR TEMOS Q ANULAR A PLANILHA
+     //TEMOS QUE VERIFICAR SE Ã‰ A ULTIMA NOTA EXCLUIDA... SE FOR TEMOS Q ANULAR A PLANILHA
      $sqlnum = "select  q21_planilha,q21_sequencial from issplanit 
 		            where q21_planilha = $q21_planilha and q21_status = 1";
 		 $resultnum = db_query($sqlnum);
@@ -1348,7 +1348,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 				
 				 echo "
 				 <script>
-				 var conf = confirm('Se excluir a última nota terá que anular a planilha. Deseja anular a planilha?');
+				 var conf = confirm('Se excluir a Ãºltima nota terÃ¡ que anular a planilha. Deseja anular a planilha?');
 				 if(conf){
 				 	 location.href = 'anulaplanilha.php?planilha=$q21_planilha&mes=$mes&ano=$ano&numcgm=$z01_numcgm&inscricaow=$inscricaow&q21_sequencial=$q21_sequencial&ultima=sim';
 				 }else{";
@@ -1364,17 +1364,17 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 			  db_inicio_transacao();
 			  echo"<script> document.form1.proximo.style.visibility='visible';
 	         </script>"; 
-				// não da pra ser por metodo... porque ele tenta alterar os campos em ranco da tela... ele não sabe q tem q alterar só o status.	 
+				// nÃ£o da pra ser por metodo... porque ele tenta alterar os campos em ranco da tela... ele nÃ£o sabe q tem q alterar sÃ³ o status.	 
 				$sqlaltera = " update issplanit set q21_status= 3 where q21_sequencial = $pkq21_sequencial";
 				$resultealtera = db_query($sqlaltera);
 				if($resultealtera == false){
 				  $sqlerro = true;
 				  //die($sqlaltera);
-				  $erro_msg = " Erro na exclusão na nota ";
+				  $erro_msg = " Erro na exclusÃ£o na nota ";
 				  db_msgbox($erro_msg);
 				}	 
 			
-	    // se situação for igual a emitir ou reemitir
+	    // se situaÃ§Ã£o for igual a emitir ou reemitir
 	      if (($q20_situacao==3 )||( $q20_situacao==4)){
 	        $cl_issplan->q20_situacao = 2;
 	        $cl_issplan->q20_planilha = $q21_planilha;
@@ -1451,7 +1451,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 				db_fieldsmemory($result_valorissplanit,0);
 			}else{
 				$sqlerro = true;
-				$erro_msg = " Erro na alteração na nota ";
+				$erro_msg = " Erro na alteraÃ§Ã£o na nota ";
 		    db_msgbox($erro_msg);
 			}
 	
@@ -1498,9 +1498,9 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 	
 			  }
 			}
-			// só inclui nova se for alterado o valor da nota
+			// sÃ³ inclui nova se for alterado o valor da nota
 			if($valornotaorigem != $q21_valorimposto){
-				// alterar o status da nota para desativado por alteração
+				// alterar o status da nota para desativado por alteraÃ§Ã£o
         //usei update por no metodo iria alterar todos os campos e eu quero alterar so status.
 			  if($sqlerro==false){
 	        $sqlaltera = " update issplanit set q21_status= 2 where q21_sequencial = $pkq21_sequencial";
@@ -1508,7 +1508,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
 				  if($resultealtera == false){
 					  $sqlerro = true;
 					  //die($sqlaltera);
-			      $erro_msg = " Erro na alteração na nota ";
+			      $erro_msg = " Erro na alteraÃ§Ã£o na nota ";
 			      db_msgbox($erro_msg);
 			  	}
 			  }
@@ -1577,7 +1577,7 @@ if ((isset ($numcgm)) and ($numcgm!="")){
                                             TIPO SER.
                                         </th>
                                         <th>
-                                            INSCRIÇÃO
+                                            INSCRIÃ‡ÃƒO
                                         </th>
                                         <th>
                                             CNPJ

@@ -61,7 +61,7 @@ else
   
   switch($campo) {
     case "k11_id":
-      $sql = "select (k11_id || '##' || k11_id) as db_codigo,k11_id as db_codigo,k11_id as Código,k11_ipterm as \"Ip/Term\",k11_local as Local 
+      $sql = "select (k11_id || '##' || k11_id) as db_codigo,k11_id as db_codigo,k11_id as CÃ³digo,k11_ipterm as \"Ip/Term\",k11_local as Local 
 	          from cfautent 
 			  where k11_id like '".$k11_id."%'
 		      order by k11_id";
@@ -71,7 +71,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onFocus="document.form5.filtro.focus()">

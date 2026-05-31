@@ -72,23 +72,23 @@ class cl_issplanit {
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
                  q21_sequencial = int4 = q21_sequencial 
-                 q21_planilha = int4 = Código da Planilha 
+                 q21_planilha = int4 = CÃ³digo da Planilha 
                  q21_cnpj = varchar(40) = CNPJ 
                  q21_nome = varchar(60) = Nome 
-                 q21_servico = varchar(40) = Serviço 
+                 q21_servico = varchar(40) = ServiÃ§o 
                  q21_nota = varchar(10) = Nota 
-                 q21_serie = varchar(5) = Série 
-                 q21_valorser = float8 = Valor do Serviço 
-                 q21_aliq = float8 = Alíquota 
+                 q21_serie = varchar(5) = SÃ©rie 
+                 q21_valorser = float8 = Valor do ServiÃ§o 
+                 q21_aliq = float8 = AlÃ­quota 
                  q21_valor = float8 = Valor 
-                 q21_dataop = date = Data da operação 
-                 q21_horaop = char(5) = hora da operação 
-                 q21_tipolanc = int4 = Tipo de serviço 
-                 q21_situacao = int4 = Situação 
-                 q21_valordeducao = float8 = Dedução 
-                 q21_valorbase = float8 = Base de cálculo 
+                 q21_dataop = date = Data da operaÃ§Ã£o 
+                 q21_horaop = char(5) = hora da operaÃ§Ã£o 
+                 q21_tipolanc = int4 = Tipo de serviÃ§o 
+                 q21_situacao = int4 = SituaÃ§Ã£o 
+                 q21_valordeducao = float8 = DeduÃ§Ã£o 
+                 q21_valorbase = float8 = Base de cÃ¡lculo 
                  q21_retido = bool = Imposto retido 
-                 q21_obs = text = Observação 
+                 q21_obs = text = ObservaÃ§Ã£o 
                  q21_datanota = date = Data da nota 
                  q21_valorimposto = float4 = Valor do Imposto 
                  q21_status = int4 = Status 
@@ -154,10 +154,10 @@ class cl_issplanit {
    function incluir ($q21_sequencial){ 
       $this->atualizacampos();
      if($this->q21_planilha == null ){ 
-       $this->erro_sql = " Campo Código da Planilha nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo da Planilha nao Informado.";
        $this->erro_campo = "q21_planilha";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -166,7 +166,7 @@ class cl_issplanit {
        $this->erro_sql = " Campo CNPJ nao Informado.";
        $this->erro_campo = "q21_cnpj";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -175,16 +175,16 @@ class cl_issplanit {
        $this->erro_sql = " Campo Nome nao Informado.";
        $this->erro_campo = "q21_nome";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q21_servico == null ){ 
-       $this->erro_sql = " Campo Serviço nao Informado.";
+       $this->erro_sql = " Campo ServiÃ§o nao Informado.";
        $this->erro_campo = "q21_servico";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -193,25 +193,25 @@ class cl_issplanit {
        $this->erro_sql = " Campo Nota nao Informado.";
        $this->erro_campo = "q21_nota";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q21_valorser == null ){ 
-       $this->erro_sql = " Campo Valor do Serviço nao Informado.";
+       $this->erro_sql = " Campo Valor do ServiÃ§o nao Informado.";
        $this->erro_campo = "q21_valorser";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q21_aliq == null ){ 
-       $this->erro_sql = " Campo Alíquota nao Informado.";
+       $this->erro_sql = " Campo AlÃ­quota nao Informado.";
        $this->erro_campo = "q21_aliq";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -220,7 +220,7 @@ class cl_issplanit {
        $this->erro_sql = " Campo Valor nao Informado.";
        $this->erro_campo = "q21_valor";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -229,37 +229,37 @@ class cl_issplanit {
        $this->q21_dataop = "null";
      }
      if($this->q21_tipolanc == null ){ 
-       $this->erro_sql = " Campo Tipo de serviço nao Informado.";
+       $this->erro_sql = " Campo Tipo de serviÃ§o nao Informado.";
        $this->erro_campo = "q21_tipolanc";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q21_situacao == null ){ 
-       $this->erro_sql = " Campo Situação nao Informado.";
+       $this->erro_sql = " Campo SituaÃ§Ã£o nao Informado.";
        $this->erro_campo = "q21_situacao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q21_valordeducao == null ){ 
-       $this->erro_sql = " Campo Dedução nao Informado.";
+       $this->erro_sql = " Campo DeduÃ§Ã£o nao Informado.";
        $this->erro_campo = "q21_valordeducao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->q21_valorbase == null ){ 
-       $this->erro_sql = " Campo Base de cálculo nao Informado.";
+       $this->erro_sql = " Campo Base de cÃ¡lculo nao Informado.";
        $this->erro_campo = "q21_valorbase";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -268,7 +268,7 @@ class cl_issplanit {
        $this->erro_sql = " Campo Imposto retido nao Informado.";
        $this->erro_campo = "q21_retido";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -280,7 +280,7 @@ class cl_issplanit {
        $this->erro_sql = " Campo Valor do Imposto nao Informado.";
        $this->erro_campo = "q21_valorimposto";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -289,7 +289,7 @@ class cl_issplanit {
        $this->erro_sql = " Campo Status nao Informado.";
        $this->erro_campo = "q21_status";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -299,7 +299,7 @@ class cl_issplanit {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: issplanit_q21_sequencial_seq do campo: q21_sequencial"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -308,9 +308,9 @@ class cl_issplanit {
      }else{
        $result = @db_query("select last_value from issplanit_q21_sequencial_seq");
        if(($result != false) && (pg_result($result,0,0) < $q21_sequencial)){
-         $this->erro_sql = " Campo q21_sequencial maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo q21_sequencial maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -321,7 +321,7 @@ class cl_issplanit {
      if(($this->q21_sequencial == null) || ($this->q21_sequencial == "") ){ 
        $this->erro_sql = " Campo q21_sequencial nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -376,13 +376,13 @@ class cl_issplanit {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "itens da planilha de retenção na fonte ($this->q21_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "itens da planilha de retenção na fonte já Cadastrado";
+         $this->erro_sql   = "itens da planilha de retenÃ§Ã£o na fonte ($this->q21_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "itens da planilha de retenÃ§Ã£o na fonte jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "itens da planilha de retenção na fonte ($this->q21_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "itens da planilha de retenÃ§Ã£o na fonte ($this->q21_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -392,7 +392,7 @@ class cl_issplanit {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q21_sequencial;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -437,7 +437,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo q21_sequencial nao Informado.";
          $this->erro_campo = "q21_sequencial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -447,10 +447,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_planilha = $this->q21_planilha ";
        $virgula = ",";
        if(trim($this->q21_planilha) == null ){ 
-         $this->erro_sql = " Campo Código da Planilha nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo da Planilha nao Informado.";
          $this->erro_campo = "q21_planilha";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -463,7 +463,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo CNPJ nao Informado.";
          $this->erro_campo = "q21_cnpj";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -476,7 +476,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo Nome nao Informado.";
          $this->erro_campo = "q21_nome";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -486,10 +486,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_servico = '$this->q21_servico' ";
        $virgula = ",";
        if(trim($this->q21_servico) == null ){ 
-         $this->erro_sql = " Campo Serviço nao Informado.";
+         $this->erro_sql = " Campo ServiÃ§o nao Informado.";
          $this->erro_campo = "q21_servico";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -502,7 +502,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo Nota nao Informado.";
          $this->erro_campo = "q21_nota";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -516,10 +516,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_valorser = $this->q21_valorser ";
        $virgula = ",";
        if(trim($this->q21_valorser) == null ){ 
-         $this->erro_sql = " Campo Valor do Serviço nao Informado.";
+         $this->erro_sql = " Campo Valor do ServiÃ§o nao Informado.";
          $this->erro_campo = "q21_valorser";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -529,10 +529,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_aliq = $this->q21_aliq ";
        $virgula = ",";
        if(trim($this->q21_aliq) == null ){ 
-         $this->erro_sql = " Campo Alíquota nao Informado.";
+         $this->erro_sql = " Campo AlÃ­quota nao Informado.";
          $this->erro_campo = "q21_aliq";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -545,7 +545,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo Valor nao Informado.";
          $this->erro_campo = "q21_valor";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -568,10 +568,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_tipolanc = $this->q21_tipolanc ";
        $virgula = ",";
        if(trim($this->q21_tipolanc) == null ){ 
-         $this->erro_sql = " Campo Tipo de serviço nao Informado.";
+         $this->erro_sql = " Campo Tipo de serviÃ§o nao Informado.";
          $this->erro_campo = "q21_tipolanc";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -581,10 +581,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_situacao = $this->q21_situacao ";
        $virgula = ",";
        if(trim($this->q21_situacao) == null ){ 
-         $this->erro_sql = " Campo Situação nao Informado.";
+         $this->erro_sql = " Campo SituaÃ§Ã£o nao Informado.";
          $this->erro_campo = "q21_situacao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -594,10 +594,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_valordeducao = $this->q21_valordeducao ";
        $virgula = ",";
        if(trim($this->q21_valordeducao) == null ){ 
-         $this->erro_sql = " Campo Dedução nao Informado.";
+         $this->erro_sql = " Campo DeduÃ§Ã£o nao Informado.";
          $this->erro_campo = "q21_valordeducao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -607,10 +607,10 @@ class cl_issplanit {
        $sql  .= $virgula." q21_valorbase = $this->q21_valorbase ";
        $virgula = ",";
        if(trim($this->q21_valorbase) == null ){ 
-         $this->erro_sql = " Campo Base de cálculo nao Informado.";
+         $this->erro_sql = " Campo Base de cÃ¡lculo nao Informado.";
          $this->erro_campo = "q21_valorbase";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -623,7 +623,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo Imposto retido nao Informado.";
          $this->erro_campo = "q21_retido";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -649,7 +649,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo Valor do Imposto nao Informado.";
          $this->erro_campo = "q21_valorimposto";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -662,7 +662,7 @@ class cl_issplanit {
          $this->erro_sql = " Campo Status nao Informado.";
          $this->erro_campo = "q21_status";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -725,9 +725,9 @@ class cl_issplanit {
      $result = @db_query($sql);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "itens da planilha de retenção na fonte nao Alterado. Alteracao Abortada.\\n";
+       $this->erro_sql   = "itens da planilha de retenÃ§Ã£o na fonte nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->q21_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -735,18 +735,18 @@ class cl_issplanit {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "itens da planilha de retenção na fonte nao foi Alterado. Alteracao Executada.\\n";
+         $this->erro_sql = "itens da planilha de retenÃ§Ã£o na fonte nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->q21_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->q21_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -805,9 +805,9 @@ class cl_issplanit {
      $result = @db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "itens da planilha de retenção na fonte nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "itens da planilha de retenÃ§Ã£o na fonte nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$q21_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -815,18 +815,18 @@ class cl_issplanit {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "itens da planilha de retenção na fonte nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "itens da planilha de retenÃ§Ã£o na fonte nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$q21_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$q21_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -841,7 +841,7 @@ class cl_issplanit {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -850,7 +850,7 @@ class cl_issplanit {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:issplanit";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

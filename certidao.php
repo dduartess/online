@@ -121,7 +121,7 @@ if (isset($oPost->pesquisa) && $oPost->pesquisa == "Pesquisa") {
 	} else if ($linhascgm > 1){
 		msgbox("Inconsistencia de dados, procure a Prefeitura.");
 	} else {
-		msgbox("CPF ou CNPJ inválido");
+		msgbox("CPF ou CNPJ invÃ¡lido");
 	}
 }
 
@@ -144,7 +144,7 @@ if (isset($w13_libcertpos) && $w13_libcertpos == "t") {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php db_estilosite();?>
@@ -267,7 +267,7 @@ if (isset($w13_libcertpos) && $w13_libcertpos == "t") {
            <tr align=\"center\"> 
              <td height=\"28\">
                <a class=\"links\" href=\"cai3_certidao.php?matricula=".$j01_matric."\">
-                 <img src=\"imagens/folder4.gif\" border=\"0\">Emite Certid&atilde;o da Matrícula ".$j01_matric."
+                 <img src=\"imagens/folder4.gif\" border=\"0\">Emite Certid&atilde;o da MatrÃ­cula ".$j01_matric."
                </a>
              </td>
            </tr>        
@@ -282,7 +282,7 @@ if (isset($w13_libcertpos) && $w13_libcertpos == "t") {
            <tr align=\"center\"> 
              <td height=\"28\"> 
                <a class=\"links\" href=\"cai3_certidao.php?inscricao=".$q02_inscr."\">
-                 <img src=\"imagens/folder4.gif\" border=\"0\">Emite Certid&atilde;o da Inscrição ".$q02_inscr."
+                 <img src=\"imagens/folder4.gif\" border=\"0\">Emite Certid&atilde;o da InscriÃ§Ã£o ".$q02_inscr."
                </a>
              </td>
            </tr>        

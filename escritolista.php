@@ -41,7 +41,7 @@ if($cllistainscrcab->numrows > 0 ){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php db_estilosite();
@@ -57,7 +57,7 @@ if($cllistainscrcab->numrows > 0 ){
       <table width="100%" class="tab">
 	<tr>
 	  <th align="center">
-	    <strong>Código</strong>
+	    <strong>CÃ³digo</strong>
 	  </th>
 	  <th align="center">
 	    <strong>Data</strong>
@@ -69,7 +69,7 @@ if($cllistainscrcab->numrows > 0 ){
 	    <strong>Contato</strong>
 	  </th>
 	  <th align="center">
-	    <strong>Opções</strong>
+	    <strong>OpÃ§Ãµes</strong>
 	  </th>
 	</tr>
 <?php 
@@ -95,16 +95,16 @@ for($i=0;$i<$numrows;$i++){
 	    <strong><?=@$p11_contato?></strong>
 	  </td>
 	  <td align="left" nowrap>
-	    <input class="botao" type="<?=($p11_fechado == 'f'?"submit":"button")?>" value="<?=($p11_fechado == 'f'?"Fechar Lista":"Imprimir Lista")?>" name="opcao" <?=($p11_fechado == 'f'?"onclick=\"document.form1.p11_codigo_fechar.value='$p11_codigo';return confirm('Após fechar a lista ela não pode mais ser alterada\\ndeseja fechar a lista?');\"":"onclick=\"js_imprimir('$p11_codigo')\"")?>>
+	    <input class="botao" type="<?=($p11_fechado == 'f'?"submit":"button")?>" value="<?=($p11_fechado == 'f'?"Fechar Lista":"Imprimir Lista")?>" name="opcao" <?=($p11_fechado == 'f'?"onclick=\"document.form1.p11_codigo_fechar.value='$p11_codigo';return confirm('ApÃ³s fechar a lista ela nÃ£o pode mais ser alterada\\ndeseja fechar a lista?');\"":"onclick=\"js_imprimir('$p11_codigo')\"")?>>
 	    <?php 
 	    if($p11_processado == 'f' && $p11_fechado == 'f'){
 	    ?>
 	      <input type="submit" value="Alterar Lista" name="alterar" class="botao" onclick="document.form1.p11_codigo_alterar.value='<?=$p11_codigo?>'">
 	    <?php 
 	    }elseif($p11_processado == 't'){
-	      echo "<strong><font size='1'>.: lista já processada na Prefeitura :.</font></strong>";
+	      echo "<strong><font size='1'>.: lista jÃ¡ processada na Prefeitura :.</font></strong>";
 	    }else{
-	      echo "<strong><font size='1'>.: lista já fechada pelo escritório :.</font></strong>";
+	      echo "<strong><font size='1'>.: lista jÃ¡ fechada pelo escritÃ³rio :.</font></strong>";
 	    }
 	    if($p11_fechado == 'f'){
 	    ?>

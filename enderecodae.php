@@ -31,7 +31,7 @@ include("libs/db_stdlib.php");
 include("libs/db_sql.php");
 include("db_funcoes.php");
 postmemory($HTTP_POST_VARS);
-parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));// esquema de codificação de criptografia
+parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));// esquema de codificaÃ§Ã£o de criptografia
 $result = pg_exec("SELECT distinct m_publico,m_arquivo,m_descricao
                        FROM db_menupref 
                        WHERE m_arquivo = 'digitadae.php'
@@ -46,7 +46,7 @@ if($m_publico != 't'){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
@@ -65,7 +65,7 @@ function js_vericampos(){
     alerta +="Rua\n";
   }
   if(numero==""){
-    alerta +="Número\n";
+    alerta +="NÃºmero\n";
   }
   if(bairro==""){
     alerta +="Bairro\n";
@@ -90,7 +90,7 @@ return false;
  <form name="form1" method="post" action="enderecodae.php" onSubmit="return js_vericampos()">
    <table   border="0" cellspacing="2" cellpadding="0">
      <tr class="titulo2"><br>
-       <td nowrap title="Endereço" >
+       <td nowrap title="EndereÃ§o" >
         
          Rua:
          
@@ -103,9 +103,9 @@ return false;
        </td>
      </tr>
      <tr class="titulo2">
-       <td nowrap title="Número">
+       <td nowrap title="NÃºmero">
          
-         Número:
+         NÃºmero:
          
        </td>
        <td>

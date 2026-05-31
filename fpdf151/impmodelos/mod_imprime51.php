@@ -13,7 +13,7 @@
                 $this->objpdf->setfillcolor(255,255,255);
 //                $this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
                 $this->objpdf->Setfont('Arial','B',11);
-                $this->objpdf->text(150,$xlin-13,'RECIBO VÁLIDO ATÉ: ');
+                $this->objpdf->text(150,$xlin-13,'RECIBO VÃLIDO ATÃ‰: ');
                 $this->objpdf->text(159,$xlin-8,$this->datacalc);
                 
                 //Via
@@ -24,7 +24,7 @@
                   $str_via = 'Prefeitura';
                 }
                 $this->objpdf->Setfont('Arial','B',8);
-                $this->objpdf->text(178,$xlin-1,($i+1).'ª Via '.$str_via );
+                $this->objpdf->text(178,$xlin-1,($i+1).'Âª Via '.$str_via );
         
                 $this->objpdf->Image('imagens/files/'.$this->logo,15,$xlin-17,12);
                 $this->objpdf->Setfont('Arial','B',9);
@@ -40,13 +40,13 @@
         
                 $this->objpdf->Roundedrect($xcol,$xlin+2,$xcol+119,20,2,'DF','1234');
                 $this->objpdf->Setfont('Arial','',6);
-                $this->objpdf->text($xcol+2,$xlin+4,'Identificação:');
+                $this->objpdf->text($xcol+2,$xlin+4,'IdentificaÃ§Ã£o:');
                 $this->objpdf->Setfont('Arial','',8);
                 $this->objpdf->text($xcol+2,$xlin+7,'Nome :');
                 $this->objpdf->text($xcol+17,$xlin+7,$this->nome);
-                $this->objpdf->text($xcol+2,$xlin+11,'Endereço :');
+                $this->objpdf->text($xcol+2,$xlin+11,'EndereÃ§o :');
                 $this->objpdf->text($xcol+17,$xlin+11,$this->ender);
-                $this->objpdf->text($xcol+2,$xlin+15,'Município :');
+                $this->objpdf->text($xcol+2,$xlin+15,'MunicÃ­pio :');
                 $this->objpdf->text($xcol+17,$xlin+15,$this->munic);
                 $this->objpdf->text($xcol+75,$xlin+15,'CEP :');
                 $this->objpdf->text($xcol+82,$xlin+15,$this->cep);
@@ -95,7 +95,7 @@
                         $this->objpdf->setx($xcol+3+$maiscol);
                         $this->objpdf->cell(5,3,"Rec",0,0,"L",0);
                         $this->objpdf->cell(10,3,"Reduz",0,0,"L",0);
-                          $this->objpdf->cell(63,3,"Descrição",0,0,"L",0);
+                          $this->objpdf->cell(63,3,"DescriÃ§Ã£o",0,0,"L",0);
                       $this->objpdf->cell(15,3,"Valor",0,1,"R",0);
 
                    }
@@ -113,7 +113,7 @@
                 $this->objpdf->Roundedrect($xcol,$xlin+40,202,135,2,'DF','1234');
                 $this->objpdf->SetY($xlin+41);
                 $this->objpdf->SetX($xcol+3);
-                $this->objpdf->multicell(0,4,'HISTÓRICO :   '.$this->historico);
+                $this->objpdf->multicell(0,4,'HISTÃ“RICO :   '.$this->historico);
                 $this->objpdf->SetX($xcol+3);
                 $this->objpdf->multicell(0,4,$this->histparcel);
 // mostra os dados da nota                
@@ -125,19 +125,19 @@
                     $this->objpdf->Setfont('Arial','B',6);
                    // $this->objpdf->cell(7,3,"TIPO",0,0,"L",0);
                     if($this->totalvalor_P>0){
-                       $this->objpdf->cell(90,3,"SERVIÇOS PRESTADOS - Valor Total do ISSQN: ".db_formatar($this->totalvalor_P,"f"),0,1,"L",0);
+                       $this->objpdf->cell(90,3,"SERVIÃ‡OS PRESTADOS - Valor Total do ISSQN: ".db_formatar($this->totalvalor_P,"f"),0,1,"L",0);
                     }
                     $this->objpdf->ln(2);                   
-                    $this->objpdf->cell(90,3,"SERVIÇOS TOMADOS",0,1,"L",0);
+                    $this->objpdf->cell(90,3,"SERVIÃ‡OS TOMADOS",0,1,"L",0);
                     $this->objpdf->cell(20,3,"CPF/CNPJ",0,0,"L",0);
-                    $this->objpdf->cell(42,3,"PRESTADOR DO SERVIÇO",0,0,"L",0);
+                    $this->objpdf->cell(42,3,"PRESTADOR DO SERVIÃ‡O",0,0,"L",0);
                     $this->objpdf->cell(10,3,"NOTA",0,0,"R",0);
                     $this->objpdf->cell(15,3,"VALOR",0,0,"R",0);
 
                     $this->objpdf->cell(2,3,"|",0,0,"C",0);
                    // $this->objpdf->cell(7,3,"TIPO",0,0,"L",0);
                     $this->objpdf->cell(20,3,"CPF/CNPJ",0,0,"L",0);
-                    $this->objpdf->cell(42,3,"PRESTADOR DO SERVIÇO",0,0,"L",0);
+                    $this->objpdf->cell(42,3,"PRESTADOR DO SERVIÃ‡O",0,0,"L",0);
                     $this->objpdf->cell(10,3,"NOTA",0,0,"R",0);
                     $this->objpdf->cell(15,3,"VALOR",0,1,"R",0);
                     $this->objpdf->Setfont('Arial','',6);
@@ -181,7 +181,7 @@
          	      $this->objpdf->Setfont('Arial','B',6);
                // $this->objpdf->cell(100,3,"Resumo das notas:",0,1,"L",0);
                 
-                $this->objpdf->cell(100,3,"Serviços Tomados   - ".$totalnota_T." notas - Valor Total do ISSQN: ".db_formatar($totalvalor_T,"f"),0,1,"L",0);
+                $this->objpdf->cell(100,3,"ServiÃ§os Tomados   - ".$totalnota_T." notas - Valor Total do ISSQN: ".db_formatar($totalvalor_T,"f"),0,1,"L",0);
                 
                 $this->objpdf->Setfont('Arial','',6);
                 $this->objpdf->setx(15);
@@ -190,7 +190,7 @@
                 $this->objpdf->Roundedrect(173,$xlin+177,32,10,2,'DF','1234');
                 $this->objpdf->Roundedrect(147,$xlin+177,25,10,2,'DF','1234');
                 $this->objpdf->text(129,$xlin+179,'Vencimento');
-                $this->objpdf->text(179,$xlin+179,'Código de Arrecadação');
+                $this->objpdf->text(179,$xlin+179,'CÃ³digo de ArrecadaÃ§Ã£o');
                 $this->objpdf->text(150,$xlin+179,'Valor a Pagar em R$');
                 $this->objpdf->setfont('Arial','',10);
                 $this->objpdf->text(127,$xlin+184,$this->dtvenc);
@@ -198,12 +198,12 @@
                 $this->objpdf->text(150,$xlin+184,$this->valtotal);
 
                 $this->objpdf->SetFont('Arial','B',5);
-                $this->objpdf->text(150,$xlin+190,"A   U   T   E   N   T   I   C   A   Ç   Ã   O      M   E   C   Â   N   I   C   A");
+                $this->objpdf->text(150,$xlin+190,"A   U   T   E   N   T   I   C   A   Ã‡   Ãƒ   O      M   E   C   Ã‚   N   I   C   A");
 
                 $this->objpdf->setfillcolor(0,0,0);
                 $this->objpdf->SetFont('Arial','',4);
                 $this->objpdf->TextWithDirection(1.5,$xlin+170,$this->texto,'U'); // texto no canhoto do carne
-//                $this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2ª VIA - CONTRIBUINTE':'1ª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
+//                $this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2Âª VIA - CONTRIBUINTE':'1Âª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
                 $this->objpdf->setfont('Arial','',11);
                 $this->objpdf->text(10,$xlin+180,$this->linhadigitavel);
                 
@@ -216,7 +216,7 @@
                 $this->objpdf->setfillcolor(255,255,255);
 //                $this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
                 $this->objpdf->Setfont('Arial','B',11);
-                $this->objpdf->text(150,$xlin-13,'RECIBO VÁLIDO ATÉ: ');
+                $this->objpdf->text(150,$xlin-13,'RECIBO VÃLIDO ATÃ‰: ');
                 $this->objpdf->text(159,$xlin-8,$this->datacalc);
 
                 //Via
@@ -227,7 +227,7 @@
                   $str_via = 'Prefeitura';
                 }
                 $this->objpdf->Setfont('Arial','B',8);
-                $this->objpdf->text(178,$xlin-1,($i+1).'ª Via '.$str_via );
+                $this->objpdf->text(178,$xlin-1,($i+1).'Âª Via '.$str_via );
 
                 $this->objpdf->Image('imagens/files/'.$this->logo,15,$xlin-17,12);
                 $this->objpdf->Setfont('Arial','B',9);
@@ -241,13 +241,13 @@
 
                 $this->objpdf->Roundedrect($xcol,$xlin+2,$xcol+119,20,2,'DF','1234');
                 $this->objpdf->Setfont('Arial','',6);
-                $this->objpdf->text($xcol+2,$xlin+4,'Identificação:');
+                $this->objpdf->text($xcol+2,$xlin+4,'IdentificaÃ§Ã£o:');
                 $this->objpdf->Setfont('Arial','',8);
                 $this->objpdf->text($xcol+2,$xlin+7,'Nome :');
                 $this->objpdf->text($xcol+17,$xlin+7,$this->nome);
-                $this->objpdf->text($xcol+2,$xlin+11,'Endereço :');
+                $this->objpdf->text($xcol+2,$xlin+11,'EndereÃ§o :');
                 $this->objpdf->text($xcol+17,$xlin+11,$this->ender);
-                $this->objpdf->text($xcol+2,$xlin+15,'Município :');
+                $this->objpdf->text($xcol+2,$xlin+15,'MunicÃ­pio :');
                 $this->objpdf->text($xcol+17,$xlin+15,$this->munic);
                 $this->objpdf->text($xcol+75,$xlin+15,'CEP :');
                 $this->objpdf->text($xcol+82,$xlin+15,$this->cep);
@@ -285,7 +285,7 @@
                 $this->objpdf->Roundedrect(173,$xlin+27,32,10,2,'DF','1234');
                 $this->objpdf->Roundedrect(147,$xlin+27,25,10,2,'DF','1234');
                 $this->objpdf->text(129,$xlin+29,'Vencimento');
-                $this->objpdf->text(179,$xlin+29,'Código de Arrecadação');
+                $this->objpdf->text(179,$xlin+29,'CÃ³digo de ArrecadaÃ§Ã£o');
                 $this->objpdf->text(150,$xlin+29,'Valor a Pagar em R$');
                 $this->objpdf->setfont('Arial','',10);
                 $this->objpdf->text(127,$xlin+34,$this->dtvenc);
@@ -293,12 +293,12 @@
                 $this->objpdf->text(150,$xlin+34,$this->valtotal);
 
                 $this->objpdf->SetFont('Arial','B',5);
-                $this->objpdf->text(150,$xlin+40,"A   U   T   E   N   T   I   C   A   Ç   Ã   O      M   E   C   Â   N   I   C   A");
+                $this->objpdf->text(150,$xlin+40,"A   U   T   E   N   T   I   C   A   Ã‡   Ãƒ   O      M   E   C   Ã‚   N   I   C   A");
 
                 $this->objpdf->setfillcolor(0,0,0);
                 $this->objpdf->SetFont('Arial','',4);
                 $this->objpdf->TextWithDirection(1.5,$xlin+30,$this->texto,'U'); // texto no canhoto do carne
-//                $this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2ª VIA - CONTRIBUINTE':'1ª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
+//                $this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2Âª VIA - CONTRIBUINTE':'1Âª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
                 $this->objpdf->setfont('Arial','',11);
                 $this->objpdf->text(10,$xlin+30,$this->linhadigitavel);
 

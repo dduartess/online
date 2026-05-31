@@ -53,7 +53,7 @@ class convenio {
   function __construct($iCodConvenio="",$iNumpre,$iNumpar,$sValor,$sVlrbar,$dDataVenc,$iTercDig) {
 	
   	if(empty($iCodConvenio)){
-      throw new Exception("Nenhum código de convênio informado!");
+      throw new Exception("Nenhum cÃ³digo de convÃªnio informado!");
   	}
   	
   	$sSqlConvenio  = " select ar12_cadconveniomodalidade,	                                                                         		         ";
@@ -125,7 +125,7 @@ class convenio {
         $this->iCodAgencia   = $oConvenio->codagencia;	   		
             
         /**
-         *  Calcula dígito do cedente
+         *  Calcula dÃ­gito do cedente
          */
         $sSqlDigCedente  = " select 11 - fc_modulo11('{$oConvenio->ar13_cedente}',2,9) as digito ";
         $rsDigCedente    = db_query($sSqlDigCedente);
@@ -143,7 +143,7 @@ class convenio {
 	   	}
 		  
 		} else {
-		  throw new Exception("Nenhum convênio encontrado!");
+		  throw new Exception("Nenhum convÃªnio encontrado!");
 		}
 		
 		$this->geraLinhaBarra($iNumpre,$iNumpar,$sValor,$sVlrbar,$dDataVenc,$iTercDig);
@@ -196,7 +196,7 @@ class convenio {
       $oFebraban  = db_utils::fieldsMemory($rsFebraban,0);
         
       if ($oFebraban->fc_febraban == "") {
-        throw new Exception("Erro ao gerar código de barras(2)");
+        throw new Exception("Erro ao gerar cÃ³digo de barras(2)");
       }
         
       $this->sCodigoBarra     = substr($oFebraban->fc_febraban,0,strpos($oFebraban->fc_febraban, ','));
@@ -210,8 +210,8 @@ class convenio {
     }
     
     /*
-     * Verificamos se o numpre é um numpre de recibo
-     * Se a condição for verdadeira, inserimos registro do numpre, código de barra e linha digitavel na tabela recibocodbar 
+     * Verificamos se o numpre Ã© um numpre de recibo
+     * Se a condiÃ§Ã£o for verdadeira, inserimos registro do numpre, cÃ³digo de barra e linha digitavel na tabela recibocodbar 
      */
     $sSqlRecibo  = "select 1                       ";   
     $sSqlRecibo .= "  from recibopaga              ";
@@ -274,7 +274,7 @@ class convenio {
 	    return $sCaminho;
   
   	} else {
-  	  throw new Exception("Não existe Banco cadastrado para o código {$this->getCodBanco()}!");
+  	  throw new Exception("NÃ£o existe Banco cadastrado para o cÃ³digo {$this->getCodBanco()}!");
     }
     
   }

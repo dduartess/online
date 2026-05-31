@@ -83,7 +83,7 @@ $oDadosServidor  = db_utils::fieldsMemory($rsDadosServidor,0);
 switch ($sSigla) {
 	case 'r14':
 		$sTabela = 'gerfsal';
-		$sDescrTipoFolha = 'Salário';
+		$sDescrTipoFolha = 'SalÃ¡rio';
 	break;
   case 'r22':
   	$sTabela = 'gerfadi';
@@ -91,11 +91,11 @@ switch ($sSigla) {
   break;
   case 'r35':
   	$sTabela = 'gerfs13';
-    $sDescrTipoFolha = '13º Salário';
+    $sDescrTipoFolha = '13Âº SalÃ¡rio';
   break;
   case 'r20':
   	$sTabela = 'gerfres';
-    $sDescrTipoFolha = 'Recisão';
+    $sDescrTipoFolha = 'RecisÃ£o';
   break;    	
   case 'r48':
   	$sTabela = 'gerfcom';
@@ -107,7 +107,7 @@ switch ($sSigla) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css"               rel="stylesheet" type="text/css">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
@@ -127,7 +127,7 @@ switch ($sSigla) {
 			      </tr>
             <tr>
               <td class="labelForm">
-                Instituição:
+                InstituiÃ§Ã£o:
               </td>
               <td class="dadosForm" colspan="7">
                 <?=$oDadosServidor->nomeinst?>
@@ -135,13 +135,13 @@ switch ($sSigla) {
             </tr>            
             <tr>
               <td  class="labelForm">
-                Matrícula:  
+                MatrÃ­cula:  
               </td>
               <td class="dadosForm">
                 <?=$iMatric ?>
               </td>
               <td class="labelForm">
-                Vínculo:
+                VÃ­nculo:
               </td>
               <td class="dadosForm">
               </td>              
@@ -168,7 +168,7 @@ switch ($sSigla) {
             </tr>
             <tr>
               <td class="labelForm">
-                Mês/Ano:
+                MÃªs/Ano:
               </td>
               <td class="dadosForm">
                 <?=str_pad($iMesUsu,2,'0',STR_PAD_LEFT)."/".$iAnoUsu?>
@@ -309,10 +309,10 @@ switch ($sSigla) {
               </td>                                                                            
             </tr>
             <tr>
-              <td class="labelForm" align="center">Base Previdência  </td>            
-              <td class="labelForm" align="center">Base p/IRRF Férias</td>
+              <td class="labelForm" align="center">Base PrevidÃªncia  </td>            
+              <td class="labelForm" align="center">Base p/IRRF FÃ©rias</td>
               <td class="labelForm" align="center">Total Descontos   </td>
-              <td class="labelForm" align="center">Líquido a Receber </td>                            
+              <td class="labelForm" align="center">LÃ­quido a Receber </td>                            
             </tr>            
             <tr>
               <td class="dadosForm" align="right">

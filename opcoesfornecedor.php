@@ -34,29 +34,29 @@ require_once("libs/db_encriptacao.php");
 
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 postmemory($HTTP_POST_VARS);
-//ALTERA A SENHA QUANDO J¡ EXISTE CADASTRO
+//ALTERA A SENHA QUANDO J√Å EXISTE CADASTRO
 if(isset($HTTP_POST_VARS["alt_senha"])) {
   postmemory($HTTP_POST_VARS);
   if($senha_c1 == '' || $senha_c2 == '') {
-    msgbox('Nova senha n„o pode ser em branco.');
+    msgbox('Nova senha n√£o pode ser em branco.');
    redireciona("digitafornecedor.php");
    exit;
   }
   $result = @db_query("select senha from db_usuarios where senha = '$senha' ");
   if(@pg_num_rows($result) == 0 ) {
-    msgbox("ERRO: Senha Inv·lida.");
+    msgbox("ERRO: Senha Inv√°lida.");
    redireciona("digitafornecedor.php");
    exit;
   }
   $result = @db_query("update db_usuarios set senha = '" . Encriptacao::encriptaSenha( $senha_c1 ) . "' where login = '$cgccpf'") or die(@pg_errormessage());
   if(@pg_cmdtuples($result) > 0) {
-    db_logs("","",0,"SolicitaÁ„o de senha: senha alterada: $cgccpf");
+    db_logs("","",0,"Solicita√ß√£o de senha: senha alterada: $cgccpf");
    msgbox("Senha Alterada com sucesso");
    redireciona("digitafornecedor.php");
    exit;
   } else
-    db_logs("","",0,"SolicitaÁ„o de senha: erro alterando senha: $cgccpf");
-//MANDA UM E-MAIL DE CONFIRMA«√O
+    db_logs("","",0,"Solicita√ß√£o de senha: erro alterando senha: $cgccpf");
+//MANDA UM E-MAIL DE CONFIRMA√á√ÉO
 } else if(isset($HTTP_POST_VARS["cria_senha"])) {
   postmemory($HTTP_POST_VARS);
   if($email == "") {
@@ -82,12 +82,12 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
   $cgccpf = str_replace("-","",$cgccpf);
   $result = @db_query("select z01_nome,z01_email,z01_cgccpf from cgm where trim(z01_cgccpf) = '$cgccpf'") or die(@pg_errormessage());
   if(@pg_num_rows($result) == 0) {
-    db_logs("","",0,"SolicitaÁ„o de senha para fornecedor: cgc ou cpf inv·lido. $cgccpf");
-   msgbox("CGC ou CPF Inv·lido.");
+    db_logs("","",0,"Solicita√ß√£o de senha para fornecedor: cgc ou cpf inv√°lido. $cgccpf");
+   msgbox("CGC ou CPF Inv√°lido.");
    redireciona(-1);
    exit;
   } else
-    db_logs("","",0,"SolicitaÁ„o de senha para fornecedor: cgc ou cpf valido. $cgccpf");
+    db_logs("","",0,"Solicita√ß√£o de senha para fornecedor: cgc ou cpf valido. $cgccpf");
    if($cgccpf == "00000000000" || @pg_result($result,0,"z01_cgccpf") == "00000000000000" || @pg_result($result,0,"z01_cgccpf") == "              ") {
      msgbox("Seu cgc/cpf esta zerado, atualize com a prefeitura para criar senha");
      redireciona("index.php");
@@ -109,7 +109,7 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
  <html>
 <head>
 <title>Solicita&ccedil;&atilde;o de senha</title>
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
 <style type=\"text/css\">
 <!--
 .arial {
@@ -162,8 +162,8 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
   if($login == 1) {
 
 	$oMail = new Smtp();
-    $oMail->Send($email,$w13_emailadmin,'ConfirmaÁ„o de e-mail para recebimento de senha',$corpo_email);
-    msgbox("Um e-mail de confirmaÁ„o foi enviado para: $email. Clique no link para confirmar o e-mail e receber sua senha.");
+    $oMail->Send($email,$w13_emailadmin,'Confirma√ß√£o de e-mail para recebimento de senha',$corpo_email);
+    msgbox("Um e-mail de confirma√ß√£o foi enviado para: $email. Clique no link para confirmar o e-mail e receber sua senha.");
 
    redireciona("digitafornecedor.php");
    exit;
@@ -173,17 +173,17 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
    <script>
    function js_submeter() {
        if(document.form1.senha.value == '') {
-       alert('Campo senha n„o pode ser vazio!');
+       alert('Campo senha n√£o pode ser vazio!');
       document.form1.senha.focus()
       return false;
      }
      if(document.form1.senha_c1.value != document.form1.senha_c2.value) {
-       alert('As senhas est„o diferentes!');
+       alert('As senhas est√£o diferentes!');
       document.form1.senha_c1.select();
       return false;
      }
      if(document,form1.senha_c1.value == '') {
-       alert('A sua nova senha n„o pode ser em branco');
+       alert('A sua nova senha n√£o pode ser em branco');
       document.form1.senha_c1.select();
       return false;
      }
@@ -191,7 +191,7 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
    }
    </script>
    <body bgcolor=\"#FFFFFF\" background=\"imagens/azul_ceu_O.jpg\" text=\"#000000\" >
-   Email j· cadastrado. Informe sua senha e nova senha pra alteraÁ„o.
+   Email j√° cadastrado. Informe sua senha e nova senha pra altera√ß√£o.
    <center>
    <form name=\"form1\" method=\"post\" onsubmit=\"return js_submeter()\">
     <table border=0>
@@ -208,7 +208,7 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
    ";
   exit;
   } else if($z01_email != $email) {
-    msgbox("Email n„o cadastrado, favor entrar em contado com a prefeitura para alteraÁ„o ou cadastro");
+    msgbox("Email n√£o cadastrado, favor entrar em contado com a prefeitura para altera√ß√£o ou cadastro");
    redireciona("index.php");
    exit;
   }
@@ -235,7 +235,7 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
     $result = @db_query("select senha from db_usuarios where login = '$cgccpf' and senha != '' ");
 
     if(@pg_num_rows($result) == 0){
-      msgbox("Login inv·lido");
+      msgbox("Login inv√°lido");
       redireciona("digitafornecedor.php");
       exit;
     }
@@ -257,7 +257,7 @@ if(isset($HTTP_POST_VARS["alt_senha"])) {
 
 $result = @db_query("select login,senha from db_usuarios where trim(login) = '$cgccpf' ");
   if(@pg_num_rows($result) == 0 ) {
-    msgbox("ERRO: REGISTRO N√O ENCONTRADO.");
+    msgbox("ERRO: REGISTRO N√ÉO ENCONTRADO.");
     exit;
   }
 
@@ -268,7 +268,7 @@ mens_help();
 <html>
 <head>
 <title>opcoesimovel</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="javascript/db_script.js"></script>
 <script>
 js_verificapagina("digitafornecedor.php,index.php");
@@ -304,7 +304,7 @@ include("processando.php");
   <tr>
     <td height="173" valign="top">
         <?php 
-         //pega n˙mero do cgm
+         //pega n√∫mero do cgm
          $result = @db_query("SELECT z01_numcgm FROM cgm where Z01_CGCCPF='$cgccpf'");
          $dados = @pg_fetch_row( $result, 0 );
          $cgm = $dados[0];
@@ -336,10 +336,10 @@ include("processando.php");
             echo "<font face=\"verdana\" size=\"1\">";
             echo "<table bgcolor=black align=center width=100% border=0>";
             echo "<th bgcolor=$cor><font size=\"1\">&nbsp;Empenho&nbsp;</th>";
-            echo "<th bgcolor=$cor><font size=\"1\">&nbsp;DotaÁ„o&nbsp;</th>";
-            echo "<th bgcolor=$cor><font size=\"1\">&nbsp;Data de emiss„o</th>";
+            echo "<th bgcolor=$cor><font size=\"1\">&nbsp;Dota√ß√£o&nbsp;</th>";
+            echo "<th bgcolor=$cor><font size=\"1\">&nbsp;Data de emiss√£o</th>";
             echo "<th bgcolor=$cor width=80%><font size=\"1\">Ordem de compra</th>";
-            echo "<th bgcolor=$cor><font size=\"1\">&nbsp;N∫ licitaÁ„o</th>";
+            echo "<th bgcolor=$cor><font size=\"1\">&nbsp;N¬∫ licita√ß√£o</th>";
             echo "<th bgcolor=$cor width=80%><font size=\"1\">Valor empenhado</th>";
             echo "<th bgcolor=$cor width=80%><font size=\"1\">Valor liquidado</th>";
             echo "<th bgcolor=$cor width=80%><font size=\"1\">Valor pago</th>";

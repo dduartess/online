@@ -39,7 +39,7 @@ $pdf->SetFillColor(235);
 
 $pdf->Ln(3);
 $pdf->SetFont($Letra,'BI',14);
-$pdf->MultiCell(0,6,'Autorização para impressão de documentos fiscais- AIDOF ',0,"C",0);
+$pdf->MultiCell(0,6,'AutorizaÃ§Ã£o para impressÃ£o de documentos fiscais- AIDOF ',0,"C",0);
 $pdf->SetFont($Letra,'B',12);
 $pdf->Ln(3);
 $pdf->MultiCell(0,6,'EMPRESA SOLICITANTE :',0,"J",0);
@@ -51,14 +51,14 @@ if(pg_numrows($result) > 0){
 }
 $pdf->MultiCell(0,6,'Nome : '.@$z01_nome,0,"J",0);
 $pdf->MultiCell(0,6,'CNPJ : '.@$z01_cgccpf,0,"J",0);
-$pdf->MultiCell(0,6,'Endereço : '.@$z01_ender,0,"J",0);
-$pdf->MultiCell(0,6,'Número : '.@$z01_numero,0,"J",0);
+$pdf->MultiCell(0,6,'EndereÃ§o : '.@$z01_ender,0,"J",0);
+$pdf->MultiCell(0,6,'NÃºmero : '.@$z01_numero,0,"J",0);
 $pdf->MultiCell(0,6,'Complemento : '.@$z01_compl,0,"J",0);
 $pdf->MultiCell(0,6,'Bairro : '.@$z01_bairro,0,"J",0);
 $pdf->Ln(3);
 $pdf->SetFont($Letra,'B',12);
 $pdf->Ln(3);
-$pdf->MultiCell(0,6,'GRÁFICA :',0,"J",0);
+$pdf->MultiCell(0,6,'GRÃFICA :',0,"J",0);
 $pdf->Ln(3);
 $pdf->SetFont($Letra,'',10);
 $result = pg_exec("select * from cgm where z01_numcgm = $grafica");
@@ -67,8 +67,8 @@ if(pg_numrows($result) > 0){
 }
 $pdf->MultiCell(0,6,'Nome : '.@$z01_nome,0,"J",0);
 $pdf->MultiCell(0,6,'CNPJ : '.@$z01_cgccpf,0,"J",0);
-$pdf->MultiCell(0,6,'Endereço : '.@$z01_ender,0,"J",0);
-$pdf->MultiCell(0,6,'Número : '.@$z01_numero,0,"J",0);
+$pdf->MultiCell(0,6,'EndereÃ§o : '.@$z01_ender,0,"J",0);
+$pdf->MultiCell(0,6,'NÃºmero : '.@$z01_numero,0,"J",0);
 $pdf->MultiCell(0,6,'Complemento : '.@$z01_compl,0,"J",0);
 $pdf->MultiCell(0,6,'Bairro : '.@$z01_bairro,0,"J",0);
 $pdf->Ln(3);
@@ -84,8 +84,8 @@ if(pg_numrows($result) > 0){
 $pdf->MultiCell(0,6,'codigo : '.@$codigo ,0,"J",0);
 $pdf->MultiCell(0,6,'Tipo de Nota : '.@$nota,0,"J",0);
 $pdf->MultiCell(0,6,'Quantidade de Notas autorizadas : '.(@$y08_quantlib),0,"J",0);
-$pdf->MultiCell(0,6,'Nota Inicial : '.@$y08_notain.' até Nota Final : '.@$y08_notafi,0,"J",0);
-$pdf->MultiCell(0,6,'Observações : '.@$y08_obs,0,"L",0);
+$pdf->MultiCell(0,6,'Nota Inicial : '.@$y08_notain.' atÃ© Nota Final : '.@$y08_notafi,0,"J",0);
+$pdf->MultiCell(0,6,'ObservaÃ§Ãµes : '.@$y08_obs,0,"L",0);
 $pdf->Ln(3);
 $pdf->output();
 ?>

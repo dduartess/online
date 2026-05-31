@@ -98,18 +98,18 @@ if($cgccpf != "" ) {
 if($clissbase->numrows != 0){
   db_fieldsmemory($result,0);
 }else{
-  db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso a Rotina Inválido, verifique os dados digitados!'));
+  db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso a Rotina InvÃ¡lido, verifique os dados digitados!'));
 }  
 if(!isset($DB_LOGADO) && $m_publico !='t'){
   $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricaow)";
   $result = pg_query($sql);
   if(pg_numrows($result)==0){
-    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso não Permitido. Contate a Prefeitura.'));
+    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso nÃ£o Permitido. Contate a Prefeitura.'));
     exit;
   }
   $result = pg_result($result,0,0);
   if($result=="0"){
-    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso não Permitido. Contate a Prefeitura.'));
+    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso nÃ£o Permitido. Contate a Prefeitura.'));
     exit;
   }
 } 
@@ -139,7 +139,7 @@ if($linhas > 0){
 	 }
  
 }
-  // grava os dados da solicitação...$quantnotasrec
+  // grava os dados da solicitaÃ§Ã£o...$quantnotasrec
   
   db_inicio_transacao();
   $dataat = date("Y-m-d");
@@ -195,7 +195,7 @@ if($linhas > 0){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("digitaaidof.php,pesquisagrafica.php,opcoesaidof.php");
@@ -210,7 +210,7 @@ function js_verifica(){
   vgrafica=document.form1.numgrafica.value;
   tipo = document.form1.tiponota.value;
   if(isNaN(notas)){
-    alert('Este campo deve ser preenchido somente com números');
+    alert('Este campo deve ser preenchido somente com nÃºmeros');
     document.form1.quantnotas.value = '';
     document.form1.quantnotas.focus();
   }
@@ -240,7 +240,7 @@ function js_buscagrafica(){
 function js_calculanotas(notafinal){
   var notasolicitada = document.form1.quantnotas.value;
   if(isNaN(notasolicitada)){
-    alert('Este campo deve ser preenchido somente com números');
+    alert('Este campo deve ser preenchido somente com nÃºmeros');
     document.form1.quantnotas.value = '';
     document.form1.quantnotas.focus();
   }
@@ -289,7 +289,7 @@ td{
                      <font color="<?=$w01_corfontesite?>">  <?=$z01_ender?>
                      </font>
                    </td>
-                   <td width="19%" nowrap><b>Número:</b>
+                   <td width="19%" nowrap><b>NÃºmero:</b>
                      <font color="<?=$w01_corfontesite?>">  <?=$z01_numero?>
                      </font>
                    </td>
@@ -328,7 +328,7 @@ td{
                echo "<input type=\"hidden\" value=\"$q14_nota\" name=\"nota\">";
                echo "<input type=\"hidden\" value=\"$q09_descr\" name=\"nomenota\">";
              }/*elseif(pg_numrows($result) == 0){
-               echo "<script>alert('A inscrição não possui atividade cadastrada, entre em contato com a Prefeitura Municipal.')</script>";
+               echo "<script>alert('A inscriÃ§Ã£o nÃ£o possui atividade cadastrada, entre em contato com a Prefeitura Municipal.')</script>";
                db_redireciona("digitaaidof.php");
              }*/
              ?>
@@ -338,7 +338,7 @@ td{
              <td colspan="2">
              <?php  if(isset($tiponota)){?>
              <fieldset style="border: 1px solid <?=$w01_corfontesite?>">
-               <legend> <b>Última Solicitação</b> </legend>
+               <legend> <b>Ãšltima SolicitaÃ§Ã£o</b> </legend>
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
                <?php  
                //die($tiponota);
@@ -353,7 +353,7 @@ td{
                            Quantidade de Notas :
                          </td>
                          <td align=\"center\">
-                           Número das notas:
+                           NÃºmero das notas:
                          </td>
                        </tr>  ";
                  echo "<tr>
@@ -364,7 +364,7 @@ td{
                            ".(($y08_notafi - $y08_notain) + 1)."
                          </td>
                          <td align=\"center\">
-                           ".$y08_notain." até ".$y08_notafi."
+                           ".$y08_notain." atÃ© ".$y08_notafi."
                          </td>
                        </tr>  ";
                  echo "<tr>
@@ -372,7 +372,7 @@ td{
                            <input type=\"hidden\" value=\"$y08_notafi\" name=\"notaini\"><br>
                            <input type=\"hidden\" value=\"$y08_codigo\" name=\"codant\"><br>
                            		";
-                           //&nbsp;&nbsp;&nbsp;&nbsp;<input name=\"reemite\" type=\"button\" class=\"botao\" value=\"Reemite última solicitação\" onClick=\"js_abre()\">
+                           //&nbsp;&nbsp;&nbsp;&nbsp;<input name=\"reemite\" type=\"button\" class=\"botao\" value=\"Reemite Ãºltima solicitaÃ§Ã£o\" onClick=\"js_abre()\">
                          echo"
                          </td>
                        </tr>
@@ -382,7 +382,7 @@ td{
                  $y08_notafi = "0";
                  echo "<tr>
                          <td align=\"center\">
-                           Não há solicitações anteriores.
+                           NÃ£o hÃ¡ solicitaÃ§Ãµes anteriores.
                          </td>
                        </tr>  ";
                }
@@ -408,7 +408,7 @@ td{
              <td>
              <?php  if(isset($tiponota) && $tiponota!=0){?>
                Notas a serem impressas :&nbsp;&nbsp;&nbsp;
-               de&nbsp;<?=($y08_notafi + 1)?>&nbsp;até
+               de&nbsp;<?=($y08_notafi + 1)?>&nbsp;atÃ©
                <input type="text" name="quantnotasrec" value="" size="5" maxlength="5" style="border: none; border-color: #transparent; background-color: <?=$w01_corbody?>; color: <?=$w01_corfontesite?>; font-size:<?=$w01_tamfontesite?>">
                <?php }?>
              </td>
@@ -416,7 +416,7 @@ td{
            <tr>
              <td colspan="5"> <table width="457" border="0">
                  <tr height="30" valign="center">
-                   <td align="left" nowrap>Gráfica:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <td align="left" nowrap>GrÃ¡fica:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <?php 
                    $sqlgraf= "select z01_nome,z01_numcgm from cgm inner join graficas on y20_grafica = z01_numcgm order by z01_nome";
                    $resultgraf=pg_query($sqlgraf);
@@ -442,7 +442,7 @@ td{
            </tr>
            <tr>
              <td>
-               Observações :
+               ObservaÃ§Ãµes :
              </td>
            </tr>
            <tr>

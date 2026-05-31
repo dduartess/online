@@ -41,10 +41,10 @@ if($m_publico != 't'){
     echo"<script>location.href='index.php?".base64_encode('erroscripts=3')."'</script>";
 }
 mens_help();
-db_mensagem("itbi_cab","itbi_rod");//aqui tu coloca as mensagens configuradas l· no 
+db_mensagem("itbi_cab","itbi_rod");//aqui tu coloca as mensagens configuradas l√° no 
                                    //modulo prefeitura online, esta parte qdo tu for fazer eu te ajudo
 $db_verificaip = db_verifica_ip();
-if($db_verificaip == "0"){//este if È usado para qdo se tem cnpj ou cpf na pagina inicial ele verificar a autenticidade do mesmo, tb te explico se tu for usar
+if($db_verificaip == "0"){//este if √© usado para qdo se tem cnpj ou cpf na pagina inicial ele verificar a autenticidade do mesmo, tb te explico se tu for usar
   $onsubmit = "onsubmit=\"return js_verificaCGCCPF((this.cgc.value==''?'':this.cgc),this.cpf);\"";
 }else{
   $onsubmit = "";
@@ -53,7 +53,7 @@ if($db_verificaip == "0"){//este if È usado para qdo se tem cnpj ou cpf na pagin
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 </script>
@@ -143,5 +143,5 @@ db_rodape();
 
 
 <?php 
-db_logs("","",0,"este È um log de teste, que ser· gravado toda vez que tu entrar nesta pagina.");//aqui È o log do sistema
+db_logs("","",0,"este √© um log de teste, que ser√° gravado toda vez que tu entrar nesta pagina.");//aqui √© o log do sistema
 ?>

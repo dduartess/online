@@ -272,16 +272,16 @@ function db_alerta_dados_func($opcao, $regist, $ano, $mes){
   if($retorno == true){
     global $dias_ferias, $dias_afasta, $data_recis, $matric, $nomefc;
     if(isset($dias_ferias) && $dias_ferias > 0 && strpos($opcao,"f") !== false){
-      $emFerias = "\\n* Férias cadastradas.";
+      $emFerias = "\\n* FÃ©rias cadastradas.";
     }
     if(isset($dias_afasta) && $dias_afasta > 0 && strpos($opcao,"a") !== false){
       $emAfasta = "\\n* Afastamento cadastrado.";
     }
     if(isset($data_recis) && $data_recis != "" && strpos($opcao,"r") !== false){
-      $emRescis = "\\n* Rescisão.";
+      $emRescis = "\\n* RescisÃ£o.";
     }
     if($emFerias != "" || $emAfasta != "" || $emRescis != ""){
-      $msgRetorno = "ALERTA: \\nFuncionário (".$matric." - ".$nomefc.") possui, neste ano / mês: ".$emFerias.$emAfasta.$emRescis;
+      $msgRetorno = "ALERTA: \\nFuncionÃ¡rio (".$matric." - ".$nomefc.") possui, neste ano / mÃªs: ".$emFerias.$emAfasta.$emRescis;
     }
   }
   return $msgRetorno;
@@ -346,8 +346,8 @@ function db_retorno_variaveis($ano, $mes, $registro){
 }
 
 //Cria variaveis globais para o ano e mes passados
-//Se ano e mes não forem passados, buscará dados do ano e mes correntes da folha
-//Retorna false se tiver problemas na execução do sql e numrows caso sql esteja correto (0 se não encontrar registros e 1 caso encontre)
+//Se ano e mes nÃ£o forem passados, buscarÃ¡ dados do ano e mes correntes da folha
+//Retorna false se tiver problemas na execuÃ§Ã£o do sql e numrows caso sql esteja correto (0 se nÃ£o encontrar registros e 1 caso encontre)
 function db_sel_cfpess($anofolha=null, $mesfolha=null, $campos=" * "){
   if($anofolha == null || trim($anofolha) == ""){
     $anofolha = db_anofolha();
@@ -442,7 +442,7 @@ function db_dtoc($string=null){
 
 function db_dow($string=null){
  
- // Representação numérica do dia da semana 
+ // RepresentaÃ§Ã£o numÃ©rica do dia da semana 
  
   $retorna = date("w",db_mktime($string));
   return ($retorna==0?7:$retorna);
@@ -1046,15 +1046,15 @@ function ferias($registro,$cfuncao = ""){
   $condicaoaux .= " order by r30_perai desc limit 1";
   if( db_selectmax( "cadferia", "select * from cadferia ".bb_condicaosubpes("r30_").$condicaoaux )){
 
-      // r30_proc1 --> Funcionário com férias já cadastradas para o proximo ano / mês
-      // r30_proc2 --> Funcionário com saldo de férias para o proximo ano / mês
+      // r30_proc1 --> FuncionÃ¡rio com fÃ©rias jÃ¡ cadastradas para o proximo ano / mÃªs
+      // r30_proc2 --> FuncionÃ¡rio com saldo de fÃ©rias para o proximo ano / mÃªs
 
      if( db_substr($cadferia[0]["r30_proc1"],1,4).db_substr($cadferia[0]["r30_proc1"],6,2)  > $anomes || 
 	       db_substr($cadferia[0]["r30_proc2"],1,4).db_substr($cadferia[0]["r30_proc2"],6,2)  > $anomes ){
        	return;
      }
 
-     // r30_proc1d --> Funcionário com diferença de férias para este ano / mês.
+     // r30_proc1d --> FuncionÃ¡rio com diferenÃ§a de fÃ©rias para este ano / mÃªs.
 
      if( db_empty($cadferia[0]["r30_proc1d"]) || $cadferia[0]["r30_proc1d"] == $subpes){
       	
@@ -1128,7 +1128,7 @@ function ferias($registro,$cfuncao = ""){
          }
        }
 
-       // r30_proc2d --> Funcionário com diferença de saldo de férias já cadastradas para este ano / mês
+       // r30_proc2d --> FuncionÃ¡rio com diferenÃ§a de saldo de fÃ©rias jÃ¡ cadastradas para este ano / mÃªs
 
 	     if( db_empty($cadferia[0]["r30_proc2d"]) || $cadferia[0]["r30_proc2d"] == $subpes){ 
 	        if( $cadferia[0]["r30_tip2"] == "10"){
@@ -1299,7 +1299,7 @@ function retorna_avos($r30_perai,$r30_peraf_ant,$r30_peraf){
     }
     
     if( (ndia($r30_peraf) - ndia($r30_perai)) > 14 ) {
-       // a fração superior a 14 dias - 1/12 avo. , conta como um mes a mais
+       // a fraÃ§Ã£o superior a 14 dias - 1/12 avo. , conta como um mes a mais
        $navos++;
     }
  }else{

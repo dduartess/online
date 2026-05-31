@@ -17,7 +17,7 @@
 	$this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 	$this->objpdf->setfillcolor(255,255,255);
 	$this->objpdf->Setfont('Arial','B',9);
-	$this->objpdf->text(130,$xlin-13,'AUTORIZAÇÃO DE EMPENHO N'.CHR(176));
+	$this->objpdf->text(130,$xlin-13,'AUTORIZAÃ‡ÃƒO DE EMPENHO N'.CHR(176));
 	$this->objpdf->text(185,$xlin-13,db_formatar($this->numaut,'s','0',6,'e'));
 	$this->objpdf->text(137.5,$xlin-8,'PROCESSO DE COMPRA N'.CHR(176));
 	$this->objpdf->text(185,$xlin-8,db_formatar(pg_result($this->recorddositens,0,$this->Snumeroproc),'s','0',6,'e'));
@@ -41,12 +41,12 @@
 	$this->objpdf->Setfont('Arial','',6);
 	$this->objpdf->text($xcol+2,$xlin+4,'Dados da Compra');
 	$this->objpdf->Setfont('Arial','B',8);
-	$this->objpdf->text($xcol+2,$xlin+ 8,'Licitação');
+	$this->objpdf->text($xcol+2,$xlin+ 8,'LicitaÃ§Ã£o');
 	$this->objpdf->text($xcol+2,$xlin+12,'Tipo de Compra');
 	$this->objpdf->text($xcol+2,$xlin+16,'Prazo de Entrega');
-	$this->objpdf->text($xcol+2,$xlin+20,'Observações');
+	$this->objpdf->text($xcol+2,$xlin+20,'ObservaÃ§Ãµes');
 	$this->objpdf->text($xcol+2,$xlin+24,'Cond.de Pagto');
-	$this->objpdf->text($xcol+2,$xlin+28,'Outras Condições');
+	$this->objpdf->text($xcol+2,$xlin+28,'Outras CondiÃ§Ãµes');
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text($xcol+27,$xlin+ 8,':  '.$this->num_licitacao.'  -  '.$this->descr_licitacao);
 	$this->objpdf->text($xcol+27,$xlin+12,':  '.$this->descr_tipocompra);
@@ -57,12 +57,12 @@
 
 	$this->objpdf->rect($xcol+106,$xlin+2,96,28,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','',6);
-	$this->objpdf->text($xcol+110,$xlin+4,'Dados da Dotação');
+	$this->objpdf->text($xcol+110,$xlin+4,'Dados da DotaÃ§Ã£o');
 	$this->objpdf->Setfont('Arial','B',8);
 
 	
-	$this->objpdf->text($xcol+108,$xlin+ 8,'Dotação');
-	$this->objpdf->text($xcol+108,$xlin+11.5,'Órgão');
+	$this->objpdf->text($xcol+108,$xlin+ 8,'DotaÃ§Ã£o');
+	$this->objpdf->text($xcol+108,$xlin+11.5,'Ã“rgÃ£o');
 	$this->objpdf->text($xcol+108,$xlin+15,'Unidade');
 	$this->objpdf->text($xcol+108,$xlin+18.5,'Proj/Ativ');
 	$this->objpdf->text($xcol+108,$xlin+22,'Elemento');
@@ -86,9 +86,9 @@
 	$this->objpdf->text($xcol+109,$xlin+38,'Numcgm');
 	$this->objpdf->text($xcol+150,$xlin+38,(strlen($this->cnpj) == 11?'CPF':'CNPJ'));
 	$this->objpdf->text($xcol+  2,$xlin+38,'Nome');
-	$this->objpdf->text($xcol+  2,$xlin+42,'Endereço');
+	$this->objpdf->text($xcol+  2,$xlin+42,'EndereÃ§o');
 	$this->objpdf->text($xcol+102,$xlin+42,'Complemento');
-	$this->objpdf->text($xcol+  2,$xlin+46,'Município');
+	$this->objpdf->text($xcol+  2,$xlin+46,'MunicÃ­pio');
 	$this->objpdf->text($xcol+115,$xlin+46,'CEP');
 	$this->objpdf->text($xcol+  2,$xlin+50,'Contato');
 	$this->objpdf->text($xcol+110,$xlin+50,'Telefone');
@@ -135,8 +135,8 @@
 	
 	$this->objpdf->text($xcol+   4,$xlin+58,'ITEM');
 	$this->objpdf->text($xcol+15.5,$xlin+58,'QUANTIDADE');
-	$this->objpdf->text($xcol+  70,$xlin+58,'MATERIAL OU SERVIÇO');
-	$this->objpdf->text($xcol+ 145,$xlin+58,'VALOR UNITÁRIO');
+	$this->objpdf->text($xcol+  70,$xlin+58,'MATERIAL OU SERVIÃ‡O');
+	$this->objpdf->text($xcol+ 145,$xlin+58,'VALOR UNITÃRIO');
 	$this->objpdf->text($xcol+ 176,$xlin+58,'VALOR TOTAL');
         $maiscol = 0;
 	
@@ -161,7 +161,7 @@
 	  }
           $descricaoitem = pg_result($this->recorddositens,$ii,$this->descricaoitem);
 	  if(pg_result($this->recorddositens,$ii,$this->Snumero)!=""){
-            $descricaoitem = pg_result($this->recorddositens,$ii,$this->descricaoitem)."\n".'SOLICITAÇÃO: '.pg_result($this->recorddositens,$ii,$this->Snumero);
+            $descricaoitem = pg_result($this->recorddositens,$ii,$this->descricaoitem)."\n".'SOLICITAÃ‡ÃƒO: '.pg_result($this->recorddositens,$ii,$this->Snumero);
 	  }
           $this->objpdf->Setfont('Arial','',7);
 	 
@@ -180,7 +180,7 @@
 	      ( $this->objpdf->gety() > $this->objpdf->h - 30 && $pagina != 1 )){
 
             if ($this->objpdf->PageNo() == 1){
-	       $this->objpdf->text(110,$xlin+214,'Continua na Página '.($this->objpdf->PageNo()+1));
+	       $this->objpdf->text(110,$xlin+214,'Continua na PÃ¡gina '.($this->objpdf->PageNo()+1));
 	       $this->objpdf->rect($xcol,$xlin+217,202,55,2,'DF','1234');
 	       
 	       /*
@@ -271,7 +271,7 @@
 	       }
 	       
             }else{
-	       $this->objpdf->text(110,$xlin+320,'Continua na Página '.($this->objpdf->PageNo()+1));
+	       $this->objpdf->text(110,$xlin+320,'Continua na PÃ¡gina '.($this->objpdf->PageNo()+1));
 	    }
             $this->objpdf->addpage();
             $pagina += 1;	   
@@ -287,7 +287,7 @@
 	    $this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 	    $this->objpdf->setfillcolor(255,255,255);
 	    $this->objpdf->Setfont('Arial','B',9);
-	    $this->objpdf->text(130,$xlin-13,'AUTORIZAÇÃO DE EMPENHO N'.CHR(176));
+	    $this->objpdf->text(130,$xlin-13,'AUTORIZAÃ‡ÃƒO DE EMPENHO N'.CHR(176));
 	    $this->objpdf->text(185,$xlin-13,db_formatar($this->numaut,'s','0',6,'e'));
 	    $this->objpdf->text(137.5,$xlin-8,'PROCESSO DE COMPRA N'.CHR(176));
 	    $this->objpdf->text(185,$xlin-8,db_formatar(pg_result($this->recorddositens,0,$this->Snumeroproc),'s','0',6,'e'));
@@ -320,10 +320,10 @@
 
 	    $this->objpdf->text($xcol+4,$xlin+58,'ITEM');
 	    $this->objpdf->text($xcol+15.5,$xlin+58,'QUANTIDADE');
-	    $this->objpdf->text($xcol+70,$xlin+58,'MATERIAL OU SERVIÇO');
-	    $this->objpdf->text($xcol+145,$xlin+58,'VALOR UNITÁRIO');
+	    $this->objpdf->text($xcol+70,$xlin+58,'MATERIAL OU SERVIÃ‡O');
+	    $this->objpdf->text($xcol+145,$xlin+58,'VALOR UNITÃRIO');
 	    $this->objpdf->text($xcol+176,$xlin+58,'VALOR TOTAL');
-	    $this->objpdf->text($xcol+38,$xlin+63,'Continuação da Página '.($this->objpdf->PageNo()-1));
+	    $this->objpdf->text($xcol+38,$xlin+63,'ContinuaÃ§Ã£o da PÃ¡gina '.($this->objpdf->PageNo()-1));
 
 	    $maiscol = 0;
 
@@ -405,7 +405,7 @@
 	  $this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 	  $this->objpdf->setfillcolor(255,255,255);
 	  $this->objpdf->Setfont('Arial','B',9);
-	  $this->objpdf->text(130,$xlin-13,'AUTORIZAÇÃO DE EMPENHO N'.CHR(176));
+	  $this->objpdf->text(130,$xlin-13,'AUTORIZAÃ‡ÃƒO DE EMPENHO N'.CHR(176));
 	  $this->objpdf->text(185,$xlin-13,db_formatar($this->numaut,'s','0',6,'e'));
 	  $this->objpdf->text(137.5,$xlin-8,'PROCESSO DE COMPRA N'.CHR(176));
 	  $this->objpdf->text(185,$xlin-8,db_formatar(pg_result($this->recorddositens,0,$this->Snumeroproc),'s','0',6,'e'));
@@ -428,12 +428,12 @@
 	  $this->objpdf->Setfont('Arial','',6);
 	  $this->objpdf->text($xcol+2,$xlin+4,'Dados da Compra');
 	  $this->objpdf->Setfont('Arial','B',8);
-	  $this->objpdf->text($xcol+2,$xlin+ 8,'Licitação');
+	  $this->objpdf->text($xcol+2,$xlin+ 8,'LicitaÃ§Ã£o');
 	  $this->objpdf->text($xcol+2,$xlin+12,'Tipo de Compra');
 	  $this->objpdf->text($xcol+2,$xlin+16,'Prazo de Entrega');
-	  $this->objpdf->text($xcol+2,$xlin+20,'Observações');
+	  $this->objpdf->text($xcol+2,$xlin+20,'ObservaÃ§Ãµes');
 	  $this->objpdf->text($xcol+2,$xlin+24,'Cond.de Pagto');
-	  $this->objpdf->text($xcol+2,$xlin+28,'Outras Condições');
+	  $this->objpdf->text($xcol+2,$xlin+28,'Outras CondiÃ§Ãµes');
 	  $this->objpdf->Setfont('Arial','',8);
 	  $this->objpdf->text($xcol+27,$xlin+ 8,':  '.$this->num_licitacao.'  -  '.$this->descr_licitacao);
 	  $this->objpdf->text($xcol+27,$xlin+12,':  '.$this->descr_tipocompra);
@@ -444,12 +444,12 @@
 
 	  $this->objpdf->rect($xcol+106,$xlin+2,96,28,2,'DF','1234');
 	  $this->objpdf->Setfont('Arial','',6);
-	  $this->objpdf->text($xcol+110,$xlin+4,'Dados da Dotação');
+	  $this->objpdf->text($xcol+110,$xlin+4,'Dados da DotaÃ§Ã£o');
 	  $this->objpdf->Setfont('Arial','B',8);
 
 	  
-	  $this->objpdf->text($xcol+108,$xlin+ 8,'Dotação');
-	  $this->objpdf->text($xcol+108,$xlin+11.5,'Órgão');
+	  $this->objpdf->text($xcol+108,$xlin+ 8,'DotaÃ§Ã£o');
+	  $this->objpdf->text($xcol+108,$xlin+11.5,'Ã“rgÃ£o');
 	  $this->objpdf->text($xcol+108,$xlin+15,'Unidade');
 	  $this->objpdf->text($xcol+108,$xlin+18.5,'Proj/Ativ');
 	  $this->objpdf->text($xcol+108,$xlin+22,'Elemento');
@@ -473,9 +473,9 @@
 	  $this->objpdf->text($xcol+109,$xlin+38,'Numcgm');
 	  $this->objpdf->text($xcol+150,$xlin+38,(strlen($this->cnpj) == 11?'CPF':'CNPJ'));
 	  $this->objpdf->text($xcol+  2,$xlin+38,'Nome');
-	  $this->objpdf->text($xcol+  2,$xlin+42,'Endereço');
+	  $this->objpdf->text($xcol+  2,$xlin+42,'EndereÃ§o');
 	  $this->objpdf->text($xcol+102,$xlin+42,'Complemento');
-	  $this->objpdf->text($xcol+  2,$xlin+46,'Município');
+	  $this->objpdf->text($xcol+  2,$xlin+46,'MunicÃ­pio');
 	  $this->objpdf->text($xcol+115,$xlin+46,'CEP');
 	  $this->objpdf->text($xcol+  2,$xlin+50,'Contato');
 	  $this->objpdf->text($xcol+110,$xlin+50,'Telefone');
@@ -519,8 +519,8 @@
 	  
 	  $this->objpdf->text($xcol+   4,$xlin+58,'ITEM');
 	  $this->objpdf->text($xcol+15.5,$xlin+58,'QUANTIDADE');
-	  $this->objpdf->text($xcol+  70,$xlin+58,'MATERIAL OU SERVIÇO');
-	  $this->objpdf->text($xcol+ 145,$xlin+58,'VALOR UNITÁRIO');
+	  $this->objpdf->text($xcol+  70,$xlin+58,'MATERIAL OU SERVIÃ‡O');
+	  $this->objpdf->text($xcol+ 145,$xlin+58,'VALOR UNITÃRIO');
 	  $this->objpdf->text($xcol+ 176,$xlin+58,'VALOR TOTAL');
 	  $maiscol = 0;
 	  
@@ -545,7 +545,7 @@
 	    }
 	    $descricaoitem = pg_result($this->recorddositens,$ii,$this->descricaoitem);
 	    if(pg_result($this->recorddositens,$ii,$this->Snumero) != "") {
-              $descricaoitem = pg_result($this->recorddositens,$ii,$this->descricaoitem)."\n".'SOLICITAÇÃO: '.pg_result($this->recorddositens,$ii,$this->Snumero);
+              $descricaoitem = pg_result($this->recorddositens,$ii,$this->descricaoitem)."\n".'SOLICITAÃ‡ÃƒO: '.pg_result($this->recorddositens,$ii,$this->Snumero);
 	    }
 	    $this->objpdf->Setfont('Arial','',7);
 	    $this->objpdf->Row(array(pg_result($this->recorddositens,$ii,$this->item),
@@ -562,7 +562,7 @@
 	    if( ( $this->objpdf->gety() > $this->objpdf->h - 110 && $pagina == 1 ) || 
 	        ( $this->objpdf->gety() > $this->objpdf->h - 40  && $pagina != 1 )){
 	      if ($this->objpdf->PageNo() == 1){
-		 $this->objpdf->text(110,$xlin+214,'Continua na Página '.($this->objpdf->PageNo()+1));
+		 $this->objpdf->text(110,$xlin+214,'Continua na PÃ¡gina '.($this->objpdf->PageNo()+1));
 		 $this->objpdf->rect($xcol,$xlin+217,202,55,2,'DF','1234');
 
                  $this->objpdf->SetXY(172,$xlin+205);
@@ -609,7 +609,7 @@
                     $this->objpdf->MultiCell(65,3,$cont,0,"C",0);
 
                     $this->objpdf->SetXY(72,$y);
-                    $this->objpdf->MultiCell(65,3,"HÁ RECURSOS FINANCEIROS:",0,"C",0);
+                    $this->objpdf->MultiCell(65,3,"HÃ RECURSOS FINANCEIROS:",0,"C",0);
 
                     $this->objpdf->SetXY(72,$y+8);
                     $this->objpdf->MultiCell(65,3,$ass_secfaz,0,"C",0);
@@ -633,7 +633,7 @@
 		    $this->objpdf->SetXY(2,$y);
   		    $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nDIRETOR DE COMPRAS",0,"C",0);
 		    $this->objpdf->SetXY(72,$y);
-  		    $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÁRIO DE FINANÇAS",0,"C",0);
+  		    $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÃRIO DE FINANÃ‡AS",0,"C",0);
 		    $this->objpdf->SetXY(137,$y);
 		    $this->objpdf->MultiCell(70,4,$ass_visto,0,"C",0);
 		    $this->objpdf->setfillcolor(0,0,0);
@@ -677,7 +677,7 @@
 		 
 		 $this->objpdf->SetXY(72,$y);
 		 if(strtoupper(trim($this->municpref)) == 'ALEGRETE'){
-  		   $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÁRIO DE FINANÇAS",0,"C",0);
+  		   $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÃRIO DE FINANÃ‡AS",0,"C",0);
 		 } else {
 		   $this->objpdf->MultiCell(70,4,$ass_ord,0,"C",0);
 		 }
@@ -703,7 +703,7 @@
 		 }
 		 
 	      }else{
-		 $this->objpdf->text(110,$xlin+320,'Continua na Página '.($this->objpdf->PageNo()+1));
+		 $this->objpdf->text(110,$xlin+320,'Continua na PÃ¡gina '.($this->objpdf->PageNo()+1));
 	      }
 	      $this->objpdf->addpage();
 	      $pagina += 1;	   
@@ -720,7 +720,7 @@
 	      $this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
 	      $this->objpdf->setfillcolor(255,255,255);
 	      $this->objpdf->Setfont('Arial','B',9);
-	      $this->objpdf->text(130,$xlin-13,'AUTORIZAÇÃO DE EMPENHO N'.CHR(176));
+	      $this->objpdf->text(130,$xlin-13,'AUTORIZAÃ‡ÃƒO DE EMPENHO N'.CHR(176));
 	      $this->objpdf->text(185,$xlin-13,db_formatar($this->numaut,'s','0',6,'e'));
 	      $this->objpdf->text(137.5,$xlin-8,'PROCESSO DE COMPRA N'.CHR(176));
 	      $this->objpdf->text(185,$xlin-8,db_formatar(pg_result($this->recorddositens,0,$this->Snumeroproc),'s','0',6,'e'));
@@ -753,10 +753,10 @@
 
 	      $this->objpdf->text($xcol+4,$xlin+58,'ITEM');
 	      $this->objpdf->text($xcol+15.5,$xlin+58,'QUANTIDADE');
-	      $this->objpdf->text($xcol+70,$xlin+58,'MATERIAL OU SERVIÇO');
-	      $this->objpdf->text($xcol+145,$xlin+58,'VALOR UNITÁRIO');
+	      $this->objpdf->text($xcol+70,$xlin+58,'MATERIAL OU SERVIÃ‡O');
+	      $this->objpdf->text($xcol+145,$xlin+58,'VALOR UNITÃRIO');
 	      $this->objpdf->text($xcol+176,$xlin+58,'VALOR TOTAL');
-	      $this->objpdf->text($xcol+38,$xlin+63,'Continuação da Página '.($this->objpdf->PageNo()-1));
+	      $this->objpdf->text($xcol+38,$xlin+63,'ContinuaÃ§Ã£o da PÃ¡gina '.($this->objpdf->PageNo()-1));
 
 	      $maiscol = 0;
 
@@ -836,7 +836,7 @@
 		    $this->objpdf->MultiCell(65,3,$cont,0,"C",0);
 		    
 		    $this->objpdf->SetXY(72,$y);
-		    $this->objpdf->MultiCell(65,3,"HÁ RECURSOS FINANCEIROS:",0,"C",0);
+		    $this->objpdf->MultiCell(65,3,"HÃ RECURSOS FINANCEIROS:",0,"C",0);
 		   
 		    $this->objpdf->SetXY(72,$y+8);
 		    $this->objpdf->MultiCell(65,3,$ass_secfaz,0,"C",0);
@@ -861,7 +861,7 @@
 		    $this->objpdf->SetXY(2,$y);
   		    $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nDIRETOR DE COMPRAS",0,"C",0);
 		    $this->objpdf->SetXY(72,$y);
-  		    $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÁRIO DE FINANÇAS",0,"C",0);
+  		    $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÃRIO DE FINANÃ‡AS",0,"C",0);
 		    $this->objpdf->SetXY(137,$y);
 		    $this->objpdf->MultiCell(70,4,$ass_visto,0,"C",0);
 		    $this->objpdf->setfillcolor(0,0,0);
@@ -907,7 +907,7 @@
 		 
 		 $this->objpdf->SetXY(72,$y);
 		 if(strtoupper(trim($this->municpref)) == 'ALEGRETE'){
-  		   $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÁRIO DE FINANÇAS",0,"C",0);
+  		   $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\nSECRETÃRIO DE FINANÃ‡AS",0,"C",0);
 		 } else {
   		   $this->objpdf->MultiCell(70,2,"AUTORIZO"."\n\n\n\n\n\n".$ass_ord,0,"C",0);
 		 }

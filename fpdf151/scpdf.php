@@ -14,8 +14,8 @@ if(!defined('DB_BIBLIOT')){
 
 class scpdf extends fpdf {
 //|00|//scpdf
-//|10|//Esta classe é uma extensão da classe |fpdf|, não possui cabeçalho ou rodapé, é classe utilizada
-//|10|//na geração de formularios tais como: carnês de parcelamento, recibos, alvarás, etc
+//|10|//Esta classe Ã© uma extensÃ£o da classe |fpdf|, nÃ£o possui cabeÃ§alho ou rodapÃ©, Ã© classe utilizada
+//|10|//na geraÃ§Ã£o de formularios tais como: carnÃªs de parcelamento, recibos, alvarÃ¡s, etc
 function _Arc($x1, $y1, $x2, $y2, $x3, $y3)
    {
    $h = $this->h;

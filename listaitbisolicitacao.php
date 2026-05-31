@@ -140,7 +140,7 @@ if(isset($HTTP_POST_VARS['id_itbi'])) {
                                        '".date("Y-m-d")."')
                                        ") or die('Erro no Sql');
     pg_exec("COMMIT");
-        db_msgbox2("SolicitaÁ„o gerada com o n˙mero $id_itbi");
+        db_msgbox2("Solicita√ß√£o gerada com o n√∫mero $id_itbi");
         redireciona("digitaitbi.php");
         exit;
   }else{
@@ -205,12 +205,12 @@ if(isset($HTTP_POST_VARS['id_itbi'])) {
                        where id_itbi = $id_itbi") or die('Erro no Sql');
     if(pg_cmdtuples($result) == 0) {
       pg_exec("rollback");
-          db_msgbox2('Erro ao Gravar SolicitaÁ„o.');
+          db_msgbox2('Erro ao Gravar Solicita√ß√£o.');
           redireciona("opcoesitbi.php?".base64_encode("matricula=".$cod_matricula));
           exit;
     } else {
           pg_exec("commit");
-            db_msgbox2('SolicitaÁ„o alterada com sucesso');
+            db_msgbox2('Solicita√ß√£o alterada com sucesso');
           redireciona("opcoesitbi.php?".base64_encode("matricula=".$cod_matricula));
           exit;
         }
@@ -220,27 +220,27 @@ mens_help();
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 $cod_matricula = 0 + $matricula;
 if ( !is_int($cod_matricula) or $cod_matricula == "" ){
-   msgbox("CÛdigo da MatrÌcula Inv·lido.");
-   db_logs("","",0,"CÛdigo da MatrÌcula Inv·lido.");
+   msgbox("C√≥digo da Matr√≠cula Inv√°lido.");
+   db_logs("","",0,"C√≥digo da Matr√≠cula Inv√°lido.");
    redireciona("digitaitbi.php");
 }
 
 $result = pg_exec("select * from db_itbi where matricula = $cod_matricula and libpref = '1'");
 if (pg_numrows($result) > 0){
-   msgbox("SocilitaÁ„o de Guia de ITBI est· em processo de avaliaÁ„o. Volte mais tarde.");
-   db_logs("$cod_matricula","",0,"SocilitaÁ„o de Guia de ITBI est· em processo de avaliaÁ„o. Volte mais tarde. Numero: $cod_matricula");
+   msgbox("Socilita√ß√£o de Guia de ITBI est√° em processo de avalia√ß√£o. Volte mais tarde.");
+   db_logs("$cod_matricula","",0,"Socilita√ß√£o de Guia de ITBI est√° em processo de avalia√ß√£o. Volte mais tarde. Numero: $cod_matricula");
    redireciona("opcoesitbi.php?".base64_encode("matricula=".$cod_matricula));
 }
 $result = pg_exec("select * from db_itbi where matricula = $cod_matricula and liberado = 1 and ( datavencimento is null or datavencimento >= CURRENT_DATE)");
 if (pg_numrows($result) != 0){
-   msgbox("Verifique LiberaÁ„o de Guia.");
+   msgbox("Verifique Libera√ß√£o de Guia.");
    db_logs("$cod_matricula","",0,"Verifique Liberacao da Guia. Numero: $cod_matricula");
    redireciona("opcoesitbi.php?".base64_encode("matricula=".$cod_matricula));
 }
 $result = pg_exec("select * from db_itbi where matricula = $cod_matricula and (liberado is null or liberado = 0)");
 if (pg_numrows($result) != 0){
-  msgbox("SocilitaÁ„o Recentemente Encaminhada. Proceda as AlteraÁıes.");
-  db_logs("$cod_matricula","",0,"SocilitaÁ„o Recentemente Encaminhada. Proceda as AlteraÁıes. Numero: $cod_matricula");
+  msgbox("Socilita√ß√£o Recentemente Encaminhada. Proceda as Altera√ß√µes.");
+  db_logs("$cod_matricula","",0,"Socilita√ß√£o Recentemente Encaminhada. Proceda as Altera√ß√µes. Numero: $cod_matricula");
   db_fieldsmemory($result,0);
 }
 /*$result = pg_exec("select ctmbase.*,zona.*,cgm.z01_nome as imobiliaria from (select *
@@ -268,8 +268,8 @@ $result = pg_exec("select p.*,pm.z01_nome as promitente, m.z01_nome as imobiliar
                      on m.z01_numcgm = i.j44_numcgm
                    where j01_matric = $cod_matricula");
 if (pg_numrows($result) == 0){
-   msgbox("MatrÌcula n„o Cadastrada.");
-   db_logs("$cod_matricula","",0,"MatrÌcula n„o Cadastrada. Numero: $cod_matricula");
+   msgbox("Matr√≠cula n√£o Cadastrada.");
+   db_logs("$cod_matricula","",0,"Matr√≠cula n√£o Cadastrada. Numero: $cod_matricula");
    redireciona("index.php");
    exit;
 }
@@ -279,7 +279,7 @@ db_logs("$cod_matricula","",0,"Solicitacao de Guia. Numero: $cod_matricula");
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesitbi.php");
@@ -295,7 +295,7 @@ function jsss_verificadados() {
        document.form1.elements[contador].name.substr(0,3) != "car" )  
     {
       if (document.form1.elements[contador].value == "" ){
-        alert("Campo Inv·lido.");
+        alert("Campo Inv√°lido.");
              document.form1.elements[contador].focus(); 
             return;
       }
@@ -306,12 +306,12 @@ function jsss_verificadados() {
     document.form1.areaedificada.value = '0';
   }
   if (isNaN(document.form1.areaterreno.value) ){
-     alert("Area Territorial da Transmiss„o Inv·lida");
+     alert("Area Territorial da Transmiss√£o Inv√°lida");
          document.form1.areaterreno.focus(); 
          return;
   }
   if ( isNaN(document.form1.areaedificada.value) ){
-     alert("Area Predial da Transmiss„o Inv·lida");
+     alert("Area Predial da Transmiss√£o Inv√°lida");
          document.form1.areaedificada.focus(); 
          return;
   }
@@ -437,7 +437,7 @@ echo"
                     <tr>
 
                     <td class="tabfonte" height="25">Endere&ccedil;o:
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N˙mero:&nbsp;Complemento:<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N√∫mero:&nbsp;Complemento:<br>
                         <input type="text" name="enderecocomprador" size="40" maxlength="40" value="<?=@$enderecocomprador?>" onBlur="js_maiuscula(this)">
                         <input type="text" name="numerocomprador" size="5" maxlength="10" value="<?=@$numerocomprador?>" >
                         <input type="text" name="complcomprador" size="12" maxlength="20" value="<?=@$complcomprador?>" onBlur="js_maiuscula(this)">
@@ -544,42 +544,42 @@ echo"
                       <td class="tabfonte">Tipo de Transmiss&atilde;o:</td>
                       <td class="tabfonte" colspan="3"><select name="tipotransacao">
 
-<option  <?php  echo @$tipotransacao=="ABERT.CRED.FIXO REAL"?"selected":"" ?>             value='ABERT.CRED.FIXO REAL'>ABERTURA DE CR…DITO FIXO COM GARANTIA REAL</option>
-<option  <?php  echo @$tipotransacao=="AVALIA«√O FISCAL"?"selected":"" ?>                 value='AVALIA«√O FISCAL'>AVALIA«√O FISCAL</option>
+<option  <?php  echo @$tipotransacao=="ABERT.CRED.FIXO REAL"?"selected":"" ?>             value='ABERT.CRED.FIXO REAL'>ABERTURA DE CR√âDITO FIXO COM GARANTIA REAL</option>
+<option  <?php  echo @$tipotransacao=="AVALIA√á√ÉO FISCAL"?"selected":"" ?>                 value='AVALIA√á√ÉO FISCAL'>AVALIA√á√ÉO FISCAL</option>
 <option  <?php  echo @$tipotransacao=="CANCEL.  DE USUFRUTO"?"selected":"" ?>             value='CANCEL.  DE USUFRUTO'>CANCELAMENTO DE USUFRUTO</option>
-<option  <?php  echo @$tipotransacao=="CANCEL.USUF FAL USUF"?"selected":"" ?>             value='CANCEL.USUF FAL USUF'>CANCELAMENTO DE USUFRUTO P/FALECIMENTO DO USUFRUTU¡RIO</option>
-<option  <?php  echo @$tipotransacao=="CARTA DE ADJUDICA«√O"?"selected":"" ?>             value='CARTA DE ADJUDICA«√O'>CARTA DE ADJUDICA«√O</option>
-<option  <?php  echo @$tipotransacao=="CARTA DE ARREMATA«√O"?"selected":"" ?>             value='CARTA DE ARREMATA«√O' >CARTA DE ARREMATA«√O</option>
-<option  <?php  echo @$tipotransacao=="CARTA DE ARR LEIL√O"?"selected":"" ?>              value='CARTA DE ARR LEIL√O'>CARTA DE ARREMATA«√O - LEIL√O</option>
-<option  <?php  echo @$tipotransacao=="CESS√O DE DIR HERED."?"selected":"" ?>             value='CESS√O DE DIR HERED.' >CESS√O DE DIREITOS HEREDIT¡RIOS</option>
-<option  <?php  echo @$tipotransacao=="CESS√O DIR POSSESS”R"?"selected":"" ?>             value='CESS√O DIR POSSESS”R'>CESS√O DE DIREITOS POSSESS”RIOS</option>
-<option  <?php  echo @$tipotransacao=="CESS√O E TRA DIR HER"?"selected":"" ?>             value='CESS√O E TRA DIR HER'>CESS√O E TRANSFER NCIA DE DIREITOS HEREDIT¡RIOS</option>
+<option  <?php  echo @$tipotransacao=="CANCEL.USUF FAL USUF"?"selected":"" ?>             value='CANCEL.USUF FAL USUF'>CANCELAMENTO DE USUFRUTO P/FALECIMENTO DO USUFRUTU√ÅRIO</option>
+<option  <?php  echo @$tipotransacao=="CARTA DE ADJUDICA√á√ÉO"?"selected":"" ?>             value='CARTA DE ADJUDICA√á√ÉO'>CARTA DE ADJUDICA√á√ÉO</option>
+<option  <?php  echo @$tipotransacao=="CARTA DE ARREMATA√á√ÉO"?"selected":"" ?>             value='CARTA DE ARREMATA√á√ÉO' >CARTA DE ARREMATA√á√ÉO</option>
+<option  <?php  echo @$tipotransacao=="CARTA DE ARR LEIL√ÉO"?"selected":"" ?>              value='CARTA DE ARR LEIL√ÉO'>CARTA DE ARREMATA√á√ÉO - LEIL√ÉO</option>
+<option  <?php  echo @$tipotransacao=="CESS√ÉO DE DIR HERED."?"selected":"" ?>             value='CESS√ÉO DE DIR HERED.' >CESS√ÉO DE DIREITOS HEREDIT√ÅRIOS</option>
+<option  <?php  echo @$tipotransacao=="CESS√ÉO DIR POSSESS√ìR"?"selected":"" ?>             value='CESS√ÉO DIR POSSESS√ìR'>CESS√ÉO DE DIREITOS POSSESS√ìRIOS</option>
+<option  <?php  echo @$tipotransacao=="CESS√ÉO E TRA DIR HER"?"selected":"" ?>             value='CESS√ÉO E TRA DIR HER'>CESS√ÉO E TRANSFER√äNCIA DE DIREITOS HEREDIT√ÅRIOS</option>
 <option  <?php  echo @$tipotransacao=="COMPRA E VENDA"?"selected":"" ?> selected        value='COMPRA E VENDA' >COMPRA E VENDA</option>
 <option  <?php  echo @$tipotransacao=="COMPRA E VENDA-COMPL"?"selected":"" ?>              value='COMPRA E VENDA-COMPL'>COMPRA E VENDA - COMPLEMENTAR</option>
 <option  <?php  echo @$tipotransacao=="COMPRA E VEN RES USU"?"selected":"" ?>             value='COMPRA E VEN RES USU' >COMPRA E VENDA COM RESERVA DE USUFRUTO</option>
 <option  <?php  echo @$tipotransacao=="COMPRA E VEN NUA PRO"?"selected":"" ?>             value='COMPRA E VEN NUA PRO'>COMPRA E VENDA DA NUA PROPRIEDADE</option>
-<option  <?php  echo @$tipotransacao=="COMPRA VENDA MEA«√O"?"selected":"" ?>              value='COMPRA VENDA MEA«√O'>COMPRA E VENDA DE MEA«√O</option>
+<option  <?php  echo @$tipotransacao=="COMPRA VENDA MEA√á√ÉO"?"selected":"" ?>              value='COMPRA VENDA MEA√á√ÉO'>COMPRA E VENDA DE MEA√á√ÉO</option>
 <option  <?php  echo @$tipotransacao=="COMPRA VENDA DO USU"?"selected":"" ?>              value='COMPRA VENDA DO USU'>COMPRA E VENDA DO USUFRUTO</option>
-<option  <?php  echo @$tipotransacao=="CONF  DÕV C/GAR HIP"?"selected":"" ?>              value='CONF  DÕV C/GAR HIP'>CONFISS√O DE DÕVIDA C/GARANTIA HIPOTEC¡RIA</option>
+<option  <?php  echo @$tipotransacao=="CONF  D√çV C/GAR HIP"?"selected":"" ?>              value='CONF  D√çV C/GAR HIP'>CONFISS√ÉO DE D√çVIDA C/GARANTIA HIPOTEC√ÅRIA</option>
 <option  <?php  echo @$tipotransacao=="CONTR DE PROM COMP V"?"selected":"" ?>             value='CONTR DE PROM COMP V'>CONTRATO DE PROMESSA DE COMPRA E VENDA</option>
-<option  <?php  echo @$tipotransacao=="DA«√O EM PAGAMENTO"?"selected":"" ?>               value='DA«√O EM PAGAMENTO'>DA«√O EM PAGAMENTO</option>
-<option  <?php  echo @$tipotransacao=="DA«√O PAG P/INT COT"?"selected":"" ?>              value='DA«√O PAG P/INT COT'>DA«√O EM PAGTO P/FINS DE INTEGRALIZA«√O DE COTA CAPITAL</option>
-<option  <?php  echo @$tipotransacao=="DESAPROPIA«√O"?"selected":"" ?>                    value='DESAPROPIA«√O'>DESAPROPIA«√O</option>
-<option  <?php  echo @$tipotransacao=="DIV EXT DE USUFRUTO"?"selected":"" ?>              value='DIV EXT DE USUFRUTO'>DIVIS√O E EXTIN«√O DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="DA√á√ÉO EM PAGAMENTO"?"selected":"" ?>               value='DA√á√ÉO EM PAGAMENTO'>DA√á√ÉO EM PAGAMENTO</option>
+<option  <?php  echo @$tipotransacao=="DA√á√ÉO PAG P/INT COT"?"selected":"" ?>              value='DA√á√ÉO PAG P/INT COT'>DA√á√ÉO EM PAGTO P/FINS DE INTEGRALIZA√á√ÉO DE COTA CAPITAL</option>
+<option  <?php  echo @$tipotransacao=="DESAPROPIA√á√ÉO"?"selected":"" ?>                    value='DESAPROPIA√á√ÉO'>DESAPROPIA√á√ÉO</option>
+<option  <?php  echo @$tipotransacao=="DIV EXT DE USUFRUTO"?"selected":"" ?>              value='DIV EXT DE USUFRUTO'>DIVIS√ÉO E EXTIN√á√ÉO DE USUFRUTO</option>
 <option  <?php  echo @$tipotransacao=="HIPOTECA"?"selected":"" ?>                         value='HIPOTECA'>HIPOTECA</option>
-<option  <?php  echo @$tipotransacao=="INCORPORA«√O"?"selected":"" ?>                     value='INCORPORA«√O'>INCORPORA«√O</option>
-<option  <?php  echo @$tipotransacao=="INST DE GAR HIPOTEC"?"selected":"" ?>              value='INST DE GAR HIPOTEC'>INSTITUI«√O DE GARANTIA HIPOTEC¡RIA</option>
-<option  <?php  echo @$tipotransacao=="INSTITUI«√O DE USUFR"?"selected":"" ?>             value='INSTITUI«√O DE USUFR"'>INSTITUI«√O DE USUFRUTO</option>
-<option  <?php  echo @$tipotransacao=="L E I L √ O"?"selected":"" ?>                         value='L E I L √ O' >L E I L √ O</option>
+<option  <?php  echo @$tipotransacao=="INCORPORA√á√ÉO"?"selected":"" ?>                     value='INCORPORA√á√ÉO'>INCORPORA√á√ÉO</option>
+<option  <?php  echo @$tipotransacao=="INST DE GAR HIPOTEC"?"selected":"" ?>              value='INST DE GAR HIPOTEC'>INSTITUI√á√ÉO DE GARANTIA HIPOTEC√ÅRIA</option>
+<option  <?php  echo @$tipotransacao=="INSTITUI√á√ÉO DE USUFR"?"selected":"" ?>             value='INSTITUI√á√ÉO DE USUFR"'>INSTITUI√á√ÉO DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="L E I L √É O"?"selected":"" ?>                         value='L E I L √É O' >L E I L √É O</option>
 <option  <?php  echo @$tipotransacao=="PERMUTA"?"selected":"" ?>                          value='PERMUTA'>PERMUTA</option>
-<option  <?php  echo @$tipotransacao=="REN⁄NCIA DE USUFRUTO"?"selected":"" ?>               value='REN⁄NCIA DE USUFRUTO' >REN⁄NCIA DE USUFRUTO</option>
+<option  <?php  echo @$tipotransacao=="REN√öNCIA DE USUFRUTO"?"selected":"" ?>               value='REN√öNCIA DE USUFRUTO' >REN√öNCIA DE USUFRUTO</option>
 <option  <?php  echo @$tipotransacao=="T O R N A"?"selected":"" ?>                        value='T O R N A' >T O R N A</option>
-<option  <?php  echo @$tipotransacao=="T O R N A (div Cons)"?"selected":"" ?>             value='T O R N A (div Cons)'>T O R N A (divÛrcio Consensual)</option>
-<option  <?php  echo @$tipotransacao=="TORNA-SEP JUD CONSEN"?"selected":"" ?>             value='TORNA-SEP JUD CONSEN'>TORNA - SEPARA«√O JUDICIAL CONSENSUAL</option>
+<option  <?php  echo @$tipotransacao=="T O R N A (div Cons)"?"selected":"" ?>             value='T O R N A (div Cons)'>T O R N A (div√≥rcio Consensual)</option>
+<option  <?php  echo @$tipotransacao=="TORNA-SEP JUD CONSEN"?"selected":"" ?>             value='TORNA-SEP JUD CONSEN'>TORNA - SEPARA√á√ÉO JUDICIAL CONSENSUAL</option>
 <option  <?php  echo @$tipotransacao=="USUCAPIAO"?"selected":"" ?>                      value='USUCAPIAO' >USUCAPIAO</option>
-<option  <?php  echo @$tipotransacao=="VENDA DE MEA«√O"?"selected":"" ?>                value='VENDA DE MEA«√O'>VENDA DE MEA«√O</option>
-<option  <?php  echo @$tipotransacao=="CIS√O PARCIAL COM INCORPORA«√O"?"selected":"" ?> value='CIS√O PARCIAL COM INCORPORA«√O'>CIS√O PARCIAL COM INCORPORA«√O</option>
-<option  <?php  echo @$tipotransacao=="EXTIN«√O DE PESSOA JURÕDICA"?"selected":"" ?>   value='EXTIN«√O DE PESSOA JURÕDICA'>EXTIN«√O DE PESSOA JURÕDICA</option>
+<option  <?php  echo @$tipotransacao=="VENDA DE MEA√á√ÉO"?"selected":"" ?>                value='VENDA DE MEA√á√ÉO'>VENDA DE MEA√á√ÉO</option>
+<option  <?php  echo @$tipotransacao=="CIS√ÉO PARCIAL COM INCORPORA√á√ÉO"?"selected":"" ?> value='CIS√ÉO PARCIAL COM INCORPORA√á√ÉO'>CIS√ÉO PARCIAL COM INCORPORA√á√ÉO</option>
+<option  <?php  echo @$tipotransacao=="EXTIN√á√ÉO DE PESSOA JUR√çDICA"?"selected":"" ?>   value='EXTIN√á√ÉO DE PESSOA JUR√çDICA'>EXTIN√á√ÉO DE PESSOA JUR√çDICA</option>
 
                                         </select>
                                      </td>
@@ -638,16 +638,16 @@ echo"
 
                                   echo "<tr>
                                                                          <td class=\"tabfonte\">
-                                                                                    DescriÁ„o
+                                                                                    Descri√ß√£o
                                                                                  </td>
                                                                                  <td class=\"tabfonte\">
                                             Tipo
                                                                                  </td>
                                                                                  <td class=\"tabfonte\">
-                                                                                    ¡rea ConstruÌda Transm.
+                                                                                    √Årea Constru√≠da Transm.
                                                                                  </td>
                                                                                  <td class=\"tabfonte\">
-                                            Ano ConstruÁ„o
+                                            Ano Constru√ß√£o
                                                                                    </td>
                                                                                  </tr>\n";
 

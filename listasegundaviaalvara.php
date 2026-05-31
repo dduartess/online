@@ -44,7 +44,7 @@ mens_help();
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 
 if (!isset($inscricao) or empty($inscricao)){
-   msgbox("Inscrição Inválida.");
+   msgbox("InscriÃ§Ã£o InvÃ¡lida.");
    db_logs("","$inscricao",0,"Inscricao Invalida. Numero: $inscricao ");
    redireciona("index.php");
 }
@@ -70,7 +70,7 @@ if (pg_numrows($result) == 0 ){
 db_logs("","$inscricao",0,"Inscricao Pesquisada. Numero: $inscricao ");
 db_fieldsmemory($result,0);
 if (empty($escritorio)){
-   $escritorio = 'O PRÓPRIO';
+   $escritorio = 'O PRÃ“PRIO';
 }
 /*
 $result = pg_exec("select v29_cep
@@ -96,7 +96,7 @@ if (pg_numrows($result) == 0 ){
 <html>
 <head>
 <title>Segunda Via de Alvar&aacute;</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdebitospendentes.php");
@@ -111,7 +111,7 @@ js_verificapagina("opcoesdebitospendentes.php");
 </style>
 </head>
 
-<body leftmargin="5" topmargin="5" marginwidth="0" marginheight="0" onLoad="alert('Clique em ALVARÁ para imprimir, ou digite Ctrl P')">
+<body leftmargin="5" topmargin="5" marginwidth="0" marginheight="0" onLoad="alert('Clique em ALVARÃ para imprimir, ou digite Ctrl P')">
 
 			   
 <table width="644" height="951" border="1" cellpadding="3" cellspacing="0" bordercolor="#000000">

@@ -37,7 +37,7 @@ db_postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
 <script>
@@ -73,7 +73,7 @@ if($id_usuario!=""){
 	}
 
 ?>  
- <div align="center" class='titulo'> Situação dos orçamentos
+ <div align="center" class='titulo'> SituaÃ§Ã£o dos orÃ§amentos
   <select name="mostra"  onchange="js_mostra()">
    <option value=1 <?php  if($mostra=="1"){ echo "selected"; }?> >Abertos</option>				 
 	 <option value=2 <?php  if($mostra=="2"){ echo "selected"; }?> >Vencidos</option>
@@ -100,7 +100,7 @@ if ($mostra==1) {	// se for em ABERTO .............
 		           z01_fax,
 		           z01_contato,
 		           pc23_vlrun,
-		           case when pc29_orcamitem is not null then 'SOLICITAÇÃO' else 'PROCESSO DE COMPRAS' end as origem,
+		           case when pc29_orcamitem is not null then 'SOLICITAÃ‡ÃƒO' else 'PROCESSO DE COMPRAS' end as origem,
 		           case when exists ( select 1 from pcorcamjulg where pc24_orcamitem = pc22_orcamitem ) 
                     then 'Julgado' 
                     else 'Aberto' 
@@ -135,7 +135,7 @@ if ($mostra==1) {	// se for em ABERTO .............
 		           z01_telef,
 		           z01_fax,
 		           z01_contato, 
-		           case when pc29_orcamitem is not null then 'SOLICITAÇÃO' else 'PROCESSO DE COMPRAS' end as origem
+		           case when pc29_orcamitem is not null then 'SOLICITAÃ‡ÃƒO' else 'PROCESSO DE COMPRAS' end as origem
 		      from pcorcamforne 
 		     inner join cgm             on cgm.z01_numcgm      = pcorcamforne.pc21_numcgm 
 		     inner join pcorcam         on pcorcam.pc20_codorc = pcorcamforne.pc21_codorc 
@@ -168,7 +168,7 @@ if ($mostra==3){// se for TODOS ...........
 		           z01_fax,
 		           z01_contato, 
 		           pc23_vlrun, 
-		           case when pc29_orcamitem is not null then 'SOLICITAÇÃO' else 'PROCESSO DE COMPRAS' end as origem,
+		           case when pc29_orcamitem is not null then 'SOLICITAÃ‡ÃƒO' else 'PROCESSO DE COMPRAS' end as origem,
 		           case when pc20_dtate <= '$data' 
 		                then 'Vencido' 
 		                else case when exists ( select 1 from pcorcamjulg where pc24_orcamitem = pc22_orcamitem ) 
@@ -194,7 +194,7 @@ if ($mostra==3){// se for TODOS ...........
 	if($linhas>0){
 		    echo"
 		    <tr >
-				<th align='center'> Orçamento
+				<th align='center'> OrÃ§amento
 				</th>
 				<th align='center'> Data
 				</th> 
@@ -210,7 +210,7 @@ if ($mostra==3){// se for TODOS ...........
 		for ($i = 0; $i < $linhas; $i ++) {
 			db_fieldsmemory($result,$i);
 			
-			if($origem=="SOLICITAÇÃO"){ 
+			if($origem=="SOLICITAÃ‡ÃƒO"){ 
 				$sol= 1;
 				
 			}else{
@@ -221,7 +221,7 @@ if ($mostra==3){// se for TODOS ...........
 			echo "<tr align='center' class='texto'>";
 			echo"<td>$pc20_codorc</td>";
 			
-			if($origem=="SOLICITAÇÃO"){
+			if($origem=="SOLICITAÃ‡ÃƒO"){
 				$sol=1;
 			}else{
 				$sol=2;
@@ -243,7 +243,7 @@ if ($mostra==3){// se for TODOS ...........
 					if ($mostra==1) {// se for aberto
 						if($pc23_vlrun!="" && $situacao=="Aberto"){ // se tiver valor
 							echo"<input name='alterar'  type='button' value='Alterar'  class='botao' onclick='js_alterar($pc20_codorc,$sol,$pc21_orcamforne,$id_usuario)'>";
-						}else{// se não tiver valor
+						}else{// se nÃ£o tiver valor
 							echo"<input name='incluir'  type='button' value='Incluir'  class='botao' onclick='js_alterar($pc20_codorc,$sol,$pc21_orcamforne,$id_usuario)'>";
 						}
 					}
@@ -251,7 +251,7 @@ if ($mostra==3){// se for TODOS ...........
 						if($situacao=="Aberto"){ // se for aberto
 							if($pc23_vlrun!="" ){ // se tiver valor
 								echo"<input name='alterar'  type='button' value='Alterar'  class='botao' onclick='js_alterar($pc20_codorc,$sol,$pc21_orcamforne,$id_usuario)'>";
-							}else{// se não tiver valor
+							}else{// se nÃ£o tiver valor
 								echo"<input name='incluir'  type='button' value='Incluir'  class='botao' onclick='js_alterar($pc20_codorc,$sol,$pc21_orcamforne,$id_usuario)'>";
 							}
 						}
@@ -266,7 +266,7 @@ if ($mostra==3){// se for TODOS ...........
 	}
 	
 }else{ 
-	echo " não logado";
+	echo " nÃ£o logado";
 }
 ?>
 </form>

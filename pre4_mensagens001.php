@@ -59,7 +59,7 @@ if(isset($HTTP_POST_VARS["enviar"])) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Expires" CONTENT="0">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/db_script.js"></script>
@@ -78,7 +78,7 @@ function js_ins_imagem() {
     alert("Selecione um arquivo primeiro");
 	return false;
   }
-  alert('Voce deverá clicar no botão Salvar para a imagem aparecer na tela');
+  alert('Voce deverÃ¡ clicar no botÃ£o Salvar para a imagem aparecer na tela');
   //pega o basename do arquivo
   if(arq.indexOf("/") != -1)
     arq = arq.split("/");
@@ -250,7 +250,7 @@ function js_submeter() {
   var F = document.form1;
   
   if(F.result_text.value == '')
-    if(confirm('A mensagem ficará vazia. Deseja continuar?') == true)
+    if(confirm('A mensagem ficarÃ¡ vazia. Deseja continuar?') == true)
 	  return true;
 	else
 	  return false;
@@ -335,7 +335,7 @@ echo "<b><u>Help ".$codhelp."</u>\n";
                     <label for="negrito3">Negrito</label>
                     <br>
                     <input name="italico" type="checkbox" id="italico3" value="I">
-                    <label for="italico3">Itálico</label>
+                    <label for="italico3">ItÃ¡lico</label>
                     <br>
                     <input name="sublinhado" type="checkbox" id="sublinhado3" value="S">
                     <label for="sublinhado3">Sublinhado</label>
@@ -362,7 +362,7 @@ echo "<b><u>Help ".$codhelp."</u>\n";
                 </tr>
                 <tr align="left" valign="top"> 
                   <td nowrap> <select name="fonte" id="select5">
-                      <option value="FP">Fonte Padrão</option>
+                      <option value="FP">Fonte PadrÃ£o</option>
                       <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, 
                       sans-serif</option>
                       <option value="Times New Roman, Times, serif">Times New 

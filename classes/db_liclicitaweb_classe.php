@@ -25,7 +25,7 @@
  *                                licenca/licenca_pt.txt 
  */
 
-//MODULO: licitação
+//MODULO: licitaÃ§Ã£o
 //CLASSE DA ENTIDADE liclicitaweb
 class cl_liclicitaweb { 
    // cria variaveis de erro 
@@ -56,12 +56,12 @@ class cl_liclicitaweb {
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
                  l29_sequencial = int4 = codigo sequencial 
-                 l29_liclicita = int4 = codigo da licitação 
-                 l29_datapublic = date = data para publicação 
+                 l29_liclicita = int4 = codigo da licitaÃ§Ã£o 
+                 l29_datapublic = date = data para publicaÃ§Ã£o 
                  l29_contato = varchar(60) = Contato 
                  l29_email = varchar(100) = Email 
                  l29_telefone = varchar(15) = Telefone 
-                 l29_obs = text = Observação 
+                 l29_obs = text = ObservaÃ§Ã£o 
                  l29_liberaedital = int4 = l29_liberaedital 
                  ";
    //funcao construtor da classe 
@@ -105,19 +105,19 @@ class cl_liclicitaweb {
    function incluir ($l29_sequencial){ 
       $this->atualizacampos();
      if($this->l29_liclicita == null ){ 
-       $this->erro_sql = " Campo codigo da licitação nao Informado.";
+       $this->erro_sql = " Campo codigo da licitaÃ§Ã£o nao Informado.";
        $this->erro_campo = "l29_liclicita";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->l29_datapublic == null ){ 
-       $this->erro_sql = " Campo data para publicação nao Informado.";
+       $this->erro_sql = " Campo data para publicaÃ§Ã£o nao Informado.";
        $this->erro_campo = "l29_datapublic_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -126,7 +126,7 @@ class cl_liclicitaweb {
        $this->erro_sql = " Campo l29_liberaedital nao Informado.";
        $this->erro_campo = "l29_liberaedital";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -136,7 +136,7 @@ class cl_liclicitaweb {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: liclicitaweb_l29_sequencial_seq do campo: l29_sequencial"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -145,9 +145,9 @@ class cl_liclicitaweb {
      }else{
        $result = @pg_query("select last_value from liclicitaweb_l29_sequencial_seq");
        if(($result != false) && (pg_result($result,0,0) < $l29_sequencial)){
-         $this->erro_sql = " Campo l29_sequencial maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo l29_sequencial maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -158,7 +158,7 @@ class cl_liclicitaweb {
      if(($this->l29_sequencial == null) || ($this->l29_sequencial == "") ){ 
        $this->erro_sql = " Campo l29_sequencial nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -187,13 +187,13 @@ class cl_liclicitaweb {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "liclicitaweb ($this->l29_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "liclicitaweb já Cadastrado";
+         $this->erro_sql   = "liclicitaweb ($this->l29_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "liclicitaweb jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "liclicitaweb ($this->l29_sequencial) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "liclicitaweb ($this->l29_sequencial) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -203,7 +203,7 @@ class cl_liclicitaweb {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->l29_sequencial;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -235,7 +235,7 @@ class cl_liclicitaweb {
          $this->erro_sql = " Campo codigo sequencial nao Informado.";
          $this->erro_campo = "l29_sequencial";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -245,10 +245,10 @@ class cl_liclicitaweb {
        $sql  .= $virgula." l29_liclicita = $this->l29_liclicita ";
        $virgula = ",";
        if(trim($this->l29_liclicita) == null ){ 
-         $this->erro_sql = " Campo codigo da licitação nao Informado.";
+         $this->erro_sql = " Campo codigo da licitaÃ§Ã£o nao Informado.";
          $this->erro_campo = "l29_liclicita";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -258,10 +258,10 @@ class cl_liclicitaweb {
        $sql  .= $virgula." l29_datapublic = '$this->l29_datapublic' ";
        $virgula = ",";
        if(trim($this->l29_datapublic) == null ){ 
-         $this->erro_sql = " Campo data para publicação nao Informado.";
+         $this->erro_sql = " Campo data para publicaÃ§Ã£o nao Informado.";
          $this->erro_campo = "l29_datapublic_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -271,10 +271,10 @@ class cl_liclicitaweb {
          $sql  .= $virgula." l29_datapublic = null ";
          $virgula = ",";
          if(trim($this->l29_datapublic) == null ){ 
-           $this->erro_sql = " Campo data para publicação nao Informado.";
+           $this->erro_sql = " Campo data para publicaÃ§Ã£o nao Informado.";
            $this->erro_campo = "l29_datapublic_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -304,7 +304,7 @@ class cl_liclicitaweb {
          $this->erro_sql = " Campo l29_liberaedital nao Informado.";
          $this->erro_campo = "l29_liberaedital";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -343,7 +343,7 @@ class cl_liclicitaweb {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "liclicitaweb nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->l29_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -353,16 +353,16 @@ class cl_liclicitaweb {
          $this->erro_banco = "";
          $this->erro_sql = "liclicitaweb nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->l29_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->l29_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -408,9 +408,9 @@ class cl_liclicitaweb {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "liclicitaweb nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "liclicitaweb nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$l29_sequencial;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -418,18 +418,18 @@ class cl_liclicitaweb {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "liclicitaweb nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "liclicitaweb nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$l29_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$l29_sequencial;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -444,7 +444,7 @@ class cl_liclicitaweb {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -453,7 +453,7 @@ class cl_liclicitaweb {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:liclicitaweb";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

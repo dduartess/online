@@ -28,7 +28,7 @@
 
 /**
  * 
- * Esta classe deve conter metodos para tratamento de Números.
+ * Esta classe deve conter metodos para tratamento de NÃºmeros.
  * @name DBNumber
  * @package std
  * @author dbseller
@@ -38,7 +38,7 @@ class DBNumber {
   
   /**
    * 
-   * Classe responsável por arredondar um número float 
+   * Classe responsÃ¡vel por arredondar um nÃºmero float 
    * @param float $nNumber Numero a ser tratado
    * @param integar $iBase base de arredondamento
    * @return float
@@ -46,7 +46,7 @@ class DBNumber {
   static function round($nNumber=null,$iBase=null){
     
     /**
-     * Metodo wrapper para correção de bug no metodo round em versões do php <= 5.2
+     * Metodo wrapper para correÃ§Ã£o de bug no metodo round em versÃµes do php <= 5.2
      */
     if (floatval(phpversion()) <= 5.2) {
       return round(round($nNumber*pow(10, $iBase+1), 0), -1)/pow(10, $iBase+1);

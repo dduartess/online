@@ -79,7 +79,7 @@ if(isset($HTTP_POST_VARS["calculavalor"])) {
      next($vt);
   }
   if(sizeof($valores) != sizeof($numpres)) {
-    echo "Matriz inválida!\n";
+    echo "Matriz invÃ¡lida!\n";
      exit;
   }
   $tam = sizeof($valores);
@@ -97,29 +97,29 @@ if(isset($HTTP_POST_VARS["calculavalor"])) {
 
 //mens_help();
 if(!isset($tipo)){
-   msgbox("Acesso a Rotina Inválido.");
+   msgbox("Acesso a Rotina InvÃ¡lido.");
    db_logs("","",0,"Acesso a Rotina Invalida. - Variavel tipo nao setada");
    redireciona("index.php");
 }
 if(!isset($opcao)){
-   msgbox("Acesso a Rotina Inválido.");
+   msgbox("Acesso a Rotina InvÃ¡lido.");
    db_logs("","",0,"Acesso a Rotina Invalida. - Variavel tipo nao setada");
    redireciona("index.php");
 }
 if($opcao == "n") {
   $Caminho = "&nbsp;<a href=\"digitacontribuinte.php\" class=\"links\">Contribuinte &gt;</a>
-               &nbsp;<a href=\"opcoesdebitospendentes.php?".base64_encode("opcao=n&numcgm=".$numcgm)."\" class=\"links\">Opções Contribuinte &gt;</a>
+               &nbsp;<a href=\"opcoesdebitospendentes.php?".base64_encode("opcao=n&numcgm=".$numcgm)."\" class=\"links\">OpÃ§Ãµes Contribuinte &gt;</a>
                &nbsp;<font class=\"links\">Lista Contribuinte($descricaotipo) &gt;</font>\n";
 } else if($opcao == "m") {
-  $Caminho = "&nbsp;<a href=\"digitamatricula.php\" class=\"links\">Imóvel &gt;</a>
-               &nbsp;<a href=\"opcoesdebitospendentes.php?".base64_encode("opcao=m&matricula=".$matricula)."\" class=\"links\">Opções Imóvel &gt;</a>
-               &nbsp;<font class=\"links\">Lista Imóvel($descricaotipo) &gt;</font>\n";
+  $Caminho = "&nbsp;<a href=\"digitamatricula.php\" class=\"links\">ImÃ³vel &gt;</a>
+               &nbsp;<a href=\"opcoesdebitospendentes.php?".base64_encode("opcao=m&matricula=".$matricula)."\" class=\"links\">OpÃ§Ãµes ImÃ³vel &gt;</a>
+               &nbsp;<font class=\"links\">Lista ImÃ³vel($descricaotipo) &gt;</font>\n";
 } else if($opcao == "i") {
-  $Caminho = "&nbsp;<a href=\"digitainscricao.php\" class=\"links\">Alvará &gt;</a>
-              &nbsp;<a href=\"opcoesdebitospendentes.php?".base64_encode("opcao=i&inscricao=".@$inscricao)."\" class=\"links\">Opções Alvará &gt;</a>
-               &nbsp;<font class=\"links\">Lista Alvará($descricaotipo) &gt;</font>\n";
+  $Caminho = "&nbsp;<a href=\"digitainscricao.php\" class=\"links\">AlvarÃ¡ &gt;</a>
+              &nbsp;<a href=\"opcoesdebitospendentes.php?".base64_encode("opcao=i&inscricao=".@$inscricao)."\" class=\"links\">OpÃ§Ãµes AlvarÃ¡ &gt;</a>
+               &nbsp;<font class=\"links\">Lista AlvarÃ¡($descricaotipo) &gt;</font>\n";
 }
-//verifica o tipo e da o select dependendo se é numcgm, matric numpre ou inscr          
+//verifica o tipo e da o select dependendo se Ã© numcgm, matric numpre ou inscr          
 if(isset($tipo)) {
   if($tipo == 3) {
     if(isset($numcgm)){
@@ -169,7 +169,7 @@ $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",$acesso,$campo)"
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdebitospendentes.php,listadebitospendentes.php");
@@ -195,7 +195,7 @@ function js_emiterecibo() {
     jan.moveTo(0,0);
     return true;
   }else{
-    alert("Selecione o débito a ser impresso.");
+    alert("Selecione o dÃ©bito a ser impresso.");
   }
   return false;
 }
@@ -341,7 +341,7 @@ mens_div();
                     <th class="borda" style="font-size:11px" nowrap>TP</th>
                     <th class="borda" style="font-size:11px" nowrap>Dt. oper.</th>
                     <th class="borda" style="font-size:11px" nowrap>Dt. Venc.</th>
-                    <th class="borda" style="font-size:11px" nowrap>Descrição</th>
+                    <th class="borda" style="font-size:11px" nowrap>DescriÃ§Ã£o</th>
                     <th class="borda" style="font-size:11px" nowrap>R</th>
                     <th class="borda" style="font-size:11px" nowrap>D.R.</th>
                     <th class="borda" style="font-size:11px" nowrap>Val.</th>
@@ -354,12 +354,12 @@ mens_div();
                   </tr>
                   <?php 
      ////////////////////////////////////////////////////////
-       //if com 3 partes. Primeiro se é pra agrupar por numpre, segundo se é pra agrupar por parcela e terceiro mostra o default
+       //if com 3 partes. Primeiro se Ã© pra agrupar por numpre, segundo se Ã© pra agrupar por parcela e terceiro mostra o default
   //agrupar por numpre
   $numrows = pg_numrows($result);
   if(@$agnum == 't') {
   /******************************************************************************************/
-    //cria um array com os elementos não repetidos
+    //cria um array com os elementos nÃ£o repetidos
      $j = 0;
      $vlrtotal = 0;
      $elementos[0] = "";
@@ -408,7 +408,7 @@ mens_div();
          $corDtvenc = "red";
        else
          $corDtvenc = "";       
-          //*****CABEÇALHO  ;border:none
+          //*****CABEÃ‡ALHO  ;border:none
       echo "<label for=\"CHECK$i\"><tr style=\"cursor: hand\" bgcolor=\"".($cor = (@$cor=="#E4F471"?"#EFE029":"#E4F471"))."\">\n";
       echo "<td class=\"borda\" nowrap>0</td>\n";
       echo "<td class=\"borda\" nowrap>".$REGISTRO[$i]["k00_numtot"]."</td>\n";
@@ -433,7 +433,7 @@ mens_div();
 
     
   /***************/      
-       //cria um array com os numpres não repetidos
+       //cria um array com os numpres nÃ£o repetidos
      $j = 0;
      $elementos_numpres[0] = "";
     for($i = 0;$i < $numrows;$i++) {       
@@ -590,7 +590,7 @@ mens_div();
   /***************/
   } else {
   /**********************************************************************************************/   
-//cria um array com os numpres não repetidos
+//cria um array com os numpres nÃ£o repetidos
 //issqnvar
     $j = 0;
     $elementos_numpres[0] = "";
@@ -604,7 +604,7 @@ mens_div();
     $bool = 1;
     //faz a mao..
     for($x = 0;$x < sizeof($elementos_numpres);$x++) {
-       //cria um array com as parcelas do numpre não repetidos
+       //cria um array com as parcelas do numpre nÃ£o repetidos
        if($bool == 0) {
          $ConfCor1 = "#77EE20";
          $ConfCor2 = "#A9F471";
@@ -700,9 +700,9 @@ mens_div();
           echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>00</td>\n";
           echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>".$dtoperunic."</td>\n";
           echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>".$dtvencunic."</td>\n";     
-          echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcena Única com $k00_percdes% desconto</td>\n";
+          echo "<td colspan=\"3\" class=\"borda\" style=\"font-size:11px;color:white\" nowrap>Parcena Ãšnica com $k00_percdes% desconto</td>\n";
 //          echo "<td class=\"borda\" style=\"font-size:11px\" nowrap></td>\n";
- //         echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>Parcela Única</td>\n";
+ //         echo "<td class=\"borda\" style=\"font-size:11px\" nowrap>Parcela Ãšnica</td>\n";
        
           echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrhis,2,".",",")."</td>\n";
           echo "<td class=\"borda\" style=\"font-size:11px\" align=\"right\" nowrap>".number_format($uvlrcorr,2,".",",")."</td>\n";

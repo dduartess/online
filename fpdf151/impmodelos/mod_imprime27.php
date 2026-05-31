@@ -1,7 +1,7 @@
 <?php 
 global $contapagina;
 	$contapagina=1;
-////////// MODELO 26  -  TRANSFERÊNCIAS DE MATERIAIS 
+////////// MODELO 26  -  TRANSFERÃŠNCIAS DE MATERIAIS 
 	$this->objpdf->AliasNbPages();
 //	$this->objpdf->AddPage();
 	$this->objpdf->settopmargin(1);
@@ -32,7 +32,7 @@ global $contapagina;
 	  $this->objpdf->setfillcolor(255,255,255);
 //		$this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
 	  $this->objpdf->Setfont('Arial','B',11);
-	  $this->objpdf->text(110,$xlin-13,'TRANSFERÊNCIA DE MATERIAIS N'.chr(176).' '.$this->Rnumero);
+	  $this->objpdf->text(110,$xlin-13,'TRANSFERÃŠNCIA DE MATERIAIS N'.chr(176).' '.$this->Rnumero);
 //		$this->objpdf->text(159,$xlin-8,$this->datacalc);
 	  $this->objpdf->Image('imagens/files/logo_boleto.png',10,$xlin-17,12);
 	  
@@ -78,9 +78,9 @@ global $contapagina;
 //		$this->objpdf->setfillcolor(245);
 	  $this->objpdf->Roundedrect($xcol,$xlin+18,202,78,2,'DF','1234');
 	  $this->objpdf->Setfont('Arial','b',8);
-	  $this->objpdf->text($xcol+2,$xlin+26,'CÓDIGO');
-	  $this->objpdf->text($xcol+25,$xlin+26,'DESCRIÇÃO');
-	  $this->objpdf->text($xcol+80,$xlin+26,'UNID. SAÍDA');
+	  $this->objpdf->text($xcol+2,$xlin+26,'CÃ“DIGO');
+	  $this->objpdf->text($xcol+25,$xlin+26,'DESCRIÃ‡ÃƒO');
+	  $this->objpdf->text($xcol+80,$xlin+26,'UNID. SAÃDA');
 	  $this->objpdf->text($xcol+115,$xlin+26,'QUANT. TRANSFERIDA');
 	  
 	  $this->objpdf->Setfont('Arial','',8);

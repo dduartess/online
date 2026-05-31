@@ -1,9 +1,9 @@
 <?php 
-                            	  //  F I C H A   D E   C O M P E N S A Ç Ã O 
+                            	  //  F I C H A   D E   C O M P E N S A Ã‡ Ãƒ O 
 
 /*  Line(float x1, float y1, float x2, float y2)
 
-Parâmetros:
+ParÃ¢metros:
 x1
    Abscissa do primeiro ponto. 
 y1
@@ -86,44 +86,44 @@ y2
   $this->objpdf->Text($x+158, $y+11,"Vencimento");
 
   $this->objpdf->Text($x+3,   $y+19,"Cedente");
-  $this->objpdf->Text($x+138, $y+19,"Agência/Código Cedente");
+  $this->objpdf->Text($x+138, $y+19,"AgÃªncia/CÃ³digo Cedente");
 
   $this->objpdf->Text($x+3,   $y+26,"Data do Documento");
-  $this->objpdf->Text($x+29,  $y+26,"Número do Documento");
-  $this->objpdf->Text($x+75,  $y+26,"Espécie Doc.");
+  $this->objpdf->Text($x+29,  $y+26,"NÃºmero do Documento");
+  $this->objpdf->Text($x+75,  $y+26,"EspÃ©cie Doc.");
   $this->objpdf->Text($x+101, $y+26,"Aceite");
   $this->objpdf->Text($x+114, $y+26,"Data do Processamento");
-  $this->objpdf->Text($x+138, $y+26,"Nosso Número");
+  $this->objpdf->Text($x+138, $y+26,"Nosso NÃºmero");
 
   $this->objpdf->Text($x+3,   $y+33,"Uso do banco");
   $this->objpdf->Text($x+34,  $y+33,"Carteira");
-  $this->objpdf->Text($x+54,  $y+33,"Espécie");
+  $this->objpdf->Text($x+54,  $y+33,"EspÃ©cie");
   $this->objpdf->Text($x+80,  $y+33,"Quantidade");
   $this->objpdf->Text($x+110, $y+33,"Valor");
   $this->objpdf->Text($x+138, $y+33,"( = ) Valor do Documento");
 
-  $this->objpdf->Text($x+3,   $y+40,"Instruções");
+  $this->objpdf->Text($x+3,   $y+40,"InstruÃ§Ãµes");
   $this->objpdf->Text($x+138, $y+40,"( - ) Desconto / Abatimento");
 
-  $this->objpdf->Text($x+138, $y+47,"( - ) Outras Deduções");
+  $this->objpdf->Text($x+138, $y+47,"( - ) Outras DeduÃ§Ãµes");
   $this->objpdf->Text($x+138, $y+54,"( + ) Mora / Multa");
-  $this->objpdf->Text($x+138, $y+61,"( + ) Outros Acréscimos");
+  $this->objpdf->Text($x+138, $y+61,"( + ) Outros AcrÃ©scimos");
   $this->objpdf->Text($x+138, $y+68,"( = ) Valor Cobrado");
   $this->objpdf->Text($x+3,   $y+75,"Sacado");
   $this->objpdf->Text($x+3,   $y+85,"Sacador/Avalista");
 
   $this->objpdf->SetFont('Arial','b',6);
-  $this->objpdf->Text($x+120, $y+90,"AUTENTICAÇÃO MECÂNICA / FICHA DE COMPENSAÇÃO");
+  $this->objpdf->Text($x+120, $y+90,"AUTENTICAÃ‡ÃƒO MECÃ‚NICA / FICHA DE COMPENSAÃ‡ÃƒO");
 
 // $this->instrucoes1     = 'IPTU 2006';                                // instrucoes 1
-// $this->instrucoes2     = 'CODIGO DE ARRECADAÇÃO : '.$this->descr9;   // instrucoes 2
+// $this->instrucoes2     = 'CODIGO DE ARRECADAÃ‡ÃƒO : '.$this->descr9;   // instrucoes 2
 // $this->instrucoes3     = 'EXERC : 2006';                             // ins
 /* $this->agencia_cedente = "0694-7 / 73336-9";
    $this->carteira        = '18-027';*/
 
   $this->especie_doc     = "RC";
   $this->aceite          = "N";
-  $this->localpagamento  = " QUALQUER BANCO ATÉ O VENCIMENTO "; 
+  $this->localpagamento  = " QUALQUER BANCO ATÃ‰ O VENCIMENTO "; 
 
   $this->objpdf->SetFont('Arial','b',8);
   $this->objpdf->Text($x+3,   $y+15,$this->localpagamento);              // local de pagamento
@@ -159,7 +159,7 @@ y2
   
   $this->objpdf->sety($y+42);
   $this->objpdf->SetFont('Arial','',9);
-  $instrucao = "Tipo/Exercício: ".@$this->tipo_exerc.$this->descr12_1." \n";
+  $instrucao = "Tipo/ExercÃ­cio: ".@$this->tipo_exerc.$this->descr12_1." \n";
   if(@$this->valtotal!=""){
     $instrucao .= "Valor corrigido= ".trim($this->valtotal);
   }
@@ -170,13 +170,13 @@ y2
     $instrucao .= "  Mora/Multa = ".trim($this->mora_multa);
   }
 
-  $this->objpdf->multicell(130,3,$instrucao); // Instrução
+  $this->objpdf->multicell(130,3,$instrucao); // InstruÃ§Ã£o
   $this->objpdf->SetFont('Arial','',10);
  
   $this->objpdf->setXY($x+136,$y+39);
   $this->objpdf->cell(30,6,"",0,0,"R");//desconto abatimento;  tirei @$this->desconto_abatimento
   $this->objpdf->setXY($x+136,$y+46);
-  $this->objpdf->cell(30,6,'',0,0,"R");//outras deduções
+  $this->objpdf->cell(30,6,'',0,0,"R");//outras deduÃ§Ãµes
   $this->objpdf->setXY($x+136,$y+53);
   $this->objpdf->cell(30,6,"",0,0,"R");//multa ...... @$this->mora_multa
   $this->objpdf->setXY($x+136,$y+60);

@@ -58,7 +58,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
     db_query("COMMIT");
   }else{
 
-    db_msgbox("campo senha atual não confere!");
+    db_msgbox("campo senha atual nÃ£o confere!");
     db_redireciona($HTTP_SERVER_VARS['PHP_SELF']."?".base64_encode("id_usuario=".$id_usuario));
   }
   if(isset($enviaemail) && ($enviaemail == "sim")){
@@ -66,7 +66,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
 <html>
 <head>
 <title>DBSeller Inform&aacute;tica Ltda.</title>
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
 </head>
 
 <body bgcolor=\"#FFFFFF\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\">
@@ -84,7 +84,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
               </tr>
               <tr>
                 <td><ul>
-                    <li><font size=\"2\" face=\"Arial, Helvetica, sans-serif\">Você alterou sua senha no site Prefeitura-OnLine,<br> este e-mail foi enviado conforme solicitado no site para verificação</li>
+                    <li><font size=\"2\" face=\"Arial, Helvetica, sans-serif\">VocÃª alterou sua senha no site Prefeitura-OnLine,<br> este e-mail foi enviado conforme solicitado no site para verificaÃ§Ã£o</li>
                   </ul></td>
               </tr>
               <tr>
@@ -95,7 +95,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
               </tr>
               <tr>
                 <td><ul>
-                    <li>Usuário : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>$nome</strong></font></li>
+                    <li>UsuÃ¡rio : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>$nome</strong></font></li>
                   </ul></td>
               </tr>
               <tr>
@@ -110,7 +110,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
               </tr>
               <tr>
                 <td><ul>
-                    <li>Data da alteração : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>".db_formatar(date("Y-m-d"),'d')."</strong></font></li>
+                    <li>Data da alteraÃ§Ã£o : <font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><strong>".db_formatar(date("Y-m-d"),'d')."</strong></font></li>
                   </ul></td>
               </tr>
               <tr>
@@ -126,7 +126,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
               </tr>
               <tr>
                 <td align=\"center\"><p><font size=\"1\">Este e-mail foi enviado automaticamente
-                    por favor não responda-o</font></p></td>
+                    por favor nÃ£o responda-o</font></p></td>
               </tr>
               <tr>
                 <td align=\"center\"><p><a href=\"http://200.102.214.168\"><font size=\"1\">DBSeller Inform&aacute;tica
@@ -145,7 +145,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
   db_fieldsmemory($rsConsultaConfigDBPref,0);
 
   $oMail = new Smtp();
-  $oMail->Send($email,$w13_emailadmin,'Alteração de senha do site Prefeitura On-Line',$mensagemDestinatario);
+  $oMail->Send($email,$w13_emailadmin,'AlteraÃ§Ã£o de senha do site Prefeitura On-Line',$mensagemDestinatario);
 
   }
   db_msgbox("Senha alterada com sucesso!");
@@ -155,7 +155,7 @@ if(isset($HTTP_POST_VARS["alterar"])) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php db_estilosite();?>

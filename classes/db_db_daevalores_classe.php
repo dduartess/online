@@ -54,9 +54,9 @@ class cl_db_daevalores {
    var $w07_dtpaga = null; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 w07_codigo = int4 = Código dae 
-                 w07_item = int4 = código do item 
-                 w07_mes = varchar(2) = mês 
+                 w07_codigo = int4 = CÃ³digo dae 
+                 w07_item = int4 = cÃ³digo do item 
+                 w07_mes = varchar(2) = mÃªs 
                  w07_valor = float8 = Valor da receita 
                  w07_aliquota = int4 = Aliquota 
                  w07_imposto = int4 = Imposto 
@@ -103,10 +103,10 @@ class cl_db_daevalores {
    function incluir ($w07_codigo,$w07_item){ 
       $this->atualizacampos();
      if($this->w07_mes == 0 ){ 
-       $this->erro_sql = " Campo mês nao Informado.";
+       $this->erro_sql = " Campo mÃªs nao Informado.";
        $this->erro_campo = "w07_mes";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -115,7 +115,7 @@ class cl_db_daevalores {
        $this->erro_sql = " Campo Valor da receita nao Informado.";
        $this->erro_campo = "w07_valor";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -124,7 +124,7 @@ class cl_db_daevalores {
        $this->erro_sql = " Campo Aliquota nao Informado.";
        $this->erro_campo = "w07_aliquota";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -133,7 +133,7 @@ class cl_db_daevalores {
        $this->erro_sql = " Campo Imposto nao Informado.";
        $this->erro_campo = "w07_imposto";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -142,7 +142,7 @@ class cl_db_daevalores {
     //   $this->erro_sql = " Campo Data de pagamento nao Informado.";
     //   $this->erro_campo = "w07_dtpaga_dia";
     //   $this->erro_banco = "";
-    //   $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+    //   $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
     //   $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
     //   $this->erro_status = "0";
     //   return false;
@@ -152,7 +152,7 @@ class cl_db_daevalores {
      if(($this->w07_codigo == null) || ($this->w07_codigo == "") ){ 
        $this->erro_sql = " Campo w07_codigo nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -160,7 +160,7 @@ class cl_db_daevalores {
      if(($this->w07_item == null) || ($this->w07_item == "") ){ 
        $this->erro_sql = " Campo w07_item nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -187,13 +187,13 @@ class cl_db_daevalores {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "tabela de valores do dae ($this->w07_codigo."-".$this->w07_item) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "tabela de valores do dae já Cadastrado";
+         $this->erro_sql   = "tabela de valores do dae ($this->w07_codigo."-".$this->w07_item) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "tabela de valores do dae jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "tabela de valores do dae ($this->w07_codigo."-".$this->w07_item) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "tabela de valores do dae ($this->w07_codigo."-".$this->w07_item) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -203,7 +203,7 @@ class cl_db_daevalores {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->w07_codigo."-".$this->w07_item;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -232,10 +232,10 @@ class cl_db_daevalores {
        $sql  .= $virgula." w07_codigo = $this->w07_codigo ";
        $virgula = ",";
        if(trim($this->w07_codigo) == null ){ 
-         $this->erro_sql = " Campo Código dae nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo dae nao Informado.";
          $this->erro_campo = "w07_codigo";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -245,10 +245,10 @@ class cl_db_daevalores {
        $sql  .= $virgula." w07_item = $this->w07_item ";
        $virgula = ",";
        if(trim($this->w07_item) == null ){ 
-         $this->erro_sql = " Campo código do item nao Informado.";
+         $this->erro_sql = " Campo cÃ³digo do item nao Informado.";
          $this->erro_campo = "w07_item";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -258,10 +258,10 @@ class cl_db_daevalores {
        $sql  .= $virgula." w07_mes = '$this->w07_mes' ";
        $virgula = ",";
        if(trim($this->w07_mes) == null ){ 
-         $this->erro_sql = " Campo mês nao Informado.";
+         $this->erro_sql = " Campo mÃªs nao Informado.";
          $this->erro_campo = "w07_mes";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -274,7 +274,7 @@ class cl_db_daevalores {
          $this->erro_sql = " Campo Valor da receita nao Informado.";
          $this->erro_campo = "w07_valor";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -287,7 +287,7 @@ class cl_db_daevalores {
          $this->erro_sql = " Campo Aliquota nao Informado.";
          $this->erro_campo = "w07_aliquota";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -300,7 +300,7 @@ class cl_db_daevalores {
          $this->erro_sql = " Campo Imposto nao Informado.";
          $this->erro_campo = "w07_imposto";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -313,7 +313,7 @@ class cl_db_daevalores {
       //   $this->erro_sql = " Campo Data de pagamento nao Informado.";
       //   $this->erro_campo = "w07_dtpaga_dia";
        //  $this->erro_banco = "";
-      //   $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+      //   $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
       //   $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
       //   $this->erro_status = "0";
       //   return false;
@@ -326,7 +326,7 @@ class cl_db_daevalores {
           // $this->erro_sql = " Campo Data de pagamento nao Informado.";
           // $this->erro_campo = "w07_dtpaga_dia";
           // $this->erro_banco = "";
-          // $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+          // $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
           // $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
           // $this->erro_status = "0";
           // return false;
@@ -368,7 +368,7 @@ class cl_db_daevalores {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "tabela de valores do dae nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->w07_codigo."-".$this->w07_item;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -378,16 +378,16 @@ class cl_db_daevalores {
          $this->erro_banco = "";
          $this->erro_sql = "tabela de valores do dae nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->w07_codigo."-".$this->w07_item;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->w07_codigo."-".$this->w07_item;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -439,9 +439,9 @@ class cl_db_daevalores {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "tabela de valores do dae nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "tabela de valores do dae nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$w07_codigo."-".$w07_item;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -449,18 +449,18 @@ class cl_db_daevalores {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "tabela de valores do dae nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "tabela de valores do dae nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$w07_codigo."-".$w07_item;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$w07_codigo."-".$w07_item;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -475,7 +475,7 @@ class cl_db_daevalores {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -484,7 +484,7 @@ class cl_db_daevalores {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:db_daevalores";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

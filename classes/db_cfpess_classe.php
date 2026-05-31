@@ -136,7 +136,7 @@ class cl_cfpess {
    var $r11_relatoriotermorescisao = 0; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 r11_instit = int4 = Cod. Instituição 
+                 r11_instit = int4 = Cod. InstituiÃ§Ã£o 
                  r11_anousu = int4 = Ano do Exercicio 
                  r11_mesusu = int4 = Mes do Exercicio 
                  r11_codaec = varchar(5) = CNAE 
@@ -147,72 +147,72 @@ class cl_cfpess {
                  r11_pctemp = float8 = INSS % 
                  r11_pcterc = float8 = Terceiros % 
                  r11_fgts12 = int4 = FGTS 
-                 r11_cdcef = varchar(5) = Código FGTS 
-                 r11_cdfgts = varchar(8) = Sequência FGTS 
+                 r11_cdcef = varchar(5) = CÃ³digo FGTS 
+                 r11_cdfgts = varchar(8) = SequÃªncia FGTS 
                  r11_ultger = date = Data de Mov. do Gerfxxx.dbf 
-                 r11_ultfec = date = Último Fechamento 
+                 r11_ultfec = date = Ãšltimo Fechamento 
                  r11_arredn = int4 = Arredondamento 
-                 r11_sald13 = bool = Adiantamento de 13º 
+                 r11_sald13 = bool = Adiantamento de 13Âº 
                  r11_datai = date = data inicial do periodo da fol 
                  r11_dataf = date = data final do periodo da folha 
                  r11_fecha = varchar(12) = Indica se folha foi fechada 
-                 r11_ultreg = int4 = Último Registro 
+                 r11_ultreg = int4 = Ãšltimo Registro 
                  r11_codipe = int4 = Codigo do I.P.E. 
-                 r11_mes13 = int4 = Mês Pagto Saldo 13º 
+                 r11_mes13 = int4 = MÃªs Pagto Saldo 13Âº 
                  r11_tbprev = int4 = Tabela INSS 
-                 r11_confer = bool = Ignora Férias 
+                 r11_confer = bool = Ignora FÃ©rias 
                  r11_valor = float8 = Valor Minimo Contr ao IPE 
                  r11_dtipe = int4 = Codigo Tabela do IPE 
-                 r11_implan = varchar(7) = Ano/mes da implantação 
+                 r11_implan = varchar(7) = Ano/mes da implantaÃ§Ã£o 
                  r11_subpes = varchar(7) = Ano/Mes da Folha 
-                 r11_rubmat = varchar(4) = Salário maternidade 
+                 r11_rubmat = varchar(4) = SalÃ¡rio maternidade 
                  r11_eleina = varchar(12) = Elementos de Inativos 
                  r11_elepen = varchar(12) = Elemento de Pensionistas 
                  r11_rubnat = varchar(4) = Rubrica do Sal. Maternidade 
                  r11_rubdec = varchar(4) = Adiantamento de 13o. 
-                 r11_qtdcal = int4 = Qtd. de Servidores Cálculo Geral 
-                 r11_palime = varchar(4) = Rubrica Pensão Alimentícia 
-                 r11_altfer = varchar(7) = Alt. Férias 
-                 r11_ferias = varchar(4) = Férias 
-                 r11_fer13 = varchar(4) = 1/3 de férias 
-                 r11_ferant = varchar(4) = Férias mês anterior 
-                 r11_fer13o = varchar(4) = 1/3 de férias 
-                 r11_fer13a = varchar(4) = 1/3 Abono de férias 
-                 r11_ferabo = varchar(4) = Abono de férias 
-                 r11_feabot = varchar(4) = Abono Mês Anterior 
-                 r11_feradi = varchar(4) = Adiantamento de férias 
-                 r11_fadiab = varchar(4) = Adiantamento abono de férias 
-                 r11_recalc = bool = recalcula 1/3 ferias mês gozo 
-                 r11_pagaab = bool = Pagar abono de férias 
+                 r11_qtdcal = int4 = Qtd. de Servidores CÃ¡lculo Geral 
+                 r11_palime = varchar(4) = Rubrica PensÃ£o AlimentÃ­cia 
+                 r11_altfer = varchar(7) = Alt. FÃ©rias 
+                 r11_ferias = varchar(4) = FÃ©rias 
+                 r11_fer13 = varchar(4) = 1/3 de fÃ©rias 
+                 r11_ferant = varchar(4) = FÃ©rias mÃªs anterior 
+                 r11_fer13o = varchar(4) = 1/3 de fÃ©rias 
+                 r11_fer13a = varchar(4) = 1/3 Abono de fÃ©rias 
+                 r11_ferabo = varchar(4) = Abono de fÃ©rias 
+                 r11_feabot = varchar(4) = Abono MÃªs Anterior 
+                 r11_feradi = varchar(4) = Adiantamento de fÃ©rias 
+                 r11_fadiab = varchar(4) = Adiantamento abono de fÃ©rias 
+                 r11_recalc = bool = recalcula 1/3 ferias mÃªs gozo 
+                 r11_pagaab = bool = Pagar abono de fÃ©rias 
                  r11_fersal = varchar(1) = Paga como 
                  r11_vtprop = bool = Considerar dias afastados 
-                 r11_desliq = varchar(20) = Códigos s/ líquido 
-                 r11_propae = bool = Proporcionaliza estatutário 
+                 r11_desliq = varchar(20) = CÃ³digos s/ lÃ­quido 
+                 r11_propae = bool = Proporcionaliza estatutÃ¡rio 
                  r11_propac = bool = Proporcionaliza celetista 
-                 r11_codestrut = int4 = Estrutural da Lotação 
+                 r11_codestrut = int4 = Estrutural da LotaÃ§Ã£o 
                  r11_geracontipe = bool = Gerar contrato IPE 
-                 r11_13ferias = bool = Pagar 1/3 férias 
-                 r11_pagarferias = char(1) = Pagar férias 
-                 r11_vtfer = bool = Descontar dias de férias 
+                 r11_13ferias = bool = Pagar 1/3 fÃ©rias 
+                 r11_pagarferias = char(1) = Pagar fÃ©rias 
+                 r11_vtfer = bool = Descontar dias de fÃ©rias 
                  r11_vtcons = bool = Apresentar qtd proporcional 
                  r11_vtmpro = bool = Proporcionalizar com dias afastados 
                  r11_localtrab = int4 = Estrutural do Local 
                  r11_databaseatra = date = Base atrasados 
                  r11_rubpgintegral = varchar(32) = Pagto Vlr Integral 
-                 r11_conver = varchar(7) = Ano/Mês de conversão 
-                 r11_concatdv = bool = Concatenar Dígito 
-                 r11_infla = varchar(5) = Código do Inflator 
+                 r11_conver = varchar(7) = Ano/MÃªs de conversÃ£o 
+                 r11_concatdv = bool = Concatenar DÃ­gito 
+                 r11_infla = varchar(5) = CÃ³digo do Inflator 
                  r11_baseipe = varchar(4) = Base do IPE 
                  r11_txadm = float4 = Taxa de Admin. Fundo 
-                 r11_modanalitica = int4 = Modelo de Impressão 
+                 r11_modanalitica = int4 = Modelo de ImpressÃ£o 
                  r11_viravalemes = bool = Virada Mensal de Vales 
-                 r11_histslip = int4 = Histórico de SLIP 
-                 r11_mensagempadraotxt = text = Expressão padrão contra-cheque gráfica 
+                 r11_histslip = int4 = HistÃ³rico de SLIP 
+                 r11_mensagempadraotxt = text = ExpressÃ£o padrÃ£o contra-cheque grÃ¡fica 
                  r11_recpatrafasta = bool = Recolhe Patronal no Afastamento 
-                 r11_relatoriocontracheque = int4 = Relatório contra cheque 
+                 r11_relatoriocontracheque = int4 = RelatÃ³rio contra cheque 
                  r11_relatorioempenhofolha = int4 = Empenho da folha 
                  r11_relatoriocomprovanterendimentos = int4 = Comprovante de rendimentos 
-                 r11_relatoriotermorescisao = int4 = Termo de Rescisão 
+                 r11_relatoriotermorescisao = int4 = Termo de RescisÃ£o 
                  ";
    //funcao construtor da classe 
    function cl_cfpess() { 
@@ -447,7 +447,7 @@ class cl_cfpess {
        $this->erro_sql = " Campo Virada Mensal de Vales nao Informado.";
        $this->erro_campo = "r11_viravalemes";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -462,10 +462,10 @@ class cl_cfpess {
        $this->r11_recpatrafasta = "f";
      }
      if($this->r11_relatoriocontracheque == null ){ 
-       $this->erro_sql = " Campo Relatório contra cheque nao Informado.";
+       $this->erro_sql = " Campo RelatÃ³rio contra cheque nao Informado.";
        $this->erro_campo = "r11_relatoriocontracheque";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -474,7 +474,7 @@ class cl_cfpess {
        $this->erro_sql = " Campo Empenho da folha nao Informado.";
        $this->erro_campo = "r11_relatorioempenhofolha";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -483,16 +483,16 @@ class cl_cfpess {
        $this->erro_sql = " Campo Comprovante de rendimentos nao Informado.";
        $this->erro_campo = "r11_relatoriocomprovanterendimentos";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->r11_relatoriotermorescisao == null ){ 
-       $this->erro_sql = " Campo Termo de Rescisão nao Informado.";
+       $this->erro_sql = " Campo Termo de RescisÃ£o nao Informado.";
        $this->erro_campo = "r11_relatoriotermorescisao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -503,7 +503,7 @@ class cl_cfpess {
      if(($this->r11_anousu == null) || ($this->r11_anousu == "") ){ 
        $this->erro_sql = " Campo r11_anousu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -511,7 +511,7 @@ class cl_cfpess {
      if(($this->r11_mesusu == null) || ($this->r11_mesusu == "") ){ 
        $this->erro_sql = " Campo r11_mesusu nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -519,7 +519,7 @@ class cl_cfpess {
      if(($this->r11_instit == null) || ($this->r11_instit == "") ){ 
        $this->erro_sql = " Campo r11_instit nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -686,13 +686,13 @@ class cl_cfpess {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "Parametros de Configuracao ($this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "Parametros de Configuracao já Cadastrado";
+         $this->erro_sql   = "Parametros de Configuracao ($this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "Parametros de Configuracao jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "Parametros de Configuracao ($this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "Parametros de Configuracao ($this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -702,7 +702,7 @@ class cl_cfpess {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -803,10 +803,10 @@ class cl_cfpess {
        $sql  .= $virgula." r11_instit = $this->r11_instit ";
        $virgula = ",";
        if(trim($this->r11_instit) == null ){ 
-         $this->erro_sql = " Campo Cod. Instituição nao Informado.";
+         $this->erro_sql = " Campo Cod. InstituiÃ§Ã£o nao Informado.";
          $this->erro_campo = "r11_instit";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -819,7 +819,7 @@ class cl_cfpess {
          $this->erro_sql = " Campo Ano do Exercicio nao Informado.";
          $this->erro_campo = "r11_anousu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -832,7 +832,7 @@ class cl_cfpess {
          $this->erro_sql = " Campo Mes do Exercicio nao Informado.";
          $this->erro_campo = "r11_mesusu";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1188,7 +1188,7 @@ class cl_cfpess {
          $this->erro_sql = " Campo Virada Mensal de Vales nao Informado.";
          $this->erro_campo = "r11_viravalemes";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1213,10 +1213,10 @@ class cl_cfpess {
        $sql  .= $virgula." r11_relatoriocontracheque = $this->r11_relatoriocontracheque ";
        $virgula = ",";
        if(trim($this->r11_relatoriocontracheque) == null ){ 
-         $this->erro_sql = " Campo Relatório contra cheque nao Informado.";
+         $this->erro_sql = " Campo RelatÃ³rio contra cheque nao Informado.";
          $this->erro_campo = "r11_relatoriocontracheque";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1229,7 +1229,7 @@ class cl_cfpess {
          $this->erro_sql = " Campo Empenho da folha nao Informado.";
          $this->erro_campo = "r11_relatorioempenhofolha";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1242,7 +1242,7 @@ class cl_cfpess {
          $this->erro_sql = " Campo Comprovante de rendimentos nao Informado.";
          $this->erro_campo = "r11_relatoriocomprovanterendimentos";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1252,10 +1252,10 @@ class cl_cfpess {
        $sql  .= $virgula." r11_relatoriotermorescisao = $this->r11_relatoriotermorescisao ";
        $virgula = ",";
        if(trim($this->r11_relatoriotermorescisao) == null ){ 
-         $this->erro_sql = " Campo Termo de Rescisão nao Informado.";
+         $this->erro_sql = " Campo Termo de RescisÃ£o nao Informado.";
          $this->erro_campo = "r11_relatoriotermorescisao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -1441,7 +1441,7 @@ class cl_cfpess {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Parametros de Configuracao nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -1451,16 +1451,16 @@ class cl_cfpess {
          $this->erro_banco = "";
          $this->erro_sql = "Parametros de Configuracao nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->r11_anousu."-".$this->r11_mesusu."-".$this->r11_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -1590,9 +1590,9 @@ class cl_cfpess {
      $result = db_query($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "Parametros de Configuracao nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "Parametros de Configuracao nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$r11_anousu."-".$r11_mesusu."-".$r11_instit;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -1600,18 +1600,18 @@ class cl_cfpess {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "Parametros de Configuracao nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "Parametros de Configuracao nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$r11_anousu."-".$r11_mesusu."-".$r11_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$r11_anousu."-".$r11_mesusu."-".$r11_instit;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -1626,7 +1626,7 @@ class cl_cfpess {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -1635,7 +1635,7 @@ class cl_cfpess {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:cfpess";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;
@@ -1861,7 +1861,7 @@ class cl_cfpess {
   }
 
   /**
-   * Busca código do tipo de relatório
+   * Busca cÃ³digo do tipo de relatÃ³rio
    * 
    * @require db_utils.php
    * @param   string  $sTipoRelatorio - (contracheque, empenhofolha, comprovanterendimentos, termorescisao)

@@ -28,7 +28,7 @@
 		$this->objpdf->setfillcolor(255,255,255);
 //		$this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
 		$this->objpdf->Setfont('Arial','B',11);
-		$this->objpdf->text(150,$xlin-13,'TRANSFERÊNCIA N'.chr(176).'  '.$this->codtransf);
+		$this->objpdf->text(150,$xlin-13,'TRANSFERÃŠNCIA N'.chr(176).'  '.$this->codtransf);
 		$this->objpdf->text(159,$xlin-8,$this->datacalc);
 		$this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12);
 		$this->objpdf->Setfont('Arial','B',9);
@@ -67,11 +67,11 @@
 		$this->objpdf->text($xcol+2,$xlin+27,'Itens a Transmitir :');
 		$this->objpdf->Setfont('Arial','b',8);
 		$this->objpdf->text($xcol+2,$xlin+30,'BEM');
-		$this->objpdf->text($xcol+25,$xlin+30,'DESCRIÇÃO');
-		$this->objpdf->text($xcol+75,$xlin+30,'CLASSIFICAÇÃO');
+		$this->objpdf->text($xcol+25,$xlin+30,'DESCRIÃ‡ÃƒO');
+		$this->objpdf->text($xcol+75,$xlin+30,'CLASSIFICAÃ‡ÃƒO');
 		$this->objpdf->text($xcol+102,$xlin+30,'BEM');
-		$this->objpdf->text($xcol+125,$xlin+30,'DESCRIÇÃO');
-		$this->objpdf->text($xcol+175,$xlin+30,'CLASSIFICAÇÃO');
+		$this->objpdf->text($xcol+125,$xlin+30,'DESCRIÃ‡ÃƒO');
+		$this->objpdf->text($xcol+175,$xlin+30,'CLASSIFICAÃ‡ÃƒO');
 		$this->objpdf->Setfont('Arial','',8);
 	   	$this->objpdf->sety($xlin+31);
                 $maiscol = 0;

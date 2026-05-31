@@ -49,7 +49,7 @@ db_logs("","",0,"Consulta Funcional.");
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -106,7 +106,7 @@ db_logs("","",0,"Consulta Funcional.");
    <tr>
     <td align="center" height="100">
      <img src="imagens/atencao.gif"><br>
-       <b>NÃO PERMITE CONSULTA DE FUNCIONÁRIO DEMITIDO!</b>
+       <b>NÃƒO PERMITE CONSULTA DE FUNCIONÃRIO DEMITIDO!</b>
     </td>
    </tr>
    <?php 
@@ -119,10 +119,10 @@ db_logs("","",0,"Consulta Funcional.");
 </table>
 <table align="center"  class="tableForm">   
    <tr class="subTituloForm" align="center">
-      <td>N° Matrícula</td>
-      <td>Data Admissão</td>
+      <td>NÂ° MatrÃ­cula</td>
+      <td>Data AdmissÃ£o</td>
       <td>Cargo</td>
-      <td>Data Demissão</td>
+      <td>Data DemissÃ£o</td>
       <td>Instituicao</td>
    </tr>
    <?php 

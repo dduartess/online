@@ -15,7 +15,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	$this->objpdf->Setfont('Arial','B',10);
 	$this->objpdf->text(128,$xlin-13,'ORDEM DE PAGAMENTO N'.CHR(176).': ');
 	$this->objpdf->text(177,$xlin-13,db_formatar($this->ordpag,'s','0',6,'e'));
-	$this->objpdf->text(134,$xlin-8,'DATA DE EMISSÃO : ');
+	$this->objpdf->text(134,$xlin-8,'DATA DE EMISSÃƒO : ');
 	$this->objpdf->text(175,$xlin-8,$this->emissao);
 	$this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12); //.$this->logo
 	$this->objpdf->Setfont('Arial','B',9);
@@ -26,18 +26,18 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	$this->objpdf->text(40,$xlin-5,$this->telefpref);
 	$this->objpdf->text(40,$xlin-2,$this->emailpref);
 
-        /// retangulo dos dados da dotação
+        /// retangulo dos dados da dotaÃ§Ã£o
 	$this->objpdf->rect($xcol,$xlin+2,$xcol+100,39,2,'DF','1234');
 	$this->objpdf->Setfont('Arial','B',8);
 	//if($ano < 2005){
         //  $this->objpdf->text($xcol+2,$xlin+19,'RESTOS A PAGAR ');
 	//}else{
-	  $this->objpdf->text($xcol+2,$xlin+7,'Órgao');
+	  $this->objpdf->text($xcol+2,$xlin+7,'Ã“rgao');
 	  $this->objpdf->text($xcol+2,$xlin+11,'Unidade');
-	  $this->objpdf->text($xcol+2,$xlin+15,'Função');
+	  $this->objpdf->text($xcol+2,$xlin+15,'FunÃ§Ã£o');
 	
 	  $this->objpdf->text($xcol+2,$xlin+19,'Proj/Ativ');
-	  $this->objpdf->text($xcol+2,$xlin+23,'Dotação');
+	  $this->objpdf->text($xcol+2,$xlin+23,'DotaÃ§Ã£o');
 	  $this->objpdf->text($xcol+2,$xlin+27,'Elemento');
 	  $this->objpdf->text($xcol+2,$xlin+34,'Recurso');
 	
@@ -65,8 +65,8 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	$this->objpdf->text($xcol+107,$xlin+9,'Numcgm');
 	$this->objpdf->text($xcol+150,$xlin+9,(strlen($this->cnpj) == 11?'CPF':'CNPJ'));
 	$this->objpdf->text($xcol+107,$xlin+13,'Nome');
-	$this->objpdf->text($xcol+107,$xlin+17,'Endereço');
-	$this->objpdf->text($xcol+107,$xlin+21,'Município');
+	$this->objpdf->text($xcol+107,$xlin+17,'EndereÃ§o');
+	$this->objpdf->text($xcol+107,$xlin+21,'MunicÃ­pio');
 	$this->objpdf->text($xcol+107,$xlin+25,'Banco/Ag./Conta');
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text($xcol+124,$xlin+9,': '.$this->numcgm);
@@ -104,7 +104,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
         $this->objpdf->rect($xcol+102,$xlin+105, 75,17,2,'DF','34');
         $this->objpdf->rect($xcol+177,$xlin+105, 25,17,2,'DF','34');
 
-        ///// retangulo das retenções
+        ///// retangulo das retenÃ§Ãµes
         $this->objpdf->rect($xcol+177,$xlin+179, 25, 8,2,'DF','34');
         $this->objpdf->rect($xcol+177,$xlin+171, 25, 8,2,'DF','');
         $this->objpdf->rect($xcol+000,$xlin+133, 75,46,2,'DF','12');
@@ -133,7 +133,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	$this->objpdf->text($xcol+2,$xlin+46,'Dados da Ordem de Pagto.');
 	$this->objpdf->Setfont('Arial','B',6);
 	
-	//// título do corpo do empenho
+	//// tÃ­tulo do corpo do empenho
         $maiscol = 0;
 	
 	/// monta os dados dos elementos da ordem de compra
@@ -142,7 +142,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 		$this->objpdf->setleftmargin(4);
 		$this->objpdf->sety($xlin+48);
 		$this->objpdf->cell(20,4,'ELEMENTO',0,0,"L");
-		$this->objpdf->cell(80,4,'DESCRIÇÃO',0,0,"L");
+		$this->objpdf->cell(80,4,'DESCRIÃ‡ÃƒO',0,0,"L");
 		$this->objpdf->cell(25,4,'VALOR',0,0,"R");
 		$this->objpdf->cell(25,4,'ANULADO',0,0,"R");
 		$this->objpdf->cell(25,4,'PAGO',0,0,"R");
@@ -170,17 +170,17 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	}
 
 
-	/// monta os dados das retenções da ordem de compra
+	/// monta os dados das retenÃ§Ãµes da ordem de compra
         $this->objpdf->SetWidths(array(10,62,25));
 		$this->objpdf->SetAligns(array('C','L','R'));
 		$this->objpdf->setleftmargin(4);
 		$this->objpdf->setxy($xcol+102,$xlin+134);
 		$this->objpdf->Setfont('Arial','B',10);
-		$this->objpdf->text($xcol+104,$xlin+131,'Dados das Retenções');
+		$this->objpdf->text($xcol+104,$xlin+131,'Dados das RetenÃ§Ãµes');
 		$this->objpdf->text($xcol+2,$xlin+131,'Repasses');
 		$this->objpdf->Setfont('Arial','b',7);
 		$this->objpdf->cell(10,4,'REC.',0,0,"L");
-		$this->objpdf->cell(62,4,'DESCRIÇÃO',0,0,"L");
+		$this->objpdf->cell(62,4,'DESCRIÃ‡ÃƒO',0,0,"L");
 		$this->objpdf->cell(25,4,'VALOR',0,1,"R");
 		$this->objpdf->Setfont('Arial','',7);
         $total_ret = 0;
@@ -219,13 +219,13 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	$this->objpdf->cell(50,5,'VALOR RESTANTE',0,0,"R");
 	$this->objpdf->cell(23,4,db_formatar($this->empenhado - $this->outrasordens - $total_emp - $total_anu ,'f'),0,1,"R");
 	$this->objpdf->Setfont('Arial','b',8);
-	$this->objpdf->text($xcol+2,$xlin+102,'OBSERVAÇÕES :');
+	$this->objpdf->text($xcol+2,$xlin+102,'OBSERVAÃ‡Ã•ES :');
 	$this->objpdf->Setfont('Arial','',7);
 	$this->objpdf->setxy($xcol,$xlin+103);
 	$this->objpdf->Setfont('Arial','',7);
 	$this->objpdf->multicell(102,4,$this->obs);
         
-	/// total das retenções
+	/// total das retenÃ§Ãµes
 	$this->objpdf->setxy($xcol+127,$xlin+172);
 	$this->objpdf->Setfont('Arial','B',7);
 	$this->objpdf->cell(50,5,'TOTAL ',0,0,"R");
@@ -240,7 +240,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	/// liquido da ordem de compra
 	$this->objpdf->setxy($xcol+127,$xlin+181);
 	$this->objpdf->Setfont('Arial','B',7);
-	$this->objpdf->cell(50,5,'LÍQUIDO DA ORDEM DE PAGTO. ',0,0,"R");
+	$this->objpdf->cell(50,5,'LÃQUIDO DA ORDEM DE PAGTO. ',0,0,"R");
 	$this->objpdf->cell(23,5,db_formatar($total_sal - $total_ret,'f'),0,1,"R");
 
 	
@@ -268,7 +268,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 		        $this->objpdf->text($xcol+13,$xlin+224,'JORGE ANTONIO POKORSKI');
 		        $this->objpdf->text($xcol+76,$xlin+224,'MANOEL STRINGHINI');
 		        $this->objpdf->text($xcol+76,$xlin+227,'PREFEITO MUNICIPAL');
-	            $this->objpdf->text($xcol+13,$xlin+227,'SECRETÁRIO DA FAZENDA');
+	            $this->objpdf->text($xcol+13,$xlin+227,'SECRETÃRIO DA FAZENDA');
 		   } else {  
                 $this->objpdf->SetFont('Arial','',6);
 	            $this->objpdf->line($xcol+12,$xlin+221,$xcol+43,$xlin+221);
@@ -290,8 +290,8 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	    $this->objpdf->text($xcol+26,$xlin+213,'VISTO');
 	    if(strtoupper(trim($this->municpref)) != 'SAPIRANGA'){
 	      $this->objpdf->line($xcol+5,$xlin+225,$xcol+54,$xlin+225);
-	      $this->objpdf->text($xcol+19,$xlin+227,'TÉCNICO CONTÁBIL');
-	      $this->objpdf->text($xcol+13,$xlin+240,'SECRETÁRIO(A) DA FAZENDA');
+	      $this->objpdf->text($xcol+19,$xlin+227,'TÃ‰CNICO CONTÃBIL');
+	      $this->objpdf->text($xcol+13,$xlin+240,'SECRETÃRIO(A) DA FAZENDA');
 	    }
 	    $this->objpdf->text($xcol+66,$xlin+212,'DATA  ____________/____________/____________');
 	    $this->objpdf->text($xcol+76,$xlin+227,'PREFEITO MUNICIPAL');
@@ -312,7 +312,7 @@ for($xxx = 0;$xxx < $this->nvias;$xxx++){
 	   
         $this->objpdf->SetFont('Arial','',7);
         $this->objpdf->text($xcol+90,$xlin+249,'R E C I B O');
-        $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+        $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
         $this->objpdf->text($xcol+2,$xlin+257,'(     ) PARTE DO VALOR EMPENHADO');
 	$this->objpdf->text($xcol+102,$xlin+257,'(     ) SALDO/TOTAL EMPENHADO');
 	$this->objpdf->text($xcol+2,$xlin+261,'R$');

@@ -76,23 +76,23 @@ $dblink="certidao.php";
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("certidao.php");
 function js_errocgc(cgc){
-  alert('Número CNPJ/CPF '+cgc+' inválido');
+  alert('NÃºmero CNPJ/CPF '+cgc+' invÃ¡lido');
 }
 function testa() {
   var numero = new Number(document.form1.<?=@$opcao2?>.value);
   if(isNaN(numero)){
-    alert ("Este campo deve ser preenchido somente com números");
+    alert ("Este campo deve ser preenchido somente com nÃºmeros");
     document.form1.<?=$opcao2?>.focus();
   }
 }
 function js_verificamatricula() {
   if (document.form1.<?=$opcao2?>.value == "" || isNaN(document.form1.<?=$opcao2?>.value)){
-    alert("Código de <?=$opcao?> Inválido.");
+    alert("CÃ³digo de <?=$opcao?> InvÃ¡lido.");
     document.form1.<?=$opcao2?>.focus();
     document.form1.<?=$opcao2?>.select();
     return false;

@@ -61,7 +61,7 @@ if(isset($certid)){
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/scripts.js"></script>
 <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -83,8 +83,8 @@ if(isset($certid)){
     echo "
    <table border='1';>   
     <tr>
-    <td nowrap bgcolor=\"#CDCDFF\" title=\"Opções\" align=\"center\"><b>O</b></td>
-    <td nowrap bgcolor=\"#CDCDFF\" title=\"Opções\" align=\"center\"><b>Origem</b></td>
+    <td nowrap bgcolor=\"#CDCDFF\" title=\"OpÃ§Ãµes\" align=\"center\"><b>O</b></td>
+    <td nowrap bgcolor=\"#CDCDFF\" title=\"OpÃ§Ãµes\" align=\"center\"><b>Origem</b></td>
     <td nowrap bgcolor=\"#CDCDFF\" title=\"$Tv14_parcel\" align=\"center\">$Lv14_parcel</td>
     <td nowrap bgcolor=\"#CDCDFF\" title=\"$Tv07_numpre\" align=\"center\">$Lv07_numpre</td>
     <th title=\"Valor Corrigido\" bgcolor=\"#CDCDFF\"   nowrap>Val His.</th>\n
@@ -142,7 +142,7 @@ if(isset($certid)){
      
 echo "
     <tr>
-    <td nowrap bgcolor=\"$color\" title=\"Opções\" align=\"center\"><b><a href='#' onclick=\"$funcao return false;\">MI</a></b></td>
+    <td nowrap bgcolor=\"$color\" title=\"OpÃ§Ãµes\" align=\"center\"><b><a href='#' onclick=\"$funcao return false;\">MI</a></b></td>
     <td nowrap bgcolor=\"$color\" title=\"Origem do parcelamento\" align=\"center\">$origem</td>
     <td nowrap bgcolor=\"$color\" title=\"Origem do parcelamento\" align=\"center\">$v14_parcel</td>
     <td nowrap bgcolor=\"$color\" title=\"$Tv07_numpre\" align=\"center\">$v07_numpre</td>

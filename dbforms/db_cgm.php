@@ -126,25 +126,25 @@ else
   
   switch($campo) {
     case "nome":
-      $sql = "select (z01_numcgm || '##' || z01_nome || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as Endereço,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
+      $sql = "select (z01_numcgm || '##' || z01_nome || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as EndereÃ§o,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
               from cgm
 		      where upper(z01_nome) like upper('".$arg[1]."%')
 		      order by z01_nome";
 	  break;
     case "numcgm":
-      $sql = "select (z01_numcgm || '##' || z01_numcgm || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as Endereço,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
+      $sql = "select (z01_numcgm || '##' || z01_numcgm || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as EndereÃ§o,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
               from cgm
 		      where z01_numcgm like '".$arg[1]."%'
 		      order by z01_numcgm";
 	  break;
 	case "endereco":
-      $sql = "select (z01_numcgm || '##' || z01_ender || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as Endereço,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
+      $sql = "select (z01_numcgm || '##' || z01_ender || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as EndereÃ§o,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
               from cgm
 		      where upper(z01_ender) like upper('".$arg[1]."%')
 		      order by z01_ender";
 	  break;
     case "cgccpf":
-      $sql = "select (z01_numcgm || '##' || z01_cgccpf || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as Endereço,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
+      $sql = "select (z01_numcgm || '##' || z01_cgccpf || '##' || z01_numcgm || '##' || z01_nome|| '##' || z01_ender|| '##' || z01_munic|| '##' || z01_cep|| '##' || z01_uf) as db_codigo,z01_nome as Nome,z01_numcgm as Numcgm,z01_ender as EndereÃ§o,z01_munic as Municipio,z01_cep as CEP,z01_uf as UF
               from cgm
 		      where z01_cgccpf like '".$arg[1]."%'
 		      order by z01_cgccpf";
@@ -154,7 +154,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onFocus="document.form5.filtro.focus()">

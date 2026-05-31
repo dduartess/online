@@ -29,7 +29,7 @@ include("libs/db_conecta.php");
 include("classes/db_db_certidaoweb_classe.php");
 
 db_mensagem("certidaopositiva","");
-$meses = array("","JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO");
+$meses = array("","JANEIRO", "FEVEREIRO", "MARÃ‡O", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO");
 $data = getdate();
 $mes1 = $data['mon'];
 if((strlen($mes1)) == 1)
@@ -124,7 +124,7 @@ $t1 = strrev($nros);
  $ffputs = ('<html>'."\n");
  $ffputs .= ('<head>'."\n");
  $ffputs .= ('<title>Documento sem t&iacute;tulo</title>'."\n");
- $ffputs .= ('<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">'."\n");
+ $ffputs .= ('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'."\n");
  $ffputs .= ('</head>'."\n");
  $ffputs .= ('<STYLE>'."\n");
  $ffputs .= ('  .link color: white;'."\n");
@@ -244,7 +244,7 @@ $clcertidao->incluir();
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <style>
 A:hover {color:gray; cursor:hand};
@@ -274,7 +274,7 @@ window.print();
         </tr>
       </table>
     </td>
-<div align="center" id="botao"><a onClick="imprimir()">Clique aqui para imprimir a Certidão</a></div>
+<div align="center" id="botao"><a onClick="imprimir()">Clique aqui para imprimir a CertidÃ£o</a></div>
 
   </tr>
   <tr>

@@ -27,7 +27,7 @@
 	$this->objpdf->multicell(0,5,db_geratexto($this->texto),0,"J",0,20);
 
 	$this->objpdf->SetFont('Arial','B',9);
-	$this->objpdf->Text($coluna,$linha+35,'INSCRIÇÃO:'); // inscricao
+	$this->objpdf->Text($coluna,$linha+35,'INSCRIÃ‡ÃƒO:'); // inscricao
 
     if ($this->processo > 0) {
 	  $this->objpdf->Text($coluna + 70,$linha+35,'PROCESSO:'); // inscricao
@@ -52,12 +52,12 @@
 
 
 	$this->objpdf->SetFont('Arial','B',9);
-	$this->objpdf->Text($coluna,$linha+47,"ENDEREÇO: "); // endereco
+	$this->objpdf->Text($coluna,$linha+47,"ENDEREÃ‡O: "); // endereco
 	$this->objpdf->SetFont('Arial','',9);
 	$this->objpdf->Text($coluna + 40,$linha+47,$this->ender); // endereco
 
 	$this->objpdf->SetFont('Arial','B',9);
-	$this->objpdf->Text($coluna,$linha+51,"NÚMERO: "); // endereco
+	$this->objpdf->Text($coluna,$linha+51,"NÃšMERO: "); // endereco
 	$this->objpdf->SetFont('Arial','',9);
 	$this->objpdf->Text($coluna + 40,$linha+51,($this->numero == ""?"":$this->numero));
 
@@ -74,9 +74,9 @@
 	$this->objpdf->Text($coluna + 40,$linha+55,$this->bairropri);
 
 	$this->objpdf->SetFont('Arial','B',9);
-	$this->objpdf->Text($coluna,$linha+59,"DATA DE INCLUSÃO: ");
+	$this->objpdf->Text($coluna,$linha+59,"DATA DE INCLUSÃƒO: ");
     if ($this->datafim != "") {
- 	  $this->objpdf->Text($coluna + 60,$linha+59,"VALIDADE ATÉ: ");
+ 	  $this->objpdf->Text($coluna + 60,$linha+59,"VALIDADE ATÃ‰: ");
     }
 	$this->objpdf->SetFont('Arial','',9);
 	$this->objpdf->Text($coluna + 40,$linha+59,db_formatar($this->datainc,'d'));
@@ -136,7 +136,7 @@
 	        }else{
 		    	$this->objpdf->setx(45);
 		     	$this->objpdf->Cell(10,3,"",0,0,"C",0);
-		        $this->objpdf->Cell(113,3,"OBS: Sem observações ...",0,1,"L",0);
+		        $this->objpdf->Cell(113,3,"OBS: Sem observaÃ§Ãµes ...",0,1,"L",0);
 		    }
 		 }
   	  $linha += 16;
@@ -158,7 +158,7 @@
 		   $this->objpdf->setx(45);
 	       $yyy = $this->objpdf->gety() + 7;
 		   $this->objpdf->SetFont('Arial','B',8);
-           $this->objpdf->Cell(83,5,"ATIVIDADE" . ($num_outras > 1?"S":"") . " SECUNDÁRIA" . ($num_outras > 1?"S":"") . ":",0,0,"L",0);
+           $this->objpdf->Cell(83,5,"ATIVIDADE" . ($num_outras > 1?"S":"") . " SECUNDÃRIA" . ($num_outras > 1?"S":"") . ":",0,0,"L",0);
 	       if ($this->impdatas == 't'){
 	       		$this->objpdf->Cell(20,5,"INICIO",0,0,"C",0);
 	       		if($this->permanente == 'f'){
@@ -210,7 +210,7 @@
 			     }else{
 			     	$this->objpdf->setx(45);
 			     	$this->objpdf->Cell(10,3,"",0,0,"C",0);
-			        $this->objpdf->Cell(114,3,"OBS: Sem observações ...",0,1,"L",0);
+			        $this->objpdf->Cell(114,3,"OBS: Sem observaÃ§Ãµes ...",0,1,"L",0);
 				}
 		     }
 		     $linha += 5;
@@ -256,6 +256,6 @@
     $this->objpdf->MultiCell(90,4,'..........................................................................................'."\n".$this->assalvara,0,"C",0);
 	$this->objpdf->sety(185);
     $this->objpdf->setfont('arial','B',12);
-    $this->objpdf->multicell(0,6,'FIXAR EM LUGAR VISÍVEL',1,"C");
+    $this->objpdf->multicell(0,6,'FIXAR EM LUGAR VISÃVEL',1,"C");
 	$this->objpdf->SetFont('Arial','B',10);	
 ?>

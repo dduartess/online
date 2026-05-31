@@ -30,8 +30,8 @@ require_once("libs/db_utils.php");
 ?>
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php 
@@ -42,7 +42,7 @@ db_estilosite()
 
 <?php 
 
-db_logs(0,0,0,"Licitações em Aberto.");
+db_logs(0,0,0,"LicitaÃ§Ãµes em Aberto.");
 
 $sSqlParam  = " select l12_tipoliberacaoweb,    ";
 $sSqlParam .= "        l12_qtdediasliberacaoweb "; 
@@ -88,7 +88,7 @@ $linhas = pg_num_rows($result);
 			<table width="100%" border="0" align= "center" cellpadding="0" cellspacing="0">
 				<tr><td>&nbsp;</td></tr>
 				<tr><td >&nbsp;</td></tr>	
-				<tr><td  align="center" class="texto" bgcolor="<?=$w01_corfundomenu?>"><b>LICITAÇÕES EM ABERTO</b></td></tr>
+				<tr><td  align="center" class="texto" bgcolor="<?=$w01_corfundomenu?>"><b>LICITAÃ‡Ã•ES EM ABERTO</b></td></tr>
 				<tr><td >&nbsp;</td></tr>	
 				<?php 
 				for ($i = 0; $i < $linhas; $i++){

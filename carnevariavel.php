@@ -93,7 +93,7 @@ if(isset($ano)){
                     and ( q05_vlrinf = 0 or q05_vlrinf is null )";
 //die($sqlvariavel);
 // cfe contato com Evandro 09/03/06
-// não precisa q05_valor != 0
+// nÃ£o precisa q05_valor != 0
 // and q05_valor != 0 and q05_vlrinf = 0";
 
   $result = @pg_query($sqlvariavel);
@@ -119,7 +119,7 @@ if(isset($ano)){
   }else{ 
    ?>
    <script>
-    alert("Sem lançamentos!");
+    alert("Sem lanÃ§amentos!");
     window.close();
    </script>
    <?php 
@@ -128,7 +128,7 @@ if(isset($ano)){
 }
 
 if (!isset($inscricao) or empty($inscricao)){
-   msgbox("Inscrição Inválida.");
+   msgbox("InscriÃ§Ã£o InvÃ¡lida.");
    db_logs("","$inscricao",0,"Inscricao Invalida. Numero: $inscricao ");
    redireciona("digitainscricao.php");
 }
@@ -143,19 +143,19 @@ if(@pg_num_rows($result) == 0 ){
 }
 db_fieldsmemory($result,0);
 if (empty($escritorio)){
-   $escritorio = 'O PRÓPRIO';
+   $escritorio = 'O PRÃ“PRIO';
 }
 
 if(!isset($DB_LOGADO) && $m_publico !='t'){
   $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricao)";
   $resultteste = pg_query($sql);
   if(pg_num_rows($resultteste)==0){
-    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inválido.'));
+    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina invÃ¡lido.'));
     exit;
   }
   $resultteste = pg_result($result,0,0);
   if($resultteste=="0"){
-    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inválido.'));
+    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina invÃ¡lido.'));
     exit;
   }
 } 
@@ -164,7 +164,7 @@ if(!isset($DB_LOGADO) && $m_publico !='t'){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdebitospendentes.php");
@@ -177,7 +177,7 @@ function js_emiterecibo() {
      jan.moveTo(0,0);
      retorno = true;
   }else {
-     alert("Você deverá selecionar algum mês" );
+     alert("VocÃª deverÃ¡ selecionar algum mÃªs" );
   }
   return retorno;
 }
@@ -391,7 +391,7 @@ mens_div();
      <tr>
       <td align="center">
        <input type="button" value="Voltar" onclick="history.go(-2)">
-       <input class="botao" type="submit" name="emite" value="Emite carnê" <?php if(pg_num_rows($result)==0){echo "disabled";}?> onClick="return js_emiterecibo()">
+       <input class="botao" type="submit" name="emite" value="Emite carnÃª" <?php if(pg_num_rows($result)==0){echo "disabled";}?> onClick="return js_emiterecibo()">
       </td>
      </tr>
       </td>

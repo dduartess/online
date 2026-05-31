@@ -35,8 +35,8 @@ db_postmemory($HTTP_SERVER_VARS);
 ?>
 <html>
 <head>
-<title>Licitações</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>LicitaÃ§Ãµes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
@@ -49,7 +49,7 @@ db_estilosite();
 <?php
 
 /**
- * Busca o parâmetro "Disp. licitação na web até o julgamento"
+ * Busca o parÃ¢metro "Disp. licitaÃ§Ã£o na web atÃ© o julgamento"
  */
 $sSqlParam  = " select l12_tipoliberacaoweb,    ";
 $sSqlParam .= "        l12_qtdediasliberacaoweb ";
@@ -71,7 +71,7 @@ if (!isset($tipo)) {
 } else {
 
   /*
-   * Valida se A opção do menu for de licitação aberta ou Julgada
+   * Valida se A opÃ§Ã£o do menu for de licitaÃ§Ã£o aberta ou Julgada
    * Se for Julgada mostra os pempenhos se tiver.
    *
    */
@@ -92,7 +92,7 @@ if (!isset($tipo)) {
     $sWhere .= "      and l20_codtipocom  = $tipo";
 
     if (!$lJulgada) {
-      $sWhere .= " and l11_licsituacao = 0"; // Nesse caso sempre irá aparecer somente as licitações em andamento
+      $sWhere .= " and l11_licsituacao = 0"; // Nesse caso sempre irÃ¡ aparecer somente as licitaÃ§Ãµes em andamento
     } else {
 
       if ($l12_qtdediasliberacaoweb > 0) {
@@ -102,7 +102,7 @@ if (!isset($tipo)) {
       }
     }
   }
-  // mostra editais........mostrar somente os que for liberado para publicação de acordo com a data de publicação e retidar os que a data de abetrura ja passou
+  // mostra editais........mostrar somente os que for liberado para publicaÃ§Ã£o de acordo com a data de publicaÃ§Ã£o e retidar os que a data de abetrura ja passou
   $sSql  = "select * from (";
   $sSql .= "  select distinct on(l20_codigo) l20_codigo,";
   $sSql .= "  l03_descr,";
@@ -142,7 +142,7 @@ if (!isset($tipo)) {
           $data = (db_formatar($l20_dataaber,"d"));
 
           echo "<tr bgcolor='$w01_corfundomenu'>
-            <td> <b>$l03_descr Nº $l20_numero </b></td>
+            <td> <b>$l03_descr NÂº $l20_numero </b></td>
             </tr>
             <tr>
             <td> Data de abertura: $data</td>
@@ -199,7 +199,7 @@ if (!isset($tipo)) {
             echo"</td></tr>";
           }
           /*
-           * Verifica Se as licitações julgadas possuem empenho
+           * Verifica Se as licitaÃ§Ãµes julgadas possuem empenho
            * e as exibe no modelo:
            * numero/ano,
            */

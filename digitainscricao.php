@@ -90,7 +90,7 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 </script>
@@ -115,11 +115,11 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
 <br><br><center>
 <?php 
 
-// verifica se está logado
+// verifica se estÃ¡ logado
   if(( @$id_usuario!="" ) && !isset($outro)){
    @$usuario = $id_usuario;
   
-   // é escritório?
+   // Ã© escritÃ³rio?
    $wherebx = " and q10_dtfim is null ";
    if (@$mostrainscricao == 1) {
 
@@ -132,22 +132,22 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
      $wherebx = " and q10_dtfim is null and q02_dtbaix is not null ";
    } if (@$mostrainscricao == 3) {
 
-   // não baixadas
+   // nÃ£o baixadas
      $wherebx = " and q10_dtfim is null and q02_dtbaix is null ";
    }   
    
-   // retorna todos os clientes do escritório
+   // retorna todos os clientes do escritÃ³rio
    $result  = $clescrito->sql_record($clescrito->sql_query("","q02_inscr,cgm.z01_nome as z01_nome,cgm.z01_cgccpf as z01_cgccpf","cgm.z01_nome","q10_numcgm = $usuario $wherebx"));
    // echo($clescrito->sql_query("","q02_inscr,a.z01_nome as z01_nome,a.z01_cgccpf as z01_cgccpf","a.z01_nome","q10_numcgm = $usuario"));
    $escrito = $clescrito->numrows;
    
-   // é issbase
+   // Ã© issbase
    $result2 = $clissbase->sql_record($clissbase->sql_query("","issbase.q02_inscr,z01_nome,z01_cgccpf","","q02_numcgm = $usuario"));
    
    //$result2 = $clissbase->sql_record($clissbase->sqlinscricoes_socios(0,$cookie_codigo_cgm,"*"));
    $issbase = $clissbase->numrows;
    
-   // sócios
+   // sÃ³cios
    //$sql = $clissbase->sqlinscricoes_socios(0,$cookie_codigo_cgm,"*");
    }
    
@@ -230,19 +230,19 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
    }
    if($escrito>0){
      ?>
-     <a href="digitainscricao.php?id_usuario=<?=$id_usuario?>&outro=''">:: Pesquisar Outro Alvará ::</a><br><br>
+     <a href="digitainscricao.php?id_usuario=<?=$id_usuario?>&outro=''">:: Pesquisar Outro AlvarÃ¡ ::</a><br><br>
      <?php 
    }
    ?>
    <form name="form3" method="post" >
    <table width="350" border="0" cellspacing="0" cellpadding="3" class="texto">
    <?php  if($escrito>0){ ?>
-   <tr height="20" ><td colspan="3"><b>Mostrar inscriçoes</b> 
+   <tr height="20" ><td colspan="3"><b>Mostrar inscriÃ§oes</b> 
    <select name="mostrainscricao" onchange = "document.form3.submit();">
    <?php  echo "
    <option value = '1'".($mostrainscricao == 1?"selected":"").">Todas</option>
    <option value = '2'".($mostrainscricao == 2?"selected":"").">Somente baixadas</option>
-   <option value = '3'".($mostrainscricao == 3?"selected":"").">Somente não baixadas</option>
+   <option value = '3'".($mostrainscricao == 3?"selected":"").">Somente nÃ£o baixadas</option>
    ";
    ?>
    </select>
@@ -254,10 +254,10 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
    
    
    
-   //busca clientes do escritório
+   //busca clientes do escritÃ³rio
    for($x=0;$x<$escrito;$x++){
     if($x==0){
-     ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>Inscrições que tenho acesso</b></td></tr><?php 
+     ?><tr height="20" bgcolor="#eaeaea"><td colspan="3"><b>InscriÃ§Ãµes que tenho acesso</b></td></tr><?php 
     }
     db_fieldsmemory($result,$x);
     if($escrito==1 && $issbase==0){ 
@@ -273,7 +273,7 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
    //busca dados do issbase
    for($x=0;$x<$issbase;$x++){
     if($x==0){
-     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><td colspan="3"><b>Minha Inscrição</b></td></tr>
+     ?><tr height="20" bgcolor="<?=$w01_corfundomenu?>"><td colspan="3"><b>Minha InscriÃ§Ã£o</b></td></tr>
      <?php 
     }
     db_fieldsmemory($result2,$x);
@@ -302,7 +302,7 @@ if (@$_COOKIE["cookie_codigo_cgm"]=="") {
 <script>
   function js_valida(){
 		if (document.form1.inscricaow.value == ""){
-			alert('Preencha o campo Inscrição Alvará');
+			alert('Preencha o campo InscriÃ§Ã£o AlvarÃ¡');
 			return false;
 		}else{
 			return true;

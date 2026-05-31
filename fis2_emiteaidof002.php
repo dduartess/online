@@ -147,7 +147,7 @@ for($i = 0;$i < pg_numrows($result);$i++){
   $pdf1->codigo     = @$codigobarra;
   $pdf1->imprime();
   
-  //$pdf->MultiCell(180, 3, "CÛdigo de Autenticidade da Certid„o", 0, "R", 0);
+  //$pdf->MultiCell(180, 3, "C√≥digo de Autenticidade da Certid√£o", 0, "R", 0);
    
    
 }

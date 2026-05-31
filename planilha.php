@@ -54,7 +54,7 @@ db_mensagem("alvara_cab","alvara_rod");
 postmemory($HTTP_POST_VARS);
 $clquery = new cl_query;
 $alterando=false;
-$matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"MarÁo","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
+$matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"Mar√ßo","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
 $mesx= $matri[$mes];
 $clquery->sql_query("issplan","q20_nomecontri,q20_planilha, q20_numcgm, q20_ano, q20_mes,q20_numpre","q20_mes","q20_ano = $ano and q20_mes=$mes and q20_numcgm= $numcgm or q20_ano = $ano and q20_numpre is null and q20_numcgm= $numcgm");
 //die("$clquery->sql");  // traz todos do ano e mes selecionado ou ano e numpre = nada pelo cgc.
@@ -125,7 +125,7 @@ $cl_issplanitinscr = new cl_issplanitinscr;
            		$linhas = $clquery->numrows;
            		if ($linhas!= 0){
            			db_fieldsmemory($result,0);
-           		  //echo "com inscriÁao";  
+           		  //echo "com inscri√ßao";  
 								$cl_issplaninscr->q24_sequencial = $q24_sequencial;     			
 	         	  	$cl_issplaninscr->excluir($q24_sequencial);
 	         		
@@ -144,7 +144,7 @@ $cl_issplanitinscr = new cl_issplanitinscr;
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 
 <style type="text/css">
@@ -190,7 +190,7 @@ small{
        <tr><td>&nbsp;</td></tr>
        <tr>
          <td align="center">
-         <b>Para cadastrar uma nova planilha para esta mesma data, clique no bot„o abaixo! </b>
+         <b>Para cadastrar uma nova planilha para esta mesma data, clique no bot√£o abaixo! </b>
          </td>
        </tr>
        <tr>
@@ -199,7 +199,7 @@ small{
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buscar planilhas
            <select name="mostra"  onchange= "js_mostra();">
                  <?php  
-								 echo "<option value=\"5\"".($mostra==5?" selected":"").">Em digitaÁ„o</option>		
+								 echo "<option value=\"5\"".($mostra==5?" selected":"").">Em digita√ß√£o</option>		
 							         <option value=\"1\"".($mostra==1?" selected":"").">Abertos</option>				 
 							         <option value=\"2\"".($mostra==2?" selected":"").">Todos</option>
 			                 <option value=\"3\"".($mostra==3?" selected":"").">Pagos</option>
@@ -220,7 +220,7 @@ small{
     	if (isset($mostra)){
     		
     		if($mostra==5){
-    		//	echo "Em digitaÁ„o";
+    		//	echo "Em digita√ß√£o";
     		//select * from issplan where q20_ano = 2006 and q20_mes=1 and q20_numcgm= 278626 and (q20_numpre=0 or q20_numpre is null);   
     		
     		 $clquery->sql_query("issplan inner join issplanit on q20_planilha=q21_planilha","distinct issplan.*","","q20_ano = $ano and q20_mes=$mes and q20_numcgm= $numcgm and (q20_numpre=0 or q20_numpre is null) and q20_situacao<> 5 ");
@@ -316,7 +316,7 @@ small{
     	}
     	
     	
-          if(isset($planilha) && $planilha != ""){ // entra aki quando clico no bot„o comprovante.....................
+          if(isset($planilha) && $planilha != ""){ // entra aki quando clico no bot√£o comprovante.....................
              $clquery->sql_query("issplanit  left join issplanitinscr on q21_sequencial=q31_issplanit"," distinct q21_cnpj,q21_nome,q21_servico,q31_inscr,sum(q21_valor) as q21_valor",""," q21_planilha = $planilha  and q21_status = 1 group by q21_cnpj,q21_nome,q21_servico,q31_inscr");
             // die ("$clquery->sql");
              $clquery->sql_record($clquery->sql);
@@ -328,9 +328,9 @@ small{
              echo "<table width=\"100%\"  class=\"tab\">";
              echo "  <tr>";
              echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">CNPJ</font></b></th> ";
-             echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">INSCRI«√O</font></b></th> ";
-             echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">NOME/RAZ√O SOCIAL</font></b></th> ";
-             echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">SERVI«O PRESTADO</font></b></th> ";
+             echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">INSCRI√á√ÉO</font></b></th> ";
+             echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">NOME/RAZ√ÉO SOCIAL</font></b></th> ";
+             echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">SERVI√áO PRESTADO</font></b></th> ";
              echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">TOTAL</font></b></th> ";
              echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">EMITE</font></b></th> ";
              echo "  </tr>";
@@ -366,10 +366,10 @@ small{
                echo "  <tr>";
                echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">Planilha</font></b></th> ";
                echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">Ano</font></b></th> ";
-               echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">MÍs</font></b></th> ";
+               echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">M√™s</font></b></th> ";
                echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">Emite</font></b></th> ";
                echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">Contato</font></b></th> ";
-               echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">OpÁıes</font></b></th> ";
+               echo "    <th align=\"center\" bgcolor=\"#00436E\" ><b><font color=\"#FFFFFF\">Op√ß√µes</font></b></th> ";
                echo "  </tr>"; 
                echo "<input name=\"planilha\" value=\"\" type=\"hidden\">";
                echo "<tbody id='corpoplanilha'>";
@@ -398,14 +398,14 @@ small{
 	               echo "<td align=\"center\" ><b><font > $q20_nomecontri </font></b></td> ";
 	             
 	               // se o mes que escolhi for maior que o mes atual-2 ou se o ano q escolhi for maior que o ano atual
-	               // ele mostra um bot„o de alterar
+	               // ele mostra um bot√£o de alterar
 	               
-	               //determina o bot„o.... se tiver numpre = 0 bot„o reemite recibo sen„o emite recibo
-	               //bot„o reemite recibo chama a funÁ„o js_recibo e passa o numpre que vai chamar recibopdf.php
-	               //bot„o emite recibo chama a funÁ„o 7 e passa $planilha,$q20_ano,$q20_mes,$numcgm que vai chamar opcoesissqn001
+	               //determina o bot√£o.... se tiver numpre = 0 bot√£o reemite recibo sen√£o emite recibo
+	               //bot√£o reemite recibo chama a fun√ß√£o js_recibo e passa o numpre que vai chamar recibopdf.php
+	               //bot√£o emite recibo chama a fun√ß√£o 7 e passa $planilha,$q20_ano,$q20_mes,$numcgm que vai chamar opcoesissqn001
 				  
 				   if (isset($mostra)){	              
-		               if ($mostra==5 || $mostra==1){ //......... se for aberto ou em diditaÁ„o 
+		               if ($mostra==5 || $mostra==1){ //......... se for aberto ou em didita√ß√£o 
 		               
 			               $botvalor = $q20_numpre!=0?"Reemite Recibo":("Emite Recibo");
 			               $evento = $q20_numpre!=0?'onclick="js_recibo('.$q20_numpre.','.$planilha.')"':('onclick="js_recibo1('.$planilha.','.$q20_ano.','.$q20_mes.','.$numcgm.',this)"');
@@ -561,7 +561,7 @@ function js_recibo1(planilha,ano,mes,cgm,obj){
 
   if(isNaN(dt)){
 
-    alert('Data Inv·lida. Verifique');
+    alert('Data Inv√°lida. Verifique');
     document.form1.dtvenc_dia.select();
     document.form1.dtvenc_dia.focus();
   
@@ -572,11 +572,11 @@ function js_recibo1(planilha,ano,mes,cgm,obj){
    
     if( dti < dtf ){
     
-      alert('Data de Pagamento Inv·lida. Dever· ser data de hoje ou maior que hoje.');
+      alert('Data de Pagamento Inv√°lida. Dever√° ser data de hoje ou maior que hoje.');
     
     } else {
     
-      var retorno = confirm('Confirma emiss„o do recibo?');
+      var retorno = confirm('Confirma emiss√£o do recibo?');
       if(retorno==true){
         jan = window.open('recibopdf.php?planilha='+planilha+'&dtpaga='+document.form1.dtvenc_ano.value+"-"+document.form1.dtvenc_mes.value+"-"+document.form1.dtvenc_dia.value,'','toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');
         jan.focus();
@@ -599,7 +599,7 @@ function js_recibo(numpre,planilha){
 
   if(isNaN(dt)){
 
-    alert('Data Inv·lida. Verifique');
+    alert('Data Inv√°lida. Verifique');
     document.form1.dtvenc_dia.select();
     document.form1.dtvenc_dia.focus();
   
@@ -609,13 +609,13 @@ function js_recibo(numpre,planilha){
     var dtf = new Number(dthoje.getTime());
 	if( dti < dtf ){
     
-      alert('Data de Pagamento Inv·lida. Dever· ser data de hoje ou maior que hoje.');
+      alert('Data de Pagamento Inv√°lida. Dever√° ser data de hoje ou maior que hoje.');
 
       document.form1.dtvenc_dia.select();
       document.form1.dtvenc_dia.focus();
 
     }else{
-      var retorno = confirm('Confirma e Emiss„o?');
+      var retorno = confirm('Confirma e Emiss√£o?');
       if(retorno==true){
         window.open('recibopdf.php?dados_recibo=true&q24_inscr=<?=$inscricaow?>&q20_numcgm=<?=$numcgm?>&q20_numpre='+numpre+'&planilha='+planilha+'&dtpaga='+document.form1.dtvenc_ano.value+"-"+document.form1.dtvenc_mes.value+"-"+document.form1.dtvenc_dia.value,'','toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');
       }

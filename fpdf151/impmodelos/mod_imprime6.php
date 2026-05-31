@@ -34,7 +34,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->Setfont('Arial', 'B', 10);
 		$this->objpdf->text(128, $xlin -13, 'NOTA DE EMPENHO N'.CHR(176).': ');
 		$this->objpdf->text(175, $xlin -13, db_formatar($this->codemp, 's', '0', 6, 'e'));
-		$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃO : ');
+		$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃƒO : ');
 		$this->objpdf->text(175, $xlin -8, $this->emissao);
 		$this->objpdf->Image('imagens/files/logo_boleto.png', 15, $xlin -17, 12); //.$this->logo
 		$this->objpdf->Setfont('Arial', 'B', 9);
@@ -46,13 +46,13 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->text(40, $xlin -2, $this->emailpref);
 		$this->objpdf->text(40, $xlin, db_formatar($this->cgcpref, 'cnpj'));
 
-		/// retangulo dos dados da dotação
+		/// retangulo dos dados da dotaÃ§Ã£o
 		$this->objpdf->rect($xcol, $xlin +2, $xcol +100, 50, 2, 'DF', '1234');
 		$this->objpdf->Setfont('Arial', 'B', 8);
-		$this->objpdf->text($xcol +2, $xlin +7, 'Órgao');
+		$this->objpdf->text($xcol +2, $xlin +7, 'Ã“rgao');
 		$this->objpdf->text($xcol +2, $xlin +10.5, 'Unidade');
-		$this->objpdf->text($xcol +2, $xlin +14, 'Função');
-		$this->objpdf->text($xcol +2, $xlin +17.5, 'Subfunção');
+		$this->objpdf->text($xcol +2, $xlin +14, 'FunÃ§Ã£o');
+		$this->objpdf->text($xcol +2, $xlin +17.5, 'SubfunÃ§Ã£o');
 		$this->objpdf->text($xcol +2, $xlin +21, 'Programa');
 
 		$this->objpdf->text($xcol +2, $xlin +24.5, 'Proj/Ativ');
@@ -66,7 +66,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		}
 
 		$this->objpdf->text($xcol +2, $xlin +42.5, 'Reduzido');
-		$this->objpdf->text($xcol +2, $xlin +48, 'Licitação');
+		$this->objpdf->text($xcol +2, $xlin +48, 'LicitaÃ§Ã£o');
 
 		$this->objpdf->Setfont('Arial', '', 8);
 		$this->objpdf->text($xcol +17, $xlin +7, ':  '.db_formatar($this->orgao, 'orgao').' - '.$this->descr_orgao);
@@ -101,8 +101,8 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->text($xcol +107, $xlin +7, 'Numcgm');
 		$this->objpdf->text($xcol +140, $xlin +7, (strlen($this->cnpj) == 11 ? 'CPF' : 'CNPJ'));
 		$this->objpdf->text($xcol +107, $xlin +11, 'Nome');
-		$this->objpdf->text($xcol +107, $xlin +15, 'Endereço');
-		$this->objpdf->text($xcol +107, $xlin +19, 'Município');
+		$this->objpdf->text($xcol +107, $xlin +15, 'EndereÃ§o');
+		$this->objpdf->text($xcol +107, $xlin +19, 'MunicÃ­pio');
 		$this->objpdf->Setfont('Arial', '', 8);
 		$this->objpdf->text($xcol +124, $xlin +7, ': '.$this->numcgm);
 		$this->objpdf->text($xcol +149, $xlin +7, ':  '. (strlen($this->cnpj) == 11 ? db_formatar($this->cnpj, 'cpf') : db_formatar($this->cnpj, 'cnpj')).'   Fone: '.$this->telefone);
@@ -117,12 +117,12 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->rect($xcol +106, $xlin +42.5, 47, 9, 2, 'DF', '1234');
 		$this->objpdf->rect($xcol +155, $xlin +42.5, 47, 9, 2, 'DF', '1234');
 		$this->objpdf->Setfont('Arial', '', 6);
-		$this->objpdf->text($xcol +108, $xlin +34.0, 'Valor Orçado');
+		$this->objpdf->text($xcol +108, $xlin +34.0, 'Valor OrÃ§ado');
 		$this->objpdf->text($xcol +157, $xlin +34.0, 'Saldo Anterior');
 		$this->objpdf->text($xcol +108, $xlin +44.5, 'Valor Empenhado');
 		$this->objpdf->text($xcol +157, $xlin +44.5, 'Saldo Atual');
 		$this->objpdf->Setfont('Arial', '', 8);
-		$this->objpdf->text($xcol +108, $xlin +27, 'AUTORIZAÇÃO N'.chr(176).' '.db_formatar($this->numaut, 's', '0', 5, 'e'));
+		$this->objpdf->text($xcol +108, $xlin +27, 'AUTORIZAÃ‡ÃƒO N'.chr(176).' '.db_formatar($this->numaut, 's', '0', 5, 'e'));
 		$this->objpdf->text($xcol +150, $xlin +27, 'SEQ. DO EMPENHO N'.chr(176).' '.db_formatar($this->numemp, 's', '0', 6, 'e'));
 		//	$this->objpdf->text($xcol+108,$xlin+26.5,$this->texto);
 		$this->objpdf->text($xcol +130, $xlin +38.0, db_formatar($this->orcado, 'f'));
@@ -144,10 +144,10 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->rect($xcol +152, $xlin +54, 25, 6, 2, 'DF', '12');
 		$this->objpdf->rect($xcol +177, $xlin +54, 25, 6, 2, 'DF', '12');
 
-		//// título do corpo do empenho
+		//// tÃ­tulo do corpo do empenho
 		$this->objpdf->text($xcol +2, $xlin +58, 'QUANT');
-		$this->objpdf->text($xcol +70, $xlin +58, 'MATERIAL OU SERVIÇO');
-		$this->objpdf->text($xcol +154, $xlin +58, 'VALOR UNITÁRIO');
+		$this->objpdf->text($xcol +70, $xlin +58, 'MATERIAL OU SERVIÃ‡O');
+		$this->objpdf->text($xcol +154, $xlin +58, 'VALOR UNITÃRIO');
 		$this->objpdf->text($xcol +181, $xlin +58, 'VALOR TOTAL');
 		$maiscol = 0;
 
@@ -175,7 +175,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 			if (($this->objpdf->gety() > $this->objpdf->h - 125 && $pagina == 1) || ($this->objpdf->gety() > $this->objpdf->h - 22 && $pagina != 1)) {
 
 				$proxima_pagina = $pagina +1;
-				$this->objpdf->Row(array ('', "Continua na página $proxima_pagina", '', ''), 3, false, 4);
+				$this->objpdf->Row(array ('', "Continua na pÃ¡gina $proxima_pagina", '', ''), 3, false, 4);
 				if ($pagina == 1) {
 					$this->objpdf->rect($xcol, $xlin +183, 152, 6, 2, 'DF', '34');
 					$this->objpdf->rect($xcol +152, $xlin +183, 25, 6, 2, 'DF', '34');
@@ -245,7 +245,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 					$this->objpdf->SetFont('Arial', '', 7);
 					$this->objpdf->text($xcol +90, $xlin +249, 'R E C I B O');
-					$this->objpdf->text($xcol +45, $xlin +253, 'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+					$this->objpdf->text($xcol +45, $xlin +253, 'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
 					$this->objpdf->text($xcol +2, $xlin +257, '(     ) PARTE DO VALOR EMPENHADO');
 					$this->objpdf->text($xcol +102, $xlin +257, '(     ) SALDO/TOTAL EMPENHADO');
 					$this->objpdf->text($xcol +2, $xlin +261, 'R$');
@@ -281,7 +281,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 				$this->objpdf->text(128, $xlin -13, 'NOTA DE EMPENHO N'.CHR(176).': ');
 				$this->objpdf->text(175, $xlin -13, db_formatar($this->codemp, 's', '0', 6, 'e'));
-				$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃO : ');
+				$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃƒO : ');
 				$this->objpdf->text(175, $xlin -8, $this->emissao);
 				$this->objpdf->Image('imagens/files/logo_boleto.png', 15, $xlin -17, 12); //.$this->logo
 				$this->objpdf->Setfont('Arial', 'B', 9);
@@ -311,10 +311,10 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 				//	    $this->objpdf->text($xcol+4,$xlin+58,'ITEM');
 				$this->objpdf->text($xcol +0.5, $xlin +58, 'QUANT');
-				$this->objpdf->text($xcol +65, $xlin +58, 'MATERIAL OU SERVIÇO');
-				$this->objpdf->text($xcol +145, $xlin +58, 'VALOR UNITÁRIO');
+				$this->objpdf->text($xcol +65, $xlin +58, 'MATERIAL OU SERVIÃ‡O');
+				$this->objpdf->text($xcol +145, $xlin +58, 'VALOR UNITÃRIO');
 				$this->objpdf->text($xcol +179, $xlin +58, 'VALOR TOTAL');
-				$this->objpdf->text($xcol +38, $xlin +63, 'Continuação da Página '. ($this->objpdf->PageNo() - 1));
+				$this->objpdf->text($xcol +38, $xlin +63, 'ContinuaÃ§Ã£o da PÃ¡gina '. ($this->objpdf->PageNo() - 1));
 
 				$maiscol = 0;
 
@@ -394,7 +394,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 				     $this->objpdf->SetFont('Arial','',7);
 			
 				     $this->objpdf->text($xcol+90,$xlin+249,'R E C I B O');
-				     $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+				     $this->objpdf->text($xcol+45,$xlin+253,'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
 				     $this->objpdf->text($xcol+2,$xlin+257,'(     ) PARTE DO VALOR EMPENHADO');
 				     $this->objpdf->text($xcol+102,$xlin+257,'(     ) SALDO/TOTAL EMPENHADO');
 				     $this->objpdf->text($xcol+2,$xlin+261,'R$');
@@ -435,7 +435,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->Setfont('Arial', 'B', 10);
 		$this->objpdf->text(128, $xlin -13, 'NOTA DE EMPENHO N'.CHR(176).': ');
 		$this->objpdf->text(175, $xlin -13, db_formatar($this->codemp, 's', '0', 6, 'e'));
-		$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃO : ');
+		$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃƒO : ');
 		$this->objpdf->text(175, $xlin -8, $this->emissao);
 
 		$this->objpdf->text(159, $xlin -3, 'TIPO : ');
@@ -451,13 +451,13 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->text(40, $xlin -2, $this->emailpref);
 		$this->objpdf->text(40, $xlin +1, db_formatar($this->cgcpref, 'cnpj'));
 
-		/// retangulo dos dados da dotação
+		/// retangulo dos dados da dotaÃ§Ã£o
 		$this->objpdf->rect($xcol, $xlin +2, $xcol +100, 50, 2, 'DF', '1234');
 		$this->objpdf->Setfont('Arial', 'B', 8);
-		$this->objpdf->text($xcol +2, $xlin +7, 'Órgao');
+		$this->objpdf->text($xcol +2, $xlin +7, 'Ã“rgao');
 		$this->objpdf->text($xcol +2, $xlin +10.5, 'Unidade');
-		$this->objpdf->text($xcol +2, $xlin +14, 'Função');
-		$this->objpdf->text($xcol +2, $xlin +17.5, 'Subfunção');
+		$this->objpdf->text($xcol +2, $xlin +14, 'FunÃ§Ã£o');
+		$this->objpdf->text($xcol +2, $xlin +17.5, 'SubfunÃ§Ã£o');
 		$this->objpdf->text($xcol +2, $xlin +21, 'Programa');
 		$this->objpdf->text($xcol +2, $xlin +24.5, 'Proj/Ativ');
 		$this->objpdf->text($xcol +2, $xlin +28, 'Rubrica');
@@ -470,7 +470,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		}
 
 		$this->objpdf->text($xcol +2, $xlin +42.5, 'Reduzido');
-		$this->objpdf->text($xcol +2, $xlin +48, 'Licitação');
+		$this->objpdf->text($xcol +2, $xlin +48, 'LicitaÃ§Ã£o');
 
 		$this->objpdf->Setfont('Arial', '', 8);
 		$this->objpdf->text($xcol +17, $xlin +7, ':  '.db_formatar($this->orgao, 'orgao').' - '.$this->descr_orgao);
@@ -505,8 +505,8 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->text($xcol +107, $xlin +7, 'Numcgm');
 		$this->objpdf->text($xcol +135, $xlin +7, (strlen($this->cnpj) == 11 ? 'CPF' : 'CNPJ'));
 		$this->objpdf->text($xcol +107, $xlin +11, 'Nome');
-		$this->objpdf->text($xcol +107, $xlin +15, 'Endereço');
-		$this->objpdf->text($xcol +107, $xlin +19, 'Município');
+		$this->objpdf->text($xcol +107, $xlin +15, 'EndereÃ§o');
+		$this->objpdf->text($xcol +107, $xlin +19, 'MunicÃ­pio');
 		$this->objpdf->Setfont('Arial', '', 8);
 		$this->objpdf->text($xcol +124, $xlin +7, ': '.$this->numcgm);
 		$this->objpdf->text($xcol +143, $xlin +7, ': '. (strlen($this->cnpj) == 11 ? db_formatar($this->cnpj, 'cpf') : db_formatar($this->cnpj, 'cnpj')).' - Fone: '.$this->telefone);
@@ -521,12 +521,12 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->rect($xcol +106, $xlin +42.5, 47, 9, 2, 'DF', '1234');
 		$this->objpdf->rect($xcol +155, $xlin +42.5, 47, 9, 2, 'DF', '1234');
 		$this->objpdf->Setfont('Arial', '', 6);
-		$this->objpdf->text($xcol +108, $xlin +34.0, 'Valor Orçado');
+		$this->objpdf->text($xcol +108, $xlin +34.0, 'Valor OrÃ§ado');
 		$this->objpdf->text($xcol +157, $xlin +34.0, 'Saldo Anterior');
 		$this->objpdf->text($xcol +108, $xlin +44.5, 'Valor Empenhado');
 		$this->objpdf->text($xcol +157, $xlin +44.5, 'Saldo Atual');
 		$this->objpdf->Setfont('Arial', '', 8);
-		$this->objpdf->text($xcol +108, $xlin +27, 'AUTORIZAÇÃO N'.chr(176).' '.db_formatar($this->numaut, 's', '0', 5, 'e'));
+		$this->objpdf->text($xcol +108, $xlin +27, 'AUTORIZAÃ‡ÃƒO N'.chr(176).' '.db_formatar($this->numaut, 's', '0', 5, 'e'));
 		$this->objpdf->text($xcol +150, $xlin +27, 'SEQ. DO EMPENHO N'.chr(176).' '.db_formatar($this->numemp, 's', '0', 6, 'e'));
 		//	$this->objpdf->text($xcol+108,$xlin+26.5,$this->texto);
 		$this->objpdf->text($xcol +130, $xlin +38.0, db_formatar($this->orcado, 'f'));
@@ -548,10 +548,10 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 		$this->objpdf->rect($xcol +152, $xlin +54, 25, 6, 2, 'DF', '12');
 		$this->objpdf->rect($xcol +177, $xlin +54, 25, 6, 2, 'DF', '12');
 
-		//// título do corpo do empenho
+		//// tÃ­tulo do corpo do empenho
 		$this->objpdf->text($xcol +2, $xlin +58, 'QUANT');
-		$this->objpdf->text($xcol +70, $xlin +58, 'MATERIAL OU SERVIÇO');
-		$this->objpdf->text($xcol +154, $xlin +58, 'VALOR UNITÁRIO');
+		$this->objpdf->text($xcol +70, $xlin +58, 'MATERIAL OU SERVIÃ‡O');
+		$this->objpdf->text($xcol +154, $xlin +58, 'VALOR UNITÃRIO');
 		$this->objpdf->text($xcol +181, $xlin +58, 'VALOR TOTAL');
 		$maiscol = 0;
 
@@ -579,7 +579,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 			if (($this->objpdf->gety() > $this->objpdf->h - 125 && $pagina == 1) || ($this->objpdf->gety() > $this->objpdf->h - 22 && $pagina != 1)) {
 
 				$proxima_pagina = $pagina +1;
-				$this->objpdf->Row(array ('', "Continua na página $proxima_pagina", '', ''), 3, false, 4);
+				$this->objpdf->Row(array ('', "Continua na pÃ¡gina $proxima_pagina", '', ''), 3, false, 4);
 				if ($pagina == 1) {
 					$this->objpdf->rect($xcol, $xlin +183, 152, 6, 2, 'DF', '34');
 					$this->objpdf->rect($xcol +152, $xlin +183, 25, 6, 2, 'DF', '34');
@@ -646,7 +646,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 					$this->objpdf->SetFont('Arial', '', 7);
 					$this->objpdf->text($xcol +90, $xlin +249, 'R E C I B O');
-					$this->objpdf->text($xcol +45, $xlin +253, 'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+					$this->objpdf->text($xcol +45, $xlin +253, 'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
 					$this->objpdf->text($xcol +2, $xlin +257, '(     ) PARTE DO VALOR EMPENHADO');
 					$this->objpdf->text($xcol +102, $xlin +257, '(     ) SALDO/TOTAL EMPENHADO');
 					$this->objpdf->text($xcol +2, $xlin +261, 'R$');
@@ -682,7 +682,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 				$this->objpdf->text(128, $xlin -13, 'NOTA DE EMPENHO N'.CHR(176).': ');
 				$this->objpdf->text(175, $xlin -13, db_formatar($this->codemp, 's', '0', 6, 'e'));
-				$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃO : ');
+				$this->objpdf->text(134, $xlin -8, 'DATA DE EMISSÃƒO : ');
 				$this->objpdf->text(175, $xlin -8, $this->emissao);
 				$this->objpdf->Image('imagens/files/logo_boleto.png', 15, $xlin -17, 12); //.$this->logo
 				$this->objpdf->Setfont('Arial', 'B', 9);
@@ -712,10 +712,10 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 				//	    $this->objpdf->text($xcol+4,$xlin+58,'ITEM');
 				$this->objpdf->text($xcol +0.5, $xlin +58, 'QUANT');
-				$this->objpdf->text($xcol +65, $xlin +58, 'MATERIAL OU SERVIÇO');
-				$this->objpdf->text($xcol +145, $xlin +58, 'VALOR UNITÁRIO');
+				$this->objpdf->text($xcol +65, $xlin +58, 'MATERIAL OU SERVIÃ‡O');
+				$this->objpdf->text($xcol +145, $xlin +58, 'VALOR UNITÃRIO');
 				$this->objpdf->text($xcol +179, $xlin +58, 'VALOR TOTAL');
-				$this->objpdf->text($xcol +38, $xlin +63, 'Continuação da Página '. ($this->objpdf->PageNo() - 1));
+				$this->objpdf->text($xcol +38, $xlin +63, 'ContinuaÃ§Ã£o da PÃ¡gina '. ($this->objpdf->PageNo() - 1));
 
 				$maiscol = 0;
 
@@ -757,8 +757,8 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 			if (strtoupper(trim($this->municpref)) == 'BAGE') { // eu carlos, assumo ! 
 				$this->assinatura1 = 'EMISSOR';
 				$this->assinatura2 = 'CONTABILIDADE - CONFERIDO';
-				$this->assinatura3 = 'SECRETÃRIO(A) RESPONSAVEL';
-				$this->assinatura4 = 'SECRETÃRIO DA FAZENDA';
+				$this->assinatura3 = 'SECRETÃƒRIO(A) RESPONSAVEL';
+				$this->assinatura4 = 'SECRETÃƒRIO DA FAZENDA';
 				$this->assinaturaprefeito = 'SECRETARIA DA FAZENDA';
 			}
 
@@ -795,7 +795,7 @@ if (strtoupper(trim($this->municpref)) == 'GUAIBA') {
 
 			$this->objpdf->SetFont('Arial', '', 7);
 			$this->objpdf->text($xcol +90, $xlin +249, 'R E C I B O');
-			$this->objpdf->text($xcol +45, $xlin +253, 'RECEBI(EMOS) DO MUNICÍPIO DE '.$this->municpref.', A IMPORTÂNCIA ABAIXO ESPECIFICADA, REFERENTE À:');
+			$this->objpdf->text($xcol +45, $xlin +253, 'RECEBI(EMOS) DO MUNICÃPIO DE '.$this->municpref.', A IMPORTÃ‚NCIA ABAIXO ESPECIFICADA, REFERENTE Ã€:');
 			$this->objpdf->text($xcol +2, $xlin +257, '(     ) PARTE DO VALOR EMPENHADO');
 			$this->objpdf->text($xcol +102, $xlin +257, '(     ) SALDO/TOTAL EMPENHADO');
 			$this->objpdf->text($xcol +2, $xlin +261, 'R$');

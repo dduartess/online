@@ -97,21 +97,21 @@ function js_emiterecibo(){
      document.getElementById('dia_vcto').focus();
      return false;
     }
-    //Aqui testo se emite aviso sim ou n„o
+    //Aqui testo se emite aviso sim ou n√£o
     //se true fazer chamada ajax para verificar se existem debitos e emitir alerta
     js_verificaDebitos(); 
     
     if(agrupadebrecibos){
       if(debitos){
        emissao = false;
-			 if(!confirm('\nExistem DÈbitos Vencidos que ser„o Agrupados a esse recibo! \n\n Emitir mesmo assim?\n')){
+			 if(!confirm('\nExistem D√©bitos Vencidos que ser√£o Agrupados a esse recibo! \n\n Emitir mesmo assim?\n')){
 				return false;
 			 }
 			}		
 		}
 		
 		if(emissao){
-			alert('\nParcela n„o Liberada para Emiss„o de Recibos!\n');
+			alert('\nParcela n√£o Liberada para Emiss√£o de Recibos!\n');
 			return false;		
 		}
 	    	
@@ -247,7 +247,7 @@ function js_voltar(){
 <table width="100%" border="0" cellspacing="0" cellpadding="3" align="center">
  <tr>
   <td align="center">
-  	<font size="1"> <b>Obs: Valores abaixo calculados sem considerar a(s) parcela(s) ˙nica(s). </b></font>
+  	<font size="1"> <b>Obs: Valores abaixo calculados sem considerar a(s) parcela(s) √∫nica(s). </b></font>
    <table class="tab" width="100%">
     <tr>
      <th width="20% style="font-family: Verdana, Arial, Helvetica, sans-serif;font-size:10px;font-weight: bold;">Valor</th>

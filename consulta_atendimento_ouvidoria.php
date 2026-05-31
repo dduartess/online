@@ -56,7 +56,7 @@ $rsOuviAtendimento = $oDaoOuvidoriaAtend->sql_record($sSqlOuvAtend);
 
 if ($oDaoOuvidoriaAtend->erro_status == "0") {
 
-  db_msgbox("Não foi possível localizar o atendimento desejado.");
+  db_msgbox("NÃ£o foi possÃ­vel localizar o atendimento desejado.");
   db_redireciona("digitaconsultaouvidorianovo.php");
   exit;
 }
@@ -78,7 +78,7 @@ $oAtendimento->numero_processo = $sNumeroProcesso;
 <html>
 <head>
 	<title>Consulta Atendimento Ouvidoria</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 	<script language="JavaScript" src="scripts/db_script.js"></script>
 	<script language="JavaScript" src="scripts/prototype.js"></script>
@@ -173,7 +173,7 @@ $oAtendimento->numero_processo = $sNumeroProcesso;
                   <input class="valores" name="input" value="<?=db_formatar($oAtendimento->data_atendimento, 'd'); ?>" readonly="readonly" />
                 </td>
                 <td align="right" nowrap="nowrap">
-                  <span class='texto'><b>Hora Inclusão:</b></span>
+                  <span class='texto'><b>Hora InclusÃ£o:</b></span>
                 </td>
                 <td>
                   <input class="valores" name="input" value="<?=$oAtendimento->hora_atendimento; ?>" readonly="readonly" />
@@ -230,7 +230,7 @@ $oAtendimento->numero_processo = $sNumeroProcesso;
     	  </td>
     	  <td style="width: 30%;">
     	    <fieldset>
-    	      <legend class="titulo"><b>Solicitação</b></legend>
+    	      <legend class="titulo"><b>SolicitaÃ§Ã£o</b></legend>
     	      <textarea class="textarea" readonly="readonly"><?=$oAtendimento->ov01_solicitacao; ?></textarea>
     	    </fieldset>
     	  </td>
@@ -243,7 +243,7 @@ $oAtendimento->numero_processo = $sNumeroProcesso;
     	</tr>
     </table>
     <fieldset >
-      <legend class="titulo">Informações Adicionais</legend>
+      <legend class="titulo">InformaÃ§Ãµes Adicionais</legend>
       
       <table id="globalInformacaoAdicional" >
         <tr>
@@ -266,7 +266,7 @@ $oAtendimento->numero_processo = $sNumeroProcesso;
               </tr>
               <tr>
                 <td id="btnInformacoesRequerente" width="300px;" class="buttonSpan">
-                  <span onclick="js_atualizaFrame('btnInformacoesRequerente');">Informações Requerente</span>
+                  <span onclick="js_atualizaFrame('btnInformacoesRequerente');">InformaÃ§Ãµes Requerente</span>
                 </td>
               </tr>
             </table>

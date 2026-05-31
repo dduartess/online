@@ -53,22 +53,22 @@
   if($q20_situacao==5){
   	$situacao = " (ANULADA)";
   }
-  $matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"Março","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
+  $matri= array("1"=>"janeiro","2"=>"Fevereiro","3"=>"MarÃ§o","4"=>"Abril","5"=>"Maio","6"=>"Junho","7"=>"Julho","8"=>"Agosto","9"=>"Setembro","10"=>"Outubro","11"=>"Novembro","12"=>"Dezembro");
   $mesx= $matri[$q20_mes];
   
   $pdf = new FPDF();
   $pdf->Open();
   $pdf->AliasNbPages();
   $pdf->AddPage("L");
-  // monta cabecalho do relatório    
+  // monta cabecalho do relatÃ³rio    
   $pdf->Image('imagens/files/logo_boleto.png',140,3,20);
   $pdf->SetFont('Times','',9);
   $pdf->Text(118,31,$nomeinst);
   $pdf->Text(125,34,$db12_extenso);
   $pdf->SetFont('Courier','B',12);
-  $pdf->Text(122,38,"PLANILHA NÚMERO: ".$planilha.$situacao);
+  $pdf->Text(122,38,"PLANILHA NÃšMERO: ".$planilha.$situacao);
   $pdf->SetFont('Courier','B',9);
-  $pdf->Text(243,38,"COMPETÊNCIA:".$mesx."/".$q20_ano);
+  $pdf->Text(243,38,"COMPETÃŠNCIA:".$mesx."/".$q20_ano);
   $pdf->SetFont('Courier','B',10);
   $pdf->setY(41);
   $pdf->setX(5);
@@ -82,15 +82,15 @@
   $clquery->sql_record($clquery->sql);
   db_fieldsmemory($clquery->result,0);
  
-  $pdf->Cell(154,5,"NOME OU RAZÃO SOCIAL:".$z01_nome,"LTB",0,"L",0);
-  $pdf->Cell(52,5,"INSCRIÇÃO MUNICIPAL:".$q24_inscr,"TB",0,"L",0);
+  $pdf->Cell(154,5,"NOME OU RAZÃƒO SOCIAL:".$z01_nome,"LTB",0,"L",0);
+  $pdf->Cell(52,5,"INSCRIÃ‡ÃƒO MUNICIPAL:".$q24_inscr,"TB",0,"L",0);
   $pdf->Cell(80,5,"CONTATO:".$q20_nomecontri." FONE:".$q20_fonecontri,"TRB",1,"L",0);
   $pdf->SetFont('Courier','B',10);
   
   
   $pdf->Ln(10);
   $pdf->setX(5);
-  $pdf->Cell(286,5,"DADOS DOS SERVIÇOS PRESTADOS",1,1,"C",1);
+  $pdf->Cell(286,5,"DADOS DOS SERVIÃ‡OS PRESTADOS",1,1,"C",1);
  // $pdf->Ln(2);
 
   $pdf->setX(5);
@@ -99,11 +99,11 @@
   $pdf->Cell(15,5,"Insc.",1,0,"C",1);
   $pdf->Cell(65,5,"Nome do Tomador",1,0,"C",1);
   $pdf->Cell(10,5,"Nota",1,0,"C",1);
-  $pdf->Cell(10,5,"Série",1,0,"C",1);
+  $pdf->Cell(10,5,"SÃ©rie",1,0,"C",1);
   $pdf->Cell(7,5,"Dia",1,0,"C",1);
   $pdf->Cell(29,5,"Valor bruto",1,0,"C",1);
-  $pdf->Cell(25,5,"Dedução",1,0,"C",1);
-  $pdf->Cell(25,5,"Base cálculo",1,0,"C",1);
+  $pdf->Cell(25,5,"DeduÃ§Ã£o",1,0,"C",1);
+  $pdf->Cell(25,5,"Base cÃ¡lculo",1,0,"C",1);
   $pdf->Cell(10,5,"Aliq",1,0,"C",1);
   $pdf->Cell(25,5,"Imposto",1,0,"C",1);
   $pdf->Cell(10,5,"Ret.",1,0,"C",1);
@@ -125,7 +125,7 @@
     $q21_tipolanc = "Prestado";
   }
   if($q21_retido=="f"){
-    $q21_retido= "não";
+    $q21_retido= "nÃ£o";
   }else{
     $q21_retido= "sim";
   }
@@ -180,7 +180,7 @@
   $pdf->Cell(25,5,db_formatar($vt,'f'),1,1,"R",0);
  } 
   
- // $pdf->Cell(220,5,"QUANTIDADE DE ÍTENS: ".$i,1,0,"C",0);
+ // $pdf->Cell(220,5,"QUANTIDADE DE ÃTENS: ".$i,1,0,"C",0);
 //  $pdf->Cell(24,5,db_formatar(@$vs,'f'),1,0,"R",0);
  // $pdf->Cell(15,5,"",1,0,"C",0);
 //  $pdf->Cell(25,5,db_formatar(@$vt,'f'),1,1,"R",0);
@@ -195,7 +195,7 @@ $vi1 = 0;
 $pdf->SetFont('Courier','B',9);
 $pdf->Ln(10);
   $pdf->setX(5);
-  $pdf->Cell(286,5,"DADOS DOS SERVIÇOS TOMADOS",1,1,"C",1);
+  $pdf->Cell(286,5,"DADOS DOS SERVIÃ‡OS TOMADOS",1,1,"C",1);
  // $pdf->Ln(2);
 
   $pdf->setX(5);
@@ -204,11 +204,11 @@ $pdf->Ln(10);
   $pdf->Cell(15,5,"Insc.",1,0,"C",1);
   $pdf->Cell(65,5,"Nome Prestador",1,0,"C",1);
   $pdf->Cell(10,5,"Nota",1,0,"C",1);
-  $pdf->Cell(10,5,"Série",1,0,"C",1);
+  $pdf->Cell(10,5,"SÃ©rie",1,0,"C",1);
   $pdf->Cell(7,5,"Dia",1,0,"C",1); 
   $pdf->Cell(29,5,"Valor bruto",1,0,"C",1);
-  $pdf->Cell(25,5,"Dedução",1,0,"C",1);
-  $pdf->Cell(25,5,"Base cálculo",1,0,"C",1);
+  $pdf->Cell(25,5,"DeduÃ§Ã£o",1,0,"C",1);
+  $pdf->Cell(25,5,"Base cÃ¡lculo",1,0,"C",1);
   $pdf->Cell(10,5,"Aliq",1,0,"C",1);
   $pdf->Cell(25,5,"Imposto",1,0,"C",1);
   $pdf->Cell(10,5,"Ret.",1,0,"C",1);
@@ -229,7 +229,7 @@ $pdf->Ln(10);
     $q21_tipolanc = "Prestado";
   }
   if($q21_retido=="f"){
-    $q21_retido= "não";
+    $q21_retido= "nÃ£o";
   }else{
     $q21_retido= "sim";
   }
@@ -325,7 +325,7 @@ $pdf->Ln(10);
   $pdf->Setx(5);
   $pdf->SetFont('Courier','B',9);
   $pdf->Cell(170,5,$DB_mens2,0,0,"L",0);
-  $pdf->Cell(110,5,"Página ".$pdf->PageNo()." de {nb} ",0,0,"C",0);
+  $pdf->Cell(110,5,"PÃ¡gina ".$pdf->PageNo()." de {nb} ",0,0,"C",0);
 
   $pdf->Output();
 

@@ -32,7 +32,7 @@ include("classes/db_db_daitomador_classe.php");
 $cldb_daitomador = new cl_db_daitomador;
 $result = $cldb_daitomador->sql_record($cldb_daitomador->sql_query_file(null, "*", null, "w08_cnpj= '$cnpj' and w08_nota = '$nota' and w08_serie='$serie'"));
 if ($cldb_daitomador->numrows > 0) {
-	echo " <script> alert('CNPJ, Nota e Série ja lançadas');
+	echo " <script> alert('CNPJ, Nota e SÃ©rie ja lanÃ§adas');
   	parent.js_notaexiste()
  	 </script>";
 } 

@@ -54,7 +54,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js">
 </script>
 <script>
@@ -157,7 +157,7 @@ div.tabIframeWrapper {
 		  <a id="1" class="tab activeTab" href=<?=$href?> target="cad" onClick="trocacor('1')">Dados iniciais</a> 
 			<a id="2" class="tab" target="cad" onClick="trocacor('2')">Atividades</a> 
 			<?php if($pessoa=='J'){?>
-			<a id="3" class="tab" target="cad" onClick="trocacor('3')">Sócios</a>
+			<a id="3" class="tab" target="cad" onClick="trocacor('3')">SÃ³cios</a>
 			<?php }?>
 		</div>
 		<div class="tabMain">

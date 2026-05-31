@@ -59,16 +59,16 @@ class cl_itbi {
    var $it01_finalizado = 'f'; 
    // cria propriedade com as variaveis do arquivo 
    var $campos = "
-                 it01_guia = int8 = Número da guia de ITBI 
-                 it01_data = date = Data da solicitação 
-                 it01_hora = varchar(5) = Hora da solicitação 
-                 it01_tipotransacao = int8 = Código do tipo de transação 
-                 it01_areaterreno = float8 = Àrea do terreno 
-                 it01_areaedificada = float8 = Área edificada 
-                 it01_obs = text = Observações dadas pelo comprador 
-                 it01_valortransacao = float8 = Valor da transação 
-                 it01_valortransacaofinanc = float8 = Valor financiado da transação 
-                 it01_areatrans = float8 = Área transmitida do terreno 
+                 it01_guia = int8 = NÃºmero da guia de ITBI 
+                 it01_data = date = Data da solicitaÃ§Ã£o 
+                 it01_hora = varchar(5) = Hora da solicitaÃ§Ã£o 
+                 it01_tipotransacao = int8 = CÃ³digo do tipo de transaÃ§Ã£o 
+                 it01_areaterreno = float8 = Ã€rea do terreno 
+                 it01_areaedificada = float8 = Ãrea edificada 
+                 it01_obs = text = ObservaÃ§Ãµes dadas pelo comprador 
+                 it01_valortransacao = float8 = Valor da transaÃ§Ã£o 
+                 it01_valortransacaofinanc = float8 = Valor financiado da transaÃ§Ã£o 
+                 it01_areatrans = float8 = Ãrea transmitida do terreno 
                  it01_mail = varchar(50) = Mail de contato 
                  it01_finalizado = bool = Finalizado 
                  ";
@@ -117,55 +117,55 @@ class cl_itbi {
    function incluir ($it01_guia){ 
       $this->atualizacampos();
      if($this->it01_data == null ){ 
-       $this->erro_sql = " Campo Data da solicitação nao Informado.";
+       $this->erro_sql = " Campo Data da solicitaÃ§Ã£o nao Informado.";
        $this->erro_campo = "it01_data_dia";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->it01_hora == null ){ 
-       $this->erro_sql = " Campo Hora da solicitação nao Informado.";
+       $this->erro_sql = " Campo Hora da solicitaÃ§Ã£o nao Informado.";
        $this->erro_campo = "it01_hora";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->it01_tipotransacao == null ){ 
-       $this->erro_sql = " Campo Código do tipo de transação nao Informado.";
+       $this->erro_sql = " Campo CÃ³digo do tipo de transaÃ§Ã£o nao Informado.";
        $this->erro_campo = "it01_tipotransacao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->it01_areaterreno == null ){ 
-       $this->erro_sql = " Campo Àrea do terreno nao Informado.";
+       $this->erro_sql = " Campo Ã€rea do terreno nao Informado.";
        $this->erro_campo = "it01_areaterreno";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->it01_areaedificada == null ){ 
-       $this->erro_sql = " Campo Área edificada nao Informado.";
+       $this->erro_sql = " Campo Ãrea edificada nao Informado.";
        $this->erro_campo = "it01_areaedificada";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
      }
      if($this->it01_valortransacao == null ){ 
-       $this->erro_sql = " Campo Valor da transação nao Informado.";
+       $this->erro_sql = " Campo Valor da transaÃ§Ã£o nao Informado.";
        $this->erro_campo = "it01_valortransacao";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -174,10 +174,10 @@ class cl_itbi {
        $this->it01_valortransacaofinanc = "0";
      }
      if($this->it01_areatrans == null ){ 
-       $this->erro_sql = " Campo Área transmitida do terreno nao Informado.";
+       $this->erro_sql = " Campo Ãrea transmitida do terreno nao Informado.";
        $this->erro_campo = "it01_areatrans";
        $this->erro_banco = "";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -190,7 +190,7 @@ class cl_itbi {
        if($result==false){
          $this->erro_banco = str_replace("\n","",@pg_last_error());
          $this->erro_sql   = "Verifique o cadastro da sequencia: itbi_it01_guia_seq do campo: it01_guia"; 
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false; 
@@ -199,9 +199,9 @@ class cl_itbi {
      }else{
        $result = @pg_query("select last_value from itbi_it01_guia_seq");
        if(($result != false) && (pg_result($result,0,0) < $it01_guia)){
-         $this->erro_sql = " Campo it01_guia maior que último número da sequencia.";
-         $this->erro_banco = "Sequencia menor que este número.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql = " Campo it01_guia maior que Ãºltimo nÃºmero da sequencia.";
+         $this->erro_banco = "Sequencia menor que este nÃºmero.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -212,7 +212,7 @@ class cl_itbi {
      if(($this->it01_guia == null) || ($this->it01_guia == "") ){ 
        $this->erro_sql = " Campo it01_guia nao declarado.";
        $this->erro_banco = "Chave Primaria zerada.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -250,13 +250,13 @@ class cl_itbi {
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        if( strpos(strtolower($this->erro_banco),"duplicate key") != 0 ){
-         $this->erro_sql   = "ITBI ($this->it01_guia) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
-         $this->erro_banco = "ITBI já Cadastrado";
+         $this->erro_sql   = "ITBI ($this->it01_guia) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_banco = "ITBI jÃ¡ Cadastrado";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }else{
-         $this->erro_sql   = "ITBI ($this->it01_guia) nao Incluído. Inclusao Abortada.";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_sql   = "ITBI ($this->it01_guia) nao IncluÃ­do. Inclusao Abortada.";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        }
        $this->erro_status = "0";
@@ -266,7 +266,7 @@ class cl_itbi {
      $this->erro_banco = "";
      $this->erro_sql = "Inclusao efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->it01_guia;
-     $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+     $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
      $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
      $this->erro_status = "1";
      $this->numrows_incluir= pg_affected_rows($result);
@@ -299,10 +299,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_guia = $this->it01_guia ";
        $virgula = ",";
        if(trim($this->it01_guia) == null ){ 
-         $this->erro_sql = " Campo Número da guia de ITBI nao Informado.";
+         $this->erro_sql = " Campo NÃºmero da guia de ITBI nao Informado.";
          $this->erro_campo = "it01_guia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -312,10 +312,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_data = '$this->it01_data' ";
        $virgula = ",";
        if(trim($this->it01_data) == null ){ 
-         $this->erro_sql = " Campo Data da solicitação nao Informado.";
+         $this->erro_sql = " Campo Data da solicitaÃ§Ã£o nao Informado.";
          $this->erro_campo = "it01_data_dia";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -325,10 +325,10 @@ class cl_itbi {
          $sql  .= $virgula." it01_data = null ";
          $virgula = ",";
          if(trim($this->it01_data) == null ){ 
-           $this->erro_sql = " Campo Data da solicitação nao Informado.";
+           $this->erro_sql = " Campo Data da solicitaÃ§Ã£o nao Informado.";
            $this->erro_campo = "it01_data_dia";
            $this->erro_banco = "";
-           $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+           $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
            $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
            $this->erro_status = "0";
            return false;
@@ -339,10 +339,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_hora = '$this->it01_hora' ";
        $virgula = ",";
        if(trim($this->it01_hora) == null ){ 
-         $this->erro_sql = " Campo Hora da solicitação nao Informado.";
+         $this->erro_sql = " Campo Hora da solicitaÃ§Ã£o nao Informado.";
          $this->erro_campo = "it01_hora";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -352,10 +352,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_tipotransacao = $this->it01_tipotransacao ";
        $virgula = ",";
        if(trim($this->it01_tipotransacao) == null ){ 
-         $this->erro_sql = " Campo Código do tipo de transação nao Informado.";
+         $this->erro_sql = " Campo CÃ³digo do tipo de transaÃ§Ã£o nao Informado.";
          $this->erro_campo = "it01_tipotransacao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -365,10 +365,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_areaterreno = $this->it01_areaterreno ";
        $virgula = ",";
        if(trim($this->it01_areaterreno) == null ){ 
-         $this->erro_sql = " Campo Àrea do terreno nao Informado.";
+         $this->erro_sql = " Campo Ã€rea do terreno nao Informado.";
          $this->erro_campo = "it01_areaterreno";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -378,10 +378,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_areaedificada = $this->it01_areaedificada ";
        $virgula = ",";
        if(trim($this->it01_areaedificada) == null ){ 
-         $this->erro_sql = " Campo Área edificada nao Informado.";
+         $this->erro_sql = " Campo Ãrea edificada nao Informado.";
          $this->erro_campo = "it01_areaedificada";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -395,10 +395,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_valortransacao = $this->it01_valortransacao ";
        $virgula = ",";
        if(trim($this->it01_valortransacao) == null ){ 
-         $this->erro_sql = " Campo Valor da transação nao Informado.";
+         $this->erro_sql = " Campo Valor da transaÃ§Ã£o nao Informado.";
          $this->erro_campo = "it01_valortransacao";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -415,10 +415,10 @@ class cl_itbi {
        $sql  .= $virgula." it01_areatrans = $this->it01_areatrans ";
        $virgula = ",";
        if(trim($this->it01_areatrans) == null ){ 
-         $this->erro_sql = " Campo Área transmitida do terreno nao Informado.";
+         $this->erro_sql = " Campo Ãrea transmitida do terreno nao Informado.";
          $this->erro_campo = "it01_areatrans";
          $this->erro_banco = "";
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "0";
          return false;
@@ -474,7 +474,7 @@ class cl_itbi {
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "ITBI nao Alterado. Alteracao Abortada.\\n";
          $this->erro_sql .= "Valores : ".$this->it01_guia;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_alterar = 0;
@@ -484,16 +484,16 @@ class cl_itbi {
          $this->erro_banco = "";
          $this->erro_sql = "ITBI nao foi Alterado. Alteracao Executada.\\n";
          $this->erro_sql .= "Valores : ".$this->it01_guia;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Alteração efetuada com Sucesso\\n";
+         $this->erro_sql = "AlteraÃ§Ã£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$this->it01_guia;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_alterar = pg_affected_rows($result);
@@ -543,9 +543,9 @@ class cl_itbi {
      $result = @pg_exec($sql.$sql2);
      if($result==false){ 
        $this->erro_banco = str_replace("\n","",@pg_last_error());
-       $this->erro_sql   = "ITBI nao Excluído. Exclusão Abortada.\\n";
+       $this->erro_sql   = "ITBI nao ExcluÃ­do. ExclusÃ£o Abortada.\\n";
        $this->erro_sql .= "Valores : ".$it01_guia;
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        $this->numrows_excluir = 0;
@@ -553,18 +553,18 @@ class cl_itbi {
      }else{
        if(pg_affected_rows($result)==0){
          $this->erro_banco = "";
-         $this->erro_sql = "ITBI nao Encontrado. Exclusão não Efetuada.\\n";
+         $this->erro_sql = "ITBI nao Encontrado. ExclusÃ£o nÃ£o Efetuada.\\n";
          $this->erro_sql .= "Valores : ".$it01_guia;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = 0;
          return true;
        }else{
          $this->erro_banco = "";
-         $this->erro_sql = "Exclusão efetuada com Sucesso\\n";
+         $this->erro_sql = "ExclusÃ£o efetuada com Sucesso\\n";
          $this->erro_sql .= "Valores : ".$it01_guia;
-         $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+         $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
          $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
          $this->erro_status = "1";
          $this->numrows_excluir = pg_affected_rows($result);
@@ -579,7 +579,7 @@ class cl_itbi {
        $this->numrows    = 0;
        $this->erro_banco = str_replace("\n","",@pg_last_error());
        $this->erro_sql   = "Erro ao selecionar os registros.";
-       $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+       $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
        $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
        $this->erro_status = "0";
        return false;
@@ -588,7 +588,7 @@ class cl_itbi {
       if($this->numrows==0){
         $this->erro_banco = "";
         $this->erro_sql   = "Record Vazio na Tabela:itbi";
-        $this->erro_msg   = "Usuário: \\n\\n ".$this->erro_sql." \\n\\n";
+        $this->erro_msg   = "UsuÃ¡rio: \\n\\n ".$this->erro_sql." \\n\\n";
         $this->erro_msg   .=  str_replace('"',"",str_replace("'","",  "Administrador: \\n\\n ".$this->erro_banco." \\n"));
         $this->erro_status = "0";
         return false;

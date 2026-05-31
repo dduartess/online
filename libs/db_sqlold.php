@@ -590,7 +590,7 @@ function db_mensagem($cabecalho,$rodape) {
   global $DB_mens1, $DB_align1, $DB_mens2, $DB_align2;
   $result = pg_exec("select mens,alinhamento from db_confmensagem where cod = '$cabecalho' or cod = '$rodape' order by cod");
   if (pg_numrows($result) == 0 ){
-     db_msgbox2("Mensagem n„o encontrado para: $cabecalho $rodape");
+     db_msgbox2("Mensagem n√£o encontrado para: $cabecalho $rodape");
      //redireciona("index.php");
 	 exit;
   }
@@ -621,7 +621,7 @@ function debitos_alvara($inscricao,$limite){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
      if (pg_numrows($result) == 0 ){
-        db_msgbox("Sem dÈbitos a Pagar");
+        db_msgbox("Sem d√©bitos a Pagar");
         db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Alvara. Numero: $inscricao");
         redireciona("opcoesalvara.php?inscricao=".$inscricao);
      }
@@ -658,8 +658,8 @@ function debitos_alvara_sanitario($inscricao,$limite){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
      if (pg_numrows($result) == 0 ){
-        db_msgbox("Sem dÈbitos a Pagar");
-        db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Alvara Sanit·rio. Numero: $inscricao");
+        db_msgbox("Sem d√©bitos a Pagar");
+        db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Alvara Sanit√°rio. Numero: $inscricao");
         redireciona("opcoesalvara.php?inscricao=".$inscricao);
      }
      db_logs("","$inscricao",0,"Existem Debitos de Alvara. Numero: $inscricao");
@@ -696,7 +696,7 @@ function debitos_issqnfixo($inscricao,$limite){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
     if (pg_numrows($result) == 0 ){
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Issqn Fixo. Numero: $inscricao");
       redireciona("opcoesalvara.php?inscricao=".$inscricao);
     }
@@ -742,7 +742,7 @@ function debitos_issqnvariavel($inscricao,$limite,$recalculo){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
     if (pg_numrows($result) == 0 ){
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Issqn Variavel. Numero: $inscricao");
       redireciona("opcoesalvara.php?inscricao=".$inscricao); 
     }
@@ -785,7 +785,7 @@ function debitos_dividaalvara($inscricao,$limite){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
     if (pg_numrows($result) == 0 ){
-       db_msgbox("Sem dÈbitos a Pagar");
+       db_msgbox("Sem d√©bitos a Pagar");
        db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Divida Ativa Alvara. Numero: $inscricao");
        redireciona("opcoesalvara.php?inscricao=".$inscricao);  
     }
@@ -829,7 +829,7 @@ function debitos_dividaparalvara($inscricao,$limite){
 
     if (pg_numrows($result) == 0 ){
 
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Divida Parcelada Alvara. Numero: $inscricao");
 
       redireciona("opcoesalvara.php?inscricao=".$inscricao);
@@ -893,7 +893,7 @@ function debitos_diversosalvara($inscricao,$limite){
 
     if (pg_numrows($result) == 0 ){
 
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("","$inscricao",0,"Nao Existem Debitos a Pagar de Diversos Alvara. Numero: $inscricao");
 
       redireciona("opcoesalvara.php?inscricao=".$inscricao);
@@ -950,7 +950,7 @@ function debitos_iptu($matricula,$limite,$anoexe){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
     if (pg_numrows($result) == 0 ){
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("$matricula","",0,"Nao Existem Debitos a Pagar de IPTU Exercicio. Numero: $matricula");
       redireciona("opcoesimovel.php?matricula=".$matricula);
     }
@@ -984,7 +984,7 @@ function debitos_iptu($matricula,$limite){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
     if (pg_numrows($result) == 0 ){
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("$matricula","",0,"Nao Existem Debitos a Pagar de IPTU Exercicio. Numero: $matricula");
       redireciona("opcoesimovel.php?matricula=".$matricula);
     }
@@ -1039,7 +1039,7 @@ function debitos_divida($matricula,$limite){
 
     if (pg_numrows($result) == 0 ){
 
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("$matricula","",0,"Nao Existem Debitos a Pagar de Divida Ativa Matricula. Numero: $matricula");
 
       redireciona("opcoesimovel.php?matricula=".$matricula);
@@ -1101,7 +1101,7 @@ function debitos_dividaparmat($matricula,$limite){
 
     if (pg_numrows($result) == 0 ){
 
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("$matricula","",0,"Nao Existem Debitos a Pagar de Divida Parcelamento Matricula. Numero: $matricula");
 
       redireciona("opcoesimovel.php?matricula=".$matricula);
@@ -1178,7 +1178,7 @@ function debitos_diversosmatricula($matricula,$limite){
 
     if (pg_numrows($result) == 0 ){
 
-      db_msgbox("Sem dÈbitos a Pagar");
+      db_msgbox("Sem d√©bitos a Pagar");
       db_logs("$matricula","",0,"Nao Existem Debitos a Pagar de Diversos Matricula. Numero: $matricula");
 
       redireciona("opcoesimovel.php?matricula=".$matricula);
@@ -1224,15 +1224,15 @@ function pagamento_fornecedor($cgccpf,$limite){
   $result = pg_exec($sql) or die("Sql : ".pg_ErrorMessage($result));
   if ($limite == 0 ) {
      if (pg_numrows($result) == 0 ){
-        db_msgbox("N„o existem pagamentos agendados.");
-        db_logs("","",0,"N„o existem pagamentos agendados. CGCCPF: $cgccpf");
+        db_msgbox("N√£o existem pagamentos agendados.");
+        db_logs("","",0,"N√£o existem pagamentos agendados. CGCCPF: $cgccpf");
         redireciona("opcoesfornecedor.php?inscricao=".$inscricao);
      }
      db_logs("","",0,"Existem pagamentos agendados. CGCCPF: $cgccpf");
 	 return 1;
   }else{
     if (pg_numrows($result) == 0 ){
-      db_logs("","",0,"N„o existem pagamentos agendados. CGCCPF: $cgccpf");
+      db_logs("","",0,"N√£o existem pagamentos agendados. CGCCPF: $cgccpf");
     return 0;
 	}else{
       db_logs("","",0,"Existem pagamentos agendados. CGCCPF: $cgccpf");

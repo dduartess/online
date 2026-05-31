@@ -69,7 +69,7 @@ if(isset($matricula1) && $matricula1 == "") {
 }
 
 /*
- * consulta se o par‚metro do mÛdulo prefeitura online est· habilidado como true
+ * consulta se o par√¢metro do m√≥dulo prefeitura online est√° habilidado como true
 */
 
 $sqlRetornoConfig  = " select *                       ";
@@ -88,8 +88,8 @@ $sqlinst .= "  where codigo = {$instit}      ";
 $resultinst = db_query($sqlinst);
 db_fieldsmemory($resultinst, 0);
 
-// $cgccpf recebe o valor informado no formul·rio [CPF ou CNPJ]
-// Depois com o preg_replace È retirada a formataÁ„o do campo 
+// $cgccpf recebe o valor informado no formul√°rio [CPF ou CNPJ]
+// Depois com o preg_replace √© retirada a formata√ß√£o do campo 
 
 $cgccpf = "";
 
@@ -102,7 +102,7 @@ if (isset($cgc) || isset($cpf)) {
 	}	
 }
 
-// valida se o n˙mero da matrÌcula fornecida È v·lida
+// valida se o n√∫mero da matr√≠cula fornecida √© v√°lida
 if ( isset($matricula1) && $matricula1 != "" ) {
 
   $sWhere = "";  
@@ -163,21 +163,21 @@ if ( isset($matricula1) && $matricula1 != "" ) {
   $sResultadoValMat  = pg_num_rows($rsValidaMatricula);
   
   if ($sResultadoValMat == 0 ) {
-  	  $sUrl = base64_encode("erroscripts=Aviso: Os dados informados n„o conferem. Verifique o n˙mero da matrÌcula ou o CPF/CNPJ indicado!");
+  	  $sUrl = base64_encode("erroscripts=Aviso: Os dados informados n√£o conferem. Verifique o n√∫mero da matr√≠cula ou o CPF/CNPJ indicado!");
       db_redireciona("certidaoimovel003.php?". $sUrl);
   }
   
 }
 
 if (isset($id_usuario) && trim($id_usuario) != ""){
-// verifica se È um escritÛrio cont·bel
+// verifica se √© um escrit√≥rio cont√°bel
 $sVerificaEscrito  = " select q86_numcgm                    ";
 $sVerificaEscrito .= "    from cadescrito                   ";
 $sVerificaEscrito .= "   where q86_numcgm = {$id_usuario}   ";
 
 $rsVerificaEscrito = db_query($sVerificaEscrito);
 
-  // impede o usu·rio, que for escritÛrio, de fazer consultas que N√O estejam ligadas ao seu cgm
+  // impede o usu√°rio, que for escrit√≥rio, de fazer consultas que N√ÉO estejam ligadas ao seu cgm
   if (pg_num_rows($rsVerificaEscrito) > 0 && $opcao == "i" && !isset($naovalida) ) {
      if (isset($inscricaow)) {
        $iInscricao = $inscricaow;
@@ -202,7 +202,7 @@ $rsVerificaEscrito = db_query($sVerificaEscrito);
   
     if ($iVerificaInscricao == 0) {
   	  $sUrl = base64_encode("id_usuario=".$id_usuario."&opcao=i&inscricao=".$iInscricao);
-      db_msgbox("N„o È permitido fazer consultas que n„o estejam ligadas ao seu CGM.");
+      db_msgbox("N√£o √© permitido fazer consultas que n√£o estejam ligadas ao seu CGM.");
       db_redireciona("certidaoinscr003.php?".$sUrl);
     }
   }
@@ -400,17 +400,17 @@ echo "</script>";
 $script = false;
 if (isset ( $codigo_cgm ) && $codigo_cgm == "") {
 	?>
-<script>alert("Dados Inv·lidos. Verifique!"); history.back();</script>
+<script>alert("Dados Inv√°lidos. Verifique!"); history.back();</script>
 <?php 
 
 }
 
 if (!isset ( $opcao )) {
 	if ( !isset ( $HTTP_POST_VARS ["opcao"] )) {
-		db_logs ( "", "", 0, "Acesso a Rotina Invalida. - Vari·vel opcao nao setada" );
+		db_logs ( "", "", 0, "Acesso a Rotina Invalida. - Vari√°vel opcao nao setada" );
 ?>
  <script>
-   alert("Acesso a Rotina Iv·lida. Verifique!"); 
+   alert("Acesso a Rotina Iv√°lida. Verifique!"); 
    history.back();
  </script>
 <?php 
@@ -422,15 +422,15 @@ $db_verifica_ip = db_verifica_ip ();
 
 // PESQUISA MATRICULA
 if ($opcao == "m") {
-//	$Caminho = "&nbsp;<a href=\"javascript:history.back()\" class=\"links\">ImÛvel &gt;</a>
-//	                &nbsp;<font class=\"links\">OpÁıes ImÛvel &gt;</font>\n";
-	db_logs ( "", "", 0, "Listando debitos - consulta por matrÌcula." );
+//	$Caminho = "&nbsp;<a href=\"javascript:history.back()\" class=\"links\">Im√≥vel &gt;</a>
+//	                &nbsp;<font class=\"links\">Op√ß√µes Im√≥vel &gt;</font>\n";
+	db_logs ( "", "", 0, "Listando debitos - consulta por matr√≠cula." );
 	db_mensagem ( "opcoesmatricula_cab", "opcoesmatricula_rod" );
 	
 	if (! isset ( $matricula )) {
 	    if (! isset ( $matricula1 )) {
 			db_logs ( "", "", 0, "Acesso a Rotina Invalida." );
-			db_redireciona ( "centro_pref.php?" . base64_encode ( 'erroscripts=Acesso a Rotina Inv·lido.' ) );
+			db_redireciona ( "centro_pref.php?" . base64_encode ( 'erroscripts=Acesso a Rotina Inv√°lido.' ) );
 		}
 		$matricula = trim ( $matricula1 );
 		if (! empty ( $cgc )) {
@@ -450,15 +450,15 @@ if ($opcao == "m") {
 		$cgccpf = str_replace ( "-", "", $cgccpf );
 		
 		if (! isset ( $matricula ) or empty ( $matricula ) or ! is_int ( 0 + $matricula )) {
-			db_logs ( "", "", 0, "Vari·vel Matricula Invalida." );
+			db_logs ( "", "", 0, "Vari√°vel Matricula Invalida." );
 			if (isset ( $referencia )) {
-				db_redireciona ( "digitamatricula_arapiraca.php?" . base64_encode ( 'erroscripts=MatrÌcula Inv·lida.' ) );
+				db_redireciona ( "digitamatricula_arapiraca.php?" . base64_encode ( 'erroscripts=Matr√≠cula Inv√°lida.' ) );
 			}
-			db_redireciona ( $arquivosel . "?" . base64_encode ( 'erroscripts=MatrÌcula Inv·lida.' ) );
+			db_redireciona ( $arquivosel . "?" . base64_encode ( 'erroscripts=Matr√≠cula Inv√°lida.' ) );
 		}
 		if (! isset ( $cgccpf )) {
 			db_logs ( "", "", 0, "Variavel CGCCPF Invalida." );
-			db_redireciona ( "digitamatricula.php?" . base64_encode ( 'erroscripts=Vari·vel CNPJ/CPF Inv·lida.' ) );
+			db_redireciona ( "digitamatricula.php?" . base64_encode ( 'erroscripts=Vari√°vel CNPJ/CPF Inv√°lida.' ) );
 		}
 		$sql_exe1 = "select ident from db_config where codigo = " . db_getsession ( 'DB_instit' );
 		
@@ -467,7 +467,7 @@ if ($opcao == "m") {
 		
 		$sWhere = "";
 		
-		// ---- Verifica se È Imobili·ria
+		// ---- Verifica se √© Imobili√°ria
 		if ( isset($id_usuario) && (trim($id_usuario) != "") && ( trim($matricula) && isset($matricula) != "") ) {
 			
 			$sSqlImobil  = " select *							 ";
@@ -482,19 +482,19 @@ if ($opcao == "m") {
 			$iLinhaImobil = 0;
 		}
 		
-		    // ---- Caso n„o seja Imobili·ria testa CGCCPF
+		    // ---- Caso n√£o seja Imobili√°ria testa CGCCPF
 		    if ( ($iLinhaImobil == 0) && ($sConfig["w13_exigecpfcnpj"] == "t") && ($db_verifica_ip == "0") ) {
 		      $sWhere = " and trim(z01_cgccpf) = '{$cgccpf}'";
 		    }
 
 		    
-		// ---- Consulta Propriet·rio e Promitente conforme parametrizaÁ„o
+		// ---- Consulta Propriet√°rio e Promitente conforme parametriza√ß√£o
 		$sql_exe = " select cgm.*															   ";
 		$sql_exe .= "   from fc_busca_envolvidos(false,{$db21_regracgmiptu},'M',{$matricula})  ";
 		$sql_exe .= "		 inner join cgm on z01_numcgm = rinumcgm				           ";
 		$sql_exe .= "	 where rimatric = {$matricula}										   ";
 		
-		// ---- Caso regra seja 2 e n„o retornar nenhum promitente, testar CGM da iptubase
+		// ---- Caso regra seja 2 e n√£o retornar nenhum promitente, testar CGM da iptubase
 		if ($db21_regracgmiptu == 2) {
 			$rsTestaEnvol = db_query ( $sql_exe );
 			$iLinhasEnvol = pg_num_rows ( $rsTestaEnvol );
@@ -538,7 +538,7 @@ if ($opcao == "m") {
 		db_logs ( "$matricula", "", 0, "Dados Inconsistentes. Numero : $matricula" );
 		if (isset ( $referencia )) {
 		
-			db_redireciona ( "digitamatricula_arapiraca.php?" . base64_encode ( 'erroscripts=Os dados informados n„o conferem, verifique!' ) );
+			db_redireciona ( "digitamatricula_arapiraca.php?" . base64_encode ( 'erroscripts=Os dados informados n√£o conferem, verifique!' ) );
 		}
 		$script = false;
 	} else {
@@ -547,15 +547,15 @@ if ($opcao == "m") {
 	
 //PESQUISA INSCRICAO
 } else if ($opcao == "i") {
-//	$Caminho = "&nbsp;<a href=\"javascript:history.back()\" class=\"links\">Alvar· &gt;</a>
-//		                &nbsp;<font class=\"links\">OpÁıes Alvar· &gt;</font>\n";
-	db_logs ( "", "", 0, "Listando debitos - consulta por matrÌcula." );
+//	$Caminho = "&nbsp;<a href=\"javascript:history.back()\" class=\"links\">Alvar√° &gt;</a>
+//		                &nbsp;<font class=\"links\">Op√ß√µes Alvar√° &gt;</font>\n";
+	db_logs ( "", "", 0, "Listando debitos - consulta por matr√≠cula." );
 	db_mensagem ( "opcoesinscricao_cab", "opcoesinscricao_rod" );
 	
 	if (! isset ( $inscricao )) {
 		if (! isset ( $HTTP_POST_VARS ["inscricaow"] )) {
 			db_logs ( "", "", 0, "Acesso a Rotina Invalido" );
-			db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Acesso a Rotina Inv·lido.' ) );
+			db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Acesso a Rotina Inv√°lido.' ) );
 		}
 		$inscricao = $HTTP_POST_VARS ["inscricaow"];
 		$cgc = $HTTP_POST_VARS ["cgc"];
@@ -575,12 +575,12 @@ if ($opcao == "m") {
 		
 		if (! isset ( $inscricao ) or empty ( $inscricao ) or ! is_int ( 0 + $inscricao )) {
 			db_logs ( "", "$inscricao", 0, "Variavel Inscricao Invalida" );
-			db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=InscriÁ„o Inv·lida.' ) );
+			db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Inscri√ß√£o Inv√°lida.' ) );
 		}
 		
 		if (! isset ( $cgccpf )) {
 			db_logs ( "", "$inscricao", 0, "CNPJ/CPF Invalidos" );
-			db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=N˙mero do CNPJ/CPF Inv·lido.' ) );
+			db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=N√∫mero do CNPJ/CPF Inv√°lido.' ) );
 		}
 		
 		$sql_exe = "select ident from db_config";
@@ -612,7 +612,7 @@ if ($opcao == "m") {
 	}
 	
 	if (pg_numrows ( $result ) == 0) {
-		$sUrl = base64_encode ( "id_usuario=''&erroscripts=Dados Inconsistentes na InscriÁ„o N˙mero: " . $inscricao . "." );
+		$sUrl = base64_encode ( "id_usuario=''&erroscripts=Dados Inconsistentes na Inscri√ß√£o N√∫mero: " . $inscricao . "." );
 		db_logs ( "", "$inscricao", 0, "Dados Inconsistentes na Inscricao Numero: $inscricao" );
 		db_redireciona ( "digitainscricao.php?" . $sUrl );
 		$script = false;
@@ -632,12 +632,12 @@ if ($opcao == "m") {
 //		   $sql = "select fc_permissaodbpref(" . db_getsession ( "DB_login" ) . ",2,$inscricao)";
 //		   $result = db_query ( $sql );
 //		   if (pg_numrows ( $result ) == 0) {
-//			  db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Acesso n„o Permitido. Contate a Prefeitura.' ) );
+//			  db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.' ) );
 //			  exit ();
 //		   }
 //		   $result = pg_result ( $result, 0, 0 );
 //		   if ($result == "0") {
-//			  db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Acesso n„o Permitido. Contate a Prefeitura.' ) );
+//			  db_redireciona ( "digitainscricao.php?" . base64_encode ( 'erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.' ) );
 //			  exit ();
 //		   }
 //	    }
@@ -646,14 +646,14 @@ if ($opcao == "m") {
 // PESQUISA NUMCGM
 } else if ($opcao == "n") {
 //	$Caminho = "&nbsp;<a href=\"javascript:history.back()\" class=\"links\">Contribuinte &gt;</a>
-//			                &nbsp;<font class=\"links\">OpÁıes Contribuinte &gt;</font>\n";
-	db_logs ( "", "", 0, "Listando opÁıes de debito - consulta por numcgm." );
+//			                &nbsp;<font class=\"links\">Op√ß√µes Contribuinte &gt;</font>\n";
+	db_logs ( "", "", 0, "Listando op√ß√µes de debito - consulta por numcgm." );
 	db_mensagem ( "opcoescontribuinte_cab", "opcoescontribuinte_rod" );
 	
 	if (! isset ( $codigo_cgm ) && @$sConfig["w13_permconscgm"] == "t") {
 		if (! isset ( $HTTP_POST_VARS ["codigo_cgm"] )) {
-			db_logs ( "", "", $numcgm, "Acesso a Rotina Inv·lido." );
-			db_redireciona ( "certidaonome003.php?" . base64_encode ( 'erroscripts=CÛdigo identificador Inv·lido.' ) );
+			db_logs ( "", "", $numcgm, "Acesso a Rotina Inv√°lido." );
+			db_redireciona ( "certidaonome003.php?" . base64_encode ( 'erroscripts=C√≥digo identificador Inv√°lido.' ) );
 		}
 	}
 
@@ -672,7 +672,7 @@ if ($opcao == "m") {
 	
 	if (! isset ( $cgccpf )) {
 		db_logs ( "", "$codigo_cgm", 0, "CNPJ/CPF Invalidos" );
-		db_redireciona ( "certidaonome003.php?" . base64_encode ( 'erroscripts=N˙mero do CNPJ/CPF Inv·lido.' ) );
+		db_redireciona ( "certidaonome003.php?" . base64_encode ( 'erroscripts=N√∫mero do CNPJ/CPF Inv√°lido.' ) );
 	}
 	
 	if (! isset ( $sConfig["w13_permconscgm"] ) or @ $sConfig["w13_permconscgm"] == "f") {
@@ -692,8 +692,8 @@ if ($opcao == "m") {
 	}
     $result = @db_query($sql_exe);
 	if (pg_num_rows ( $result ) == 0) {
-		db_logs ( "", "", 0, "Contribuinte n„o Cadastrado ou dados n„o conferem." );
-		db_redireciona ( "certidaonome003.php?" . base64_encode ( "id_usuario=''&erroscripts=Contribuinte n„o cadastrado ou dados n„o conferem." ) );
+		db_logs ( "", "", 0, "Contribuinte n√£o Cadastrado ou dados n√£o conferem." );
+		db_redireciona ( "certidaonome003.php?" . base64_encode ( "id_usuario=''&erroscripts=Contribuinte n√£o cadastrado ou dados n√£o conferem." ) );
 		$script = false;
 	} elseif (pg_result ( $result, 0, "z01_cgccpf" ) == "00000000000000" || pg_result ( $result, 0, "z01_cgccpf" ) == "              " || trim ( pg_result ( $result, 0, "z01_cgccpf" ) ) != "$cgccpf") {
 		$script = true;
@@ -720,12 +720,12 @@ if ($opcao == "m") {
 //		$sql = "select fc_permissaodbpref(" . db_getsession ( "DB_login" ) . ",1,$codigo_cgm)";
 //		$result = db_query ( $sql );
 //		if (pg_numrows ( $result ) == 0) {
-//			db_redireciona ( "digitacontribuinte.php?" . base64_encode ( 'erroscripts=Acesso n„o Permitido. Contate a Prefeitura.' ) );
+//			db_redireciona ( "digitacontribuinte.php?" . base64_encode ( 'erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.' ) );
 //			exit ();
 //		}
 //		$result = pg_result ( $result, 0, 0 );
 //		if ($result == "0") {
-//			db_redireciona ( "digitacontribuinte.php?" . base64_encode ( 'erroscripts=Acesso n„o Permitido. Contate a Prefeitura.' ) );
+//			db_redireciona ( "digitacontribuinte.php?" . base64_encode ( 'erroscripts=Acesso n√£o Permitido. Contate a Prefeitura.' ) );
 //			exit ();
 //		}
 //	}
@@ -739,7 +739,7 @@ if (pg_num_rows($result) > 0) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="include/estilodai.css">
 
 <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -817,8 +817,8 @@ db_estilosite();
 					<tr class="texto">
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: <span class="bold3"><?=$cgccpf?></span><br>
-						<?php  if(@$inscricao!=""){?> InscriÁ„o:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
-						<?php }else if(@$matricula!=""){?> MatrÌcula:&nbsp; <span
+						<?php  if(@$inscricao!=""){?> Inscri√ß√£o:&nbsp; <span class="bold3"><?=@$inscricao?></span><br>
+						<?php }else if(@$matricula!=""){?> Matr√≠cula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
 							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
 							<?php }?>
@@ -852,7 +852,7 @@ db_estilosite();
 				if (@ $k00_tipo == 3)	$k00_agnum = "nivel3";
 				
 				if (@ $k00_tipo == 3 && @ $id_usuario != "") {
-					// se tiver logado e tipo = 3 È issqn variavel
+					// se tiver logado e tipo = 3 √© issqn variavel
 					
 					if (($k00_recibodbpref != "3") and ($linhasmenuissqn > 0)) {
 						$aK00_tipo[] = $k00_tipo;
@@ -870,7 +870,7 @@ db_estilosite();
 
 				if (@$k00_tipo == 3 && @$id_usuario == "" && @$sConfig["w13_permvarsemlog"] == "f") {
 					if ($linhasmenuissqn > 0) {
-						//n„o mostrar isso se o escritorio digitar a inscriÁ„o do cliente....
+						//n√£o mostrar isso se o escritorio digitar a inscri√ß√£o do cliente....
 						if (! isset ( $logadoescrito )) {
 							if ($k00_recibodbpref != "3") {
 								?>
@@ -880,18 +880,18 @@ db_estilosite();
 						}
 					}
 				} else if ($k00_tipo != 3 || @$sConfig["w13_permvarsemlog"] == "t" && @$id_usuario == "") {
-					// se n„o for variavel e permite mostrar variavel sem log
+					// se n√£o for variavel e permite mostrar variavel sem log
 					
 
 					if ($k00_recibodbpref != "3") {
-						//Verifica se usa o modulo agua para fazer as demais verificaÁıes
+						//Verifica se usa o modulo agua para fazer as demais verifica√ß√µes
 						$lExibe = true;
 
-						//Se utilizar o mÛdulo agua tem que verificar a situaÁ„o do contribuinte.
+						//Se utilizar o m√≥dulo agua tem que verificar a situa√ß√£o do contribuinte.
 						if ($db21_usasisagua == 't'){
 							
 							if(isset($matricula) and $matricula != '') {
-								//Verifica a situaÁ„o de corte da matrÌcula em quest„o.
+								//Verifica a situa√ß√£o de corte da matr√≠cula em quest√£o.
 								require_once ("agu3_conscadastro_002_classe.php");
 								$Consulta = new ConsultaAguaBase($matricula);
 								$sqlcorte = $Consulta->GetAguaCorteMatMovSQL();
@@ -900,7 +900,7 @@ db_estilosite();
 					      if (pg_numrows($resultcorte) > 0) {
 					        $x42_codsituacao = pg_result($resultcorte, 0, "x42_codsituacao");
 						      //echo $x42_codsituacao;
-						      //Verifico se o codigo da situaÁ„o da matricula esta na tabela de restriÁoes configdbprefagua
+						      //Verifico se o codigo da situa√ß√£o da matricula esta na tabela de restri√ßoes configdbprefagua
 						      $w16_recibodbpref = false;
 						      $sExibeDebitos = "select w16_recibodbpref 
 						      										from configdbprefagua 
@@ -936,7 +936,7 @@ db_estilosite();
 						      <tr>
 						        <td height="28"><a class='links'
 						          href="cai3_certidao.php?numcgm=<?=$k00_numcgm?>"><img
-						          src="imagens/folder4.gif" border="0"> Emitir Certid„o por Nome</a>
+						          src="imagens/folder4.gif" border="0"> Emitir Certid√£o por Nome</a>
 						        </td>
 						      </tr>            	 	
         <?php     	 	
@@ -946,7 +946,7 @@ db_estilosite();
 						      <tr>
 						        <td height="28"><a class='links'
 						          href="cai3_certidao.php?numcgm=<?=$cookie_codigo_cgm?>"> <img
-						          src="imagens/folder4.gif" border="0"> Emitir Certid„o por Nome</a> </td>
+						          src="imagens/folder4.gif" border="0"> Emitir Certid√£o por Nome</a> </td>
 						      </tr>
       <?php             	 	
             	 	
@@ -958,7 +958,7 @@ db_estilosite();
       <tr>
         <td height="28"><a class="links"
           href="cai3_certidao.php?inscricao=<?=$inscricao?>"> <img
-          src="imagens/folder4.gif" border="0"> Emitir Certid„o por InscriÁ„o </a> </td>
+          src="imagens/folder4.gif" border="0"> Emitir Certid√£o por Inscri√ß√£o </a> </td>
       </tr>
       <?php 
           }
@@ -967,7 +967,7 @@ db_estilosite();
       <tr>
         <td height="28"><a class='links'
           href="cai3_certidao.php?matricula=<?=$matricula1?>"> <img
-          src="imagens/folder4.gif" border="0"> Emitir Certid„o por matricula</a> </td>
+          src="imagens/folder4.gif" border="0"> Emitir Certid√£o por matricula</a> </td>
       </tr>
       <?php 
           }
@@ -994,9 +994,9 @@ db_estilosite();
 					<tr class="texto">
 						<td><img src="imagens/icone.gif" border="0"></td>
 						<td>CNPJ/CPF: <span class="bold3"><?=@$cgccpf?></span><br>
-            <?php  if(@$inscricao!=""){?> InscriÁ„o:&nbsp; <span
+            <?php  if(@$inscricao!=""){?> Inscri√ß√£o:&nbsp; <span
 							class="bold3"><?=@$inscricao?></span><br>
-						<?php }else if(@$matricula!=""){?> MatrÌcula:&nbsp; <span
+						<?php }else if(@$matricula!=""){?> Matr√≠cula:&nbsp; <span
 							class="bold3"><?=@$matricula?></span><br>
 							<?php }else if(@$codigo_cgm!=""){?> CGM:&nbsp; <span class="bold3"><?=@$codigo_cgm?></span><br>
 							<?php }?>						
@@ -1015,14 +1015,14 @@ db_estilosite();
 				   ?>
             <tr>
              <td height="28"><a class='links' href="cai3_certidao.php?numcgm=<?=$codigo_cgm?>"> 
-             <img src="imagens/folder4.gif" border="0"> Emitir Certid„o</a> </td>
+             <img src="imagens/folder4.gif" border="0"> Emitir Certid√£o</a> </td>
             </tr>
            <?php 
 				  } else {
 					  ?>
 			      <tr>
 				     <td height="28"><a class='links' href="cai3_certidao.php?numcgm=<?=$cookie_codigo_cgm?>"> 
-				     <img src="imagens/folder4.gif" border="0"> Emitir Certid„o</a> </td>
+				     <img src="imagens/folder4.gif" border="0"> Emitir Certid√£o</a> </td>
 		    	  </tr>
 			    <?php   
 				  }
@@ -1033,7 +1033,7 @@ db_estilosite();
 			<tr>
 				<td height="28"><a class="links"
 					href="cai3_certidao.php?inscricao=<?=$inscricao?>"> <img
-					src="imagens/folder4.gif" border="0"> Emitir Certid„o por InscriÁ„o	</a> </td>
+					src="imagens/folder4.gif" border="0"> Emitir Certid√£o por Inscri√ß√£o	</a> </td>
 			</tr>
 			<?php 
 				}
@@ -1042,7 +1042,7 @@ db_estilosite();
       <tr>
 				<td height="28"><a class='links'
 					href="cai3_certidao.php?matricula=<?=$matricula1?>"> <img
-					src="imagens/folder4.gif" border="0"> Emitir Certid„o por matricula</a>	</td>
+					src="imagens/folder4.gif" border="0"> Emitir Certid√£o por matricula</a>	</td>
 			</tr>
 			<?php 
 				}

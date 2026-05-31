@@ -382,18 +382,18 @@ function db_rodape() {
 
 function db_numpre_sp($qn,$qnp="x",$qnt="x",$qnd="x"){
 //#00#//db_numpre_sp
-//#10#//Esta funcao coloca a mascara no numpre SEM os pontos entre os n˙mero
+//#10#//Esta funcao coloca a mascara no numpre SEM os pontos entre os n√∫mero
 //#15#//db_numpre_sp($qn,$qnp="x",$qnt="x",$qnd="x");
-//#20#//qn  : N˙mero do numpre, normalmento k00_numpre
-//#20#//qnp : N˙mero da parcela do numpre
-//#20#//qnt : N˙mero da quantidade de parcelas do numpre
-//#20#//qnd : DÌgito verificador do numpre
-//#40#//CÛdigo de arrecadaÁ„o formatado SEM os pontos
+//#20#//qn  : N√∫mero do numpre, normalmento k00_numpre
+//#20#//qnp : N√∫mero da parcela do numpre
+//#20#//qnt : N√∫mero da quantidade de parcelas do numpre
+//#20#//qnd : D√≠gito verificador do numpre
+//#40#//C√≥digo de arrecada√ß√£o formatado SEM os pontos
 //#99#//Exemplo:
 //#99#//db_numpre_sp(123456,1,12,0); // numpre 123456 - parcela 1 - total de parcelas 12 - digito 0
-//#99#//Retorno ser· : 001234560010120
+//#99#//Retorno ser√° : 001234560010120
 //#99#//
-//#99#//Para formatar os n˙meros o sistema utiliza a funÁ„o |db_formatar|
+//#99#//Para formatar os n√∫meros o sistema utiliza a fun√ß√£o |db_formatar|
   $retorno = db_formatar($qn,'s',"0",8,"e");
   if($qnp!="x" ){
    // $retorno .= ".000";
@@ -484,7 +484,7 @@ if($usuario != ""){
   $img = "<img src=\"imagens/menu.gif\" border=\"0\">";
 
   $user = "<a href=\"index.php?".base64_encode("again=1")."\"><b>$img Logout &nbsp;&nbsp;&nbsp; </b></a>";
-  $user .=  "<a href=\"trocasenha.php?".base64_encode("id_usuario=".@$id_usuario)."\" target=\"CentroPref\"><b>$img ConfiguraÁıes</b></a><br>";
+  $user .=  "<a href=\"trocasenha.php?".base64_encode("id_usuario=".@$id_usuario)."\" target=\"CentroPref\"><b>$img Configura√ß√µes</b></a><br>";
   if($w13_liberaatucgm=="t"){
    //$user .= "<a href=\"atualizaendereco.php?".base64_encode("id_usuario=".@$cgmlogin_teste."&cgmlogin=".$cgmlogin_teste)."\" target=\"CentroPref\"><b>$img Atualizar Dados</b></a><br>";
   }
@@ -492,7 +492,7 @@ if($usuario != ""){
   $cgmlogin = (!isset($cgmlogin) or trim($cgmlogin)=='')?'NULL':$cgmlogin;
 
   if($w13_liberaescritorios=="2"){ 	
-   ///verifica se È escritÛrio para cadastrar seus clientes
+   ///verifica se √© escrit√≥rio para cadastrar seus clientes
    include("classes/db_cadescrito_classe.php");
    $clcadescrito = new cl_cadescrito;
    $result  = $clcadescrito->sql_record($clcadescrito->sql_query("","*","","q86_numcgm = $cgmlogin")); // select
@@ -507,7 +507,7 @@ if($usuario != ""){
    }
 
    if($w13_liberaescritorios=="3"){
-   ///verifica se È escritÛrio para cadastrar seus clientes
+   ///verifica se √© escrit√≥rio para cadastrar seus clientes
    include("classes/db_cadescrito_classe.php");
    $clcadescrito = new cl_cadescrito;
    $result  = $clcadescrito->sql_record($clcadescrito->sql_query("","*","","q86_numcgm = $cgmlogin")); // select
@@ -522,7 +522,7 @@ if($usuario != ""){
    }
 
    if($w13_liberaescritorios=="4"){
-   ///verifica se È escritÛrio para cadastrar seus clientes
+   ///verifica se √© escrit√≥rio para cadastrar seus clientes
    include("classes/db_cadescrito_classe.php");
    $clcadescrito = new cl_cadescrito;
    $result  = $clcadescrito->sql_record($clcadescrito->sql_query("","*","","q86_numcgm = $cgmlogin")); // select
@@ -537,7 +537,7 @@ if($usuario != ""){
    }
 
    if($w13_liberaescritorios=="5"){
-   ///verifica se È escritÛrio para cadastrar seus clientes
+   ///verifica se √© escrit√≥rio para cadastrar seus clientes
    include("classes/db_cadescrito_classe.php");
    $clcadescrito = new cl_cadescrito;
    $result  = $clcadescrito->sql_record($clcadescrito->sql_query("","*","","q86_numcgm = $cgmlogin")); // select
@@ -606,7 +606,7 @@ if($usuario != ""){
   $img = "<img src=\"imagens/menu.gif\" border=\"0\">";
   $user = "<span class=\"texto\">";
   $user .= "<a href=\"index.php?".base64_encode("again=1")."\"><b>$img Logout &nbsp;&nbsp;&nbsp; </b></a>";
-  $user .=  "<a href=\"trocasenha.php?".base64_encode("id_usuario=".@$id_usuario)."\" target=\"CentroPref\"><b>$img ConfiguraÁıes</b></a><br>";
+  $user .=  "<a href=\"trocasenha.php?".base64_encode("id_usuario=".@$id_usuario)."\" target=\"CentroPref\"><b>$img Configura√ß√µes</b></a><br>";
 
 }
 
@@ -619,15 +619,15 @@ echo "
 <tr>
 		<td width=\"$totalmenu%\"  id=\"coluna\" align=\"center\" height=\"20\" class=\"bordas\" onMouseOut=\"js_restaurafundo(this,'".$GLOBALS['w01_corfundomenu']."')\" onMouseOver=\"js_trocafundo(this,'".$GLOBALS['w01_corfundomenuativo']."')\">
 		<a class=\"linksmenu\" href=\"centro_pref.php\" target=\"CentroPref\">
-		  P·gina Inicial
+		  P√°gina Inicial
 
 		</td>
 	";
 for($i = 0;$i < $numrows_dtw;$i++) {
-  $arquivo = pg_result($result_dtw,$i,"m_arquivo");//m_arquivo È o arquivo php q o menu chama exarquivo = digitadae.php
+  $arquivo = pg_result($result_dtw,$i,"m_arquivo");//m_arquivo √© o arquivo php q o menu chama exarquivo = digitadae.php
   $nome = substr($arquivo,0,strlen($arquivo) - 4);// substr(digitadae.php,0,"conta qts letras tem em digitadae.php - 4")
-                                                  //retorna digitadae... ent„o serve para tirar o .php
-  $descricao = pg_result($result_dtw,$i,"m_descricao");// pega a descriÁao "DAI 2004 "
+                                                  //retorna digitadae... ent√£o serve para tirar o .php
+  $descricao = pg_result($result_dtw,$i,"m_descricao");// pega a descri√ßao "DAI 2004 "
 
 echo "<td width=\"$totalmenu%\"  id=\"coluna$i\" align=\"center\" height=\"20\" class=\"bordas\" onMouseOut=\"js_restaurafundo(this,'".$GLOBALS['w01_corfundomenu']."')\"onMouseOver=\"js_trocafundo(this,'".$GLOBALS['w01_corfundomenuativo']."')\">
 				<a class=\"linksmenu\" href=\"$arquivo?".base64_encode("id_usuario=".@$cgmlogin_teste."&nomeusuario=".@$nomeusuario)."\" target=\"CentroPref\">
@@ -678,7 +678,7 @@ $Mes = "";
    }else if ( $xmes == '02') {
         $Mes = 'fevereiro';
    }else if ( $xmes == '03') {
-        $Mes = 'marÁo';
+        $Mes = 'mar√ßo';
    }else if ( $xmes == '04') {
         $Mes = 'abril';
    }else if ( $xmes == '05') {
@@ -730,7 +730,7 @@ function db_verifica_ip(){
    for($i=1;$i-1<sizeof($db_acessa);$i++){
      if($db_acessa[$i][1]== $db_ip){
        if($db_acessa[$i][2]==false){
-         db_redireciona('index.php?erroscripts=VocÍ n„o tem permiss„o de acesso.');
+         db_redireciona('index.php?erroscripts=Voc√™ n√£o tem permiss√£o de acesso.');
        }
      }
    }
@@ -741,7 +741,7 @@ function db_verifica_ip(){
        $quantos = substr($db_acessa[$i][1],0,$aster-1);
        if(substr($db_acessa[$i][1],0,strlen($quantos)) == substr($db_ip,0,strlen($quantos))){
          if($db_acessa[$i][2] == false){
-           db_redireciona('index.php?erroscripts=Sistema em ManutenÁ„o. Volte mais tarde.');
+           db_redireciona('index.php?erroscripts=Sistema em Manuten√ß√£o. Volte mais tarde.');
          }
          $pode_acessar = "1";
          break;
@@ -979,7 +979,7 @@ function printfieldsmemory($recordset,$indice){
 }
 
 function db_date($mes=0,$dia=0,$ano=0,$operacao="-",$quantidade=1,$formato="dma",$tipo="/") {
-/*FunÁ„o para formataÁ„o da data*/
+/*Fun√ß√£o para formata√ß√£o da data*/
 if( $ano != 0 ) {
  $diminui = 0;
   if($operacao == '-')
@@ -1052,7 +1052,7 @@ function db_msgbox2($str) {
 }
 function postmemory($vetor,$verNomeIndices = 0) {
   if(!is_array($vetor)) {
-    echo "Erro na funÁ„o postmemory: Parametro n„o È um array v·lido.<Br>\n";
+    echo "Erro na fun√ß√£o postmemory: Parametro n√£o √© um array v√°lido.<Br>\n";
         return false;
   }
   $tam_vetor = sizeof($vetor);
@@ -1177,7 +1177,7 @@ function mens_help($mens="") {
   $instit = db_getsession("DB_instit");
   $result = db_query($conn,"select * from db_confmensagem where cod = '{$mens}_help' and instit = {$instit}");
   if (pg_numrows($result) == 0 ) {
-  	$result = db_query($conn,"insert into db_confmensagem (cod,mens,alinhamento,instit) values ('{$mens}_help','Help da P·gina','600&80&250&150&#FFFFFF&',{$instit})");
+  	$result = db_query($conn,"insert into db_confmensagem (cod,mens,alinhamento,instit) values ('{$mens}_help','Help da P√°gina','600&80&250&150&#FFFFFF&',{$instit})");
 		$result = db_query($conn,"select * from db_confmensagem where cod = '{$mens}_help' and instit = {$instit}");
   }
 
@@ -1225,7 +1225,7 @@ class janela {
   var $corTitulo = "white";
   var $fonteTitulo = "Arial, Helvetica, sans-serif";
   var $tamTitulo = "11";
-  var $titulo = "DBSeller Inform·tica Ltda";
+  var $titulo = "DBSeller Inform√°tica Ltda";
   var $janBotoes = "101";
 
  function janela($nome,$arquivo) {
@@ -1246,7 +1246,7 @@ class janela {
 
 //////////// CLASSE ROTULO  ///////////
 
-/// ESTA CLASSE CRIA AS VARIAVEIS DE LABEL E TITLE DAS P¡GINAS ///
+/// ESTA CLASSE CRIA AS VARIAVEIS DE LABEL E TITLE DAS P√ÅGINAS ///
 class rotulovelho {
   var $tabela;
   function rotulo($tabela) {
@@ -1638,7 +1638,7 @@ function db_verfPostGet($post) {
 
          db_indexOf(strtoupper($dbarraypost),"PASSTHRU(")  > 0) {
 
-            echo "<script>alert('Voce est· passando parametros inv·lidos e sera redirecionado.');location.href='http://localhost/dbportal/modulos.php'</script>\n";
+            echo "<script>alert('Voce est√° passando parametros inv√°lidos e sera redirecionado.');location.href='http://localhost/dbportal/modulos.php'</script>\n";
 
         exit;
 
@@ -1734,7 +1734,7 @@ function db_postmemory($vetor,$verNomeIndices = 0) {
 
   if(!is_array($vetor)) {
 
-    echo "Erro na funÁ„o postmemory: Parametro n„o È um array v·lido.<Br>\n";
+    echo "Erro na fun√ß√£o postmemory: Parametro n√£o √© um array v√°lido.<Br>\n";
 
         return false;
 
@@ -1802,7 +1802,7 @@ function db_numpre($qn,$qnp="",$qnt="",$qnd=""){
 
 
 
-// retorna uma string formatada, retorna false se alguma opÁ„o estiver errada
+// retorna uma string formatada, retorna false se alguma op√ß√£o estiver errada
 
 // $tipo pode ser:
 
@@ -1812,7 +1812,7 @@ function db_numpre($qn,$qnp="",$qnt="",$qnd=""){
 
 // "d" formata a string pra data
 
-// "v" tira a formataÁ„o
+// "v" tira a formata√ß√£o
 
 // "cpf" formata cpf
 
@@ -1822,9 +1822,9 @@ function db_numpre($qn,$qnp="",$qnt="",$qnd=""){
 
 // se for "s":
 
-//   $caracter             caracter ou espaÁo pra acrecentar a esquerda, direita ou meio
+//   $caracter             caracter ou espa√ßo pra acrecentar a esquerda, direita ou meio
 
-//   $quantidade           tamanho que ficar· a string com os espaÁos ou caracteres
+//   $quantidade           tamanho que ficar√° a string com os espa√ßos ou caracteres
 
 //   $TipoDePreenchimento  informa se vai aplicar a string a:
 
@@ -2214,7 +2214,7 @@ function db_redireciona($url="0") {
 
 
 
-//retorna uma vari·vel de sess„o
+//retorna uma vari√°vel de sess√£o
 
 /*
 
@@ -2240,16 +2240,16 @@ function db_getsession($var) {
 
 
 
-//retorna uma vari·vel de sess„o
+//retorna uma vari√°vel de sess√£o
 
-//atualiza uma vari·vel de sessao
+//atualiza uma vari√°vel de sessao
 
 function db_putsession($var,$valor) {
 	$_SESSION[$var] = $valor;
 }
 
 
-//retorna uma string do inicio de $str, atÈ primeiro caractere da ocorrencia em $pos
+//retorna uma string do inicio de $str, at√© primeiro caractere da ocorrencia em $pos
 
 function db_strpos($str,$pos) {
 
@@ -2259,7 +2259,7 @@ function db_strpos($str,$pos) {
 
 
 
-//imprime uma mensagem de erro, com um link pra voltar pra p·gina anterior
+//imprime uma mensagem de erro, com um link pra voltar pra p√°gina anterior
 
 function db_erro($msg,$voltar=1) {
 
@@ -2320,7 +2320,7 @@ function db_hora($id_timestamp=0,$formato="H:i"){
 //#20#//$id_timestamp =        Data e hora no formato timestamp
 //#20#//$formato      = Formato do retorno da hora ou data
 //#20#//                Padrao: H:i - Hora e minuto com :.
-//#99#//Os tipos de formato de retorno s„o:
+//#99#//Os tipos de formato de retorno s√£o:
 //#99#//a        Meridiano da Hora no formato am ou pm
 //#99#//A        Meridiano da Hora no formato AM or PM
 //#99#//B        Hora na internet de 000 a 999
@@ -2338,13 +2338,13 @@ function db_hora($id_timestamp=0,$formato="H:i"){
 //#99#//m        Mes numericpo com dois digitos  01 a 12
 //#99#//M        3 primeiras letras do nome do mes Jan through Dec
 //#99#//n        Mes numerico sem zero a esquerda 1 a 12
-//#99#//O        DiferenÁa para hora Greenwich (GMT) em horas        Example: +0200
+//#99#//O        Diferen√ßa para hora Greenwich (GMT) em horas        Example: +0200
 //#99#//r        Data no formato RFC 2822 Exemplo: Thu, 21 Dec 2000 16:01:07 +0200
 //#99#//s        Segundos com zeros a esquerda 00 through 59
 //#99#//S        Ordinal sufixo em Ingles do mes, 2 caracteres st, nd, rd or th.
 //#99#//t        Numero de dias do mes 28 a 31
-//#99#//T        Zona da hora setada na m·quina        Exemplo: EST, MDT ...
-//#99#//U        Segundos em relaÁ„o a 1/1/1970  timestamp.
+//#99#//T        Zona da hora setada na m√°quina        Exemplo: EST, MDT ...
+//#99#//U        Segundos em rela√ß√£o a 1/1/1970  timestamp.
 //#99#//w        Nnumero do dia da semana 0 a 6
 //#99#//W        Numero da semana do ano conforme ISO-8601
 //#99#//Y        Ano com 4 digitos Exemplo: 1999 or 2003
@@ -2361,27 +2361,27 @@ function db_hora($id_timestamp=0,$formato="H:i"){
 
 function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_self", $campos_layer = "", $NomeForm = "NoMe", $variaveis_repassa = array (), $automatico = true, $totalizacao = array()) {
 
-	//ObservaÁ„o : Quando utilizar o parametro automatico, coloque no parametro NomeForm o seguinte "NoMe" e em variaveis_repassa array().
+	//Observa√ß√£o : Quando utilizar o parametro automatico, coloque no parametro NomeForm o seguinte "NoMe" e em variaveis_repassa array().
 
 	//#00#//db_lovrot
-	//#10#//Esta funcao È utilizada para mostrar registros na tela, podendo p·ginar os dados
+	//#10#//Esta funcao √© utilizada para mostrar registros na tela, podendo p√°ginar os dados
 	//#15#//db_lovrot($query,$numlinhas,$arquivo="",$filtro="%",$aonde="_self",$campos_layer="",$NomeForm="NoMe",$variaveis_repassa=array());
-	//#20#//$query               Select que ser· executado
-	//#20#//$numlinhas           N˙mero de linhas a serem mostradas
-	//#20#//$arquivo             Arquivo que ser· executado quando der um click em uma linha
-	//#20#//                     Na vers„o com iframe dever· ser colocado "()"
-	//#20#//$filtro              Filtro que ser· gerado, normamente ""
-	//#20#//$aonde               Nome da funÁ„o que ser· executada quando der um click
-	//#20#//$campos_layer        Campos que ser„o colocados na layer quando passar o mouse ( n„o esta implementado )
-	//#20#//$NomeForm            Nome do formul·rio para colocar vari·veis complementares Padr„o = "NoMe"
-	//#20#//$variaveis_repassa   Array com as vari·veis a serem reoassadas para o programa
+	//#20#//$query               Select que ser√° executado
+	//#20#//$numlinhas           N√∫mero de linhas a serem mostradas
+	//#20#//$arquivo             Arquivo que ser√° executado quando der um click em uma linha
+	//#20#//                     Na vers√£o com iframe dever√° ser colocado "()"
+	//#20#//$filtro              Filtro que ser√° gerado, normamente ""
+	//#20#//$aonde               Nome da fun√ß√£o que ser√° executada quando der um click
+	//#20#//$campos_layer        Campos que ser√£o colocados na layer quando passar o mouse ( n√£o esta implementado )
+	//#20#//$NomeForm            Nome do formul√°rio para colocar vari√°veis complementares Padr√£o = "NoMe"
+	//#20#//$variaveis_repassa   Array com as vari√°veis a serem reoassadas para o programa
 	//#99#//Exemplo:
 	//#99#//$js_funcao = "";
 	//#99#//db_lovrot("select z01_nome from cgm limit 1","()","",$js_funcao);
 	//#99#//
-	//#99#//O cabeÁalho da tabela o sistema pega pelo nome do campo e busca na documentaÁ„o, colcando o label
-	//#99#//Quando n„o desejar colocar o label da documentacao, o nome do campo dever· ser iniciado com dl_ e o sistema retirar·
-	//#99#//estes caracteres e colocar· o primeiro caracter em maiusculo
+	//#99#//O cabe√ßalho da tabela o sistema pega pelo nome do campo e busca na documenta√ß√£o, colcando o label
+	//#99#//Quando n√£o desejar colocar o label da documentacao, o nome do campo dever√° ser iniciado com dl_ e o sistema retirar√°
+	//#99#//estes caracteres e colocar√° o primeiro caracter em maiusculo
 	//#99#//Criado parametro novo, $totalizacao = array() que devere fornecer os campos que desejar fazer somatorio, conforme
 	//#99#//exemplo abaixo:
 	//#99#//
@@ -2389,7 +2389,7 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
 	//#99#//$totalizacao["e60_vlranu"] = "e60_vlranu"; totaliza o campo
 	//#99#//$totalizacao["e60_vlrpag"] = "e60_vlrpag"; totaliza o campo
 	//#99#//$totalizacao["e60_vlrliq"] = "e60_vlrliq"; totaliza o campo
-	//#99#//$totalizacao["dl_saldo"] = "dl_saldo";     totaliza o campo ( neste caso, o campo È um alias no sql)
+	//#99#//$totalizacao["dl_saldo"] = "dl_saldo";     totaliza o campo ( neste caso, o campo √© um alias no sql)
 	//#99#//$totalizacao["totalgeral"] = "z01_nome";   indica qual o campo sera colocado o total
 
 
@@ -2423,7 +2423,7 @@ if (isset ($HTTP_POST_VARS["offset".$NomeForm])) {
 if(isset($HTTP_POST_VARS["recomecar"])){
 	$recomecar = $HTTP_POST_VARS["recomecar"];
 }
-// se for a primeira vez que È rodado, pega o total de registros e guarda no campo hidden
+// se for a primeira vez que √© rodado, pega o total de registros e guarda no campo hidden
 if ( ( empty ($$tot_registros) && !empty ($query) ) || isset($recomecar)) {
 	if(isset($recomecar)){
 		$query = db_getsession("dblov_query_inicial");
@@ -2554,7 +2554,7 @@ $NumRows = pg_numrows($result);
 
 if ($NumRows == 0) {
 	if (isset ($query_anterior)) {
-		echo "<script>alert('N„o existem dados para este filtro');</script>";
+		echo "<script>alert('N√£o existem dados para este filtro');</script>";
 
 
 		if(count($totalizacao)>0 || isset($totalizacao_rep)){
@@ -2651,7 +2651,7 @@ echo "<script>
 			function js_nova_quantidade_linhas(valor_recebido){
 			valor_recebe = Number(valor_recebido);
           if(!valor_recebe){
-			alert('Valor Inv·lido!');
+			alert('Valor Inv√°lido!');
 			document.navega_lov".$NomeForm.".nova_quantidade_linhas.value = '';
                 document.getElementById('quant_lista').value = '';
 		}else{
@@ -2668,10 +2668,10 @@ echo "<script>
 		echo "<table id=\"TabDbLov\" border=\"1\" cellspacing=\"1\" cellpadding=\"0\" class=\"lov\">\n";
 /**** botoes de navegacao ********/
 echo "<tr><td colspan=\"". ($NumFields +1)."\" nowrap> <form name=\"navega_lov".$NomeForm."\" method=\"post\">
-	    <input type=\"submit\" name=\"pri".$NomeForm."\" value=\"InÌcio\" ".@ $Dd1." class=\"botao\">
+	    <input type=\"submit\" name=\"pri".$NomeForm."\" value=\"In√≠cio\" ".@ $Dd1." class=\"botao\">
 	    <input type=\"submit\" name=\"ant".$NomeForm."\" value=\"Anterior\" ".@ $Dd1." class=\"botao\">
-	    <input type=\"submit\" name=\"prox".$NomeForm."\" value=\"PrÛximo\" ".@ $Dd2." class=\"botao\">
-	    <input type=\"submit\" name=\"ult".$NomeForm."\" value=\"⁄ltimo\" ".@ $Dd2." class=\"botao\">
+	    <input type=\"submit\" name=\"prox".$NomeForm."\" value=\"Pr√≥ximo\" ".@ $Dd2." class=\"botao\">
+	    <input type=\"submit\" name=\"ult".$NomeForm."\" value=\"√öltimo\" ".@ $Dd2." class=\"botao\">
 			<input type=\"hidden\" name=\"offset".$NomeForm."\" value=\"".@ $$offset."\">
 			<input type=\"hidden\" name=\"totreg".$NomeForm."\" value=\"".@ $$tot_registros."\">
 			<input type=\"hidden\" name=\"codigo_pesquisa\" value=\"\">\n
@@ -2726,7 +2726,7 @@ if(isset($totalizacao) && isset($tot)){
 echo "<input type=\"hidden\" name=\"filtroquery\" value=\"".str_replace("\n", "", @ $filtroquery)."\">
           ". ($NumRows > 0 ? "
           Foram retornados <font color=\"red\"><strong>".$$tot_registros."</strong></font> registros.
-		Mostrando de <font color=\"red\"><strong>". (@ $$offset +1)."</strong></font> atÈ
+		Mostrando de <font color=\"red\"><strong>". (@ $$offset +1)."</strong></font> at√©
           <font color=\"red\"><strong>". ($$tot_registros < (@ $$offset + $numlinhas) ? ($NumRows <= $numlinhas ? $$tot_registros : $NumRows) : ($$offset + $numlinhas))."</strong></font>." : "Nenhum Registro
 		Retornado")."</form>
           </td></tr>\n";
@@ -2736,11 +2736,11 @@ echo "<input type=\"hidden\" name=\"filtroquery\" value=\"".str_replace("\n", ""
 if ($NumRows > 0) {
 	echo "<tr>\n";
 	// implamentacao de informacoes complementares
-	//    echo "<td title='Outras InformaÁıes'>OI</td>\n";
+	//    echo "<td title='Outras Informa√ß√µes'>OI</td>\n";
 	//se foi passado funcao
 	if ($campos_layer != "") {
 		$campo_layerexe = split("\|", $campos_layer);
-		echo "<td nowrap bgcolor=\"$db_corcabec\" title=\"Executa Procedimento EspecÌfico.\" align=\"center\">Clique</td>\n";
+		echo "<td nowrap bgcolor=\"$db_corcabec\" title=\"Executa Procedimento Espec√≠fico.\" align=\"center\">Clique</td>\n";
 	}
 
 	$clrotulocab = new rotulolov();
@@ -2833,7 +2833,7 @@ for ($i = 0; $i < $NumRows; $i ++) {
 					echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000\" bgcolor=\"$cor\" align=right nowrap>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim($var_data)."</a>" : (trim($var_data)))."&nbsp;</td>\n";
 				} else {
 					if (pg_fieldtype($result, $j) == "bool") {
-						$var_data = (pg_result($result, $i, $j) == 'f' || pg_result($result, $i, $j) == '' ? 'N„o' : 'Sim');
+						$var_data = (pg_result($result, $i, $j) == 'f' || pg_result($result, $i, $j) == '' ? 'N√£o' : 'Sim');
 						echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;align:right\" bgcolor=\"$cor\" nowrap>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim($var_data)."</a>" : (trim($var_data)))."&nbsp;</td>\n";
 					} else {
 						if (pg_fieldtype($result, $j) == "text") {
@@ -2843,49 +2843,49 @@ for ($i = 0; $i < $NumRows; $i ++) {
 						} else {
 
 							if (pg_fieldname($result, $j) == 'j01_matric')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes ImÛvel' onclick=\"js_JanelaAutomatica('iptubase','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Im√≥vel' onclick=\"js_JanelaAutomatica('iptubase','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'm80_codigo')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes LanÁamento' onclick=\"js_JanelaAutomatica('matestoqueini','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Lan√ßamento' onclick=\"js_JanelaAutomatica('matestoqueini','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'm40_codigo')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes RequisiÁ„o' onclick=\"js_JanelaAutomatica('matrequi','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Requisi√ß√£o' onclick=\"js_JanelaAutomatica('matrequi','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'm42_codigo')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Atendimento' onclick=\"js_JanelaAutomatica('atendrequi','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Atendimento' onclick=\"js_JanelaAutomatica('atendrequi','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'm45_codigo')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes DevoluÁ„o' onclick=\"js_JanelaAutomatica('matestoquedev','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Devolu√ß√£o' onclick=\"js_JanelaAutomatica('matestoquedev','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 't52_bem')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Bem' onclick=\"js_JanelaAutomatica('bem','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Bem' onclick=\"js_JanelaAutomatica('bem','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'q02_inscr')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Issqn' onclick=\"js_JanelaAutomatica('issbase','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Issqn' onclick=\"js_JanelaAutomatica('issbase','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'z01_numcgm')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Contribuinte/Empresa' onclick=\"js_JanelaAutomatica('cgm','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Contribuinte/Empresa' onclick=\"js_JanelaAutomatica('cgm','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							//else if(pg_fieldname($result,$j)=='o58_coddot' )
-							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes DotaÁ„o OrÁament·ria' onclick=\"js_JanelaAutomatica('orcdotacao','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o58_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
+							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Dota√ß√£o Or√ßament√°ria' onclick=\"js_JanelaAutomatica('orcdotacao','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o58_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
 							//else if(pg_fieldname($result,$j)=='o59_coddot' )
-							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes DotaÁ„o OrÁament·ria' onclick=\"js_JanelaAutomatica('orcdotacao','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o59_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
+							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Dota√ß√£o Or√ßament√°ria' onclick=\"js_JanelaAutomatica('orcdotacao','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o59_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
 							//else if(pg_fieldname($result,$j)=='o61_coddot' )
-							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes DotaÁ„o OrÁament·ria' onclick=\"js_JanelaAutomatica('orcdotacao','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o61_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
+							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Dota√ß√£o Or√ßament√°ria' onclick=\"js_JanelaAutomatica('orcdotacao','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o61_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
 							//else if(pg_fieldname($result,$j)=='o70_codrec' )
-							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Receita OrÁament·ria' onclick=\"js_JanelaAutomatica('orcreceita','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o70_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
+							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Receita Or√ßament√°ria' onclick=\"js_JanelaAutomatica('orcreceita','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o70_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
 							//else if(pg_fieldname($result,$j)=='o71_codrec' )
-							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Receita OrÁament·ria' onclick=\"js_JanelaAutomatica('orcreceita','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o71_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
+							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Receita Or√ßament√°ria' onclick=\"js_JanelaAutomatica('orcreceita','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o71_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
 							//else if(pg_fieldname($result,$j)=='o74_codrec' )
-							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes Receita OrÁament·ria' onclick=\"js_JanelaAutomatica('orcreceita','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o74_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
+							//  echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes Receita Or√ßament√°ria' onclick=\"js_JanelaAutomatica('orcreceita','".(trim(pg_result($result,$i,$j)))."','".(trim(pg_result($result,$i,"o74_anousu")))."');return false;\">&nbsp;Inf->&nbsp;</a>".($arquivo!=""?"<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ".($arquivo=="()"?"OnClick=\"".$resultadoRetorno.";return false\">":"onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=".($BrowSe==1?$i:trim(pg_result($result,$i,0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result,$i,$j))."</a>":(trim(pg_result($result,$i,$j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'e60_numemp' || pg_fieldname($result, $j) == 'e61_numemp' || pg_fieldname($result, $j) == 'e62_numemp')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes do Empenho' onclick=\"js_JanelaAutomatica('empempenho','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes do Empenho' onclick=\"js_JanelaAutomatica('empempenho','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == 'e54_autori' || pg_fieldname($result, $j) == 'e55_autori' || pg_fieldname($result, $j) == 'e56_autori')
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes da AutorizaÁ„o de Empenho' onclick=\"js_JanelaAutomatica('empautoriza','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes da Autoriza√ß√£o de Empenho' onclick=\"js_JanelaAutomatica('empautoriza','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							if (pg_fieldname($result, $j) == "pc10_numero")
-							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='InformaÁıes da SolicitaÁ„o' onclick=\"js_JanelaAutomatica('empsolicita','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
+							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap><a title='Informa√ß√µes da Solicita√ß√£o' onclick=\"js_JanelaAutomatica('empsolicita','". (trim(pg_result($result, $i, $j)))."');return false;\">&nbsp;Inf->&nbsp;</a>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 							else
 							echo "<td id=\"I".$i.$j."\" style=\"text-decoration:none;color:#000000;\" bgcolor=\"$cor\" nowrap>". ($arquivo != "" ? "<a title=\"$mensagem\" style=\"text-decoration:none;color:#000000;\" href=\"\" ". ($arquivo == "()" ? "OnClick=\"".$resultadoRetorno.";return false\">" : "onclick=\"JanBrowse = window.open('".$arquivo."?".base64_encode("retorno=". ($BrowSe == 1 ? $i : trim(pg_result($result, $i, 0))))."','$aonde','width=800,height=600');return false\">").trim(pg_result($result, $i, $j))."</a>" : (trim(pg_result($result, $i, $j))))."&nbsp;</td>\n";
 						}
@@ -2941,10 +2941,10 @@ if(count($totalizacao) > 0 ){
 
 if ($NumRows > 0) {
 	echo "<tr><td colspan=$NumFields >
-              <input name='recomecar' type='button' value='RecomeÁar' onclick=\"js_troca_ordem('navega_lov".$NomeForm."','recomecar','0');\" class=\"botao\">
-						<strong>Indique o Conte˙do:</strong><input title='Digite o valor a pesquisar e clique sobre o campo (cabeÁalho) a pesquisar' name=indica_codigo type=text onchange='js_lanca_codigo_pesquisa(this.value)' style='background-color:#E6E4F1'>
+              <input name='recomecar' type='button' value='Recome√ßar' onclick=\"js_troca_ordem('navega_lov".$NomeForm."','recomecar','0');\" class=\"botao\">
+						<strong>Indique o Conte√∫do:</strong><input title='Digite o valor a pesquisar e clique sobre o campo (cabe√ßalho) a pesquisar' name=indica_codigo type=text onchange='js_lanca_codigo_pesquisa(this.value)' style='background-color:#E6E4F1'>
 						<strong>Quantidade a Listar:</strong><input id=quant_lista name=quant_lista type=text onchange='js_nova_quantidade_linhas(this.value)' style='background-color:#E6E4F1' value='$numlinhas' size='5'>
-						<strong>Mostra Diferentes:</strong><input title='Mostra os valores diferentes clicando no cabeÁalho a pesquisar' name=mostra_diferentes type=checkbox onchange='js_lanca_distinct_pesquisa()' style='background-color:#E6E4F1'>
+						<strong>Mostra Diferentes:</strong><input title='Mostra os valores diferentes clicando no cabe√ßalho a pesquisar' name=mostra_diferentes type=checkbox onchange='js_lanca_distinct_pesquisa()' style='background-color:#E6E4F1'>
 						</td>";
 	echo "</tr>\n";
 }
@@ -3224,16 +3224,16 @@ function db_menu($usuario,$modulo,$anousu,$instit) {
 
 function db_extenso($valor=0, $maiusculas=false) {
     $rt = '';
-    $singular = array("centavo", "real", "mil", "milh„o", "bilh„o", "trilh„o", "quatrilh„o");
-    $plural = array("centavos", "reais", "mil", "milhıes", "bilhıes", "trilhıes",
-"quatrilhıes");
+    $singular = array("centavo", "real", "mil", "milh√£o", "bilh√£o", "trilh√£o", "quatrilh√£o");
+    $plural = array("centavos", "reais", "mil", "milh√µes", "bilh√µes", "trilh√µes",
+"quatrilh√µes");
     $c = array("", "cem", "duzentos", "trezentos", "quatrocentos",
 "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos");
     $d = array("", "dez", "vinte", "trinta", "quarenta", "cinquenta",
 "sessenta", "setenta", "oitenta", "noventa");
     $d10 = array("dez", "onze", "doze", "treze", "quatorze", "quinze",
 "dezesseis", "dezesete", "dezoito", "dezenove");
-    $u = array("", "um", "dois", "trÍs", "quatro", "cinco", "seis",
+    $u = array("", "um", "dois", "tr√™s", "quatro", "cinco", "seis",
 "sete", "oito", "nove");
     $z=0;
     $valor = number_format($valor, 2, ".", ".");
@@ -3263,7 +3263,7 @@ $ru) ? " e " : "").$ru;
          if(!$maiusculas){
                           return($rt ? $rt : "zero");
          } else { /*
-                         Trocando o " E " por " e ", fica muito + apresent·vel!
+                         Trocando o " E " por " e ", fica muito + apresent√°vel!
                      Rodrigo Cerqueira, rodrigobc@fte.com.br
                     */
                           if ($rt) $rt=ereg_replace(" E "," e ",ucwords($rt));
@@ -3492,7 +3492,7 @@ function db_criacarne($arretipo,$ip,$datahj,$instit,$tipomod){
       db_fieldsmemory($rsModgeral,0);
       $achou = 1;
     }else{
-      db_redireciona('db_erros.php?fechar=true&db_erro=Modelo de carne n„o encontrado, contate o suporte !');
+      db_redireciona('db_erros.php?fechar=true&db_erro=Modelo de carne n√£o encontrado, contate o suporte !');
     }
   }
 
@@ -3551,7 +3551,7 @@ function db_base_ativa() {
 }
 
 function UltimoDiaMes($ano,$mes){
-  //verifica se È ano bisesto
+  //verifica se √© ano bisesto
   if($ano%4 == 0){
     if($ano%100 != 0){
       $fev = 29;
@@ -3603,7 +3603,7 @@ function db_sel_instit($instit=null,$campos=" * "){
 function db_buscaImagemBanco($cadban,$conn){
 /*
  * $cadban = codigo k15_codigo da cadban
- * $conn   =  conex„o
+ * $conn   =  conex√£o
  */
 
   $sqlcodban = "select k15_codbco from cadban where k15_codigo = $cadban";
@@ -3622,12 +3622,12 @@ function db_buscaImagemBanco($cadban,$conn){
 	  $db90_digban = pg_result($resultBanco,0,"db90_digban");
 	  $db90_abrev  = pg_result($resultBanco,0,"db90_abrev");
 	  $db90_logo   = pg_result($resultBanco,0,"db90_logo");
-	  // se n„o tiver os dados do banco na db_bancos n„o deve emitir o recibo.
+	  // se n√£o tiver os dados do banco na db_bancos n√£o deve emitir o recibo.
 	  if($db90_digban=="" || $db90_abrev=="" || $db90_logo==""){
 	  	return false;
 //	  	db_redireciona('db_erros.php?fechar=true&db_erro=Configure os dados(Digito verificador, Nome abreviado do banco e o Arquivo do logo) do Banco: '.$banco.'-'.$db90_descr.', no Cadastro de Bancos');
 	  }
-	  // seta os dados para o boleto passando as informaÁıes do logo
+	  // seta os dados para o boleto passando as informa√ß√µes do logo
 	  db_query ($conn, "begin");
 	  $caminho = "tmp/".$banco.".jpg";
       pg_lo_export  ( "$db90_logo",$caminho ,$conn);
@@ -3640,8 +3640,8 @@ function db_buscaImagemBanco($cadban,$conn){
     return $arr;
 
 	}else{
-		// se n„o tiver o banco na db_bancos
-		db_redireciona('db_erros.php?fechar=true&db_erro=N„o existe Banco cadastrado para o cÛdigo'.$banco.' no Cadastro de Bancos'.$sqlBanco);
+		// se n√£o tiver o banco na db_bancos
+		db_redireciona('db_erros.php?fechar=true&db_erro=N√£o existe Banco cadastrado para o c√≥digo'.$banco.' no Cadastro de Bancos'.$sqlBanco);
 	}
   }
 }
@@ -3649,7 +3649,7 @@ function db_buscaImagemBanco($cadban,$conn){
 /***
  *
  * Funcao para montar uma string com o backtrace do PHP **SEM PARAMETROS***
- * nas chamadas de funÁıes e mÈtodos
+ * nas chamadas de fun√ß√µes e m√©todos
  *
  */
 function db_debug_backtrace() {
@@ -3730,7 +3730,7 @@ function validaUsuarioLogado() {
 	          <tr height="220">
 	            <td align="center">
 	              <img src="imagens/atencao.gif"><br>
-	               Usu·rio n„o logado no sistema!
+	               Usu√°rio n√£o logado no sistema!
 	            </td>
 	          </tr>
 	        </table>');
@@ -3739,32 +3739,32 @@ function validaUsuarioLogado() {
 
 function db_translate($db_transforma = null,$expresAdicional = "",$stringAdicional = ""){
 
-  // Array com expressıes regulares
+  // Array com express√µes regulares
   $arr_regexp = Array(
-  "/∫/",
-  "/Á/",
-  "/«/",
-  "/·|‡|„|‚|‰/",
-  "/¡|¿|√|¬|ƒ/",
-  "/È|Ë|Í|Î/",
-  "/…|»| |À|&/",
-  "/Ì|Ï|Ó|Ô/",
-  "/Õ|Ã|Œ|œ/",
-  "/Û|Ú|ı|Ù|ˆ/",
-  "/”|“|’|‘|÷/",
-  "/˙|˘|˚|¸/",
-  "/⁄|Ÿ|€|‹/",
+  "/¬∫/",
+  "/√ß/",
+  "/√á/",
+  "/√°|√†|√£|√¢|√§/",
+  "/√Å|√Ä|√É|√Ç|√Ñ/",
+  "/√©|√®|√™|√´/",
+  "/√â|√à|√ä|√ã|&/",
+  "/√≠|√¨|√Æ|√Ø/",
+  "/√ç|√å|√é|√è/",
+  "/√≥|√≤|√µ|√¥|√∂/",
+  "/√ì|√í|√ï|√î|√ñ/",
+  "/√∫|√π|√ª|√º/",
+  "/√ö|√ô|√õ|√ú/",
   "/'|;|:/",
   "/$expresAdicional/"
   );
   // Array com substitutos
   $arr_replac = Array("o","c","C","a","A","e","E","i","I","o","O","u","U"," ","$stringAdicional");
 
-  // $arr_regexp[0] substituÌdo por $arr_replac[0], ou seja, Á por c
-  // $arr_regexp[1] substituÌdo por $arr_replac[1], ou seja, « por C
-  // $arr_regexp[2] substituÌdo por $arr_replac[2], ou seja, · ou ‡ ou „ ou ‚ ou ‰ por a
-  // $arr_regexp[3] substituÌdo por $arr_replac[3], ou seja, ¡ ou ¿ ou √ ou ¬ ou ƒ por A
-  // $arr_regexp[n] substituÌdo por $arr_replac[n]
+  // $arr_regexp[0] substitu√≠do por $arr_replac[0], ou seja, √ß por c
+  // $arr_regexp[1] substitu√≠do por $arr_replac[1], ou seja, √á por C
+  // $arr_regexp[2] substitu√≠do por $arr_replac[2], ou seja, √° ou √† ou √£ ou √¢ ou √§ por a
+  // $arr_regexp[3] substitu√≠do por $arr_replac[3], ou seja, √Å ou √Ä ou √É ou √Ç ou √Ñ por A
+  // $arr_regexp[n] substitu√≠do por $arr_replac[n]
   // ...
   $db_transforma = preg_replace($arr_regexp,$arr_replac,$db_transforma);
 

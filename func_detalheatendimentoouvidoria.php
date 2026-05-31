@@ -36,7 +36,7 @@ $clouvidoriaatendimento = new cl_ouvidoriaatendimento;
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 	<script language="JavaScript" src="scripts/db_script.js"></script>
 	<script language="JavaScript" src="scripts/prototype.js"></script>

@@ -38,7 +38,7 @@ if(!session_is_registered("DB_uol_hora"))
   $sess = 1;
 if($sess == 1) {
   session_destroy();
-  echo "Sess„o Inv·lida!(14)<br>Feche seu navegador e faÁa login novamente.<Br>\n";
+  echo "Sess√£o Inv√°lida!(14)<br>Feche seu navegador e fa√ßa login novamente.<Br>\n";
   exit;
 }
 $arquivo = pg_exec("select id_item,funcao as arquivo

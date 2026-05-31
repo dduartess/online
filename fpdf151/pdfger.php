@@ -33,7 +33,7 @@ class PDF extends FPDF {
     global $conn;
 	global $result;
 	global $url;
-	//Dados da instituição
+	//Dados da instituiÃ§Ã£o
     $dados = @pg_exec("select nomeinst,ender,munic,uf,telef,email,url,logo from db_config where codigo = ".@$GLOBALS["DB_instit"]);
 	$url = @pg_result($dados,0,"url");
 	$this->SetXY(1,1);
@@ -93,8 +93,8 @@ class PDF extends FPDF {
 //    $this->Text(14,293,$url);	
     $nome = @$GLOBALS["HTTP_SERVER_VARS"]["PHP_SELF"];
     $nome = substr($nome,strrpos($nome,"/")+1);
-    $this->Cell(0,10,$nome.'     Emissor: '.@$GLOBALS["DB_login"].'     Exercício: '.db_getsession("DB_anousu").'    Data: '.date("d-m-Y - H:i:s"),"T",0,'C');
-    $this->Cell(0,10,'Página '.$this->PageNo().' de {nb}',0,1,'R');
+    $this->Cell(0,10,$nome.'     Emissor: '.@$GLOBALS["DB_login"].'     ExercÃ­cio: '.db_getsession("DB_anousu").'    Data: '.date("d-m-Y - H:i:s"),"T",0,'C');
+    $this->Cell(0,10,'PÃ¡gina '.$this->PageNo().' de {nb}',0,1,'R');
 
   }
 

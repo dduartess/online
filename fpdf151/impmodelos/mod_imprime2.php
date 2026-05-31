@@ -18,7 +18,7 @@ for ($i = 0;$i < 2;$i++){
   $this->objpdf->setfillcolor(255,255,255);
   //		$this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
   $this->objpdf->Setfont('Arial','B',11);
-  $this->objpdf->text(150,$xlin-13,'RECIBO VÁLIDO ATÉ: ');
+  $this->objpdf->text(150,$xlin-13,'RECIBO VÃLIDO ATÃ‰: ');
   $this->objpdf->text(159,$xlin-8,$this->datacalc);
   //Via
   if( $i == 0 ){
@@ -27,7 +27,7 @@ for ($i = 0;$i < 2;$i++){
     $str_via = 'Prefeitura';
   }
   $this->objpdf->Setfont('Arial','B',8);
-  $this->objpdf->text(178,$xlin-1,($i+1).'ª Via '.$str_via );
+  $this->objpdf->text(178,$xlin-1,($i+1).'Âª Via '.$str_via );
   
   $this->objpdf->Image('imagens/files/'.$this->logo,15,$xlin-17,12);
   $this->objpdf->Setfont('Arial','B',9);
@@ -43,17 +43,17 @@ for ($i = 0;$i < 2;$i++){
   
   $this->objpdf->Roundedrect($xcol,$xlin+2,$xcol+119,20,2,'DF','1234');
   $this->objpdf->Setfont('Arial','',6);
-  $this->objpdf->text($xcol+2,$xlin+4,'Identificação:');
+  $this->objpdf->text($xcol+2,$xlin+4,'IdentificaÃ§Ã£o:');
   $this->objpdf->Setfont('Arial','',8);
   $this->objpdf->text($xcol+2,$xlin+7,'Nome :');
   $this->objpdf->text($xcol+17,$xlin+7,$this->nome);
-  $this->objpdf->text($xcol+2,$xlin+11,'Endereço :');
+  $this->objpdf->text($xcol+2,$xlin+11,'EndereÃ§o :');
   $this->objpdf->text($xcol+17,$xlin+11,$this->ender);
   
   $this->objpdf->text($xcol+2,  $xlin+15, 'Bairro :');
   $this->objpdf->text($xcol+17, $xlin+15, $this->bairrocontri);
   
-  $this->objpdf->text($xcol+2,$xlin+19,'Município :');
+  $this->objpdf->text($xcol+2,$xlin+19,'MunicÃ­pio :');
   $this->objpdf->text($xcol+17,$xlin+19,$this->munic);
   
   $this->objpdf->text($xcol+75,$xlin+15,'CEP :');
@@ -106,7 +106,7 @@ for ($i = 0;$i < 2;$i++){
       $this->objpdf->setx($xcol+3+$maiscol);
       $this->objpdf->cell(5,3,"Rec",0,0,"L",0);
       $this->objpdf->cell(7,3,"Reduz",0,0,"L",0);
-      $this->objpdf->cell(63,3,"Descrição",0,0,"L",0);
+      $this->objpdf->cell(63,3,"DescriÃ§Ã£o",0,0,"L",0);
       $this->objpdf->cell(15,3,"Valor",0,1,"R",0);
       
     }
@@ -137,7 +137,7 @@ for ($i = 0;$i < 2;$i++){
   $this->objpdf->Roundedrect($xcol,$xlin+71,176,30,2,'DF','1234');
   $this->objpdf->SetY($xlin+72);
   $this->objpdf->SetX($xcol+3);
-  $this->objpdf->multicell(150,4,'HISTÓRICO :   '.$this->historico);
+  $this->objpdf->multicell(150,4,'HISTÃ“RICO :   '.$this->historico);
   $this->objpdf->SetX($xcol+3);
   //dados do desconto
   //$this->objpdf->Roundedrect($xcol+153,$xlin+71,49,30,2,'DF','1234');
@@ -166,7 +166,7 @@ for ($i = 0;$i < 2;$i++){
   $this->objpdf->Roundedrect(125,$xlin+103,32,9,2,'DF','1234');
   $this->objpdf->Roundedrect(158,$xlin+103,22,9,2,'DF','1234');
   $this->objpdf->Roundedrect(181,$xlin+103,25,9,2,'DF','1234');
-  $this->objpdf->text(129,$xlin+105,'Código de Arrecadação');
+  $this->objpdf->text(129,$xlin+105,'CÃ³digo de ArrecadaÃ§Ã£o');
   $this->objpdf->text(160,$xlin+105,'Vencimento');
   $this->objpdf->text(183,$xlin+105,'( = ) Valor Cobrado R$');
   $this->objpdf->setfont('Arial','',10);
@@ -177,12 +177,12 @@ for ($i = 0;$i < 2;$i++){
   $this->objpdf->cell(25,9,$this->valtotal,0,0,"R");
   
   $this->objpdf->SetFont('Arial','B',5);
-  $this->objpdf->text(140,$xlin+116,"A   U   T   E   N   T   I   C   A   Ç   Ã   O      M   E   C   Â   N   I   C   A");
+  $this->objpdf->text(140,$xlin+116,"A   U   T   E   N   T   I   C   A   Ã‡   Ãƒ   O      M   E   C   Ã‚   N   I   C   A");
   
   $this->objpdf->setfillcolor(0,0,0);
   $this->objpdf->SetFont('Arial','',4);
   $this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto,'U'); // texto no canhoto do carne
-  //		$this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2ª VIA - CONTRIBUINTE':'1ª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
+  //		$this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2Âª VIA - CONTRIBUINTE':'1Âª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
   $this->objpdf->setfont('Arial','',11);
   $this->objpdf->text(10,$xlin+108,@$this->linhadigitavel);
   

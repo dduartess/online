@@ -36,13 +36,13 @@ $tipos 		  = split(",", $tipos);
 
 if (isset ($db_datausu)) {
 	if (!checkdate(substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4))) {
-		echo "Data para C·lculo Inv·lida. <br><br>";
-		echo "Data dever· ser superior a : " . date('Y-m-d', db_getsession("DB_datausu"));
+		echo "Data para C√°lculo Inv√°lida. <br><br>";
+		echo "Data dever√° ser superior a : " . date('Y-m-d', db_getsession("DB_datausu"));
 		exit;
 	}
 	if (mktime(0, 0, 0, substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4)) < mktime(0, 0, 0, date('m', db_getsession("DB_datausu")), date('d', db_getsession("DB_datausu")), date('Y', db_getsession("DB_datausu")))) {
-		echo "Data no permitida para c·lculo. <br><br>";
-		echo "Data dever· ser superior a : " . date('Y-m-d', db_getsession("DB_datausu"));
+		echo "Data no permitida para c√°lculo. <br><br>";
+		echo "Data dever√° ser superior a : " . date('Y-m-d', db_getsession("DB_datausu"));
 		exit;
 	}
 	$DB_DATACALC = mktime(0, 0, 0, substr($db_datausu, 5, 2), substr($db_datausu, 8, 2), substr($db_datausu, 0, 4));
@@ -54,7 +54,7 @@ $pdf = new pdf();
 $pdf->Open();
 $pdf->AliasNbPages();
 $head2 = "";
-$head4 = "RelatÛrio do Total dos DÈbitos SintÈtico";
+$head4 = "Relat√≥rio do Total dos D√©bitos Sint√©tico";
 $linha = 60;
 $TPagina = 40;
 
@@ -72,7 +72,7 @@ if (isset ($matric)) {
 
 	$outros1 = 'REF. ANTER.';
 	$outros2 = $j40_refant;
-	$outros3 = 'MATRÕCULA';
+	$outros3 = 'MATR√çCULA';
 	@ $outros4 = "Setor: " . $j34_setor . "   Quadra: " . $j34_quadra . "   Lote: " . $j34_lote;
 
 } else
@@ -86,7 +86,7 @@ if (isset ($matric)) {
 		$ender = $j14_tipo . ' ' . $z01_ender . ', ' . $z01_numero . ' ' . $z01_compl;
 		$outros1 = 'ATIVIDADE';
 		$outros2 = $q03_descr;
-		$outros3 = 'INSCRI«√O';
+		$outros3 = 'INSCRI√á√ÉO';
 	} else
 		if (isset ($numcgm)) {
 			$result = debitos_tipos_numcgm($numcgm);
@@ -217,11 +217,11 @@ if ($chave != 0) {
 							}
 							$pdf->SetFont('Arial', 'BI', 12);
 							$pdf->Cell(191, 2, '', "B", 1, "R", 0);
-							$pdf->MultiCell(0, 20, "Valores V·lidos AtÈ a Data : " . db_formatar(date('Y-m-d', $DB_DATACALC), 'd'), 0, "C", 0);
+							$pdf->MultiCell(0, 20, "Valores V√°lidos At√© a Data : " . db_formatar(date('Y-m-d', $DB_DATACALC), 'd'), 0, "C", 0);
 							$pdf->SetLineWidth(0.2);
 							$pdf->SetFont('Arial', 'B', 8);
 							$pdf->Cell(7, 05, "Tipo", 1, 0, "C", 1);
-							$pdf->Cell(60, 05, "DescriÁ„o", 1, 0, "C", 1);
+							$pdf->Cell(60, 05, "Descri√ß√£o", 1, 0, "C", 1);
 							$pdf->Cell(20, 05, "Vlr Histrico", 1, 0, "C", 1);
 							$pdf->Cell(20, 05, "Vlr Corrigido", 1, 0, "C", 1);
 							$pdf->Cell(20, 05, "Vlr Juros", 1, 0, "C", 1);
@@ -252,7 +252,7 @@ if ($chave != 0) {
 		$pdf->Cell(20, 05, db_formatar($ttvlrdesconto, 'f'), 1, 0, "R", 0);
 		$pdf->Cell(20, 05, db_formatar($tttotal, 'f'), 1, 1, "R", 0);
 	} else {
-		echo "Sem DÈbitos para esta chave.";
+		echo "Sem D√©bitos para esta chave.";
 	}
 	if (isset($parReceit) and $parReceit != ''){
 
@@ -335,12 +335,12 @@ if ($chave != 0) {
    
    
      $pdf->SetFont('Arial', 'BI', 12);
-     $pdf->Cell(0,5,'DÈbitos Suspensos',0,1,"C",0);
+     $pdf->Cell(0,5,'D√©bitos Suspensos',0,1,"C",0);
      $pdf->Ln();
      
      $pdf->SetFont('Arial', 'B', 8);
      $pdf->Cell(7 ,5, "Tipo"		 ,1,0,"C",1);
-     $pdf->Cell(60,5, "DescriÁ„o"	 ,1,0,"C",1);
+     $pdf->Cell(60,5, "Descri√ß√£o"	 ,1,0,"C",1);
      $pdf->Cell(20,5, "Vlr Histrico" ,1,0,"C",1);
      $pdf->Cell(20,5, "Vlr Corrigido",1,0,"C",1);
      $pdf->Cell(20,5, "Vlr Juros"	 ,1,0,"C",1);

@@ -90,23 +90,23 @@ if($cgccpf != "" ) {
 if($clissbase->numrows != 0){
   db_fieldsmemory($result,0);
   if($q02_dtbaix!=""){
-  	db_msgbox("Contribuinte com inscrição baixada.");
+  	db_msgbox("Contribuinte com inscriÃ§Ã£o baixada.");
 	db_redireciona("digitaaidof.php");
 	exit;
   }
 }else{
-  db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso a Rotina Inválido, verifique os dados digitados!'));
+  db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso a Rotina InvÃ¡lido, verifique os dados digitados!'));
 }  
 if(!isset($DB_LOGADO) && $m_publico !='t'){
   $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricaow)";
   $result = pg_query($sql);
   if(pg_numrows($result)==0){
-    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso não Permitido. Contate a Prefeitura.'));
+    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso nÃ£o Permitido. Contate a Prefeitura.'));
     exit;
   }
   $result = pg_result($result,0,0);
   if($result=="0"){
-    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso não Permitido. Contate a Prefeitura.'));
+    db_redireciona("digitaaidof.php?".base64_encode('erroscripts=Acesso nÃ£o Permitido. Contate a Prefeitura.'));
     exit;
   }
 } 
@@ -120,7 +120,7 @@ if($clissbase->numrows != 0){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <style type="text/css">
 <?php 
@@ -139,7 +139,7 @@ db_estilosite();
 			</tr>
 			<tr class="texto" >
 				<td></td>
-				<td bgcolor="<?=$w01_corfundomenu?>">Inscrição: <?=$q02_inscr ?></td>
+				<td bgcolor="<?=$w01_corfundomenu?>">InscriÃ§Ã£o: <?=$q02_inscr ?></td>
 				<td></td>
 			</tr>
 			<tr class="texto" >

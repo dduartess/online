@@ -33,7 +33,7 @@ function db_fim_transacao(){
 }
 
 // Parametros do $tipo
-// 1  Bota as contas do plano que n„o existem no saltes
+// 1  Bota as contas do plano que n√£o existem no saltes
 // 2  Bota as contas do saltes
 // 3  Bota as contas do plano
 function db_contas($nome,$valor="",$tipo=1) {
@@ -402,7 +402,7 @@ function db_inputdata($nome,$dia="",$mes="",$ano="",$dbcadastro=true,$dbtype='te
     $DataJavaScript->posY=1;
     $DataJavaScript->largura=140;
     $DataJavaScript->altura=210;
-    $DataJavaScript->titulo="Calend·rio";
+    $DataJavaScript->titulo="Calend√°rio";
     $DataJavaScript->iniciarVisivel = false;
     $DataJavaScript->scrollbar = "no";
     $DataJavaScript->janBotoes = "001";
@@ -501,7 +501,7 @@ function db_getfile($arq,$text,$funcao="0") {
 	  return "";
 	}
   } else if($name != "" && $size == 0) {
-      db_erro("O arquivo $name n„o foi encontrado ou ele est· vazio. Verifique o seu caminho e o seu tamanho e tente novamente.");
+      db_erro("O arquivo $name n√£o foi encontrado ou ele est√° vazio. Verifique o seu caminho e o seu tamanho e tente novamente.");
   } else {
     copy($tmp_name,"$DB_FILES/$text");
     return $text;

@@ -17,31 +17,31 @@ if(!defined('DB_BIBLIOT')){
 
 class PDF extends FPDF {
 //|00|//pdf
-//|10|//Esta classe é uma extensão da classe |fpdf| e difere da mesma pelo fato de que nesta  classe 
-//|10|//foram alterados os métodos |header| (cabeçalho da página) de  |footer|  (rodapé)  para   que  
+//|10|//Esta classe Ã© uma extensÃ£o da classe |fpdf| e difere da mesma pelo fato de que nesta  classe 
+//|10|//foram alterados os mÃ©todos |header| (cabeÃ§alho da pÃ¡gina) de  |footer|  (rodapÃ©)  para   que  
 //|10|//atendessem as nossas necessidades, da seguinte maneira:
 //|10|//|header|     :    - O logotipo da prefeitura ficou alinhado a esquerda;
-//|10|//                  - Os dados da prefeitura tais como: nome,  enderço,  município,  telefone,
+//|10|//                  - Os dados da prefeitura tais como: nome,  enderÃ§o,  municÃ­pio,  telefone,
 //|10|//                    email, e site ficaram alinhados a  esquerda,  ao  lado  do  logotipo  da 
 //|10|//                    prefeitura;
-//|10|//               Contem ainda variáveis livres para o desenvolvedor as quais  serão  impressas
-//|10|//               na parte superior direita da tela, são elas:
+//|10|//               Contem ainda variÃ¡veis livres para o desenvolvedor as quais  serÃ£o  impressas
+//|10|//               na parte superior direita da tela, sÃ£o elas:
 //|10|//                  - head1, head2, head3, head4, head5, head6, head7, head8, head9
 //|10|//
 //|10|//|footer|     :    - contem dados como:
-//|10|//                      - programa que gerou o relatório;
+//|10|//                      - programa que gerou o relatÃ³rio;
 //|10|//                      - emissor;
-//|10|//                      - exercício;
-//|10|//                      - data e hora da emissão;
-//|10|//                      - número da página.
+//|10|//                      - exercÃ­cio;
+//|10|//                      - data e hora da emissÃ£o;
+//|10|//                      - nÃºmero da pÃ¡gina.
 
 //Page header
   function Header() {
 //#00#//header
-//#10#//Este método é usado gerar o cabeçalho da página. É chamado automaticamente por |addPage| e não
-//#10#//deve ser chamado diretamente pela aplicação. A implementação em FPDF está  vazia,  então  você
-//#10#//precisa criar uma subclasse dele para  sobrepor o  método  se  você  quiser  um  processamento
-//#10#//específico para o cabeçalho.
+//#10#//Este mÃ©todo Ã© usado gerar o cabeÃ§alho da pÃ¡gina. Ã‰ chamado automaticamente por |addPage| e nÃ£o
+//#10#//deve ser chamado diretamente pela aplicaÃ§Ã£o. A implementaÃ§Ã£o em FPDF estÃ¡  vazia,  entÃ£o  vocÃª
+//#10#//precisa criar uma subclasse dele para  sobrepor o  mÃ©todo  se  vocÃª  quiser  um  processamento
+//#10#//especÃ­fico para o cabeÃ§alho.
 //#15#//header()        
 //#99#//Exemplo:
 //#99#//class PDF extends FPDF
@@ -62,7 +62,7 @@ class PDF extends FPDF {
     global $conn;
     global $result;
     global $url;
-        //Dados da instituição
+        //Dados da instituiÃ§Ã£o
    
 //   echo ("select nomeinst,ender,munic,uf,telef,email,url,logo from db_config where codigo = ".db_getsession("DB_instit"));
 //   $dados = pg_exec("select nomeinst,ender,munic,uf,telef,email,url,logo from db_config where codigo = ".db_getsession("DB_instit"));
@@ -117,10 +117,10 @@ class PDF extends FPDF {
 //Page footer
   function Footer() {
 //#00#//footer
-//#10#//Este método é usado para criar o rodapé da página. Ele é automaticamente chamado por |addPage|
-//#10#//e |close| e não deve ser chamado diretamente pela aplicação. A  implementação  em  FPDF  está
-//#10#//vazia, então você  deve  criar  uma  subclasse  e  sobrepor  o  método  se  você  quiser   um
-//#10#//processamento específico.
+//#10#//Este mÃ©todo Ã© usado para criar o rodapÃ© da pÃ¡gina. Ele Ã© automaticamente chamado por |addPage|
+//#10#//e |close| e nÃ£o deve ser chamado diretamente pela aplicaÃ§Ã£o. A  implementaÃ§Ã£o  em  FPDF  estÃ¡
+//#10#//vazia, entÃ£o vocÃª  deve  criar  uma  subclasse  e  sobrepor  o  mÃ©todo  se  vocÃª  quiser   um
+//#10#//processamento especÃ­fico.
 //#15#//footer()
 //#99#//Exemplo:
 //#99#//class PDF extends FPDF
@@ -129,9 +129,9 @@ class PDF extends FPDF {
 //#99#//  {
 //#99#//    Vai para 1.5 cm da borda inferior
 //#99#//      $this->SetY(-15);
-//#99#//    Seleciona Arial itálico 8
+//#99#//    Seleciona Arial itÃ¡lico 8
 //#99#//      $this->SetFont('Arial','I',8);
-//#99#//    Imprime o número da página centralizado
+//#99#//    Imprime o nÃºmero da pÃ¡gina centralizado
 //#99#//      $this->Cell(0,10,'Page '.$this->PageNo(),0,0,'C');
 //#99#//  }
 //#99#//}
@@ -144,8 +144,8 @@ class PDF extends FPDF {
     $this->SetY(-10);
     $nome = @$GLOBALS["HTTP_SERVER_VARS"]["PHP_SELF"];
     $nome = substr($nome,strrpos($nome,"/")+1);
-    $this->Cell(0,10,$nome.'     Emissor: '.@$GLOBALS["DB_login"].'     Exercício: '.db_getsession("DB_anousu").'    Data: '.date("d-m-Y",db_getsession("DB_datausu"))." - ".date("H:i:s"),"T",0,'C');
-    $this->Cell(0,10,'Página '.$this->PageNo().' de {nb}',0,1,'R');
+    $this->Cell(0,10,$nome.'     Emissor: '.@$GLOBALS["DB_login"].'     ExercÃ­cio: '.db_getsession("DB_anousu").'    Data: '.date("d-m-Y",db_getsession("DB_datausu"))." - ".date("H:i:s"),"T",0,'C');
+    $this->Cell(0,10,'PÃ¡gina '.$this->PageNo().' de {nb}',0,1,'R');
 
   }
 

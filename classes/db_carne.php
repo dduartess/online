@@ -43,7 +43,7 @@ class cl_carne {
   }  
   function verifica(){
     if($this->np == 0 or $this->np == ""){
-	   $this->db_erro = "Numpre Inválido.";
+	   $this->db_erro = "Numpre InvÃ¡lido.";
 	   return false;
 	}
     if($this->npi == ""){
@@ -64,7 +64,7 @@ class cl_carne {
 	}
     $this->resultparcelas = pg_exec($this->sql);
 	if(pg_numrows($this->resultparcelas)==0){
-	  $this->db_erro = "Código de Arrecadacao nao Encontrado ou Quitado.";
+	  $this->db_erro = "CÃ³digo de Arrecadacao nao Encontrado ou Quitado.";
 	  return false;
 	}
 	return true;

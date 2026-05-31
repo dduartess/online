@@ -7,7 +7,7 @@ function js_in_array(elem,vetor) {
   return false;
 }
 
-//tipo o parse int, só que pega o numero se tiver na final da straing tb!!
+//tipo o parse int, sÃ³ que pega o numero se tiver na final da straing tb!!
 function js_parse_int(str) {
   var num = new Array("0","1","2","3","4","5","6","7","8","9");
   var tam = str.length;
@@ -82,7 +82,7 @@ function js_verificapagina(pagina){
 	}
   }
   if(existe == 0) {
-    //alert("Você esta acessando a página de uma URL inválida e será redirecionado.");
+    //alert("VocÃª esta acessando a pÃ¡gina de uma URL invÃ¡lida e serÃ¡ redirecionado.");
     //top.location.href = "index.php";
   }
 }
@@ -100,7 +100,7 @@ function js_emiteboleto(alias,pagredirect) {
     }
   }
   if(x == "")
-    alert("Você deverá Selecionar os valores a emitir");
+    alert("VocÃª deverÃ¡ Selecionar os valores a emitir");
   else
     window.open("emiteboleto.php?alias="+alias+"&numpres="+ x,"","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,height="+(screen.height-100)+",width="+(screen.width-100));
 	document.href = pagredirect;
@@ -122,7 +122,7 @@ function js_selecionavar(alias,cod_inscr) {
 	}
   }
   if( x == "")
-    alert("Você deverá Selecionar Digitar os valores a Pagar");
+    alert("VocÃª deverÃ¡ Selecionar Digitar os valores a Pagar");
   else {
     location.href = "pagaissvarsel.php?inscricao="+cod_inscr+"&alias="+alias+"&issvar="+ x + "&issvarvlr=" + vx;
   }
@@ -142,7 +142,7 @@ function js_emiteboletovar(alias) {
     }
   }
   if(x == "")
-    alert("Você deverá Selecionar os valores a emitir");
+    alert("VocÃª deverÃ¡ Selecionar os valores a emitir");
   else
     window.open("emiteboleto.php?alias="+alias+"&issvar="+ x + "&issvarvlr=" + xx,"","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,height="+(screen.height-100)+",width="+(screen.width-100));
 }
@@ -187,7 +187,7 @@ function js_emiteboletovarold(alias) {
 
   if( x == "")
 
-    alert("Você deverá Selecionar Digitar os valores a Pagar");
+    alert("VocÃª deverÃ¡ Selecionar Digitar os valores a Pagar");
 
   else {
 
@@ -403,14 +403,14 @@ function TestaNI(cNI,iTipo){
 	switch (iTipo) {
 		case 1:
 			if (NI.length != 14){
-				alert('O número do CNPJ informado está incorreto');
+				alert('O nÃºmero do CNPJ informado estÃ¡ incorreto');
 				cNI.value = "";
 				cNI.focus();
 				return(false);
 				}
 
 			if (NI.substr(12,2) != CalcularDV(NI.substr(0,12), 9)){
-				alert('O número do CNPJ informado está incorreto');
+				alert('O nÃºmero do CNPJ informado estÃ¡ incorreto');
 				cNI.value = "";
 				cNI.focus();
 				return(false);
@@ -419,14 +419,14 @@ function TestaNI(cNI,iTipo){
 
 		case 2:
 			if (NI.length != 11){
-				alert('O número do CPF informado está incorreto');
+				alert('O nÃºmero do CPF informado estÃ¡ incorreto');
 				cNI.value = "";
 				cNI.focus();
 				return(false);
 				}
 
 			if (NI.substr(9,2) != CalcularDV(NI.substr(0,9), 11)){
-				alert('O número do CPF informado está incorreto');
+				alert('O nÃºmero do CPF informado estÃ¡ incorreto');
 				cNI.value = "";
 				cNI.focus();
 				return(false);
@@ -578,7 +578,7 @@ function js_validaAlfaNumerico(obvalida){
 	pValor = pValor.replace('.','');
 	for(var j=0;j<AuxTam;j++){
 		if ((!IndAlfaNumerico(pValor.charAt(j))) || (pValor.charAt(j) == " ")){
-            alert("Voce deverá digitar o valor separando os centavos com PONTO");
+            alert("Voce deverÃ¡ digitar o valor separando os centavos com PONTO");
 			obvalida.value = "";          
 			obvalida.focus();  
 		} 

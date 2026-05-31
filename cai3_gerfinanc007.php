@@ -38,10 +38,10 @@ parse_str($HTTP_SERVER_VARS['QUERY_STRING']);
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
 function js_recebenotif(notifi){
-    js_OpenJanelaIframe('top.corpo','db_iframe_notificacao','cai3_gerfinanc019.php?notifi='+notifi,'Recebimento de Notificação',true);
+    js_OpenJanelaIframe('top.corpo','db_iframe_notificacao','cai3_gerfinanc019.php?notifi='+notifi,'Recebimento de NotificaÃ§Ã£o',true);
 }
 
 </script>
@@ -57,13 +57,13 @@ font-family:Arial, Helvetica, sans-serif;
 <center>
 <?php 
 if(isset($erro1)) { ?>
- <br><br><br><Br><h3>Débitos recentemente pagos!</h3>
+ <br><br><br><Br><h3>DÃ©bitos recentemente pagos!</h3>
 <?php  
 }else{
 ?>
   <table width="100%" border="0" cellpadding="0" cellspacing="5">
    <tr>
-   <td align="left" ><h3> Notificações Enviadas ao Contribuinte:</h3>
+   <td align="left" ><h3> NotificaÃ§Ãµes Enviadas ao Contribuinte:</h3>
   <?php 
   $clnotificacao = new cl_notificacao;
    $numpres = "";

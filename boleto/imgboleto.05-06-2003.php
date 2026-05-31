@@ -124,11 +124,11 @@ $preto = imagecolorallocate($img,0,0,0);
 //DADOS//
 /////////
 
-//InformaÁıes do contribuinte
+//Informa√ß√µes do contribuinte
 //cgm.z01_nome,cgm.z01_ender,cgm.z01_munic,cgm.z01_uf,cgm.z01_cep,c.v01_nome,i.q02_compl,i.q02_numero,i.q02_bairro 
 ImageString($img,2,35,145,"Nome:      ".$identificacao[0],$preto);
-ImageString($img,2,35,158,"EndereÁo:  ".$identificacao[1],$preto);
-ImageString($img,2,35,168,"MunicÌpio: ".$identificacao[2]." - ".$identificacao[3],$preto);
+ImageString($img,2,35,158,"Endere√ßo:  ".$identificacao[1],$preto);
+ImageString($img,2,35,168,"Munic√≠pio: ".$identificacao[2]." - ".$identificacao[3],$preto);
 ImageString($img,2,35,178,"CEP:       ".substr($identificacao[4],0,2).".".substr($identificacao[4],2,3)."-".substr($identificacao[4],3,2),$preto);
 ImageString($img,2,35,188,"Data:      ".date("d/m/Y")." Hora: ".date("H:i:s"),$preto);
 ImageString($img,2,35,198,"IP:        ".$_SERVER['REMOTE_ADDR'],$preto);
@@ -142,7 +142,7 @@ ImageString($img,2,530,140,$numero,$preto);
 
 //Banco
 ImageString($img,10,125,610,$k00_codbco."-0",$preto);
-//Linha Digit·vel
+//Linha Digit√°vel
 ImageString($img,4,220,615,$linha_digitavel,$preto);
 //Local de Pagamento
 ImageString($img,3,12,647,$k15_local,$preto);
@@ -183,8 +183,8 @@ ImageString($img,3,12,845,$k00_hist8,$preto);
 // nome do contribuinte
 
 ImageString($img,2,12,871,"Nome:      ".$identificacao[0],$preto);
-ImageString($img,2,12,884,"EndereÁo:  ".$identificacao[1],$preto);
-ImageString($img,2,12,897,"MunicÌpio: ".$identificacao[2]." - ".$identificacao[3]."  "."CEP:       ".substr($identificacao[4],0,2).".".substr($identificacao[4],2,3)."-".substr($identificacao[4],3,2),$preto);
+ImageString($img,2,12,884,"Endere√ßo:  ".$identificacao[1],$preto);
+ImageString($img,2,12,897,"Munic√≠pio: ".$identificacao[2]." - ".$identificacao[3]."  "."CEP:       ".substr($identificacao[4],0,2).".".substr($identificacao[4],2,3)."-".substr($identificacao[4],3,2),$preto);
 
 
 
@@ -201,7 +201,7 @@ ImageString($img,3,150,855,$codigo_barras[1],$preto);
 int25($img,10,927,$codigo_barras[0]);
 //int25($img,70,700,"81704000001294003502003012400003305179800996");
 //Receitas
-ImageString($img,2,70,265,"Taxa Banc·ria",$preto);
+ImageString($img,2,70,265,"Taxa Banc√°ria",$preto);
 ImageString($img,2,577,265,$taxabancaria,$preto);  
 //k02_receit k02_descr k02_drecei valor
 $c = 0;
@@ -219,7 +219,7 @@ for($i = 0;$i < sizeof($dados);$i++) {
 }
 /******************************
 if(substr($parc,0,4) != "PARC") {
-  ImageString($img,2,70,265,"Taxa Banc·ria",$preto);
+  ImageString($img,2,70,265,"Taxa Banc√°ria",$preto);
   ImageString($img,2,580,265,$taxabancaria,$preto);  
   $rec = split("&",$rec);
   $c=0;
@@ -244,7 +244,7 @@ if(substr($parc,0,4) != "PARC") {
 } else {
   ImageString($img,2,35,280,"Valor",$preto);
   ImageString($img,2,100,280,"Desconto",$preto);
-  ImageString($img,2,180,280,"Taxa Banc·ria",$preto);
+  ImageString($img,2,180,280,"Taxa Banc√°ria",$preto);
   ImageString($img,2,290,280,"Total",$preto);
       
   ImageString($img,2,35,295,$apagar_u,$preto);
@@ -256,7 +256,7 @@ if(substr($parc,0,4) != "PARC") {
 //parcelas
 //ImageString($img,2,35,390,"Parcelas: ".$parc,$preto);
 
-//outras informaÁoes
+//outras informa√ßoes
 ImageString($img,$tam1,$posx1,$posy1,$obs1,$preto);
 ImageString($img,$tam2,$posx2,$posy2,$obs2,$preto);
 ImageString($img,$tam3,$posx3,$posy3,$obs3,$preto);

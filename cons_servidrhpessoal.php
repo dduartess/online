@@ -53,12 +53,12 @@ $sUrlAverba = base64_encode("&averba");
 
 /**
  * Caso o cliente seja Bage (codcli = 15) 
- * Então a variável lBloqueio passa a ser true e não mostrará os menus:
+ * EntÃ£o a variÃ¡vel lBloqueio passa a ser true e nÃ£o mostrarÃ¡ os menus:
  * - Assentamento 
- * - Averbação do tempo de serviço 
- * - Férias
+ * - AverbaÃ§Ã£o do tempo de serviÃ§o 
+ * - FÃ©rias
  * 
- * Do contrário todos os menus são mostrados normalmente.
+ * Do contrÃ¡rio todos os menus sÃ£o mostrados normalmente.
  */
 $lBloqueio = false;
 $rsCodCli  = db_query("select db21_codcli from db_config where prefeitura is true limit 1");
@@ -71,7 +71,7 @@ if ($iCodCli == 15 ) {
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 </head>
@@ -102,7 +102,7 @@ if ($iCodCli == 15 ) {
         </tr>     
         <tr>
            <td nowrap="nowrap" width="100%">
-             <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('averbacao');">Averbação de Tempo de Serviço</span>
+             <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('averbacao');">AverbaÃ§Ã£o de Tempo de ServiÃ§o</span>
            </td>
         </tr>
         <?php  } ?>
@@ -116,7 +116,7 @@ if ($iCodCli == 15 ) {
         <?php  if ($lBloqueio == false ) { ?>
          <tr>
             <td nowrap="nowrap" width="100%">
-              <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('ferias');">Férias</span>
+              <span class="navText" style="cursor: pointer;" onClick="js_atualizaFrame('ferias');">FÃ©rias</span>
             </td>
          </tr>
         <?php  } ?>
@@ -154,7 +154,7 @@ if ($iCodCli == 15 ) {
   <tr height="220">
    <td align="center">
     <img src="imagens/atencao.gif"><br>
-    Para acessar suas informações, efetue login.
+    Para acessar suas informaÃ§Ãµes, efetue login.
    </td>
   </tr>
  </table>

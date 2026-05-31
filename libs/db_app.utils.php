@@ -79,7 +79,7 @@ class db_app {
          } else if (file_exists("ext/javascript/".trim($filename))) {
            echo str_replace("#filename", "ext/javascript/".trim($filename), $sStringPrefix)."{$sStringSufix}\n";
          } else {
-           throw new Exception("Include {$filename} n„o existe");
+           throw new Exception("Include {$filename} n√£o existe");
          }
        }
      }
@@ -113,7 +113,7 @@ class db_app {
                continue;
             }
             /**
-             * n„o carrega arquivos que n„o sejam php
+             * n√£o carrega arquivos que n√£o sejam php
              */
             if (substr($sFile, -3) !== "php") {
               continue;

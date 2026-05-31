@@ -43,7 +43,7 @@ mens_help();
 parse_str(base64_decode($HTTP_SERVER_VARS["QUERY_STRING"]));
 
 if (!isset($inscricao) or empty($inscricao)){
-   msgbox("InscriÁ„o Inv·lida.");
+   msgbox("Inscri√ß√£o Inv√°lida.");
    db_logs("","$inscricao",0,"Inscricao Invalida. Numero: $inscricao ");
    redireciona("digitainscricao.php");
 }
@@ -57,18 +57,18 @@ if (pg_numrows($result) == 0 ){
 }
 db_fieldsmemory($result,0);
 if (empty($escritorio)){
-   $escritorio = 'O PR”PRIO';
+   $escritorio = 'O PR√ìPRIO';
 }
 if(!isset($DB_LOGADO) && $m_publico !='t'){
   $sql = "select fc_permissaodbpref(".db_getsession("DB_login").",2,$inscricao)";
   $resultteste = pg_exec($sql);
   if(pg_numrows($resultteste)==0){
-    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv·lido.'));
+    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv√°lido.'));
     exit;
   }
   $resultteste = pg_result($result,0,0);
   if($resultteste=="0"){
-    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv·lido.'));
+    db_redireciona("centro_pref.php?".base64_encode('erroscripts=Acesso a rotina inv√°lido.'));
     exit;
   }
 } 
@@ -77,7 +77,7 @@ if(!isset($DB_LOGADO) && $m_publico !='t'){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 js_verificapagina("opcoesdebitospendentes.php");
@@ -115,8 +115,8 @@ mens_div();
         <tr>
           <td nowrap width="90%">
             &nbsp;<a href="index.php" class="links">Principal &gt;</a>
-		 &nbsp;<a href="digitainscricao.php" class="links">Alvar· &gt;</a>
-	     &nbsp;<a href="javascript:history.back()" class="links">OpÁıes Alvar· &gt;</a>
+		 &nbsp;<a href="digitainscricao.php" class="links">Alvar√° &gt;</a>
+	     &nbsp;<a href="javascript:history.back()" class="links">Op√ß√µes Alvar√° &gt;</a>
           </td>
 	  <td align="center" width="10%" onClick="MM_showHideLayers('<?=$nome_help?>','',(document.getElementById('<?=$nome_help?>').style.visibility == 'visible'?'hide':'show'));">
 	    <a href="#" class="links">Ajuda</a>

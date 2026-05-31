@@ -16,9 +16,9 @@
 	$this->objpdf->text(40,28,$this->emailpref);
 
 	$this->objpdf->Setfont('Arial','B',9);
-	$this->objpdf->text(130,16,'EXTRATO ANUAL DO FUNDO DE PENSÃO');
+	$this->objpdf->text(130,16,'EXTRATO ANUAL DO FUNDO DE PENSÃƒO');
 	$this->objpdf->Setfont('Arial','',9);
-	$this->objpdf->text(145,20,'Para simples verificação');
+	$this->objpdf->text(145,20,'Para simples verificaÃ§Ã£o');
 	$this->objpdf->text(143,24,'Lei Complementar 017/2005');
 //	$this->objpdf->text(40,28,$this->emailpref);
         $linha = 47;
@@ -30,14 +30,14 @@
 
 	$this->objpdf->Setfont('Arial','',6);
 	$this->objpdf->text(17,$linha,'Ente Federativo');
-	$this->objpdf->text(97,$linha,'Código');
-	$this->objpdf->text(130,$linha,'Operação');
-	$this->objpdf->text(163,$linha,'Emissão');
+	$this->objpdf->text(97,$linha,'CÃ³digo');
+	$this->objpdf->text(130,$linha,'OperaÃ§Ã£o');
+	$this->objpdf->text(163,$linha,'EmissÃ£o');
 	
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text(17,$linha+5,$this->prefeitura);
-//	$this->objpdf->text(97,$linha+5,'Código');
-//	$this->objpdf->text(130,$linha+5,'Operação');
+//	$this->objpdf->text(97,$linha+5,'CÃ³digo');
+//	$this->objpdf->text(130,$linha+5,'OperaÃ§Ã£o');
 	$this->objpdf->text(163,$linha+5,date('d/m/Y',db_getsession("DB_datausu")));
 	
 	$this->objpdf->rect(15,$linha+8,80,10,'DF');
@@ -47,7 +47,7 @@
 	$this->objpdf->Setfont('Arial','',6);
 	$this->objpdf->text(17,$linha+10,'Fundo');
 	$this->objpdf->text(97,$linha+10,'CNPJ do Fundo');
-	$this->objpdf->text(147,$linha+10,'Início das Atividades do Fundo');
+	$this->objpdf->text(147,$linha+10,'InÃ­cio das Atividades do Fundo');
 	
 	$this->objpdf->Setfont('Arial','',8);
 	$this->objpdf->text(17,$linha+15,'ALEGRETE PREV');
@@ -63,7 +63,7 @@
 
 	$this->objpdf->Setfont('Arial','',6);
 	$this->objpdf->text(17,$linha+35,'Nome');
-	$this->objpdf->text(89,$linha+35,'Endereço');
+	$this->objpdf->text(89,$linha+35,'EndereÃ§o');
 	$this->objpdf->text(162,$linha+35,'CNPJ da Administradora');
 	
 	$this->objpdf->Setfont('Arial','',8);
@@ -83,7 +83,7 @@
 	$this->objpdf->Setfont('Arial','',6);
 	$this->objpdf->text(17,$linha+60,'Nome');
 	$this->objpdf->text(102,$linha+60,'CPF/CNPJ');
-	$this->objpdf->text(132,$linha+60,'Matrícula');
+	$this->objpdf->text(132,$linha+60,'MatrÃ­cula');
 	$this->objpdf->text(162,$linha+60,'Ano');
 	$this->objpdf->text(180,$linha+60,'Folha');
 
@@ -99,8 +99,8 @@
      
   $this->objpdf->Setfont('Arial','B',9);
 
-	$this->objpdf->cell(30,6,'MÊS',1,0,"C",1);
-	$this->objpdf->cell(26,6,'REMUNERAÇÃO',1,0,"C",1);
+	$this->objpdf->cell(30,6,'MÃŠS',1,0,"C",1);
+	$this->objpdf->cell(26,6,'REMUNERAÃ‡ÃƒO',1,0,"C",1);
 	$this->objpdf->cell(26,6,'B.CONTRIB',1,0,"C",1);
 	$this->objpdf->cell(10,6,'%',1,0,"C",1);
 	$this->objpdf->cell(26,6,'PATRONAL',1,0,"C",1);
@@ -147,7 +147,7 @@
 	$this->objpdf->cell(26,6,db_formatar($this->desc_02,'f'),1,0,"R",1);
         $this->objpdf->cell(26,6,db_formatar($acum,'f'),1,1,"R",1);
 	
-	$this->objpdf->cell(30,6,'MARÇO',1,0,"L",1);
+	$this->objpdf->cell(30,6,'MARÃ‡O',1,0,"L",1);
 	$this->objpdf->cell(26,6,db_formatar($this->total_03,'f'),1,0,"R",1);
 	$this->objpdf->cell(26,6,db_formatar($this->base_03,'f'),1,0,"R",1);
 	$patronal = $this->base_03/100*$this->patr;

@@ -62,13 +62,13 @@ else
   
   switch($campo) {
     case "nomeruas":
-      $sql = "select (j14_codigo || '##' || j14_nome ) as db_codigoruas, j14_codigo as Código,j14_nome as Nome
+      $sql = "select (j14_codigo || '##' || j14_nome ) as db_codigoruas, j14_codigo as CÃ³digo,j14_nome as Nome
               from ruas
 		      where upper(j14_nome) like upper('".$arg[1]."%')
 		      order by j14_nome";
 	  break;
     case "codigoruas":
-      $sql = "select (j14_codigo || '##' || j14_nome ) as db_codigoruas, j14_codigo as Código, j14_nome as Nome
+      $sql = "select (j14_codigo || '##' || j14_nome ) as db_codigoruas, j14_codigo as CÃ³digo, j14_nome as Nome
               from ruas
 		      where j14_codigo like '".$arg[1]."%'
 		      order by j14_codigo";
@@ -78,7 +78,7 @@ else
 <html>
 <head>
 <title>Lista de Valores</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onFocus="document.form5.filtro.focus()">

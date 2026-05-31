@@ -50,10 +50,10 @@ if($cgm!=""){ //  se tiver logado
 	$resultgra= pg_query($sqlgra);
 	$linhagra=pg_num_rows($resultgra);
 	if ($linhagra>0){
-		msgbox("é grafica");
+		msgbox("Ã© grafica");
 		echo"<script> location.href='aidof_grafica.php?cgm=$cgm';</script>";
 	}else{
-		msgbox("não é grafica");
+		msgbox("nÃ£o Ã© grafica");
 	}
 }
 
@@ -82,7 +82,7 @@ if($db_verificaip == "0"){
   $onsubmit = "";
 }
 
-//verifica se está logado
+//verifica se estÃ¡ logado
 
 if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
  if(@$id_usuario=="")$id_usuario = $_COOKIE["cookie_codigo_cgm"];
@@ -102,7 +102,7 @@ if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <script>
 </script>
@@ -145,7 +145,7 @@ if(@$id_usuario!="" || @$_COOKIE["cookie_codigo_cgm"]!=""){
             <td width="50%" height="30">
              <input class="botao" type="submit" name="pesquisa" value="Pesquisa" class="botaoconfirma">
              <input type="hidden" name="opcao" value="i" ><br><br>
-             <a align="center" href="digitaaidof.php?outro">Pesquisar Outra Inscrição</a><br><br>
+             <a align="center" href="digitaaidof.php?outro">Pesquisar Outra InscriÃ§Ã£o</a><br><br>
             </td>
           </tr>
         </table>

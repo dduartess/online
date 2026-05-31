@@ -57,7 +57,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="config/estilos.css"        rel="stylesheet" type="text/css">
 <link href="config/portalservidor.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="scripts/scripts.js"  ></script>
@@ -97,7 +97,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
                 ?>
               </td>
               <td class="labelForm">
-                Mês:
+                MÃªs:
               </td>
               <td class="dadosForm">
                 <select id="selMes"      name="mescalc" onChange="js_consultaTipo()">
@@ -105,7 +105,7 @@ $iNroCalculoAnos = pg_num_rows($rsCalculoAnos);
               </td>
 
               <td class="labelForm">
-                Tipo Cálculo:
+                Tipo CÃ¡lculo:
               </td>
               <td class="dadosForm">
                 <select id="selTipoCalc" name="tipocalc" onChange="js_limpaFrame();">

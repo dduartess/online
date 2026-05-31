@@ -129,13 +129,13 @@ if ($iRhEmiteContraCheque > 0) {
      	case 'r14':
      	 $sTabela    = 'gerfsal';
      	 $sSigla     = 'r14';
-     	 $sTipoFolha = 'SAL¡RIO';
+     	 $sTipoFolha = 'SAL√ÅRIO';
      	break;
 
        case 'r31';
         $sTabela    = 'gerffer';
      	$sSigla     = 'r31';
-        $sTipoFolha = 'F…RIAS';
+        $sTipoFolha = 'F√âRIAS';
      	 
        case 'r48':
         $sTabela    = 'gerfcom';
@@ -146,7 +146,7 @@ if ($iRhEmiteContraCheque > 0) {
        case 'r20':
         $sTabela    = 'gerfres';
         $sSigla     = 'r20';
-        $sTipoFolha = 'RESCIS√O';
+        $sTipoFolha = 'RESCIS√ÉO';
        break; 
 
        case 'r22':
@@ -158,7 +158,7 @@ if ($iRhEmiteContraCheque > 0) {
        case 'r35':
         $sTabela    = 'gerfs13';
         $sSigla     = 'r35';
-        $sTipoFolha = '13o. SAL¡RIO';
+        $sTipoFolha = '13o. SAL√ÅRIO';
        break; 
 
        case 'r53':
@@ -170,7 +170,7 @@ if ($iRhEmiteContraCheque > 0) {
        case 'r60':
         $sTabela    = 'previden';
         $sSigla     = 'r60';
-        $sTipoFolha = 'AJUSTE DA PREVID NCIA';
+        $sTipoFolha = 'AJUSTE DA PREVID√äNCIA';
        break;
 
        case 'r61':
@@ -215,7 +215,7 @@ if ($iRhEmiteContraCheque > 0) {
 <html>
   <head>
     <title><?=$w01_titulo?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="estilos.css" rel="stylesheet" type="text/css">
     <link href="config/estilos.css" rel="stylesheet" type="text/css">
     <script language="JavaScript" src="scripts/db_script.js"></script>
@@ -227,10 +227,10 @@ if ($iRhEmiteContraCheque > 0) {
       <table align="center" border="0" cellpadding="3" cellspacing="3" width="80%" class="texto" style="border: 1px solid">
         <tr>
           <td align="center" width="100%" style="border: 1px solid">
-            <b>** AUTENTICA«√O CONTRA CHEQUE / FOLHA DE PAGAMENTO **</b></td>
+            <b>** AUTENTICA√á√ÉO CONTRA CHEQUE / FOLHA DE PAGAMENTO **</b></td>
         </tr>
         <tr>
-          <td width="100%"><b>NOME DA INSTITUI«√O:</b>&nbsp;&nbsp;<?=$oRhPessoalFolha->nomeinst;?></td>
+          <td width="100%"><b>NOME DA INSTITUI√á√ÉO:</b>&nbsp;&nbsp;<?=$oRhPessoalFolha->nomeinst;?></td>
         </tr>        
       </table>
       <table align="center" border="0" cellpadding="4" cellspacing="4" width="80%" class="texto" style="border: 1px solid">
@@ -246,7 +246,7 @@ if ($iRhEmiteContraCheque > 0) {
          </td>
         </tr>        
         <tr>
-          <td align="left" width="10%"><b>REF.AO M S:</b></td>
+          <td align="left" width="10%"><b>REF.AO M√äS:</b></td>
           <td align="left" width="13%">&nbsp;
              <font color="<?=$w01_corfontesite?>"><?=$RhEmiteContraChequeMesFolha."/".$RhEmiteContraChequeAnoFolha;?></font>
           </td>
@@ -273,7 +273,7 @@ if ($iRhEmiteContraCheque > 0) {
           <td align="left" width="2%" >&nbsp;</td>
         </tr>   
         <tr>
-          <td align="left" width="10%"><b>FUN«√O:</b></td>
+          <td align="left" width="10%"><b>FUN√á√ÉO:</b></td>
           <td align="left" width="23%">&nbsp;
              <font color="<?=$w01_corfontesite?>"><?=$oRhEmiteContraCheque->rh37_descr;?></font>
           </td>
@@ -285,14 +285,14 @@ if ($iRhEmiteContraCheque > 0) {
           <td align="left" width="2%">&nbsp;</td>
         </tr>
         <tr>
-          <td align="left" width="10%"><b>LOTA«√O:</b></td>
+          <td align="left" width="10%"><b>LOTA√á√ÉO:</b></td>
           <td align="left" width="23%">&nbsp;
              <font color="<?=$w01_corfontesite?>"><?=$oRhPessoalFolha->r70_estrut."-".$oRhPessoalFolha->r70_descr;?></font>
           </td>
           <td align="left" width="2%">&nbsp;</td>
         </tr>                                  
         <tr>
-          <td align="left" width="10%"><b>AUTENTICA«√O:</b></td>
+          <td align="left" width="10%"><b>AUTENTICA√á√ÉO:</b></td>
           <td align="left" width="23%">&nbsp;
              <font color="<?=$w01_corfontesite?>"><?=$oRhPessoalFolha->rh85_codautent;?></font>
           </td>

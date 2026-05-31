@@ -28,7 +28,7 @@
 <html>
 <head>
 <title><?=$w01_titulo?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script language="JavaScript" src="scripts/db_script.js"></script>
 <link rel="stylesheet" type="text/css" href="include/estilodai.css" >
 <link href="config/estilos.css" rel="stylesheet" type="text/css">
@@ -36,69 +36,69 @@
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >
 <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" >
 	<tr class="titulo3">
-  		<td align="center"><br>INSTRUÇÕES DE PREENCHIMENTO DAÍ  
+  		<td align="center"><br>INSTRUÃ‡Ã•ES DE PREENCHIMENTO DAÃ  
   		</td>
   	</tr>
   	<tr><td>&nbsp;</td></tr>
   	<tr class= "titulo2">
   		<td><b>
-			1 - OBRIGATORIEDADE DE APRESENTAÇÃO:</b> Todas as pessoas jurídicas inscritas no Cadastro Fiscal do Município, sujeitas ao recolhimento do ISSQN Variável.
+			1 - OBRIGATORIEDADE DE APRESENTAÃ‡ÃƒO:</b> Todas as pessoas jurÃ­dicas inscritas no Cadastro Fiscal do MunicÃ­pio, sujeitas ao recolhimento do ISSQN VariÃ¡vel.
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
  	<tr><td>&nbsp;</td></tr>
  	<tr class= "texto2">
   		<td><b>
-			2 - INSTRUÇÕES DE PREENCHIMENTO:</b>
+			2 - INSTRUÃ‡Ã•ES DE PREENCHIMENTO:</b>
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
 	<tr class= "texto2">
   		<td><b>
-			2.1 - ENDEREÇO:</b>  O quadro endereço já aparece preenchido de acordo com as informações do cadastro fiscal, caso haja divergência de dados, proceder à alteração fazendo as modificações necessárias e clicando no botão salvar.
+			2.1 - ENDEREÃ‡O:</b>  O quadro endereÃ§o jÃ¡ aparece preenchido de acordo com as informaÃ§Ãµes do cadastro fiscal, caso haja divergÃªncia de dados, proceder Ã  alteraÃ§Ã£o fazendo as modificaÃ§Ãµes necessÃ¡rias e clicando no botÃ£o salvar.
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
 	<tr class= "texto2">
   		<td><b>
-			2.2 - VALORES:</b> Informar os valores tributáveis por mês de competência, inclusive recolhimentos complementares, caso houver.
-Não informar recolhimentos relativos à retenção na fonte.
+			2.2 - VALORES:</b> Informar os valores tributÃ¡veis por mÃªs de competÃªncia, inclusive recolhimentos complementares, caso houver.
+NÃ£o informar recolhimentos relativos Ã  retenÃ§Ã£o na fonte.
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
  	<tr class= "texto2">
   		<td><b>
-			2.3 - RETENÇÃO COMO TOMADOR:</b> Este campo somente será preenchido na hipótese de ter havido contratação de serviços de terceiros sujeitos a retenção na fonte .
-Selecionar o mês de competência e informar o CNPJ e Razão Social da empresa contratada,  o tipo de serviço prestado, número, série e valor da nota fiscal, o valor do imposto retido e a data e valor recolhido de acordo com o recibo de pagamento. "Havendo mais de uma retenção no mesmo mês, a data e valor recolhido serão os mesmos em todos os lançamentos". 
-Na hipótese de existir para a respectiva competência planilha de
-retenção lançada, esta será importada pelo sistema, sendo possível
-confirmar, alterar ou excluir a informação.  		
+			2.3 - RETENÃ‡ÃƒO COMO TOMADOR:</b> Este campo somente serÃ¡ preenchido na hipÃ³tese de ter havido contrataÃ§Ã£o de serviÃ§os de terceiros sujeitos a retenÃ§Ã£o na fonte .
+Selecionar o mÃªs de competÃªncia e informar o CNPJ e RazÃ£o Social da empresa contratada,  o tipo de serviÃ§o prestado, nÃºmero, sÃ©rie e valor da nota fiscal, o valor do imposto retido e a data e valor recolhido de acordo com o recibo de pagamento. "Havendo mais de uma retenÃ§Ã£o no mesmo mÃªs, a data e valor recolhido serÃ£o os mesmos em todos os lanÃ§amentos". 
+Na hipÃ³tese de existir para a respectiva competÃªncia planilha de
+retenÃ§Ã£o lanÃ§ada, esta serÃ¡ importada pelo sistema, sendo possÃ­vel
+confirmar, alterar ou excluir a informaÃ§Ã£o.  		
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
  	<tr class= "texto2">
   		<td><b>
-			2.4 - RETENÇÃO COMO PRESTADOR:</b> Este campo somente será preenchido quando a empresa sofreu retenção por serviço prestado. Deverá ser preenchida a competência, o CNPJ do contratante e o número, série, valor e data da emissão da nota que sofreu a retenção.			
+			2.4 - RETENÃ‡ÃƒO COMO PRESTADOR:</b> Este campo somente serÃ¡ preenchido quando a empresa sofreu retenÃ§Ã£o por serviÃ§o prestado. DeverÃ¡ ser preenchida a competÃªncia, o CNPJ do contratante e o nÃºmero, sÃ©rie, valor e data da emissÃ£o da nota que sofreu a retenÃ§Ã£o.			
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
 	<tr class= "texto2">
   		<td><b>
-			2.5 - ENVIA DAÍ:</b> Preencher com o nome e o telefone do responsável pelo preenchimento. 
-Antes do envio da declaração poderá ser impressa uma cópia para conferência das informações digitadas na opção "Verificar relatório antes de enviar".
-Para efetuar remessa clicar na opção "enviar daí".
+			2.5 - ENVIA DAÃ:</b> Preencher com o nome e o telefone do responsÃ¡vel pelo preenchimento. 
+Antes do envio da declaraÃ§Ã£o poderÃ¡ ser impressa uma cÃ³pia para conferÃªncia das informaÃ§Ãµes digitadas na opÃ§Ã£o "Verificar relatÃ³rio antes de enviar".
+Para efetuar remessa clicar na opÃ§Ã£o "enviar daÃ­".
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
  	<tr class= "texto2">
   		<td>
-			Depois de enviada, a declaração não mais poderá ser alterada, constatada alguma divergência entrar em contato com a fiscalização.
+			Depois de enviada, a declaraÃ§Ã£o nÃ£o mais poderÃ¡ ser alterada, constatada alguma divergÃªncia entrar em contato com a fiscalizaÃ§Ã£o.
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>
  	<tr class= "texto2">
   		<td>
-			OBS: Se for necessário sair da guia que está sendo digitada, não esqueça de salvar os dados digitados, clicando no botão "Salvar", para posterior retorno ao preenchimento a partir das informações já digitadas.
+			OBS: Se for necessÃ¡rio sair da guia que estÃ¡ sendo digitada, nÃ£o esqueÃ§a de salvar os dados digitados, clicando no botÃ£o "Salvar", para posterior retorno ao preenchimento a partir das informaÃ§Ãµes jÃ¡ digitadas.
   		</td>
  	</tr>
  	<tr><td>&nbsp;</td></tr>

@@ -76,11 +76,11 @@ db_query("select fc_putsession('DB_anousu','".db_getsession("DB_anousu")."')");
 	$ip   = getenv("REMOTE_ADDR");
 	
 	if ( $tipo == 1 ) {
-		$sTipoCertidao = "p"; //Certid„o positiva
+		$sTipoCertidao = "p"; //Certid√£o positiva
 	} else if ( $tipo == 2 ) {
-		$sTipoCertidao = "n"; //Certid„o negativa
+		$sTipoCertidao = "n"; //Certid√£o negativa
 	} else {
-		$sTipoCertidao = "r"; //Certid„o regular
+		$sTipoCertidao = "r"; //Certid√£o regular
 	}
 	
 	$w13_instit = db_getsession('DB_instit');
@@ -92,7 +92,7 @@ db_query("select fc_putsession('DB_anousu','".db_getsession("DB_anousu")."')");
 	}
 	
 	/**
-	 * Novos parametros para reemis„o da certid„o
+	 * Novos parametros para reemis√£o da certid√£o
 	 */
 	$iInstit      		 = db_getsession('DB_instit');
 	$iAnoUsu      		 = db_getsession('DB_anousu');
@@ -145,7 +145,7 @@ db_query("select fc_putsession('DB_anousu','".db_getsession("DB_anousu")."')");
 	}
 	
 	/**
-	 * SÛ deve permitir a reemis„o caso a data seja valida 
+	 * S√≥ deve permitir a reemis√£o caso a data seja valida 
 	 */
 	if ( $lReemitirCertidao && isset ($iOidCertidao) && $iOidCertidao != 0 && $p50_web == 't') {
 		
@@ -245,7 +245,7 @@ $clcertidao->p50_instit      = db_getsession("DB_instit");
 $clcertidao->p50_arquivo     = '0';
 
 /**
- * Adicionamos campo para armazenar o dias de validade da certid„o de acordo com
+ * Adicionamos campo para armazenar o dias de validade da certid√£o de acordo com
  * o parametro que estava setado quando emitida
  */
 $sSql         = $clnumpref->sql_query_file ( $iAnoUsu, $iInstit, "k03_diasvalidadecertidao" );
@@ -262,7 +262,7 @@ if ( pg_num_rows($rsResultados) > 0 ){
 $clcertidao->incluir(null);
  
 if ($clcertidao->erro_status == '0') {
-	$erro_msg = $clcertidao->erro_msg."--- Inclus„o Certid„o";
+	$erro_msg = $clcertidao->erro_msg."--- Inclus√£o Certid√£o";
 	db_fim_transacao(true);
 	db_redireciona("db_erros.php?fechar=true&db_erro=$erro_msg");
   exit;
@@ -277,7 +277,7 @@ if (isset ($titulo) && $titulo == 'CGM') {
 		
 	if ($clcertidaocgm->erro_status == '0') {
 		
-		$erro_msg = $clcertidaocgm->erro_msg."--- Inclus„o Certid„o CGM";
+		$erro_msg = $clcertidaocgm->erro_msg."--- Inclus√£o Certid√£o CGM";
 		db_fim_transacao(true);
 		db_redireciona("db_erros.php?fechar=true&db_erro=$erro_msg");
 		exit;
@@ -291,7 +291,7 @@ if (isset ($titulo) && $titulo == 'CGM') {
 	$clcertidaomatric->incluir();
 	if ($clcertidaomatric->erro_status == '0') {
 		
-		$erro_msg = $clcertidaomatric->erro_msg."--- Inclus„o Certid„o Matricula";
+		$erro_msg = $clcertidaomatric->erro_msg."--- Inclus√£o Certid√£o Matricula";
 		db_fim_transacao(true);
 		db_redireciona("db_erros.php?fechar=true&db_erro=$erro_msg");
 		exit;
@@ -303,7 +303,7 @@ if (isset ($titulo) && $titulo == 'CGM') {
 	$clcertidaoinscr->p48_inscr = $inscr;
 	$clcertidaoinscr->incluir();
 	if ($clcertidaoinscr->erro_status == '0') {
-		$erro_msg = $clcertidaoinscr->erro_msg."--- Inclus„o Certid„o InscriÁ„o";
+		$erro_msg = $clcertidaoinscr->erro_msg."--- Inclus√£o Certid√£o Inscri√ß√£o";
 		db_fim_transacao(true);
 		db_redireciona("db_erros.php?fechar=true&db_erro=$erro_msg");
     exit;
@@ -311,7 +311,7 @@ if (isset ($titulo) && $titulo == 'CGM') {
 }
 
 /*
- * Verificamos qual o par‚metro configurado para a numeraÁ„o da certid„o
+ * Verificamos qual o par√¢metro configurado para a numera√ß√£o da certid√£o
  */
 if ($w13_tipocodigocertidao != 0) {
 
@@ -334,7 +334,7 @@ if ($w13_tipocodigocertidao != 0) {
 	$clcertidaoalt->p50_codimpresso = $codimpresso;
 	$clcertidaoalt->alterar($clcertidao->p50_sequencial);
 	if ($clcertidaoalt->erro_status == '0') {
-		$erro_msg = $clcertidaoalt->erro_msg."--- Inclus„o do cÛdigo do processo de impress„o";
+		$erro_msg = $clcertidaoalt->erro_msg."--- Inclus√£o do c√≥digo do processo de impress√£o";
 		db_fim_transacao(true);
 		db_redireciona("db_erros.php?fechar=true&db_erro=$erro_msg");
 		exit;
@@ -363,7 +363,7 @@ if($w13_tipocertidao == '3') {
 
 if ($tipo == 1) {
 	// certidao positiva 
-	$tipocer = "CERTID√O POSITIVA DE D…BITO";
+	$tipocer = "CERTID√ÉO POSITIVA DE D√âBITO";
 	if (isset ($matric)) {
 		
 	  $codtipodoc = $w13_tipocertidao == '1' ?  1028 : 2028 ;
@@ -376,10 +376,10 @@ if ($tipo == 1) {
 		
     if (isset ($j01_baixa) && $j01_baixa != "") {
     	
-      $situinscr           = "SituaÁ„o da matrÌcula: MATRÕCULA BAIXADA ";
+      $situinscr           = "Situa√ß√£o da matr√≠cula: MATR√çCULA BAIXADA ";
       $dadosbaixamatricula = "Matricula Baixada em: ".db_formatar($j01_baixa,'d');
     } else {
-      $situinscr           = "SituaÁ„o da matrÌcula: MATRÕCULA ATIVA ";
+      $situinscr           = "Situa√ß√£o da matr√≠cula: MATR√çCULA ATIVA ";
     }
      
 		db_sel_instit(null, "db21_usasisagua");
@@ -418,10 +418,10 @@ if ($tipo == 1) {
 		db_fieldsmemory($result, 0);
 		
     if (isset ($q02_dtbaix) && $q02_dtbaix != "") {
-      $situinscr         = "SituaÁ„o do alvar·: ALVAR¡ BAIXADO ";
-      $dadosbaixaempresa = "Alvar· Baixado em: ".db_formatar($q02_dtbaix,'d');
+      $situinscr         = "Situa√ß√£o do alvar√°: ALVAR√Å BAIXADO ";
+      $dadosbaixaempresa = "Alvar√° Baixado em: ".db_formatar($q02_dtbaix,'d');
     } else {
-      $situinscr         = "SituaÁ„o do alvar·: ALVAR¡ ATIVO ";
+      $situinscr         = "Situa√ß√£o do alvar√°: ALVAR√Å ATIVO ";
     }       
     
     $sql2 = " select q07_inscr, 
@@ -436,14 +436,14 @@ if ($tipo == 1) {
     
     if (pg_num_rows($result2) > 0) {
       db_fieldsmemory($result2, 0);
-      $dadosalvaraprovisorio = "Alvar· ProvisÛrio V·lido entre: (".db_formatar($q07_datain,'d')." e ".db_formatar($q07_datafi,'d').")";
+      $dadosalvaraprovisorio = "Alvar√° Provis√≥rio V√°lido entre: (".db_formatar($q07_datain,'d')." e ".db_formatar($q07_datafi,'d').")";
     }
 	}
 	
 } else	if ($tipo == 2) {
 	// certidao negativa
 
-  $tipocer = "CERTID√O NEGATIVA";
+  $tipocer = "CERTID√ÉO NEGATIVA";
 	if (isset ($matric)) {
 
 		$codtipodoc = $w13_tipocertidao == '1' ?  1022 : 2022 ;
@@ -455,10 +455,10 @@ if ($tipo == 1) {
 		db_fieldsmemory($result, 0);
 		
 	  if (isset ($j01_baixa) && $j01_baixa != "") {
-      $situinscr           = "SituaÁ„o da matrÌcula: MATRÕCULA BAIXADA ";
+      $situinscr           = "Situa√ß√£o da matr√≠cula: MATR√çCULA BAIXADA ";
       $dadosbaixamatricula = "Matricula Baixada em: ".db_formatar($j01_baixa,'d');
     } else {
-      $situinscr           = "SituaÁ„o da matrÌcula: MATRÕCULA ATIVA ";
+      $situinscr           = "Situa√ß√£o da matr√≠cula: MATR√çCULA ATIVA ";
     }
 
     db_sel_instit(null, "db21_usasisagua");    
@@ -497,10 +497,10 @@ if ($tipo == 1) {
 		db_fieldsmemory($result, 0);
 		
 	    if (isset ($q02_dtbaix) && $q02_dtbaix != "") {
-      $situinscr         = "SituaÁ„o do alvar·: ALVAR¡ BAIXADO ";
-      $dadosbaixaempresa = "Alvar· Baixado em: ".db_formatar($q02_dtbaix,'d');
+      $situinscr         = "Situa√ß√£o do alvar√°: ALVAR√Å BAIXADO ";
+      $dadosbaixaempresa = "Alvar√° Baixado em: ".db_formatar($q02_dtbaix,'d');
     } else {
-      $situinscr         = "SituaÁ„o do alvar·: ALVAR¡ ATIVO ";
+      $situinscr         = "Situa√ß√£o do alvar√°: ALVAR√Å ATIVO ";
     }
             
     $sql2 = " select q07_inscr, 
@@ -515,13 +515,13 @@ if ($tipo == 1) {
     
     if (pg_num_rows($result2) > 0) {
       db_fieldsmemory($result2, 0);
-      $dadosalvaraprovisorio = "Alvar· ProvisÛrio V·lido entre: (".db_formatar($q07_datain,'d')." e ".db_formatar($q07_datafi,'d').")";
+      $dadosalvaraprovisorio = "Alvar√° Provis√≥rio V√°lido entre: (".db_formatar($q07_datain,'d')." e ".db_formatar($q07_datafi,'d').")";
     }	
 				
 	}
 } else {
 	// certidao regular
-	$tipocer = "CERTID√O POSITIVA COM EFEITO DE NEGATIVA";
+	$tipocer = "CERTID√ÉO POSITIVA COM EFEITO DE NEGATIVA";
 	if (isset ($matric)) {
 		$codtipo = 32;
 		$codtipodoc = $w13_tipocertidao == '1' ?  1025 : 2025 ;
@@ -531,10 +531,10 @@ if ($tipo == 1) {
 		db_fieldsmemory($result, 0);
 		
 	  if (isset ($j01_baixa) && $j01_baixa != "") {
-      $situinscr           = "SituaÁ„o da matrÌcula: MATRÕCULA BAIXADA ";
+      $situinscr           = "Situa√ß√£o da matr√≠cula: MATR√çCULA BAIXADA ";
       $dadosbaixamatricula = "Matricula Baixada em: ".db_formatar($j01_baixa,'d');
     } else {
-      $situinscr           = "SituaÁ„o da matrÌcula: MATRÕCULA ATIVA ";
+      $situinscr           = "Situa√ß√£o da matr√≠cula: MATR√çCULA ATIVA ";
     }
     
 
@@ -573,10 +573,10 @@ if ($tipo == 1) {
 		db_fieldsmemory($result, 0);
 		
     if (isset ($q02_dtbaix) && $q02_dtbaix != "") {
-      $situinscr         = "SituaÁ„o do alvar·: ALVAR¡ BAIXADO ";
-      $dadosbaixaempresa = "Alvar· Baixado em: ".db_formatar($q02_dtbaix,'d');
+      $situinscr         = "Situa√ß√£o do alvar√°: ALVAR√Å BAIXADO ";
+      $dadosbaixaempresa = "Alvar√° Baixado em: ".db_formatar($q02_dtbaix,'d');
     } else {
-      $situinscr         = "SituaÁ„o do alvar·: ALVAR¡ ATIVO ";
+      $situinscr         = "Situa√ß√£o do alvar√°: ALVAR√Å ATIVO ";
     }
     
     $sql2 = " select q07_inscr, 
@@ -592,7 +592,7 @@ if ($tipo == 1) {
     
     if (pg_num_rows($result2) > 0) {
       db_fieldsmemory($result2, 0);
-      $dadosalvaraprovisorio = "Alvar· ProvisÛrio V·lido entre: (".db_formatar($q07_datain,'d')." e ".db_formatar($q07_datafi,'d').")";
+      $dadosalvaraprovisorio = "Alvar√° Provis√≥rio V√°lido entre: (".db_formatar($q07_datain,'d')." e ".db_formatar($q07_datafi,'d').")";
     }    
 	}
 }
@@ -621,10 +621,10 @@ $rsDbconfig = db_query($sqlDbconfig);
 db_fieldsmemory($rsDbconfig, 0);
 
 /**
- *  Criada este select apenas para corrigir o nome na identificaÁ„o do contribuinte
- *  de acordo com a configuraÁ„o encontrada no campo (db21_regracgmiptu) na tabela db_config
+ *  Criada este select apenas para corrigir o nome na identifica√ß√£o do contribuinte
+ *  de acordo com a configura√ß√£o encontrada no campo (db21_regracgmiptu) na tabela db_config
  * 
- *  Isso faz com que n„o aparece o nome do propriet·rio e sim o nome do promitente.
+ *  Isso faz com que n√£o aparece o nome do propriet√°rio e sim o nome do promitente.
  */ 
 if ( $db21_regracgmiptu == 2 ) {
   $sSqlNomePromitente = "select * from proprietario where j01_matric = $matric";
@@ -650,7 +650,7 @@ $resparag = db_query($sqlparag);
 
 if ( pg_numrows($resparag) == 0 ) {
 	//$head1 = 'Departamento de Fazenda';
-  //agu$head1 = 'SECRETARIA DE FINAN«AS';
+  //agu$head1 = 'SECRETARIA DE FINAN√áAS';
 }else{
      db_fieldsmemory( $resparag, 0 );
      $head1 = $db02_texto;
@@ -677,7 +677,7 @@ $numrows = $cldb_docparag->numrows;
    
 if ($numrows==0){
 	
-	db_redireciona("db_erros.php?fechar=true&db_erro=Documento n„o configurado.");
+	db_redireciona("db_erros.php?fechar=true&db_erro=Documento n√£o configurado.");
 	exit;
 }
 $logofundo = substr($logo,0,strpos($logo,"."));
@@ -703,7 +703,7 @@ if ($cldb_usuarios->numrows>0){
 $numer = "";
 if ( $w13_tipocodigocertidao != 0 ) {
   
-	$numer = $codimpresso != 0 ? " N∫ $codimpresso " : "";
+	$numer = $codimpresso != 0 ? " N¬∫ $codimpresso " : "";
 }
 
 $pdf->SetFont('Arial','b',13);
@@ -753,7 +753,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 	$rsRecibo = db_query("select * from recibo inner join tabrec on k00_receit = k02_codigo where k00_numpre = $k03_numpre");
 	$intNumrows = pg_numrows($rsRecibo);
 	if ($intNumrows == 0) {
-		db_redireciona('db_erros.php?fechar=true&db_erro=Recibo n„o cadastrado');
+		db_redireciona('db_erros.php?fechar=true&db_erro=Recibo n√£o cadastrado');
 	}
 	$valortotal = 0;
 	for ($ii = 0; $ii < $intNumrows; $ii ++) {
@@ -795,7 +795,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 	$pdf->SetFont('Arial', 'B', $TamLetra);
 	$pdf->cell(20, $alt, "Valor", $b, 0, "C", 0);
 	$pdf->SetFont('Arial', 'B', $TamLetra +1);
-	$pdf->cell(110, $alt, "DOCUMENTO V¡LIDO SOMENTE APOS AUTENTICA«√O MECANICA ", $b, 1, "C", 0);
+	$pdf->cell(110, $alt, "DOCUMENTO V√ÅLIDO SOMENTE APOS AUTENTICA√á√ÉO MECANICA ", $b, 1, "C", 0);
 
 	$pdf->SetFont('Arial', 'B', $TamLetra);
 	$pdf->SetFont('Arial', '', $TamLetra -1);
@@ -804,7 +804,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 		$pdf->cell(60, $alt, "$taxa1", "B", 0, "L", 0);
 		$pdf->cell(20, $alt, "$valor1", $b, 0, "C", 0);
 		$pdf->SetFont('Arial', 'B', $TamLetra +1);
-		$pdf->cell(110, $alt, "OU COMPROVANTE DE QUITA«√O", $b, 1, "C", 0);
+		$pdf->cell(110, $alt, "OU COMPROVANTE DE QUITA√á√ÉO", $b, 1, "C", 0);
 	} else {
 		$pdf->cell(60, $alt, "", $b, 0, "L", 0);
 		$pdf->cell(20, $alt, "", $b, 0, "C", 0);
@@ -822,7 +822,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 	}
 
 	$pdf->SetFont('Arial', 'B', $TamLetra +1);
-	$pdf->cell(110, $alt, " A U T E N T I C A « √ O   M E C ¬ N I C A ", $b, 1, "C", 0);
+	$pdf->cell(110, $alt, " A U T E N T I C A √á √É O   M E C √Ç N I C A ", $b, 1, "C", 0);
 
 	$pdf->SetFont('Arial', '', $TamLetra -1);
 	if (isset ($taxa3) && $taxa3 != "") {
@@ -866,7 +866,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 	$pdf->cell(20, $alt, "Valor", $b, 1, "C", 0);
 
 	$pdf->SetFont('Arial', 'B', $TamLetra);
-	$pdf->cell(40, $alt, "ENDERE«O: ", $b, 0, "L", 0);
+	$pdf->cell(40, $alt, "ENDERE√áO: ", $b, 0, "L", 0);
 	$pdf->SetFont('Arial', '', $TamLetra);
 	$pdf->cell(70, $alt, trim(@ $z01_ender).", ".trim(@ $z01_numero)."  ".trim(@ $z01_compl), $b, 0, "L", 0);
 
@@ -919,7 +919,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 	$pdf->cell(40, $alt, "", $b, 0, "L", 0);
 	$pdf->cell(70, $alt, "", $b, 0, "L", 0);
 	$pdf->SetFont('Arial', 'B', $TamLetra);
-	$pdf->cell(80, $alt, " A U T E N T I C A « √ O   M E C ¬ N I C A  ", 0, 1, "C", 0);
+	$pdf->cell(80, $alt, " A U T E N T I C A √á √É O   M E C √Ç N I C A  ", 0, 1, "C", 0);
 
 	$y = $pdf->GetY();
 	$x = $pdf->GetX();
@@ -934,7 +934,7 @@ if (isset ($cadrecibo) && $cadrecibo == 't') {
 	$y = $pdf->GetY();
 	$pdf->MultiCell(90, 5, '', 0, "C", 0);
 	$pdf->SetFillColor(000);
-	$pdf->MultiCell(180, 3, "CÛdigo de Autenticidade da Certid„o", 0, "R", 0);
+	$pdf->MultiCell(180, 3, "C√≥digo de Autenticidade da Certid√£o", 0, "R", 0);
 	$pdf->MultiCell(180, 10, $t1, 0, "R", 0);
 	$pdf->int25(95, 270, $t1, 15, 0.341);
 	
@@ -987,7 +987,7 @@ if ($sqlerro == false) {
 			}
 
 			/**
-			 * Grava arquivo da certidao tambÈm na tabela certidao
+			 * Grava arquivo da certidao tamb√©m na tabela certidao
 			 */
 			$clcertidao->p50_arquivo    = $oidgrava;
 			$clcertidao->alterar( $clcertidao->p50_sequencial );

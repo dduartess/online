@@ -37,7 +37,7 @@ js_verificapagina("certidaoautentica.php");
 <html>
 <head>
 <title>Documento sem t&iacute;tulo</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 <table width="650" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#CCCCCC">
@@ -59,7 +59,7 @@ js_verificapagina("certidaoautentica.php");
   </tr>
 <tr>  
   <td align="center" height="77">
-   <font face='arial' size='2'><b>Certidão com o prazo de validade expirado</b><br>
+   <font face='arial' size='2'><b>CertidÃ£o com o prazo de validade expirado</b><br>
                   Por Favor entre em contato com a Prefeitura</font><br>
                   <br><center>
   </td>

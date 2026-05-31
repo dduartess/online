@@ -32,7 +32,7 @@ postmemory($HTTP_POST_VARS);
 <html>
 <head>
 <title>xxx</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <script>
 function js_cont(){

@@ -37,7 +37,7 @@ $clruas->rotulo->label("j14_nome");
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="estilos.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="scripts/scripts.js"></script>
 <style>
@@ -124,7 +124,7 @@ $clruas->rotulo->label("j14_nome");
             db_fieldsmemory($result,0);
             echo "<script>".$funcao_js."('$j14_nome',false);</script>";
           }else{
-            echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") não Encontrado',true);</script>";
+            echo "<script>".$funcao_js."('Chave(".$pesquisa_chave.") nÃ£o Encontrado',true);</script>";
           }
         }else{
           echo "<script>".$funcao_js."('',false);</script>";
